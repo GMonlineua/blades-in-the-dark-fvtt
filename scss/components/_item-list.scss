@@ -1,0 +1,75 @@
+
+/* ----------------------------------------- */
+/*  Items Lists                              */
+/* ----------------------------------------- */
+
+.items-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #444;
+
+  .item {
+    position: relative;
+    align-items: center;
+    background-color: $dark-paper;
+    margin-bottom: 5px;
+
+    .item-image {
+      flex: 0 0 30px;
+      height: 30px;
+      min-width: 30;
+      background-size: 27px;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-right: 5px;
+      transition: .5s ease;
+    }
+
+    &:hover .item-image {
+      background-image: url("/icons/svg/d20-grey.svg") !important;
+    }
+
+    .item-image:hover {
+      background-image: url("/icons/svg/d20-black.svg") !important;
+    }
+
+    .item-name {
+      flex: 2;
+      margin: 0;
+      overflow: hidden;
+      height: 30px;
+      padding: 6px 0;
+      cursor: pointer;
+    }
+
+    .item-name:hover {
+      text-shadow: 0 0 8px red;
+    }
+
+    .item-summary {
+      flex: auto;
+      margin: 0;
+      height: 0;
+      overflow: hidden;
+      transition: height 0.3s ease;
+
+      p {
+        margin: 0.5em;
+      }
+    }
+
+    .item-controls {
+      position: absolute;
+      top: 4px;
+      right: 0;
+      display: flex;
+      justify-content: flex-end;
+      a {
+        font-size: 12px;
+        text-align: center;
+        margin: 0 6px;
+      }
+    }
+  }
+}

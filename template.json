@@ -1,0 +1,162 @@
+{
+  "Actor": {
+    "types": ["character", "crew", "cohort", "npc", "faction", "factions", "clock"],
+    "templates": {
+      "base": {
+        "description": "",
+        "notes": ""
+      },
+      "players": {
+        "exp": 0,
+        "coins": 0
+      },
+      "group": {
+        "tier": 0
+      }
+    },
+    "character": {
+      "templates": ["base", "players"],
+      "alias": "",
+      "heritage": "",
+      "background": "",
+      "vice": "",
+      "look": "",
+      "stress": {
+        "value": [0],
+        "max": 9
+      },
+      "trauma": {
+        "value": 0,
+        "max": 4,
+        "list": []
+      },
+      "coins": 0,
+      "stash": 0,
+      "load": {
+        "value": 0,
+        "max": 5
+      },
+      "harm": {
+        "light": {
+          "first": "",
+          "second": ""
+        },
+        "medium": {
+          "first": "",
+          "second": ""
+        },
+        "heavy": ""
+      },
+      "healing": 0,
+      "usedArmor": {
+        "armor": false,
+        "heavy": false,
+        "special": false
+      },
+      "attributes": {
+        "insight": {
+          "exp": 0,
+          "hunt": 0,
+          "study": 0,
+          "survey": 0,
+          "tinker": 0
+        },
+        "prowess": {
+          "exp": 0,
+          "finesse": 0,
+          "prowl": 0,
+          "skirmish": 0,
+          "wreck": 0
+        },
+        "resolve": {
+          "exp": 0,
+          "attune": 0,
+          "command": 0,
+          "consort": 0,
+          "sway": 0
+        }
+      }
+    },
+    "crew": {
+      "templates": ["base", "players", "group"],
+      "lair": "",
+      "tier": 0,
+      "hold": "strong",
+      "reputation": 0,
+      "reputationType": "",
+      "wanted": 0,
+      "heat": 0
+    },
+    "cohort": {
+      "templates": ["base"],
+      "isGang": true,
+      "type": "",
+      "scale": 0,
+      "quality": 0,
+      "edges": "",
+      "flaws": "",
+      "harm": 0,
+      "armor": false
+    },
+    "npc": {
+      "templates": ["base"],
+      "tags": "",
+      "class": "",
+      "faction": "",
+      "crewType": ""
+    },
+    "faction": {
+      "templates": ["base", "group"],
+      "quirks": "",
+      "situation": ""
+    },
+    "factions": {
+      "templates": ["base"]
+    },
+    "clock": {
+      "type": 4,
+      "value": 0
+    }
+  },
+  "Item": {
+    "types": ["playbook", "crewType", "abilityCharacter", "abilityCrew", "contact"],
+    "templates": {},
+    "playbook": {
+      "actions": {
+        "hunt": 0,
+        "study": 0,
+        "survey": 0,
+        "tinker": 0,
+        "finesse": 0,
+        "prowl": 0,
+        "skirmish": 0,
+        "wreck": 0,
+        "attune": 0,
+        "command": 0,
+        "consort": 0,
+        "sway": 0
+      },
+      "exp": "",
+      "description": ""
+    },
+    "crewType": {
+      "exp": "",
+      "description": ""
+    },
+    "abilityCharacter": {
+      "description": ""
+    },
+    "abilityCrew": {
+      "price": 1,
+      "description": ""
+    },
+    "contact": {
+      "type": "friend",
+      "description": ""
+    },
+    "upgrade": {
+      "price": 1,
+      "description": ""
+    }
+  }
+}

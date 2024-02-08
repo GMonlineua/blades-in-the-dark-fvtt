@@ -1,0 +1,35 @@
+{
+  "TYPES": {
+    "Actor": {
+      "character": "Character",
+      "crew": "Crew",
+      "cohort": "Cohort",
+      "npc": "NPC",
+      "faction": "Faction",
+      "factions": "Factions List",
+      "clock": "Clock"
+    },
+    "Item": {
+      "playbook": "Playbook",
+      "crewType": "Crew Type",
+      "abilityCharacter": "Cracter's Ability",
+      "abilityCrew": "Crew's Ability",
+      "contact": "Contact",
+      "upgrade": "Upgrade"
+    }
+  },
+
+  "BITD": {
+    "ActorName": "Name",
+    "ItemName": "Name",
+
+    "Description": "Description",
+    "Notes": "Notes",
+
+    "ItemShow": "Show",
+    "ItemAdd": "Add",
+    "ItemDelete": "Delete",
+    "ItemEdit": "Edit",
+    "NewItem": "Item"
+  }
+}

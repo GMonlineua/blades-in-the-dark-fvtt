@@ -1,0 +1,69 @@
+.sheet-header {
+  flex: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+
+  h1.charname {
+    flex: 100%;
+    height: 50px;
+    padding: 0px;
+    margin: 5px 0;
+    border-bottom: 0;
+    font-family: $font-secondary;
+    font-weight: 700;
+    input {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+  }
+
+  img.profile-img {
+    flex: 1;
+    height: 300px;
+    min-width: 300px;
+    padding-right: 10px;
+    border: none;
+  }
+
+  .description-block {
+    flex: 2;
+  }
+}
+
+.sheet-body {
+  .items-block {
+    position: relative;
+
+    .item-add {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .grid {
+    gap: 10px;
+  }
+
+  .editor {
+    min-height: 75px;
+    height: 250px;
+    padding: 0 $padding-sm;
+    border: $border;
+  }
+}
+
+.tox {
+  .tox-editor-container {
+    background: #fff;
+  }
+
+  .tox-edit-area {
+    padding: 0 $padding-sm;
+  }
+}
