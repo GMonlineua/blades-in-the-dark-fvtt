@@ -8,10 +8,10 @@ export class BitdActorSheet extends ActorSheet
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["bitd", "sheet", "actor", ""],
+      classes: ["bitd", "sheet", "actor"],
       template: "systems/bitd/templates/actor/character-sheet.hbs",
-      width: 700,
-      height: 800,
+      width: 750,
+      height: 900,
       tabs: [
         {
           navSelector: ".sheet-tab",

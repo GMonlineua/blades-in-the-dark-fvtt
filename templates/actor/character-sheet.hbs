@@ -1,11 +1,44 @@
 <form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
   {{!-- Sheet Header --}}
   <header class="sheet-header">
-    <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.ActorName'}}"/></h1>
-    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
-    <div class="description-block">
-      <h2>{{localize 'BITD.Description'}}</h2>
-      {{editor system.description target="system.description" button=true owner=owner editable=editable}}
+    <div class="img-block">
+      <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    </div>
+
+    <div class="header-fields">
+      <div class="name-alias">
+        <h1 class="character-name">
+          <input class="clear-input" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.ActorName'}}"/>
+        </h1>
+        <h2 class="character-alias">
+          <input class="clear-input" name="alias" type="text" value="{{system.alias}}" placeholder="{{localize 'BITD.CharacterAlias'}}"/>
+        </h2>
+      </div>
+
+      <div class="brief-info grid-2col">
+        <div class="prop flexrow">
+          <label class="prop-label" for="system.heritage">{{localize 'BITD.Heritage'}}:</label>
+          <input class="prop-input clear-input" type="text" name="system.heritage" value="{{system.heritage}}" data-dtype="String" placeholder="{{localize 'BITD.Heritage'}}"/>
+        </div>
+        <div class="prop flexrow">
+          <label class="prop-label" for="system.background">{{localize 'BITD.Background'}}:</label>
+          <input class="prop-input clear-input" type="text" name="system.background" value="{{system.background}}" data-dtype="String" placeholder="{{localize 'BITD.Background'}}"/>
+        </div>
+        <div class="prop flexrow">
+          <label class="prop-label" for="system.vice">{{localize 'BITD.Vice'}}:</label>
+          <input class="prop-input clear-input" type="text" name="system.vice" value="{{system.vice}}" data-dtype="String" placeholder="{{localize 'BITD.Vice'}}"/>
+        </div>
+        <div class="prop flexrow">
+          <label class="prop-label" for="system.look">{{localize 'BITD.Look'}}:</label>
+          <input class="prop-input clear-input" type="text" name="system.look" value="{{system.look}}" data-dtype="String" placeholder="{{localize 'BITD.Look'}}"/>
+        </div>
+      </div>
+
+      <div class="stress-block">
+        Stress
+      </div>
+
+      {{> "systems/bitd/templates/actor/parts/attributes.hbs"}}
     </div>
   </header>
 

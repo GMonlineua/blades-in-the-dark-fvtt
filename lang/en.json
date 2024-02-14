@@ -18,10 +18,32 @@
       "upgrade": "Upgrade"
     }
   },
-
   "BITD": {
     "ActorName": "Name",
+    "CharacterAlias": "Alias",
     "ItemName": "Name",
+
+    "Heritage": "Heritage",
+    "Background": "Background",
+    "Vice": "Vice",
+    "Look": "Look",
+
+    "Insight": "Insight",
+    "Prowess": "Prowess",
+    "Resolve": "Resolve",
+
+    "Hunt": "Hunt",
+    "Study": "Study",
+    "Survey": "Survey",
+    "Tinker": "Tinker",
+    "Finesse": "Finesse",
+    "Prowl": "Prowl",
+    "Skirmish": "Skirmish",
+    "Wreck": "Wreck",
+    "Attune": "Attune",
+    "Command": "Command",
+    "Consort": "Consort",
+    "Sway": "Sway",
 
     "Description": "Description",
     "Notes": "Notes",

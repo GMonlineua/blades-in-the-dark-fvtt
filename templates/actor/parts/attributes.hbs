@@ -1,0 +1,34 @@
+<div class="attribute-block grid-3col">
+  <div class="attribute insight-block">
+    <h3 class="attribute-name">{{localize 'BITD.Insight'}}</h3>
+    <div class="action">
+      {{#numLoop 4}}
+        {{#iff system.attributes.insight.hunt ">" this}}
+            <span class="resource-value-step active" data-index="{{this}}"></span>
+        {{else}}
+            <span class="resource-value-step" data-index="{{this}}"></span>
+        {{/iff}}
+      {{/numLoop}}
+      <span class="value-dot"></span>
+      <label class="action-label">{{localize 'BITD.Insight'}}</label>
+    </div>
+    <div class="action">
+      <span class="value-dot"></span>
+      <label class="action-label">{{localize 'BITD.Insight'}}</label>
+    </div>
+    <div class="action">
+      <span class="value-dot"></span>
+      <label class="action-label">{{localize 'BITD.Insight'}}</label>
+    </div>
+    <div class="action">
+      <span class="value-dot"></span>
+      <label class="action-label">{{localize 'BITD.Insight'}}</label>
+    </div>
+  </div>
+
+  <div class="attribute prowess-block">
+  </div>
+
+  <div class="attribute resolve-block">
+  </div>
+</div>

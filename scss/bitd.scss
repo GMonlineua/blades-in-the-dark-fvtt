@@ -1,5 +1,4 @@
 // Import utilities.
-@import 'utils/typography';
 @import 'utils/variables';
 
 /* Global styles */
@@ -10,6 +9,8 @@
 
 /* Styles limited to system sheets */
 .bitd {
+  font-family: $font-primary;
+
   @import 'components/actors';
   @import 'components/items';
   @import 'components/item-list';

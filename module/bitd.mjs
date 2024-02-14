@@ -4,6 +4,8 @@ import { BitdActorSheet } from "./sheets/actor-sheet.mjs";
 import { BitdItem } from "./documents/item.mjs";
 import { BitdItemSheet } from "./sheets/item-sheet.mjs";
 import { preprocessChatMessage, renderChatMessage } from "./helpers/chat-portraits.mjs";
+import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
+import { registerHandlebarsHelpers } from "./helpers/handlebars-helpers.mjs";
 
 Hooks.once('init', async function() {
 
@@ -21,36 +23,15 @@ Hooks.once('init', async function() {
   Actors.registerSheet("bitd", BitdActorSheet, { makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("bitd", BitdItemSheet, { makeDefault: true });
+
+  await registerHandlebarsHelpers();
+
+  // Preload Handlebars templates.
+  return preloadHandlebarsTemplates();
 });
-
-
-/* -------------------------------------------- */
-/*  Chat Message                   */
-/* -------------------------------------------- */
 
 // Preprocess chat message before it is created hook
 Hooks.on("preCreateChatMessage", preprocessChatMessage);
 
 // Render chat message hook
 Hooks.on("renderChatMessage", renderChatMessage);
-
-
-/* -------------------------------------------- */
-/*  Handlebars Helpers                          */
-/* -------------------------------------------- */
-
-Handlebars.registerHelper("load", function(data) {
-  let load = game.i18n.localize("ROGUE.Unloaded");
-  if (data.free >= 5) {
-    load = game.i18n.localize("ROGUE.Unloaded")
-  } else if (data.free >= 2 && data.free < 5) {
-    load = game.i18n.localize("ROGUE.LightlyLoaded")
-  } else if (data.free >= 0 && data.free < 2) {
-    load = game.i18n.localize("ROGUE.HeavilyLoaded")
-  } else if (data.free >= -2 && data.free < 0) {
-    load = game.i18n.localize("ROGUE.Overloaded")
-  } else {
-    load = game.i18n.localize("ROGUE.MoveBlocked")
-  }
-  return load;
-});
