@@ -61,51 +61,61 @@
 }
 
 .grid-3col {
+  display: grid;
   grid-column: span 3/span 3;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .grid-4col {
+  display: grid;
   grid-column: span 4/span 4;
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .grid-5col {
+  display: grid;
   grid-column: span 5/span 5;
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .grid-6col {
+  display: grid;
   grid-column: span 6/span 6;
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .grid-7col {
+  display: grid;
   grid-column: span 7/span 7;
   grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
 .grid-8col {
+  display: grid;
   grid-column: span 8/span 8;
   grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 
 .grid-9col {
+  display: grid;
   grid-column: span 9/span 9;
   grid-template-columns: repeat(9, minmax(0, 1fr));
 }
 
 .grid-10col {
+  display: grid;
   grid-column: span 10/span 10;
   grid-template-columns: repeat(10, minmax(0, 1fr));
 }
 
 .grid-11col {
+  display: grid;
   grid-column: span 11/span 11;
   grid-template-columns: repeat(11, minmax(0, 1fr));
 }
 
 .grid-12col {
+  display: grid;
   grid-column: span 12/span 12;
   grid-template-columns: repeat(12, minmax(0, 1fr));
 }
@@ -233,8 +243,37 @@ input.clear-input:focus {
 }
 
 .rollable:hover, .rollable:focus {
-  color: #000;
+  color: black;
   cursor: pointer;
+}
+
+.value-step-block {
+  display: inline-block;
+}
+.value-step-block .value-step {
+  display: inline-block;
+  cursor: pointer;
+}
+.value-step-block .value-dot {
+  height: 14px;
+  width: 14px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background: white;
+}
+.value-step-block .value-dot.active {
+  background: black;
+}
+.value-step-block .value-tooth {
+  height: 30px;
+  width: 10px;
+  background-image: url("../assets/tooth-white.svg");
+  background-size: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.value-step-block .value-tooth.active {
+  background-image: url("../assets/tooth-black.svg");
 }
 
 .tox {
@@ -299,6 +338,39 @@ input.clear-input:focus {
   flex: 1;
   text-transform: lowercase;
 }
+.bitd .sheet-header .header-fields .stress-trauma {
+  font-size: medium;
+}
+.bitd .sheet-header .header-fields .stress-trauma .stress {
+  flex: inherit;
+  margin-right: 10px;
+}
+.bitd .sheet-header .header-fields .attribute-block {
+  font-size: medium;
+  grid-gap: 10px;
+}
+.bitd .sheet-header .header-fields .attribute-block .attribute {
+  position: relative;
+}
+.bitd .sheet-header .header-fields .attribute-block .attribute .exp-block {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.bitd .sheet-header .header-fields .attribute-block .attribute .value-dot {
+  position: relative;
+}
+.bitd .sheet-header .header-fields .attribute-block .attribute .value-dot:first-child {
+  margin-right: 3px;
+}
+.bitd .sheet-header .header-fields .attribute-block .attribute .value-dot:first-child::after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  width: 1px;
+  height: 18px;
+  background-color: #555;
+}
 .bitd .sheet-body .items-block {
   position: relative;
 }
@@ -317,7 +389,7 @@ input.clear-input:focus {
   border: 1px solid #b5b3a4;
 }
 .bitd .tox .tox-editor-container {
-  background: #fff;
+  background: white;
 }
 .bitd .tox .tox-edit-area {
   padding: 0 5px;

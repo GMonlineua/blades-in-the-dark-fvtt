@@ -11,7 +11,7 @@
           <input class="clear-input" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.ActorName'}}"/>
         </h1>
         <h2 class="character-alias">
-          <input class="clear-input" name="alias" type="text" value="{{system.alias}}" placeholder="{{localize 'BITD.CharacterAlias'}}"/>
+          <input class="clear-input" name="system.alias" type="text" value="{{system.alias}}" placeholder="{{localize 'BITD.CharacterAlias'}}"/>
         </h2>
       </div>
 
@@ -34,8 +34,22 @@
         </div>
       </div>
 
-      <div class="stress-block">
-        Stress
+      <div class="stress-trauma flexrow">
+        <div class="stress">
+          <span>{{localize 'BITD.Stress'}}</span>
+          <div class="value-step-block" data-value="{{system.stress}}" data-key="system.stress">
+            {{#numLoop 8}}
+              <span class="value-step value-tooth" data-index="{{this}}"></span>
+            {{/numLoop}}
+          </div>
+        </div>
+
+        <div class="trauma-block">
+          {{#each system.trauma}}
+            <span class="trauma">{{this}}</span>
+          {{/each}}
+          <a class="item-control add-trauma"><i class="fa-solid fa-plus"></i>{{localize 'BITD.AddTrauma'}}</a>
+        </div>
       </div>
 
       {{> "systems/bitd/templates/actor/parts/attributes.hbs"}}

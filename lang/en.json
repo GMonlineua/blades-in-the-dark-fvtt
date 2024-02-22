@@ -28,6 +28,20 @@
     "Vice": "Vice",
     "Look": "Look",
 
+    "Stress": "Stress",
+    "Trauma": "Trauma",
+    "AddTrauma": "Add Trauma",
+    "Traumas": {
+      "Cold": "Cold",
+      "Haunted": "Haunted",
+      "Obsessed": "Obsessed",
+      "Paranoid": "Paranoid",
+      "Reckless": "Reckless",
+      "Soft": "Soft",
+      "Unstable": "Unstable",
+      "Vicious": "Vicious"
+    },
+
     "Insight": "Insight",
     "Prowess": "Prowess",
     "Resolve": "Resolve",

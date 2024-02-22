@@ -39,8 +39,42 @@ input.clear-input:focus {
 .rollable {
   &:hover,
   &:focus {
-    color: #000;
+    color: black;
     cursor: pointer;
+  }
+}
+
+.value-step-block {
+  display: inline-block;
+
+  .value-step {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .value-dot {
+    height: 14px;
+    width: 14px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background: white;
+  }
+
+  .value-dot.active {
+    background: black;
+  }
+
+  .value-tooth {
+    height: 30px;
+    width: 10px;
+    background-image: url("../assets/tooth-white.svg");
+    background-size: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .value-tooth.active {
+    background-image: url("../assets/tooth-black.svg");
   }
 }
 

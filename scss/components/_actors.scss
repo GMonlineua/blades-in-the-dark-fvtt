@@ -54,6 +54,47 @@
         }
       }
     }
+
+    .stress-trauma {
+      font-size: medium;
+
+      .stress {
+        flex: inherit;
+        margin-right: 10px;
+      }
+    }
+
+    .attribute-block {
+      font-size: medium;
+      grid-gap: 10px;
+
+      .attribute {
+        position: relative;
+
+        .exp-block {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+
+        .value-dot {
+          position: relative;
+        }
+
+        .value-dot:first-child {
+          margin-right: 3px;
+        }
+
+        .value-dot:first-child::after {
+          content: "";
+          position: absolute;
+          right: -5px;
+          width: 1px;
+          height: 18px;
+          background-color: #555;
+        }
+      }
+    }
   }
 }
 
@@ -82,7 +123,7 @@
 
 .tox {
   .tox-editor-container {
-    background: #fff;
+    background: white;
   }
 
   .tox-edit-area {

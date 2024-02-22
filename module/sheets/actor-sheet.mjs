@@ -96,6 +96,24 @@ export class BitdActorSheet extends ActorSheet
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
 
+    // Count dot
+    html.find('.value-step-block').each(function () {
+      const value = Number(this.dataset.value);
+      $(this)
+        .find(".value-step")
+        .each(function (i) {
+          if (i + 1 <= value) {
+            $(this).addClass("active");
+          }
+        });
+    });
+
+    // Resource dots
+    html.find(".value-step-block > .value-step").click(this._onDotChange.bind(this));
+
+    // Add Trauma
+    html.find('.add-trauma').click(this._onAddTrauma.bind(this));
+
     // Add Inventory Item
     html.find('.item-create').click(this._onItemCreate.bind(this));
 
@@ -184,12 +202,10 @@ export class BitdActorSheet extends ActorSheet
         const itemId = element.closest('.item').dataset.itemId;
         const item = this.actor.items.get(itemId);
         if (item) return item.roll();
-
       } else if (dataset.rollType == 'show') {
         const itemId = element.closest('.item').dataset.itemId;
         const item = this.actor.items.get(itemId);
         if (item) return item.show();
-
       }
     }
 
@@ -203,5 +219,43 @@ export class BitdActorSheet extends ActorSheet
       });
       return roll;
     }
+  }
+
+  async _onDotChange(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    const dataset = element.dataset;
+
+    const index = Number(dataset.index);
+    const parent = $(element.parentNode);
+    const steps = parent.find(".value-step");
+    const key = parent[0].dataset.key;
+
+    let value = index + 1;
+
+    const nextElement = (index === steps.length - 1) || !steps[index + 1].classList.contains("active");
+
+    if (element.classList.contains("active") && nextElement) {
+      steps.removeClass("active");
+      steps.each(function (i) {
+        if (i < index) {
+          $(this).addClass("active");
+        }
+      });
+      value = index;
+    } else {
+      steps.removeClass("active");
+      steps.each(function (i) {
+        if (i <= index) {
+          $(this).addClass("active");
+        }
+      });
+    }
+
+    await this.actor.update({ [key]: value });
+  }
+
+  async _onAddTrauma(event) {
+    event.preventDefault();
   }
 }

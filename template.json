@@ -21,21 +21,11 @@
       "background": "",
       "vice": "",
       "look": "",
-      "stress": {
-        "value": [0],
-        "max": 9
-      },
-      "trauma": {
-        "value": 0,
-        "max": 4,
-        "list": []
-      },
+      "stress": 0,
+      "trauma": [],
       "coins": 0,
       "stash": 0,
-      "load": {
-        "value": 0,
-        "max": 5
-      },
+      "load": 5,
       "harm": {
         "light": {
           "first": "",
@@ -56,24 +46,30 @@
       "attributes": {
         "insight": {
           "exp": 0,
-          "hunt": 0,
-          "study": 0,
-          "survey": 0,
-          "tinker": 0
+          "actions": {
+            "hunt": 0,
+            "study": 0,
+            "survey": 0,
+            "tinker": 0
+          }
         },
         "prowess": {
           "exp": 0,
-          "finesse": 0,
-          "prowl": 0,
-          "skirmish": 0,
-          "wreck": 0
+          "actions": {
+            "finesse": 0,
+            "prowl": 0,
+            "skirmish": 0,
+            "wreck": 0
+          }
         },
         "resolve": {
           "exp": 0,
-          "attune": 0,
-          "command": 0,
-          "consort": 0,
-          "sway": 0
+          "actions": {
+            "attune": 0,
+            "command": 0,
+            "consort": 0,
+            "sway": 0
+          }
         }
       }
     },
