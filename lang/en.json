@@ -27,6 +27,8 @@
     "Background": "Background",
     "Vice": "Vice",
     "Look": "Look",
+    "ActorContact": "Dangerous Friends",
+    "ContactType": "Type",
 
     "Stress": "Stress",
     "Trauma": "Trauma",
@@ -40,6 +42,13 @@
       "Soft": "Soft",
       "Unstable": "Unstable",
       "Vicious": "Vicious"
+    },
+
+    "Load": {
+      "Light": "Light",
+      "Normal": "Normal",
+      "Heavy": "Heavy",
+      "Encumbered": "Encumbered"
     },
 
     "Insight": "Insight",
@@ -58,6 +67,18 @@
     "Command": "Command",
     "Consort": "Consort",
     "Sway": "Sway",
+
+    "HarmandArmor": "Harm & Armor",
+    "Harm": "Harm",
+    "HarmEffect": {
+      "Light": "Need Help",
+      "Medium": "-1 D",
+      "Heavy": "Less Effect"
+    },
+    "Armor": "Armor",
+    "ArmorUses": "Armor Uses",
+    "ArmorHeavy": "Heavy",
+    "ArmorSpecial": "Special",
 
     "Description": "Description",
     "Notes": "Notes",

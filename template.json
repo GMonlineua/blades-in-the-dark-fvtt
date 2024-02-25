@@ -148,6 +148,7 @@
     },
     "contact": {
       "type": "friend",
+      "tags": "",
       "description": ""
     },
     "upgrade": {

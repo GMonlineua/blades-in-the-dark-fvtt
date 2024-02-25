@@ -22,10 +22,6 @@ input.clear-input:focus {
     max-width: 35px;
   }
 
-  input[type="number"].long-n-input {
-    max-width: 50px;
-  }
-
   input[type="text"] {
     width: auto;
   }
@@ -34,54 +30,4 @@ input.clear-input:focus {
 .bitd.sheet.actor {
   min-width: 550px;
   min-height: 500px;
-}
-
-.rollable {
-  &:hover,
-  &:focus {
-    color: black;
-    cursor: pointer;
-  }
-}
-
-.value-step-block {
-  display: inline-block;
-
-  .value-step {
-    display: inline-block;
-    cursor: pointer;
-  }
-
-  .value-dot {
-    height: 14px;
-    width: 14px;
-    border: 1px solid black;
-    border-radius: 50%;
-    background: white;
-  }
-
-  .value-dot.active {
-    background: black;
-  }
-
-  .value-tooth {
-    height: 30px;
-    width: 10px;
-    background-image: url("../assets/tooth-white.svg");
-    background-size: 10px;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .value-tooth.active {
-    background-image: url("../assets/tooth-black.svg");
-  }
-}
-
-.tox {
-  min-height: 300px;
-}
-
-.editor {
-  min-height: 200px;
 }

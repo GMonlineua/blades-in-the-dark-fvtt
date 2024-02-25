@@ -1,8 +1,40 @@
-<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+<form class="{{cssClass}} {{actor.type}}" autocomplete="off">
   {{!-- Sheet Header --}}
   <header class="sheet-header">
-    <div class="img-block">
+    <div class="img-block grid-2col">
       <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+
+      <div class="load">
+        <select name="system.load">
+          {{#select system.load}}
+            <option value="3">{{localize 'BITD.Load.Light'}}</option>
+            <option value="5">{{localize 'BITD.Load.Normal'}}</option>
+            <option value="6">{{localize 'BITD.Load.Heavy'}}</option>
+            <option value="9">{{localize 'BITD.Load.Encumbered'}}</option>
+          {{/select}}
+        </select>
+      </div>
+
+      <div class="money">
+        <img class="money-icon" src="/systems/bitd/assets/icons/coins.svg"/>
+        <div class="money-numbers">
+          <span class="coins">{{system.coins}}</span>
+          <span>/</span>
+          <span class="stash">{{system.stash}}</span>
+        </div>
+        <div class="money-block">
+          <div class="value-step-block coins" data-value="{{system.coins}}" data-key="system.coins">
+            {{#numLoop 4}}
+              <span class="value-step value-box" data-index="{{this}}"></span>
+            {{/numLoop}}
+          </div>
+          <div class="value-step-block stash" data-value="{{system.stash}}" data-key="system.stash">
+            {{#numLoop 40}}
+              <span class="value-step value-box" data-index="{{this}}"></span>
+            {{/numLoop}}
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="header-fields">
@@ -16,19 +48,19 @@
       </div>
 
       <div class="brief-info grid-2col">
-        <div class="prop flexrow">
+        <div class="prop">
           <label class="prop-label" for="system.heritage">{{localize 'BITD.Heritage'}}:</label>
           <input class="prop-input clear-input" type="text" name="system.heritage" value="{{system.heritage}}" data-dtype="String" placeholder="{{localize 'BITD.Heritage'}}"/>
         </div>
-        <div class="prop flexrow">
+        <div class="prop">
           <label class="prop-label" for="system.background">{{localize 'BITD.Background'}}:</label>
           <input class="prop-input clear-input" type="text" name="system.background" value="{{system.background}}" data-dtype="String" placeholder="{{localize 'BITD.Background'}}"/>
         </div>
-        <div class="prop flexrow">
+        <div class="prop">
           <label class="prop-label" for="system.vice">{{localize 'BITD.Vice'}}:</label>
           <input class="prop-input clear-input" type="text" name="system.vice" value="{{system.vice}}" data-dtype="String" placeholder="{{localize 'BITD.Vice'}}"/>
         </div>
-        <div class="prop flexrow">
+        <div class="prop">
           <label class="prop-label" for="system.look">{{localize 'BITD.Look'}}:</label>
           <input class="prop-input clear-input" type="text" name="system.look" value="{{system.look}}" data-dtype="String" placeholder="{{localize 'BITD.Look'}}"/>
         </div>
@@ -54,26 +86,21 @@
 
       {{> "systems/bitd/templates/actor/parts/attributes.hbs"}}
     </div>
-  </header>
 
-  {{!-- Sheet Body --}}
-  <section class="sheet-body">
-    <hr>
-    <div class="items-block">
+    <div class="contacts items-block">
       <div class="item-header">
-        <h3>{{localize 'TYPES.Item.item'}}</h3>
-        <a class="item-add item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="item"><i class="fas fa-plus"></i>{{localize 'BITD.ItemAdd'}}</a>
+        <h3>{{localize 'BITD.ActorContact'}}</h3>
+        <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="contact"><i class="fas fa-plus"></i>{{localize 'BITD.ItemAdd'}}</a>
       </div>
       <ol class="items-list">
-        {{#each item as |item id|}}
+        {{#each contact as |item id|}}
           <li class="item {{item.type}}" data-item-id="{{item._id}}">
-            <div class="item-info flexrow">
-              <a class="item-image rollable" data-roll-type="item" style="background-image: url({{item.img}})"></a>
-              <h4 class="item-name">{{item.name}}</h4>
+            <div class="item-description">
+              <span class="item-name">{{item.name}}</span>
+              <span class="contact-tags">{{item.system.tags}}</span>
+              <span class="contact-type">({{item.system.type}})</span>
             </div>
-            <div class="item-summary">
-              {{{item.system.description}}}
-            </div>
+
             <div class="item-controls">
               <a class="item-control rollable" data-roll-type="show" title="{{localize 'ROGUE.ItemShow'}}"><i class="fa fa-comment"></i></a>
               <a class="item-control item-edit" title="{{localize 'BITD.ItemEdit'}}"><i class="fas fa-edit"></i></a>
@@ -83,6 +110,56 @@
         {{/each}}
       </ol>
     </div>
+
+    <div class="armor-harm">
+      <div class="harm">
+        <h3>{{localize 'BITD.HarmandArmor'}} </h3>
+        <table>
+          <tr>
+            <td>3</td>
+            <td><input class="clear-input" name="system.harm.heavy" type="text" value="{{system.harm.heavy}}"/></td>
+            <td>{{localize 'BITD.HarmEffect.Light'}}</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>
+              <input class="clear-input" name="system.harm.medium.first" type="text" value="{{system.harm.medium.first}}"/>
+              <input class="clear-input" name="system.harm.medium.second" type="text" value="{{system.harm.medium.second}}"/>
+            </td>
+            <td>{{localize 'BITD.HarmEffect.Medium'}}</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>
+              <input class="clear-input" name="system.harm.light.first" type="text" value="{{system.harm.light.first}}"/>
+              <input class="clear-input" name="system.harm.light.second" type="text" value="{{system.harm.light.second}}"/>
+            </td>
+            <td>{{localize 'BITD.HarmEffect.Heavy'}}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="armor flexrow">
+        <div class="armor-uses">
+          <label for="system.usedArmor.armor">{{localize 'BITD.Armor'}}</label>
+          <input type="checkbox" name="system.usedArmor.armor" data-dtype="Boolean" {{#if system.usedArmor.armor}} checked {{/if}}/>
+        </div>
+        <div class="armor-uses">
+          <label for="system.usedArmor.special">{{localize 'BITD.ArmorHeavy'}}</label>
+          <input type="checkbox" name="system.usedArmor.special" data-dtype="Boolean" {{#if system.usedArmor.special}} checked {{/if}}/>
+        </div>
+        <div class="armor-uses">
+          <label for="system.usedArmor.heavy">{{localize 'BITD.ArmorSpecial'}}</label>
+          <input type="checkbox" name="system.usedArmor.heavy" data-dtype="Boolean" {{#if system.usedArmor.heavy}} checked {{/if}}/>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <hr>
     <h2>{{localize 'BITD.Notes'}}</h2>
     {{editor system.notes target="system.notes" button=true owner=owner editable=editable}}
   </section>

@@ -1,0 +1,28 @@
+.sheet-body {
+  .items-block {
+    position: relative;
+
+    .item-add {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .editor {
+    min-height: 75px;
+    height: 250px;
+    padding: 0 $padding-sm;
+    border: $border;
+  }
+}
+
+.tox {
+  .tox-editor-container {
+    background: white;
+  }
+
+  .tox-edit-area {
+    padding: 0 $padding-sm;
+  }
+}

@@ -1,0 +1,83 @@
+.brief-info {
+  font-size: medium;
+
+  .prop {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    .prop-label {
+      flex: 0 0 auto;
+      margin-right: 3px;
+    }
+
+    .prop-input {
+      flex: 1;
+      text-transform: lowercase;
+    }
+  }
+}
+
+.rollable {
+  &:hover,
+  &:focus {
+    color: black;
+    cursor: pointer;
+  }
+}
+
+.value-step-block {
+  display: inline-block;
+
+  .value-step {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .value-dot {
+    height: 14px;
+    width: 14px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background: white;
+  }
+
+  .value-dot.active {
+    background: black;
+  }
+
+  .value-tooth {
+    height: 30px;
+    width: 10px;
+    background-image: url("../assets/tooth/tooth-white.svg");
+    background-size: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .value-tooth.active {
+    background-image: url("../assets/tooth/tooth-black.svg");
+  }
+
+  .value-box {
+    height: 14px;
+    width: 14px;
+    border: 1px solid black;
+    border-radius: 0;
+    background: white;
+  }
+
+  .value-box.active {
+    background: black;
+  }
+}
+
+.tox {
+  min-height: 300px;
+}
+
+.editor {
+  min-height: 200px;
+}

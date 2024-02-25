@@ -72,19 +72,19 @@ export class BitdActorSheet extends ActorSheet
    */
   _prepareItems(context) {
     // Initialize containers.
-    const item = [];
+    const contact = [];
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
-      // Append to loot.
-      if (i.type === 'item') {
-        item.push(i);
+      // Append to contacts.
+      if (i.type === 'contact') {
+        contact.push(i);
       }
     }
 
     // Assign and return
-    context.item = item;
+    context.contact = contact;
   }
 
   /* -------------------------------------------- */

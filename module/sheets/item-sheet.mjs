@@ -14,6 +14,13 @@ export class BitdItemSheet extends ItemSheet {
     });
   }
 
+  /** @override */
+  get template()
+  {
+    const path = "systems/bitd/templates/item";
+    return `${path}/${this.item.type}-sheet.hbs`;
+  }
+
   /* -------------------------------------------- */
 
   /** @override */
