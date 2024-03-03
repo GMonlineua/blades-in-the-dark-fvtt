@@ -1,0 +1,17 @@
+<div class="stress-trauma flexrow">
+  <div class="stress">
+    <span>{{localize 'BITD.Stress'}}</span>
+    <div class="value-step-block" data-value="{{system.stress}}" data-key="system.stress">
+      {{#numLoop 8}}
+        <span class="value-step value-tooth" data-index="{{this}}"></span>
+      {{/numLoop}}
+    </div>
+  </div>
+
+  <div class="trauma-block">
+    {{#each system.trauma}}
+      <span class="trauma">{{this}}</span>
+    {{/each}}
+    <a class="item-control add-trauma"><i class="fa-solid fa-plus"></i>{{localize 'BITD.AddTrauma'}}</a>
+  </div>
+</div>

@@ -12,14 +12,11 @@ export class BitdActorSheet extends ActorSheet
       template: "systems/bitd/templates/actor/character-sheet.hbs",
       width: 750,
       height: 900,
-      tabs: [
-        {
-          navSelector: ".sheet-tab",
-          contentSelector: ".tab-content",
-          initial: "abilities"
-        }
-      ],
-      scrollY: ['.tab.active']
+      tabs: [{
+        navSelector: ".sheet-tabs",
+        contentSelector: ".sheet-body",
+        initial: "playbook"
+      }]
     });
   }
 
@@ -95,6 +92,15 @@ export class BitdActorSheet extends ActorSheet
 
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
+
+    // Open blcok
+    html.find('.detail-window > .detail-trigger').click(ev => {
+      const element = ev.currentTarget;
+      const parent = $(element.parentNode);
+      const block = parent.find(".detail-block");
+
+      block.toggleClass("active");
+    });
 
     // Count dot
     html.find('.value-step-block').each(function () {

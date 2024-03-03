@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral+SC:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 $padding-sm: 5px;
 $padding-md: 10px;
 $padding-lg: 20px;
@@ -5,7 +7,10 @@ $padding-lg: 20px;
 $light-grey: #ccc;
 
 $border: 1px solid #b5b3a4;
-$dark-paper: rgba(165, 154, 132, 0.3);
+$background-paper: url("../ui/white-parchment.jpg") repeat;
+$dark-paper: rgba(0, 0, 0, 0.1);
 
 $font-primary: 'Lora', serif;
-$font-secondary: 'Noto Serif Display', serif;
+$font-secondary: "Spectral SC", serif;
+
+

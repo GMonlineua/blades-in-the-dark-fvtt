@@ -22,7 +22,7 @@
       .money {
         position: relative;
 
-        .money-icon {
+        .money-icon img {
           border: none;
           width: 30px;
           height: 30px;
@@ -38,12 +38,17 @@
         .money-block {
           position: absolute;
           z-index: 100;
-          width: 180px;
+          width: 185px;
+          padding: 5px;
+          background: $background-paper;
+          border: $border;
         }
       }
     }
 
     .header-fields {
+      font-family: $font-secondary;
+
       .name-alias {
         input {
           flex: 1;
@@ -126,5 +131,11 @@
     }
   }
 
-  .sheet-body {}
+  .sheet-body {
+    .playbook {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 10px;
+    }
+  }
 }

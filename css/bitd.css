@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Spectral+SC:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 /* Global styles */
 .portrait {
   flex: none;
@@ -243,6 +244,9 @@ input.clear-input:focus {
   /*  Items Lists                              */
   /* ----------------------------------------- */
 }
+.bitd .window-content {
+  background: url("../ui/white-parchment.jpg") repeat;
+}
 .bitd .brief-info {
   font-size: medium;
 }
@@ -260,6 +264,23 @@ input.clear-input:focus {
 .bitd .brief-info .prop .prop-input {
   flex: 1;
   text-transform: lowercase;
+}
+.bitd .sheet-tabs {
+  font-family: "Spectral SC", serif;
+  font-size: medium;
+}
+.bitd .sheet-tabs .item.active {
+  background: rgba(0, 0, 0, 0.1);
+  text-shadow: none;
+}
+.bitd .detail-window .detail-trigger {
+  cursor: pointer;
+}
+.bitd .detail-window .detail-block {
+  display: none;
+}
+.bitd .detail-window .detail-block.active {
+  display: block;
 }
 .bitd .rollable:hover, .bitd .rollable:focus {
   color: black;
@@ -350,7 +371,7 @@ input.clear-input:focus {
 .bitd .character .sheet-header .img-block .money {
   position: relative;
 }
-.bitd .character .sheet-header .img-block .money .money-icon {
+.bitd .character .sheet-header .img-block .money .money-icon img {
   border: none;
   width: 30px;
   height: 30px;
@@ -364,7 +385,13 @@ input.clear-input:focus {
 .bitd .character .sheet-header .img-block .money .money-block {
   position: absolute;
   z-index: 100;
-  width: 180px;
+  width: 185px;
+  padding: 5px;
+  background: url("../ui/white-parchment.jpg") repeat;
+  border: 1px solid #b5b3a4;
+}
+.bitd .character .sheet-header .header-fields {
+  font-family: "Spectral SC", serif;
 }
 .bitd .character .sheet-header .header-fields .name-alias input {
   flex: 1;
@@ -427,6 +454,11 @@ input.clear-input:focus {
   top: 5px;
   margin: 0;
 }
+.bitd .character .sheet-body .playbook {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 10px;
+}
 .bitd .items-header {
   flex: 100px auto;
   overflow: hidden;
@@ -450,7 +482,7 @@ input.clear-input:focus {
   padding: 0px;
   margin: 5px 0;
   border-bottom: 0;
-  font-family: "Noto Serif Display", serif;
+  font-family: "Spectral SC", serif;
   font-weight: 700;
 }
 .bitd .items-header .header-fields .item-name input {

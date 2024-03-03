@@ -15,14 +15,14 @@
         </select>
       </div>
 
-      <div class="money">
-        <img class="money-icon" src="/systems/bitd/assets/icons/coins.svg"/>
+      <div class="money detail-window">
+        <a class="money-icon detail-trigger"><img src="/systems/bitd/assets/icons/coins.svg"/></a>
         <div class="money-numbers">
           <span class="coins">{{system.coins}}</span>
           <span>/</span>
           <span class="stash">{{system.stash}}</span>
         </div>
-        <div class="money-block">
+        <div class="money-block detail-block">
           <div class="value-step-block coins" data-value="{{system.coins}}" data-key="system.coins">
             {{#numLoop 4}}
               <span class="value-step value-box" data-index="{{this}}"></span>
@@ -66,101 +66,33 @@
         </div>
       </div>
 
-      <div class="stress-trauma flexrow">
-        <div class="stress">
-          <span>{{localize 'BITD.Stress'}}</span>
-          <div class="value-step-block" data-value="{{system.stress}}" data-key="system.stress">
-            {{#numLoop 8}}
-              <span class="value-step value-tooth" data-index="{{this}}"></span>
-            {{/numLoop}}
-          </div>
-        </div>
-
-        <div class="trauma-block">
-          {{#each system.trauma}}
-            <span class="trauma">{{this}}</span>
-          {{/each}}
-          <a class="item-control add-trauma"><i class="fa-solid fa-plus"></i>{{localize 'BITD.AddTrauma'}}</a>
-        </div>
-      </div>
-
+      {{> "systems/bitd/templates/actor/parts/stress-trauma.hbs"}}
       {{> "systems/bitd/templates/actor/parts/attributes.hbs"}}
     </div>
 
-    <div class="contacts items-block">
-      <div class="item-header">
-        <h3>{{localize 'BITD.ActorContact'}}</h3>
-        <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="contact"><i class="fas fa-plus"></i>{{localize 'BITD.ItemAdd'}}</a>
-      </div>
-      <ol class="items-list">
-        {{#each contact as |item id|}}
-          <li class="item {{item.type}}" data-item-id="{{item._id}}">
-            <div class="item-description">
-              <span class="item-name">{{item.name}}</span>
-              <span class="contact-tags">{{item.system.tags}}</span>
-              <span class="contact-type">({{item.system.type}})</span>
-            </div>
-
-            <div class="item-controls">
-              <a class="item-control rollable" data-roll-type="show" title="{{localize 'ROGUE.ItemShow'}}"><i class="fa fa-comment"></i></a>
-              <a class="item-control item-edit" title="{{localize 'BITD.ItemEdit'}}"><i class="fas fa-edit"></i></a>
-              <a class="item-control item-delete" title="{{localize 'BITD.ItemDelete'}}"><i class="fas fa-trash"></i></a>
-            </div>
-          </li>
-        {{/each}}
-      </ol>
-    </div>
-
-    <div class="armor-harm">
-      <div class="harm">
-        <h3>{{localize 'BITD.HarmandArmor'}} </h3>
-        <table>
-          <tr>
-            <td>3</td>
-            <td><input class="clear-input" name="system.harm.heavy" type="text" value="{{system.harm.heavy}}"/></td>
-            <td>{{localize 'BITD.HarmEffect.Light'}}</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>
-              <input class="clear-input" name="system.harm.medium.first" type="text" value="{{system.harm.medium.first}}"/>
-              <input class="clear-input" name="system.harm.medium.second" type="text" value="{{system.harm.medium.second}}"/>
-            </td>
-            <td>{{localize 'BITD.HarmEffect.Medium'}}</td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>
-              <input class="clear-input" name="system.harm.light.first" type="text" value="{{system.harm.light.first}}"/>
-              <input class="clear-input" name="system.harm.light.second" type="text" value="{{system.harm.light.second}}"/>
-            </td>
-            <td>{{localize 'BITD.HarmEffect.Heavy'}}</td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="armor flexrow">
-        <div class="armor-uses">
-          <label for="system.usedArmor.armor">{{localize 'BITD.Armor'}}</label>
-          <input type="checkbox" name="system.usedArmor.armor" data-dtype="Boolean" {{#if system.usedArmor.armor}} checked {{/if}}/>
-        </div>
-        <div class="armor-uses">
-          <label for="system.usedArmor.special">{{localize 'BITD.ArmorHeavy'}}</label>
-          <input type="checkbox" name="system.usedArmor.special" data-dtype="Boolean" {{#if system.usedArmor.special}} checked {{/if}}/>
-        </div>
-        <div class="armor-uses">
-          <label for="system.usedArmor.heavy">{{localize 'BITD.ArmorSpecial'}}</label>
-          <input type="checkbox" name="system.usedArmor.heavy" data-dtype="Boolean" {{#if system.usedArmor.heavy}} checked {{/if}}/>
-        </div>
-      </div>
-    </div>
+    {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
+    {{> "systems/bitd/templates/actor/parts/armor-harm.hbs"}}
 
   </header>
 
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs flexrow" data-group="primary">
+    <a class="item" data-tab="playbook">{{localize 'BITD.Playbook'}}</a>
+    <a class="item" data-tab="notes">{{localize 'BITD.Notes'}}</a>
+  </nav>
+
   {{!-- Sheet Body --}}
   <section class="sheet-body">
-    <hr>
-    <h2>{{localize 'BITD.Notes'}}</h2>
-    {{editor system.notes target="system.notes" button=true owner=owner editable=editable}}
+
+    {{!-- Owned Playbook Tab --}}
+    <div class="tab playbook" data-group="primary" data-tab="playbook">
+{{!--      {{> "systems/rogue/templates/actor/parts/abilities.hbs"}}
+      {{> "systems/rogue/templates/actor/parts/inventory.hbs"}}--}}
+    </div>
+
+    {{!-- Owned Notes Tab --}}
+    <div class="tab notes" data-group="primary" data-tab="notes">
+    </div>
+
   </section>
 </form>

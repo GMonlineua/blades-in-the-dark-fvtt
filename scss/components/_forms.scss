@@ -1,3 +1,7 @@
+.window-content {
+  background: $background-paper;
+}
+
 .brief-info {
   font-size: medium;
 
@@ -17,6 +21,30 @@
       flex: 1;
       text-transform: lowercase;
     }
+  }
+}
+
+.sheet-tabs {
+  font-family: $font-secondary;
+  font-size: medium;
+
+  .item.active {
+    background: $dark-paper;
+    text-shadow: none;
+  }
+}
+
+.detail-window {
+  .detail-trigger {
+    cursor: pointer;
+  }
+
+  .detail-block {
+    display: none;
+  }
+
+  .detail-block.active {
+    display: block;
   }
 }
 
