@@ -40,10 +40,10 @@
     <div class="header-fields">
       <div class="name-alias">
         <h1 class="character-name">
-          <input class="clear-input" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.ActorName'}}"/>
+          <input class="clear-input" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.ActorName'}}" data-dtype="String"/>
         </h1>
         <h2 class="character-alias">
-          <input class="clear-input" name="system.alias" type="text" value="{{system.alias}}" placeholder="{{localize 'BITD.CharacterAlias'}}"/>
+          <input class="clear-input" name="system.alias" type="text" value="{{system.alias}}" placeholder="{{localize 'BITD.CharacterAlias'}}" data-dtype="String"/>
         </h2>
       </div>
 
@@ -77,7 +77,7 @@
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs flexrow" data-group="primary">
-    <a class="item" data-tab="playbook">{{localize 'BITD.Playbook'}}</a>
+    <a class="item" data-tab="general">{{localize 'BITD.Playbook'}}</a>
     <a class="item" data-tab="notes">{{localize 'BITD.Notes'}}</a>
   </nav>
 
@@ -85,9 +85,9 @@
   <section class="sheet-body">
 
     {{!-- Owned Playbook Tab --}}
-    <div class="tab playbook" data-group="primary" data-tab="playbook">
-{{!--      {{> "systems/rogue/templates/actor/parts/abilities.hbs"}}
-      {{> "systems/rogue/templates/actor/parts/inventory.hbs"}}--}}
+    <div class="tab general" data-group="primary" data-tab="general">
+      {{> "systems/bitd/templates/actor/parts/inventory.hbs"}}
+      {{> "systems/bitd/templates/actor/parts/abilities.hbs"}}
     </div>
 
     {{!-- Owned Notes Tab --}}

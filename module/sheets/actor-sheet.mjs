@@ -15,7 +15,7 @@ export class BitdActorSheet extends ActorSheet
       tabs: [{
         navSelector: ".sheet-tabs",
         contentSelector: ".sheet-body",
-        initial: "playbook"
+        initial: "general"
       }]
     });
   }
@@ -178,7 +178,7 @@ export class BitdActorSheet extends ActorSheet
     const header = event.currentTarget;
     const type = header.dataset.type;
     const data = duplicate(header.dataset);
-    const name = game.i18n.localize("TYPES.Item.item");
+    const name = game.i18n.localize("BITD.NewItem");
     // Prepare the item object.
     const itemData = {
       name: name,

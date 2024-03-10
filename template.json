@@ -8,7 +8,8 @@
       },
       "players": {
         "exp": 0,
-        "coins": 0
+        "coins": 0,
+        "playbook": ""
       },
       "group": {
         "tier": 0
@@ -115,23 +116,38 @@
     }
   },
   "Item": {
-    "types": ["playbook", "crewType", "abilityCharacter", "abilityCrew", "contact"],
+    "types": ["playbook", "crewType", "abilityCharacter", "abilityCrew", "contact", "tool", "upgrade"],
     "templates": {},
     "playbook": {
-      "actions": {
-        "hunt": 0,
-        "study": 0,
-        "survey": 0,
-        "tinker": 0,
-        "finesse": 0,
-        "prowl": 0,
-        "skirmish": 0,
-        "wreck": 0,
-        "attune": 0,
-        "command": 0,
-        "consort": 0,
-        "sway": 0
+      "attributes": {
+        "insight": {
+          "actions": {
+            "hunt": 0,
+            "study": 0,
+            "survey": 0,
+            "tinker": 0
+          }
+        },
+        "prowess": {
+          "actions": {
+            "finesse": 0,
+            "prowl": 0,
+            "skirmish": 0,
+            "wreck": 0
+          }
+        },
+        "resolve": {
+          "actions": {
+            "attune": 0,
+            "command": 0,
+            "consort": 0,
+            "sway": 0
+          }
+        }
       },
+      "abilities": [],
+      "contacts": [],
+      "inventory": [],
       "exp": "",
       "description": ""
     },
@@ -149,6 +165,9 @@
     "contact": {
       "type": "friend",
       "tags": "",
+      "description": ""
+    },
+    "tool": {
       "description": ""
     },
     "upgrade": {

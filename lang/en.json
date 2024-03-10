@@ -27,7 +27,7 @@
     "Background": "Background",
     "Vice": "Vice",
     "Look": "Look",
-    "ActorContact": "Dangerous Friends",
+    "Contact": "Contact",
     "ContactType": "Type",
 
     "Stress": "Stress",
@@ -81,7 +81,15 @@
     "ArmorSpecial": "Special",
 
     "Playbook": "Playbook",
+    "General": "General",
     "Description": "Description",
+    "PlaybookExp": {
+      "Title": "Expirience Clue",
+      "Placeholder": "Expirience clue which depend on character's playbook"
+    },
+    "Links": "Links",
+    "AbilityPlural": "Abilities",
+    "PlaybookItems": "Items",
     "Notes": "Notes",
 
     "ItemShow": "Show",

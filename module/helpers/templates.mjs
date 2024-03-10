@@ -9,5 +9,7 @@
     "systems/bitd/templates/actor/parts/contacts.hbs",
     "systems/bitd/templates/actor/parts/inventory.hbs",
     "systems/bitd/templates/actor/parts/stress-trauma.hbs",
+
+    "systems/bitd/templates/item/parts/linked-item.hbs",
   ]);
 };

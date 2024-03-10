@@ -35,10 +35,21 @@
     .brief-info {
 
     }
+
+    // For playbook
+    .exp-clues {
+      input {
+        width: 100%;
+      }
+    }
   }
 }
 
 .sheet-body {
+  .linked-items {
+    margin-bottom: 10px;
+  }
+
   .formula {
     margin-top: 5px;
     width: 100%;

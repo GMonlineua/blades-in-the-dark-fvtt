@@ -1,7 +1,3 @@
-.window-content {
-  background: $background-paper;
-}
-
 .brief-info {
   font-size: medium;
 
@@ -22,6 +18,10 @@
       text-transform: lowercase;
     }
   }
+}
+
+.attribute-block {
+  font-family: $font-secondary;
 }
 
 .sheet-tabs {
@@ -46,6 +46,14 @@
   .detail-block.active {
     display: block;
   }
+}
+
+.window-content {
+  background: $background-paper;
+}
+
+h1,h2,h3 {
+  font-family: $font-secondary;
 }
 
 .rollable {
@@ -107,5 +115,8 @@
 }
 
 .editor {
-  min-height: 200px;
+  min-height: 75px;
+  height: 150px;
+  padding: 0 $padding-sm;
+  border: $border;
 }

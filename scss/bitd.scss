@@ -12,8 +12,14 @@
   font-family: $font-primary;
 
   @import 'components/forms';
+  @import 'components/item-list';
+}
+
+.bitd.actor {
   @import 'components/actor';
   @import 'components/actors/character';
+}
+
+.bitd.item {
   @import 'components/item';
-  @import 'components/item-list';
 }

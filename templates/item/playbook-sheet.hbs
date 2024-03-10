@@ -1,0 +1,56 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="items-header">
+    <img class="item-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+    <div class="header-fields">
+      <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.ItemName'}}"/></h1>
+      <div class="exp-clues">
+        <p>{{localize 'BITD.PlaybookExp.Title'}}:</p>
+        <input name="system.exp" type="text" value="{{system.exp}}" placeholder="{{localize 'BITD.PlaybookExp.Placeholder'}}" data-dtype="String"></input>
+      </div>
+    </div>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs flexrow" data-group="primary">
+    <a class="item" data-tab="general">{{localize 'BITD.General'}}</a>
+    <a class="item" data-tab="links">{{localize 'BITD.Links'}}</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Owned Playbook Tab --}}
+    <div class="tab general" data-group="primary" data-tab="general">
+      {{> "systems/bitd/templates/actor/parts/attributes.hbs"}}
+
+      <h3>{{localize 'BITD.Description'}}</h3>
+      {{editor enrichedDescription target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+    </div>
+
+    {{!-- Owned Notes Tab --}}
+    <div class="tab links" data-group="primary" data-tab="links">
+      <div class="abilities-block linked-items" data-array="abilities">
+        <h3>{{localize 'BITD.AbilityPlural'}}</h3>
+        {{#each system.abilities}}
+          {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
+        {{/each}}
+      </div>
+
+      <div class="contacts-block linked-items" data-array="contacts">
+        <h3>{{localize 'BITD.Contact'}}</h3>
+        {{#each system.contacts}}
+          {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
+        {{/each}}
+      </div>
+
+      <div class="inventory-block linked-items" data-array="inventory">
+        <h3>{{item.name}} {{localize 'BITD.PlaybookItems'}}</h3>
+        {{#each system.inventory as |tool|}}
+          {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
+        {{/each}}
+      </div>
+    </div>
+
+  </section>
+
+</form>

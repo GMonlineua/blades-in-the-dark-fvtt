@@ -1,1 +1,23 @@
-Playbook name
+<div class="abilities item-block">
+  <div class="item-header">
+    <h2>Playbook</h2>
+    <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="contact"><i class="fas fa-plus"></i>{{localize 'BITD.AbilityAdd'}}</a>
+  </div>
+  <ol class="items-list">
+    {{#each contact as |item id|}}
+      <li class="item {{item.type}}" data-item-id="{{item._id}}">
+        <div class="item-description">
+          <span class="item-name">{{item.name}}</span>
+          <span class="contact-tags">{{item.system.tags}}</span>
+          <span class="contact-type">({{item.system.type}})</span>
+        </div>
+
+        <div class="item-controls">
+          <a class="item-control rollable" data-roll-type="show" title="{{localize 'ROGUE.ItemShow'}}"><i class="fa fa-comment"></i></a>
+          <a class="item-control item-edit" title="{{localize 'BITD.ItemEdit'}}"><i class="fas fa-edit"></i></a>
+          <a class="item-control item-delete" title="{{localize 'BITD.ItemDelete'}}"><i class="fas fa-trash"></i></a>
+        </div>
+      </li>
+    {{/each}}
+  </ol>
+</div>
