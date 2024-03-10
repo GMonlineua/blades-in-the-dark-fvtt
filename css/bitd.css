@@ -385,6 +385,26 @@ input.clear-input:focus {
   margin: 0 3px;
 }
 
+.bitd.actor .sheet-header .img-block {
+  font-family: "Spectral SC", serif;
+}
+.bitd.actor .sheet-header .img-block .money input {
+  margin-left: 3px;
+  padding: 0;
+  min-width: 10px;
+  max-width: 15px;
+}
+.bitd.actor .sheet-header .img-block .money .coins > input {
+  max-width: 10px;
+}
+.bitd.actor .sheet-header .img-block .load select {
+  width: 100%;
+}
+.bitd.actor .sheet-header .img-block .load span {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
 .bitd.actor .sheet-body .items-block {
   position: relative;
 }

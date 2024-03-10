@@ -93,15 +93,6 @@ export class BitdActorSheet extends ActorSheet
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
 
-    // Open blcok
-    html.find('.detail-window > .detail-trigger').click(ev => {
-      const element = ev.currentTarget;
-      const parent = $(element.parentNode);
-      const block = parent.find(".detail-block");
-
-      block.toggleClass("active");
-    });
-
     // Count dot
     html.find('.value-step-block').each(function () {
       const value = Number(this.dataset.value);

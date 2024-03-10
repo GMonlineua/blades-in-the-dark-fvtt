@@ -4,36 +4,28 @@
     <div class="img-block grid-2col">
       <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
 
+      <div class="money">
+        <div class="resource coins">
+          <label for="system.coins">{{localize 'BITD.Vice'}}:</label>
+          <input class="clear-input" type="number" name="system.coins" value="{{system.coins}}" data-dtype="Number"/>
+          <span>/4</span>
+        </div>
+        <div class="resource stash">
+          <label for="system.stash">{{localize 'BITD.Vice'}}:</label>
+          <input class="clear-input" type="number" name="system.stash" value="{{system.stash}}" data-dtype="Number"/>
+          <span>/30</span>
+        </div>
+      </div>
+
       <div class="load">
         <select name="system.load">
           {{#select system.load}}
             <option value="3">{{localize 'BITD.Load.Light'}}</option>
             <option value="5">{{localize 'BITD.Load.Normal'}}</option>
             <option value="6">{{localize 'BITD.Load.Heavy'}}</option>
-            <option value="9">{{localize 'BITD.Load.Encumbered'}}</option>
           {{/select}}
         </select>
-      </div>
-
-      <div class="money detail-window">
-        <a class="money-icon detail-trigger"><img src="/systems/bitd/assets/icons/coins.svg"/></a>
-        <div class="money-numbers">
-          <span class="coins">{{system.coins}}</span>
-          <span>/</span>
-          <span class="stash">{{system.stash}}</span>
-        </div>
-        <div class="money-block detail-block">
-          <div class="value-step-block coins" data-value="{{system.coins}}" data-key="system.coins">
-            {{#numLoop 4}}
-              <span class="value-step value-box" data-index="{{this}}"></span>
-            {{/numLoop}}
-          </div>
-          <div class="value-step-block stash" data-value="{{system.stash}}" data-key="system.stash">
-            {{#numLoop 40}}
-              <span class="value-step value-box" data-index="{{this}}"></span>
-            {{/numLoop}}
-          </div>
-        </div>
+        <span>0/{{system.load}}</span>
       </div>
     </div>
 

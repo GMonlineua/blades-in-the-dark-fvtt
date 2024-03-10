@@ -21,13 +21,20 @@ export class BitdItemSheet extends ItemSheet {
 
   /** @override */
   get template() {
-    try {
-      const path = `systems/bitd/templates/item/${this.item.type}-sheet.hbs`;
-      fs.accessSync(path, fs.constants.R_OK);
-      return path;
-    } catch (error) {
-      return "systems/bitd/templates/item/item-sheet.hbs"
+    let path = "systems/bitd/templates/item/item-sheet.hbs";
+
+    switch (this.item.type) {
+      case 'playbook':
+        path = "systems/bitd/templates/item/playbook-sheet.hbs";
+        break;
+      case 'crewType':
+        path = "systems/bitd/templates/item/crew-type-sheet.hbs";
+        break;
+      case 'contact':
+        path = "systems/bitd/templates/item/contact-sheet.hbs";
     }
+
+    return path;
   }
 
   /* -------------------------------------------- */
