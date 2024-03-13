@@ -6,6 +6,16 @@
   margin-right: 5px;
 }
 
+.add-trauma-form {
+  margin-bottom: 5px;
+  font-size: medium;
+  font-family: "Spectral SC", serif;
+  text-align: center;
+}
+.add-trauma-form .trauma.active {
+  text-shadow: 0 0 8px red;
+}
+
 .flex-group-center,
 .flex-group-left,
 .flex-group-right {

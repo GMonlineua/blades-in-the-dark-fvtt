@@ -3,3 +3,14 @@
   border-width: 0;
   margin-right: 5px;
 }
+
+.add-trauma-form {
+  margin-bottom: 5px;
+  font-size: medium;
+  font-family: $font-secondary;
+  text-align: center;
+
+  .trauma.active {
+    text-shadow: $shadow;
+  }
+}

@@ -163,8 +163,7 @@ export class BitdActorSheet extends ActorSheet
    * @private
    */
 
-  _onItemCreate(event)
-  {
+  _onItemCreate(event) {
     event.preventDefault();
     const header = event.currentTarget;
     const type = header.dataset.type;
@@ -253,6 +252,47 @@ export class BitdActorSheet extends ActorSheet
   }
 
   async _onAddTrauma(event) {
-    event.preventDefault();
+    const currentTraumas = this.actor.system.trauma || [];
+    const defaultTraumas = [
+      "BITD.Traumas.Cold",
+      "BITD.Traumas.Haunted",
+      "BITD.Traumas.Obsessed",
+      "BITD.Traumas.Paranoid",
+      "BITD.Traumas.Reckless",
+      "BITD.Traumas.Soft",
+      "BITD.Traumas.Unstable",
+      "BITD.Traumas.Vicious",
+    ];
+    const filteredTraumas = defaultTraumas.filter(trauma => !currentTraumas.includes(trauma));
+
+    const template = await renderTemplate("systems/bitd/templates/apps/trauma.hbs", { currentTraumas, filteredTraumas });
+
+    const dialog = new Dialog({
+      title: game.i18n.localize("BITD.ChooseTrauma"),
+      content: template,
+      buttons: {
+        add: {
+          label: game.i18n.localize("BITD.AddTrauma"),
+          callback: async (html) => {
+            const elements = Array.from(html.find(".trauma.active"));
+            const newTraumas = elements.map(el => el.dataset.value);
+
+            const customTrauma = html.find("input.custom-trauma")[0].value;
+            newTraumas.push(customTrauma);
+
+            await this.actor.update({ "system.trauma": newTraumas });
+          }
+        }
+      },
+      default: "add",
+      close: () => {},
+      render: (html) => {
+        html.find(".trauma").on("click", function() {
+          $(this).toggleClass("active");
+        });
+      }
+    });
+
+    dialog.render(true);
   }
 }

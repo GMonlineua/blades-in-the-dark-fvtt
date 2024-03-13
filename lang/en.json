@@ -32,6 +32,7 @@
 
     "Stress": "Stress",
     "Trauma": "Trauma",
+    "ChooseTrauma": "Choose Trauma",
     "AddTrauma": "Add Trauma",
     "Traumas": {
       "Cold": "Cold",
@@ -41,7 +42,8 @@
       "Reckless": "Reckless",
       "Soft": "Soft",
       "Unstable": "Unstable",
-      "Vicious": "Vicious"
+      "Vicious": "Vicious",
+      "Custom": "Custom"
     },
 
     "Load": {
@@ -98,6 +100,8 @@
     "ItemAdd": "Add",
     "ItemDelete": "Delete",
     "ItemEdit": "Edit",
-    "NewItem": "Item"
+    "NewItem": "Item",
+
+    "Cancel": "Cancel"
   }
 }

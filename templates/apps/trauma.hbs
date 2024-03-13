@@ -1,48 +1,12 @@
-<form class="add-trauma-form">
+<form class="add-trauma-form grid-2col">
+  {{#each currentTraumas as |trauma|}}
+    <a class="trauma active" data-value={{trauma}}>{{localize trauma}}</a>
+  {{/each}}
 
-    <div class="trauma-section">
-      <input class="trauma-checkbox" id="trauma-cold" type="checkbox" data-dtype="Boolean"/>
-      <label class="trauma-name">{{localize 'BITD.Traumas.Cold'}}:</label>
-    </div>
+  {{#each filteredTraumas as |trauma|}}
+    <a class="trauma" data-value={{trauma}}>{{localize trauma}}</a>
+  {{/each}}
 
-    <div class="trauma-section">
-      <input class="trauma-checkbox" id="trauma-haunted" type="checkbox" data-dtype="Boolean"/>
-      <label class="trauma-name">{{localize 'BITD.Traumas.Haunted'}}:</label>
-    </div>
-
-    <div class="trauma-section">
-      <input class="trauma-checkbox" id="trauma-obsessed" type="checkbox" data-dtype="Boolean"/>
-      <label class="trauma-name">{{localize 'BITD.Traumas.Obsessed'}}:</label>
-    </div>
-
-    <div class="trauma-section">
-      <input class="trauma-checkbox" id="trauma-paranoid" type="checkbox" data-dtype="Boolean"/>
-      <label class="trauma-name">{{localize 'BITD.Traumas.Paranoid'}}:</label>
-    </div>
-
-    <div class="trauma-section">
-      <input class="trauma-checkbox" id="reckless" type="checkbox" data-dtype="Boolean"/>
-      <label class="trauma-name">{{localize 'BITD.Traumas.Reckless'}}:</label>
-    </div>
-
-    <div class="trauma-section">
-      <input class="trauma-checkbox" id="soft" type="checkbox" data-dtype="Boolean"/>
-      <label class="trauma-name">{{localize 'BITD.Traumas.Soft'}}:</label>
-    </div>
-
-    <div class="trauma-section">
-      <input class="trauma-checkbox" id="unstable" type="checkbox" data-dtype="Boolean"/>
-      <label class="trauma-name">{{localize 'BITD.Traumas.Unstable'}}:</label>
-    </div>
-
-    <div class="trauma-section">
-      <input class="trauma-checkbox" id="vicious" type="checkbox" data-dtype="Boolean"/>
-      <label class="trauma-name">{{localize 'BITD.Traumas.Vicious'}}:</label>
-    </div>
-
-    <div class="trauma-section">
-      <input class="trauma-checkbox" id="custom" type="checkbox" data-dtype="Boolean"/>
-      <label class="trauma-name">{{localize 'BITD.Traumas.Cold'}}:</label>
-    </div>
-
+  <label class="custom-trauma">{{localize 'BITD.Traumas.Custom'}}:</label>
+  <input class="custom-trauma" type="text" data-dtype="String" placeholder="{{localize 'BITD.Traumas.Custom'}}"/>
 </form>

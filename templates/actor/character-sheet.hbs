@@ -18,6 +18,7 @@
       </div>
 
       <div class="load">
+        <span>0/{{system.load}}</span>
         <select name="system.load">
           {{#select system.load}}
             <option value="3">{{localize 'BITD.Load.Light'}}</option>
@@ -25,7 +26,6 @@
             <option value="6">{{localize 'BITD.Load.Heavy'}}</option>
           {{/select}}
         </select>
-        <span>0/{{system.load}}</span>
       </div>
     </div>
 

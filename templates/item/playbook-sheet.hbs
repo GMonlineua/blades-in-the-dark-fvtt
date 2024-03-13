@@ -45,7 +45,7 @@
 
       <div class="inventory-block linked-items" data-array="inventory">
         <h3>{{item.name}} {{localize 'BITD.PlaybookItems'}}</h3>
-        {{#each system.inventory as |tool|}}
+        {{#each system.inventory}}
           {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
         {{/each}}
       </div>
