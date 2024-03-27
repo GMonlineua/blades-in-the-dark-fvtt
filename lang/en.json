@@ -59,6 +59,12 @@
     "Prowess": "Prowess",
     "Resolve": "Resolve",
 
+    "AttributeDescription": {
+      "Insight": "Consequences from deception or understanding.",
+      "Prowess": "Consequences from physical strain or injury.",
+      "Resolve": "Consequences from mental strain or willpower."
+    },
+
     "Hunt": "Hunt",
     "Study": "Study",
     "Survey": "Survey",
@@ -71,6 +77,21 @@
     "Command": "Command",
     "Consort": "Consort",
     "Sway": "Sway",
+
+    "ActionDescription": {
+      "Attune": "When you <strong>Attune</strong>, you open your mind to the ghost field or channel nearby electroplasmic energy through your body. <em>You might communicate with a ghost or understand aspects of spectrology. You could try to perceive beyond sight in order to better understand your situation (but Surveying might be better).</em>",
+      "Command": "When you <strong>Command</strong>, you compel swift obedience. <em>You might intimidate or threaten to get what you want. You might lead a gang in a group action. You could try to order people around to persuade them (but Consorting might be better).</em>",
+      "Consort": "When you <strong>Consort</strong>, you socialize with friends and contacts. <em>You might gain access to resources, information, people, or places. You might make a good impression or win someone over with your charm and style. You might make new friends or connect with your heritage or background. You could try to direct your friends with social pressure (but Commanding might be better).</em>",
+      "Finesse": "When you <strong>Finesse</strong>, you employ dextrous manipulation or subtle misdirection. <em>You might pick someone's pocket. You might handle the controls of a vehicle or direct a mount. You might formally duel an opponent with graceful fighting arts. You could try to employ those arts in a chaotic melee (but Skirmishing might be better). You could try to pick a lock (but Tinkering might be better).</em>",
+      "Hunt": "When you <strong>Hunt</strong>, you carefully track a target. <em>You might follow a person or discover their location. You might arrange an ambush. You might attack with precision shooting from a distance. You could try to bring your guns to bear in a melee (but Skirmishing might be better).</em>",
+      "Prowl": "When you <strong>Prowl</strong>, you traverse skillfully and quietly. <em>You might sneak past a guard or hide in the shadows. You might run and leap across the rooftops. You might attack someone from hiding with a back-stab or blackjack. You could try to waylay a victim in the midst of battle (but Skirmishing might be better).</em>",
+      "Skirmish": "When you <strong>Skirmish</strong>, you entangle a target in close combat so they can't easily escape. <em>You might brawl or wrestle with them. You might hack and slash. You might seize or hold a position in battle. You could try to fight in a formal duel (but Finessing might be better).</em>",
+      "Study": "When you <strong>Study</strong>, you scrutinize details and interpret evidence. <em>You might gather information from documents, newspapers, and books. You might do research on an esoteric topic. You might closely analyze a person to detect lies or true feelings. You could try to examine events to understand a pressing situation (but Surveying might be better).</em>",
+      "Survey": "When you <wrap>Survey</wrap>, you observe the situation and anticipate outcomes. <em>You might spot telltale signs of trouble before it happens. You might uncover opportunities or weaknesses. You might detect a person's motivations or intentions (but Studying might be better). You could try to spot a good ambush point (but Hunting might be better).</em>",
+      "Sway": "When you <strong>Sway</strong>, you influence someone with guile, charm, or argument. <em>You might lie convincingly. You might persuade someone to do what you want. You might argue a case that leaves no clear rebuttal. You could try to trick people into affection or obedience (but Consorting or Commanding might be better).</em>",
+      "Tinker": "When you <strong>Tinker</strong>, you fiddle with devices and mechanisms. <em>You might create a new gadget or alter an existing item. You might pick a lock or crack a safe. You might disable an alarm or trap. You might turn the spark- craft and electroplasmic devices around the city to your advantage. You could try to use your technical expertise to control a vehicle (but Finessing might be better).</em>",
+      "Wreck": "When you <strong>Wreck</strong>, you unleash savage force. <em>You might smash down a door or wall with a sledgehammer, or use an explosive to do the same. You might employ chaos or sabotage to create a distraction or overcome an obstacle. You could try to overwhelm an enemy with sheer force in battle (but Skirmishing might be better).</em>"
+    },
 
     "HarmandArmor": "Harm & Armor",
     "Harm": "Harm",
@@ -101,6 +122,73 @@
     "ItemDelete": "Delete",
     "ItemEdit": "Edit",
     "NewItem": "Item",
+
+    "Roll": {
+      "Title": "Roll Dice",
+      "Button": "Roll",
+      "Cancel": "Cancel",
+      "DiceNumber": "Dice Number",
+      "Modifier": "Modifier",
+      "Type": "Roll Type"
+    },
+    "RollType": {
+      "Action": "Action Roll",
+      "Resistance": "Resistance Roll",
+      "Fortune": "Fortune Roll",
+      "GatherInformation": "Gather Information",
+      "Engagement": "Engagement Roll",
+      "IndulgeVice": "Indulge Vice",
+      "AcquireAsset": "Acquire Asset"
+    },
+    "RollPosition": {
+      "Controlled": "Controlled",
+      "Risky": "Risky",
+      "Desperate": "Desperate"
+    },
+    "RollEffcet": {
+      "Limited": "Limited",
+      "Standard": "Standard",
+      "Great": "Great"
+    },
+    "RollBonus": {
+      "Push": "Push Yourself",
+      "DevilsBargain": "Devil’s Bargain",
+      "Teamwork": "Assistance"
+    },
+    "RollResult": {
+      "Critical": "Critical",
+      "Success": "Full Success",
+      "Mixed": "Partial Success",
+      "Fail": "Bad Outcome"
+    },
+    "RollAction": {
+      "Controlled": {
+        "Critical": "You do it with <strong>increased effect</strong>.",
+        "Success": "You do it.",
+        "Mixed": "You hesitate. Withdraw and try a different approach, or else do it with a minor consequence: a minor <strong>complication</strong> occurs, you have <strong>reduced effect</strong>, you suffer <strong>lesser harm</strong>, you end up in a <strong>risky</strong> position.",
+        "Fail": "You falter. Press on by seizing a <strong>risky</strong> opportunity, or withdraw and try a different approach."
+      },
+      "Risky": {
+        "Critical": "You do it with <strong>increased effect</strong>.",
+        "Success": "You do it.",
+        "Mixed": "You do it, but there’s a consequence: you suffer <strong>harm</strong>, a <strong>complication</strong> occurs, you have <strong>reduced effect</strong>, you end up in a <strong>desperate</strong> position.",
+        "Fail": "Things go badly. You suffer <strong>harm</strong>, a <strong>complication</strong> occurs, you end up in a <strong>desperate</strong> position, you <strong>lose this opportunity</strong>."
+      },
+      "Desperate": {
+        "Critical": "You do it with <strong>increased effect</strong>.",
+        "Success": "You do it.",
+        "Mixed": "You do it, but there’s a consequence: you suffer <strong>severe harm</strong>, a <strong>serious complication</strong> occurs, you have <strong>reduced effect</strong>.",
+        "Fail": "It’s the worst outcome. You suffer <strong>severe harm</strong>, a <strong>serious complication</strong> occurs, you <strong>lose this opportunity</strong> for action."
+      }
+    },
+    "BITD.RollResistance": {},
+    "RollFortune": {
+      "Critical": "Exceptional result / Great, extreme effect.",
+      "Success": "Good result / Standard, full effect.",
+      "Mixed": "Mixed result / Limited, partial effect.",
+      "Fail": "Bad result / Poor, little effect."
+    },
+    "RollCancel": "Cancel",
 
     "Cancel": "Cancel"
   }

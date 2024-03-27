@@ -4,6 +4,7 @@ import { BitdActorSheet } from "./sheets/actor-sheet.mjs";
 import { BitdItem } from "./documents/item.mjs";
 import { BitdItemSheet } from "./sheets/item-sheet.mjs";
 import { preprocessChatMessage, renderChatMessage } from "./helpers/chat-portraits.mjs";
+import { createRollDialog } from "./helpers/roll.mjs";
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { registerHandlebarsHelpers } from "./helpers/handlebars-helpers.mjs";
 
@@ -24,7 +25,7 @@ Hooks.once('init', async function() {
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("bitd", BitdItemSheet, { makeDefault: true });
 
-  await registerHandlebarsHelpers();
+  registerHandlebarsHelpers();
 
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
@@ -35,3 +36,16 @@ Hooks.on("preCreateChatMessage", preprocessChatMessage);
 
 // Render chat message hook
 Hooks.on("renderChatMessage", renderChatMessage);
+
+Hooks.on("renderSceneControls", async (app, html) => {
+  const diceRollButton = $(`
+    <li class="scene-control" data-control="bitd-dice" title="BitD Dice Roller">
+    <i class="fas fa-dice"></i>
+    </li>
+  `);
+  diceRollButton.click( async function() {
+    await createRollDialog("fortune");
+  });
+  html.children().first().append( diceRollButton );
+
+});

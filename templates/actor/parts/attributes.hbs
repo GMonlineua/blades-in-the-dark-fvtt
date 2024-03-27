@@ -1,7 +1,7 @@
 <div class="attribute-block grid-3col">
   {{#each system.attributes as |attribute key|}}
     <div class="attribute {{key}}">
-      <h3 class="attribute-name">{{getLocalizeName key}}</h3>
+      <h3 class="attribute-name" data-tooltip="{{getLocalizeDescription 'attribute' key}}">{{getLocalizeName key}}</h3>
       {{#if attribute.exp includeZero=true}}
         <div class="value-step-block exp-block" data-value="{{attribute.exp}}" data-key="system.attributes.{{key}}.exp">
           {{#numLoop 6}}
@@ -16,7 +16,7 @@
               <span class="value-step value-dot" data-index="{{this}}"></span>
             {{/numLoop}}
           </div>
-          <label class="action-label">{{getLocalizeName subKey}}</label>
+          <label class="action-label rollable" data-roll-type="action" data-roll-note="{{key}}.actions.{{subKey}}" data-tooltip="{{getLocalizeDescription 'action' subKey}}">{{getLocalizeName subKey}}</label>
         </div>
       {{/each}}
     </div>

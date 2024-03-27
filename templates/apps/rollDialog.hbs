@@ -1,0 +1,26 @@
+<form class="roll-dice-form grid-2col">
+  <div class="dice-number">
+    <label for="dice-number">{{localize 'BITD.Roll.DiceNumber'}}: </label>
+    <input id="dice-number" name="diceNumber" type="number" value="{{diceNumber}}" data-dtype="Number">
+  </div>
+
+  <div class="modifier">
+    <label for="modifier">{{localize 'BITD.Roll.Modifier'}}: </label>
+    <input id="modifier" name="modifier" type="number" value="0" data-dtype="Number">
+  </div>
+
+  <div class="roll-type">
+    <label for="roll-type">{{localize 'BITD.Roll.Type'}}: </label>
+    <select id="roll-type" name="rollType" data-type="Number">
+      {{#select rollType}}
+        <option value="action">{{localize 'BITD.RollType.Action'}}</option>
+        <option value="resistance">{{localize 'BITD.RollType.Resistance'}}</option>
+        <option value="fortune">{{localize 'BITD.RollType.Fortune'}}</option>
+        <option value="information">{{localize 'BITD.RollType.GatherInformation'}}</option>
+        <option value="engagement">{{localize 'BITD.RollType.Engagement'}}</option>
+        <option value="vice">{{localize 'BITD.RollType.IndulgeVice'}}</option>
+        <option value="asset">{{localize 'BITD.RollType.AcquireAsset'}}</option>
+      {{/select}}
+    </select>
+  </div>
+</form>

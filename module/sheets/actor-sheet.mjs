@@ -1,3 +1,5 @@
+import { createRollDialog } from "../helpers/roll.mjs";
+
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
@@ -192,29 +194,7 @@ export class BitdActorSheet extends ActorSheet
     const element = event.currentTarget;
     const dataset = element.dataset;
 
-    // Handle item rolls.
-    if (dataset.rollType) {
-      if (dataset.rollType == 'item') {
-        const itemId = element.closest('.item').dataset.itemId;
-        const item = this.actor.items.get(itemId);
-        if (item) return item.roll();
-      } else if (dataset.rollType == 'show') {
-        const itemId = element.closest('.item').dataset.itemId;
-        const item = this.actor.items.get(itemId);
-        if (item) return item.show();
-      }
-    }
-
-    // Handle rolls that supply the formula directly.
-    if (dataset.roll) {
-      let roll = new Roll(dataset.roll, this.actor.getRollData());
-      roll.toMessage({
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: label,
-        rollMode: game.settings.get('core', 'rollMode')
-      });
-      return roll;
-    }
+    createRollDialog(dataset.rollType, this.actor, dataset.rollNote)
   }
 
   async _onDotChange(event) {
@@ -252,7 +232,7 @@ export class BitdActorSheet extends ActorSheet
   }
 
   async _onAddTrauma(event) {
-    const currentTraumas = this.actor.system.trauma || [];
+    const currentTraumas = (this.actor.system.trauma || []).filter(Boolean);
     const defaultTraumas = [
       "BITD.Traumas.Cold",
       "BITD.Traumas.Haunted",
@@ -264,6 +244,7 @@ export class BitdActorSheet extends ActorSheet
       "BITD.Traumas.Vicious",
     ];
     const filteredTraumas = defaultTraumas.filter(trauma => !currentTraumas.includes(trauma));
+    console.log(currentTraumas);
 
     const template = await renderTemplate("systems/bitd/templates/apps/trauma.hbs", { currentTraumas, filteredTraumas });
 
@@ -278,7 +259,10 @@ export class BitdActorSheet extends ActorSheet
             const newTraumas = elements.map(el => el.dataset.value);
 
             const customTrauma = html.find("input.custom-trauma")[0].value;
-            newTraumas.push(customTrauma);
+            if (customTrauma) {
+              console.log("not empty:", customTrauma)
+              newTraumas.push(customTrauma);
+            }
 
             await this.actor.update({ "system.trauma": newTraumas });
           }

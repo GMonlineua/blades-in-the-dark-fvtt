@@ -57,6 +57,22 @@ export const registerHandlebarsHelpers = function() {
     return localizeName;
   });
 
+  Handlebars.registerHelper("getLocalizeDescription", function (type, key, options) {
+    const localizeKey = key.charAt(0).toUpperCase() + key.slice(1);
+    let name;
+    switch (type) {
+      case "attribute":
+        name = "BITD.AttributeDescription." + localizeKey;
+        break;
+      case "action":
+        name = "BITD.ActionDescription." + localizeKey;
+        break;
+    }
+    const localizeName = game.i18n.localize(name);
+
+    return localizeName;
+  });
+
   Handlebars.registerHelper("testCon", function (i, options) {
     console.log(i);
 
