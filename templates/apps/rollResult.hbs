@@ -1,0 +1,16 @@
+<div class="roll-message">
+  <div class="roll-header">
+    <h3>{{name}}</h3>
+  </div>
+
+  <div class="roll-results">
+    <h4>{{localizeResult}}</h4>
+    {{{description}}}
+  </div>
+
+  <ol class="roll-dice">
+    {{#each dice}}
+      <li class="dice">{{this}}</li>
+    {{/each}}
+  </ol>
+</div>

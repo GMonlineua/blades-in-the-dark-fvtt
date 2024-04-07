@@ -1,6 +1,21 @@
+import { getRollData } from "./roll-data.mjs";
+
 export async function createRollDialog (type, sheet, note) {
-  let { rollName, rollFunction, templateData } = getTestData(type, sheet, note);
-  console.log(rollName, rollFunction, templateData)
+  if (!sheet) {
+    sheet = game.user.character;
+  }
+
+  const templateData = getRollData(type, sheet, note);
+
+  const functions = {
+    action: actionRoll,
+    resistance: resistanceRoll,
+    fortune: fortuneRoll,
+    information: GatherInformation,
+    engagement: EngagementRoll,
+    asset: AcquireAsset,
+    vice: IndulgeVice
+  }
 
   const html = await renderTemplate("systems/bitd/templates/apps/rollDialog.hbs", templateData);
 
@@ -9,17 +24,18 @@ export async function createRollDialog (type, sheet, note) {
     content: html,
     buttons: {
       roll: {
-        label: game.i18n.localize("BITD.Roll.Button"),
+        label: game.i18n.localize("BITD.Roll.Submit"),
         icon: '<i class="fas fa-dice"></i>',
         callback: async (html) => {
           const formData = new FormData(html[0].querySelector("form"));
           const data = toIntData(Object.fromEntries(formData.entries()));
 
+          const rollFunction = functions[data.rollType];
           const rollData = await roll(data);
-          rollData.name = rollName;
-          console.log(rollData);
+          rollData.name = templateData.type[data.rollType];
+
           rollFunction(rollData, sheet, data);
-          console.log(rollData);
+          renderRoll(rollData, sheet)
         },
       },
       cancel: {
@@ -30,41 +46,11 @@ export async function createRollDialog (type, sheet, note) {
     },
     default: "roll",
     close: () => {},
+  },
+  {
+    width: 400
   });
   dialog.render(true);
-}
-
-function getTestData(type, sheet, note) {
-  let attribute, action, actionLocalize;
-
-  if (type == "action") {
-    attribute = note.split('.')[0];
-    action = note.split('.')[2];
-    actionLocalize = game.i18n.localize("BITD." + action.charAt(0).toUpperCase() + action.slice(1));
-  } else {
-    actionLocalize = "";
-  }
-
-  const testData = {
-    action: {
-      rollName: `${game.i18n.localize("BITD.RollType.Action")}: ${actionLocalize}`,
-      rollFunction: actionRoll,
-      templateData: {
-        diceNumber: note ? sheet.system.attributes[attribute].actions[action] : '',
-        rollType: type
-      }
-    },
-    fortune: {
-      rollName: game.i18n.localize("ROGUE.RollType.Fortune"),
-      rollFunction: fortuneRoll,
-      templateData: {
-        diceNumber: 1,
-        rollType: type
-      }
-    }
-  };
-
-  return testData[type];
 }
 
 function toIntData(data) {
@@ -78,55 +64,129 @@ function toIntData(data) {
 }
 
 async function roll(data) {
-  const number = data.diceNumber + data.modifier;
+  console.log("roll: ", data);
+  let number = data.diceNumber + data.modifier;
+
+  if (data.assistance) {
+    number += 1;
+  }
+  if (data.pushDice || data.devisBargain) {
+    number += 1;
+  }
+
   const roll = new Roll(number + "d6");
   await roll.evaluate();
   const resultsArr = roll.terms[0].results.map((element) => (element.result));
 
   const rollResult = {
     dice: resultsArr,
-    max: Math.max(...resultsArr)
+    max: Math.max(...resultsArr),
+    assistance: data.assistance,
+    pushEffect: data.pushEffect,
+    pushDice: data.pushDice,
+    devisBargain: data.devisBargain
   }
 
   if (resultsArr.filter(num => num === 6).length === 2) {
     rollResult.result = "critical";
+    rollResult.localizeResult = game.i18n.localize("BITD.Roll.Result.Critical");
   } else {
-    switch (rollData.max) {
+    switch (rollResult.max) {
       case 6:
         rollResult.result = "success";
+        rollResult.localizeResult = game.i18n.localize("BITD.Roll.Result.Success");
         break;
       case 4:
       case 5:
         rollResult.result = "mixed";
+        rollResult.localizeResult = game.i18n.localize("BITD.Roll.Result.Mixed");
         break;
       case 1:
       case 2:
       case 3:
         rollResult.result = "fail";
+        rollResult.localizeResult = game.i18n.localize("BITD.Roll.Result.Fail");
     }
   }
+
+  rollResult.resultKey = rollResult.result.charAt(0).toUpperCase() + rollResult.result.slice(1);
 
   return rollResult
 }
 
 function actionRoll(rollData, sheet, formData) {
-  console.log(rollData);
+  const positionKey = formData.position.charAt(0).toUpperCase() + formData.position.slice(1);
+  rollData.description = game.i18n.localize("BITD.Roll.Action." + positionKey + "." + rollData.resultKey);
+
+  return rollData
 }
 
-function fortuneRoll(rollData) {
-  switch (rollData.result) {
-    case "critical":
-      rollResult.description = game.i18n.localize("BITD.FortuneRoll.Critical");
-      break;
-    case "success":
-      rollResult.description = game.i18n.localize("BITD.FortuneRoll.Success");
-      break;
-    case "mixed":
-      rollResult.description = game.i18n.localize("BITD.FortuneRoll.Mixed");
-      break;
-    case "fail":
-      rollResult.description = game.i18n.localize("BITD.FortuneRoll.Fail");
+function resistanceRoll(rollData, sheet, formData) {
+  let sufferedStress = 6 - rollData.max;
+  rollData.description = game.i18n.localize("BITD.Roll.Resistance.Result");
+  if (rollData.result == "critical") {
+    rollData.description += game.i18n.localize("BITD.Roll.Resistance.Critical");
+    sufferedStress = -1;
+  } else {
+    rollData.description += game.i18n.format("BITD.Roll.Resistance.Regular", {stress: sufferedStress});
   }
 
   return rollData
+}
+
+function fortuneRoll(rollData) {
+  rollData.description = game.i18n.localize("BITD.Roll.Fortune." + rollData.resultKey);
+
+  return rollData
+}
+
+function GatherInformation(rollData, sheet, formData) {
+  const rollAs = formData.rollAs;
+  const positionKey = formData.position.charAt(0).toUpperCase() + formData.position.slice(1);
+  const effectKey = formData.effect.charAt(0).toUpperCase() + formData.effect.slice(1);
+  rollData.description = game.i18n.localize("BITD.Roll.GatherInformation." + effectKey);
+
+  let addDescription;
+  if (rollAs == "action") {
+    addDescription = game.i18n.localize("BITD.Roll.Action." + positionKey + "." + rollData.resultKey);
+  } else if (rollAs == "fortune") {
+    addDescription = game.i18n.localize("BITD.Roll.Fortune." + rollData.resultKey);
+  }
+
+  rollData.description += "<p>" + addDescription + "</p>";
+
+  return rollData
+}
+
+function EngagementRoll(rollData) {
+  rollData.description = game.i18n.localize("BITD.Roll.Engagement." + rollData.resultKey);
+
+  return rollData
+}
+
+function AcquireAsset(rollData) {
+  rollData.description = game.i18n.localize("BITD.Roll.AcquireAsset." + rollData.resultKey);
+
+  return rollData
+}
+
+function IndulgeVice(rollData) {
+  let clearStress = rollData.max;
+  rollData.description = game.i18n.format("BITD.Roll.IndulgeVice.Regular", {stress: clearStress});
+  // get data from actor
+
+  return rollData
+}
+
+async function renderRoll(renderData, sheet) {
+  const speaker = ChatMessage.getSpeaker({ actor: sheet });
+  console.log("Render data:", renderData)
+  const chatMessage = await renderTemplate("systems/bitd/templates/apps/rollResult.hbs", renderData);
+  const chatData = {
+    speaker: speaker,
+    content: chatMessage,
+    type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+    sound: CONFIG.sounds.dice
+  };
+  ChatMessage.create(chatData);
 }

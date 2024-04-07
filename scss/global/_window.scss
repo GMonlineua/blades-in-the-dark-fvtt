@@ -13,6 +13,11 @@ input.clear-input:focus {
   outline: none;
 }
 
+select.clear-select {
+  border: none;
+  background: none;
+}
+
 .window-app {
   font-family: $font-primary;
 }

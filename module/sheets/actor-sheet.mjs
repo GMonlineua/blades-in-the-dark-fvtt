@@ -244,7 +244,6 @@ export class BitdActorSheet extends ActorSheet
       "BITD.Traumas.Vicious",
     ];
     const filteredTraumas = defaultTraumas.filter(trauma => !currentTraumas.includes(trauma));
-    console.log(currentTraumas);
 
     const template = await renderTemplate("systems/bitd/templates/apps/trauma.hbs", { currentTraumas, filteredTraumas });
 
@@ -275,6 +274,9 @@ export class BitdActorSheet extends ActorSheet
           $(this).toggleClass("active");
         });
       }
+    },
+    {
+      width: 220
     });
 
     dialog.render(true);

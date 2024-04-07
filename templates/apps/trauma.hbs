@@ -1,4 +1,4 @@
-<form class="add-trauma-form grid-2col">
+<form class="add-trauma-form">
   {{#each currentTraumas as |trauma|}}
     <a class="trauma active" data-value={{trauma}}>{{localize trauma}}</a>
   {{/each}}
@@ -7,6 +7,5 @@
     <a class="trauma" data-value={{trauma}}>{{localize trauma}}</a>
   {{/each}}
 
-  <label class="custom-trauma">{{localize 'BITD.Traumas.Custom'}}:</label>
-  <input class="custom-trauma" type="text" data-dtype="String" placeholder="{{localize 'BITD.Traumas.Custom'}}"/>
+  <input class="trauma custom-trauma" type="text" data-dtype="String" placeholder="{{localize 'BITD.Traumas.Custom'}}"/>
 </form>

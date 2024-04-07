@@ -10,7 +10,106 @@
   font-family: $font-secondary;
   text-align: center;
 
+  .trauma {
+    display: block;
+  }
+
   .trauma.active {
     text-shadow: $shadow;
+  }
+}
+
+.roll-dice-form {
+  font-family: $font-secondary;
+
+  .roll-type {
+    margin-bottom: 5px;
+    font-size: medium;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+
+    #roll-type {
+      font-weight: bold;
+    }
+  }
+
+  .roll-dice {
+    gap: 0;
+
+    input {
+      border: none;
+      background: none;
+    }
+  }
+
+  .push-or-devil {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+
+  .position-and-effect {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+
+  h4 {
+    margin: 0.5rem 0 0 0;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .checkbox-label {
+    position: relative;
+    top: -5px;
+  }
+}
+
+.roll-message {
+  .roll-header {
+    margin: 0;
+    padding: 3px 5px 0 5px;
+    background-color: $light-black;
+    color: $light-white;
+    text-transform: uppercase;
+    font-family:$font-secondary;
+    font-weight: bold;
+
+    h3 {
+      font-weight: bold;
+      border: none;
+    }
+  }
+
+  .roll-results {
+    h4 {
+      text-transform: uppercase;
+      font-family:$font-secondary;
+      font-size: medium;
+      font-weight: bold;
+    }
+  }
+
+  .roll-dice {
+    list-style: none;
+    margin: 5px 0;
+    padding: 0;
+    overflow: hidden;
+
+    .dice {
+      min-width: 30px;
+      line-height: 30px;
+      float: left;
+      margin-right: 1px;
+      background-image: url(/icons/svg/d6-grey.svg);
+      background-repeat: no-repeat;
+      background-size: 30px 30px;
+      color: $light-black;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+    }
   }
 }

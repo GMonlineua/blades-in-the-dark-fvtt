@@ -12,8 +12,90 @@
   font-family: "Spectral SC", serif;
   text-align: center;
 }
+.add-trauma-form .trauma {
+  display: block;
+}
 .add-trauma-form .trauma.active {
   text-shadow: 0 0 8px red;
+}
+
+.roll-dice-form {
+  font-family: "Spectral SC", serif;
+}
+.roll-dice-form .roll-type {
+  margin-bottom: 5px;
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+.roll-dice-form .roll-type #roll-type {
+  font-weight: bold;
+}
+.roll-dice-form .roll-dice {
+  gap: 0;
+}
+.roll-dice-form .roll-dice input {
+  border: none;
+  background: none;
+}
+.roll-dice-form .push-or-devil {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.roll-dice-form .position-and-effect {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.roll-dice-form h4 {
+  margin: 0.5rem 0 0 0;
+  text-align: center;
+  font-weight: bold;
+}
+.roll-dice-form .checkbox-label {
+  position: relative;
+  top: -5px;
+}
+
+.roll-message .roll-header {
+  margin: 0;
+  padding: 3px 5px 0 5px;
+  background-color: #222;
+  color: #eee;
+  text-transform: uppercase;
+  font-family: "Spectral SC", serif;
+  font-weight: bold;
+}
+.roll-message .roll-header h3 {
+  font-weight: bold;
+  border: none;
+}
+.roll-message .roll-results h4 {
+  text-transform: uppercase;
+  font-family: "Spectral SC", serif;
+  font-size: medium;
+  font-weight: bold;
+}
+.roll-message .roll-dice {
+  list-style: none;
+  margin: 5px 0;
+  padding: 0;
+  overflow: hidden;
+}
+.roll-message .roll-dice .dice {
+  min-width: 30px;
+  line-height: 30px;
+  float: left;
+  margin-right: 1px;
+  background-image: url(/icons/svg/d6-grey.svg);
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  color: #222;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .flex-group-center,
@@ -229,6 +311,11 @@ input.clear-input {
 
 input.clear-input:focus {
   outline: none;
+}
+
+select.clear-select {
+  border: none;
+  background: none;
 }
 
 .window-app {
