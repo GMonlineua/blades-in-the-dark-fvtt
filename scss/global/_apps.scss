@@ -19,67 +19,98 @@
   }
 }
 
-.roll-dice-form {
-  font-family: $font-secondary;
+.bitd-roll-dialog {
+  height: auto;
 
-  .roll-type {
-    margin-bottom: 5px;
-    font-size: medium;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
+  .window-content {
+    overflow: visible;
+  }
 
-    #roll-type {
+  .roll-dice-form {
+    font-family: $font-secondary;
+
+    .roll-type {
+      margin-bottom: 5px;
+      font-size: medium;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+
+      #roll-type {
+        font-weight: bold;
+      }
+    }
+
+    .roll-dice {
+      gap: 0;
+
+      input {
+        border: none;
+        background: none;
+      }
+    }
+
+    .push-or-devil {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    .position-and-effect {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    .useful-info {
+      font-family: $font-primary;
+    }
+
+    h4 {
+      width: 100%;
+      margin: 0.5rem 0 0 0;
+      text-align: center;
       font-weight: bold;
     }
-  }
 
-  .roll-dice {
-    gap: 0;
-
-    input {
-      border: none;
-      background: none;
+    .checkbox-label {
+      position: relative;
+      top: -5px;
     }
-  }
 
-  .push-or-devil {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-  }
-
-  .position-and-effect {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-  }
-
-  h4 {
-    margin: 0.5rem 0 0 0;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  .checkbox-label {
-    position: relative;
-    top: -5px;
+    .optional:not(.active) {
+      display: none;
+    }
   }
 }
 
 .roll-message {
   .roll-header {
-    margin: 0;
-    padding: 3px 5px 0 5px;
-    background-color: $light-black;
-    color: $light-white;
-    text-transform: uppercase;
-    font-family:$font-secondary;
-    font-weight: bold;
+    margin-bottom: 10px;
 
-    h3 {
+    .roll-name {
+      margin: 0;
+      padding: 3px 5px 0 5px;
+      background-color: $light-black;
+      color: $light-white;
+      text-transform: uppercase;
+      font-family:$font-secondary;
       font-weight: bold;
       border: none;
+    }
+
+    .roll-subheader {
+      padding: 3px 5px 0 5px;
+      background-color: $grey;
+      color: black;
+      font-weight: bold;
+
+      h4 {
+        display: inline;
+        font-weight: bold;
+      }
     }
   }
 
@@ -88,6 +119,13 @@
       text-transform: uppercase;
       font-family:$font-secondary;
       font-size: medium;
+      font-weight: bold;
+    }
+
+    h5 {
+      margin: 10px 0 0 0;
+      text-transform: uppercase;
+      font-family:$font-secondary;
       font-weight: bold;
     }
   }

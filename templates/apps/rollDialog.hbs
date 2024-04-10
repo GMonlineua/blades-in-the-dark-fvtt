@@ -7,7 +7,7 @@
   </div>
 
   <div class="general-info">
-    <div class="roll-as">
+    <div class="roll-as optional" data-connected="information">
       <label for="roll-as">{{localize 'BITD.Roll.GatherInformation.RollAs'}}: </label>
       <select id="roll-as" class="clear-select" name="rollAs" data-type="String">
         {{#select rollAs}}
@@ -17,17 +17,17 @@
       </select>
     </div>
 
-    <div class="attributes">
+    <div class="attributes optional" data-connected="resistance">
       <label for="attribute">{{localize 'BITD.Attribute'}}: </label>
       <select id="attribute" class="clear-select" name="attribute" data-type="String">
-        {{selectOptions attributes localize=true}}
+        {{selectOptions attributes selected=defaultAttribute localize=true}}
       </select>
     </div>
 
-    <div class="action">
+    <div class="action optional" data-connected="action">
       <label for="action">{{localize 'BITD.Action'}}: </label>
       <select id="action" class="clear-select" name="action" data-type="String">
-        {{selectOptions actions localize=true}}
+        {{selectOptions actions selected=defaultAction localize=true}}
       </select>
     </div>
   </div>
@@ -54,8 +54,9 @@
     </div>
   </div>
 
-  <h4 for="push-or-dice">{{localize 'BITD.Roll.Bonus.AddDice'}}</h4>
   <div class="push-or-devil">
+    <h4 for="push-or-dice">{{localize 'BITD.Roll.Bonus.AddDice'}}</h4>
+
     <div>
       <input id="pushDice" name="pushDice" type="checkbox" data-dtype="Boolean">
       <label class="checkbox-label" for="pushDice">{{localize 'BITD.Roll.Bonus.Push'}}</label>
@@ -69,20 +70,30 @@
     </div>
   </div>
 
-  <h4 for="position-and-effect">{{localize 'BITD.Roll.PositionEffect'}}</h4>
-  <div class="position-and-effect">
-    <div class="position">
+  <div class="position-and-effect optional" data-connected="action,information">
+    <h4 for="position-and-effect">{{localize 'BITD.Roll.PositionEffect'}}</h4>
+
+    <div class="position optional" data-connected="action">
       <label>{{localize 'BITD.Roll.Position.Title'}}:</label>
       <select id="position" class="clear-select" name="position" data-type="Number">
         {{selectOptions position selected="risky" localize=true}}
       </select>
     </div>
 
-    <div class="effect">
+    <div class="effect optional" data-connected="action,information">
       <label>{{localize 'BITD.Roll.Effect.Title'}}:</label>
       <select id="effect" class="clear-select" name="effect" data-type="Number">
-        {{selectOptions effect selected="standart" localize=true}}
+        {{selectOptions effect selected="standard" localize=true}}
       </select>
     </div>
+  </div>
+
+  <div class="useful-info">
+    <ul class="optional" data-connected="engagement">
+      <li>{{{localize 'BITD.Roll.Engagement.Operation'}}}</li>
+      <li>{{{localize 'BITD.Roll.Engagement.Plan'}}}</li>
+      <li>{{{localize 'BITD.Roll.Engagement.Contact'}}}</li>
+      <li>{{{localize 'BITD.Roll.Engagement.Other'}}}</li>
+    </ul>
   </div>
 </form>

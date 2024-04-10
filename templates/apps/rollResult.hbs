@@ -1,11 +1,35 @@
 <div class="roll-message">
   <div class="roll-header">
-    <h3>{{name}}</h3>
+    <h3 class="roll-name">{{name}}</h3>
+    <div class="roll-subheader">
+      {{#if positionShow}}
+        <h4 class="position">{{positionLocalize}}</h4>
+        <span>|</span>
+      {{/if}}
+      {{#if effectShow}}
+        <h4 class="effect">{{effectLocalize}}</h4>
+      {{/if}}
+    </div>
   </div>
 
   <div class="roll-results">
+    {{#if rollAs}}
+      <p>{{localize "BITD.Roll.GatherInformation.RollAs"}}: {{rollAs}}</p>
+    {{/if}}
     <h4>{{localizeResult}}</h4>
     {{{description}}}
+    {{#if devisBargain}}
+      <h5>{{localize "BITD.Roll.Bonus.DevilsBargain"}}</h5>
+      <p>{{localize "BITD.Roll.BonusDescription.DevilsBargain"}}</p>
+    {{/if}}
+    {{#if assistance}}
+      <h5>{{localize "BITD.Roll.Bonus.Assistance"}}</h5>
+      <p>{{localize "BITD.Roll.BonusDescription.Assistance"}}</p>
+    {{/if}}
+    {{#if push}}
+      <h5>{{localize "BITD.Roll.Bonus.Push"}}</h5>
+      <p>{{pushDescription}}</p>
+    {{/if}}
   </div>
 
   <ol class="roll-dice">

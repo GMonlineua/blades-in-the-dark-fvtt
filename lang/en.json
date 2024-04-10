@@ -161,7 +161,13 @@
         "DevilsBargain": "Devil’s Bargain",
         "Assistance": "Assistance"
       },
+      "BonusDescription": {
+        "Push": "You suffer {stress} stress.",
+        "DevilsBargain": "The Devil’s Bargain occurs regardless of the outcome of the roll.",
+        "Assistance": "Character who helps suffer 1 stress and might also suffer any consequences that occur because of the roll."
+      },
       "Result": {
+        "Exp": "{actor} gains 1 experiences",
         "Critical": "Critical",
         "Success": "Full Success",
         "Mixed": "Partial Success",
@@ -222,11 +228,11 @@
       },
       "IndulgeVice": {
         "Regular": "You indulge your vice. Clear <strong>{stress} stress</strong>.",
-        "Overindulgence": "<p>You <strong>overindulge</strong>. Clear <strong>{clear_stress} stress</strong> and choose <strong>one</strong> of the following consequences:</p>",
-        "Trouble": "<strong>Attract Trouble.</strong> Select or roll an additional <strong>entanglement.</strong>",
-        "Brag": "<strong>Brag</strong> about your exploits. <strong>+2 Heat</strong>",
-        "Lost": "<strong>Lost.</strong> Your character vanishes for a few weeks. Play a different character until this one returns from their bender. When your character returns, they've also healed any harm they had.",
-        "Trapped": "<strong>Tapped.</strong> Your current purveyor cuts you off. Find a new source for your vice."
+        "Overindulgence": "<p>You <strong>overindulge</strong>. Clear <strong>all stress</strong> and choose <strong>one</strong> of the following consequences:</p>",
+        "Trouble": "<li><strong>Attract Trouble.</strong> Select or roll an additional <strong>entanglement.</strong></li>",
+        "Brag": "<li><strong>Brag</strong> about your exploits. <strong>+2 Heat</strong></li>",
+        "Lost": "<li><strong>Lost.</strong> Your character vanishes for a few weeks. Play a different character until this one returns from their bender. When your character returns, they've also healed any harm they had.</li>",
+        "Trapped": "<li><strong>Tapped.</strong> Your current purveyor cuts you off. Find a new source for your vice.</li>"
       }
     },
 
