@@ -50,14 +50,14 @@ export const registerHandlebarsHelpers = function() {
     }
   });
 
-  Handlebars.registerHelper("getLocalizeName", function (key, options) {
+  Handlebars.registerHelper("getLocalizeName", function (key) {
     const name = "BITD." + key.charAt(0).toUpperCase() + key.slice(1);
     const localizeName = game.i18n.localize(name);
 
     return localizeName;
   });
 
-  Handlebars.registerHelper("getLocalizeDescription", function (type, key, options) {
+  Handlebars.registerHelper("getLocalizeDescription", function (type, key) {
     const localizeKey = key.charAt(0).toUpperCase() + key.slice(1);
     let name;
     switch (type) {
@@ -74,8 +74,12 @@ export const registerHandlebarsHelpers = function() {
   });
 
   Handlebars.registerHelper("testCon", function (i, options) {
-    console.log(i);
+    console.log(i, system);
 
     return options.fn(i);
+  });
+
+  Handlebars.registerHelper("testValue", function (i) {
+    console.log(i);
   });
 }

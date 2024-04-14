@@ -1,18 +1,16 @@
 <div class="attribute-block grid-3col">
   {{#each system.attributes as |attribute key|}}
     <div class="attribute {{key}}">
-      <h3 class="attribute-name rollable" data-roll-type="attribute" data-roll-note="{{key}}" data-tooltip="{{getLocalizeDescription 'attribute' key}}">{{getLocalizeName key}}</h3>
-      {{#if attribute.exp includeZero=true}}
-        <div class="value-step-block exp-block" data-value="{{attribute.exp}}" data-key="system.attributes.{{key}}.exp">
-          {{#numLoop 6}}
-            <span class="value-step value-tooth" data-index="{{this}}"></span>
-          {{/numLoop}}
-        </div>
-      {{/if}}
+      <h3 class="attribute-name rollable" data-roll-type="resistance" data-roll-note="{{key}}" data-tooltip="{{getLocalizeDescription 'attribute' key}}">{{getLocalizeName key}}</h3>
+      <div class="value-step-block exp-block" data-value="{{attribute.exp}}" data-key="system.attributes.{{key}}.exp">
+        {{#numLoop 6}}
+          <span class="value-step value-tooth" data-index="{{this}}"></span>
+        {{/numLoop}}
+      </div>
       {{#each attribute.actions as |action subKey|}}
         <div class="action {{subKey}}">
-          <div class="value-step-block" data-value="{{action}}" data-key="system.attributes.{{key}}.actions.{{subKey}}">
-            {{#numLoop 4}}
+          <div class="value-step-block" data-value="{{action.value}}" data-key="system.attributes.{{key}}.actions.{{subKey}}.value">
+            {{#numLoop action.max}}
               <span class="value-step value-dot" data-index="{{this}}"></span>
             {{/numLoop}}
           </div>

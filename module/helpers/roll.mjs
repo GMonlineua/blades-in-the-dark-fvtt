@@ -52,12 +52,13 @@ export async function createRollDialog (type, sheet, note) {
     close: () => {},
     render: (html) => {
       optionalBlocks(html);
-      // if (sheet) {
-      //   getDiceNumber(html, sheet);
-      //   html.find("#roll-type, #roll-as, #attribute, #action").on("change", function() {
-      //     getDiceNumber(html, sheet);
-      //   });
-      // }
+
+      if (sheet) {
+        getDiceNumber(html, sheet);
+        html.find("#roll-type, #roll-as, #attribute, #action").on("change", function() {
+          getDiceNumber(html, sheet);
+        });
+      }
 
       html.find("#roll-type, #roll-as").on("change", function() {
         optionalBlocks(html);
@@ -102,26 +103,33 @@ function optionalBlocks(html) {
   }
 }
 
-// function getDiceNumber(html, sheet) {
-//   const type = html.find("#roll-type")[0].value;
-//   const rollAs = html.find("#roll-as")[0].value;
-//
-//   const targetType = type == "information" ? rollAs : type;
-//   let diceNumber;
-//   switch (targetType) {
-//     case 'action':
-//       const action = html.find("#action")[0].value;
-//       diceNumber = 1;
-//       break;
-//     case 'resistance':
-//       const attribute = html.find("#attribute")[0].value;
-//       diceNumber = 1;
-//       break;
-//     case 'vice':
-//       diceNumber = 1;
-//       break;
-//   }
-// }
+function getDiceNumber(html, sheet) {
+  const type = html.find("#roll-type")[0].value;
+  const rollAs = html.find("#roll-as")[0].value;
+
+  const targetType = type == "information" ? rollAs : type;
+  let diceNumber = 0;
+  switch (targetType) {
+    case 'action':
+      const action = html.find("#action")[0].value;
+      diceNumber = sheet.system[action].value;
+      break;
+    case 'resistance':
+      const attribute = html.find("#attribute")[0].value;
+      diceNumber = sheet.system.attributes[attribute].value;
+      break;
+    case 'vice':
+      diceNumber = 10;
+      for (let [attrKey, attribute] of Object.entries(sheet.system.attributes)) {
+        if (attribute.value < diceNumber) {
+          diceNumber = attribute.value
+        }
+      }
+      break;
+  }
+
+  html.find("#dice-number")[0].value = diceNumber;
+}
 
 async function roll(data) {
   console.log("roll: ", data);
@@ -134,14 +142,19 @@ async function roll(data) {
     number += 1;
   }
 
-  const roll = new Roll(number + "d6");
+  let formula = "2d6kl"
+  if (number > 0) {
+    formula = number + "d6";
+  }
+
+  const roll = new Roll(formula);
   await roll.evaluate();
   const resultsArr = roll.terms[0].results.map((element) => (element.result));
 
   const rollResult = {
     type: data.rollType,
     dice: resultsArr,
-    max: Math.max(...resultsArr),
+    max: number > 0 ? Math.max(...resultsArr) : Math.min(...resultsArr),
     assistance: data.assistance,
     pushEffect: data.pushEffect,
     pushDice: data.pushDice,
