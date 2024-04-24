@@ -18,16 +18,43 @@ export class BitdActor extends Actor {
   }
 
   _prepareCharacterData(systemData) {
-    for (let [attrKey, attribute] of Object.entries(systemData.attributes)) {
+    for (const [attrKey, attribute] of Object.entries(systemData.attributes)) {
       attribute.value = 0;
 
-      for (let [actionKey, action] of Object.entries(attribute.actions)) {
+      for (const [actionKey, action] of Object.entries(attribute.actions)) {
         action.max = 4;
         systemData[actionKey] = foundry.utils.deepClone(action);
 
         if (action.value > 0) {
           attribute.value += 1;
         }
+      }
+    }
+  }
+
+  _onCreateDescendantDocuments(parent, collection, documents, data, options, userId) {
+    super._onCreateDescendantDocuments(parent, collection, documents, data, options, userId);
+
+    for (const i of data) {
+      if (i.type == "playbook" && this.type == "character") {
+        const playbookData = {
+          id: i._id,
+          name: i.name
+        }
+        this.update({ "system.playbook": playbookData });
+        const forLoad = ["abilities", "contacts", "inventory"]
+        this._loadPlaybookDara(forLoad, i);
+      }
+    }
+  }
+
+  async _loadPlaybookDara(forLoad, playbook) {
+    for (const i of forLoad) {
+      const idArr = playbook.system[i];
+      for (const itemData of idArr) {
+        const item = await fromUuid(itemData.uuid);
+        const cls = getDocumentClass("Item");
+        cls.create(item, {parent: this})
       }
     }
   }

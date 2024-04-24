@@ -37,6 +37,7 @@ Hooks.on("preCreateChatMessage", preprocessChatMessage);
 // Render chat message hook
 Hooks.on("renderChatMessage", renderChatMessage);
 
+// Add scene controls
 Hooks.on("renderSceneControls", async (app, html) => {
   const diceRollButton = $(`
     <li class="scene-control" data-control="bitd-dice" title="BitD Dice Roller">
@@ -47,5 +48,4 @@ Hooks.on("renderSceneControls", async (app, html) => {
     await createRollDialog("fortune");
   });
   html.children().first().append( diceRollButton );
-
 });

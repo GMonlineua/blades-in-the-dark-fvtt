@@ -70,20 +70,47 @@ export class BitdActorSheet extends ActorSheet
    * @return {undefined}
    */
   _prepareItems(context) {
-    // Initialize containers.
+    let playbook;
+    const abilities = [];
     const contact = [];
+    const inventory = [];
+    const specInventory = [];
 
-    // Iterate through items, allocating to containers
+    const playbookId = this.actor.system.playbook.id;
+
     for (let i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
-      // Append to contacts.
-      if (i.type === 'contact') {
+
+      if (i.type === 'playbook') {
+        if (i._id == playbookId) {
+          playbook = i;
+        } else {
+          const item = this.actor.items.get(i._id);
+          item.delete();
+        }
+
+        console.log(i);
+      }
+      else if (i.type === 'abilityCharacter') {
+        abilities.push(i);
+      }
+      else if (i.type === 'contact') {
         contact.push(i);
+      }
+      else if (i.type === 'tool') {
+        if (i.system.type === 'common') {
+          inventory.push(i);
+        } else {
+          specInventory.push(i);
+        }
       }
     }
 
-    // Assign and return
+    context.abilities = abilities;
     context.contact = contact;
+    context.inventory = inventory;
+    context.playbook = playbook;
+    context.specInventory = specInventory;
   }
 
   /* -------------------------------------------- */
@@ -128,6 +155,7 @@ export class BitdActorSheet extends ActorSheet
       const button = ev.currentTarget;
       const li = button.closest(".item");
       const item = this.actor.items.get(li?.dataset.itemId);
+      console.log(item);
       return item.delete();
     });
 
@@ -161,10 +189,9 @@ export class BitdActorSheet extends ActorSheet
 
   /**
    * Handle creating a new Owned Item for the actor using initial data defined in the HTML dataset
-   * @param {Event} event   The originating click event
+   * @param {Event} the originating click event
    * @private
    */
-
   _onItemCreate(event) {
     event.preventDefault();
     const header = event.currentTarget;
@@ -181,12 +208,12 @@ export class BitdActorSheet extends ActorSheet
     delete itemData.data["type"];
 
     const cls = getDocumentClass("Item");
-    return cls.create(itemData, {parent: this.actor});    
+    return cls.create(itemData, {parent: this.actor});
   }
 
   /**
    * Handle clickable rolls.
-   * @param {Event} event   The originating click event
+   * @param {Event} the originating click event
    * @private
    */
   _onRoll(event) {
@@ -197,6 +224,11 @@ export class BitdActorSheet extends ActorSheet
     createRollDialog(dataset.rollType, this.actor, dataset.rollNote)
   }
 
+  /**
+   * Handle dot counter.
+   * @param {Event} the originating click event
+   * @private
+   */
   async _onDotChange(event) {
     event.preventDefault();
     const element = event.currentTarget;
@@ -231,6 +263,11 @@ export class BitdActorSheet extends ActorSheet
     await this.actor.update({ [key]: value });
   }
 
+  /**
+   * Handle adding traumas.
+   * @param {Event} the originating click event
+   * @private
+   */
   async _onAddTrauma(event) {
     const currentTraumas = (this.actor.system.trauma || []).filter(Boolean);
     const defaultTraumas = [

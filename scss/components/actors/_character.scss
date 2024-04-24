@@ -3,9 +3,6 @@
   .sheet-header {
     flex: 0 auto;
     overflow: hidden;
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 10px;
     margin-bottom: $padding-md;
 
     .img-block {
@@ -111,6 +108,11 @@
 
     .contacts {
       align-self: start;
+
+      .item-name::after {
+        content: ",";
+        font-weight: normal;
+      }
     }
 
     .armor-harm {
@@ -132,10 +134,52 @@
   }
 
   .sheet-body {
-    .playbook {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 10px;
+    .general-container {
+      grid-template-areas:
+      "1 main"
+      "2 main";
+
+      .abilities {
+        grid-area: main;
+
+        .item-header {
+          h2 {
+            display: inline-block;
+          }
+        }
+      }
+
+      .spec-inventory {
+        grid-area: 1;
+      }
+
+      .inventory {
+        grid-area: 2;
+      }
     }
+
+    .notes-container {
+      grid-template-areas:
+      "1 main"
+      "2 main";
+
+      .description {
+        grid-area: main;
+      }
+
+      .expirience {
+        grid-area: 1;
+      }
+
+      .rules {
+        grid-area: 2;
+      }
+    }
+  }
+
+  .character-grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 220px 1fr;
   }
 }

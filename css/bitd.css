@@ -490,15 +490,21 @@ select.clear-select {
   align-items: center;
   margin-bottom: 5px;
 }
+.bitd .items-block .items-list .item .item-summary {
+  flex: auto;
+  margin: 0;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+.bitd .items-block .items-list .item .item-summary p {
+  margin: 0.5em;
+}
 .bitd .items-block .items-list .item .item-description {
   padding-right: 55px;
 }
 .bitd .items-block .items-list .item .item-description .item-name {
   font-weight: bold;
-}
-.bitd .items-block .items-list .item .item-description .item-name::after {
-  content: ",";
-  font-weight: normal;
 }
 .bitd .items-block .items-list .item .item-controls {
   position: absolute;
@@ -556,9 +562,6 @@ select.clear-select {
 .bitd.actor .character .sheet-header {
   flex: 0 auto;
   overflow: hidden;
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 10px;
   margin-bottom: 10px;
 }
 .bitd.actor .character .sheet-header .img-block {
@@ -645,6 +648,10 @@ select.clear-select {
 .bitd.actor .character .sheet-header .contacts {
   align-self: start;
 }
+.bitd.actor .character .sheet-header .contacts .item-name::after {
+  content: ",";
+  font-weight: normal;
+}
 .bitd.actor .character .sheet-header .armor-harm .armor {
   font-weight: bold;
 }
@@ -657,10 +664,37 @@ select.clear-select {
   top: 5px;
   margin: 0;
 }
-.bitd.actor .character .sheet-body .playbook {
+.bitd.actor .character .sheet-body .general-container {
+  grid-template-areas: "1 main" "2 main";
+}
+.bitd.actor .character .sheet-body .general-container .abilities {
+  grid-area: main;
+}
+.bitd.actor .character .sheet-body .general-container .abilities .item-header h2 {
+  display: inline-block;
+}
+.bitd.actor .character .sheet-body .general-container .spec-inventory {
+  grid-area: 1;
+}
+.bitd.actor .character .sheet-body .general-container .inventory {
+  grid-area: 2;
+}
+.bitd.actor .character .sheet-body .notes-container {
+  grid-template-areas: "1 main" "2 main";
+}
+.bitd.actor .character .sheet-body .notes-container .description {
+  grid-area: main;
+}
+.bitd.actor .character .sheet-body .notes-container .expirience {
+  grid-area: 1;
+}
+.bitd.actor .character .sheet-body .notes-container .rules {
+  grid-area: 2;
+}
+.bitd.actor .character .character-grid {
   display: grid;
-  grid-template-columns: 220px 1fr;
   gap: 10px;
+  grid-template-columns: 220px 1fr;
 }
 
 .bitd.item .items-header {

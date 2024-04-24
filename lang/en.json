@@ -15,6 +15,7 @@
       "abilityCharacter": "Cracter's Ability",
       "abilityCrew": "Crew's Ability",
       "contact": "Contact",
+      "tool": "Tool",
       "upgrade": "Upgrade"
     }
   },
@@ -27,7 +28,7 @@
     "Background": "Background",
     "Vice": "Vice",
     "Look": "Look",
-    "Contact": "Contact",
+    "Contacts": "Contacts",
     "ContactType": "Type",
 
     "Stress": "Stress",
@@ -115,14 +116,21 @@
     },
     "Links": "Links",
     "AbilityPlural": "Abilities",
+    "AbilitySpecial": "Special Abilities",
     "PlaybookItems": "Items",
     "Notes": "Notes",
+
+    "Inventory": "Items",
+    "InventorySpecial": "Special Items",
 
     "ItemShow": "Show",
     "ItemAdd": "Add",
     "ItemDelete": "Delete",
     "ItemEdit": "Edit",
     "NewItem": "Item",
+
+    "ItemExists": "Item with the same id already exists in the container.",
+    "ItemNotAdd": "The <b>{item}</b> has not been added to the actor. The item with <b>this ID does not</b> exist.",
 
     "Roll": {
       "Title": "Roll Dice",

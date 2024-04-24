@@ -130,6 +130,7 @@ export class BitdItemSheet extends ItemSheet {
 
   async _onDropItem(event) {
     const itemData = JSON.parse(event.dataTransfer.getData('text/plain'));
+
     if (itemData.type === 'Item') {
       const item = await fromUuid(itemData.uuid);
       let key = "";
@@ -170,7 +171,7 @@ export class BitdItemSheet extends ItemSheet {
           linkArr.push(link);
           await this.item.update({ [path]: linkArr });
         } else {
-          ui.notifications.warn("Item with the same id already exists in the container.");
+          ui.notifications.warn(game.i18n.localize("BITD.ItemExists"));
         }
       }
     }

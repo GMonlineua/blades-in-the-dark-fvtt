@@ -1,6 +1,6 @@
 <form class="{{cssClass}} {{actor.type}}" autocomplete="off">
   {{!-- Sheet Header --}}
-  <header class="sheet-header">
+  <header class="sheet-header character-grid">
     <div class="img-block grid-2col">
       <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
 
@@ -69,7 +69,14 @@
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs flexrow" data-group="primary">
-    <a class="item" data-tab="general">{{localize 'BITD.Playbook'}}</a>
+    <a class="item" data-tab="general">
+      {{#if system.playbook}}
+        {{system.playbook.name}}
+      {{else}}
+        {{localize 'BITD.Playbook'}}
+      {{/if}}
+      {{e}}
+    </a>
     <a class="item" data-tab="notes">{{localize 'BITD.Notes'}}</a>
   </nav>
 
@@ -78,12 +85,25 @@
 
     {{!-- Owned Playbook Tab --}}
     <div class="tab general" data-group="primary" data-tab="general">
-      {{> "systems/bitd/templates/actor/parts/inventory.hbs"}}
-      {{> "systems/bitd/templates/actor/parts/abilities.hbs"}}
+      <div class="general-container character-grid">
+        {{> "systems/bitd/templates/actor/parts/inventory.hbs"}}
+        {{> "systems/bitd/templates/actor/parts/abilities.hbs"}}
+      </div>
     </div>
 
     {{!-- Owned Notes Tab --}}
     <div class="tab notes" data-group="primary" data-tab="notes">
+      <div class="character-grid notes-container">
+        <div class="description">
+          {{editor enrichedDescription target="system.description" button=true owner=owner editable=editable}}
+        </div>
+        <div class="expirience">
+          Clues for expirience
+        </div>
+        <div class="rules">
+          Clues for rules
+        </div>
+      </div>
     </div>
 
   </section>
