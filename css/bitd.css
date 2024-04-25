@@ -728,6 +728,18 @@ select.clear-select {
   height: 100%;
   margin: 0;
 }
+.bitd.item .items-header .header-fields .brief-info {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: "Spectral SC", serif;
+}
+.bitd.item .items-header .header-fields .exp-clues p {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
 .bitd.item .items-header .header-fields .exp-clues input {
   width: 100%;
 }

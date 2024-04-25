@@ -8,7 +8,7 @@ export class BitdItemSheet extends ItemSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["bitd", "sheet", "item"],
-      template: "systems/bitd/templates/item-sheet.hbs",
+      template: "systems/bitd/templates/tool-sheet.hbs",
       width: 550,
       height: 550,
       tabs: [{
@@ -21,20 +21,7 @@ export class BitdItemSheet extends ItemSheet {
 
   /** @override */
   get template() {
-    let path = "systems/bitd/templates/item/item-sheet.hbs";
-
-    switch (this.item.type) {
-      case 'playbook':
-        path = "systems/bitd/templates/item/playbook-sheet.hbs";
-        break;
-      case 'crewType':
-        path = "systems/bitd/templates/item/crew-type-sheet.hbs";
-        break;
-      case 'contact':
-        path = "systems/bitd/templates/item/contact-sheet.hbs";
-    }
-
-    return path;
+    return `systems/bitd/templates/item/${this.item.type}-sheet.hbs`;
   }
 
   /* -------------------------------------------- */

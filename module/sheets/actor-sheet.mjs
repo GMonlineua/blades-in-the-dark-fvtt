@@ -79,7 +79,6 @@ export class BitdActorSheet extends ActorSheet
     const playbookId = this.actor.system.playbook;
 
     for (const i of context.items) {
-      console.log("Item:", i.name, i._id)
       i.img = i.img || DEFAULT_TOKEN;
 
       if (i.type === 'playbook') {
@@ -107,7 +106,6 @@ export class BitdActorSheet extends ActorSheet
     context.inventory = inventory;
     context.playbook = playbook;
     context.specInventory = specInventory;
-    console.log(context)
   }
 
   /* -------------------------------------------- */

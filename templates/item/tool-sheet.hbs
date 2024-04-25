@@ -1,0 +1,31 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="items-header">
+    <img class="item-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+    <div class="header-fields">
+      <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.ItemName'}}"/></h1>
+      <div class="brief-info">
+        <select class="prop clear-select" name="system.type">
+          {{#select system.type}}
+            <option value="common">{{localize 'BITD.Tool.Common'}}</option>
+            <option value="special">{{localize 'BITD.Tool.Special'}}</option>
+          {{/select}}
+        </select>
+        <div class="prop">
+          <label class="prop-label" for="system.loadout">{{localize 'BITD.Tool.Loadout'}}:</label>
+          <input class="prop-input clear-input" type="number" name="system.loadout" value="{{system.loadout}}" data-dtype="Number" placeholder="0"></input>
+        </div>
+        <div class="prop">
+          <label class="prop-label" for="system.used">{{localize 'BITD.Tool.Used'}}</label>
+          <input class="prop-input" type="checkbox" name="system.used" data-dtype="Boolean" {{#if system.used}} checked {{/if}}></input>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <hr>
+    {{editor enrichedDescription target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+  </section>
+
+</form>

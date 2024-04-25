@@ -46,21 +46,21 @@
     {{!-- Owned Notes Tab --}}
     <div class="tab links" data-group="primary" data-tab="links">
       <div class="abilities-block linked-items" data-array="abilities">
-        <h3>{{localize 'BITD.AbilityPlural'}}</h3>
+        <h3>{{localize 'BITD.Ability.Plural'}}</h3>
         {{#each system.abilities}}
           {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
         {{/each}}
       </div>
 
       <div class="contacts-block linked-items" data-array="contacts">
-        <h3>{{localize 'BITD.Contact'}}</h3>
+        <h3>{{localize 'BITD.Contacts'}}</h3>
         {{#each system.contacts}}
           {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
         {{/each}}
       </div>
 
       <div class="inventory-block linked-items" data-array="inventory">
-        <h3>{{item.name}} {{localize 'BITD.PlaybookItems'}}</h3>
+        <h3>{{localize 'BITD.PlaybookItems'}}</h3>
         {{#each system.inventory}}
           {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
         {{/each}}

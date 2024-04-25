@@ -33,11 +33,21 @@
     }
 
     .brief-info {
-
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font-family: $font-secondary;
     }
 
     // For playbook
     .exp-clues {
+      p {
+        margin-top: 10px;
+        margin-bottom: 0;
+      }
+
       input {
         width: 100%;
       }

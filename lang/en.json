@@ -115,13 +115,23 @@
       "Placeholder": "Expirience clue which depend on character's playbook"
     },
     "Links": "Links",
-    "AbilityPlural": "Abilities",
-    "AbilitySpecial": "Special Abilities",
     "PlaybookItems": "Items",
     "Notes": "Notes",
 
+    "Ability": {
+      "Plural": "Abilities",
+      "Special": "Special Abilities",
+      "IsActive": "Active"
+    },
+
     "Inventory": "Items",
     "InventorySpecial": "Special Items",
+    "Tool": {
+      "Common": "Common",
+      "Special": "Special",
+      "Loadout": "Loadout",
+      "Used": "Used"
+    },
 
     "ItemShow": "Show",
     "ItemAdd": "Add",
