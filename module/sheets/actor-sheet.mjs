@@ -76,20 +76,16 @@ export class BitdActorSheet extends ActorSheet
     const inventory = [];
     const specInventory = [];
 
-    const playbookId = this.actor.system.playbook.id;
+    const playbookId = this.actor.system.playbook;
 
-    for (let i of context.items) {
+    for (const i of context.items) {
+      console.log("Item:", i.name, i._id)
       i.img = i.img || DEFAULT_TOKEN;
 
       if (i.type === 'playbook') {
-        if (i._id == playbookId) {
+        if (i._id === playbookId) {
           playbook = i;
-        } else {
-          const item = this.actor.items.get(i._id);
-          item.delete();
         }
-
-        console.log(i);
       }
       else if (i.type === 'abilityCharacter') {
         abilities.push(i);
@@ -111,6 +107,7 @@ export class BitdActorSheet extends ActorSheet
     context.inventory = inventory;
     context.playbook = playbook;
     context.specInventory = specInventory;
+    console.log(context)
   }
 
   /* -------------------------------------------- */
@@ -155,7 +152,6 @@ export class BitdActorSheet extends ActorSheet
       const button = ev.currentTarget;
       const li = button.closest(".item");
       const item = this.actor.items.get(li?.dataset.itemId);
-      console.log(item);
       return item.delete();
     });
 

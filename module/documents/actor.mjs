@@ -35,27 +35,41 @@ export class BitdActor extends Actor {
   _onCreateDescendantDocuments(parent, collection, documents, data, options, userId) {
     super._onCreateDescendantDocuments(parent, collection, documents, data, options, userId);
 
-    for (const i of data) {
-      if (i.type == "playbook" && this.type == "character") {
-        const playbookData = {
-          id: i._id,
-          name: i.name
+    for (const dataItem of data) {
+      if (dataItem.type == "playbook" && this.type == "character") {
+        for (const i of this.items) {
+          if (i.type === 'playbook' && i._id != dataItem._id) {
+            const item2Delete = this.items.get(i._id);
+            console.log("delete: ", i._id)
+            item2Delete.delete();
+          }
         }
-        this.update({ "system.playbook": playbookData });
+
+        this.update({ "system.playbook": dataItem._id });
+
         const forLoad = ["abilities", "contacts", "inventory"]
-        this._loadPlaybookDara(forLoad, i);
+        this._preCreatePlaybook(dataItem, forLoad);
       }
     }
   }
 
-  async _loadPlaybookDara(forLoad, playbook) {
-    for (const i of forLoad) {
-      const idArr = playbook.system[i];
+  async _preCreatePlaybook(playbook, forLoad) {
+    const oldItems = this.items;
+    const newItems = [];
+
+    for (const array of forLoad) {
+      const idArr = playbook.system[array];
       for (const itemData of idArr) {
         const item = await fromUuid(itemData.uuid);
-        const cls = getDocumentClass("Item");
-        cls.create(item, {parent: this})
+        if (!oldItems.find(i => i.name === item.name)) {
+          newItems.push(item);
+        }
       }
+    }
+
+    const cls = getDocumentClass("Item");
+    for (const item of newItems) {
+      cls.create(item, {parent: this})
     }
   }
 }

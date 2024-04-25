@@ -70,12 +70,11 @@
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs flexrow" data-group="primary">
     <a class="item" data-tab="general">
-      {{#if system.playbook}}
-        {{system.playbook.name}}
+      {{#if playbook}}
+        {{playbook.name}}
       {{else}}
         {{localize 'BITD.Playbook'}}
       {{/if}}
-      {{e}}
     </a>
     <a class="item" data-tab="notes">{{localize 'BITD.Notes'}}</a>
   </nav>
