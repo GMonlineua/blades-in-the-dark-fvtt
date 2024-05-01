@@ -110,6 +110,7 @@
     "Playbook": "Playbook",
     "General": "General",
     "Description": "Description",
+    "Summarize": "Describe this playbook briefly",
     "PlaybookExp": {
       "Title": "Expirience Clue",
       "Placeholder": "Expirience clue which depend on character's playbook"
@@ -139,7 +140,8 @@
     "ItemEdit": "Edit",
     "NewItem": "Item",
 
-    "ItemExists": "Item with the same id already exists in the container.",
+    "ItemExistsId": "Item with the same id already exists in the container.",
+    "ItemExistsName": "Item with the same name already exists in the container.",
     "ItemNotAdd": "The <b>{item}</b> has not been added to the actor. The item with <b>this ID does not</b> exist.",
 
     "Roll": {

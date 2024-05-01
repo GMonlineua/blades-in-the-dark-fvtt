@@ -42,27 +42,24 @@
     }
 
     // For playbook
-    .exp-clues {
-      p {
-        margin-top: 10px;
-        margin-bottom: 0;
-      }
-
-      input {
-        width: 100%;
-      }
+    .summarize {
+      margin-top: 10px;
+      margin-bottom: 0;
+      width: 100%;
     }
   }
 }
 
 .sheet-body {
+  // For playbook
   .linked-items {
     margin-bottom: 10px;
   }
 
-  .formula {
-    margin-top: 5px;
-    width: 100%;
+  .exp-clues {
+    input {
+      width: 100%;
+    }
   }
 
   .editor-block {

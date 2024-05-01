@@ -74,11 +74,11 @@ export class BitdItemSheet extends ItemSheet {
     // Resource dots
     html.find(".value-step-block > .value-step").click(this._onDotChange.bind(this));
 
-    // Create linked items by dropping onto item
-    this.form.ondrop = ev => this._onDropItem(ev);
-
     // Delete linked item
     html.find('.link-delete').click(this._onRemoveLink.bind(this));
+
+    // Create linked items by dropping onto item
+    this.form.ondrop = ev => this._onDropItem(ev);
   }
 
   async _onDotChange(event) {
@@ -158,7 +158,7 @@ export class BitdItemSheet extends ItemSheet {
           linkArr.push(link);
           await this.item.update({ [path]: linkArr });
         } else {
-          ui.notifications.warn(game.i18n.localize("BITD.ItemExists"));
+          ui.notifications.warn(game.i18n.localize("BITD.ItemExistsId"));
         }
       }
     }

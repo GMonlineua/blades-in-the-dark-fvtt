@@ -40,7 +40,6 @@ export class BitdActor extends Actor {
         for (const i of this.items) {
           if (i.type === 'playbook' && i._id != dataItem._id) {
             const item2Delete = this.items.get(i._id);
-            console.log("delete: ", i._id)
             item2Delete.delete();
           }
         }
@@ -63,6 +62,7 @@ export class BitdActor extends Actor {
         const item = await fromUuid(itemData.uuid);
         if (!oldItems.find(i => i.name === item.name)) {
           newItems.push(item);
+          ui.notifications.warn(game.i18n.localize("BITD.ItemExistsName"));
         }
       }
     }

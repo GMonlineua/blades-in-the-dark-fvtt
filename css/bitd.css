@@ -736,18 +736,15 @@ select.clear-select {
   justify-content: space-between;
   font-family: "Spectral SC", serif;
 }
-.bitd.item .items-header .header-fields .exp-clues p {
+.bitd.item .items-header .header-fields .summarize {
   margin-top: 10px;
   margin-bottom: 0;
-}
-.bitd.item .items-header .header-fields .exp-clues input {
   width: 100%;
 }
 .bitd.item .sheet-body .linked-items {
   margin-bottom: 10px;
 }
-.bitd.item .sheet-body .formula {
-  margin-top: 5px;
+.bitd.item .sheet-body .exp-clues input {
   width: 100%;
 }
 .bitd.item .sheet-body .editor-block {
