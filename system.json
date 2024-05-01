@@ -29,6 +29,19 @@
       "path": "lang/en.json"
     }
   ],
+  "packs": [
+    {
+      "label": "Items",
+      "type": "Item",
+      "name": "items",
+      "path": "packs/items",
+      "system": "bitd",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
   "gridDistance": 1,
   "gridUnits": "m",
   "url": "https://github.com/GMonlineua/blades-in-the-dark-fvtt",

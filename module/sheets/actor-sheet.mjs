@@ -34,7 +34,6 @@ export class BitdActorSheet extends ActorSheet
     const actorData = this.actor.toObject(false);
 
     // Encrich editor content
-    context.enrichedNotes = await TextEditor.enrichHTML(this.object.system.notes, { async: true })
     context.enrichedDescription = await TextEditor.enrichHTML(this.object.system.description, { async: true })
 
     // Add the actor's data to context.data for easier access, as well as flags.

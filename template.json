@@ -188,7 +188,7 @@
       "description": ""
     },
     "tool": {
-      "type": "common",
+      "type": "special",
       "loadout": 1,
       "used": false,
       "description": ""

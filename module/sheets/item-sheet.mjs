@@ -43,6 +43,9 @@ export class BitdItemSheet extends ItemSheet {
       context.rollData = actor.getRollData();
     }
 
+    // Encrich editor content
+    context.enrichedDescription = await TextEditor.enrichHTML(this.object.system.description, { async: true })
+
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = itemData.system;
     context.flags = itemData.flags;
