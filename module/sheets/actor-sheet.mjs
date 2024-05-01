@@ -152,8 +152,16 @@ export class BitdActorSheet extends ActorSheet
       return item.delete();
     });
 
-    // Rollable abilities.
+    // Roll dice
     html.find('.rollable').click(this._onRoll.bind(this));
+
+    // Show items in chat
+    html.find('.show-item').click(ev => {
+      const button = ev.currentTarget;
+      const itemId = button.closest('.item').dataset.itemId;
+      const item = this.actor.items.get(itemId);
+      if (item) return item.show();
+    });
 
     // Show item summary.
     html.find('.item-name').click(ev => {

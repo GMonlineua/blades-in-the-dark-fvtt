@@ -296,7 +296,6 @@ function IndulgeVice(rollData, sheet) {
 }
 
 async function renderRoll(renderData, speaker) {
-  console.log("Render data:", renderData)
   const chatMessage = await renderTemplate("systems/bitd/templates/apps/rollResult.hbs", renderData);
   const chatData = {
     user: game.user.id,
