@@ -18,9 +18,9 @@
       </div>
 
       <div class="load">
-        <span>{{localize 'BITD.Load.Title'}}: 0/{{system.load}}</span>
-        <select class="clear-select" name="system.load">
-          {{#select system.load}}
+        <span>{{localize 'BITD.Load.Title'}}: {{system.load.value}}/{{system.load.max}}</span>
+        <select class="clear-select" name="system.load.max">
+          {{#select system.load.max}}
             <option value="3">{{localize 'BITD.Load.Light'}}</option>
             <option value="5">{{localize 'BITD.Load.Normal'}}</option>
             <option value="6">{{localize 'BITD.Load.Heavy'}}</option>

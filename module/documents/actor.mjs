@@ -14,10 +14,10 @@ export class BitdActor extends Actor {
     const actorData = this;
     const systemData = actorData.system;
 
-    if (actorData.type == 'character') this._prepareCharacterData(systemData);
+    if (actorData.type == 'character') this._prepareCharacterData(actorData, systemData);
   }
 
-  _prepareCharacterData(systemData) {
+  _prepareCharacterData(actorData, systemData) {
     for (const [attrKey, attribute] of Object.entries(systemData.attributes)) {
       attribute.value = 0;
 
@@ -30,6 +30,15 @@ export class BitdActor extends Actor {
         }
       }
     }
+
+    // Inventory slots
+    let load = 0;
+    for (let i of actorData.items) {
+      if (i.system.loadout && i.system.equipped) {
+        load += i.system.loadout;
+      }
+    }
+    systemData.load.value = load;
   }
 
   _onCreateDescendantDocuments(parent, collection, documents, data, options, userId) {
