@@ -48,6 +48,7 @@
     },
 
     "Load": {
+      "Title": "Load",
       "Light": "Light",
       "Normal": "Normal",
       "Heavy": "Heavy",
@@ -95,17 +96,33 @@
       "Wreck": "When you <strong>Wreck</strong>, you unleash savage force. <em>You might smash down a door or wall with a sledgehammer, or use an explosive to do the same. You might employ chaos or sabotage to create a distraction or overcome an obstacle. You could try to overwhelm an enemy with sheer force in battle (but Skirmishing might be better).</em>"
     },
 
-    "HarmandArmor": "Harm & Armor",
     "Harm": "Harm",
     "HarmEffect": {
       "Light": "Need Help",
       "Medium": "-1 D",
       "Heavy": "Less Effect"
     },
-    "Armor": "Armor",
-    "ArmorUses": "Armor Uses",
-    "ArmorHeavy": "Heavy",
-    "ArmorSpecial": "Special",
+    "Healing": "Healing",
+
+    "Notes": "Notes",
+    "Expirience": {
+      "Title": "Expirience",
+      "HowItWorks": "At the end of each session, for these three items, mark 1 xp (in your playbook or an attribute) or 2 xp if that item occurred multiple times.",
+      "DesperateRoll": "Every time you roll a desperate action, mark xp in that action's attribute.",
+      "Character": "You expressed your beliefs, drives, heritage, or background.",
+      "Vice": "You struggled with issues from your vice or traumas during the session."
+    },
+    "RulesRef": {
+      "Title": "Rules Reference",
+      "GatherInfo": {
+        "Title": "Gather Information",
+        "Tips": "<li>What do they intend to do?</li><li>How can I get them to [X]?</li><li>What should I look out for?</li><li>What's the best way in?</li><li>Where can I hide here?</li><li>How can I find [X]?</li><li>What's really going on here?</li>"
+      },
+      "Teamwork": {
+        "Title": "Teamwork",
+        "Tips": "<span><b>Assist</b> a teammate</span><span><b>Protect</b> a teammate</span><span>Lead a <b>group action</b></span><span><b>Set up</b> a teammate</span>"
+      }
+    },
 
     "Playbook": "Playbook",
     "General": "General",
@@ -117,7 +134,6 @@
     },
     "Links": "Links",
     "PlaybookItems": "Items",
-    "Notes": "Notes",
 
     "Ability": {
       "Plural": "Abilities",
@@ -131,7 +147,8 @@
       "Common": "Common",
       "Special": "Special",
       "Loadout": "Loadout",
-      "Used": "Used"
+      "Equipped": "Equipped",
+      "Broken": "Broken/Lost"
     },
 
     "ItemShow": "Show",

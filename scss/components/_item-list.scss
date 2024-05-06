@@ -7,8 +7,8 @@
 
   .item-create {
     position: absolute;
-    top: 3px;
-    right: 0;
+    top: 2px;
+    right: 5px;
   }
 
   .items-list {
@@ -21,19 +21,6 @@
       align-items: center;
       margin-bottom: 5px;
 
-      // .item-name {
-      //   flex: 2;
-      //   margin: 0;
-      //   overflow: hidden;
-      //   height: 30px;
-      //   padding: 6px 0;
-      //   cursor: pointer;
-      // }
-
-      // .item-name:hover {
-      //   text-shadow: 0 0 8px red;
-      // }
-      //
       .item-summary {
         flex: auto;
         margin: 0;
@@ -49,7 +36,7 @@
       .item-description {
         padding-right: 55px;
 
-        .item-name {
+        .item-name.active {
           font-weight: bold;
         }
       }

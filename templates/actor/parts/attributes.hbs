@@ -1,10 +1,10 @@
 <div class="attribute-block grid-3col">
   {{#each system.attributes as |attribute key|}}
     <div class="attribute {{key}}">
-      <h3 class="attribute-name rollable" data-roll-type="resistance" data-roll-note="{{key}}" data-tooltip="{{getLocalizeDescription 'attribute' key}}">{{getLocalizeName key}}</h3>
+      <h3 class="attribute-name bitd-header rollable" data-roll-type="resistance" data-roll-note="{{key}}" data-tooltip="{{getLocalizeDescription 'attribute' key}}">{{getLocalizeName key}}</h3>
       <div class="value-step-block exp-block" data-value="{{attribute.exp}}" data-key="system.attributes.{{key}}.exp">
         {{#numLoop 6}}
-          <span class="value-step value-tooth" data-index="{{this}}"></span>
+          <span class="value-step value-tooth simple-red-tooth" data-index="{{this}}"></span>
         {{/numLoop}}
       </div>
       {{#each attribute.actions as |action subKey|}}

@@ -32,6 +32,18 @@ select.clear-select {
   }
 }
 
+.bitd-header, .bitd-header>h3 {
+  margin: 0;
+  padding: 0 3px;
+  background-color: $light-black;
+  color: $light-white;
+  text-transform: uppercase;
+  font-size: medium;
+  font-weight: bold;
+  font-family: $font-secondary;
+  border: none;
+}
+
 .bitd.sheet.actor {
   min-width: 550px;
   min-height: 500px;

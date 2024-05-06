@@ -1,12 +1,19 @@
 <div class="spec-inventory items-block">
-  <div class="item-header">
-    <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="tool"><i class="fas fa-plus"></i>{{localize 'BITD.ItemAdd'}}</a>
-    <h2>{{localize 'BITD.InventorySpecial'}}</h2>
+  <div class="item-header bitd-header">
+    <h3>{{localize 'BITD.InventorySpecial'}}</h3>
+    <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="tool"><i class="fas fa-plus"></i></a>
   </div>
   <ol class="items-list">
     {{#each specInventory as |item id|}}
-      <li class="item {{item.type}}" data-item-id="{{item._id}}">
+      <li class="item {{item.type}} {{toolClass item.system}}" data-item-id="{{item._id}}">
         <div class="item-description">
+          {{#if item.system.loadout}}
+            <div class="value-step-block" data-value="{{item.system.equipped}}" data-key="item.system.equipped">
+              {{#numLoop item.system.loadout}}
+                <span class="value-step value-box" data-index="{{this}}"></span>
+              {{/numLoop}}
+            </div>
+          {{/if}}
           <span class="item-name">{{item.name}}</span>
         </div>
 
@@ -25,14 +32,21 @@
 </div>
 
 <div class="inventory items-block">
-  <div class="item-header">
-    <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="tool"><i class="fas fa-plus"></i>{{localize 'BITD.ItemAdd'}}</a>
-    <h2>{{localize 'BITD.Inventory'}}</h2>
+  <div class="item-header bitd-header">
+    <h3>{{localize 'BITD.Inventory'}}</h3>
+    <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="tool"><i class="fas fa-plus"></i></a>
   </div>
   <ol class="items-list">
     {{#each inventory as |item id|}}
-      <li class="item {{item.type}}" data-item-id="{{item._id}}">
+      <li class="item {{item.type}} {{toolClass item.system}}" data-item-id="{{item._id}}">
         <div class="item-description">
+          {{#if item.system.loadout}}
+            <div class="value-step-block" data-value="{{item.system.equipped}}" data-key="item.system.equipped">
+              {{#numLoop item.system.loadout}}
+                <span class="value-step value-box" data-index="{{this}}"></span>
+              {{/numLoop}}
+            </div>
+          {{/if}}
           <span class="item-name">{{item.name}}</span>
         </div>
 

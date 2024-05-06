@@ -39,11 +39,6 @@
         "heavy": ""
       },
       "healing": 0,
-      "usedArmor": {
-        "armor": false,
-        "heavy": false,
-        "special": false
-      },
       "attributes": {
         "insight": {
           "exp": 0,
@@ -190,7 +185,8 @@
     "tool": {
       "type": "special",
       "loadout": 1,
-      "used": false,
+      "equipped": false,
+      "broken": false,
       "description": ""
     },
     "upgrade": {

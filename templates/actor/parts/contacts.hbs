@@ -1,15 +1,14 @@
 <div class="contacts items-block">
-  <div class="item-header">
-    <h3>{{localize 'BITD.Contacts'}}</h3>
-    <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="contact"><i class="fas fa-plus"></i>{{localize 'BITD.ItemAdd'}}</a>
+  <div class="item-header bitd-header">
+    <h3 class="contacts-title">{{localize 'BITD.Contacts'}}</h3>
+    <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="contact"><i class="fas fa-plus"></i></a>
   </div>
   <ol class="items-list">
     {{#each contact as |item id|}}
       <li class="item {{item.type}}" data-item-id="{{item._id}}">
         <div class="item-description">
           <span class="item-name">{{item.name}}</span>
-          <span class="contact-tags">{{item.system.tags}}</span>
-          <span class="contact-type">({{item.system.type}})</span>
+          <span class="contact-type">{{item.system.type}}</span>
         </div>
 
         <div class="item-controls">

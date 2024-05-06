@@ -1,16 +1,16 @@
 <div class="abilities items-block">
-  <div class="item-header">
-    <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="abilityCharacter"><i class="fas fa-plus"></i>{{localize 'BITD.ItemAdd'}}</a>
-    <h2>{{localize 'BITD.Ability.Special'}}</h2>
-    <div class="value-step-block exp-block" data-value="{{system.exp}}" data-key="system.attributes.{{key}}.exp">
+  <div class="item-header bitd-header">
+    <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="abilityCharacter"><i class="fas fa-plus"></i></a>
+    <h3>{{localize 'BITD.Ability.Special'}}</h3>
+    <div class="value-step-block exp-block" data-value="{{system.exp}}" data-key="system.exp">
       {{#numLoop 6}}
-        <span class="value-step value-tooth" data-index="{{this}}"></span>
+        <span class="value-step value-tooth simple-red-tooth" data-index="{{this}}"></span>
       {{/numLoop}}
     </div>
   </div>
   <ol class="items-list">
     {{#each abilities as |item id|}}
-      <li class="item {{item.type}}" data-item-id="{{item._id}}">
+      <li class="item {{item.type}} {{#if item.system.active}}active{{/if}}" data-item-id="{{item._id}}">
         <div class="item-description">
           <span class="item-name">{{item.name}}</span>
         </div>

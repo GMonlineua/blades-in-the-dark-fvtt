@@ -80,12 +80,6 @@
 .roll-message .roll-header .roll-name {
   margin: 0;
   padding: 3px 5px 0 5px;
-  background-color: #222;
-  color: #eee;
-  text-transform: uppercase;
-  font-family: "Spectral SC", serif;
-  font-weight: bold;
-  border: none;
 }
 .roll-message .roll-header .roll-subheader {
   padding: 3px 5px 0 5px;
@@ -360,6 +354,18 @@ select.clear-select {
   width: auto;
 }
 
+.bitd-header, .bitd-header > h3 {
+  margin: 0;
+  padding: 0 3px;
+  background-color: #222;
+  color: #eee;
+  text-transform: uppercase;
+  font-size: medium;
+  font-weight: bold;
+  font-family: "Spectral SC", serif;
+  border: none;
+}
+
 .bitd.sheet.actor {
   min-width: 550px;
   min-height: 500px;
@@ -395,6 +401,10 @@ select.clear-select {
   flex: 1;
   text-transform: lowercase;
 }
+.bitd .brief-info .prop .all-row {
+  flex: 100%;
+  padding: 0;
+}
 .bitd .attribute-block {
   font-family: "Spectral SC", serif;
 }
@@ -425,6 +435,9 @@ select.clear-select {
   color: black;
   cursor: pointer;
 }
+.bitd .bitd-header.rollable:hover, .bitd .bitd-header.rollable:focus {
+  color: white;
+}
 .bitd .value-step-block {
   display: inline-block;
 }
@@ -443,19 +456,34 @@ select.clear-select {
   background: black;
 }
 .bitd .value-step-block .value-tooth {
-  height: 30px;
-  width: 10px;
-  background-image: url("../assets/tooth/tooth-white.svg");
-  background-size: 10px;
+  height: 40px;
+  width: 14px;
+  background-image: url("../assets/tooth/tooth-black-white.svg");
+  background-size: 14px;
   background-position: center;
   background-repeat: no-repeat;
 }
 .bitd .value-step-block .value-tooth.active {
   background-image: url("../assets/tooth/tooth-black.svg");
 }
+.bitd .value-step-block .red-tooth.active {
+  background-image: url("../assets/tooth/tooth-black-red.svg");
+}
+.bitd .value-step-block .simple-tooth, .bitd .value-step-block .simple-red-tooth {
+  height: 30px;
+  width: 9px;
+  background-image: url("../assets/tooth/tooth-white.svg");
+  background-size: 9px;
+}
+.bitd .value-step-block .simple-tooth.active {
+  background-image: url("../assets/tooth/tooth-black.svg");
+}
+.bitd .value-step-block .simple-red-tooth.active {
+  background-image: url("../assets/tooth/tooth-red.svg");
+}
 .bitd .value-step-block .value-box {
-  height: 14px;
-  width: 14px;
+  height: 12px;
+  width: 12px;
   border: 1px solid black;
   border-radius: 0;
   background: white;
@@ -477,8 +505,8 @@ select.clear-select {
 }
 .bitd .items-block .item-create {
   position: absolute;
-  top: 3px;
-  right: 0;
+  top: 2px;
+  right: 5px;
 }
 .bitd .items-block .items-list {
   list-style: none;
@@ -503,7 +531,7 @@ select.clear-select {
 .bitd .items-block .items-list .item .item-description {
   padding-right: 55px;
 }
-.bitd .items-block .items-list .item .item-description .item-name {
+.bitd .items-block .items-list .item .item-description .item-name.active {
   font-weight: bold;
 }
 .bitd .items-block .items-list .item .item-controls {
@@ -596,35 +624,55 @@ select.clear-select {
   background: url("../ui/white-parchment.jpg") repeat;
   border: 1px solid #b5b3a4;
 }
+.bitd.actor .character .sheet-header .img-block .load span {
+  height: 26px;
+}
 .bitd.actor .character .sheet-header .header-fields {
   font-family: "Spectral SC", serif;
 }
+.bitd.actor .character .sheet-header .header-fields .name-alias {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 10px;
+}
 .bitd.actor .character .sheet-header .header-fields .name-alias input {
-  flex: 1;
   text-decoration-line: underline;
   margin: 0;
   padding: 0;
 }
+.bitd.actor .character .sheet-header .header-fields .name-alias .character-name {
+  position: relative;
+}
+.bitd.actor .character .sheet-header .header-fields .name-alias .character-name::after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  width: 2px;
+  height: 40px;
+  background-color: #222;
+}
 .bitd.actor .character .sheet-header .header-fields .name-alias .character-alias {
-  margin: 0;
+  text-align: right;
   border-bottom: none;
 }
+.bitd.actor .character .sheet-header .header-fields .name-alias .character-alias input {
+  width: 200px;
+}
 .bitd.actor .character .sheet-header .header-fields .brief-info {
-  gap: 0;
+  gap: 0 10px;
 }
-.bitd.actor .character .sheet-header .header-fields .stress-trauma {
-  font-size: medium;
-}
-.bitd.actor .character .sheet-header .header-fields .stress-trauma .stress {
-  flex: inherit;
-  margin-right: 10px;
+.bitd.actor .character .sheet-header .header-fields .brief-info .prop-input.all-row {
+  font-size: small;
 }
 .bitd.actor .character .sheet-header .header-fields .attribute-block {
-  font-size: medium;
-  grid-gap: 10px;
+  font-size: small;
 }
 .bitd.actor .character .sheet-header .header-fields .attribute-block .attribute {
   position: relative;
+}
+.bitd.actor .character .sheet-header .header-fields .attribute-block .attribute .attribute-name {
+  margin-bottom: 3px;
+  font-size: medium;
 }
 .bitd.actor .character .sheet-header .header-fields .attribute-block .attribute .exp-block {
   position: absolute;
@@ -633,6 +681,8 @@ select.clear-select {
 }
 .bitd.actor .character .sheet-header .header-fields .attribute-block .attribute .value-dot {
   position: relative;
+  height: 12px;
+  width: 12px;
 }
 .bitd.actor .character .sheet-header .header-fields .attribute-block .attribute .value-dot:first-child {
   margin-right: 3px;
@@ -640,44 +690,127 @@ select.clear-select {
 .bitd.actor .character .sheet-header .header-fields .attribute-block .attribute .value-dot:first-child::after {
   content: "";
   position: absolute;
+  top: -3px;
   right: -5px;
   width: 1px;
-  height: 18px;
-  background-color: #555;
+  height: 20px;
+  background-color: #222;
+}
+.bitd.actor .character .sheet-header .header-fields .stress-trauma {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 5px;
+  border-top: 2px solid black;
+  font-size: medium;
+}
+.bitd.actor .character .sheet-header .header-fields .stress-trauma .stress {
+  display: flex;
+}
+.bitd.actor .character .sheet-header .header-fields .stress-trauma .stress .add-trauma {
+  margin: 0 3px;
+}
+.bitd.actor .character .sheet-header .header-fields .stress-trauma .stress .stress-title:hover, .bitd.actor .character .sheet-header .header-fields .stress-trauma .stress .stress-title:focus {
+  color: white;
+}
+.bitd.actor .character .sheet-header .header-fields .value-step-block {
+  min-width: fit-content;
+}
+.bitd.actor .character .sheet-header .header-fields .trauma-list {
+  padding-left: 3px;
 }
 .bitd.actor .character .sheet-header .contacts {
   align-self: start;
+}
+.bitd.actor .character .sheet-header .contacts .contacts-title {
+  margin-bottom: 3px;
 }
 .bitd.actor .character .sheet-header .contacts .item-name::after {
   content: ",";
   font-weight: normal;
 }
-.bitd.actor .character .sheet-header .armor-harm .armor {
-  font-weight: bold;
-}
-.bitd.actor .character .sheet-header .armor-harm .armor .armor-uses {
-  margin-bottom: 3px;
-  text-align: center;
-}
-.bitd.actor .character .sheet-header .armor-harm .armor .armor-uses input {
+.bitd.actor .character .sheet-header .harm {
   position: relative;
-  top: 5px;
-  margin: 0;
+}
+.bitd.actor .character .sheet-header .harm .healing {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.bitd.actor .character .sheet-header .harm .healing .healing-input {
+  height: 24px;
+  color: white;
+}
+.bitd.actor .character .sheet-header .harm .harm-table {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  border: 1px solid #222;
+  text-align: center;
+  font-family: "Spectral SC", serif;
+}
+.bitd.actor .character .sheet-header .harm .harm-table div {
+  border: 1px solid #222;
+  padding: 0.25em;
+}
+.bitd.actor .character .sheet-header .harm .harm-table .harm-name.full-with {
+  grid-column: 2/4;
+}
+.bitd.actor .character .sheet-header .harm .harm-table .harm-name.full-with input {
+  width: 100%;
+}
+.bitd.actor .character .sheet-header .harm .harm-table .harm-level, .bitd.actor .character .sheet-header .harm .harm-table .harm-effect {
+  background: rgba(0, 0, 0, 0.05);
+}
+.bitd.actor .character .sheet-body {
+  position: relative;
 }
 .bitd.actor .character .sheet-body .general-container {
   grid-template-areas: "1 main" "2 main";
 }
-.bitd.actor .character .sheet-body .general-container .abilities {
-  grid-area: main;
+.bitd.actor .character .sheet-body .general-container .item-header {
+  margin-bottom: 5px;
 }
-.bitd.actor .character .sheet-body .general-container .abilities .item-header h2 {
-  display: inline-block;
+.bitd.actor .character .sheet-body .general-container .item.active .item-name {
+  font-weight: bold;
+}
+.bitd.actor .character .sheet-body .general-container .item.tool .value-box:not(:last-child) {
+  position: relative;
+}
+.bitd.actor .character .sheet-body .general-container .item.tool .value-box:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: -5px;
+  width: 5px;
+  height: 1px;
+  background-color: #222;
+}
+.bitd.actor .character .sheet-body .general-container .item.tool.broken .item-name {
+  text-decoration: line-through;
 }
 .bitd.actor .character .sheet-body .general-container .spec-inventory {
   grid-area: 1;
 }
 .bitd.actor .character .sheet-body .general-container .inventory {
   grid-area: 2;
+}
+.bitd.actor .character .sheet-body .general-container .abilities {
+  position: relative;
+  grid-area: main;
+}
+.bitd.actor .character .sheet-body .general-container .abilities .item-header {
+  display: flex;
+}
+.bitd.actor .character .sheet-body .general-container .abilities .item-header .item-create {
+  position: static;
+  margin: 0 3px;
+}
+.bitd.actor .character .sheet-body .general-container .abilities .item-header .exp-block {
+  position: absolute;
+  right: 5px;
+}
+.bitd.actor .character .sheet-body .general-container .abilities .items-list .item-name {
+  font-family: "Spectral SC", serif;
 }
 .bitd.actor .character .sheet-body .notes-container {
   grid-template-areas: "1 main" "2 main";
@@ -691,9 +824,20 @@ select.clear-select {
 .bitd.actor .character .sheet-body .notes-container .rules {
   grid-area: 2;
 }
+.bitd.actor .character .sheet-body .notes-container .rules ul {
+  margin-top: 0;
+}
+.bitd.actor .character .sheet-body .notes-container .rules h4 {
+  margin: 0;
+  font-family: "Spectral SC", serif;
+  font-weight: bold;
+}
+.bitd.actor .character .sheet-body .notes-container .rules .teamwork .grid-2col {
+  row-gap: 0;
+}
 .bitd.actor .character .character-grid {
   display: grid;
-  gap: 10px;
+  column-gap: 10px;
   grid-template-columns: 220px 1fr;
 }
 

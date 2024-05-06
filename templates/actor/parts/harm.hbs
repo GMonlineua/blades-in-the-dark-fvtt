@@ -1,0 +1,26 @@
+<div class="harm">
+  <div class="bitd-header">
+    <h3>{{localize 'BITD.Harm'}}</h3>
+  </div>
+
+  <div class="healing bitd-header">
+    <h3 class="healing-title">{{localize 'BITD.Healing'}}:</h3>
+    <input class="healing-input clear-input" type="number" name="system.healing" value="{{system.healing}}" data-dtype="Number" placeholder="0"></input>
+  </div>
+
+  <div class="harm-table">
+    <div class="harm-level">3</div>
+    <div class="harm-name full-with"><input class="clear-input" name="system.harm.heavy" type="text" value="{{system.harm.heavy}}"/></div>
+    <div class="harm-effect">{{localize 'BITD.HarmEffect.Light'}}</div>
+
+    <div class="harm-level">2</div>
+    <div class="harm-name"><input class="clear-input" name="system.harm.medium.first" type="text" value="{{system.harm.medium.first}}"/></div>
+    <div class="harm-name"><input class="clear-input" name="system.harm.medium.second" type="text" value="{{system.harm.medium.second}}"/></div>
+    <div class="harm-effect">{{localize 'BITD.HarmEffect.Medium'}}</div>
+
+    <div class="harm-level">1</div>
+    <div class="harm-name"><input class="clear-input" name="system.harm.light.first" type="text" value="{{system.harm.light.first}}"/></div>
+    <div class="harm-name"><input class="clear-input" name="system.harm.light.second" type="text" value="{{system.harm.light.second}}"/></div>
+    <div class="harm-effect">{{localize 'BITD.HarmEffect.Heavy'}}</div>
+  </div>
+</div>

@@ -18,7 +18,7 @@
       </div>
 
       <div class="load">
-        <span>0/{{system.load}}</span>
+        <span>{{localize 'BITD.Load.Title'}}: 0/{{system.load}}</span>
         <select class="clear-select" name="system.load">
           {{#select system.load}}
             <option value="3">{{localize 'BITD.Load.Light'}}</option>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="header-fields">
-      <div class="name-alias">
+      <div class="name-alias grid-2col">
         <h1 class="character-name">
           <input class="clear-input" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.ActorName'}}" data-dtype="String"/>
         </h1>
@@ -45,25 +45,25 @@
           <input class="prop-input clear-input" type="text" name="system.heritage" value="{{system.heritage}}" data-dtype="String" placeholder="{{localize 'BITD.Heritage'}}"/>
         </div>
         <div class="prop">
-          <label class="prop-label" for="system.background">{{localize 'BITD.Background'}}:</label>
-          <input class="prop-input clear-input" type="text" name="system.background" value="{{system.background}}" data-dtype="String" placeholder="{{localize 'BITD.Background'}}"/>
-        </div>
-        <div class="prop">
           <label class="prop-label" for="system.vice">{{localize 'BITD.Vice'}}:</label>
           <input class="prop-input clear-input" type="text" name="system.vice" value="{{system.vice}}" data-dtype="String" placeholder="{{localize 'BITD.Vice'}}"/>
         </div>
         <div class="prop">
+          <label class="prop-label" for="system.background">{{localize 'BITD.Background'}}:</label>
+          <input class="prop-input clear-input all-row" type="text" name="system.background" value="{{system.background}}" data-dtype="String" placeholder="{{localize 'BITD.Background'}}"/>
+        </div>
+        <div class="prop">
           <label class="prop-label" for="system.look">{{localize 'BITD.Look'}}:</label>
-          <input class="prop-input clear-input" type="text" name="system.look" value="{{system.look}}" data-dtype="String" placeholder="{{localize 'BITD.Look'}}"/>
+          <input class="prop-input clear-input all-row" type="text" name="system.look" value="{{system.look}}" data-dtype="String" placeholder="{{localize 'BITD.Look'}}"/>
         </div>
       </div>
 
-      {{> "systems/bitd/templates/actor/parts/stress-trauma.hbs"}}
       {{> "systems/bitd/templates/actor/parts/attributes.hbs"}}
+      {{> "systems/bitd/templates/actor/parts/stress-trauma.hbs"}}
     </div>
 
     {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
-    {{> "systems/bitd/templates/actor/parts/armor-harm.hbs"}}
+    {{> "systems/bitd/templates/actor/parts/harm.hbs"}}
 
   </header>
 
@@ -92,17 +92,7 @@
 
     {{!-- Owned Notes Tab --}}
     <div class="tab notes" data-group="primary" data-tab="notes">
-      <div class="character-grid notes-container">
-        <div class="description">
-          {{editor enrichedDescription target="system.description" button=true owner=owner editable=editable}}
-        </div>
-        <div class="expirience">
-          Clues for expirience
-        </div>
-        <div class="rules">
-          Clues for rules
-        </div>
-      </div>
+      {{> "systems/bitd/templates/actor/parts/character-notes.hbs"}}
     </div>
 
   </section>

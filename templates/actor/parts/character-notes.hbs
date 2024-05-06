@@ -1,0 +1,31 @@
+<div class="character-grid notes-container">
+  <div class="description">
+    <h3 class="bitd-header">{{localize 'BITD.Notes'}}</h3>
+    {{editor enrichedDescription target="system.description" button=true owner=owner editable=editable}}
+  </div>
+  <div class="expirience">
+    <h3 class="bitd-header">{{localize 'BITD.Expirience.Title'}}</h3>
+    {{localize 'BITD.Expirience.HowItWorks'}}
+    <ul class="rule-tips">
+      <li>{{localize 'BITD.Expirience.DesperateRoll'}}</li>
+      <li>{{playbook.exp}}</li>
+      <li>{{localize 'BITD.Expirience.Character'}}</li>
+      <li>{{localize 'BITD.Expirience.Vice'}}</li>
+    </ul>
+  </div>
+  <div class="rules">
+    <h3 class="bitd-header">{{localize 'BITD.RulesRef.Title'}}</h3>
+    <div class="gather-info">
+      <h4>{{localize 'BITD.RulesRef.GatherInfo.Title'}}</h4>
+      <ul class="rule-tips">
+        {{{localize 'BITD.RulesRef.GatherInfo.Tips'}}}
+      </ul>
+    </div>
+    <div class="teamwork">
+      <h4>{{localize 'BITD.RulesRef.Teamwork.Title'}}</h4>
+      <div class="grid-2col">
+        {{{localize 'BITD.RulesRef.Teamwork.Tips'}}}
+      </div>
+    </div>
+  </div>
+</div>

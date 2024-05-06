@@ -17,6 +17,11 @@
       flex: 1;
       text-transform: lowercase;
     }
+
+    .all-row {
+      flex: 100%;
+      padding: 0;
+    }
   }
 }
 
@@ -64,6 +69,13 @@ h1,h2,h3 {
   }
 }
 
+.bitd-header.rollable {
+  &:hover,
+  &:focus {
+    color: white;
+  }
+}
+
 .value-step-block {
   display: inline-block;
 
@@ -85,10 +97,10 @@ h1,h2,h3 {
   }
 
   .value-tooth {
-    height: 30px;
-    width: 10px;
-    background-image: url("../assets/tooth/tooth-white.svg");
-    background-size: 10px;
+    height: 40px;
+    width: 14px;
+    background-image: url("../assets/tooth/tooth-black-white.svg");
+    background-size: 14px;
     background-position: center;
     background-repeat: no-repeat;
   }
@@ -97,9 +109,28 @@ h1,h2,h3 {
     background-image: url("../assets/tooth/tooth-black.svg");
   }
 
+  .red-tooth.active {
+    background-image: url("../assets/tooth/tooth-black-red.svg");
+  }
+
+  .simple-tooth, .simple-red-tooth {
+    height: 30px;
+    width: 9px;
+    background-image: url("../assets/tooth/tooth-white.svg");
+    background-size: 9px;
+  }
+
+  .simple-tooth.active {
+    background-image: url("../assets/tooth/tooth-black.svg");
+  }
+
+  .simple-red-tooth.active {
+    background-image: url("../assets/tooth/tooth-red.svg");
+  }
+
   .value-box {
-    height: 14px;
-    width: 14px;
+    height: 12px;
+    width: 12px;
     border: 1px solid black;
     border-radius: 0;
     background: white;

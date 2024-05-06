@@ -41,44 +41,69 @@
           border: $border;
         }
       }
+
+      .load {
+        span {
+          height: 26px;
+        }
+      }
     }
 
     .header-fields {
       font-family: $font-secondary;
 
       .name-alias {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        gap: 10px;
+
         input {
-          flex: 1;
           text-decoration-line: underline;
           margin: 0;
           padding: 0;
         }
 
+        .character-name {
+          position: relative;
+        }
+
+        .character-name::after {
+          content: "";
+          position: absolute;
+          right: -5px;
+          width: 2px;
+          height: 40px;
+          background-color: $light-black;
+        }
+
         .character-alias {
-          margin: 0;
+          text-align: right;
           border-bottom: none;
+
+          input {
+            width: 200px;
+          }
         }
       }
 
       .brief-info {
-        gap: 0;
-      }
+        gap: 0 10px;
 
-      .stress-trauma {
-        font-size: medium;
-
-        .stress {
-          flex: inherit;
-          margin-right: 10px;
+        .prop-input.all-row {
+          font-size: small;
         }
       }
 
       .attribute-block {
-        font-size: medium;
-        grid-gap: 10px;
+        font-size: small;
 
         .attribute {
           position: relative;
+
+          .attribute-name {
+            margin-bottom: 3px;
+            font-size: medium;
+          }
 
           .exp-block {
             position: absolute;
@@ -88,6 +113,8 @@
 
           .value-dot {
             position: relative;
+            height: 12px;
+            width: 12px;
           }
 
           .value-dot:first-child {
@@ -97,17 +124,53 @@
           .value-dot:first-child::after {
             content: "";
             position: absolute;
+            top: -3px;
             right: -5px;
             width: 1px;
-            height: 18px;
-            background-color: #555;
+            height: 20px;
+            background-color: $light-black;
           }
         }
+      }
+
+      .stress-trauma {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 5px;
+        border-top: 2px solid black;
+        font-size: medium;
+
+        .stress {
+          display: flex;
+
+          .add-trauma {
+            margin: 0 3px;
+          }
+
+          .stress-title {
+            &:hover,
+            &:focus {
+              color: white;
+            }
+          }
+        }
+      }
+
+      .value-step-block {
+        min-width: fit-content;
+      }
+
+      .trauma-list {
+        padding-left: 3px;
       }
     }
 
     .contacts {
       align-self: start;
+
+      .contacts-title {
+        margin-bottom: 3px;
+      }
 
       .item-name::after {
         content: ",";
@@ -115,37 +178,85 @@
       }
     }
 
-    .armor-harm {
-      .armor {
-        font-weight: bold;
+    .harm {
+      position: relative;
 
-        .armor-uses {
-          margin-bottom: 3px;
-          text-align: center;
+      .healing {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        .healing-input {
+          height: 24px;
+          color: white;
+        }
+      }
+
+      .harm-table {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        border: 1px solid $light-black;
+        text-align: center;
+        font-family: $font-secondary;
+
+        div {
+          border: 1px solid $light-black;
+          padding: 0.25em;
+        }
+
+        .harm-name.full-with {
+          grid-column: 2 / 4;
 
           input {
-            position: relative;
-            top: 5px;
-            margin: 0;
+            width: 100%;
           }
+        }
+
+        .harm-level, .harm-effect {
+          background: rgba(0, 0, 0, 0.05);
         }
       }
     }
   }
 
   .sheet-body {
+    position: relative;
+
     .general-container {
       grid-template-areas:
       "1 main"
       "2 main";
 
-      .abilities {
-        grid-area: main;
+      .item-header {
+        margin-bottom: 5px;
+      }
 
-        .item-header {
-          h2 {
-            display: inline-block;
-          }
+      .item.active {
+        .item-name {
+          font-weight: bold;
+        }
+      }
+
+      .item.tool {
+        .value-box:not(:last-child) {
+          position: relative;
+        }
+
+        .value-box:not(:last-child)::after {
+          content: "";
+          position: absolute;
+          top: 5px;
+          right: -5px;
+          width: 5px;
+          height: 1px;
+          background-color: $light-black;
+        }
+      }
+
+      .item.tool.broken {
+        .item-name {
+          text-decoration: line-through;
         }
       }
 
@@ -155,6 +266,31 @@
 
       .inventory {
         grid-area: 2;
+      }
+
+      .abilities {
+        position: relative;
+        grid-area: main;
+
+        .item-header {
+          display: flex;
+
+          .item-create {
+            position: static;
+            margin: 0 3px;
+          }
+
+          .exp-block {
+            position: absolute;
+            right: 5px;
+          }
+        }
+
+        .items-list {
+          .item-name {
+            font-family: $font-secondary;
+          }
+        }
       }
     }
 
@@ -173,13 +309,29 @@
 
       .rules {
         grid-area: 2;
+
+        ul {
+          margin-top: 0;
+        }
+
+        h4 {
+          margin: 0;
+          font-family: $font-secondary;
+          font-weight: bold;
+        }
+
+        .teamwork {
+          .grid-2col {
+            row-gap: 0;
+          }
+        }
       }
     }
   }
 
   .character-grid {
     display: grid;
-    gap: 10px;
+    column-gap: 10px;
     grid-template-columns: 220px 1fr;
   }
 }

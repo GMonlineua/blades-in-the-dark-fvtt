@@ -73,13 +73,17 @@ export const registerHandlebarsHelpers = function() {
     return localizeName;
   });
 
-  Handlebars.registerHelper("testCon", function (i, options) {
-    console.log(i, system);
+  Handlebars.registerHelper("toolClass", function (item) {
+    let classes;
 
-    return options.fn(i);
-  });
+    if (item.equipped && item.broken) {
+      classes = "active broken";
+    } else if (item.equipped) {
+      classes = "active";
+    } else if (item.broken) {
+      classes = "broken";
+    }
 
-  Handlebars.registerHelper("testValue", function (i) {
-    console.log(i);
+    return classes
   });
 }
