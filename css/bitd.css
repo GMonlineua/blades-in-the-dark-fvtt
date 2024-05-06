@@ -773,10 +773,20 @@ select.clear-select {
 .bitd.actor .character .sheet-body .general-container .item.active .item-name {
   font-weight: bold;
 }
-.bitd.actor .character .sheet-body .general-container .item.tool .value-box:not(:last-child) {
-  position: relative;
+.bitd.actor .character .sheet-body .general-container .item-checkbox {
+  display: inline-block;
 }
-.bitd.actor .character .sheet-body .general-container .item.tool .value-box:not(:last-child)::after {
+.bitd.actor .character .sheet-body .general-container .item-checkbox .loadout-box {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  border: 1px solid black;
+  border-radius: 0;
+  background: white;
+}
+.bitd.actor .character .sheet-body .general-container .item-checkbox .loadout-box:not(:last-child)::after {
   content: "";
   position: absolute;
   top: 5px;
@@ -784,6 +794,9 @@ select.clear-select {
   width: 5px;
   height: 1px;
   background-color: #222;
+}
+.bitd.actor .character .sheet-body .general-container .item-checkbox.active .loadout-box {
+  background: black;
 }
 .bitd.actor .character .sheet-body .general-container .item.tool.broken .item-name {
   text-decoration: line-through;
@@ -809,8 +822,15 @@ select.clear-select {
   position: absolute;
   right: 5px;
 }
+.bitd.actor .character .sheet-body .general-container .abilities .items-list .item-checkbox {
+  position: relative;
+  top: 4px;
+  width: 15px;
+  margin: 0;
+}
 .bitd.actor .character .sheet-body .general-container .abilities .items-list .item-name {
   font-family: "Spectral SC", serif;
+  cursor: pointer;
 }
 .bitd.actor .character .sheet-body .notes-container {
   grid-template-areas: "1 main" "2 main";

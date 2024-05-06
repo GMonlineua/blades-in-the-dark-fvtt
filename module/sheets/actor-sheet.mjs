@@ -131,6 +131,9 @@ export class BitdActorSheet extends ActorSheet
     // Resource dots
     html.find(".value-step-block > .value-step").click(this._onDotChange.bind(this));
 
+    // Item checkbox in Actor Sheet
+    html.find('.item-checkbox').click(this._onItemCheckbox.bind(this));
+
     // Add Trauma
     html.find('.add-trauma').click(this._onAddTrauma.bind(this));
 
@@ -262,6 +265,19 @@ export class BitdActorSheet extends ActorSheet
     }
 
     await this.actor.update({ [key]: value });
+  }
+
+  async _onItemCheckbox(event) {
+    const element = event.currentTarget;
+    const dataset = element.dataset;
+    const key = dataset.key;
+    const updateKey = "system." + key;
+
+    const parent = $(event.currentTarget).parents(".item");
+    const item = this.actor.items.get(parent.data("itemId"));
+
+    const checked = !item.system[key];
+    await item.update({ [updateKey]: checked });
   }
 
   /**

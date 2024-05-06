@@ -238,12 +238,21 @@
         }
       }
 
-      .item.tool {
-        .value-box:not(:last-child) {
+      .item-checkbox {
+        display: inline-block;
+
+        .loadout-box {
           position: relative;
+          display: inline-block;
+          cursor: pointer;
+          height: 12px;
+          width: 12px;
+          border: 1px solid black;
+          border-radius: 0;
+          background: white;
         }
 
-        .value-box:not(:last-child)::after {
+        .loadout-box:not(:last-child)::after {
           content: "";
           position: absolute;
           top: 5px;
@@ -251,6 +260,12 @@
           width: 5px;
           height: 1px;
           background-color: $light-black;
+        }
+      }
+
+      .item-checkbox.active {
+        .loadout-box {
+          background: black;
         }
       }
 
@@ -287,8 +302,16 @@
         }
 
         .items-list {
+          .item-checkbox {
+            position: relative;
+            top: 4px;
+            width: 15px;
+            margin: 0;
+          }
+
           .item-name {
             font-family: $font-secondary;
+            cursor: pointer;
           }
         }
       }
