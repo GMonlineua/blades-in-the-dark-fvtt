@@ -47,48 +47,33 @@ export class BitdCrewSheet extends BitdActorSheet
   _prepareItems(context) {
     let playbook;
     const abilities = [];
-    const contact = [];
-    const inventory = [];
-    const specInventory = [];
+    const contacts = [];
+    const upgrades = [];
 
     const playbookId = this.actor.system.playbook;
 
     for (const i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
 
-      if (i.type === 'playbook') {
+      if (i.type === 'crewType') {
         if (i._id === playbookId) {
           playbook = i;
         }
       }
-      else if (i.type === 'abilityCharacter') {
+      else if (i.type === 'abilityCrew') {
         abilities.push(i);
       }
       else if (i.type === 'contact') {
-        contact.push(i);
+        contacts.push(i);
       }
-      else if (i.type === 'tool') {
-        if (i.system.type === 'common') {
-          inventory.push(i);
-        } else {
-          specInventory.push(i);
-        }
+      else if (i.type === 'upgrade') {
+        upgrades.push(i);
       }
     }
 
     context.abilities = abilities;
-    context.contact = contact;
-    context.inventory = inventory;
+    context.contacts = contacts;
     context.playbook = playbook;
-    context.specInventory = specInventory;
+    context.upgrades = upgrades;
   }
-
-  /* -------------------------------------------- */
-
-  /** @override */
-  activateListeners(html) {
-    super.activateListeners(html);
-  }
-
-  /* -------------------------------------------- */
 }

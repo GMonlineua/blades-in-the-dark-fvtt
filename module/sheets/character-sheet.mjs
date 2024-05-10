@@ -47,7 +47,7 @@ export class BitdCharacterSheet extends BitdActorSheet
   _prepareItems(context) {
     let playbook;
     const abilities = [];
-    const contact = [];
+    const contacts = [];
     const inventory = [];
     const specInventory = [];
 
@@ -65,7 +65,7 @@ export class BitdCharacterSheet extends BitdActorSheet
         abilities.push(i);
       }
       else if (i.type === 'contact') {
-        contact.push(i);
+        contacts.push(i);
       }
       else if (i.type === 'tool') {
         if (i.system.type === 'common') {
@@ -77,7 +77,7 @@ export class BitdCharacterSheet extends BitdActorSheet
     }
 
     context.abilities = abilities;
-    context.contact = contact;
+    context.contacts = contacts;
     context.inventory = inventory;
     context.playbook = playbook;
     context.specInventory = specInventory;
