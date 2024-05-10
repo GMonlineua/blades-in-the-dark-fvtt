@@ -1,6 +1,6 @@
 <form class="{{cssClass}} {{actor.type}}" autocomplete="off">
   {{!-- Sheet Header --}}
-  <header class="sheet-header character-grid">
+  <header class="sheet-header actor-grid">
     <div class="img-block grid-2col">
       <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
 
@@ -84,7 +84,7 @@
 
     {{!-- Owned Playbook Tab --}}
     <div class="tab general" data-group="primary" data-tab="general">
-      <div class="general-container character-grid">
+      <div class="general-container actor-grid">
         <div class="spec-inventory items-block">
           <div class="item-header bitd-header">
             <h3>{{localize 'BITD.InventorySpecial'}}</h3>

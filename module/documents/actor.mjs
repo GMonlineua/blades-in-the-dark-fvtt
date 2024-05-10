@@ -15,6 +15,7 @@ export class BitdActor extends Actor {
     const systemData = actorData.system;
 
     if (actorData.type == 'character') this._prepareCharacterData(actorData, systemData);
+    if (actorData.type == 'crew') this._prepareCrewData(systemData);
   }
 
   _prepareCharacterData(actorData, systemData) {
@@ -39,6 +40,13 @@ export class BitdActor extends Actor {
       }
     }
     systemData.load.value = load;
+  }
+
+  _prepareCrewData(systemData) {
+    if (0 <= !systemData.turf < 9) {
+      systemData.turf = 0;
+    }
+    systemData.rep.max = 9 - systemData.turf;
   }
 
   _onCreateDescendantDocuments(parent, collection, documents, data, options, userId) {

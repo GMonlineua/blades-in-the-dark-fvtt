@@ -1,3 +1,11 @@
+.character, .crew {
+  .actor-grid {
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: 220px 1fr;
+  }
+}
+
 .brief-info {
   font-size: medium;
 

@@ -98,12 +98,15 @@
     "crew": {
       "templates": ["base", "players", "group"],
       "lair": "",
-      "tier": 0,
-      "hold": "strong",
-      "reputation": 0,
-      "reputationType": "",
+      "repType": "",
+      "heat": 0,
       "wanted": 0,
-      "heat": 0
+      "hold": "strong",
+      "tier": 0,
+      "rep": {
+        "value": 0
+      },
+      "turf": 0
     },
     "cohort": {
       "templates": ["base"],

@@ -1,29 +1,14 @@
 .sheet-header {
-  .img-block {
-    font-family: $font-secondary;
-
-    .money {
-      input {
-        margin-left: 3px;
-        padding: 0;
-        min-width: 10px;
-        max-width: 15px;
-      }
-
-      .coins > input {
-        max-width: 10px;
-      }
+  .money, .storage {
+    input {
+      margin-left: 3px;
+      padding: 0;
+      min-width: 10px;
+      max-width: 15px;
     }
 
-    .load {
-      select {
-        width: 100%;
-      }
-      span {
-        display: block;
-        width: 100%;
-        text-align: center;
-      }
+    .coins > input {
+      max-width: 10px;
     }
   }
 }

@@ -42,6 +42,10 @@ select.clear-select {
   font-weight: bold;
   font-family: $font-secondary;
   border: none;
+
+  input {
+    color: $light-white;
+  }
 }
 
 .bitd.sheet.actor {

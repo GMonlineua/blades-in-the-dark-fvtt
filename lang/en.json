@@ -22,6 +22,7 @@
   "BITD": {
     "ActorName": "Name",
     "CharacterAlias": "Alias",
+    "CrewName": "Name",
     "ItemName": "Name",
 
     "Heritage": "Heritage",
@@ -66,7 +67,6 @@
       "Prowess": "Consequences from physical strain or injury.",
       "Resolve": "Consequences from mental strain or willpower."
     },
-
 
     "Action": "Action",
     "Hunt": "Hunt",
@@ -149,6 +149,30 @@
       "Loadout": "Loadout",
       "Equipped": "Equipped",
       "Broken": "Broken/Lost"
+    },
+
+    "CrewType": "Crew Type",
+    "Lair": "Lair",
+    "HuntingGround": {
+      "Title": "Hunting Grounds",
+      "Tips": "<li>Get +1d to any gather information rolls when prepare to operation of your prefer type.</li><li>Free additional downtime activity to contribute to that operation.</li>"
+    },
+    "Tier": "Tier",
+    "Hold": {
+      "Title": "Hold",
+      "Weak": "Weak",
+      "Strong": "Strong"
+    },
+    "Rep": "Rep",
+    "RepType": "Reputation",
+    "RepDescription": "What initial reputation crew have?",
+    "Vaults": "Vaults",
+    "Heat": "Heat",
+    "WantedLvl": "Wanted Level",
+    "Turf": "Turf",
+    "CrewExp": {
+      "Title": "Xp",
+      "Tips": "<li>Contend with challenges above your current station.</li><li>Bolster your crew's reputation or develop a new one.</li><li>Express the goals, drives, inner conflict, or essential nature of the crew.</li>"
     },
 
     "ItemShow": "Show",

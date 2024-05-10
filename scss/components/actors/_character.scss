@@ -6,8 +6,8 @@
     margin-bottom: $padding-md;
 
     .img-block {
-      position: relative;
       padding-right: $padding-md;
+      font-family: $font-secondary;
 
       .profile-img {
         grid-column: 1 / 3;
@@ -16,35 +16,16 @@
         border: none;
       }
 
-      .money {
-        position: relative;
-
-        .money-icon img {
-          border: none;
-          width: 30px;
-          height: 30px;
-        }
-
-        .money-numbers {
-          position: absolute;
-          display: inline-block;
-          top: 7px;
-          left: 30px;
-        }
-
-        .money-block {
-          position: absolute;
-          z-index: 100;
-          width: 185px;
-          padding: 5px;
-          background: $background-paper;
-          border: $border;
-        }
-      }
-
       .load {
+        select {
+          width: 100%;
+        }
         span {
+          display: block;
           height: 26px;
+          width: 100%;
+          padding-top: 3px;
+          text-align: center;
         }
       }
     }
@@ -189,7 +170,6 @@
 
         .healing-input {
           height: 24px;
-          color: white;
         }
       }
 
@@ -350,11 +330,5 @@
         }
       }
     }
-  }
-
-  .character-grid {
-    display: grid;
-    column-gap: 10px;
-    grid-template-columns: 220px 1fr;
   }
 }
