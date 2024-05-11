@@ -212,12 +212,6 @@
         margin-bottom: 5px;
       }
 
-      .item.active {
-        .item-name {
-          font-weight: bold;
-        }
-      }
-
       .item-checkbox {
         display: inline-block;
 
@@ -267,32 +261,9 @@
         position: relative;
         grid-area: main;
 
-        .item-header {
-          display: flex;
-
-          .item-create {
-            position: static;
-            margin: 0 3px;
-          }
-
-          .exp-block {
-            position: absolute;
-            right: 5px;
-          }
-        }
-
-        .items-list {
-          .item-checkbox {
-            position: relative;
-            top: 4px;
-            width: 15px;
-            margin: 0;
-          }
-
-          .item-name {
-            font-family: $font-secondary;
-            cursor: pointer;
-          }
+        .exp-block {
+          position: absolute;
+          right: 5px;
         }
       }
     }

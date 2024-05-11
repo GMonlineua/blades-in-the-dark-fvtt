@@ -109,7 +109,18 @@
           </ol>
         </div>
 
-        {{> "systems/bitd/templates/actor/parts/abilities.hbs"}}
+        <div class="abilities items-block">
+          <div class="item-header bitd-header">
+            <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="abilityCharacter"><i class="fas fa-plus"></i></a>
+            <h3>{{localize 'BITD.Ability.Special'}}</h3>
+            <div class="value-step-block exp-block" data-value="{{system.exp}}" data-key="system.exp">
+              {{#numLoop 6}}
+                <span class="value-step value-tooth simple-red-tooth" data-index="{{this}}"></span>
+              {{/numLoop}}
+            </div>
+          </div>
+          {{> "systems/bitd/templates/actor/parts/abilities.hbs"}}
+        </div>
       </div>
     </div>
 

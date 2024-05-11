@@ -468,6 +468,13 @@ h3.bitd-header {
 .bitd .value-step-block .simple-red-tooth.active {
   background-image: url("../assets/tooth/tooth-red.svg");
 }
+.bitd .value-step-block .small-tooth {
+  height: 20px;
+  background-image: url("../assets/tooth/tooth-small-grey.svg");
+}
+.bitd .value-step-block .small-tooth.active {
+  background-image: url("../assets/tooth/tooth-small-black.svg");
+}
 .bitd .value-step-block .value-box {
   height: 12px;
   width: 12px;
@@ -558,6 +565,26 @@ h3.bitd-header {
   display: grid;
   column-gap: 10px;
   grid-template-columns: 220px 1fr;
+}
+.bitd.actor .character .sheet-body .abilities .item-header, .bitd.actor .character .sheet-body .upgrades .item-header, .bitd.actor .crew .sheet-body .abilities .item-header, .bitd.actor .crew .sheet-body .upgrades .item-header {
+  display: flex;
+}
+.bitd.actor .character .sheet-body .abilities .item-header .item-create, .bitd.actor .character .sheet-body .upgrades .item-header .item-create, .bitd.actor .crew .sheet-body .abilities .item-header .item-create, .bitd.actor .crew .sheet-body .upgrades .item-header .item-create {
+  position: static;
+  margin: 0 3px;
+}
+.bitd.actor .character .sheet-body .abilities .items-list .item-checkbox, .bitd.actor .character .sheet-body .upgrades .items-list .item-checkbox, .bitd.actor .crew .sheet-body .abilities .items-list .item-checkbox, .bitd.actor .crew .sheet-body .upgrades .items-list .item-checkbox {
+  position: relative;
+  top: 4px;
+  width: 15px;
+  margin: 0;
+}
+.bitd.actor .character .sheet-body .abilities .items-list .item-name, .bitd.actor .character .sheet-body .upgrades .items-list .item-name, .bitd.actor .crew .sheet-body .abilities .items-list .item-name, .bitd.actor .crew .sheet-body .upgrades .items-list .item-name {
+  font-family: "Spectral SC", serif;
+  cursor: pointer;
+}
+.bitd.actor .character .sheet-body .item.active .item-name, .bitd.actor .crew .sheet-body .item.active .item-name {
+  font-weight: bold;
 }
 .bitd.actor .sheet-header .money input, .bitd.actor .sheet-header .storage input {
   margin-left: 3px;
@@ -746,9 +773,6 @@ h3.bitd-header {
 .bitd.actor .character .sheet-body .general-container .item-header {
   margin-bottom: 5px;
 }
-.bitd.actor .character .sheet-body .general-container .item.active .item-name {
-  font-weight: bold;
-}
 .bitd.actor .character .sheet-body .general-container .item-checkbox {
   display: inline-block;
 }
@@ -787,26 +811,9 @@ h3.bitd-header {
   position: relative;
   grid-area: main;
 }
-.bitd.actor .character .sheet-body .general-container .abilities .item-header {
-  display: flex;
-}
-.bitd.actor .character .sheet-body .general-container .abilities .item-header .item-create {
-  position: static;
-  margin: 0 3px;
-}
-.bitd.actor .character .sheet-body .general-container .abilities .item-header .exp-block {
+.bitd.actor .character .sheet-body .general-container .abilities .exp-block {
   position: absolute;
   right: 5px;
-}
-.bitd.actor .character .sheet-body .general-container .abilities .items-list .item-checkbox {
-  position: relative;
-  top: 4px;
-  width: 15px;
-  margin: 0;
-}
-.bitd.actor .character .sheet-body .general-container .abilities .items-list .item-name {
-  font-family: "Spectral SC", serif;
-  cursor: pointer;
 }
 .bitd.actor .character .sheet-body .notes-container {
   grid-template-areas: "1 main" "2 main";
@@ -868,6 +875,9 @@ h3.bitd-header {
   justify-content: space-between;
   border-top: 2px solid black;
 }
+.bitd.actor .crew .sheet-header .header-fields .heat-block .wanted-lvl {
+  font-size: small;
+}
 .bitd.actor .crew .sheet-header .header-fields .heat-block .flexrow {
   align-items: flex-start;
 }
@@ -898,6 +908,9 @@ h3.bitd-header {
 }
 .bitd.actor .crew .sheet-header .header-fields .exp-block .exp-tips {
   font-size: small;
+}
+.bitd.actor .crew .sheet-header h3.bitd-header {
+  padding-top: 0;
 }
 
 .bitd.item .items-header {

@@ -102,6 +102,15 @@
     background-image: url("../assets/tooth/tooth-red.svg");
   }
 
+  .small-tooth {
+    height: 20px;
+    background-image: url("../assets/tooth/tooth-small-grey.svg");
+  }
+
+  .small-tooth.active {
+    background-image: url("../assets/tooth/tooth-small-black.svg");
+  }
+
   .value-box {
     height: 12px;
     width: 12px;

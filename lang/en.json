@@ -176,6 +176,12 @@
       "Tips": "<li>Contend with challenges above your current station.</li><li>Bolster your crew's reputation or develop a new one.</li><li>Express the goals, drives, inner conflict, or essential nature of the crew.</li>"
     },
 
+    "Upgrade": {
+      "Plural": "Upgrades",
+      "IsActive": "Active",
+      "Price": "Price"
+    },
+
     "ItemShow": "Show",
     "ItemAdd": "Add",
     "ItemDelete": "Delete",

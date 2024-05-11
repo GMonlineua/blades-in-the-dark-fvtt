@@ -45,7 +45,7 @@
         </div>
         <div class="resource vaults">
           <label>{{localize 'BITD.Vaults'}}:</label>
-          <input class="clear-input" type="number" name="system.vaults" value="{{system.vaults}}" data-dtype="Number"/>
+          <input class="clear-input" type="number" name="system.vault" value="{{system.vault}}" data-dtype="Number"/>
           <span>/12</span>
         </div>
       </div>
@@ -63,7 +63,7 @@
           <h3 class="bitd-header">{{localize 'BITD.WantedLvl'}}</h3>
           <div class="value-step-block" data-value="{{system.wanted}}" data-key="system.wanted">
             {{#numLoop 4}}
-              <span class="value-step value-tooth red-tooth" data-index="{{this}}"></span>
+              <span class="value-step value-tooth small-tooth" data-index="{{this}}"></span>
             {{/numLoop}}
           </div>
         </div>
@@ -122,6 +122,7 @@
     <a class="item" data-tab="general">
       General
     </a>
+    <a class="item" data-tab="abilities">{{localize 'BITD.Ability.Plural'}}</a>
     <a class="item" data-tab="notes">{{localize 'BITD.Notes'}}</a>
   </nav>
 
@@ -130,12 +131,29 @@
 
     {{!-- Owned Playbook Tab --}}
     <div class="tab general" data-group="primary" data-tab="general">
+      General
+    </div>
 
+    {{!-- Owned Playbook Tab --}}
+    <div class="tab abilities-tab" data-group="primary" data-tab="abilities">
+      <div class="abilities-container grid-2col">
+        <div class="abilities items-block">
+          <div class="item-header bitd-header">
+            <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="abilityCrew"><i class="fas fa-plus"></i></a>
+            <h3>{{localize 'BITD.Ability.Plural'}}</h3>
+          </div>
+          {{> "systems/bitd/templates/actor/parts/abilities.hbs"}}
+        </div>
+        {{> "systems/bitd/templates/actor/parts/upgrades.hbs"}}
+      </div>
     </div>
 
     {{!-- Owned Notes Tab --}}
     <div class="tab notes" data-group="primary" data-tab="notes">
-
+      <div class="description">
+        <h3 class="bitd-header">{{localize 'BITD.Notes'}}</h3>
+        {{editor enrichedDescription target="system.description" button=true owner=owner editable=editable}}
+      </div>
     </div>
 
   </section>

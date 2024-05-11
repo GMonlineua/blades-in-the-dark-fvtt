@@ -10,6 +10,7 @@
     "systems/bitd/templates/actor/parts/inventory.hbs",
     "systems/bitd/templates/actor/parts/character-notes.hbs",
     "systems/bitd/templates/actor/parts/stress-trauma.hbs",
+    "systems/bitd/templates/actor/parts/upgrades.hbs",
 
     "systems/bitd/templates/item/parts/linked-item.hbs",
   ]);

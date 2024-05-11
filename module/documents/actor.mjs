@@ -43,10 +43,12 @@ export class BitdActor extends Actor {
   }
 
   _prepareCrewData(systemData) {
-    if (0 <= !systemData.turf < 9) {
+    if (systemData.turf < 0) {
       systemData.turf = 0;
+    } else if (systemData.turf > 6) {
+      systemData.turf = 6;
     }
-    systemData.rep.max = 9 - systemData.turf;
+    systemData.rep.max = 12 - systemData.turf;
   }
 
   _onCreateDescendantDocuments(parent, collection, documents, data, options, userId) {

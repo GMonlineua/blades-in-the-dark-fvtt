@@ -5,9 +5,9 @@
       <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.ItemName'}}"/></h1>
       <div class="brief-info">
         <div class="prop">
-          <label class="prop-label" for="system.active">{{localize 'BITD.Ability.IsActive'}}</label>
+          <label class="prop-label" for="system.active">{{localize 'BITD.Upgrade.IsActive'}}</label>
           <input class="prop-input" type="checkbox" name="system.active" data-dtype="Boolean" {{#if system.active}} checked {{/if}}></input>
-          <label class="prop-label" for="system.price">{{localize 'BITD.Ability.Price'}}:</label>
+          <label class="prop-label" for="system.price">{{localize 'BITD.Upgrade.Price'}}:</label>
           <input class="prop-input clear-input" type="number" name="system.price"  value="{{system.price}}" data-dtype="Number" placeholder="0"></input>
         </div>
       </div>

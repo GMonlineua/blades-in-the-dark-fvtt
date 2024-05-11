@@ -46,6 +46,10 @@
         justify-content: space-between;
         border-top: $border-hard;
 
+        .wanted-lvl {
+          font-size: small;
+        }
+
         .flexrow {
           align-items: flex-start;
         }
@@ -89,6 +93,10 @@
           font-size: small;
         }
       }
+    }
+
+    h3.bitd-header {
+      padding-top: 0;
     }
   }
 }
