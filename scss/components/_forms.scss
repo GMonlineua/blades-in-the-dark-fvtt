@@ -1,11 +1,3 @@
-.character, .crew {
-  .actor-grid {
-    display: grid;
-    column-gap: 10px;
-    grid-template-columns: 220px 1fr;
-  }
-}
-
 .brief-info {
   font-size: medium;
 
@@ -33,40 +25,14 @@
   }
 }
 
-.attribute-block {
-  font-family: $font-secondary;
-}
-
-.sheet-tabs {
-  font-family: $font-secondary;
-  font-size: medium;
-
-  .item.active {
-    background: $dark-paper;
-    text-shadow: none;
-  }
-}
-
 .detail-window {
   .detail-trigger {
     cursor: pointer;
   }
 
-  .detail-block {
+  .detail-block:not(.active) {
     display: none;
   }
-
-  .detail-block.active {
-    display: block;
-  }
-}
-
-.window-content {
-  background: $background-paper;
-}
-
-h1,h2,h3 {
-  font-family: $font-secondary;
 }
 
 .rollable {
@@ -149,13 +115,39 @@ h1,h2,h3 {
   }
 }
 
+h1,h2,h3 {
+  font-family: $font-secondary;
+}
+
+.sheet-tabs {
+  font-family: $font-secondary;
+  font-size: medium;
+
+  .item.active {
+    background: $dark-paper;
+    text-shadow: none;
+  }
+}
+
+.window-content {
+  background: $background-paper;
+}
+
 .tox {
   min-height: 300px;
+
+  .tox-editor-container {
+    background: white;
+  }
+
+  .tox-edit-area {
+    padding: 0 $padding-sm;
+  }
 }
 
 .editor {
-  min-height: 75px;
-  height: 150px;
+  min-height: 200px;
+  height: 200px;
   padding: 0 $padding-sm;
   border: $border;
 }

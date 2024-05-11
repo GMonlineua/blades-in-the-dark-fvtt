@@ -36,7 +36,7 @@
       .name-alias {
         display: grid;
         grid-template-columns: 1fr 200px;
-        gap: 10px;
+        gap: $padding-md;
 
         input {
           text-decoration-line: underline;
@@ -68,7 +68,7 @@
       }
 
       .brief-info {
-        gap: 0 10px;
+        gap: 0 $padding-md;
 
         .prop-input.all-row {
           font-size: small;
@@ -117,8 +117,8 @@
       .stress-trauma {
         display: flex;
         align-items: flex-start;
-        margin-top: 5px;
-        border-top: 2px solid black;
+        margin-top: $padding-sm;
+        border-top: $border-hard;
         font-size: medium;
 
         .stress {
@@ -176,12 +176,12 @@
       .harm-table {
         display: grid;
         grid-template-columns: auto auto auto auto;
-        border: 1px solid $light-black;
+        border: $border-black;
         text-align: center;
         font-family: $font-secondary;
 
         div {
-          border: 1px solid $light-black;
+          border: $border-black;
           padding: 0.25em;
         }
 

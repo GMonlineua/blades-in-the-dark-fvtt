@@ -1,3 +1,11 @@
+.character, .crew {
+  .actor-grid {
+    display: grid;
+    column-gap: $padding-md;
+    grid-template-columns: 220px 1fr;
+  }
+}
+
 .sheet-header {
   .money, .storage {
     input {
@@ -25,19 +33,6 @@
   }
 
   .editor {
-    min-height: 75px;
     height: 250px;
-    padding: 0 $padding-sm;
-    border: $border;
-  }
-}
-
-.tox {
-  .tox-editor-container {
-    background: white;
-  }
-
-  .tox-edit-area {
-    padding: 0 $padding-sm;
   }
 }

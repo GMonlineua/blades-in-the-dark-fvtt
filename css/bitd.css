@@ -369,6 +369,10 @@ select.clear-select {
   color: #eee;
 }
 
+h3.bitd-header {
+  padding-top: 5px;
+}
+
 .bitd.sheet.actor {
   min-width: 550px;
   min-height: 500px;
@@ -385,11 +389,6 @@ select.clear-select {
   /* ----------------------------------------- */
   /*  Items Lists                              */
   /* ----------------------------------------- */
-}
-.bitd .character .actor-grid, .bitd .crew .actor-grid {
-  display: grid;
-  column-gap: 10px;
-  grid-template-columns: 220px 1fr;
 }
 .bitd .brief-info {
   font-size: medium;
@@ -413,31 +412,11 @@ select.clear-select {
   flex: 100%;
   padding: 0;
 }
-.bitd .attribute-block {
-  font-family: "Spectral SC", serif;
-}
-.bitd .sheet-tabs {
-  font-family: "Spectral SC", serif;
-  font-size: medium;
-}
-.bitd .sheet-tabs .item.active {
-  background: rgba(0, 0, 0, 0.1);
-  text-shadow: none;
-}
 .bitd .detail-window .detail-trigger {
   cursor: pointer;
 }
-.bitd .detail-window .detail-block {
+.bitd .detail-window .detail-block:not(.active) {
   display: none;
-}
-.bitd .detail-window .detail-block.active {
-  display: block;
-}
-.bitd .window-content {
-  background: url("../ui/white-parchment.jpg") repeat;
-}
-.bitd h1, .bitd h2, .bitd h3 {
-  font-family: "Spectral SC", serif;
 }
 .bitd .rollable:hover, .bitd .rollable:focus {
   color: black;
@@ -499,12 +478,32 @@ select.clear-select {
 .bitd .value-step-block .value-box.active {
   background: black;
 }
+.bitd h1, .bitd h2, .bitd h3 {
+  font-family: "Spectral SC", serif;
+}
+.bitd .sheet-tabs {
+  font-family: "Spectral SC", serif;
+  font-size: medium;
+}
+.bitd .sheet-tabs .item.active {
+  background: rgba(0, 0, 0, 0.1);
+  text-shadow: none;
+}
+.bitd .window-content {
+  background: url("../ui/white-parchment.jpg") repeat;
+}
 .bitd .tox {
   min-height: 300px;
 }
+.bitd .tox .tox-editor-container {
+  background: white;
+}
+.bitd .tox .tox-edit-area {
+  padding: 0 5px;
+}
 .bitd .editor {
-  min-height: 75px;
-  height: 150px;
+  min-height: 200px;
+  height: 200px;
   padding: 0 5px;
   border: 1px solid #b5b3a4;
 }
@@ -555,6 +554,11 @@ select.clear-select {
   margin: 0 3px;
 }
 
+.bitd.actor .character .actor-grid, .bitd.actor .crew .actor-grid {
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: 220px 1fr;
+}
 .bitd.actor .sheet-header .money input, .bitd.actor .sheet-header .storage input {
   margin-left: 3px;
   padding: 0;
@@ -573,16 +577,7 @@ select.clear-select {
   right: 0;
 }
 .bitd.actor .sheet-body .editor {
-  min-height: 75px;
   height: 250px;
-  padding: 0 5px;
-  border: 1px solid #b5b3a4;
-}
-.bitd.actor .tox .tox-editor-container {
-  background: white;
-}
-.bitd.actor .tox .tox-edit-area {
-  padding: 0 5px;
 }
 .bitd.actor .character .sheet-header {
   flex: 0 auto;
@@ -949,17 +944,17 @@ select.clear-select {
   margin-bottom: 0;
   width: 100%;
 }
-.bitd.item .sheet-body .linked-items {
-  margin-bottom: 10px;
-}
-.bitd.item .sheet-body .exp-clues input {
-  width: 100%;
-}
 .bitd.item .sheet-body .editor-block {
   flex: auto;
 }
-.bitd.item .sheet-body .editor-block .editor {
-  min-height: 200px;
+.bitd.item .playbook .attribute-block {
+  font-family: "Spectral SC", serif;
+}
+.bitd.item .playbook .linked-items {
+  margin-bottom: 10px;
+}
+.bitd.item .playbook .exp-clues input {
+  width: 100%;
 }
 
 /*# sourceMappingURL=bitd.css.map */

@@ -36,7 +36,7 @@
 
     .header-fields {
       display: grid;
-      column-gap: 10px;
+      column-gap: $padding-md;
       grid-template-columns: 120px 1fr;
       font-family: $font-secondary;
 
@@ -44,7 +44,7 @@
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        border-top: 2px solid black;
+        border-top: $border-hard;
 
         .flexrow {
           align-items: flex-start;
@@ -63,7 +63,7 @@
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        border-top: 2px solid black;
+        border-top: $border-hard;
 
         .turf > h3, .bitd-header, .value-step-block {
           display: inline-block;
@@ -82,7 +82,7 @@
         .value-step-block {
           position: absolute;
           top: 0;
-          right: 5px;
+          right: $padding-sm;
         }
 
         .exp-tips {
