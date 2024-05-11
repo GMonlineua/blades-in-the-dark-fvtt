@@ -138,7 +138,8 @@
     "Ability": {
       "Plural": "Abilities",
       "Special": "Special Abilities",
-      "IsActive": "Active"
+      "IsActive": "Active",
+      "Price": "Price"
     },
 
     "Inventory": "Items",

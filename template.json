@@ -99,6 +99,7 @@
       "templates": ["base", "players", "group"],
       "lair": "",
       "repType": "",
+      "vault": 0,
       "heat": 0,
       "wanted": 0,
       "hold": "strong",
@@ -179,6 +180,7 @@
       "description": ""
     },
     "abilityCrew": {
+      "active": false,
       "price": 1,
       "description": ""
     },
@@ -195,6 +197,7 @@
       "description": ""
     },
     "upgrade": {
+      "active": false,
       "price": 1,
       "description": ""
     }
