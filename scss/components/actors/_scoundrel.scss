@@ -1,4 +1,4 @@
-.character {
+.scoundrel {
 
   .sheet-header {
     flex: 0 auto;
@@ -44,11 +44,11 @@
           padding: 0;
         }
 
-        .character-name {
+        .scoundrel-name {
           position: relative;
         }
 
-        .character-name::after {
+        .scoundrel-name::after {
           content: "";
           position: absolute;
           right: -5px;
@@ -57,7 +57,7 @@
           background-color: $light-black;
         }
 
-        .character-alias {
+        .scoundrel-alias {
           text-align: right;
           border-bottom: none;
 

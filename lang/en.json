@@ -1,7 +1,7 @@
 {
   "TYPES": {
     "Actor": {
-      "character": "Character",
+      "scoundrel": "Scoundrel",
       "crew": "Crew",
       "cohort": "Cohort",
       "npc": "NPC",
@@ -12,7 +12,7 @@
     "Item": {
       "playbook": "Playbook",
       "crewType": "Crew Type",
-      "abilityCharacter": "Cracter's Ability",
+      "abilityScoundrel": "Scoundrel's Ability",
       "abilityCrew": "Crew's Ability",
       "contact": "Contact",
       "tool": "Tool",
@@ -21,7 +21,7 @@
   },
   "BITD": {
     "ActorName": "Name",
-    "CharacterAlias": "Alias",
+    "ScoundrelAlias": "Alias",
     "CrewName": "Name",
     "ItemName": "Name",
 

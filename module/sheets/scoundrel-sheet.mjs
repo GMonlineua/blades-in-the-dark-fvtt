@@ -4,14 +4,14 @@ import { BitdActorSheet } from "./actor-sheet.mjs";
  * Extend the BitdActorSheet
  * @extends {BitdActorSheet}
  */
-export class BitdCharacterSheet extends BitdActorSheet
+export class BitdScoundrelSheet extends BitdActorSheet
 {
 
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["bitd", "sheet", "actor", "character"],
-      template: "systems/bitd/templates/actor/character-sheet.hbs",
+      classes: ["bitd", "sheet", "actor", "scoundrel"],
+      template: "systems/bitd/templates/actor/scoundrel-sheet.hbs",
       width: 750,
       height: 900,
       tabs: [{
@@ -34,7 +34,7 @@ export class BitdCharacterSheet extends BitdActorSheet
     context.system = actorData.system;
     context.flags = actorData.flags;
 
-    // Prepare character data and items.
+    // Prepare scoundrel data and items.
     this._prepareItems(context);
 
     return context;
@@ -61,7 +61,7 @@ export class BitdCharacterSheet extends BitdActorSheet
           playbook = i;
         }
       }
-      else if (i.type === 'abilityCharacter') {
+      else if (i.type === 'abilityScoundrel') {
         abilities.push(i);
       }
       else if (i.type === 'contact') {
@@ -127,7 +127,6 @@ export class BitdCharacterSheet extends BitdActorSheet
 
             const customTrauma = html.find("input.custom-trauma")[0].value;
             if (customTrauma) {
-              console.log("not empty:", customTrauma)
               newTraumas.push(customTrauma);
             }
 

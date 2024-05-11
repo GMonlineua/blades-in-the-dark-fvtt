@@ -14,11 +14,11 @@ export class BitdActor extends Actor {
     const actorData = this;
     const systemData = actorData.system;
 
-    if (actorData.type == 'character') this._prepareCharacterData(actorData, systemData);
+    if (actorData.type == 'scoundrel') this._prepareScoundrelData(actorData, systemData);
     if (actorData.type == 'crew') this._prepareCrewData(systemData);
   }
 
-  _prepareCharacterData(actorData, systemData) {
+  _prepareScoundrelData(actorData, systemData) {
     for (const [attrKey, attribute] of Object.entries(systemData.attributes)) {
       attribute.value = 0;
 
@@ -55,7 +55,7 @@ export class BitdActor extends Actor {
     super._onCreateDescendantDocuments(parent, collection, documents, data, options, userId);
 
     for (const dataItem of data) {
-      if (dataItem.type == "playbook" && this.type == "character") {
+      if (dataItem.type == "playbook" && this.type == "scoundrel") {
         for (const i of this.items) {
           if (i.type === 'playbook' && i._id != dataItem._id) {
             const item2Delete = this.items.get(i._id);

@@ -34,7 +34,7 @@ export class BitdCrewSheet extends BitdActorSheet
     context.system = actorData.system;
     context.flags = actorData.flags;
 
-    // Prepare character data and items.
+    // Prepare crew data and items.
     this._prepareItems(context);
 
     return context;

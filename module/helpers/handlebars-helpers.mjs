@@ -41,8 +41,6 @@ export const registerHandlebarsHelpers = function() {
       throw "Unknown operator " + operator;
     }
 
-    console.log("case", a, operator, b, bool)
-
     if (bool) {
       return opts.fn(this);
     } else {

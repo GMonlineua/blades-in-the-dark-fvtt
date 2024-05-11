@@ -561,29 +561,29 @@ h3.bitd-header {
   margin: 0 3px;
 }
 
-.bitd.actor .character .actor-grid, .bitd.actor .crew .actor-grid {
+.bitd.actor .scoundrel .actor-grid, .bitd.actor .crew .actor-grid {
   display: grid;
   column-gap: 10px;
   grid-template-columns: 220px 1fr;
 }
-.bitd.actor .character .sheet-body .abilities .item-header, .bitd.actor .character .sheet-body .upgrades .item-header, .bitd.actor .crew .sheet-body .abilities .item-header, .bitd.actor .crew .sheet-body .upgrades .item-header {
+.bitd.actor .scoundrel .sheet-body .abilities .item-header, .bitd.actor .scoundrel .sheet-body .upgrades .item-header, .bitd.actor .crew .sheet-body .abilities .item-header, .bitd.actor .crew .sheet-body .upgrades .item-header {
   display: flex;
 }
-.bitd.actor .character .sheet-body .abilities .item-header .item-create, .bitd.actor .character .sheet-body .upgrades .item-header .item-create, .bitd.actor .crew .sheet-body .abilities .item-header .item-create, .bitd.actor .crew .sheet-body .upgrades .item-header .item-create {
+.bitd.actor .scoundrel .sheet-body .abilities .item-header .item-create, .bitd.actor .scoundrel .sheet-body .upgrades .item-header .item-create, .bitd.actor .crew .sheet-body .abilities .item-header .item-create, .bitd.actor .crew .sheet-body .upgrades .item-header .item-create {
   position: static;
   margin: 0 3px;
 }
-.bitd.actor .character .sheet-body .abilities .items-list .item-checkbox, .bitd.actor .character .sheet-body .upgrades .items-list .item-checkbox, .bitd.actor .crew .sheet-body .abilities .items-list .item-checkbox, .bitd.actor .crew .sheet-body .upgrades .items-list .item-checkbox {
+.bitd.actor .scoundrel .sheet-body .abilities .items-list .item-checkbox, .bitd.actor .scoundrel .sheet-body .upgrades .items-list .item-checkbox, .bitd.actor .crew .sheet-body .abilities .items-list .item-checkbox, .bitd.actor .crew .sheet-body .upgrades .items-list .item-checkbox {
   position: relative;
   top: 4px;
   width: 15px;
   margin: 0;
 }
-.bitd.actor .character .sheet-body .abilities .items-list .item-name, .bitd.actor .character .sheet-body .upgrades .items-list .item-name, .bitd.actor .crew .sheet-body .abilities .items-list .item-name, .bitd.actor .crew .sheet-body .upgrades .items-list .item-name {
+.bitd.actor .scoundrel .sheet-body .abilities .items-list .item-name, .bitd.actor .scoundrel .sheet-body .upgrades .items-list .item-name, .bitd.actor .crew .sheet-body .abilities .items-list .item-name, .bitd.actor .crew .sheet-body .upgrades .items-list .item-name {
   font-family: "Spectral SC", serif;
   cursor: pointer;
 }
-.bitd.actor .character .sheet-body .item.active .item-name, .bitd.actor .crew .sheet-body .item.active .item-name {
+.bitd.actor .scoundrel .sheet-body .item.active .item-name, .bitd.actor .crew .sheet-body .item.active .item-name {
   font-weight: bold;
 }
 .bitd.actor .sheet-header .money input, .bitd.actor .sheet-header .storage input {
@@ -606,48 +606,48 @@ h3.bitd-header {
 .bitd.actor .sheet-body .editor {
   height: 250px;
 }
-.bitd.actor .character .sheet-header {
+.bitd.actor .scoundrel .sheet-header {
   flex: 0 auto;
   overflow: hidden;
   margin-bottom: 10px;
 }
-.bitd.actor .character .sheet-header .img-block {
+.bitd.actor .scoundrel .sheet-header .img-block {
   padding-right: 10px;
   font-family: "Spectral SC", serif;
 }
-.bitd.actor .character .sheet-header .img-block .profile-img {
+.bitd.actor .scoundrel .sheet-header .img-block .profile-img {
   grid-column: 1/3;
   height: 100%;
   width: 100%;
   border: none;
 }
-.bitd.actor .character .sheet-header .img-block .load select {
+.bitd.actor .scoundrel .sheet-header .img-block .load select {
   width: 100%;
 }
-.bitd.actor .character .sheet-header .img-block .load span {
+.bitd.actor .scoundrel .sheet-header .img-block .load span {
   display: block;
   height: 26px;
   width: 100%;
   padding-top: 3px;
   text-align: center;
 }
-.bitd.actor .character .sheet-header .header-fields {
+.bitd.actor .scoundrel .sheet-header .header-fields {
   font-family: "Spectral SC", serif;
 }
-.bitd.actor .character .sheet-header .header-fields .name-alias {
+.bitd.actor .scoundrel .sheet-header .header-fields .name-alias {
   display: grid;
   grid-template-columns: 1fr 200px;
   gap: 10px;
 }
-.bitd.actor .character .sheet-header .header-fields .name-alias input {
+.bitd.actor .scoundrel .sheet-header .header-fields .name-alias input {
   text-decoration-line: underline;
   margin: 0;
   padding: 0;
 }
-.bitd.actor .character .sheet-header .header-fields .name-alias .character-name {
+.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-name {
   position: relative;
 }
-.bitd.actor .character .sheet-header .header-fields .name-alias .character-name::after {
+.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-name::after {
   content: "";
   position: absolute;
   right: -5px;
@@ -655,43 +655,43 @@ h3.bitd-header {
   height: 40px;
   background-color: #222;
 }
-.bitd.actor .character .sheet-header .header-fields .name-alias .character-alias {
+.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-alias {
   text-align: right;
   border-bottom: none;
 }
-.bitd.actor .character .sheet-header .header-fields .name-alias .character-alias input {
+.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-alias input {
   width: 200px;
 }
-.bitd.actor .character .sheet-header .header-fields .brief-info {
+.bitd.actor .scoundrel .sheet-header .header-fields .brief-info {
   gap: 0 10px;
 }
-.bitd.actor .character .sheet-header .header-fields .brief-info .prop-input.all-row {
+.bitd.actor .scoundrel .sheet-header .header-fields .brief-info .prop-input.all-row {
   font-size: small;
 }
-.bitd.actor .character .sheet-header .header-fields .attribute-block {
+.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block {
   font-size: small;
 }
-.bitd.actor .character .sheet-header .header-fields .attribute-block .attribute {
+.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute {
   position: relative;
 }
-.bitd.actor .character .sheet-header .header-fields .attribute-block .attribute .attribute-name {
+.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .attribute-name {
   margin-bottom: 3px;
   font-size: medium;
 }
-.bitd.actor .character .sheet-header .header-fields .attribute-block .attribute .exp-block {
+.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .exp-block {
   position: absolute;
   right: 0;
   top: 0;
 }
-.bitd.actor .character .sheet-header .header-fields .attribute-block .attribute .value-dot {
+.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .value-dot {
   position: relative;
   height: 12px;
   width: 12px;
 }
-.bitd.actor .character .sheet-header .header-fields .attribute-block .attribute .value-dot:first-child {
+.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .value-dot:first-child {
   margin-right: 3px;
 }
-.bitd.actor .character .sheet-header .header-fields .attribute-block .attribute .value-dot:first-child::after {
+.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .value-dot:first-child::after {
   content: "";
   position: absolute;
   top: -3px;
@@ -700,83 +700,83 @@ h3.bitd-header {
   height: 20px;
   background-color: #222;
 }
-.bitd.actor .character .sheet-header .header-fields .stress-trauma {
+.bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma {
   display: flex;
   align-items: flex-start;
   margin-top: 5px;
   border-top: 2px solid black;
   font-size: medium;
 }
-.bitd.actor .character .sheet-header .header-fields .stress-trauma .stress {
+.bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma .stress {
   display: flex;
 }
-.bitd.actor .character .sheet-header .header-fields .stress-trauma .stress .add-trauma {
+.bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma .stress .add-trauma {
   margin: 0 3px;
 }
-.bitd.actor .character .sheet-header .header-fields .stress-trauma .stress .stress-title:hover, .bitd.actor .character .sheet-header .header-fields .stress-trauma .stress .stress-title:focus {
+.bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma .stress .stress-title:hover, .bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma .stress .stress-title:focus {
   color: white;
 }
-.bitd.actor .character .sheet-header .header-fields .value-step-block {
+.bitd.actor .scoundrel .sheet-header .header-fields .value-step-block {
   min-width: fit-content;
 }
-.bitd.actor .character .sheet-header .header-fields .trauma-list {
+.bitd.actor .scoundrel .sheet-header .header-fields .trauma-list {
   padding-left: 3px;
 }
-.bitd.actor .character .sheet-header .contacts {
+.bitd.actor .scoundrel .sheet-header .contacts {
   align-self: start;
 }
-.bitd.actor .character .sheet-header .contacts .contacts-title {
+.bitd.actor .scoundrel .sheet-header .contacts .contacts-title {
   margin-bottom: 3px;
 }
-.bitd.actor .character .sheet-header .contacts .item-name::after {
+.bitd.actor .scoundrel .sheet-header .contacts .item-name::after {
   content: ",";
   font-weight: normal;
 }
-.bitd.actor .character .sheet-header .harm {
+.bitd.actor .scoundrel .sheet-header .harm {
   position: relative;
 }
-.bitd.actor .character .sheet-header .harm .healing {
+.bitd.actor .scoundrel .sheet-header .harm .healing {
   display: flex;
   position: absolute;
   top: 0;
   right: 0;
 }
-.bitd.actor .character .sheet-header .harm .healing .healing-input {
+.bitd.actor .scoundrel .sheet-header .harm .healing .healing-input {
   height: 24px;
 }
-.bitd.actor .character .sheet-header .harm .harm-table {
+.bitd.actor .scoundrel .sheet-header .harm .harm-table {
   display: grid;
   grid-template-columns: auto auto auto auto;
   border: 1px solid #222;
   text-align: center;
   font-family: "Spectral SC", serif;
 }
-.bitd.actor .character .sheet-header .harm .harm-table div {
+.bitd.actor .scoundrel .sheet-header .harm .harm-table div {
   border: 1px solid #222;
   padding: 0.25em;
 }
-.bitd.actor .character .sheet-header .harm .harm-table .harm-name.full-with {
+.bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-name.full-with {
   grid-column: 2/4;
 }
-.bitd.actor .character .sheet-header .harm .harm-table .harm-name.full-with input {
+.bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-name.full-with input {
   width: 100%;
 }
-.bitd.actor .character .sheet-header .harm .harm-table .harm-level, .bitd.actor .character .sheet-header .harm .harm-table .harm-effect {
+.bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-level, .bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-effect {
   background: rgba(0, 0, 0, 0.05);
 }
-.bitd.actor .character .sheet-body {
+.bitd.actor .scoundrel .sheet-body {
   position: relative;
 }
-.bitd.actor .character .sheet-body .general-container {
+.bitd.actor .scoundrel .sheet-body .general-container {
   grid-template-areas: "1 main" "2 main";
 }
-.bitd.actor .character .sheet-body .general-container .item-header {
+.bitd.actor .scoundrel .sheet-body .general-container .item-header {
   margin-bottom: 5px;
 }
-.bitd.actor .character .sheet-body .general-container .item-checkbox {
+.bitd.actor .scoundrel .sheet-body .general-container .item-checkbox {
   display: inline-block;
 }
-.bitd.actor .character .sheet-body .general-container .item-checkbox .loadout-box {
+.bitd.actor .scoundrel .sheet-body .general-container .item-checkbox .loadout-box {
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -786,7 +786,7 @@ h3.bitd-header {
   border-radius: 0;
   background: white;
 }
-.bitd.actor .character .sheet-body .general-container .item-checkbox .loadout-box:not(:last-child)::after {
+.bitd.actor .scoundrel .sheet-body .general-container .item-checkbox .loadout-box:not(:last-child)::after {
   content: "";
   position: absolute;
   top: 5px;
@@ -795,47 +795,47 @@ h3.bitd-header {
   height: 1px;
   background-color: #222;
 }
-.bitd.actor .character .sheet-body .general-container .item-checkbox.active .loadout-box {
+.bitd.actor .scoundrel .sheet-body .general-container .item-checkbox.active .loadout-box {
   background: black;
 }
-.bitd.actor .character .sheet-body .general-container .item.tool.broken .item-name {
+.bitd.actor .scoundrel .sheet-body .general-container .item.tool.broken .item-name {
   text-decoration: line-through;
 }
-.bitd.actor .character .sheet-body .general-container .spec-inventory {
+.bitd.actor .scoundrel .sheet-body .general-container .spec-inventory {
   grid-area: 1;
 }
-.bitd.actor .character .sheet-body .general-container .inventory {
+.bitd.actor .scoundrel .sheet-body .general-container .inventory {
   grid-area: 2;
 }
-.bitd.actor .character .sheet-body .general-container .abilities {
+.bitd.actor .scoundrel .sheet-body .general-container .abilities {
   position: relative;
   grid-area: main;
 }
-.bitd.actor .character .sheet-body .general-container .abilities .exp-block {
+.bitd.actor .scoundrel .sheet-body .general-container .abilities .exp-block {
   position: absolute;
   right: 5px;
 }
-.bitd.actor .character .sheet-body .notes-container {
+.bitd.actor .scoundrel .sheet-body .notes-container {
   grid-template-areas: "1 main" "2 main";
 }
-.bitd.actor .character .sheet-body .notes-container .description {
+.bitd.actor .scoundrel .sheet-body .notes-container .description {
   grid-area: main;
 }
-.bitd.actor .character .sheet-body .notes-container .expirience {
+.bitd.actor .scoundrel .sheet-body .notes-container .expirience {
   grid-area: 1;
 }
-.bitd.actor .character .sheet-body .notes-container .rules {
+.bitd.actor .scoundrel .sheet-body .notes-container .rules {
   grid-area: 2;
 }
-.bitd.actor .character .sheet-body .notes-container .rules ul {
+.bitd.actor .scoundrel .sheet-body .notes-container .rules ul {
   margin-top: 0;
 }
-.bitd.actor .character .sheet-body .notes-container .rules h4 {
+.bitd.actor .scoundrel .sheet-body .notes-container .rules h4 {
   margin: 0;
   font-family: "Spectral SC", serif;
   font-weight: bold;
 }
-.bitd.actor .character .sheet-body .notes-container .rules .teamwork .grid-2col {
+.bitd.actor .scoundrel .sheet-body .notes-container .rules .teamwork .grid-2col {
   row-gap: 0;
 }
 .bitd.actor .crew .sheet-header .brief-info {

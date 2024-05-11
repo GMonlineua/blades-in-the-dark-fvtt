@@ -1,6 +1,6 @@
 // Import Modules
 import { BitdActor } from "./documents/actor.mjs";
-import { BitdCharacterSheet } from "./sheets/character-sheet.mjs";
+import { BitdScoundrelSheet } from "./sheets/scoundrel-sheet.mjs";
 import { BitdCrewSheet } from "./sheets/crew-sheet.mjs";
 import { BitdItem } from "./documents/item.mjs";
 import { BitdItemSheet } from "./sheets/item-sheet.mjs";
@@ -22,7 +22,7 @@ Hooks.once('init', async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("bitd", BitdCharacterSheet, { types: ["character"], makeDefault: true });
+  Actors.registerSheet("bitd", BitdScoundrelSheet, { types: ["scoundrel"], makeDefault: true });
   Actors.registerSheet("bitd", BitdCrewSheet, { types: ["crew"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("bitd", BitdItemSheet, { makeDefault: true });
@@ -54,7 +54,7 @@ Hooks.on("renderSceneControls", async (app, html) => {
 
 Hooks.on("createActor", async function(actor, options, actorId) {
 
-    if (actor.type == "character") {
+    if (actor.type == "scoundrel") {
       const defaultItemsID = ["HZxYeBCQ4bZ632WU", "2H0lH4IeGq22kDyg", "cF0hFmTlXxI8CKSC", "FFNGcKvAeOjoGyI8", "jWTVSlCXWeOiGbfg", "vgMbINvoCQJAYp4q", "6NrhTvPbJTJJUn4s", "vrPi03rFguHYueWZ", "gnv9k4enWnR13mW4", "SapwXYuraydiNjej", "P95oe4AZgSomPqPs", "brU5pWiXWlG5o1Mi", "6cUx1jXXq4dx3wln", "oZOplJcmR6CjQZbO", "Wxoq19qr9LEuuNp4", "IDUBdq7KVd3dxC5W"];
 
       const defaultItems = [];
@@ -65,7 +65,6 @@ Hooks.on("createActor", async function(actor, options, actorId) {
       }
 
       const cls = getDocumentClass("Item");
-      console.log(defaultItems)
       for (const item of defaultItems) {
         cls.create(item, {parent: actor})
       }

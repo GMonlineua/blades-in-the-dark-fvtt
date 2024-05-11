@@ -31,11 +31,11 @@
 
     <div class="header-fields">
       <div class="name-alias grid-2col">
-        <h1 class="character-name">
+        <h1 class="scoundrel-name">
           <input class="clear-input" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.ActorName'}}" data-dtype="String"/>
         </h1>
-        <h2 class="character-alias">
-          <input class="clear-input" name="system.alias" type="text" value="{{system.alias}}" placeholder="{{localize 'BITD.CharacterAlias'}}" data-dtype="String"/>
+        <h2 class="scoundrel-alias">
+          <input class="clear-input" name="system.alias" type="text" value="{{system.alias}}" placeholder="{{localize 'BITD.ScoundrelAlias'}}" data-dtype="String"/>
         </h2>
       </div>
 
@@ -110,7 +110,7 @@
 
         <div class="abilities items-block">
           <div class="item-header bitd-header">
-            <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="abilityCharacter"><i class="fas fa-plus"></i></a>
+            <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="abilityScoundrel"><i class="fas fa-plus"></i></a>
             <h3>{{localize 'BITD.Ability.Special'}}</h3>
             <div class="value-step-block exp-block" data-value="{{system.exp}}" data-key="system.exp">
               {{#numLoop 6}}
@@ -125,7 +125,7 @@
 
     {{!-- Owned Notes Tab --}}
     <div class="tab notes" data-group="primary" data-tab="notes">
-      {{> "systems/bitd/templates/actor/parts/character-notes.hbs"}}
+      {{> "systems/bitd/templates/actor/parts/scoundrel-notes.hbs"}}
     </div>
 
   </section>

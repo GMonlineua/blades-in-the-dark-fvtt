@@ -8,7 +8,7 @@
     "systems/bitd/templates/actor/parts/contacts.hbs",
     "systems/bitd/templates/actor/parts/harm.hbs",
     "systems/bitd/templates/actor/parts/inventory.hbs",
-    "systems/bitd/templates/actor/parts/character-notes.hbs",
+    "systems/bitd/templates/actor/parts/scoundrel-notes.hbs",
     "systems/bitd/templates/actor/parts/stress-trauma.hbs",
     "systems/bitd/templates/actor/parts/upgrades.hbs",
 

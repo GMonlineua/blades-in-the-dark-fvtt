@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["character", "crew", "cohort", "npc", "faction", "factions", "clock"],
+    "types": ["scoundrel", "crew", "cohort", "npc", "faction", "factions", "clock"],
     "templates": {
       "base": {
         "description": "",
@@ -15,7 +15,7 @@
         "tier": 0
       }
     },
-    "character": {
+    "scoundrel": {
       "templates": ["base", "players"],
       "alias": "",
       "heritage": "",
@@ -141,7 +141,7 @@
     }
   },
   "Item": {
-    "types": ["playbook", "crewType", "abilityCharacter", "abilityCrew", "contact", "tool", "upgrade"],
+    "types": ["playbook", "crewType", "abilityScoundrel", "abilityCrew", "contact", "tool", "upgrade"],
     "templates": {},
     "playbook": {
       "attributes": {
@@ -175,7 +175,7 @@
       "exp": "",
       "description": ""
     },
-    "abilityCharacter": {
+    "abilityScoundrel": {
       "active": false,
       "description": ""
     },

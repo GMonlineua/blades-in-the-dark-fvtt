@@ -127,7 +127,7 @@ export class BitdItemSheet extends ItemSheet {
 
       if (this.item.type == "playbook") {
         switch (item.type) {
-          case 'abilityCharacter':
+          case 'abilityScoundrel':
             key = "abilities";
             break;
           case 'contact':

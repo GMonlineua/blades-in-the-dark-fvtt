@@ -132,7 +132,6 @@ function getDiceNumber(html, sheet) {
 }
 
 async function roll(data) {
-  console.log("roll: ", data);
   let number = data.diceNumber + data.modifier;
 
   if (data.assistance) {
