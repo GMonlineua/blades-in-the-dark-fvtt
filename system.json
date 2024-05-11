@@ -14,6 +14,11 @@
       "url": "https://github.com/GMonlineua",
       "email": "gmonlineua@gmail.com",
       "discord": "vlad_dracula"
+    },
+    {
+      "name": "Kem",
+      "url": "https://github.com/InqShanila",
+      "discord": "kemrian"
     }
   ],
   "esmodules": [
@@ -35,6 +40,17 @@
       "type": "Item",
       "name": "items",
       "path": "packs/items",
+      "system": "bitd",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "label": "Crew Abilities",
+      "type": "Item",
+      "name": "crew-abilities",
+      "path": "packs/crew-abilities",
       "system": "bitd",
       "ownership": {
         "PLAYER": "OBSERVER",

@@ -181,7 +181,6 @@
     },
     "abilityCrew": {
       "active": false,
-      "price": 1,
       "description": ""
     },
     "contact": {
