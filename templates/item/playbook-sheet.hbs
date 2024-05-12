@@ -3,7 +3,7 @@
     <img class="item-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
     <div class="header-fields">
       <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.ItemName'}}"/></h1>
-      <input class="summarize" name="system.summarize" type="text" value="{{system.summarize}}" placeholder="{{localize 'BITD.Summarize'}}" data-dtype="String"></input>
+      <input class="summarize all-with" name="system.summarize" type="text" value="{{system.summarize}}" placeholder="{{localize 'BITD.Summarize'}}" data-dtype="String"></input>
     </div>
   </header>
 
@@ -38,7 +38,7 @@
 
       <div class="exp-clues">
         <h3>{{localize 'BITD.PlaybookExp.Title'}}:</h3>
-        <input name="system.exp" type="text" value="{{system.exp}}" placeholder="{{localize 'BITD.PlaybookExp.Placeholder'}}" data-dtype="String"></input>
+        <input class="all-with" name="system.exp" type="text" value="{{system.exp}}" placeholder="{{localize 'BITD.PlaybookExp.Placeholder'}}" data-dtype="String"></input>
       </div>
 
       <h3>{{localize 'BITD.Description'}}</h3>

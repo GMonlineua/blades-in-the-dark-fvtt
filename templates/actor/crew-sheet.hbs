@@ -11,21 +11,9 @@
       </h1>
     </div>
 
-    <div class="brief-info grid-2col">
-      <h1 class="crew-name">
-        <input class="clear-input" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.CrewName'}}" data-dtype="String"/>
-      </h1>
-
-      <div class="prop">
-        <label class="prop-label" for="system.lair">{{localize 'BITD.Lair'}}</label>
-        <input class="prop-input clear-input" type="text" name="system.lair" value="{{system.lair}}" data-dtype="String" placeholder="{{localize 'BITD.Lair'}}"/>
-      </div>
-
-      <div class="prop">
-        <label class="prop-label" for="system.repType">{{localize 'BITD.RepType'}}</label>
-        <input class="prop-input clear-input" type="text" name="system.repType" value="{{system.repType}}" data-dtype="String" placeholder="{{localize 'BITD.RepDescription'}}"/>
-      </div>
-    </div>
+    <h1 class="crew-name">
+      <input class="clear-input" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.CrewName'}}" data-dtype="String"/>
+    </h1>
 
     <div class="contacts-and-ground">
       <div class="hunting-ground">
@@ -36,6 +24,18 @@
     </div>
 
     <div class="header-fields">
+
+      <div class="brief-info grid-2col">
+        <div class="prop">
+          <label class="prop-label" for="system.lair">{{localize 'BITD.Lair'}}</label>
+          <input class="prop-input clear-input" type="text" name="system.lair" value="{{system.lair}}" data-dtype="String" placeholder="{{localize 'BITD.Lair'}}"/>
+        </div>
+
+        <div class="prop">
+          <label class="prop-label" for="system.repType">{{localize 'BITD.RepType'}}</label>
+          <input class="prop-input clear-input" type="text" name="system.repType" value="{{system.repType}}" data-dtype="String" placeholder="{{localize 'BITD.RepDescription'}}"/>
+        </div>
+      </div>
 
       <div class="storage">
         <div class="resource coins">
@@ -101,14 +101,15 @@
       </div>
 
       <div class="exp-block">
-        <h3 class="bitd-header">{{localize 'BITD.CrewExp.Title'}}</h3>
+        <h3 class="bitd-header">{{localize 'BITD.CrewExp.ShortTitle'}}</h3>
+        <p class="bitd-subheader">{{localize 'BITD.CrewExp.HowItWorks'}}</p>
         <div class="value-step-block" data-value="{{system.exp}}" data-key="system.exp">
           {{#numLoop 6}}
             <span class="value-step value-tooth simple-red-tooth" data-index="{{this}}"></span>
           {{/numLoop}}
         </div>
         <ul class="exp-tips">
-          <li></li>
+          <li>{{playbook.exp}}</li>
           {{{localize 'BITD.CrewExp.Tips'}}}
         </ul>
       </div>

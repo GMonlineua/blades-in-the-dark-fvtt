@@ -2,17 +2,17 @@
   .sheet-header {
     .crew-type {}
 
+    .crew-name {
+      margin: 0;
+
+      input {
+        margin: 0;
+      }
+    }
+
     .brief-info {
       row-gap: 0;
-
-      .crew-name {
-        margin: 0;
-        grid-column: 1 / 3;
-
-        input {
-          margin: 0;
-        }
-      }
+      grid-column: 1 / 3;
 
       .prop {
         display: block;
@@ -89,7 +89,7 @@
           right: $padding-sm;
         }
 
-        .exp-tips {
+        .bitd-subheader, .exp-tips {
           font-size: small;
         }
       }

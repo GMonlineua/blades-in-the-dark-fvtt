@@ -5,6 +5,7 @@ import { BitdCrewSheet } from "./sheets/crew-sheet.mjs";
 import { BitdItem } from "./documents/item.mjs";
 import { BitdItemSheet } from "./sheets/item-sheet.mjs";
 import { preprocessChatMessage, renderChatMessage } from "./helpers/chat-portraits.mjs";
+import { defaultItemsID } from "./helpers/default-items.mjs";
 import { createRollDialog } from "./helpers/roll.mjs";
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { registerHandlebarsHelpers } from "./helpers/handlebars-helpers.mjs";
@@ -55,10 +56,8 @@ Hooks.on("renderSceneControls", async (app, html) => {
 Hooks.on("createActor", async function(actor, options, actorId) {
 
     if (actor.type == "scoundrel") {
-      const defaultItemsID = ["HZxYeBCQ4bZ632WU", "2H0lH4IeGq22kDyg", "cF0hFmTlXxI8CKSC", "FFNGcKvAeOjoGyI8", "jWTVSlCXWeOiGbfg", "vgMbINvoCQJAYp4q", "6NrhTvPbJTJJUn4s", "vrPi03rFguHYueWZ", "gnv9k4enWnR13mW4", "SapwXYuraydiNjej", "P95oe4AZgSomPqPs", "brU5pWiXWlG5o1Mi", "6cUx1jXXq4dx3wln", "oZOplJcmR6CjQZbO", "Wxoq19qr9LEuuNp4", "IDUBdq7KVd3dxC5W"];
-
       const defaultItems = [];
-      for (const id of defaultItemsID) {
+      for (const id of defaultItemsID.scoundrelInventory) {
         const uuid = "Compendium.bitd.items.Item." + id;
         const item = await fromUuid(uuid);
         defaultItems.push(item);

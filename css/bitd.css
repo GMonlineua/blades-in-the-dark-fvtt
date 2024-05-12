@@ -83,8 +83,6 @@
 }
 .roll-message .roll-header .roll-subheader {
   padding: 3px 5px 0 5px;
-  background-color: #999;
-  color: black;
   font-weight: bold;
 }
 .roll-message .roll-header .roll-subheader h4 {
@@ -367,6 +365,12 @@ select.clear-select {
 }
 .bitd-header input, .bitd-header > h3 input {
   color: #eee;
+}
+
+.bitd-subheader {
+  margin-top: 0;
+  background-color: #999;
+  color: black;
 }
 
 h3.bitd-header {
@@ -838,15 +842,15 @@ h3.bitd-header {
 .bitd.actor .scoundrel .sheet-body .notes-container .rules .teamwork .grid-2col {
   row-gap: 0;
 }
+.bitd.actor .crew .sheet-header .crew-name {
+  margin: 0;
+}
+.bitd.actor .crew .sheet-header .crew-name input {
+  margin: 0;
+}
 .bitd.actor .crew .sheet-header .brief-info {
   row-gap: 0;
-}
-.bitd.actor .crew .sheet-header .brief-info .crew-name {
-  margin: 0;
   grid-column: 1/3;
-}
-.bitd.actor .crew .sheet-header .brief-info .crew-name input {
-  margin: 0;
 }
 .bitd.actor .crew .sheet-header .brief-info .prop {
   display: block;
@@ -906,13 +910,16 @@ h3.bitd-header {
   top: 0;
   right: 5px;
 }
-.bitd.actor .crew .sheet-header .header-fields .exp-block .exp-tips {
+.bitd.actor .crew .sheet-header .header-fields .exp-block .bitd-subheader, .bitd.actor .crew .sheet-header .header-fields .exp-block .exp-tips {
   font-size: small;
 }
 .bitd.actor .crew .sheet-header h3.bitd-header {
   padding-top: 0;
 }
 
+.bitd.item input.all-with {
+  width: 100%;
+}
 .bitd.item .items-header {
   flex: 100px auto;
   overflow: hidden;
@@ -952,22 +959,18 @@ h3.bitd-header {
   justify-content: space-between;
   font-family: "Spectral SC", serif;
 }
-.bitd.item .items-header .header-fields .summarize {
-  margin-top: 10px;
-  margin-bottom: 0;
-  width: 100%;
-}
 .bitd.item .sheet-body .editor-block {
   flex: auto;
 }
-.bitd.item .playbook .attribute-block {
-  font-family: "Spectral SC", serif;
+.bitd.item .playbook .summarize, .bitd.item .crewType .summarize {
+  margin-top: 10px;
+  margin-bottom: 0;
 }
-.bitd.item .playbook .linked-items {
+.bitd.item .playbook .linked-items, .bitd.item .crewType .linked-items {
   margin-bottom: 10px;
 }
-.bitd.item .playbook .exp-clues input {
-  width: 100%;
+.bitd.item .playbook .attribute-block {
+  font-family: "Spectral SC", serif;
 }
 
 /*# sourceMappingURL=bitd.css.map */

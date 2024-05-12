@@ -14,6 +14,7 @@
       "crewType": "Crew Type",
       "abilityScoundrel": "Scoundrel's Ability",
       "abilityCrew": "Crew's Ability",
+      "claim": "Claim",
       "contact": "Contact",
       "tool": "Tool",
       "upgrade": "Upgrade"
@@ -171,10 +172,17 @@
     "WantedLvl": "Wanted Level",
     "Turf": "Turf",
     "CrewExp": {
-      "Title": "Xp",
+      "ShortTitle": "Xp",
+      "Title": "Expirience Clue",
+      "Placeholder": "Expirience clue which depend on crew's playbook",
+      "HowItWorks": "Mark 1 xp for each item below, or 2 xp if it occurred multiple times.",
       "Tips": "<li>Contend with challenges above your current station.</li><li>Bolster your crew's reputation or develop a new one.</li><li>Express the goals, drives, inner conflict, or essential nature of the crew.</li>"
     },
 
+    "Claim": {
+      "Title": "Claims",
+      "Effect": "Claim Effect"
+    },
     "Upgrade": {
       "Plural": "Upgrades",
       "IsActive": "Active",

@@ -141,7 +141,7 @@
     }
   },
   "Item": {
-    "types": ["playbook", "crewType", "abilityScoundrel", "abilityCrew", "contact", "tool", "upgrade"],
+    "types": ["playbook", "crewType", "abilityScoundrel", "abilityCrew", "claim", "contact", "tool", "upgrade"],
     "templates": {},
     "playbook": {
       "attributes": {
@@ -172,6 +172,25 @@
       "description": ""
     },
     "crewType": {
+      "abilities": [],
+      "claims": {
+        "first1": "",
+        "first2": "",
+        "first3": "",
+        "first4": "",
+        "first5": "",
+        "second1": "",
+        "second2": "",
+        "second4": "",
+        "second5": "",
+        "third1": "",
+        "third2": "",
+        "third3": "",
+        "third4": "",
+        "third5": ""
+      },
+      "contacts": [],
+      "upgrades": [],
       "exp": "",
       "description": ""
     },
@@ -181,6 +200,10 @@
     },
     "abilityCrew": {
       "active": false,
+      "description": ""
+    },
+    "claim": {
+      "effect": "",
       "description": ""
     },
     "contact": {

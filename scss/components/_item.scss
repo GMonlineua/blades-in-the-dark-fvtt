@@ -1,3 +1,7 @@
+input.all-with {
+  width: 100%;
+}
+
 .items-header {
   flex: 100px auto;
   overflow: hidden;
@@ -39,13 +43,6 @@
       justify-content: space-between;
       font-family: $font-secondary;
     }
-
-    // For playbook
-    .summarize {
-      margin-top: 10px;
-      margin-bottom: 0;
-      width: 100%;
-    }
   }
 }
 
@@ -55,18 +52,19 @@
   }
 }
 
-.playbook {
-  .attribute-block {
-    font-family: $font-secondary;
+.playbook, .crewType {
+  .summarize {
+    margin-top: 10px;
+    margin-bottom: 0;
   }
 
   .linked-items {
     margin-bottom: 10px;
   }
+}
 
-  .exp-clues {
-    input {
-      width: 100%;
-    }
+.playbook {
+  .attribute-block {
+    font-family: $font-secondary;
   }
 }

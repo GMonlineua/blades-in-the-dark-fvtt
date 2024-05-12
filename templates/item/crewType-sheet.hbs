@@ -3,13 +3,14 @@
     <img class="item-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
     <div class="header-fields">
       <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.ItemName'}}"/></h1>
-      <input class="summarize" name="system.summarize" type="text" value="{{system.summarize}}" placeholder="{{localize 'BITD.Summarize'}}" data-dtype="String"></input>
+      <input class="summarize all-with" name="system.summarize" type="text" value="{{system.summarize}}" placeholder="{{localize 'BITD.Summarize'}}" data-dtype="String"></input>
     </div>
   </header>
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs flexrow" data-group="primary">
     <a class="item" data-tab="general">{{localize 'BITD.General'}}</a>
+    <a class="item" data-tab="claim">{{localize 'BITD.Claim.Title'}}</a>
     <a class="item" data-tab="links">{{localize 'BITD.Links'}}</a>
   </nav>
 
@@ -19,12 +20,18 @@
     {{!-- Owned Playbook Tab --}}
     <div class="tab general" data-group="primary" data-tab="general">
       <div class="exp-clues">
-        <h3>{{localize 'BITD.PlaybookExp.Title'}}:</h3>
-        <input name="system.exp" type="text" value="{{system.exp}}" placeholder="{{localize 'BITD.PlaybookExp.Placeholder'}}" data-dtype="String"></input>
+        <h3>{{localize 'BITD.CrewExp.Title'}}:</h3>
+        <input class="all-with" name="system.exp" type="text" value="{{system.exp}}" placeholder="{{localize 'BITD.CrewExp.Placeholder'}}" data-dtype="String"></input>
       </div>
 
       <h3>{{localize 'BITD.Description'}}</h3>
       {{editor enrichedDescription target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+    </div>
+
+    {{!-- Owned Playbook Tab --}}
+    <div class="tab claims" data-group="primary" data-tab="claims">
+      <div class="claims-block">
+      </div>
     </div>
 
     {{!-- Owned Notes Tab --}}
@@ -43,9 +50,9 @@
         {{/each}}
       </div>
 
-      <div class="inventory-block linked-items" data-array="inventory">
+      <div class="upgrades-block linked-items" data-array="upgrades">
         <h3>{{localize 'BITD.PlaybookItems'}}</h3>
-        {{#each system.inventory}}
+        {{#each system.upgrades}}
           {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
         {{/each}}
       </div>
