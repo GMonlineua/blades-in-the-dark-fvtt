@@ -972,5 +972,20 @@ h3.bitd-header {
 .bitd.item .playbook .attribute-block {
   font-family: "Spectral SC", serif;
 }
+.bitd.item .crewType .claims-block {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 100px);
+}
+.bitd.item .crewType .claims-block .claim {
+  background: rgba(0, 0, 0, 0.1);
+}
+.bitd.item .crewType .claims-block .claim-lair, .bitd.item .crewType .claims-block .claim-turf {
+  font-family: "Spectral SC", serif;
+  font-weight: bold;
+  line-height: 100px;
+  text-align: center;
+}
 
 /*# sourceMappingURL=bitd.css.map */

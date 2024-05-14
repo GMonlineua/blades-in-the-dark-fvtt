@@ -17,7 +17,7 @@ export class BitdCrewSheet extends BitdActorSheet
       tabs: [{
         navSelector: ".sheet-tabs",
         contentSelector: ".sheet-body",
-        initial: "general"
+        initial: "abilities"
       }]
     });
   }

@@ -180,7 +180,8 @@
     },
 
     "Claim": {
-      "Title": "Claims",
+      "Title": "Claim Map",
+      "Plural": "Claims",
       "Effect": "Claim Effect"
     },
     "Upgrade": {

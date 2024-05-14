@@ -53,11 +53,22 @@ export class BitdActor extends Actor {
 
   _onCreateDescendantDocuments(parent, collection, documents, data, options, userId) {
     super._onCreateDescendantDocuments(parent, collection, documents, data, options, userId);
+    const target = {
+      actor: "scoundrel",
+      item: "playbook",
+      forLoad: ["abilities", "contacts", "inventory"]
+    }
+
+    if (this.type == "crew") {
+      target.actor = "crew",
+      target.item = "crewType",
+      target.forLoad = ["abilities", "contacts", "upgrades"]
+    }
 
     for (const dataItem of data) {
-      if (dataItem.type == "playbook" && this.type == "scoundrel") {
+      if (dataItem.type == target.item && this.type == target.actor) {
         for (const i of this.items) {
-          if (i.type === 'playbook' && i._id != dataItem._id) {
+          if (i.type === target.item && i._id != dataItem._id) {
             const item2Delete = this.items.get(i._id);
             item2Delete.delete();
           }
@@ -65,8 +76,7 @@ export class BitdActor extends Actor {
 
         this.update({ "system.playbook": dataItem._id });
 
-        const forLoad = ["abilities", "contacts", "inventory"]
-        this._preCreatePlaybook(dataItem, forLoad);
+        this._preCreatePlaybook(dataItem, target.forLoad);
       }
     }
   }
@@ -81,6 +91,7 @@ export class BitdActor extends Actor {
         const item = await fromUuid(itemData.uuid);
         if (!oldItems.find(i => i.name === item.name)) {
           newItems.push(item);
+        } else {
           ui.notifications.warn(game.i18n.localize("BITD.ItemExistsName"));
         }
       }

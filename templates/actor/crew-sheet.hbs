@@ -109,7 +109,7 @@
           {{/numLoop}}
         </div>
         <ul class="exp-tips">
-          <li>{{playbook.exp}}</li>
+          <li>{{playbook.system.exp}}</li>
           {{{localize 'BITD.CrewExp.Tips'}}}
         </ul>
       </div>
@@ -120,9 +120,7 @@
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs flexrow" data-group="primary">
-    <a class="item" data-tab="general">
-      General
-    </a>
+    <a class="item" data-tab="claim">{{localize 'BITD.Claim.Title'}}</a>
     <a class="item" data-tab="abilities">{{localize 'BITD.Ability.Plural'}}</a>
     <a class="item" data-tab="notes">{{localize 'BITD.Notes'}}</a>
   </nav>
@@ -131,8 +129,8 @@
   <section class="sheet-body">
 
     {{!-- Owned Playbook Tab --}}
-    <div class="tab general" data-group="primary" data-tab="general">
-      General
+    <div class="tab claim" data-group="primary" data-tab="claim">
+      This should be map in future
     </div>
 
     {{!-- Owned Playbook Tab --}}

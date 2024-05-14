@@ -68,3 +68,23 @@ input.all-with {
     font-family: $font-secondary;
   }
 }
+
+.crewType {
+  .claims-block {
+    display: grid;
+    gap: $padding-md;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 100px);
+
+    .claim {
+      background: $dark-paper;
+    }
+
+    .claim-lair, .claim-turf {
+      font-family: $font-secondary;
+      font-weight: bold;
+      line-height: 100px;
+      text-align: center;
+    }
+  }
+}

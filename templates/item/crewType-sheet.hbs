@@ -10,7 +10,7 @@
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs flexrow" data-group="primary">
     <a class="item" data-tab="general">{{localize 'BITD.General'}}</a>
-    <a class="item" data-tab="claim">{{localize 'BITD.Claim.Title'}}</a>
+    <a class="item" data-tab="claims">{{localize 'BITD.Claim.Title'}}</a>
     <a class="item" data-tab="links">{{localize 'BITD.Links'}}</a>
   </nav>
 
@@ -31,6 +31,20 @@
     {{!-- Owned Playbook Tab --}}
     <div class="tab claims" data-group="primary" data-tab="claims">
       <div class="claims-block">
+        {{#each system.claims}}
+          {{#if this.uuid}}
+            <div class="claim claim-link">
+              <a class="content-link" draggable="true" data-uuid={{this.uuid}} data-id={{this.id}} data-type="Item" data-tooltip={{this.title}}><i class="fas fa-suitcase"></i>{{this.name}}</a>
+              <a class="link-control link-delete" title="{{localize 'BITD.ItemDelete'}}"><i class="fas fa-trash"></i></a>
+            </div>
+          {{else}}
+            {{#iff this "==" "Lair"}}
+              <div class="claim claim-lair">{{localize 'BITD.Lair'}}</div>
+            {{else}}
+              <div class="claim claim-turf">{{localize 'BITD.Turf'}}</div>
+            {{/iff}}
+          {{/if}}
+        {{/each}}
       </div>
     </div>
 
@@ -51,7 +65,7 @@
       </div>
 
       <div class="upgrades-block linked-items" data-array="upgrades">
-        <h3>{{localize 'BITD.PlaybookItems'}}</h3>
+        <h3>{{localize 'BITD.Upgrade.Plural'}}</h3>
         {{#each system.upgrades}}
           {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
         {{/each}}

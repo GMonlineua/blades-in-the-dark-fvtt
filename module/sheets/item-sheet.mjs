@@ -8,7 +8,6 @@ export class BitdItemSheet extends ItemSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["bitd", "sheet", "item"],
-      template: "systems/bitd/templates/tool-sheet.hbs",
       width: 550,
       height: 550,
       tabs: [{
@@ -125,16 +124,22 @@ export class BitdItemSheet extends ItemSheet {
       const item = await fromUuid(itemData.uuid);
       let key = "";
 
-      if (this.item.type == "playbook") {
+      if (this.item.type == "playbook" || this.item.type == "crewType") {
         switch (item.type) {
+          case 'abilityCrew':
+            if (this.item.type == "crewType") key = "abilities";
+            break;
           case 'abilityScoundrel':
-            key = "abilities";
+            if (this.item.type == "playbook") key = "abilities";
             break;
           case 'contact':
             key = "contacts";
             break;
           case 'tool':
-            key = "inventory";
+            if (this.item.type == "playbook") key = "inventory";
+            break;
+          case 'upgrade':
+            if (this.item.type == "crewType") key = "upgrades";
         }
       }
 
