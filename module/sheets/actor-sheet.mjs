@@ -12,7 +12,7 @@ export class BitdActorSheet extends ActorSheet
     return mergeObject(super.defaultOptions, {
       classes: ["bitd", "sheet", "actor"],
       width: 550,
-      height: 750,
+      height: 650,
       tabs: [{
         navSelector: ".sheet-tabs",
         contentSelector: ".sheet-body",

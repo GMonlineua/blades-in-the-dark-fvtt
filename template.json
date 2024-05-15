@@ -120,7 +120,7 @@
     },
     "npc": {
       "templates": ["base"],
-      "tags": "",
+      "summarize": "",
       "class": "",
       "faction": "",
       "crewType": ""
