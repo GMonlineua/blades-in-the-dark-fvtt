@@ -11,7 +11,6 @@ export class BitdScoundrelSheet extends BitdActorSheet
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["bitd", "sheet", "actor", "scoundrel"],
-      template: "systems/bitd/templates/actor/scoundrel-sheet.hbs",
       width: 750,
       height: 900,
       tabs: [{

@@ -1,0 +1,58 @@
+<form class="{{cssClass}} {{actor.type}}" autocomplete="off">
+  {{!-- Sheet Header --}}
+  <header class="sheet-header actor-grid">
+
+    <img class="character-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+
+    <div class="header-fields">
+      <h1 class="character-name"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.ActorName'}}"/></h1>
+      <div class="brief-info">
+        <select class="prop clear-select" name="system.type">
+          {{#select system.type}}
+            <option value="gang">{{localize 'BITD.Cohort.Gang'}}</option>
+            <option value="expert">{{localize 'BITD.Cohort.Expert'}}</option>
+          {{/select}}
+        </select>
+        <div class="prop">
+          <label class="prop-label" for="system.scale">{{localize 'BITD.Cohort.Scale'}}</label>
+          <input class="prop-input" type="number" name="system.scale" value="{{system.scale}}" data-dtype="Number" placeholder="0"></input>
+        </div>
+        <div class="prop">
+          <label class="prop-label" for="system.quality">{{localize 'BITD.Cohort.Quality'}}</label>
+          <input class="prop-input" type="number" name="system.quality" value="{{system.quality}}" data-dtype="Number" placeholder="0"></input>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <hr>
+    <div class="harm">
+      <label>{{localize 'BITD.Harm'}}:</label>
+      <select class="clear-select" name="system.harm">
+        {{#select system.harm}}
+          <option value="0">{{localize 'BITD.Cohort.NoHarm'}}</option>
+          <option value="1">{{localize 'BITD.Cohort.Weakened'}}</option>
+          <option value="2">{{localize 'BITD.Cohort.Impaired'}}</option>
+          <option value="3">{{localize 'BITD.Cohort.Broken'}}</option>
+          <option value="4">{{localize 'BITD.Cohort.Dead'}}</option>
+        {{/select}}
+      </select>
+    </div>
+
+    <div class="edges">
+      <h3>{{localize 'BITD.Cohort.Edges'}}:</h3>
+      <input class="all-with" name="system.edges" type="text" value="{{system.edges}}" placeholder="{{localize 'BITD.Cohort.Edges'}}" data-dtype="String"></input>
+    </div>
+
+    <div class="flaws">
+      <h3>{{localize 'BITD.Cohort.Flaws'}}:</h3>
+      <input class="all-with" name="system.flaws" type="text" value="{{system.flaws}}" placeholder="{{localize 'BITD.Cohort.Flaws'}}" data-dtype="String"></input>
+    </div>
+
+    <h3>{{localize 'BITD.Description'}}</h3>
+    {{editor enrichedDescription target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+  </section>
+</form>

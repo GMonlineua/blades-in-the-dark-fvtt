@@ -6,6 +6,42 @@ import { createRollDialog } from "../helpers/roll.mjs";
  */
 export class BitdActorSheet extends ActorSheet
 {
+
+  /** @override */
+  static get defaultOptions() {
+    return mergeObject(super.defaultOptions, {
+      classes: ["bitd", "sheet", "actor"],
+      width: 550,
+      height: 750,
+      tabs: [{
+        navSelector: ".sheet-tabs",
+        contentSelector: ".sheet-body",
+        initial: "general"
+      }]
+    });
+  }
+
+  /** @override */
+  get template() {
+    console.log("tempate", `systems/bitd/templates/actor/${this.actor.type}-sheet.hbs`)
+    return `systems/bitd/templates/actor/${this.actor.type}-sheet.hbs`;
+  }
+
+  /** @override */
+  async getData() {
+    const context = await super.getData();
+    const actorData = this.actor.toObject(false);
+
+    // Encrich editor content
+    context.enrichedDescription = await TextEditor.enrichHTML(this.object.system.description, { async: true })
+
+    // Add the actor's data to context.data for easier access, as well as flags.
+    context.system = actorData.system;
+    context.flags = actorData.flags;
+
+    return context;
+  }
+
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);

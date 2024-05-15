@@ -111,14 +111,12 @@
     },
     "cohort": {
       "templates": ["base"],
-      "isGang": true,
       "type": "",
       "scale": 0,
       "quality": 0,
       "edges": "",
       "flaws": "",
-      "harm": 0,
-      "armor": false
+      "harm": 0
     },
     "npc": {
       "templates": ["base"],

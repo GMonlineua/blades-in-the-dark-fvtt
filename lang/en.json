@@ -190,6 +190,20 @@
       "Price": "Price"
     },
 
+    "Cohort": {
+      "Gang": "Gang",
+      "Expert": "Expert",
+      "Scale": "Scale",
+      "Quality": "Quality",
+      "Edges": "Edges",
+      "Flaws": "Flaws",
+      "NoHarm": "None",
+      "Weakened": "Weakened",
+      "Impaired": "Impaired",
+      "Broken": "Broken",
+      "Dead": "Dead"
+    },
+
     "ItemShow": "Show",
     "ItemAdd": "Add",
     "ItemDelete": "Delete",

@@ -1,5 +1,6 @@
 // Import Modules
 import { BitdActor } from "./documents/actor.mjs";
+import { BitdActorSheet } from "./sheets/actor-sheet.mjs";
 import { BitdScoundrelSheet } from "./sheets/scoundrel-sheet.mjs";
 import { BitdCrewSheet } from "./sheets/crew-sheet.mjs";
 import { BitdItem } from "./documents/item.mjs";
@@ -23,6 +24,7 @@ Hooks.once('init', async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
+  Actors.registerSheet("bitd", BitdActorSheet, { makeDefault: true });
   Actors.registerSheet("bitd", BitdScoundrelSheet, { types: ["scoundrel"], makeDefault: true });
   Actors.registerSheet("bitd", BitdCrewSheet, { types: ["crew"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);

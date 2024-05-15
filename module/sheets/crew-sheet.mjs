@@ -11,7 +11,6 @@ export class BitdCrewSheet extends BitdActorSheet
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["bitd", "sheet", "actor", "crew"],
-      template: "systems/bitd/templates/actor/crew-sheet.hbs",
       width: 750,
       height: 900,
       tabs: [{
