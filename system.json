@@ -36,6 +36,28 @@
   ],
   "packs": [
     {
+      "label": "Playbooks",
+      "type": "Item",
+      "name": "playbooks",
+      "path": "packs/playbooks",
+      "system": "bitd",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "label": "Crew Types",
+      "type": "Item",
+      "name": "crew-types",
+      "path": "packs/crew-types",
+      "system": "bitd",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
       "label": "Items",
       "type": "Item",
       "name": "items",
@@ -51,6 +73,17 @@
       "type": "Item",
       "name": "crew-abilities",
       "path": "packs/crew-abilities",
+      "system": "bitd",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "label": "Upgrades",
+      "type": "Item",
+      "name": "upgrades",
+      "path": "packs/upgrades",
       "system": "bitd",
       "ownership": {
         "PLAYER": "OBSERVER",

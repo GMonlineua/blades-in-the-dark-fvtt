@@ -56,15 +56,23 @@ Hooks.on("renderSceneControls", async (app, html) => {
 });
 
 Hooks.on("createActor", async function(actor, options, actorId) {
+    const defaultItems = [];
 
     if (actor.type == "scoundrel") {
-      const defaultItems = [];
       for (const id of defaultItemsID.scoundrelInventory) {
         const uuid = "Compendium.bitd.items.Item." + id;
         const item = await fromUuid(uuid);
         defaultItems.push(item);
       }
+    } else if (actor.type == "crew") {
+      for (const id of defaultItemsID.crewUpgrades) {
+        const uuid = "Compendium.bitd.upgrades.Item." + id;
+        const item = await fromUuid(uuid);
+        defaultItems.push(item);
+      }
+    }
 
+    if (defaultItems) {
       const cls = getDocumentClass("Item");
       for (const item of defaultItems) {
         cls.create(item, {parent: actor})
