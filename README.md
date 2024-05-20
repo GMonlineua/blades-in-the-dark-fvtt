@@ -10,7 +10,7 @@ To install a module, follow these instructions:
 
 1. Start FVTT and browse to the Game Modules tab in the Configuration and Setup menu
 
-2. Select the Install Module button and enter the following URL:
+2. Select the Install Module button and enter the following URL: `https://raw.githubusercontent.com/GMonlineua/blades-in-the-dark-fvtt/master/system.json`
 
 3. Click Install and wait for installation to complete
 
