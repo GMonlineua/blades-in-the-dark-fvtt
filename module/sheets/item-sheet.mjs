@@ -58,9 +58,6 @@ export class BitdItemSheet extends ItemSheet {
   activateListeners(html) {
     super.activateListeners(html);
 
-    // Everything below here is only needed if the sheet is editable
-    if (!this.isEditable) return;
-
     // Count dot
     html.find('.value-step-block').each(function () {
       const value = Number(this.dataset.value);
@@ -72,6 +69,9 @@ export class BitdItemSheet extends ItemSheet {
           }
         });
     });
+
+    // Everything below here is only needed if the sheet is editable
+    if (!this.isEditable) return;
 
     // Resource dots
     html.find(".value-step-block > .value-step").click(this._onDotChange.bind(this));

@@ -3,11 +3,9 @@
     "Actor": {
       "scoundrel": "Scoundrel",
       "crew": "Crew",
-      "cohort": "Cohort",
       "npc": "NPC",
       "faction": "Faction",
-      "factions": "Factions List",
-      "clock": "Clock"
+      "factions": "Factions List"
     },
     "Item": {
       "playbook": "Playbook",
@@ -15,6 +13,7 @@
       "abilityScoundrel": "Scoundrel's Ability",
       "abilityCrew": "Crew's Ability",
       "claim": "Claim",
+      "cohort": "Cohort",
       "contact": "Contact",
       "tool": "Tool",
       "upgrade": "Upgrade"
@@ -193,8 +192,8 @@
     "Cohort": {
       "Gang": "Gang",
       "Expert": "Expert",
-      "Scale": "Scale",
-      "Quality": "Quality",
+      "Elite": "Elite",
+      "Armor": "Armor",
       "Edges": "Edges",
       "Flaws": "Flaws",
       "NoHarm": "None",

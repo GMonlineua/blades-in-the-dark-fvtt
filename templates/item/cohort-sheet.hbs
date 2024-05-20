@@ -1,11 +1,11 @@
-<form class="{{cssClass}} {{actor.type}}" autocomplete="off">
+<form class="{{cssClass}} {{item.type}}" autocomplete="off">
   {{!-- Sheet Header --}}
-  <header class="sheet-header actor-grid">
+  <header class="items-header">
 
-    <img class="character-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+    <img class="item-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
 
     <div class="header-fields">
-      <h1 class="character-name"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.ActorName'}}"/></h1>
+      <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.ActorName'}}"/></h1>
       <div class="brief-info">
         <select class="prop clear-select" name="system.type">
           {{#select system.type}}
@@ -14,12 +14,12 @@
           {{/select}}
         </select>
         <div class="prop">
-          <label class="prop-label" for="system.scale">{{localize 'BITD.Cohort.Scale'}}</label>
-          <input class="prop-input" type="number" name="system.scale" value="{{system.scale}}" data-dtype="Number" placeholder="0"></input>
+          <label class="prop-label" for="system.elite">{{localize 'BITD.Cohort.Elite'}}</label>
+          <input class="prop-input" type="checkbox" name="system.elite" data-dtype="Boolean" {{#if system.elite}} checked {{/if}}></input>
         </div>
         <div class="prop">
-          <label class="prop-label" for="system.quality">{{localize 'BITD.Cohort.Quality'}}</label>
-          <input class="prop-input" type="number" name="system.quality" value="{{system.quality}}" data-dtype="Number" placeholder="0"></input>
+          <label class="prop-label" for="system.armor">{{localize 'BITD.Cohort.Armor'}}</label>
+          <input class="prop-input" type="checkbox" name="system.armor" data-dtype="Boolean" {{#if system.armor}} checked {{/if}}></input>
         </div>
       </div>
     </div>

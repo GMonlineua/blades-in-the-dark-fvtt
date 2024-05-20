@@ -72,10 +72,9 @@ Hooks.on("createActor", async function(actor, options, actorId) {
       }
     }
 
-    if (defaultItems) {
-      const cls = getDocumentClass("Item");
-      for (const item of defaultItems) {
-        cls.create(item, {parent: actor})
+    for (const [ownerId, permissions] of Object.entries(actor.ownership)) {
+      if (permissions === 3 && game.userId === ownerId) {
+        actor.createEmbeddedDocuments('Item', defaultItems)
       }
     }
 });

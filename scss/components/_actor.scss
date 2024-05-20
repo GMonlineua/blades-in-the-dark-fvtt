@@ -2,7 +2,7 @@ input.all-with {
   width: 100%;
 }
 
-.cohort, .npc, .faction {
+.npc, .faction {
   .sheet-header {
     flex: 100px auto;
     overflow: hidden;
@@ -45,13 +45,6 @@ input.all-with {
         font-family: $font-secondary;
       }
     }
-  }
-}
-
-.cohort {
-  .harm {
-    font-size: medium;
-    font-family: $font-secondary;
   }
 }
 

@@ -568,7 +568,7 @@ h3.bitd-header {
 .bitd.actor input.all-with {
   width: 100%;
 }
-.bitd.actor .cohort .sheet-header, .bitd.actor .npc .sheet-header, .bitd.actor .faction .sheet-header {
+.bitd.actor .npc .sheet-header, .bitd.actor .faction .sheet-header {
   flex: 100px auto;
   overflow: hidden;
   display: flex;
@@ -577,16 +577,16 @@ h3.bitd-header {
   justify-content: flex-start;
   margin-bottom: 10px;
 }
-.bitd.actor .cohort .sheet-header .character-img, .bitd.actor .npc .sheet-header .character-img, .bitd.actor .faction .sheet-header .character-img {
+.bitd.actor .npc .sheet-header .character-img, .bitd.actor .faction .sheet-header .character-img {
   flex: 0 0 100px;
   height: 100px;
   margin-right: 10px;
   border: none;
 }
-.bitd.actor .cohort .sheet-header .header-fields, .bitd.actor .npc .sheet-header .header-fields, .bitd.actor .faction .sheet-header .header-fields {
+.bitd.actor .npc .sheet-header .header-fields, .bitd.actor .faction .sheet-header .header-fields {
   flex: 1;
 }
-.bitd.actor .cohort .sheet-header .header-fields .character-name, .bitd.actor .npc .sheet-header .header-fields .character-name, .bitd.actor .faction .sheet-header .header-fields .character-name {
+.bitd.actor .npc .sheet-header .header-fields .character-name, .bitd.actor .faction .sheet-header .header-fields .character-name {
   height: 35px;
   padding: 0px;
   margin: 5px 0;
@@ -594,21 +594,17 @@ h3.bitd-header {
   font-family: "Spectral SC", serif;
   font-weight: 700;
 }
-.bitd.actor .cohort .sheet-header .header-fields .character-name input, .bitd.actor .npc .sheet-header .header-fields .character-name input, .bitd.actor .faction .sheet-header .header-fields .character-name input {
+.bitd.actor .npc .sheet-header .header-fields .character-name input, .bitd.actor .faction .sheet-header .header-fields .character-name input {
   width: 100%;
   height: 100%;
   margin: 0;
 }
-.bitd.actor .cohort .sheet-header .header-fields .brief-info, .bitd.actor .npc .sheet-header .header-fields .brief-info, .bitd.actor .faction .sheet-header .header-fields .brief-info {
+.bitd.actor .npc .sheet-header .header-fields .brief-info, .bitd.actor .faction .sheet-header .header-fields .brief-info {
   margin-top: 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  font-family: "Spectral SC", serif;
-}
-.bitd.actor .cohort .harm {
-  font-size: medium;
   font-family: "Spectral SC", serif;
 }
 .bitd.actor .scoundrel .actor-grid, .bitd.actor .crew .actor-grid {
@@ -965,6 +961,10 @@ h3.bitd-header {
 
 .bitd.item input.all-with {
   width: 100%;
+}
+.bitd.item .cohort .harm {
+  font-size: medium;
+  font-family: "Spectral SC", serif;
 }
 .bitd.item .items-header {
   flex: 100px auto;

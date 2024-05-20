@@ -53,53 +53,66 @@ export class BitdActor extends Actor {
 
   _onCreateDescendantDocuments(parent, collection, documents, data, options, userId) {
     super._onCreateDescendantDocuments(parent, collection, documents, data, options, userId);
-    const target = {
-      actor: "scoundrel",
-      item: "playbook",
-      forLoad: ["abilities", "contacts", "inventory"]
-    }
 
-    if (this.type == "crew") {
-      target.actor = "crew",
-      target.item = "crewType",
-      target.forLoad = ["abilities", "contacts", "upgrades"]
-    }
+    if (game.user.id === userId) {
+      const target = {
+        actor: "scoundrel",
+        item: "playbook",
+        forLoad: ["abilities", "contacts", "inventory"]
+      }
 
-    for (const dataItem of data) {
-      if (dataItem.type == target.item && this.type == target.actor) {
-        for (const i of this.items) {
-          if (i.type === target.item && i._id != dataItem._id) {
-            const item2Delete = this.items.get(i._id);
-            item2Delete.delete();
+      if (this.type == "crew") {
+        target.actor = "crew",
+        target.item = "crewType",
+        target.forLoad = ["abilities", "contacts", "upgrades"]
+      }
+
+      for (const dataItem of data) {
+        if (dataItem.type == target.item && this.type == target.actor) {
+          for (const i of this.items) {
+            if (i.type === target.item && i._id != dataItem._id) {
+              const item2Delete = this.items.get(i._id);
+              item2Delete.delete();
+            }
           }
+          this.update({ "system.playbook": dataItem._id });
+
+          this._preCreateContainer(dataItem, target.forLoad);
         }
-
-        this.update({ "system.playbook": dataItem._id });
-
-        this._preCreatePlaybook(dataItem, target.forLoad);
       }
     }
   }
 
-  async _preCreatePlaybook(playbook, forLoad) {
-    const oldItems = this.items;
-    const newItems = [];
+  async _preCreateContainer(container, forLoad) {
+    const systemData = this.system;
+    const toCreate = [];
 
     for (const array of forLoad) {
-      const idArr = playbook.system[array];
+      const idArr = container.system[array];
       for (const itemData of idArr) {
         const item = await fromUuid(itemData.uuid);
-        if (!oldItems.find(i => i.name === item.name)) {
-          newItems.push(item);
+        if (!this.items.find(i => i.name === item.name && i.type === item.type)) {
+          toCreate.push(item)
         } else {
           ui.notifications.warn(game.i18n.localize("BITD.ItemExistsName"));
         }
       }
     }
 
-    const cls = getDocumentClass("Item");
-    for (const item of newItems) {
-      cls.create(item, {parent: this})
+    this.createEmbeddedDocuments('Item', toCreate)
+
+    if (container.type == "playbook") {
+      for (const [attrKey, targetAttr] of Object.entries(systemData.attributes)) {
+        const playbookAttr = container.system.attributes[attrKey];
+        for (const [actionKey, targetAct] of Object.entries(targetAttr.actions)) {
+          const playbookAct = playbookAttr[actionKey];
+
+          if (playbookAct > targetAct.value) {
+            const path = "system.attributes." + attrKey + ".actions." + actionKey + ".value";
+            await this.update({ [path]: playbookAct });
+          }
+        }
+      }
     }
   }
 }

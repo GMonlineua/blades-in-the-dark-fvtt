@@ -23,7 +23,6 @@ export class BitdActorSheet extends ActorSheet
 
   /** @override */
   get template() {
-    console.log("tempate", `systems/bitd/templates/actor/${this.actor.type}-sheet.hbs`)
     return `systems/bitd/templates/actor/${this.actor.type}-sheet.hbs`;
   }
 
@@ -46,9 +45,6 @@ export class BitdActorSheet extends ActorSheet
   activateListeners(html) {
     super.activateListeners(html);
 
-    // Everything below here is only needed if the sheet is editable
-    if (!this.options.editable) return;
-
     // Count dot
     html.find('.value-step-block').each(function () {
       const value = Number(this.dataset.value);
@@ -60,6 +56,9 @@ export class BitdActorSheet extends ActorSheet
           }
         });
     });
+
+    // Everything below here is only needed if the sheet is editable
+    if (!this.options.editable) return;
 
     // Resource dots
     html.find(".value-step-block > .value-step").click(this._onDotChange.bind(this));

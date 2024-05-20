@@ -109,15 +109,6 @@
       },
       "turf": 0
     },
-    "cohort": {
-      "templates": ["base"],
-      "type": "",
-      "scale": 0,
-      "quality": 0,
-      "edges": "",
-      "flaws": "",
-      "harm": 0
-    },
     "npc": {
       "templates": ["base"],
       "summarize": "",
@@ -132,14 +123,10 @@
     },
     "factions": {
       "templates": ["base"]
-    },
-    "clock": {
-      "type": 4,
-      "value": 0
     }
   },
   "Item": {
-    "types": ["playbook", "crewType", "abilityScoundrel", "abilityCrew", "claim", "contact", "tool", "upgrade"],
+    "types": ["playbook", "crewType", "abilityScoundrel", "abilityCrew", "claim", "cohort", "contact", "tool", "upgrade"],
     "templates": {},
     "playbook": {
       "attributes": {
@@ -188,6 +175,15 @@
     "claim": {
       "effect": "",
       "description": ""
+    },
+    "cohort": {
+      "type": "",
+      "gangType": "",
+      "elite": false,
+      "armor": false,
+      "harm": 0,
+      "edges": "",
+      "flaws": ""
     },
     "contact": {
       "type": "",

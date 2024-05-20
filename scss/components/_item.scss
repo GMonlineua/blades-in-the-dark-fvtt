@@ -2,6 +2,13 @@ input.all-with {
   width: 100%;
 }
 
+.cohort {
+  .harm {
+    font-size: medium;
+    font-family: $font-secondary;
+  }
+}
+
 .items-header {
   flex: 100px auto;
   overflow: hidden;
