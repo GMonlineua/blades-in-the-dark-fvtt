@@ -1,0 +1,58 @@
+name: Release Workflow
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Get Version from system.json
+        run: echo "RELEASE_VERSION=$(jq -r '.version' system.json)" >> $GITHUB_ENV
+
+      - name: Update Download Link
+        run: |
+          jq '.download = "https://github.com/GMonlineua/blades-in-the-dark-fvtt/releases/download/v${RELEASE_VERSION}/foundry.zip"' system.json > tmp.json && mv tmp.json system.json
+
+      - name: Update Readme
+        run: |
+          VERSION=$(jq -r '.version' system.json | sed 's/-//g')
+          LINK="https://img.shields.io/badge/Version-${VERSION}-orange?style=flat-square"
+          sed -i "s|\[Version\]:.*|\[Version\]: $LINK|" README.md
+
+      - name: Compile CSS from SCSS
+        uses: gha-utilities/sass-build@v0.6.0
+        with:
+          source: scss/bitd.scss
+          destination: css/bitd.css
+
+      - name: Commit AutoBuild
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add README.md css/* system.json
+          git commit -m "Auto update files"
+          git push
+
+      - name: Create Zip Archive
+        run: |
+          zip -r foundry.zip LICENSE README.md
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ env.RELEASE_VERSION }}
+          name: Alpha Release ${{ env.RELEASE_VERSION }}
+          draft: false
+          prerelease: false
+          files: ./foundry.zip
