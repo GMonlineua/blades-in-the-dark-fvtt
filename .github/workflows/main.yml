@@ -19,7 +19,8 @@ jobs:
 
       - name: Update Download Link
         run: |
-          jq '.download = "https://github.com/GMonlineua/blades-in-the-dark-fvtt/releases/download/v${RELEASE_VERSION}/foundry.zip"' system.json > tmp.json && mv tmp.json system.json
+          VERSION=$(jq -r '.version' system.json)
+          jq '.download = "https://github.com/GMonlineua/blades-in-the-dark-fvtt/releases/download/v${VERSION}/foundry.zip"' system.json > tmp.json && mv tmp.json system.json
 
       - name: Update Readme
         run: |
@@ -43,7 +44,7 @@ jobs:
 
       - name: Create Zip Archive
         run: |
-          zip -r foundry.zip LICENSE README.md
+          zip -r foundry.zip assests css lang module packs templates ui system.json template.json
 
       - name: Create Release
         id: create_release

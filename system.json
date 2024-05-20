@@ -58,10 +58,32 @@
       }
     },
     {
+      "label": "Contacts",
+      "type": "Item",
+      "name": "contacts",
+      "path": "packs/contacts",
+      "system": "bitd",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
       "label": "Items",
       "type": "Item",
       "name": "items",
       "path": "packs/items",
+      "system": "bitd",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "label": "Scoundrel Abilities",
+      "type": "Item",
+      "name": "scoundrel-abilities",
+      "path": "packs/scoundrel-abilities",
       "system": "bitd",
       "ownership": {
         "PLAYER": "OBSERVER",
@@ -95,7 +117,7 @@
   "gridUnits": "m",
   "url": "https://github.com/GMonlineua/blades-in-the-dark-fvtt",
   "manifest": "https://raw.githubusercontent.com/GMonlineua/blades-in-the-dark-fvtt/master/system.json",
-  "download": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/releases/download/v${RELEASE_VERSION}/foundry.zip",
+  "download": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/releases/download/v0.1/foundry.zip",
   "license": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/blob/master/LICENSE.md",
   "changelog": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/blob/master/CHANGELOG.md"
 }

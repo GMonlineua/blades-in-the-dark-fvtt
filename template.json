@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["scoundrel", "crew", "cohort", "npc", "faction", "factions", "clock"],
+    "types": ["scoundrel", "crew", "cohort", "npc", "faction", "factions"],
     "templates": {
       "base": {
         "description": "",

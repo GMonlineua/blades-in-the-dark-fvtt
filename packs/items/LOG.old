@@ -1,8 +1,8 @@
-2024/05/20-16:31:21.624347 7f70ee8006c0 Recovering log #213
-2024/05/20-16:31:21.639136 7f70ee8006c0 Delete type=3 #211
-2024/05/20-16:31:21.639287 7f70ee8006c0 Delete type=0 #213
-2024/05/20-16:43:34.978336 7f70eae006c0 Level-0 table #218: started
-2024/05/20-16:43:34.978389 7f70eae006c0 Level-0 table #218: 0 bytes OK
-2024/05/20-16:43:34.987595 7f70eae006c0 Delete type=0 #216
-2024/05/20-16:43:34.997740 7f70eae006c0 Manual compaction at level-0 from '!folders!AzTyk3TIlIdvteXi' @ 72057594037927935 : 1 .. '!items!vrPi03rFguHYueWZ' @ 0 : 0; will stop at (end)
-2024/05/20-16:43:35.007722 7f70eae006c0 Manual compaction at level-1 from '!folders!AzTyk3TIlIdvteXi' @ 72057594037927935 : 1 .. '!items!vrPi03rFguHYueWZ' @ 0 : 0; will stop at (end)
+2024/05/20-17:12:10.713430 7fb9c52006c0 Recovering log #221
+2024/05/20-17:12:10.730211 7fb9c52006c0 Delete type=3 #219
+2024/05/20-17:12:10.730312 7fb9c52006c0 Delete type=0 #221
+2024/05/20-17:13:30.636298 7fb9b76006c0 Level-0 table #226: started
+2024/05/20-17:13:30.636359 7fb9b76006c0 Level-0 table #226: 0 bytes OK
+2024/05/20-17:13:30.645304 7fb9b76006c0 Delete type=0 #224
+2024/05/20-17:13:30.668218 7fb9b76006c0 Manual compaction at level-0 from '!folders!AzTyk3TIlIdvteXi' @ 72057594037927935 : 1 .. '!items!vrPi03rFguHYueWZ' @ 0 : 0; will stop at (end)
+2024/05/20-17:13:30.668281 7fb9b76006c0 Manual compaction at level-1 from '!folders!AzTyk3TIlIdvteXi' @ 72057594037927935 : 1 .. '!items!vrPi03rFguHYueWZ' @ 0 : 0; will stop at (end)
