@@ -36,6 +36,17 @@
   ],
   "packs": [
     {
+      "label": "Factions",
+      "type": "Actor",
+      "name": "factions",
+      "path": "packs/factions",
+      "system": "bitd",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
       "label": "Playbooks",
       "type": "Item",
       "name": "playbooks",
@@ -51,6 +62,17 @@
       "type": "Item",
       "name": "crew-types",
       "path": "packs/crew-types",
+      "system": "bitd",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "label": "Cohorts",
+      "type": "Item",
+      "name": "cohorts",
+      "path": "packs/cohorts",
       "system": "bitd",
       "ownership": {
         "PLAYER": "OBSERVER",
