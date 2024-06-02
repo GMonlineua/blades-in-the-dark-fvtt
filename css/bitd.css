@@ -1012,6 +1012,9 @@ h3.bitd-header {
 .bitd.item .playbook .linked-items, .bitd.item .crewType .linked-items {
   margin-bottom: 10px;
 }
+.bitd.item .playbook .linked-items .link-block, .bitd.item .crewType .linked-items .link-block {
+  line-height: 1.5;
+}
 .bitd.item .playbook .attribute-block {
   font-family: "Spectral SC", serif;
 }

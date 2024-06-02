@@ -4,13 +4,18 @@
     <div class="header-fields">
       <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.ItemName'}}"/></h1>
       <div class="brief-info">
+        <select class="prop clear-select" name="system.type">
+          {{#select system.type}}
+            <option value="friend">{{localize 'BITD.Contact.Types.Friend'}}</option>
+            <option value="rival">{{localize 'BITD.Contact.Types.Rival'}}</option>
+            <option value="enemy">{{localize 'BITD.Contact.Types.Enemy'}}</option>
+            <option value="vice purveyor">{{localize 'BITD.Contact.Types.VicePurveyor'}}</option>
+            <option value="other">{{localize 'BITD.Contact.Types.Other'}}</option>
+          {{/select}}
+        </select>
         <div class="prop">
-          <label class="prop-label" for="system.type">{{localize 'BITD.ContactType'}}:</label>
-          <input class="prop-input clear-input" type="text" name="system.type" value="{{system.type}}" data-dtype="String" placeholder="{{localize 'BITD.ContactType'}}"/>
-        </div>
-        <div class="prop">
-          <label class="prop-label" for="system.tags">{{localize 'BITD.Description'}}:</label>
-          <input class="tags clear-input" type="text" name="system.tags" value="{{system.tags}}" data-dtype="String" placeholder="{{localize 'BITD.Description'}}"/>
+          <label class="prop-label" for="system.tags">{{localize 'BITD.Summary'}}:</label>
+          <input class="tags clear-input" type="text" name="system.tags" value="{{system.tags}}" data-dtype="String" placeholder="{{localize 'BITD.Summary'}}"/>
         </div>
       </div>
     </div>

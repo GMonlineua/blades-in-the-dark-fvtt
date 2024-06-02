@@ -9,13 +9,8 @@ First official version
 #### Minor updates and fixes
 
 - Rollable tier (crew)
-
 - Cohorts as item in crew sheet and crew type
-
-- Cohorts: choose type, not input. Description > Summarize
-
-- Margin between rows in links
-
 - Contacts coma in crew sheet
-
+- Contacts: choose type, not input. Description > Summarize
+- Margin between rows in links
 - Show secrets for owner and GM

@@ -20,6 +20,11 @@
     }
   },
   "BITD": {
+    "General": "General",
+    "Description": "Description",
+    "Summary": "Summary",
+    "Links": "Links",
+
     "ActorName": "Name",
     "ScoundrelAlias": "Alias",
     "CrewName": "Name",
@@ -29,8 +34,16 @@
     "Background": "Background",
     "Vice": "Vice",
     "Look": "Look",
-    "Contacts": "Contacts",
-    "ContactType": "Type",
+    "Contact": {
+      "Plural": "Contacts",
+      "Types": {
+        "Friend": "Friend",
+        "Rival": "Rival",
+        "Enemy": "Enemy",
+        "VicePurveyor": "Vice Purveyor",
+        "Other": "Other"
+      }
+    },
 
     "Stress": "Stress",
     "Trauma": "Trauma",
@@ -124,16 +137,14 @@
       }
     },
 
-    "Playbook": "Playbook",
-    "General": "General",
-    "Description": "Description",
-    "Summarize": "Describe this playbook briefly",
-    "PlaybookExp": {
-      "Title": "Expirience Clue",
-      "Placeholder": "Expirience clue which depend on character's playbook"
+    "Playbook": {
+      "Summarize": "Describe this playbook briefly",
+      "Exp": {
+        "Title": "Expirience Clue",
+        "Placeholder": "Expirience clue which depend on character's playbook"
+      },
+      "Items": "Items"
     },
-    "Links": "Links",
-    "PlaybookItems": "Items",
 
     "Ability": {
       "Plural": "Abilities",

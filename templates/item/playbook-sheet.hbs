@@ -3,7 +3,7 @@
     <img class="item-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
     <div class="header-fields">
       <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.ItemName'}}"/></h1>
-      <input class="summarize all-with" name="system.summarize" type="text" value="{{system.summarize}}" placeholder="{{localize 'BITD.Summarize'}}" data-dtype="String"></input>
+      <input class="summarize all-with" name="system.summarize" type="text" value="{{system.summarize}}" placeholder="{{localize 'BITD.Playbook.Summarize'}}" data-dtype="String"></input>
     </div>
   </header>
 
@@ -37,8 +37,8 @@
       </div>
 
       <div class="exp-clues">
-        <h3>{{localize 'BITD.PlaybookExp.Title'}}:</h3>
-        <input class="all-with" name="system.exp" type="text" value="{{system.exp}}" placeholder="{{localize 'BITD.PlaybookExp.Placeholder'}}" data-dtype="String"></input>
+        <h3>{{localize 'BITD.Playbook.Exp.Title'}}:</h3>
+        <input class="all-with" name="system.exp" type="text" value="{{system.exp}}" placeholder="{{localize 'BITD.Playbook.Exp.Placeholder'}}" data-dtype="String"></input>
       </div>
 
       <h3>{{localize 'BITD.Description'}}</h3>
@@ -49,23 +49,29 @@
     <div class="tab links" data-group="primary" data-tab="links">
       <div class="abilities-block linked-items" data-array="abilities">
         <h3>{{localize 'BITD.Ability.Plural'}}</h3>
-        {{#each system.abilities}}
-          {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
-        {{/each}}
+        <div class="link-block">
+          {{#each system.abilities}}
+            {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
+          {{/each}}
+        </div>
       </div>
 
       <div class="contacts-block linked-items" data-array="contacts">
-        <h3>{{localize 'BITD.Contacts'}}</h3>
-        {{#each system.contacts}}
-          {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
-        {{/each}}
+        <h3>{{localize 'BITD.Contact.Plural'}}</h3>
+        <div class="link-block">
+          {{#each system.contacts}}
+            {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
+          {{/each}}
+        </div>
       </div>
 
       <div class="inventory-block linked-items" data-array="inventory">
-        <h3>{{localize 'BITD.PlaybookItems'}}</h3>
-        {{#each system.inventory}}
-          {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
-        {{/each}}
+        <h3>{{localize 'BITD.Playbook.Items'}}</h3>
+        <div class="link-block">
+          {{#each system.inventory}}
+            {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
+          {{/each}}
+        </div>
       </div>
     </div>
 

@@ -52,23 +52,29 @@
     <div class="tab links" data-group="primary" data-tab="links">
       <div class="abilities-block linked-items" data-array="abilities">
         <h3>{{localize 'BITD.Ability.Plural'}}</h3>
-        {{#each system.abilities}}
-          {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
-        {{/each}}
+        <div class="link-block">
+          {{#each system.abilities}}
+            {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
+          {{/each}}
+        </div>
       </div>
 
       <div class="contacts-block linked-items" data-array="contacts">
-        <h3>{{localize 'BITD.Contacts'}}</h3>
-        {{#each system.contacts}}
-          {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
-        {{/each}}
+        <h3>{{localize 'BITD.Contact.Plural'}}</h3>
+        <div class="link-block">
+          {{#each system.contacts}}
+            {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
+          {{/each}}
+        </div>
       </div>
 
       <div class="upgrades-block linked-items" data-array="upgrades">
         <h3>{{localize 'BITD.Upgrade.Plural'}}</h3>
-        {{#each system.upgrades}}
-          {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
-        {{/each}}
+        <div class="link-block">
+          {{#each system.upgrades}}
+            {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
+          {{/each}}
+        </div>
       </div>
     </div>
 
