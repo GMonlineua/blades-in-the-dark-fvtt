@@ -43,7 +43,7 @@ jobs:
 
       - name: Create Zip Archive
         run: |
-          zip -r foundry.zip assests css lang module packs templates ui system.json template.json
+          zip -r foundry.zip assets css lang module packs templates ui system.json template.json
 
       - name: Create Release
         id: create_release
@@ -52,7 +52,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: v${{ env.RELEASE_VERSION }}
-          name: Alpha Release ${{ env.RELEASE_VERSION }}
+          name: Beta Release ${{ env.RELEASE_VERSION }}
           draft: false
           prerelease: false
           files: ./foundry.zip
