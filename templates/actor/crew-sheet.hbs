@@ -16,10 +16,6 @@
     </h1>
 
     <div class="contacts-and-ground">
-      <div class="hunting-ground">
-        <h3 class="bitd-header">{{localize 'BITD.HuntingGround.Title'}}</h3>
-        <ul class="hunting-ground-tips">{{{localize 'BITD.HuntingGround.Tips'}}}</ul>
-      </div>
       {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
     </div>
 
@@ -100,18 +96,9 @@
         </div>
       </div>
 
-      <div class="exp-block">
-        <h3 class="bitd-header">{{localize 'BITD.CrewExp.ShortTitle'}}</h3>
-        <p class="bitd-subheader">{{localize 'BITD.CrewExp.HowItWorks'}}</p>
-        <div class="value-step-block" data-value="{{system.exp}}" data-key="system.exp">
-          {{#numLoop 6}}
-            <span class="value-step value-tooth simple-red-tooth" data-index="{{this}}"></span>
-          {{/numLoop}}
-        </div>
-        <ul class="exp-tips">
-          <li>{{playbook.system.exp}}</li>
-          {{{localize 'BITD.CrewExp.Tips'}}}
-        </ul>
+      <div class="hunting-ground">
+        <h3 class="bitd-header">{{localize 'BITD.HuntingGround.Title'}}</h3>
+        <ul class="hunting-ground-tips">{{{localize 'BITD.HuntingGround.Tips'}}}</ul>
       </div>
 
     </div>
@@ -152,9 +139,29 @@
 
     {{!-- Owned Notes Tab --}}
     <div class="tab notes" data-group="primary" data-tab="notes">
-      <div class="description">
-        <h3 class="bitd-header">{{localize 'BITD.Notes'}}</h3>
-        {{editor enrichedDescription target="system.description" button=true owner=owner editable=editable}}
+      <div class="notes-container">
+
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+
+        <div class="exp-block">
+          <h3 class="bitd-header">{{localize 'BITD.CrewExp.ShortTitle'}}</h3>
+          <p class="bitd-subheader">{{localize 'BITD.CrewExp.HowItWorks'}}</p>
+          <div class="value-step-block" data-value="{{system.exp}}" data-key="system.exp">
+            {{#numLoop 6}}
+              <span class="value-step value-tooth simple-red-tooth" data-index="{{this}}"></span>
+            {{/numLoop}}
+          </div>
+          <ul class="exp-tips">
+            <li>{{playbook.system.exp}}</li>
+            {{{localize 'BITD.CrewExp.Tips'}}}
+          </ul>
+        </div>
+
+        <div class="description">
+          <h3 class="bitd-header">{{localize 'BITD.Notes'}}</h3>
+          {{editor enrichedDescription target="system.description" button=true owner=owner editable=editable}}
+        </div>
+
       </div>
     </div>
 

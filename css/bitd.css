@@ -589,6 +589,11 @@ h3.bitd-header {
 .bitd.actor input.all-with {
   width: 100%;
 }
+.bitd.actor .actor-grid {
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: 220px 1fr;
+}
 .bitd.actor .npc .sheet-header, .bitd.actor .faction .sheet-header {
   flex: 100px auto;
   overflow: hidden;
@@ -627,11 +632,6 @@ h3.bitd-header {
   flex-wrap: wrap;
   justify-content: space-between;
   font-family: "Spectral SC", serif;
-}
-.bitd.actor .scoundrel .actor-grid, .bitd.actor .crew .actor-grid {
-  display: grid;
-  column-gap: 10px;
-  grid-template-columns: 220px 1fr;
 }
 .bitd.actor .sheet-header .money input, .bitd.actor .sheet-header .storage input {
   margin-left: 3px;
@@ -940,20 +940,42 @@ h3.bitd-header {
   display: flex;
   align-items: flex-start;
 }
-.bitd.actor .crew .sheet-header .header-fields .exp-block {
-  position: relative;
+.bitd.actor .crew .sheet-header .header-fields .hunting-ground {
   grid-column: 1/3;
 }
-.bitd.actor .crew .sheet-header .header-fields .exp-block .value-step-block {
+.bitd.actor .crew .sheet-header .header-fields .hunting-ground .bitd-header {
+  font-size: small;
+}
+.bitd.actor .crew .sheet-header .header-fields .hunting-ground .hunting-ground-tips {
+  font-size: small;
+  font-family: "Lora", serif;
+}
+.bitd.actor .crew .sheet-header h3.bitd-header {
+  padding-top: 0;
+}
+.bitd.actor .crew .notes .notes-container {
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: 150px 1fr;
+}
+.bitd.actor .crew .notes .notes-container .profile-img {
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+.bitd.actor .crew .notes .notes-container .exp-block {
+  position: relative;
+}
+.bitd.actor .crew .notes .notes-container .exp-block .value-step-block {
   position: absolute;
   top: 0;
   right: 5px;
 }
-.bitd.actor .crew .sheet-header .header-fields .exp-block .bitd-subheader, .bitd.actor .crew .sheet-header .header-fields .exp-block .exp-tips {
+.bitd.actor .crew .notes .notes-container .exp-block .bitd-subheader, .bitd.actor .crew .notes .notes-container .exp-block .exp-tips {
   font-size: small;
 }
-.bitd.actor .crew .sheet-header h3.bitd-header {
-  padding-top: 0;
+.bitd.actor .crew .notes .notes-container .description {
+  grid-column: 1/3;
 }
 
 .bitd.item input.all-with {

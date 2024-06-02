@@ -2,6 +2,12 @@ input.all-with {
   width: 100%;
 }
 
+.actor-grid {
+  display: grid;
+  column-gap: $padding-md;
+  grid-template-columns: 220px 1fr;
+}
+
 .npc, .faction {
   .sheet-header {
     flex: 100px auto;
@@ -45,14 +51,6 @@ input.all-with {
         font-family: $font-secondary;
       }
     }
-  }
-}
-
-.scoundrel, .crew {
-  .actor-grid {
-    display: grid;
-    column-gap: $padding-md;
-    grid-template-columns: 220px 1fr;
   }
 }
 
