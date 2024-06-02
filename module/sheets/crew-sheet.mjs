@@ -46,6 +46,8 @@ export class BitdCrewSheet extends BitdActorSheet
   _prepareItems(context) {
     let playbook;
     const abilities = [];
+    const claims = [];
+    const cohorts = [];
     const contacts = [];
     const upgrades = [];
 
@@ -62,6 +64,12 @@ export class BitdCrewSheet extends BitdActorSheet
       else if (i.type === 'abilityCrew') {
         abilities.push(i);
       }
+      else if (i.type === 'claim') {
+        claims.push(i);
+      }
+      else if (i.type === 'cohort') {
+        cohorts.push(i);
+      }
       else if (i.type === 'contact') {
         contacts.push(i);
       }
@@ -71,6 +79,8 @@ export class BitdCrewSheet extends BitdActorSheet
     }
 
     context.abilities = abilities;
+    context.claims = claims;
+    context.cohorts = cohorts;
     context.contacts = contacts;
     context.playbook = playbook;
     context.upgrades = upgrades;

@@ -178,11 +178,13 @@
       "Tips": "<li>Contend with challenges above your current station.</li><li>Bolster your crew's reputation or develop a new one.</li><li>Express the goals, drives, inner conflict, or essential nature of the crew.</li>"
     },
 
+    "ClaimCohort": "Claims and Cohorts",
     "Claim": {
       "Title": "Claim Map",
       "Plural": "Claims",
       "Effect": "Claim Effect"
     },
+
     "Upgrade": {
       "Plural": "Upgrades",
       "IsActive": "Active",
@@ -190,6 +192,7 @@
     },
 
     "Cohort": {
+      "Plural": "Cohorts",
       "Gang": "Gang",
       "Expert": "Expert",
       "Elite": "Elite",

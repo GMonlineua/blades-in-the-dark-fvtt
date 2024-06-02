@@ -1,7 +1,3 @@
-
-/* ----------------------------------------- */
-/*  Items Lists                              */
-/* ----------------------------------------- */
 .items-block {
   position: relative;
 
@@ -54,5 +50,43 @@
         }
       }
     }
+
+    .item.active {
+      .item-name {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.items-block.full-size {
+  .item-header {
+    display: flex;
+
+    .item-create {
+      position: static;
+      margin: 0 3px;
+    }
+  }
+
+  .items-list {
+    .item-checkbox {
+      position: relative;
+      top: 4px;
+      width: 15px;
+      margin: 0;
+    }
+
+    .item-name {
+      font-family: $font-secondary;
+      cursor: pointer;
+    }
+  }
+}
+
+.contacts {
+  .item-name::after {
+    content: ",";
+    font-weight: normal;
   }
 }

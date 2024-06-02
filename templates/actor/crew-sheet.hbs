@@ -80,7 +80,7 @@
           </select>
         </div>
         <div class="tier">
-          <label for="system.tier">{{localize 'BITD.Tier'}}:</label>
+          <label for="system.tier" class="rollable" data-roll-type="fortune">{{localize 'BITD.Tier'}}:</label>
           <input class="clear-input" type="number" name="system.tier" value="{{system.tier}}" data-dtype="Number"/>
         </div>
       </div>
@@ -120,7 +120,7 @@
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs flexrow" data-group="primary">
-    <a class="item" data-tab="claim">{{localize 'BITD.Claim.Title'}}</a>
+    <a class="item" data-tab="claim">{{localize 'BITD.ClaimCohort'}}</a>
     <a class="item" data-tab="abilities">{{localize 'BITD.Ability.Plural'}}</a>
     <a class="item" data-tab="notes">{{localize 'BITD.Notes'}}</a>
   </nav>
@@ -130,13 +130,16 @@
 
     {{!-- Owned Playbook Tab --}}
     <div class="tab claim" data-group="primary" data-tab="claim">
-      This should be map in future
+      <div class="claims-container grid-2col">
+        {{> "systems/bitd/templates/actor/parts/claims.hbs"}}
+        {{> "systems/bitd/templates/actor/parts/cohorts.hbs"}}
+      </div>
     </div>
 
     {{!-- Owned Playbook Tab --}}
     <div class="tab abilities-tab" data-group="primary" data-tab="abilities">
       <div class="abilities-container grid-2col">
-        <div class="abilities items-block">
+        <div class="abilities items-block full-size">
           <div class="item-header bitd-header">
             <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="abilityCrew"><i class="fas fa-plus"></i></a>
             <h3>{{localize 'BITD.Ability.Plural'}}</h3>

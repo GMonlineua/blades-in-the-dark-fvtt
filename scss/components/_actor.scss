@@ -54,38 +54,6 @@ input.all-with {
     column-gap: $padding-md;
     grid-template-columns: 220px 1fr;
   }
-
-  .sheet-body {
-    .abilities,.upgrades {
-      .item-header {
-        display: flex;
-
-        .item-create {
-          position: static;
-          margin: 0 3px;
-        }
-      }
-
-      .items-list {
-        .item-checkbox {
-          position: relative;
-          top: 4px;
-          width: 15px;
-          margin: 0;
-        }
-
-        .item-name {
-          font-family: $font-secondary;
-          cursor: pointer;
-        }
-      }
-    }
-    .item.active {
-      .item-name {
-        font-weight: bold;
-      }
-    }
-  }
 }
 
 .sheet-header {

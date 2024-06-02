@@ -1,1 +1,1034 @@
-@import"https://fonts.googleapis.com/css2?family=Spectral+SC:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap";.portrait{flex:none;border-width:0;margin-right:5px}.add-trauma-form{margin-bottom:5px;font-size:medium;font-family:"Spectral SC",serif;text-align:center}.add-trauma-form .trauma{display:block}.add-trauma-form .trauma.active{text-shadow:0 0 8px red}.bitd-roll-dialog{height:auto}.bitd-roll-dialog .window-content{overflow:visible}.bitd-roll-dialog .roll-dice-form{font-family:"Spectral SC",serif}.bitd-roll-dialog .roll-dice-form .roll-type{margin-bottom:5px;font-size:medium;font-weight:bold;text-align:center;text-transform:uppercase}.bitd-roll-dialog .roll-dice-form .roll-type #roll-type{font-weight:bold}.bitd-roll-dialog .roll-dice-form .roll-dice{gap:0}.bitd-roll-dialog .roll-dice-form .roll-dice input{border:none;background:none}.bitd-roll-dialog .roll-dice-form .push-or-devil{display:flex;flex-wrap:wrap;justify-content:space-between;margin-bottom:5px}.bitd-roll-dialog .roll-dice-form .position-and-effect{display:flex;flex-wrap:wrap;justify-content:space-between;margin-bottom:5px}.bitd-roll-dialog .roll-dice-form .useful-info{font-family:"Lora",serif}.bitd-roll-dialog .roll-dice-form h4{width:100%;margin:.5rem 0 0 0;text-align:center;font-weight:bold}.bitd-roll-dialog .roll-dice-form .checkbox-label{position:relative;top:-5px}.bitd-roll-dialog .roll-dice-form .optional:not(.active){display:none}.roll-message .roll-header{margin-bottom:10px}.roll-message .roll-header .roll-name{margin:0;padding:3px 5px 0 5px}.roll-message .roll-header .roll-subheader{padding:3px 5px 0 5px;font-weight:bold}.roll-message .roll-header .roll-subheader h4{display:inline;font-weight:bold}.roll-message .roll-results h4{text-transform:uppercase;font-family:"Spectral SC",serif;font-size:medium;font-weight:bold}.roll-message .roll-results h5{margin:10px 0 0 0;text-transform:uppercase;font-family:"Spectral SC",serif;font-weight:bold}.roll-message .roll-dice{list-style:none;margin:5px 0;padding:0;overflow:hidden}.roll-message .roll-dice .dice{min-width:30px;line-height:30px;float:left;margin-right:1px;background-image:url(/icons/svg/d6-grey.svg);background-repeat:no-repeat;background-size:30px 30px;color:#222;font-size:16px;font-weight:bold;text-align:center}.flex-group-center,.flex-group-left,.flex-group-right{justify-content:center;align-items:center;text-align:center}.flex-group-left{justify-content:flex-start;text-align:left}.flex-group-right{justify-content:flex-end;text-align:right}.flexshrink{flex:0}.flex-between{justify-content:space-between}.flexlarge{flex:2}.align-left{justify-content:flex-start;text-align:left}.align-right{justify-content:flex-end;text-align:right}.align-center{justify-content:center;text-align:center}.grid-2col{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:10px}.grid-3col{display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:10px}.grid-4col{display:grid;grid-template-columns:repeat(4, minmax(0, 1fr));gap:10px}.grid-5col{display:grid;grid-template-columns:repeat(5, minmax(0, 1fr));gap:10px}.grid-6col{display:grid;grid-template-columns:repeat(6, minmax(0, 1fr));gap:10px}.grid-7col{display:grid;grid-template-columns:repeat(7, minmax(0, 1fr));gap:10px}.grid-8col{display:grid;grid-template-columns:repeat(8, minmax(0, 1fr));gap:10px}.grid-9col{display:grid;grid-column:span 9/span 9;grid-template-columns:repeat(9, minmax(0, 1fr));gap:10px}.grid-10col{display:grid;grid-template-columns:repeat(10, minmax(0, 1fr));gap:10px}.grid-11col{display:grid;grid-template-columns:repeat(11, minmax(0, 1fr));gap:10px}.grid-12col{display:grid;grid-template-columns:repeat(12, minmax(0, 1fr));gap:10px}.grid-start-2{grid-column-start:2}.grid-start-3{grid-column-start:3}.grid-start-4{grid-column-start:4}.grid-start-5{grid-column-start:5}.grid-start-6{grid-column-start:6}.grid-start-7{grid-column-start:7}.grid-start-8{grid-column-start:8}.grid-start-9{grid-column-start:9}.grid-start-10{grid-column-start:10}.grid-start-11{grid-column-start:11}.grid-start-12{grid-column-start:12}.grid-span-2{grid-column-end:span 2}.grid-span-3{grid-column-end:span 3}.grid-span-4{grid-column-end:span 4}.grid-span-5{grid-column-end:span 5}.grid-span-6{grid-column-end:span 6}.grid-span-7{grid-column-end:span 7}.grid-span-8{grid-column-end:span 8}.grid-span-9{grid-column-end:span 9}.grid-span-10{grid-column-end:span 10}.grid-span-11{grid-column-end:span 11}.grid-span-12{grid-column-end:span 12}input.clear-input{border-width:0;border-radius:0;background-image:none;background-color:rgba(0,0,0,0);-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;--color-shadow-primary: none}input.clear-input:focus{outline:none}select.clear-select{border:none;background:none}.window-app{font-family:"Lora",serif}.window-content input[type=number]{max-width:35px}.window-content input[type=text]{width:auto}.bitd-header,.bitd-header>h3{margin:0;padding:0 3px;background-color:#222;color:#eee;text-transform:uppercase;font-size:medium;font-weight:bold;font-family:"Spectral SC",serif;border:none}.bitd-header input,.bitd-header>h3 input{color:#eee}.bitd-subheader{margin-top:0;background-color:#999;color:#000}h3.bitd-header{padding-top:5px}.bitd.sheet.actor{min-width:550px;min-height:500px}.bitd.sheet.item{min-width:450px;min-height:400px}.bitd{font-family:"Lora",serif}.bitd .brief-info{font-size:medium}.bitd .brief-info .prop{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:flex-start;align-items:center}.bitd .brief-info .prop .prop-label{flex:0 0 auto;margin-right:3px}.bitd .brief-info .prop .prop-input{flex:1;text-transform:lowercase}.bitd .brief-info .prop .all-row{flex:100%;padding:0}.bitd .detail-window .detail-trigger{cursor:pointer}.bitd .detail-window .detail-block:not(.active){display:none}.bitd .rollable:hover,.bitd .rollable:focus{color:#000;cursor:pointer}.bitd .bitd-header.rollable:hover,.bitd .bitd-header.rollable:focus{color:#fff}.bitd .value-step-block{display:inline-block}.bitd .value-step-block .value-step{display:inline-block;cursor:pointer}.bitd .value-step-block .value-dot{height:14px;width:14px;border:1px solid #000;border-radius:50%;background:#fff}.bitd .value-step-block .value-dot.active{background:#000}.bitd .value-step-block .value-tooth{height:40px;width:14px;background-image:url("../assets/tooth/tooth-black-white.svg");background-size:14px;background-position:center;background-repeat:no-repeat}.bitd .value-step-block .value-tooth.active{background-image:url("../assets/tooth/tooth-black.svg")}.bitd .value-step-block .red-tooth.active{background-image:url("../assets/tooth/tooth-black-red.svg")}.bitd .value-step-block .simple-tooth,.bitd .value-step-block .simple-red-tooth{height:30px;width:9px;background-image:url("../assets/tooth/tooth-white.svg");background-size:9px}.bitd .value-step-block .simple-tooth.active{background-image:url("../assets/tooth/tooth-black.svg")}.bitd .value-step-block .simple-red-tooth.active{background-image:url("../assets/tooth/tooth-red.svg")}.bitd .value-step-block .small-tooth{height:20px;background-image:url("../assets/tooth/tooth-small-grey.svg")}.bitd .value-step-block .small-tooth.active{background-image:url("../assets/tooth/tooth-small-black.svg")}.bitd .value-step-block .value-box{height:12px;width:12px;border:1px solid #000;border-radius:0;background:#fff}.bitd .value-step-block .value-box.active{background:#000}.bitd h1,.bitd h2,.bitd h3{font-family:"Spectral SC",serif}.bitd .sheet-tabs{font-family:"Spectral SC",serif;font-size:medium}.bitd .sheet-tabs .item.active{background:rgba(0,0,0,.1);text-shadow:none}.bitd .window-content{background:url("../ui/white-parchment.jpg") repeat}.bitd .tox{min-height:300px}.bitd .tox .tox-editor-container{background:#fff}.bitd .tox .tox-edit-area{padding:0 5px}.bitd .editor{min-height:200px;height:200px;padding:0 5px;border:1px solid #b5b3a4}.bitd .items-block{position:relative}.bitd .items-block .item-create{position:absolute;top:2px;right:5px}.bitd .items-block .items-list{list-style:none;margin:0;padding:0}.bitd .items-block .items-list .item{position:relative;align-items:center;margin-bottom:5px}.bitd .items-block .items-list .item .item-summary{flex:auto;margin:0;height:0;overflow:hidden;transition:height .3s ease}.bitd .items-block .items-list .item .item-summary p{margin:.5em}.bitd .items-block .items-list .item .item-description{padding-right:55px}.bitd .items-block .items-list .item .item-description .item-name.active{font-weight:bold}.bitd .items-block .items-list .item .item-controls{position:absolute;top:4px;right:0;display:flex;justify-content:flex-end}.bitd .items-block .items-list .item .item-controls a{font-size:12px;text-align:center;margin:0 3px}.bitd.actor input.all-with{width:100%}.bitd.actor .npc .sheet-header,.bitd.actor .faction .sheet-header{flex:100px auto;overflow:hidden;display:flex;flex-direction:row;flex-wrap:wrap;justify-content:flex-start;margin-bottom:10px}.bitd.actor .npc .sheet-header .character-img,.bitd.actor .faction .sheet-header .character-img{flex:0 0 100px;height:100px;margin-right:10px;border:none}.bitd.actor .npc .sheet-header .header-fields,.bitd.actor .faction .sheet-header .header-fields{flex:1}.bitd.actor .npc .sheet-header .header-fields .character-name,.bitd.actor .faction .sheet-header .header-fields .character-name{height:35px;padding:0px;margin:5px 0;border-bottom:0;font-family:"Spectral SC",serif;font-weight:700}.bitd.actor .npc .sheet-header .header-fields .character-name input,.bitd.actor .faction .sheet-header .header-fields .character-name input{width:100%;height:100%;margin:0}.bitd.actor .npc .sheet-header .header-fields .brief-info,.bitd.actor .faction .sheet-header .header-fields .brief-info{margin-top:10px;display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-between;font-family:"Spectral SC",serif}.bitd.actor .scoundrel .actor-grid,.bitd.actor .crew .actor-grid{display:grid;column-gap:10px;grid-template-columns:220px 1fr}.bitd.actor .scoundrel .sheet-body .abilities .item-header,.bitd.actor .scoundrel .sheet-body .upgrades .item-header,.bitd.actor .crew .sheet-body .abilities .item-header,.bitd.actor .crew .sheet-body .upgrades .item-header{display:flex}.bitd.actor .scoundrel .sheet-body .abilities .item-header .item-create,.bitd.actor .scoundrel .sheet-body .upgrades .item-header .item-create,.bitd.actor .crew .sheet-body .abilities .item-header .item-create,.bitd.actor .crew .sheet-body .upgrades .item-header .item-create{position:static;margin:0 3px}.bitd.actor .scoundrel .sheet-body .abilities .items-list .item-checkbox,.bitd.actor .scoundrel .sheet-body .upgrades .items-list .item-checkbox,.bitd.actor .crew .sheet-body .abilities .items-list .item-checkbox,.bitd.actor .crew .sheet-body .upgrades .items-list .item-checkbox{position:relative;top:4px;width:15px;margin:0}.bitd.actor .scoundrel .sheet-body .abilities .items-list .item-name,.bitd.actor .scoundrel .sheet-body .upgrades .items-list .item-name,.bitd.actor .crew .sheet-body .abilities .items-list .item-name,.bitd.actor .crew .sheet-body .upgrades .items-list .item-name{font-family:"Spectral SC",serif;cursor:pointer}.bitd.actor .scoundrel .sheet-body .item.active .item-name,.bitd.actor .crew .sheet-body .item.active .item-name{font-weight:bold}.bitd.actor .sheet-header .money input,.bitd.actor .sheet-header .storage input{margin-left:3px;padding:0;min-width:10px;max-width:15px}.bitd.actor .sheet-header .money .coins>input,.bitd.actor .sheet-header .storage .coins>input{max-width:10px}.bitd.actor .sheet-body .items-block{position:relative}.bitd.actor .sheet-body .items-block .item-add{position:absolute;top:0;right:0}.bitd.actor .sheet-body .editor{height:250px}.bitd.actor .scoundrel .sheet-header{flex:0 auto;overflow:hidden;margin-bottom:10px}.bitd.actor .scoundrel .sheet-header .img-block{padding-right:10px;font-family:"Spectral SC",serif}.bitd.actor .scoundrel .sheet-header .img-block .profile-img{grid-column:1/3;height:100%;width:100%;border:none}.bitd.actor .scoundrel .sheet-header .img-block .load select{width:100%}.bitd.actor .scoundrel .sheet-header .img-block .load span{display:block;height:26px;width:100%;padding-top:3px;text-align:center}.bitd.actor .scoundrel .sheet-header .header-fields{font-family:"Spectral SC",serif}.bitd.actor .scoundrel .sheet-header .header-fields .name-alias{display:grid;grid-template-columns:1fr 200px;gap:10px}.bitd.actor .scoundrel .sheet-header .header-fields .name-alias input{text-decoration-line:underline;margin:0;padding:0}.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-name{position:relative}.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-name::after{content:"";position:absolute;right:-5px;width:2px;height:40px;background-color:#222}.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-alias{text-align:right;border-bottom:none}.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-alias input{width:200px}.bitd.actor .scoundrel .sheet-header .header-fields .brief-info{gap:0 10px}.bitd.actor .scoundrel .sheet-header .header-fields .brief-info .prop-input.all-row{font-size:small}.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block{font-size:small}.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute{position:relative}.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .attribute-name{margin-bottom:3px;font-size:medium}.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .exp-block{position:absolute;right:0;top:0}.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .value-dot{position:relative;height:12px;width:12px}.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .value-dot:first-child{margin-right:3px}.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .value-dot:first-child::after{content:"";position:absolute;top:-3px;right:-5px;width:1px;height:20px;background-color:#222}.bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma{display:flex;align-items:flex-start;margin-top:5px;border-top:2px solid #000;font-size:medium}.bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma .stress{display:flex}.bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma .stress .add-trauma{margin:0 3px}.bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma .stress .stress-title:hover,.bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma .stress .stress-title:focus{color:#fff}.bitd.actor .scoundrel .sheet-header .header-fields .value-step-block{min-width:fit-content}.bitd.actor .scoundrel .sheet-header .header-fields .trauma-list{padding-left:3px}.bitd.actor .scoundrel .sheet-header .contacts{align-self:start}.bitd.actor .scoundrel .sheet-header .contacts .contacts-title{margin-bottom:3px}.bitd.actor .scoundrel .sheet-header .contacts .item-name::after{content:",";font-weight:normal}.bitd.actor .scoundrel .sheet-header .harm{position:relative}.bitd.actor .scoundrel .sheet-header .harm .healing{display:flex;position:absolute;top:0;right:0}.bitd.actor .scoundrel .sheet-header .harm .healing .healing-input{height:24px}.bitd.actor .scoundrel .sheet-header .harm .harm-table{display:grid;grid-template-columns:auto auto auto auto;border:1px solid #222;text-align:center;font-family:"Spectral SC",serif}.bitd.actor .scoundrel .sheet-header .harm .harm-table div{border:1px solid #222;padding:.25em}.bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-name.full-with{grid-column:2/4}.bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-name.full-with input{width:100%}.bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-level,.bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-effect{background:rgba(0,0,0,.05)}.bitd.actor .scoundrel .sheet-body{position:relative}.bitd.actor .scoundrel .sheet-body .general-container{grid-template-areas:"1 main" "2 main"}.bitd.actor .scoundrel .sheet-body .general-container .item-header{margin-bottom:5px}.bitd.actor .scoundrel .sheet-body .general-container .item-checkbox{display:inline-block}.bitd.actor .scoundrel .sheet-body .general-container .item-checkbox .loadout-box{position:relative;display:inline-block;cursor:pointer;height:12px;width:12px;border:1px solid #000;border-radius:0;background:#fff}.bitd.actor .scoundrel .sheet-body .general-container .item-checkbox .loadout-box:not(:last-child)::after{content:"";position:absolute;top:5px;right:-5px;width:5px;height:1px;background-color:#222}.bitd.actor .scoundrel .sheet-body .general-container .item-checkbox.active .loadout-box{background:#000}.bitd.actor .scoundrel .sheet-body .general-container .item.tool.broken .item-name{text-decoration:line-through}.bitd.actor .scoundrel .sheet-body .general-container .spec-inventory{grid-area:1}.bitd.actor .scoundrel .sheet-body .general-container .inventory{grid-area:2}.bitd.actor .scoundrel .sheet-body .general-container .abilities{position:relative;grid-area:main}.bitd.actor .scoundrel .sheet-body .general-container .abilities .exp-block{position:absolute;right:5px}.bitd.actor .scoundrel .sheet-body .notes-container{grid-template-areas:"1 main" "2 main"}.bitd.actor .scoundrel .sheet-body .notes-container .description{grid-area:main}.bitd.actor .scoundrel .sheet-body .notes-container .expirience{grid-area:1}.bitd.actor .scoundrel .sheet-body .notes-container .rules{grid-area:2}.bitd.actor .scoundrel .sheet-body .notes-container .rules ul{margin-top:0}.bitd.actor .scoundrel .sheet-body .notes-container .rules h4{margin:0;font-family:"Spectral SC",serif;font-weight:bold}.bitd.actor .scoundrel .sheet-body .notes-container .rules .teamwork .grid-2col{row-gap:0}.bitd.actor .crew .sheet-header .crew-name{margin:0}.bitd.actor .crew .sheet-header .crew-name input{margin:0}.bitd.actor .crew .sheet-header .brief-info{row-gap:0;grid-column:1/3}.bitd.actor .crew .sheet-header .brief-info .prop{display:block;font-family:"Spectral SC",serif}.bitd.actor .crew .sheet-header .brief-info .prop .prop-label{display:block;font-size:medium}.bitd.actor .crew .sheet-header .brief-info .prop .prop-input{padding:0;font-size:small}.bitd.actor .crew .sheet-header .contacts-and-ground{height:100%}.bitd.actor .crew .sheet-header .header-fields{display:grid;column-gap:10px;grid-template-columns:120px 1fr;font-family:"Spectral SC",serif}.bitd.actor .crew .sheet-header .header-fields .heat-block{display:flex;align-items:flex-start;justify-content:space-between;border-top:2px solid #000}.bitd.actor .crew .sheet-header .header-fields .heat-block .wanted-lvl{font-size:small}.bitd.actor .crew .sheet-header .header-fields .heat-block .flexrow{align-items:flex-start}.bitd.actor .crew .sheet-header .header-fields .tier-block .hold .clear-select{padding:0}.bitd.actor .crew .sheet-header .header-fields .reputation-block{display:flex;align-items:flex-start;justify-content:space-between;border-top:2px solid #000}.bitd.actor .crew .sheet-header .header-fields .reputation-block .turf>h3,.bitd.actor .crew .sheet-header .header-fields .reputation-block .bitd-header,.bitd.actor .crew .sheet-header .header-fields .reputation-block .value-step-block{display:inline-block}.bitd.actor .crew .sheet-header .header-fields .reputation-block .reputation{display:flex;align-items:flex-start}.bitd.actor .crew .sheet-header .header-fields .exp-block{position:relative;grid-column:1/3}.bitd.actor .crew .sheet-header .header-fields .exp-block .value-step-block{position:absolute;top:0;right:5px}.bitd.actor .crew .sheet-header .header-fields .exp-block .bitd-subheader,.bitd.actor .crew .sheet-header .header-fields .exp-block .exp-tips{font-size:small}.bitd.actor .crew .sheet-header h3.bitd-header{padding-top:0}.bitd.item input.all-with{width:100%}.bitd.item .cohort .harm{font-size:medium;font-family:"Spectral SC",serif}.bitd.item .items-header{flex:100px auto;overflow:hidden;display:flex;flex-direction:row;flex-wrap:wrap;justify-content:flex-start;margin-bottom:10px}.bitd.item .items-header .item-img{flex:0 0 100px;height:100px;margin-right:10px;border:none}.bitd.item .items-header .header-fields{flex:1}.bitd.item .items-header .header-fields .item-name{height:35px;padding:0px;margin:5px 0;border-bottom:0;font-family:"Spectral SC",serif;font-weight:700}.bitd.item .items-header .header-fields .item-name input{width:100%;height:100%;margin:0}.bitd.item .items-header .header-fields .brief-info{margin-top:10px;display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-between;font-family:"Spectral SC",serif}.bitd.item .sheet-body .editor-block{flex:auto}.bitd.item .playbook .summarize,.bitd.item .crewType .summarize{margin-top:10px;margin-bottom:0}.bitd.item .playbook .linked-items,.bitd.item .crewType .linked-items{margin-bottom:10px}.bitd.item .playbook .attribute-block{font-family:"Spectral SC",serif}.bitd.item .crewType .claims-block{display:grid;gap:10px;grid-template-columns:repeat(5, 1fr);grid-template-rows:repeat(3, 100px)}.bitd.item .crewType .claims-block .claim{background:rgba(0,0,0,.1)}.bitd.item .crewType .claims-block .claim-lair,.bitd.item .crewType .claims-block .claim-turf{font-family:"Spectral SC",serif;font-weight:bold;line-height:100px;text-align:center}
+@import url("https://fonts.googleapis.com/css2?family=Spectral+SC:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+/* Global styles */
+.portrait {
+  flex: none;
+  border-width: 0;
+  margin-right: 5px;
+}
+
+.add-trauma-form {
+  margin-bottom: 5px;
+  font-size: medium;
+  font-family: "Spectral SC", serif;
+  text-align: center;
+}
+.add-trauma-form .trauma {
+  display: block;
+}
+.add-trauma-form .trauma.active {
+  text-shadow: 0 0 8px red;
+}
+
+.bitd-roll-dialog {
+  height: auto;
+}
+.bitd-roll-dialog .window-content {
+  overflow: visible;
+}
+.bitd-roll-dialog .roll-dice-form {
+  font-family: "Spectral SC", serif;
+}
+.bitd-roll-dialog .roll-dice-form .roll-type {
+  margin-bottom: 5px;
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+.bitd-roll-dialog .roll-dice-form .roll-type #roll-type {
+  font-weight: bold;
+}
+.bitd-roll-dialog .roll-dice-form .roll-dice {
+  gap: 0;
+}
+.bitd-roll-dialog .roll-dice-form .roll-dice input {
+  border: none;
+  background: none;
+}
+.bitd-roll-dialog .roll-dice-form .push-or-devil {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.bitd-roll-dialog .roll-dice-form .position-and-effect {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.bitd-roll-dialog .roll-dice-form .useful-info {
+  font-family: "Lora", serif;
+}
+.bitd-roll-dialog .roll-dice-form h4 {
+  width: 100%;
+  margin: 0.5rem 0 0 0;
+  text-align: center;
+  font-weight: bold;
+}
+.bitd-roll-dialog .roll-dice-form .checkbox-label {
+  position: relative;
+  top: -5px;
+}
+.bitd-roll-dialog .roll-dice-form .optional:not(.active) {
+  display: none;
+}
+
+.roll-message .roll-header {
+  margin-bottom: 10px;
+}
+.roll-message .roll-header .roll-name {
+  margin: 0;
+  padding: 3px 5px 0 5px;
+}
+.roll-message .roll-header .roll-subheader {
+  padding: 3px 5px 0 5px;
+  font-weight: bold;
+}
+.roll-message .roll-header .roll-subheader h4 {
+  display: inline;
+  font-weight: bold;
+}
+.roll-message .roll-results h4 {
+  text-transform: uppercase;
+  font-family: "Spectral SC", serif;
+  font-size: medium;
+  font-weight: bold;
+}
+.roll-message .roll-results h5 {
+  margin: 10px 0 0 0;
+  text-transform: uppercase;
+  font-family: "Spectral SC", serif;
+  font-weight: bold;
+}
+.roll-message .roll-dice {
+  list-style: none;
+  margin: 5px 0;
+  padding: 0;
+  overflow: hidden;
+}
+.roll-message .roll-dice .dice {
+  min-width: 30px;
+  line-height: 30px;
+  float: left;
+  margin-right: 1px;
+  background-image: url(/icons/svg/d6-grey.svg);
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  color: #222;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.flex-group-center,
+.flex-group-left,
+.flex-group-right {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.flex-group-left {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.flex-group-right {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.flexshrink {
+  flex: 0;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.flexlarge {
+  flex: 2;
+}
+
+.align-left {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.align-right {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.align-center {
+  justify-content: center;
+  text-align: center;
+}
+
+.grid-2col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.grid-4col {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.grid-5col {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.grid-6col {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.grid-7col {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.grid-8col {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.grid-9col {
+  display: grid;
+  grid-column: span 9/span 9;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.grid-10col {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.grid-11col {
+  display: grid;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.grid-12col {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.grid-start-2 {
+  grid-column-start: 2;
+}
+
+.grid-start-3 {
+  grid-column-start: 3;
+}
+
+.grid-start-4 {
+  grid-column-start: 4;
+}
+
+.grid-start-5 {
+  grid-column-start: 5;
+}
+
+.grid-start-6 {
+  grid-column-start: 6;
+}
+
+.grid-start-7 {
+  grid-column-start: 7;
+}
+
+.grid-start-8 {
+  grid-column-start: 8;
+}
+
+.grid-start-9 {
+  grid-column-start: 9;
+}
+
+.grid-start-10 {
+  grid-column-start: 10;
+}
+
+.grid-start-11 {
+  grid-column-start: 11;
+}
+
+.grid-start-12 {
+  grid-column-start: 12;
+}
+
+.grid-span-2 {
+  grid-column-end: span 2;
+}
+
+.grid-span-3 {
+  grid-column-end: span 3;
+}
+
+.grid-span-4 {
+  grid-column-end: span 4;
+}
+
+.grid-span-5 {
+  grid-column-end: span 5;
+}
+
+.grid-span-6 {
+  grid-column-end: span 6;
+}
+
+.grid-span-7 {
+  grid-column-end: span 7;
+}
+
+.grid-span-8 {
+  grid-column-end: span 8;
+}
+
+.grid-span-9 {
+  grid-column-end: span 9;
+}
+
+.grid-span-10 {
+  grid-column-end: span 10;
+}
+
+.grid-span-11 {
+  grid-column-end: span 11;
+}
+
+.grid-span-12 {
+  grid-column-end: span 12;
+}
+
+input.clear-input {
+  border-width: 0;
+  border-radius: 0;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  --color-shadow-primary: none;
+}
+
+input.clear-input:focus {
+  outline: none;
+}
+
+select.clear-select {
+  border: none;
+  background: none;
+}
+
+.window-app {
+  font-family: "Lora", serif;
+}
+
+.window-content input[type=number] {
+  max-width: 35px;
+}
+.window-content input[type=text] {
+  width: auto;
+}
+
+.bitd-header, .bitd-header > h3 {
+  margin: 0;
+  padding: 0 3px;
+  background-color: #222;
+  color: #eee;
+  text-transform: uppercase;
+  font-size: medium;
+  font-weight: bold;
+  font-family: "Spectral SC", serif;
+  border: none;
+}
+.bitd-header input, .bitd-header > h3 input {
+  color: #eee;
+}
+
+.bitd-subheader {
+  margin-top: 0;
+  background-color: #999;
+  color: black;
+}
+
+h3.bitd-header {
+  padding-top: 5px;
+}
+
+.bitd.sheet.actor {
+  min-width: 550px;
+  min-height: 500px;
+}
+
+.bitd.sheet.item {
+  min-width: 450px;
+  min-height: 400px;
+}
+
+/* Styles limited to system sheets */
+.bitd {
+  font-family: "Lora", serif;
+}
+.bitd .brief-info {
+  font-size: medium;
+}
+.bitd .brief-info .prop {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.bitd .brief-info .prop .prop-label {
+  flex: 0 0 auto;
+  margin-right: 3px;
+}
+.bitd .brief-info .prop .prop-input {
+  flex: 1;
+  text-transform: lowercase;
+}
+.bitd .brief-info .prop .all-row {
+  flex: 100%;
+  padding: 0;
+}
+.bitd .detail-window .detail-trigger {
+  cursor: pointer;
+}
+.bitd .detail-window .detail-block:not(.active) {
+  display: none;
+}
+.bitd .rollable:hover, .bitd .rollable:focus {
+  color: black;
+  cursor: pointer;
+}
+.bitd .bitd-header.rollable:hover, .bitd .bitd-header.rollable:focus {
+  color: white;
+}
+.bitd .value-step-block {
+  display: inline-block;
+}
+.bitd .value-step-block .value-step {
+  display: inline-block;
+  cursor: pointer;
+}
+.bitd .value-step-block .value-dot {
+  height: 14px;
+  width: 14px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background: white;
+}
+.bitd .value-step-block .value-dot.active {
+  background: black;
+}
+.bitd .value-step-block .value-tooth {
+  height: 40px;
+  width: 14px;
+  background-image: url("../assets/tooth/tooth-black-white.svg");
+  background-size: 14px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bitd .value-step-block .value-tooth.active {
+  background-image: url("../assets/tooth/tooth-black.svg");
+}
+.bitd .value-step-block .red-tooth.active {
+  background-image: url("../assets/tooth/tooth-black-red.svg");
+}
+.bitd .value-step-block .simple-tooth, .bitd .value-step-block .simple-red-tooth {
+  height: 30px;
+  width: 9px;
+  background-image: url("../assets/tooth/tooth-white.svg");
+  background-size: 9px;
+}
+.bitd .value-step-block .simple-tooth.active {
+  background-image: url("../assets/tooth/tooth-black.svg");
+}
+.bitd .value-step-block .simple-red-tooth.active {
+  background-image: url("../assets/tooth/tooth-red.svg");
+}
+.bitd .value-step-block .small-tooth {
+  height: 20px;
+  background-image: url("../assets/tooth/tooth-small-grey.svg");
+}
+.bitd .value-step-block .small-tooth.active {
+  background-image: url("../assets/tooth/tooth-small-black.svg");
+}
+.bitd .value-step-block .value-box {
+  height: 12px;
+  width: 12px;
+  border: 1px solid black;
+  border-radius: 0;
+  background: white;
+}
+.bitd .value-step-block .value-box.active {
+  background: black;
+}
+.bitd h1, .bitd h2, .bitd h3 {
+  font-family: "Spectral SC", serif;
+}
+.bitd .sheet-tabs {
+  font-family: "Spectral SC", serif;
+  font-size: medium;
+}
+.bitd .sheet-tabs .item.active {
+  background: rgba(0, 0, 0, 0.1);
+  text-shadow: none;
+}
+.bitd .window-content {
+  background: url("../ui/white-parchment.jpg") repeat;
+}
+.bitd .tox {
+  min-height: 300px;
+}
+.bitd .tox .tox-editor-container {
+  background: white;
+}
+.bitd .tox .tox-edit-area {
+  padding: 0 5px;
+}
+.bitd .editor {
+  min-height: 200px;
+  height: 200px;
+  padding: 0 5px;
+  border: 1px solid #b5b3a4;
+}
+.bitd .items-block {
+  position: relative;
+}
+.bitd .items-block .item-create {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+}
+.bitd .items-block .items-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.bitd .items-block .items-list .item {
+  position: relative;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.bitd .items-block .items-list .item .item-summary {
+  flex: auto;
+  margin: 0;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+.bitd .items-block .items-list .item .item-summary p {
+  margin: 0.5em;
+}
+.bitd .items-block .items-list .item .item-description {
+  padding-right: 55px;
+}
+.bitd .items-block .items-list .item .item-description .item-name.active {
+  font-weight: bold;
+}
+.bitd .items-block .items-list .item .item-controls {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+.bitd .items-block .items-list .item .item-controls a {
+  font-size: 12px;
+  text-align: center;
+  margin: 0 3px;
+}
+.bitd .items-block .items-list .item.active .item-name {
+  font-weight: bold;
+}
+.bitd .items-block.full-size .item-header {
+  display: flex;
+}
+.bitd .items-block.full-size .item-header .item-create {
+  position: static;
+  margin: 0 3px;
+}
+.bitd .items-block.full-size .items-list .item-checkbox {
+  position: relative;
+  top: 4px;
+  width: 15px;
+  margin: 0;
+}
+.bitd .items-block.full-size .items-list .item-name {
+  font-family: "Spectral SC", serif;
+  cursor: pointer;
+}
+.bitd .contacts .item-name::after {
+  content: ",";
+  font-weight: normal;
+}
+
+.bitd.actor input.all-with {
+  width: 100%;
+}
+.bitd.actor .npc .sheet-header, .bitd.actor .faction .sheet-header {
+  flex: 100px auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.bitd.actor .npc .sheet-header .character-img, .bitd.actor .faction .sheet-header .character-img {
+  flex: 0 0 100px;
+  height: 100px;
+  margin-right: 10px;
+  border: none;
+}
+.bitd.actor .npc .sheet-header .header-fields, .bitd.actor .faction .sheet-header .header-fields {
+  flex: 1;
+}
+.bitd.actor .npc .sheet-header .header-fields .character-name, .bitd.actor .faction .sheet-header .header-fields .character-name {
+  height: 35px;
+  padding: 0px;
+  margin: 5px 0;
+  border-bottom: 0;
+  font-family: "Spectral SC", serif;
+  font-weight: 700;
+}
+.bitd.actor .npc .sheet-header .header-fields .character-name input, .bitd.actor .faction .sheet-header .header-fields .character-name input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.bitd.actor .npc .sheet-header .header-fields .brief-info, .bitd.actor .faction .sheet-header .header-fields .brief-info {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: "Spectral SC", serif;
+}
+.bitd.actor .scoundrel .actor-grid, .bitd.actor .crew .actor-grid {
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: 220px 1fr;
+}
+.bitd.actor .sheet-header .money input, .bitd.actor .sheet-header .storage input {
+  margin-left: 3px;
+  padding: 0;
+  min-width: 10px;
+  max-width: 15px;
+}
+.bitd.actor .sheet-header .money .coins > input, .bitd.actor .sheet-header .storage .coins > input {
+  max-width: 10px;
+}
+.bitd.actor .sheet-body .items-block {
+  position: relative;
+}
+.bitd.actor .sheet-body .items-block .item-add {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.bitd.actor .sheet-body .editor {
+  height: 250px;
+}
+.bitd.actor .scoundrel .sheet-header {
+  flex: 0 auto;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.bitd.actor .scoundrel .sheet-header .img-block {
+  padding-right: 10px;
+  font-family: "Spectral SC", serif;
+}
+.bitd.actor .scoundrel .sheet-header .img-block .profile-img {
+  grid-column: 1/3;
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+.bitd.actor .scoundrel .sheet-header .img-block .load select {
+  width: 100%;
+}
+.bitd.actor .scoundrel .sheet-header .img-block .load span {
+  display: block;
+  height: 26px;
+  width: 100%;
+  padding-top: 3px;
+  text-align: center;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields {
+  font-family: "Spectral SC", serif;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .name-alias {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: 10px;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .name-alias input {
+  text-decoration-line: underline;
+  margin: 0;
+  padding: 0;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-name {
+  position: relative;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-name::after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  width: 2px;
+  height: 40px;
+  background-color: #222;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-alias {
+  text-align: right;
+  border-bottom: none;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-alias input {
+  width: 200px;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .brief-info {
+  gap: 0 10px;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .brief-info .prop-input.all-row {
+  font-size: small;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block {
+  font-size: small;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute {
+  position: relative;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .attribute-name {
+  margin-bottom: 3px;
+  font-size: medium;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .exp-block {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .value-dot {
+  position: relative;
+  height: 12px;
+  width: 12px;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .value-dot:first-child {
+  margin-right: 3px;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .value-dot:first-child::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -5px;
+  width: 1px;
+  height: 20px;
+  background-color: #222;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 5px;
+  border-top: 2px solid black;
+  font-size: medium;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma .stress {
+  display: flex;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma .stress .add-trauma {
+  margin: 0 3px;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma .stress .stress-title:hover, .bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma .stress .stress-title:focus {
+  color: white;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .value-step-block {
+  min-width: fit-content;
+}
+.bitd.actor .scoundrel .sheet-header .header-fields .trauma-list {
+  padding-left: 3px;
+}
+.bitd.actor .scoundrel .sheet-header .contacts {
+  align-self: start;
+}
+.bitd.actor .scoundrel .sheet-header .contacts .contacts-title {
+  margin-bottom: 3px;
+}
+.bitd.actor .scoundrel .sheet-header .harm {
+  position: relative;
+}
+.bitd.actor .scoundrel .sheet-header .harm .healing {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.bitd.actor .scoundrel .sheet-header .harm .healing .healing-input {
+  height: 24px;
+}
+.bitd.actor .scoundrel .sheet-header .harm .harm-table {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  border: 1px solid #222;
+  text-align: center;
+  font-family: "Spectral SC", serif;
+}
+.bitd.actor .scoundrel .sheet-header .harm .harm-table div {
+  border: 1px solid #222;
+  padding: 0.25em;
+}
+.bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-name.full-with {
+  grid-column: 2/4;
+}
+.bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-name.full-with input {
+  width: 100%;
+}
+.bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-level, .bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-effect {
+  background: rgba(0, 0, 0, 0.05);
+}
+.bitd.actor .scoundrel .sheet-body {
+  position: relative;
+}
+.bitd.actor .scoundrel .sheet-body .general-container {
+  grid-template-areas: "1 main" "2 main";
+}
+.bitd.actor .scoundrel .sheet-body .general-container .item-header {
+  margin-bottom: 5px;
+}
+.bitd.actor .scoundrel .sheet-body .general-container .item-checkbox {
+  display: inline-block;
+}
+.bitd.actor .scoundrel .sheet-body .general-container .item-checkbox .loadout-box {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  border: 1px solid black;
+  border-radius: 0;
+  background: white;
+}
+.bitd.actor .scoundrel .sheet-body .general-container .item-checkbox .loadout-box:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: -5px;
+  width: 5px;
+  height: 1px;
+  background-color: #222;
+}
+.bitd.actor .scoundrel .sheet-body .general-container .item-checkbox.active .loadout-box {
+  background: black;
+}
+.bitd.actor .scoundrel .sheet-body .general-container .item.tool.broken .item-name {
+  text-decoration: line-through;
+}
+.bitd.actor .scoundrel .sheet-body .general-container .spec-inventory {
+  grid-area: 1;
+}
+.bitd.actor .scoundrel .sheet-body .general-container .inventory {
+  grid-area: 2;
+}
+.bitd.actor .scoundrel .sheet-body .general-container .abilities {
+  position: relative;
+  grid-area: main;
+}
+.bitd.actor .scoundrel .sheet-body .general-container .abilities .exp-block {
+  position: absolute;
+  right: 5px;
+}
+.bitd.actor .scoundrel .sheet-body .notes-container {
+  grid-template-areas: "1 main" "2 main";
+}
+.bitd.actor .scoundrel .sheet-body .notes-container .description {
+  grid-area: main;
+}
+.bitd.actor .scoundrel .sheet-body .notes-container .expirience {
+  grid-area: 1;
+}
+.bitd.actor .scoundrel .sheet-body .notes-container .rules {
+  grid-area: 2;
+}
+.bitd.actor .scoundrel .sheet-body .notes-container .rules ul {
+  margin-top: 0;
+}
+.bitd.actor .scoundrel .sheet-body .notes-container .rules h4 {
+  margin: 0;
+  font-family: "Spectral SC", serif;
+  font-weight: bold;
+}
+.bitd.actor .scoundrel .sheet-body .notes-container .rules .teamwork .grid-2col {
+  row-gap: 0;
+}
+.bitd.actor .crew .sheet-header .crew-name {
+  margin: 0;
+}
+.bitd.actor .crew .sheet-header .crew-name input {
+  margin: 0;
+}
+.bitd.actor .crew .sheet-header .brief-info {
+  row-gap: 0;
+  grid-column: 1/3;
+}
+.bitd.actor .crew .sheet-header .brief-info .prop {
+  display: block;
+  font-family: "Spectral SC", serif;
+}
+.bitd.actor .crew .sheet-header .brief-info .prop .prop-label {
+  display: block;
+  font-size: medium;
+}
+.bitd.actor .crew .sheet-header .brief-info .prop .prop-input {
+  padding: 0;
+  font-size: small;
+}
+.bitd.actor .crew .sheet-header .contacts-and-ground {
+  height: 100%;
+}
+.bitd.actor .crew .sheet-header .header-fields {
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: 120px 1fr;
+  font-family: "Spectral SC", serif;
+}
+.bitd.actor .crew .sheet-header .header-fields .heat-block {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-top: 2px solid black;
+}
+.bitd.actor .crew .sheet-header .header-fields .heat-block .wanted-lvl {
+  font-size: small;
+}
+.bitd.actor .crew .sheet-header .header-fields .heat-block .flexrow {
+  align-items: flex-start;
+}
+.bitd.actor .crew .sheet-header .header-fields .tier-block .hold .clear-select {
+  padding: 0;
+}
+.bitd.actor .crew .sheet-header .header-fields .reputation-block {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-top: 2px solid black;
+}
+.bitd.actor .crew .sheet-header .header-fields .reputation-block .turf > h3, .bitd.actor .crew .sheet-header .header-fields .reputation-block .bitd-header, .bitd.actor .crew .sheet-header .header-fields .reputation-block .value-step-block {
+  display: inline-block;
+}
+.bitd.actor .crew .sheet-header .header-fields .reputation-block .reputation {
+  display: flex;
+  align-items: flex-start;
+}
+.bitd.actor .crew .sheet-header .header-fields .exp-block {
+  position: relative;
+  grid-column: 1/3;
+}
+.bitd.actor .crew .sheet-header .header-fields .exp-block .value-step-block {
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+.bitd.actor .crew .sheet-header .header-fields .exp-block .bitd-subheader, .bitd.actor .crew .sheet-header .header-fields .exp-block .exp-tips {
+  font-size: small;
+}
+.bitd.actor .crew .sheet-header h3.bitd-header {
+  padding-top: 0;
+}
+
+.bitd.item input.all-with {
+  width: 100%;
+}
+.bitd.item .cohort .harm {
+  font-size: medium;
+  font-family: "Spectral SC", serif;
+}
+.bitd.item .items-header {
+  flex: 100px auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.bitd.item .items-header .item-img {
+  flex: 0 0 100px;
+  height: 100px;
+  margin-right: 10px;
+  border: none;
+}
+.bitd.item .items-header .header-fields {
+  flex: 1;
+}
+.bitd.item .items-header .header-fields .item-name {
+  height: 35px;
+  padding: 0px;
+  margin: 5px 0;
+  border-bottom: 0;
+  font-family: "Spectral SC", serif;
+  font-weight: 700;
+}
+.bitd.item .items-header .header-fields .item-name input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.bitd.item .items-header .header-fields .brief-info {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: "Spectral SC", serif;
+}
+.bitd.item .sheet-body .editor-block {
+  flex: auto;
+}
+.bitd.item .playbook .summarize, .bitd.item .crewType .summarize {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.bitd.item .playbook .linked-items, .bitd.item .crewType .linked-items {
+  margin-bottom: 10px;
+}
+.bitd.item .playbook .attribute-block {
+  font-family: "Spectral SC", serif;
+}
+.bitd.item .crewType .claims-block {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 100px);
+}
+.bitd.item .crewType .claims-block .claim {
+  background: rgba(0, 0, 0, 0.1);
+}
+.bitd.item .crewType .claims-block .claim-lair, .bitd.item .crewType .claims-block .claim-turf {
+  font-family: "Spectral SC", serif;
+  font-weight: bold;
+  line-height: 100px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=bitd.css.map */
