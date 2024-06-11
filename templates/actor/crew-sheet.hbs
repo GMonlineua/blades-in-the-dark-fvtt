@@ -1,25 +1,26 @@
 <form class="{{cssClass}} {{actor.type}}" autocomplete="off">
   {{!-- Sheet Header --}}
   <header class="sheet-header actor-grid">
-    <div class="crew-type">
-      <h1>
+    <div class="type-container">
+      <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+      <div class="crew-type">
+        <h1>
+          {{#if playbook}}
+            {{playbook.name}}
+          {{else}}
+            {{localize 'BITD.CrewType'}}
+          {{/if}}
+        </h1>
         {{#if playbook}}
-          {{playbook.name}}
-        {{else}}
-          {{localize 'BITD.CrewType'}}
+          <p class="playbook-description">{{playbook.system.summarize}}</p>
         {{/if}}
+      </div>
+    </div>
+
+    <div class="name-container">
+      <h1 class="crew-name">
+        <input class="clear-input" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.CrewName'}}" data-dtype="String"/>
       </h1>
-    </div>
-
-    <h1 class="crew-name">
-      <input class="clear-input" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.CrewName'}}" data-dtype="String"/>
-    </h1>
-
-    <div class="contacts-and-ground">
-      {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
-    </div>
-
-    <div class="header-fields">
 
       <div class="brief-info grid-2col">
         <div class="prop">
@@ -32,6 +33,16 @@
           <input class="prop-input clear-input" type="text" name="system.repType" value="{{system.repType}}" data-dtype="String" placeholder="{{localize 'BITD.RepDescription'}}"/>
         </div>
       </div>
+    </div>
+
+    <div class="hunting-ground">
+      <h3 class="bitd-header">{{localize 'BITD.HuntingGround.Title'}}</h3>
+      <input class="clear-input all-width" type="text" name="system.hunting.ground" value="{{system.hunting.ground}}" data-dtype="String" placeholder="{{localize 'BITD.HuntingGround.Title'}}"/>
+      <label class="operation-header" for="system.hunting.operation">{{localize 'BITD.HuntingGround.Operation'}}</label>
+      <input class="clear-input all-width" type="text" name="system.hunting.operation" value="{{system.hunting.operation}}" data-dtype="String" placeholder="{{localize 'BITD.HuntingGround.Operation'}}"/>
+    </div>
+
+    <div class="header-fields">
 
       <div class="storage">
         <div class="resource coins">
@@ -96,11 +107,22 @@
         </div>
       </div>
 
-      <div class="hunting-ground">
-        <h3 class="bitd-header">{{localize 'BITD.HuntingGround.Title'}}</h3>
-        <ul class="hunting-ground-tips">{{{localize 'BITD.HuntingGround.Tips'}}}</ul>
-      </div>
+    </div>
 
+    {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
+
+    <div class="exp-block">
+      <h3 class="bitd-header">{{localize 'BITD.CrewExp.ShortTitle'}}</h3>
+      <p class="bitd-subheader">{{localize 'BITD.CrewExp.HowItWorks'}}</p>
+      <div class="value-step-block" data-value="{{system.exp}}" data-key="system.exp">
+        {{#numLoop 6}}
+          <span class="value-step value-tooth simple-red-tooth" data-index="{{this}}"></span>
+        {{/numLoop}}
+      </div>
+      <ul class="exp-tips">
+        <li>{{playbook.system.exp}}</li>
+        {{{localize 'BITD.CrewExp.Tips'}}}
+      </ul>
     </div>
 
   </header>
@@ -140,28 +162,10 @@
     {{!-- Owned Notes Tab --}}
     <div class="tab notes" data-group="primary" data-tab="notes">
       <div class="notes-container">
-
-        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
-
-        <div class="exp-block">
-          <h3 class="bitd-header">{{localize 'BITD.CrewExp.ShortTitle'}}</h3>
-          <p class="bitd-subheader">{{localize 'BITD.CrewExp.HowItWorks'}}</p>
-          <div class="value-step-block" data-value="{{system.exp}}" data-key="system.exp">
-            {{#numLoop 6}}
-              <span class="value-step value-tooth simple-red-tooth" data-index="{{this}}"></span>
-            {{/numLoop}}
-          </div>
-          <ul class="exp-tips">
-            <li>{{playbook.system.exp}}</li>
-            {{{localize 'BITD.CrewExp.Tips'}}}
-          </ul>
-        </div>
-
         <div class="description">
           <h3 class="bitd-header">{{localize 'BITD.Notes'}}</h3>
           {{editor enrichedDescription target="system.description" button=true owner=owner editable=editable}}
         </div>
-
       </div>
     </div>
 

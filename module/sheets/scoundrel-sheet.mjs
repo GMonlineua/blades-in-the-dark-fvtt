@@ -24,14 +24,6 @@ export class BitdScoundrelSheet extends BitdActorSheet
   /** @override */
   async getData() {
     const context = await super.getData();
-    const actorData = this.actor.toObject(false);
-
-    // Encrich editor content
-    context.enrichedDescription = await TextEditor.enrichHTML(this.object.system.description, { async: true })
-
-    // Add the actor's data to context.data for easier access, as well as flags.
-    context.system = actorData.system;
-    context.flags = actorData.flags;
 
     // Prepare scoundrel data and items.
     this._prepareItems(context);

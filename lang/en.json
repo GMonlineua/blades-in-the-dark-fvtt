@@ -166,7 +166,8 @@
     "Lair": "Lair",
     "HuntingGround": {
       "Title": "Hunting Grounds",
-      "Tips": "<li>Get +1d to any gather information rolls when prepare to operation of your prefer type.</li><li>Free additional downtime activity to contribute to that operation.</li>"
+      "Operation": "Operation Type",
+      "Tips": "<p>Get +1d to any gather information rolls when prepare to operation of your prefer type.</p><p>Free additional downtime activity to contribute to that operation.</p>"
     },
     "Tier": "Tier",
     "Hold": {

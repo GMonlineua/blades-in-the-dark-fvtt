@@ -881,34 +881,59 @@ h3.bitd-header {
 .bitd.actor .scoundrel .sheet-body .notes-container .rules .teamwork .grid-2col {
   row-gap: 0;
 }
-.bitd.actor .crew .sheet-header .crew-name {
+.bitd.actor .crew .sheet-header {
+  row-gap: 5px;
+}
+.bitd.actor .crew .sheet-header .type-container {
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: 60px 1fr;
+  height: -webkit-fill-available;
+}
+.bitd.actor .crew .sheet-header .type-container .profile-img {
+  width: 100%;
+  border: none;
+}
+.bitd.actor .crew .sheet-header .type-container .crew-type {
+  font-family: "Spectral SC", serif;
+}
+.bitd.actor .crew .sheet-header .type-container .crew-type .playbook-description {
+  margin: 0;
+  font-size: medium;
+}
+.bitd.actor .crew .sheet-header .name-container .crew-name {
   margin: 0;
 }
-.bitd.actor .crew .sheet-header .crew-name input {
+.bitd.actor .crew .sheet-header .name-container .crew-name input {
+  height: 90%;
   margin: 0;
+  padding: 0;
 }
-.bitd.actor .crew .sheet-header .brief-info {
+.bitd.actor .crew .sheet-header .name-container .brief-info {
   row-gap: 0;
-  grid-column: 1/3;
 }
-.bitd.actor .crew .sheet-header .brief-info .prop {
+.bitd.actor .crew .sheet-header .name-container .brief-info .prop {
   display: block;
   font-family: "Spectral SC", serif;
 }
-.bitd.actor .crew .sheet-header .brief-info .prop .prop-label {
+.bitd.actor .crew .sheet-header .name-container .brief-info .prop .prop-label {
   display: block;
   font-size: medium;
 }
-.bitd.actor .crew .sheet-header .brief-info .prop .prop-input {
+.bitd.actor .crew .sheet-header .name-container .brief-info .prop .prop-input {
   padding: 0;
   font-size: small;
 }
-.bitd.actor .crew .sheet-header .contacts-and-ground {
-  height: 100%;
+.bitd.actor .crew .sheet-header .hunting-ground .clear-input {
+  padding: 0;
+}
+.bitd.actor .crew .sheet-header .hunting-ground .operation-header {
+  font-family: "Spectral SC", serif;
 }
 .bitd.actor .crew .sheet-header .header-fields {
   display: grid;
   column-gap: 10px;
+  row-gap: 5px;
   grid-template-columns: 120px 1fr;
   font-family: "Spectral SC", serif;
 }
@@ -940,39 +965,34 @@ h3.bitd-header {
   display: flex;
   align-items: flex-start;
 }
-.bitd.actor .crew .sheet-header .header-fields .hunting-ground {
-  grid-column: 1/3;
+.bitd.actor .crew .sheet-header .header-fields .reputation-block .turf input {
+  max-width: 20px;
+  padding: 0;
 }
-.bitd.actor .crew .sheet-header .header-fields .hunting-ground .bitd-header {
-  font-size: small;
+.bitd.actor .crew .sheet-header .header-fields > div {
+  background: rgba(0, 0, 0, 0.1);
 }
-.bitd.actor .crew .sheet-header .header-fields .hunting-ground .hunting-ground-tips {
+.bitd.actor .crew .sheet-header .exp-block {
+  position: relative;
+}
+.bitd.actor .crew .sheet-header .exp-block .value-step-block {
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+.bitd.actor .crew .sheet-header .exp-block .bitd-subheader, .bitd.actor .crew .sheet-header .exp-block .exp-tips {
   font-size: small;
-  font-family: "Lora", serif;
 }
 .bitd.actor .crew .sheet-header h3.bitd-header {
   padding-top: 0;
+}
+.bitd.actor .crew .sheet-header > div {
+  height: 100%;
 }
 .bitd.actor .crew .notes .notes-container {
   display: grid;
   column-gap: 10px;
   grid-template-columns: 150px 1fr;
-}
-.bitd.actor .crew .notes .notes-container .profile-img {
-  height: 100%;
-  width: 100%;
-  border: none;
-}
-.bitd.actor .crew .notes .notes-container .exp-block {
-  position: relative;
-}
-.bitd.actor .crew .notes .notes-container .exp-block .value-step-block {
-  position: absolute;
-  top: 0;
-  right: 5px;
-}
-.bitd.actor .crew .notes .notes-container .exp-block .bitd-subheader, .bitd.actor .crew .notes .notes-container .exp-block .exp-tips {
-  font-size: small;
 }
 .bitd.actor .crew .notes .notes-container .description {
   grid-column: 1/3;

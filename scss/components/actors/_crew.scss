@@ -1,42 +1,73 @@
 .crew {
   .sheet-header {
-    .crew-type {}
+    row-gap: 5px;
 
-    .crew-name {
-      margin: 0;
+    .type-container {
+      display: grid;
+      column-gap: $padding-md;
+      grid-template-columns: 60px 1fr;
+      height: -webkit-fill-available;
 
-      input {
-        margin: 0;
+      .profile-img {
+        width: 100%;
+        border: none;
       }
-    }
 
-    .brief-info {
-      row-gap: 0;
-      grid-column: 1 / 3;
-
-      .prop {
-        display: block;
+      .crew-type {
         font-family: $font-secondary;
 
-        .prop-label {
-          display: block;
+        .playbook-description {
+          margin: 0;
           font-size: medium;
-        }
-
-        .prop-input {
-          padding: 0;
-          font-size: small;
         }
       }
     }
 
-    .contacts-and-ground {
-      height: 100%;
+    .name-container {
+      .crew-name {
+        margin: 0;
+
+        input {
+          height: 90%;
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      .brief-info {
+        row-gap: 0;
+
+        .prop {
+          display: block;
+          font-family: $font-secondary;
+
+          .prop-label {
+            display: block;
+            font-size: medium;
+          }
+
+          .prop-input {
+            padding: 0;
+            font-size: small;
+          }
+        }
+      }
+    }
+
+    .hunting-ground {
+      .clear-input {
+        padding: 0;
+      }
+
+      .operation-header {
+        font-family: $font-secondary;
+      }
     }
 
     .header-fields {
       display: grid;
       column-gap: $padding-md;
+      row-gap: $padding-sm;
       grid-template-columns: 120px 1fr;
       font-family: $font-secondary;
 
@@ -77,19 +108,31 @@
           display: flex;
           align-items: flex-start;
         }
+
+        .turf {
+          input {
+            max-width: 20px;
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    .header-fields>div {
+      background: $dark-paper;
+    }
+
+    .exp-block {
+      position: relative;
+
+      .value-step-block {
+        position: absolute;
+        top: 0;
+        right: $padding-sm;
       }
 
-      .hunting-ground {
-        grid-column: 1 / 3;
-
-        .bitd-header {
-          font-size: small;
-        }
-
-        .hunting-ground-tips {
-          font-size: small;
-          font-family: $font-primary;
-        }
+      .bitd-subheader, .exp-tips {
+        font-size: small;
       }
     }
 
@@ -98,31 +141,15 @@
     }
   }
 
+  .sheet-header>div {
+    height: 100%;
+  }
+
   .notes {
     .notes-container {
       display: grid;
       column-gap: $padding-md;
       grid-template-columns: 150px 1fr;
-
-      .profile-img {
-        height: 100%;
-        width: 100%;
-        border: none;
-      }
-
-      .exp-block {
-        position: relative;
-
-        .value-step-block {
-          position: absolute;
-          top: 0;
-          right: $padding-sm;
-        }
-
-        .bitd-subheader, .exp-tips {
-          font-size: small;
-        }
-      }
 
       .description {
         grid-column: 1 / 3;

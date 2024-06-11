@@ -98,6 +98,10 @@
     "crew": {
       "templates": ["base", "players", "group"],
       "lair": "",
+      "hunting": {
+       "ground": "",
+       "operation": ""
+      },
       "repType": "",
       "vault": 0,
       "heat": 0,
