@@ -15,6 +15,15 @@ First official version
 - Contacts: choose type, not input. Description > Summarize
 - Margin between rows in links
 - Show secrets only for owner and GM
+- Update hunting grounds
+- Show in chat portraits, not tokens
+- Fix number of xp and stress boxes
+
+#### Rolls
+
+- Fix gather information roll logic
+- Add effect to fortune and action roll
+- Auto add stress after pushing
 
 #### Claims
 

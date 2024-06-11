@@ -6,7 +6,6 @@ import { BitdCrewSheet } from "./sheets/crew-sheet.mjs";
 import { BitdItem } from "./documents/item.mjs";
 import { BitdItemSheet } from "./sheets/item-sheet.mjs";
 import { preprocessChatMessage, renderChatMessage } from "./helpers/chat-portraits.mjs";
-import { defaultItemsID } from "./helpers/default-items.mjs";
 import { createRollDialog } from "./helpers/roll.mjs";
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { registerHandlebarsHelpers } from "./helpers/handlebars-helpers.mjs";
@@ -53,28 +52,4 @@ Hooks.on("renderSceneControls", async (app, html) => {
     await createRollDialog("fortune");
   });
   html.children().first().append( diceRollButton );
-});
-
-Hooks.on("createActor", async function(actor, options, actorId) {
-    const defaultItems = [];
-
-    if (actor.type == "scoundrel") {
-      for (const id of defaultItemsID.scoundrelInventory) {
-        const uuid = "Compendium.bitd.items.Item." + id;
-        const item = await fromUuid(uuid);
-        defaultItems.push(item);
-      }
-    } else if (actor.type == "crew") {
-      for (const id of defaultItemsID.crewUpgrades) {
-        const uuid = "Compendium.bitd.upgrades.Item." + id;
-        const item = await fromUuid(uuid);
-        defaultItems.push(item);
-      }
-    }
-
-    for (const [ownerId, permissions] of Object.entries(actor.ownership)) {
-      if (permissions === 3 && game.userId === ownerId) {
-        actor.createEmbeddedDocuments('Item', defaultItems)
-      }
-    }
 });

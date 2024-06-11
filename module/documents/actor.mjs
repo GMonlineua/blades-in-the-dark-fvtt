@@ -1,8 +1,37 @@
+import { defaultItemsID } from "../helpers/default-items.mjs";
+
 /**
  * Extend the base Actor entity by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
  */
 export class BitdActor extends Actor {
+
+  async _onCreate(data, options, userId) {
+    super._onCreate(data, options, userId);
+    console.log(data)
+
+    const defaultItems = [];
+
+    if (this.type == "scoundrel") {
+      for (const id of defaultItemsID.scoundrelInventory) {
+        const uuid = "Compendium.bitd.items.Item." + id;
+        const item = await fromUuid(uuid);
+        defaultItems.push(item);
+      }
+    } else if (this.type == "crew") {
+      for (const id of defaultItemsID.crewUpgrades) {
+        const uuid = "Compendium.bitd.upgrades.Item." + id;
+        const item = await fromUuid(uuid);
+        defaultItems.push(item);
+      }
+    }
+
+    for (const [ownerId, permissions] of Object.entries(this.ownership)) {
+      if (permissions === 3 && game.userId === ownerId) {
+        this.createEmbeddedDocuments('Item', defaultItems)
+      }
+    }
+  }
 
   /** @override */
   prepareData() {
