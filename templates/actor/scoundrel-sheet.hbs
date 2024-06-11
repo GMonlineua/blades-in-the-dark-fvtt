@@ -73,7 +73,7 @@
       {{#if playbook}}
         {{playbook.name}}
       {{else}}
-        {{localize 'TYPES.Item.Playbook'}}
+        {{localize 'TYPES.Item.playbook'}}
       {{/if}}
     </a>
     <a class="item" data-tab="notes">{{localize 'BITD.Notes'}}</a>
@@ -113,7 +113,7 @@
             <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="abilityScoundrel"><i class="fas fa-plus"></i></a>
             <h3>{{localize 'BITD.Ability.Special'}}</h3>
             <div class="value-step-block exp-block" data-value="{{system.exp}}" data-key="system.exp">
-              {{#numLoop 6}}
+              {{#numLoop 8}}
                 <span class="value-step value-tooth simple-red-tooth" data-index="{{this}}"></span>
               {{/numLoop}}
             </div>
