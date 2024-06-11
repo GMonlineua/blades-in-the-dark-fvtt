@@ -140,8 +140,8 @@
     "units": "m"
   },
   "url": "https://github.com/GMonlineua/blades-in-the-dark-fvtt",
-  "manifest": "https://raw.githubusercontent.com/GMonlineua/blades-in-the-dark-fvtt/master/system.json",
+  "manifest": "https://raw.githubusercontent.com/GMonlineua/blades-in-the-dark-fvtt/main/system.json",
   "download": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/releases/download/v0.2/foundry.zip",
-  "license": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/blob/master/LICENSE.md",
-  "changelog": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/blob/master/CHANGELOG.md"
+  "license": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/blob/main/LICENSE.md",
+  "changelog": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/blob/main/CHANGELOG.md"
 }

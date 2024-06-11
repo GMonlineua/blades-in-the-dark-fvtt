@@ -16,14 +16,14 @@ Ukraine is currently defending itself from Russian aggression, please consider [
 To install a module, follow these instructions:
 
 1. Start FVTT and browse to the Game Modules tab in the Configuration and Setup menu
-2. Select the Install Module button and enter the following URL: `https://raw.githubusercontent.com/GMonlineua/blades-in-the-dark-fvtt/master/system.json`
+2. Select the Install Module button and enter the following URL: `https://raw.githubusercontent.com/GMonlineua/blades-in-the-dark-fvtt/main/system.json`
 3. Click Install and wait for installation to complete
 
 ## Documentation
 
-[Changelog](https://github.com/GMonlineua/blades-in-the-dark-fvtt/blob/master/CHANGELOG.md)
+[Changelog](https://github.com/GMonlineua/blades-in-the-dark-fvtt/blob/main/CHANGELOG.md)
 
-[Roadmap](https://github.com/GMonlineua/blades-in-the-dark-fvtt/blob/master/ROADMAP.md)
+[Roadmap](https://github.com/GMonlineua/blades-in-the-dark-fvtt/blob/main/ROADMAP.md)
 
 [Foundry Shield 11]: https://img.shields.io/badge/Foundry-11-informational?style=flat-square
 [Foundry URL]: https://foundryvtt.com
@@ -32,4 +32,4 @@ To install a module, follow these instructions:
 [Version URL]: https://github.com/GMonlineua/blades-in-the-dark-fvtt
 
 [GNU License]: https://img.shields.io/badge/License-GNU-green?style=flat-square
-[GNU URL]: https://github.com/GMonlineua/blades-in-the-dark-fvtt/blob/master/LICENSE.md
+[GNU URL]: https://github.com/GMonlineua/blades-in-the-dark-fvtt/blob/main/LICENSE.md
