@@ -16,30 +16,18 @@ function isWebm(file) {
   return /(?:\.([^.]+))?$/.exec(file)?.[1] === "webm";
 }
 
-// Get the token texture source for a given scene and token
-function getTokenTextureSource({ scene, token }) {
-  const sceneObj = game.scenes.get(scene);
-  return sceneObj?.tokens.get(token)?.texture?.src;
-}
-
-// Get the actor token or prototype token texture source for a given actor
-function getActorTextureSource({ actor }) {
-  const actorObj = game.actors.get(actor);
-  const prototypeToken = actorObj?.prototypeToken;
-  return prototypeToken?.randomImg ? null : prototypeToken?.texture?.src;
-}
-
-// Get the portrait source for a chat message
-function getPortraitSource({ speaker }) {
-  return speaker.token ? getTokenTextureSource(speaker) : getActorTextureSource(speaker);
-}
-
 // Preprocess chat message before it is created
 export function preprocessChatMessage(messageData, options, userId, diff) {
-  const portraitSource = getPortraitSource(messageData);
-  if (portraitSource) {
-    messageData.updateSource({ flags: { "portrait": { src: portraitSource } } });
+  let portraitSource;
+
+  if (messageData.speaker.actor) {
+    const actor = game.actors.get(messageData.speaker.actor);
+    portraitSource = actor.img;
+  } else {
+    portraitSource = game.user.avatar;
   }
+
+  messageData.updateSource({ flags: { "portrait": { src: portraitSource } } });
 };
 
 // Render chat message
