@@ -253,9 +253,19 @@
       },
       "Effect": {
         "Title": "Effcet",
+        "Zero": "Zero",
         "Limited": "Limited",
         "Standard": "Standard",
-        "Great": "Great"
+        "Great": "Great",
+        "Extreme": "Extreme"
+      },
+      "EffectDescription": {
+        "Title": "Effcet",
+        "Zero": "This action has poor, little or even zero effect. 0 Tick",
+        "Limited": "You achieve a partial or weak effect. How is your impact diminished? What effort remains to achieve your goal? 1 Tick",
+        "Standard": "You achieve what we’d expect as “normal” with this action. Is that enough, or is there more left to do? 2 Ticks",
+        "Great": "You achieve more than usual. How does the extra effort manifest? What additional benefit do you enjoy? 3 Ticks",
+        "Extreme": "Extreme Effect! 5 Ticks"
       },
       "Bonus": {
         "or": "or",
@@ -269,6 +279,10 @@
         "Push": "You suffer {stress} stress.",
         "DevilsBargain": "The Devil’s Bargain occurs regardless of the outcome of the roll.",
         "Assistance": "Character who helps suffer 1 stress and might also suffer any consequences that occur because of the roll."
+      },
+      "SufferTrauma": {
+        "Title": "Suffer Trauma",
+        "Description": "You get {stress} stress, so you suffer a level of <b>trauma</b>. You’re <i>left for dead</i> or otherwise dropped out of the current conflict, only to come back later, shaken and drained. When you return, you have <b>zero stress</b> and your vice has been satisfied for the next downtime (see <b>Vice</b> on page 156)."
       },
       "Result": {
         "Exp": "{actor} gains 1 experiences",
@@ -310,9 +324,11 @@
       },
       "GatherInformation": {
         "RollAs": "Roll as",
-        "Great": "<p>You get exceptional details. The information is complete and follow-up questions may expand into related areas or reveal more than you hoped for.</p>",
-        "Standard": "<p>You get good details. Clarifying and follow-up questions are possible.</p>",
-        "Limited": "<p>You get incomplete or partial information. More information gathering will be needed to get all the answers.</p>"
+        "Zero": "You get little, incomplete information.",
+        "Limited": "You get incomplete or partial information. More information gathering will be needed to get all the answers.",
+        "Standard": "You get good details. Clarifying and follow-up questions are possible.",
+        "Great": "You get exceptional details. The information is complete and follow-up questions may expand into related areas or reveal more than you hoped for.",
+        "Extreme": "You get more than you ever dared to think."
       },
       "Engagement": {
         "Critical": "Exceptional result. <em>You’vealready overcome the first obstacle andyou’re in a controlled position for what’s next.</em>",

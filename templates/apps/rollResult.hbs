@@ -17,7 +17,12 @@
       <p>{{localize "BITD.Roll.GatherInformation.RollAs"}}: {{rollAs}}</p>
     {{/if}}
     <h4>{{localizeResult}}</h4>
-    {{{description}}}
+    {{#if description}}
+      <p>{{{description}}}</p>
+    {{/if}}
+    {{#if effectDescription}}
+      <p>{{{effectDescription}}}</p>
+    {{/if}}
     {{#if devisBargain}}
       <h5>{{localize "BITD.Roll.Bonus.DevilsBargain"}}</h5>
       <p>{{localize "BITD.Roll.BonusDescription.DevilsBargain"}}</p>
@@ -29,6 +34,10 @@
     {{#if push}}
       <h5>{{localize "BITD.Roll.Bonus.Push"}}</h5>
       <p>{{pushDescription}}</p>
+    {{/if}}
+    {{#if trauma}}
+      <h5>{{localize "BITD.Roll.SufferTrauma.Title"}}</h5>
+      <p>{{{traumaDescription}}}</p>
     {{/if}}
   </div>
 

@@ -13,10 +13,10 @@ export async function createRollDialog (type, sheet, note) {
     action: actionRoll,
     resistance: resistanceRoll,
     fortune: fortuneRoll,
-    information: GatherInformation,
-    engagement: EngagementRoll,
-    asset: AcquireAsset,
-    vice: IndulgeVice
+    information: gatherInformation,
+    engagement: engagementRoll,
+    asset: acquireAsset,
+    vice: indulgeVice
   }
 
   const html = await renderTemplate("systems/bitd/templates/apps/rollDialog.hbs", templateData);
@@ -33,7 +33,7 @@ export async function createRollDialog (type, sheet, note) {
           const data = toIntData(Object.fromEntries(formData.entries()));
 
           const rollFunction = functions[data.rollType];
-          const rollData = await roll(data);
+          const rollData = await roll(data, sheet);
           rollData.name = templateData.type[data.rollType];
 
           rollFunction(rollData, sheet, data);
@@ -131,7 +131,7 @@ function getDiceNumber(html, sheet) {
   html.find("#dice-number")[0].value = diceNumber;
 }
 
-async function roll(data) {
+async function roll(data, sheet) {
   let number = data.diceNumber + data.modifier;
 
   if (data.assistance) {
@@ -160,17 +160,31 @@ async function roll(data) {
     push: data.pushEffect || data.pushDice,
     devisBargain: data.devisBargain,
     position: data.position,
-    effect: data.effect
+    effect: data.effect,
+    trauma: false
   }
 
-  let stress = 0;
+  let sufferedStress = 0;
   if (data.pushEffect) {
-    stress += 2;
+    sufferedStress += 2;
   }
   if (data.pushDice) {
-    stress += 2;
+    sufferedStress += 2;
   }
-  rollResult.pushDescription = game.i18n.format("BITD.Roll.BonusDescription.Push", {stress: stress})
+
+  rollResult.pushDescription = game.i18n.format("BITD.Roll.BonusDescription.Push", {stress: sufferedStress});
+
+  if (sheet) {
+    const stress = sheet.system.stress + sufferedStress;
+
+    if (stress < 9) {
+      await sheet.update({ "system.stress": stress });
+    } else {
+      rollResult.trauma = true;
+      rollResult.traumaDescription = game.i18n.format("BITD.Roll.SufferTrauma.Description", {stress: stress});
+      await sheet.update({ "system.stress": 0 });
+    }
+  }
 
 
   if (resultsArr.filter(num => num === 6).length === 2) {
@@ -205,17 +219,30 @@ async function roll(data) {
 }
 
 function actionRoll(rollData, sheet, formData) {
-  rollData.description = game.i18n.localize("BITD.Roll.Action." + rollData.positionKey + "." + rollData.resultKey);
   rollData.effectShow = true;
   rollData.positionShow = true;
-
   const actionKey = formData.action.charAt(0).toUpperCase() + formData.action.slice(1);
   rollData.name += ": " + game.i18n.localize("BITD." + actionKey);
+
+  rollData.description = game.i18n.localize("BITD.Roll.Action." + rollData.positionKey + "." + rollData.resultKey);
+
+  switch (rollData.result) {
+    case "critical":
+      const data = getRollData();
+      const index = data.effectSequence.indexOf(rollData.effectKey);
+      rollData.effectKey = data.effectSequence[index + 1];
+      rollData.effectDescription = game.i18n.localize("BITD.Roll.EffectDescription." + rollData.effectKey);
+      break;
+    case "success":
+    case "mixed":
+      rollData.effectDescription = game.i18n.localize("BITD.Roll.EffectDescription." + rollData.effectKey);
+      break;
+  }
 
   return rollData
 }
 
-function resistanceRoll(rollData, sheet, formData) {
+async function resistanceRoll(rollData, sheet, formData) {
   let sufferedStress = 6 - rollData.max;
   rollData.description = game.i18n.localize("BITD.Roll.Resistance.Result");
 
@@ -230,8 +257,15 @@ function resistanceRoll(rollData, sheet, formData) {
   rollData.name += ": " + game.i18n.localize("BITD." + attributeKey);
 
   if (sheet) {
-    const stress = sheet.system.stress + sufferedStress
-    sheet.update({ "system.stress": stress });
+    const stress = sheet.system.stress + sufferedStress;
+
+    if (stress < 9) {
+      await sheet.update({ "system.stress": stress });
+    } else {
+      rollData.trauma = true;
+      rollData.traumaDescription = game.i18n.format("BITD.Roll.SufferTrauma.Description", {stress: stress});
+      await sheet.update({ "system.stress": 0 });
+    }
   }
 
   return rollData
@@ -240,42 +274,59 @@ function resistanceRoll(rollData, sheet, formData) {
 function fortuneRoll(rollData) {
   rollData.description = game.i18n.localize("BITD.Roll.Fortune." + rollData.resultKey);
 
+  const data = getRollData();
+  const rollEffect = data.fortuneRollResult[rollData.result];
+  rollData.effectDescription = game.i18n.localize("BITD.Roll.EffectDescription." + rollEffect);
+
   return rollData
 }
 
-function GatherInformation(rollData, sheet, formData) {
+function gatherInformation(rollData, sheet, formData) {
   rollData.rollAs = formData.rollAs;
-  rollData.description = game.i18n.localize("BITD.Roll.GatherInformation." + rollData.effectKey);
-  rollData.effectShow = true;
 
-  let addDescription;
   if (rollData.rollAs == "action") {
-    addDescription = game.i18n.localize("BITD.Roll.Action." + rollData.positionKey + "." + rollData.resultKey);
+    rollData.effectShow = true;
     rollData.positionShow = true;
     rollData.rollAs = game.i18n.localize("BITD.Roll.Type.Action");
-  } else if (rollData.rollAs == "fortune") {
-    addDescription = game.i18n.localize("BITD.Roll.Fortune." + rollData.resultKey);
-    rollData.rollAs = game.i18n.localize("BITD.Roll.Type.Fortune");
-  }
 
-  rollData.description += "<p>" + addDescription + "</p>";
+    rollData.description = game.i18n.localize("BITD.Roll.Action." + rollData.positionKey + "." + rollData.resultKey);
+
+    switch (rollData.result) {
+      case "critical":
+        const data = getRollData();
+        const index = data.effectSequence.indexOf(rollData.effectKey);
+        rollData.effectKey = data.effectSequence[index + 1];
+        rollData.effectDescription = game.i18n.localize("BITD.Roll.GatherInformation." + rollData.effectKey);
+        break;
+      case "success":
+      case "mixed":
+        rollData.effectDescription = game.i18n.localize("BITD.Roll.GatherInformation." + rollData.effectKey);
+        break;
+      case "fail":
+        rollData.effectDescription = game.i18n.localize("BITD.Roll.GatherInformation.Zero");
+    }
+  } else if (rollData.rollAs == "fortune") {
+    const data = getRollData();
+    const rollEffect = data.fortuneRollResult[rollData.result];
+    rollData.effectDescription = game.i18n.localize("BITD.Roll.GatherInformation." + rollEffect);
+  }
 
   return rollData
 }
 
-function EngagementRoll(rollData) {
+function engagementRoll(rollData) {
   rollData.description = game.i18n.localize("BITD.Roll.Engagement." + rollData.resultKey);
 
   return rollData
 }
 
-function AcquireAsset(rollData) {
+function acquireAsset(rollData) {
   rollData.description = game.i18n.localize("BITD.Roll.AcquireAsset." + rollData.resultKey);
 
   return rollData
 }
 
-function IndulgeVice(rollData, sheet) {
+async function indulgeVice(rollData, sheet) {
   let clearStress = rollData.max;
   rollData.description = game.i18n.format("BITD.Roll.IndulgeVice.Regular", {stress: clearStress});
 
@@ -283,11 +334,11 @@ function IndulgeVice(rollData, sheet) {
     const stress = sheet.system.stress - clearStress
 
     if (stress < 0) {
-      sheet.update({ "system.stress": 0 });
+      await sheet.update({ "system.stress": 0 });
       rollData.description = game.i18n.localize("BITD.Roll.IndulgeVice.Overindulgence");
       rollData.description += "<ul>" + game.i18n.localize("BITD.Roll.IndulgeVice.Trouble") + game.i18n.localize("BITD.Roll.IndulgeVice.Brag") + game.i18n.localize("BITD.Roll.IndulgeVice.Lost") + game.i18n.localize("BITD.Roll.IndulgeVice.Trapped") + "</ul>";
     } else {
-      sheet.update({ "system.stress": stress });
+      await sheet.update({ "system.stress": stress });
     }
   }
 

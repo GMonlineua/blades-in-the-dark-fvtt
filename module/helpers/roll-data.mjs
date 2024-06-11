@@ -18,7 +18,7 @@ export function getRollData(type, note) {
       asset: game.i18n.localize("BITD.Roll.Type.AcquireAsset"),
       vice: game.i18n.localize("BITD.Roll.Type.IndulgeVice")
     },
-    defaultType: type,
+    defaultType: type ? type : "",
     attributes: {
       insight: game.i18n.localize("BITD.Insight"),
       prowess: game.i18n.localize("BITD.Prowess"),
@@ -44,10 +44,19 @@ export function getRollData(type, note) {
       desperate: game.i18n.localize("BITD.Roll.Position.Desperate")
     },
     effect: {
+      zero: game.i18n.localize("BITD.Roll.Effect.Zero"),
       limited: game.i18n.localize("BITD.Roll.Effect.Limited"),
       standard: game.i18n.localize("BITD.Roll.Effect.Standard"),
-      great: game.i18n.localize("BITD.Roll.Effect.Great")
-    }
+      great: game.i18n.localize("BITD.Roll.Effect.Great"),
+      extreme: game.i18n.localize("BITD.Roll.Effect.Extreme")
+    },
+    fortuneRollResult: {
+      fail: "Zero",
+      mixed: "Limited",
+      success: "Standard",
+      critical: "Great"
+    },
+    effectSequence: ["Zero", "Limited", "Standard", "Great", "Extreme"]
   }
 
   Object.assign(templateData, rollData[type]);
