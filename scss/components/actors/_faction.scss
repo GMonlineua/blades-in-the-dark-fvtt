@@ -44,9 +44,50 @@
   }
 
   .sheet-body {
-    label {
-      font-family: $font-secondary;
-      font-weight: 700;
+    .general {
+      label {
+        font-family: $font-secondary;
+        font-weight: 700;
+      }
+
+      .turf {
+        margin: 5px 0;
+      }
+
+      .npcs {
+        margin: 5px 0;
+
+        .grid-2col{
+
+          .bitd-header {
+            margin-top: 3px;
+            font-size: small;
+
+            h3 {
+              padding: 0;
+              font-size: small;
+            }
+          }
+        }
+      }
+
+      .relation-faction {
+        margin: 5px 0;
+
+        .clear-input {
+          border-bottom: $border;
+        }
+      }
+    }
+
+    .notes {
+      .bitd-header {
+        padding: 3px;
+      }
+
+      .situation {
+        margin-bottom: 5px;
+      }
     }
   }
 }

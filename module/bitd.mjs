@@ -1,8 +1,9 @@
 // Import Modules
 import { BitdActor } from "./documents/actor.mjs";
 import { BitdActorSheet } from "./sheets/actor-sheet.mjs";
-import { BitdScoundrelSheet } from "./sheets/scoundrel-sheet.mjs";
 import { BitdCrewSheet } from "./sheets/crew-sheet.mjs";
+import { BitdFactionSheet } from "./sheets/faction-sheet.mjs";
+import { BitdScoundrelSheet } from "./sheets/scoundrel-sheet.mjs";
 import { BitdItem } from "./documents/item.mjs";
 import { BitdItemSheet } from "./sheets/item-sheet.mjs";
 import { preprocessChatMessage, renderChatMessage } from "./helpers/chat-portraits.mjs";
@@ -24,8 +25,9 @@ Hooks.once('init', async function() {
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("bitd", BitdActorSheet, { makeDefault: true });
-  Actors.registerSheet("bitd", BitdScoundrelSheet, { types: ["scoundrel"], makeDefault: true });
   Actors.registerSheet("bitd", BitdCrewSheet, { types: ["crew"], makeDefault: true });
+  Actors.registerSheet("bitd", BitdFactionSheet, { types: ["faction"], makeDefault: true });
+  Actors.registerSheet("bitd", BitdScoundrelSheet, { types: ["scoundrel"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("bitd", BitdItemSheet, { makeDefault: true });
 

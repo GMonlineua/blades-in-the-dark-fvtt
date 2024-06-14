@@ -1,0 +1,27 @@
+<div class="claims-map items-block full-size">
+  <div class="item-header bitd-header">
+    <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="claim"><i class="fas fa-plus"></i></a>
+    <h3>{{localize 'BITD.Claim.Plural'}}</h3>
+  </div>
+  <ol class="items-list">
+    {{#each claims as |item id|}}
+      <li class="item {{item.type}} {{#if item.system.active}}active{{/if}}" data-item-id="{{item._id}}">
+        <div class="item-description">
+          <input class="item-checkbox" data-key="active" type="checkbox" name="item.system.active" data-dtype="Boolean" {{#if item.system.active}} checked {{/if}}></input>
+          <span class="item-name">{{item.name}}</span>
+        </div>
+
+        <div class="item-summary">
+          <p class="effect"><b>{{localize 'BITD.Claim.Effect'}}:</b> {{system.effect}}</p>
+          {{{item.system.description}}}
+        </div>
+
+        <div class="item-controls">
+          <a class="item-control show-item" data-roll-type="show" title="{{localize 'BITD.ItemShow'}}"><i class="fa fa-comment"></i></a>
+          <a class="item-control item-edit" title="{{localize 'BITD.ItemEdit'}}"><i class="fas fa-edit"></i></a>
+          <a class="item-control item-delete" title="{{localize 'BITD.ItemDelete'}}"><i class="fas fa-trash"></i></a>
+        </div>
+      </li>
+    {{/each}}
+  </ol>
+</div>

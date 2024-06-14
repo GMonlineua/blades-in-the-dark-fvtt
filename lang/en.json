@@ -24,6 +24,7 @@
     "Description": "Description",
     "Summary": "Summary",
     "Links": "Links",
+    "ActorPlural": "Actors",
 
     "ActorName": "Name",
     "ScoundrelAlias": "Alias",

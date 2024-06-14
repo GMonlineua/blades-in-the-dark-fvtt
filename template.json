@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["scoundrel", "crew", "npc", "faction"],
+    "types": ["scoundrel", "crew", "faction", "npc"],
     "templates": {
       "base": {
         "description": ""
@@ -131,19 +131,18 @@
         "secret": true,
         "value": ""
       },
-      "npc": {
-        "secret": true,
-        "actors": []
-      },
+      "secretTurf": true,
+      "npc": [],
+      "secretNPC": true,
       "allies": {
         "secret": true,
         "value": "",
-        "actors": ""
+        "actors": []
       },
       "enemies": {
         "secret": true,
         "value": "",
-        "actors": ""
+        "actors": []
       },
       "assets": {
         "secret": true,
@@ -153,10 +152,7 @@
         "secret": true,
         "value": ""
       },
-      "situation": {
-        "secret": true,
-        "value": ""
-      }
+      "situation": ""
     }
   },
   "Item": {
