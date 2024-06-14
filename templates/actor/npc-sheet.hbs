@@ -2,11 +2,11 @@
   {{!-- Sheet Header --}}
   <header class="sheet-header actor-grid">
 
-    <img class="character-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
 
     <div class="header-fields">
       <h1 class="character-name"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.ActorName'}}"/></h1>
-      <input class="summarize all-with" name="system.summarize" type="text" value="{{system.summarize}}" placeholder="{{localize 'BITD.Summarize'}}" data-dtype="String"></input>
+      <input class="summary all-with" name="system.summary" type="text" value="{{system.summary}}" placeholder="{{localize 'BITD.Summary'}}" data-dtype="String"></input>
     </div>
 
   </header>

@@ -17,8 +17,10 @@
 
 .bitd.actor {
   @import 'components/actor';
-  @import 'components/actors/scoundrel';
   @import 'components/actors/crew';
+  @import 'components/actors/faction';
+  @import 'components/actors/npc';
+  @import 'components/actors/scoundrel';
 }
 
 .bitd.item {

@@ -1,10 +1,9 @@
 {
   "Actor": {
-    "types": ["scoundrel", "crew", "npc", "faction", "factions"],
+    "types": ["scoundrel", "crew", "npc", "faction"],
     "templates": {
       "base": {
-        "description": "",
-        "notes": ""
+        "description": ""
       },
       "players": {
         "exp": 0,
@@ -12,7 +11,8 @@
         "playbook": {}
       },
       "group": {
-        "tier": 0
+        "tier": 0,
+        "hold": "strong"
       }
     },
     "scoundrel": {
@@ -106,7 +106,6 @@
       "vault": 0,
       "heat": 0,
       "wanted": 0,
-      "hold": "strong",
       "tier": 0,
       "rep": {
         "value": 0
@@ -115,18 +114,49 @@
     },
     "npc": {
       "templates": ["base"],
-      "summarize": "",
+      "summary": "",
       "class": "",
       "faction": "",
       "crewType": ""
     },
     "faction": {
       "templates": ["base", "group"],
-      "quirks": "",
-      "situation": ""
-    },
-    "factions": {
-      "templates": ["base"]
+      "status": 0,
+      "summary": "",
+      "goals": {
+        "secret": true,
+        "value": ""
+      },
+      "lair": {
+        "secret": true,
+        "value": ""
+      },
+      "npc": {
+        "secret": true,
+        "actors": []
+      },
+      "allies": {
+        "secret": true,
+        "value": "",
+        "actors": ""
+      },
+      "enemies": {
+        "secret": true,
+        "value": "",
+        "actors": ""
+      },
+      "assets": {
+        "secret": true,
+        "value": ""
+      },
+      "quirks": {
+        "secret": true,
+        "value": ""
+      },
+      "situation": {
+        "secret": true,
+        "value": ""
+      }
     }
   },
   "Item": {
@@ -157,7 +187,7 @@
       "contacts": [],
       "inventory": [],
       "exp": "",
-      "summarize": "",
+      "summary": "",
       "description": ""
     },
     "crewType": {

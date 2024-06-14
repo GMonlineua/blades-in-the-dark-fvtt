@@ -12,7 +12,7 @@ First official version
 - Cohorts as item in crew sheet and crew type
 - Contacts coma in crew sheet
 - Change crew header grid and add ability to set a profile picture
-- Contacts: choose type, not input. Description > Summarize
+- Contacts: choose type, not input. Description > Summary
 - Margin between rows in links
 - Show secrets only for owner and GM
 - Update hunting grounds

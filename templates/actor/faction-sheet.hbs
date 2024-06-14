@@ -1,18 +1,86 @@
 <form class="{{cssClass}} {{actor.type}}" autocomplete="off">
   {{!-- Sheet Header --}}
   <header class="sheet-header actor-grid">
-
-    <img class="character-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
-
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
     <div class="header-fields">
       <h1 class="character-name"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.ActorName'}}"/></h1>
+      <div class="brief-info">
+        <div class="prop">
+          <label class="prop-label" for="system.tier">{{localize 'BITD.Tier'}}:</label>
+          <input class="prop-input clear-input" type="number" name="system.tier"  value="{{system.tier}}" data-dtype="Number" placeholder="0"></input>
+          <select class="clear-select" name="system.hold">
+            {{#select system.hold}}
+              <option value="weak">{{localize 'BITD.Hold.Weak'}}</option>
+              <option value="strong">{{localize 'BITD.Hold.Strong'}}</option>
+            {{/select}}
+          </select>
+        </div>
+        <div class="prop">
+          <label class="prop-label" for="system.status">{{localize 'BITD.Status.Title'}}:</label>
+          <select class="clear-select" name="system.status">
+            {{#select system.status}}
+              <option value="3">{{localize 'BITD.Status.Allies'}}</option>
+              <option value="2">{{localize 'BITD.Status.Friendly'}}</option>
+              <option value="1">{{localize 'BITD.Status.Helpful'}}</option>
+              <option value="0">{{localize 'BITD.Status.Neutral'}}</option>
+              <option value="-1">{{localize 'BITD.Status.Interfering'}}</option>
+              <option value="-2">{{localize 'BITD.Status.Hostile'}}</option>
+              <option value="-3">{{localize 'BITD.Status.War'}}</option>
+            {{/select}}
+          </select>
+        </div>
+        <input class="prop summary all-with" name="system.summary" type="text" value="{{system.summary}}" placeholder="{{localize 'BITD.Summary'}}" data-dtype="String"></input>
+      </div>
     </div>
 
   </header>
 
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs flexrow" data-group="primary">
+    <a class="item" data-tab="general">{{localize 'BITD.General'}}</a>
+    <a class="item" data-tab="notes">{{localize 'BITD.Notes'}}</a>
+  </nav>
+
   {{!-- Sheet Body --}}
   <section class="sheet-body">
-    <hr>
-    {{editor enrichedDescription target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+
+    {{!-- Owned Playbook Tab --}}
+    <div class="tab general" data-group="primary" data-tab="general">
+
+      <div class="goals">
+        <label for="system.goals">{{localize 'BITD.Goals'}}:</label>
+        <input class="all-with" name="system.goals.value" type="text" value="{{system.goals.value}}" data-dtype="String"></input>
+      </div>
+
+      <div class="npcs">
+        <h3>{{localize 'BITD.NPCs'}}</h3>
+      </div>
+      <div class="allies">
+        <h3>{{localize 'BITD.Allies'}}</h3>
+      </div>
+      <div class="enemies">
+        <h3>{{localize 'BITD.Enemies'}}</h3>
+      </div>
+
+      <div class="notable-assets">
+        <label for="system.assets">{{localize 'BITD.NotableAssets'}}:</label>
+        <input class="all-with" name="system.assets.value" type="text" value="{{system.assets.value}}" data-dtype="String"></input>
+      </div>
+      <div class="quirks">
+        <label for="system.quirks">{{localize 'BITD.Quirks'}}:</label>
+        <input class="all-with" name="system.quirks.value" type="text" value="{{system.quirks.value}}" data-dtype="String"></input>
+      </div>
+      <div class="situation">
+        <h3>{{localize 'BITD.Situation'}}</h3>
+        <input class="all-with" name="system.situation.value" type="text" value="{{system.situation.value}}" data-dtype="String"></input>
+      </div>
+
+    </div>
+
+    {{!-- Owned Notes Tab --}}
+    <div class="tab notes" data-group="primary" data-tab="notes">
+      {{editor enrichedDescription target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+    </div>
+
   </section>
 </form>
