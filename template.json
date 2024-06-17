@@ -19,8 +19,10 @@
       "templates": ["base", "players"],
       "alias": "",
       "heritage": "",
-      "background": "",
       "vice": "",
+      "belives": "",
+      "drives": "",
+      "background": "",
       "look": "",
       "stress": 0,
       "trauma": [],
@@ -124,32 +126,25 @@
       "status": 0,
       "summary": "",
       "goals": {
-        "secret": true,
+        "show": false,
         "value": ""
       },
       "lair": {
-        "secret": true,
+        "show": false,
         "value": ""
       },
-      "secretTurf": true,
       "npc": [],
-      "secretNPC": true,
-      "allies": {
-        "secret": true,
-        "value": "",
-        "actors": []
-      },
-      "enemies": {
-        "secret": true,
-        "value": "",
-        "actors": []
-      },
+      "showTurf": false,
+      "showNPC": false,
+      "showRelatedFactions": false,
+      "allies": "",
+      "enemies": "",
       "assets": {
-        "secret": true,
+        "show": false,
         "value": ""
       },
       "quirks": {
-        "secret": true,
+        "show": false,
         "value": ""
       },
       "situation": ""
@@ -216,8 +211,8 @@
       "flaws": ""
     },
     "contact": {
-      "type": "friend",
-      "tags": "",
+      "type": "",
+      "summary": "",
       "description": ""
     },
     "tool": {

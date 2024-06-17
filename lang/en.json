@@ -237,6 +237,10 @@
       "Dead": "Dead"
     },
 
+    "ShowForPlayers": {
+      "Title": "Show",
+      "Tooltip": "Show this field in limited sheet"
+    },
     "ItemShow": "Show",
     "ItemAdd": "Add",
     "ItemDelete": "Delete",

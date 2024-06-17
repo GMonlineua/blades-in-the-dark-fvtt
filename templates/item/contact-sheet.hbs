@@ -6,6 +6,7 @@
       <div class="brief-info">
         <select class="prop clear-select" name="system.type">
           {{#select system.type}}
+            <option value=""></option>
             <option value="friend">{{localize 'BITD.Contact.Types.Friend'}}</option>
             <option value="rival">{{localize 'BITD.Contact.Types.Rival'}}</option>
             <option value="enemy">{{localize 'BITD.Contact.Types.Enemy'}}</option>
@@ -14,8 +15,8 @@
           {{/select}}
         </select>
         <div class="prop">
-          <label class="prop-label" for="system.tags">{{localize 'BITD.Summary'}}:</label>
-          <input class="tags clear-input" type="text" name="system.tags" value="{{system.tags}}" data-dtype="String" placeholder="{{localize 'BITD.Summary'}}"/>
+          <label class="prop-label" for="system.summary">{{localize 'BITD.Summary'}}:</label>
+          <input class="summary clear-input" type="text" name="system.summary" value="{{system.summary}}" data-dtype="String" placeholder="{{localize 'BITD.Summary'}}"/>
         </div>
       </div>
     </div>

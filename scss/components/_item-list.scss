@@ -84,9 +84,21 @@
   }
 }
 
-.contacts {
-  .item-name::after {
-    content: ",";
-    font-weight: normal;
+.contacts.items-block {
+  .item {
+    margin: 0;
+
+    .item-description {
+      // font-family: $font-secondary;
+
+      .item-name {
+        font-weight: 700;
+      }
+
+      .item-name:not(:last-child)::after {
+        content: ",";
+        font-weight: normal;
+      }
+    }
   }
 }

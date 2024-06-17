@@ -1,0 +1,147 @@
+<form class="{{cssClass}} {{actor.type}}" autocomplete="off">
+  {{!-- Sheet Header --}}
+  <header class="sheet-header actor-grid">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+    <div class="header-fields">
+      <h1 class="character-name">{{actor.name}}</h1>
+      <div class="brief-info">
+        <div class="prop">
+          <label class="prop-label rollable" data-roll-type="fortune" for="system.tier">{{localize 'BITD.Tier'}}:</label>
+          <span>{{system.tier}}</span>
+          <select class="clear-select" name="system.hold">
+            {{#select system.hold}}
+              <option value="weak">{{localize 'BITD.Hold.Weak'}}</option>
+              <option value="strong">{{localize 'BITD.Hold.Strong'}}</option>
+            {{/select}}
+          </select>
+        </div>
+        <div class="prop">
+          <label class="prop-label" for="system.status">{{localize 'BITD.Status.Title'}}:</label>
+          <select class="clear-select" name="system.status">
+            {{#select system.status}}
+              <option value="3">{{localize 'BITD.Status.Allies'}}</option>
+              <option value="2">{{localize 'BITD.Status.Friendly'}}</option>
+              <option value="1">{{localize 'BITD.Status.Helpful'}}</option>
+              <option value="0">{{localize 'BITD.Status.Neutral'}}</option>
+              <option value="-1">{{localize 'BITD.Status.Interfering'}}</option>
+              <option value="-2">{{localize 'BITD.Status.Hostile'}}</option>
+              <option value="-3">{{localize 'BITD.Status.War'}}</option>
+            {{/select}}
+          </select>
+        </div>
+        <p class="summary">{{system.summary}}</p>
+      </div>
+    </div>
+
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs flexrow" data-group="primary">
+    <a class="item" data-tab="general">{{localize 'BITD.General'}}</a>
+    <a class="item" data-tab="notes">{{localize 'BITD.Notes'}}</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Owned Playbook Tab --}}
+    <div class="tab general" data-group="primary" data-tab="general">
+
+      {{#if system.goals.show}}
+        <div class="goals prop-field">
+          <label class="prop-lable">{{localize 'BITD.Goals'}}:</label>
+          <span>{{system.goals.value}}</span>
+        </div>
+      {{/if}}
+
+      {{#if system.lair.show}}
+        <div class="lair prop-field">
+          <label class="prop-lable" for="system.lair">{{localize 'BITD.Lair'}}:</label>
+          <span>{{system.lair.value}}</span>
+        </div>
+      {{/if}}
+
+      {{#if system.assets.show}}
+        <div class="notable-assets prop-field">
+          <label class="prop-lable" for="system.assets">{{localize 'BITD.NotableAssets'}}:</label>
+          <span>{{system.assets.value}}</span>
+        </div>
+      {{/if}}
+
+      {{#if system.quirks.show}}
+        <div class="quirks prop-field">
+          <label class="prop-lable" for="system.quirks">{{localize 'BITD.Quirks'}}:</label>
+          <span>{{system.quirks.value}}</span>
+        </div>
+      {{/if}}
+
+      {{#if system.showTurf}}
+        <div class="turf prop-field items-block full-size">
+          <div class="item-header bitd-header">
+            <h3>{{localize 'BITD.Turf'}}</h3>
+          </div>
+          <ol class="items-list">
+            {{#each claims as |item id|}}
+              <li class="item {{item.type}}" data-item-id="{{item._id}}">
+                <div class="item-description">
+                  <span class="item-name">{{item.name}}</span>
+                </div>
+
+                <div class="item-summary">
+                  <p class="effect"><b>{{localize 'BITD.Claim.Effect'}}:</b> {{system.effect}}</p>
+                  {{{item.system.description}}}
+                </div>
+              </li>
+            {{/each}}
+          </ol>
+        </div>
+      {{/if}}
+
+      {{#if system.showNPC}}
+        <div class="npcs prop-block">
+          <h3 class="bitd-header">{{localize 'BITD.NPCs'}}</h3>
+          <div class="grid-2col">
+            {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
+            <div class="links">
+              <div class="item-header bitd-header">
+                <h3 class="contacts-title">{{localize 'BITD.ActorPlural'}}</h3>
+              </div>
+              <div class="link-block">
+                {{#each system.npc}}
+                  <p>{{> "systems/bitd/templates/item/parts/linked-item.hbs"}}</p>
+                {{/each}}
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/if}}
+
+      {{#if system.showRelatedFactions}}
+        <div class="related-faction prop-block grid-2col">
+          <div class="allies">
+            <h3 class="bitd-header">{{localize 'BITD.Allies'}}</h3>
+            <span>{{system.allies}}</span>
+          </div>
+          <div class="enemies">
+            <h3 class="bitd-header">{{localize 'BITD.Enemies'}}</h3>
+            <span>{{system.enemies}}</span>
+          </div>
+        </div>
+      {{/if}}
+
+    </div>
+
+    {{!-- Owned Notes Tab --}}
+    <div class="tab notes" data-group="primary" data-tab="notes">
+      <div class="situation">
+        <h3 class="bitd-header">{{localize 'BITD.Situation'}}</h3>
+        {{editor enrichedSituation target="system.situation" rollData=rollData button=true owner=owner editable=editable}}
+      </div>
+      <div class="description">
+        <h3 class="bitd-header">{{localize 'BITD.Description'}}</h3>
+        {{editor enrichedDescription target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+      </div>
+    </div>
+
+  </section>
+</form>

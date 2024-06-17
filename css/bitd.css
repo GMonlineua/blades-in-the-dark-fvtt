@@ -507,7 +507,6 @@ select.clear-select {
 }
 .bitd .editor {
   min-height: 200px;
-  height: 200px;
   padding: 0 5px;
   border: 1px solid #b5b3a4;
 }
@@ -577,7 +576,13 @@ select.clear-select {
   font-family: "Spectral SC", serif;
   cursor: pointer;
 }
-.bitd .contacts .item-name::after {
+.bitd .contacts.items-block .item {
+  margin: 0;
+}
+.bitd .contacts.items-block .item .item-description .item-name {
+  font-weight: 700;
+}
+.bitd .contacts.items-block .item .item-description .item-name:not(:last-child)::after {
   content: ",";
   font-weight: normal;
 }
@@ -606,9 +611,6 @@ select.clear-select {
   position: absolute;
   top: 0;
   right: 0;
-}
-.bitd.actor .sheet-body .editor {
-  height: 250px;
 }
 .bitd.actor .crew .sheet-header {
   row-gap: 5px;
@@ -765,9 +767,23 @@ select.clear-select {
   justify-content: space-between;
   font-family: "Spectral SC", serif;
 }
-.bitd.actor .faction .sheet-body .general label {
+.bitd.actor .faction .sheet-body .general .prop-field {
+  position: relative;
+}
+.bitd.actor .faction .sheet-body .general .prop-field .prop-lable {
   font-family: "Spectral SC", serif;
   font-weight: 700;
+}
+.bitd.actor .faction .sheet-body .general .prop-field .show-for-limited {
+  position: absolute;
+  right: 0;
+}
+.bitd.actor .faction .sheet-body .general .prop-field .show-for-limited .show-checkbox {
+  position: relative;
+  top: 2px;
+  margin: 0;
+  height: 15px;
+  width: 15px;
 }
 .bitd.actor .faction .sheet-body .general .turf {
   margin: 5px 0;
@@ -783,10 +799,10 @@ select.clear-select {
   padding: 0;
   font-size: small;
 }
-.bitd.actor .faction .sheet-body .general .relation-faction {
+.bitd.actor .faction .sheet-body .general .related-faction {
   margin: 5px 0;
 }
-.bitd.actor .faction .sheet-body .general .relation-faction .clear-input {
+.bitd.actor .faction .sheet-body .general .related-faction .clear-input {
   border-bottom: 1px solid #b5b3a4;
 }
 .bitd.actor .faction .sheet-body .notes .bitd-header {

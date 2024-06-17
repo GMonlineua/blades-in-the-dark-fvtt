@@ -6,9 +6,11 @@
   <ol class="items-list">
     {{#each contacts as |item id|}}
       <li class="item {{item.type}}" data-item-id="{{item._id}}">
-        <div class="item-description">
+        <div class="item-description" data-tooltip="{{item.system.summary}}">
           <span class="item-name">{{item.name}}</span>
-          <span class="contact-type">{{item.system.type}}</span>
+          {{#if item.system.type}}
+            <span class="contact-type">{{item.system.type}}</span>
+          {{/if}}
         </div>
 
         <div class="item-controls">

@@ -45,9 +45,26 @@
 
   .sheet-body {
     .general {
-      label {
-        font-family: $font-secondary;
-        font-weight: 700;
+      .prop-field {
+        position: relative;
+
+        .prop-lable {
+          font-family: $font-secondary;
+          font-weight: 700;
+        }
+
+        .show-for-limited {
+          position: absolute;
+          right: 0;
+
+          .show-checkbox {
+            position: relative;
+            top: 2px;
+            margin: 0;
+            height: 15px;
+            width: 15px;
+          }
+        }
       }
 
       .turf {
@@ -71,7 +88,7 @@
         }
       }
 
-      .relation-faction {
+      .related-faction {
         margin: 5px 0;
 
         .clear-input {

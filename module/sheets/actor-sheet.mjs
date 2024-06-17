@@ -23,7 +23,12 @@ export class BitdActorSheet extends ActorSheet
 
   /** @override */
   get template() {
-    return `systems/bitd/templates/actor/${this.actor.type}-sheet.hbs`;
+    let sheetTemplate = `systems/bitd/templates/actor/${this.actor.type}-sheet.hbs`;
+    if ( !game.user.isGM && this.actor.limited && this.actor.type == "faction" ) {
+      sheetTemplate = `systems/bitd/templates/actor/faction-limited-sheet.hbs`;
+    }
+
+    return sheetTemplate
   }
 
   /** @override */
@@ -58,6 +63,18 @@ export class BitdActorSheet extends ActorSheet
             $(this).addClass("active");
           }
         });
+    });
+
+    // Show item summary
+    html.find('.item-name').click(ev => {
+      const button = ev.currentTarget;
+      const li = button.closest(".item");
+      const summary = li.getElementsByClassName("item-summary")[0];
+      if (summary) {
+        const contentHeight = summary.scrollHeight;
+        summary.style.height = summary.classList.contains("active") ? "0" : `${contentHeight}px`;
+        summary.classList.toggle("active");
+      }
     });
 
     // Everything below here is only needed if the sheet is editable
@@ -96,18 +113,6 @@ export class BitdActorSheet extends ActorSheet
       const itemId = button.closest('.item').dataset.itemId;
       const item = this.actor.items.get(itemId);
       if (item) return item.show();
-    });
-
-    // Show item summary
-    html.find('.item-name').click(ev => {
-      const button = ev.currentTarget;
-      const li = button.closest(".item");
-      const summary = li.getElementsByClassName("item-summary")[0];
-      if (summary) {
-        const contentHeight = summary.scrollHeight;
-        summary.style.height = summary.classList.contains("active") ? "0" : `${contentHeight}px`;
-        summary.classList.toggle("active");
-      }
     });
 
     // Drag events for macros

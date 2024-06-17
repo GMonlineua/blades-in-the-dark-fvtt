@@ -135,10 +135,6 @@
       }
     }
   ],
-  "grid": {
-    "distance": 1,
-    "units": "m"
-  },
   "url": "https://github.com/GMonlineua/blades-in-the-dark-fvtt",
   "manifest": "https://raw.githubusercontent.com/GMonlineua/blades-in-the-dark-fvtt/main/system.json",
   "download": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/releases/download/v0.2/foundry.zip",
