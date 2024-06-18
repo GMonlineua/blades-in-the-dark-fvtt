@@ -1,13 +1,18 @@
-// Import Modules
-import { BitdActor } from "./documents/actor.mjs";
+import * as models from './data/_module.mjs';
+import { BitdActor, BitdItem } from "./documents/_module.mjs";
+
+// Import Actor Sheet
 import { BitdActorSheet } from "./sheets/actor-sheet.mjs";
 import { BitdCrewSheet } from "./sheets/crew-sheet.mjs";
 import { BitdFactionSheet } from "./sheets/faction-sheet.mjs";
 import { BitdScoundrelSheet } from "./sheets/scoundrel-sheet.mjs";
-import { BitdItem } from "./documents/item.mjs";
+
+// Import Item Sheet
 import { BitdItemSheet } from "./sheets/item-sheet.mjs";
-import { preprocessChatMessage, renderChatMessage } from "./helpers/chat-portraits.mjs";
-import { createRollDialog } from "./helpers/roll.mjs";
+
+// Import modules
+import { preprocessChatMessage, renderChatMessage } from "./applications/chat-portraits.mjs";
+import { createRollDialog } from "./applications/roll.mjs";
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { registerHandlebarsHelpers } from "./helpers/handlebars-helpers.mjs";
 
@@ -20,6 +25,10 @@ Hooks.once('init', async function() {
 
   // Define custom Entity classes
   CONFIG.Actor.documentClass = BitdActor;
+  CONFIG.Actor.dataModels = {
+    'npc': models.NpcData,
+    'faction': models.FactionData
+  };
   CONFIG.Item.documentClass = BitdItem;
 
   // Register sheet application classes

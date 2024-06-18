@@ -6,8 +6,8 @@
       <h1 class="character-name"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.ActorName'}}"/></h1>
       <div class="brief-info">
         <div class="prop">
-          <label class="prop-label rollable" data-roll-type="fortune" for="system.tier">{{localize 'BITD.Tier'}}:</label>
-          <input class="prop-input clear-input" type="number" name="system.tier"  value="{{system.tier}}" data-dtype="Number" placeholder="0"></input>
+          <label class="prop-label rollable" data-roll-type="fortune" for="system.tier.value">{{localize 'BITD.Tier'}}:</label>
+          <input class="prop-input clear-input" type="number" name="system.tier.value" value="{{system.tier.value}}"></input>
           <select class="clear-select" name="system.hold">
             {{#select system.hold}}
               <option value="weak">{{localize 'BITD.Hold.Weak'}}</option>
@@ -50,42 +50,42 @@
       <div class="goals prop-field">
         <div class="show-for-limited" data-tooltip="{{localize 'BITD.ShowForPlayers.Tooltip'}}">
           <label for="system.goals.show">{{localize 'BITD.ShowForPlayers.Title'}}</label>
-          <input class="show-checkbox" type="checkbox" name="system.goals.show" data-dtype="Boolean" {{#if system.goals.show}} checked {{/if}}></input>
+          <input class="show-checkbox" type="checkbox" name="system.goals.show" {{checked system.goals.show}}></input>
         </div>
         <label class="prop-lable" for="system.goals">{{localize 'BITD.Goals'}}:</label>
-        <input class="all-with" name="system.goals.value" type="text" value="{{system.goals.value}}" data-dtype="String"></input>
+        <input class="all-with" name="system.goals.value" type="text" value="{{system.goals.value}}"></input>
       </div>
 
       <div class="lair prop-field">
         <div class="show-for-limited" data-tooltip="{{localize 'BITD.ShowForPlayers.Tooltip'}}">
           <label for="system.lair.show">{{localize 'BITD.ShowForPlayers.Title'}}</label>
-          <input class="show-checkbox" type="checkbox" name="system.lair.show" data-dtype="Boolean" {{#if system.lair.show}} checked {{/if}}></input>
+          <input class="show-checkbox" type="checkbox" name="system.lair.show" {{checked system.lair.show}}></input>
         </div>
         <label class="prop-lable" for="system.lair">{{localize 'BITD.Lair'}}:</label>
-        <input class="all-with" name="system.lair.value" type="text" value="{{system.lair.value}}" data-dtype="String"></input>
+        <input class="all-with" name="system.lair.value" type="text" value="{{system.lair.value}}"></input>
       </div>
 
       <div class="notable-assets prop-field">
         <div class="show-for-limited" data-tooltip="{{localize 'BITD.ShowForPlayers.Tooltip'}}">
           <label for="system.assets.show">{{localize 'BITD.ShowForPlayers.Title'}}</label>
-          <input class="show-checkbox" type="checkbox" name="system.assets.show" data-dtype="Boolean" {{#if system.assets.show}} checked {{/if}}></input>
+          <input class="show-checkbox" type="checkbox" name="system.assets.show" {{checked system.assets.show}}></input>
         </div>
         <label class="prop-lable" for="system.assets">{{localize 'BITD.NotableAssets'}}:</label>
-        <input class="all-with" name="system.assets.value" type="text" value="{{system.assets.value}}" data-dtype="String"></input>
+        <input class="all-with" name="system.assets.value" type="text" value="{{system.assets.value}}"></input>
       </div>
 
       <div class="quirks prop-field">
         <div class="show-for-limited" data-tooltip="{{localize 'BITD.ShowForPlayers.Tooltip'}}">
           <label for="system.quirks.show">{{localize 'BITD.ShowForPlayers.Title'}}</label>
-          <input class="show-checkbox" type="checkbox" name="system.quirks.show" data-dtype="Boolean" {{#if system.quirks.show}} checked {{/if}}></input>
+          <input class="show-checkbox" type="checkbox" name="system.quirks.show" {{checked system.quirks.show}}></input>
         </div>
         <label class="prop-lable" for="system.quirks">{{localize 'BITD.Quirks'}}:</label>
-        <input class="all-with" name="system.quirks.value" type="text" value="{{system.quirks.value}}" data-dtype="String"></input>
+        <input class="all-with" name="system.quirks.value" type="text" value="{{system.quirks.value}}"></input>
       </div>
 
       <div class="turf prop-field items-block full-size">
         <div class="show-for-limited" data-tooltip="{{localize 'BITD.ShowForPlayers.Tooltip'}}">
-          <input class="show-checkbox" type="checkbox" name="system.showTurf" data-dtype="Boolean" {{#if system.showTurf}} checked {{/if}}></input>
+          <input class="show-checkbox" type="checkbox" name="system.turf.show" {{checked system.turf.show}}></input>
         </div>
         <div class="item-header bitd-header">
           <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="claim"><i class="fas fa-plus"></i></a>
@@ -115,7 +115,7 @@
 
       <div class="npcs prop-field">
         <div class="show-for-limited" data-tooltip="{{localize 'BITD.ShowForPlayers.Tooltip'}}">
-          <input class="show-checkbox" type="checkbox" name="system.showNPC" data-dtype="Boolean" {{#if system.showNPC}} checked {{/if}}></input>
+          <input class="show-checkbox" type="checkbox" name="system.npc.show" {{checked system.npc.show}}></input>
         </div>
         <h3 class="bitd-header">{{localize 'BITD.NPCs'}}</h3>
         <div class="grid-2col">
@@ -124,26 +124,21 @@
             <div class="item-header bitd-header">
               <h3 class="contacts-title">{{localize 'BITD.ActorPlural'}}</h3>
             </div>
-            <div class="link-block">
-              {{#each system.npc}}
-                <p>{{> "systems/bitd/templates/item/parts/linked-item.hbs"}}</p>
-              {{/each}}
-            </div>
           </div>
         </div>
       </div>
 
       <div class="related-faction prop-field grid-2col">
         <div class="show-for-limited" data-tooltip="{{localize 'BITD.ShowForPlayers.Tooltip'}}">
-          <input class="show-checkbox" type="checkbox" name="system.showRelatedFactions" data-dtype="Boolean" {{#if system.showRelatedFactions}} checked {{/if}}></input>
+          <input class="show-checkbox" type="checkbox" name="system.relatedFactions.show" {{checked system.relatedFactions.show}}></input>
         </div>
         <div class="allies">
           <h3 class="bitd-header">{{localize 'BITD.Allies'}}</h3>
-          <input class="clear-input all-with" name="system.allies" type="text" value="{{system.allies}}" placeholder="{{localize 'BITD.Allies'}}" data-dtype="String"></input>
+          <input class="clear-input all-with" name="system.relatedFactions.allies" type="text" value="{{system.relatedFactions.allies}}" placeholder="{{localize 'BITD.Allies'}}"></input>
         </div>
         <div class="enemies">
           <h3 class="bitd-header">{{localize 'BITD.Enemies'}}</h3>
-          <input class="clear-input all-with" name="system.enemies" type="text" value="{{system.enemies}}" placeholder="{{localize 'BITD.Enemies'}}" data-dtype="String"></input>
+          <input class="clear-input all-with" name="system.relatedFactions.enemies" type="text" value="{{system.relatedFactions.enemies}}" placeholder="{{localize 'BITD.Enemies'}}"></input>
         </div>
       </div>
 
@@ -153,11 +148,11 @@
     <div class="tab notes" data-group="primary" data-tab="notes">
       <div class="situation">
         <h3 class="bitd-header">{{localize 'BITD.Situation'}}</h3>
-        {{editor enrichedSituation target="system.situation" rollData=rollData button=true owner=owner editable=editable}}
+        {{editor enrichedSituation target="system.situation" rollData=rollData button=true engine="prosemirror" editable=editable collaborate=true}}
       </div>
       <div class="description">
         <h3 class="bitd-header">{{localize 'BITD.Description'}}</h3>
-        {{editor enrichedDescription target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+        {{editor enrichedDescription target="system.description" rollData=rollData button=true engine="prosemirror" editable=editable collaborate=true}}
       </div>
     </div>
 

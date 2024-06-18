@@ -1,6 +1,7 @@
 {
   "Actor": {
     "types": ["scoundrel", "crew", "faction", "npc"],
+    "htmlFields": ["description"],
     "templates": {
       "base": {
         "description": ""
@@ -113,41 +114,6 @@
         "value": 0
       },
       "turf": 0
-    },
-    "npc": {
-      "templates": ["base"],
-      "summary": "",
-      "class": "",
-      "faction": "",
-      "crewType": ""
-    },
-    "faction": {
-      "templates": ["base", "group"],
-      "status": 0,
-      "summary": "",
-      "goals": {
-        "show": false,
-        "value": ""
-      },
-      "lair": {
-        "show": false,
-        "value": ""
-      },
-      "npc": [],
-      "showTurf": false,
-      "showNPC": false,
-      "showRelatedFactions": false,
-      "allies": "",
-      "enemies": "",
-      "assets": {
-        "show": false,
-        "value": ""
-      },
-      "quirks": {
-        "show": false,
-        "value": ""
-      },
-      "situation": ""
     }
   },
   "Item": {

@@ -9,7 +9,7 @@ export class BitdScoundrelSheet extends BitdActorSheet
 
   /** @override */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["bitd", "sheet", "actor", "scoundrel"],
       width: 750,
       height: 900,

@@ -9,7 +9,7 @@ export class BitdFactionSheet extends BitdActorSheet
 
   /** @override */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["bitd", "sheet", "actor", "faction"],
       width: 550,
       height: 650,
@@ -24,6 +24,9 @@ export class BitdFactionSheet extends BitdActorSheet
   /** @override */
   async getData() {
     const context = await super.getData();
+    const actorData = context.data;
+    context.system = actorData.system;
+    context.flags = actorData.flags;
 
     // Encrich editor content
     context.enrichedSituation = await TextEditor.enrichHTML(this.object.system.situation, {

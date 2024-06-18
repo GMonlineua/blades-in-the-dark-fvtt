@@ -1,4 +1,4 @@
-import { createRollDialog } from "../helpers/roll.mjs";
+import { createRollDialog } from "../applications/roll.mjs";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -9,7 +9,7 @@ export class BitdActorSheet extends ActorSheet
 
   /** @override */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["bitd", "sheet", "actor"],
       width: 550,
       height: 650,

@@ -7,7 +7,7 @@
       <div class="brief-info">
         <div class="prop">
           <label class="prop-label rollable" data-roll-type="fortune" for="system.tier">{{localize 'BITD.Tier'}}:</label>
-          <span>{{system.tier}}</span>
+          <span>{{system.tier.value}}</span>
           <select class="clear-select" name="system.hold">
             {{#select system.hold}}
               <option value="weak">{{localize 'BITD.Hold.Weak'}}</option>
@@ -75,7 +75,7 @@
         </div>
       {{/if}}
 
-      {{#if system.showTurf}}
+      {{#if system.turf.show}}
         <div class="turf prop-field items-block full-size">
           <div class="item-header bitd-header">
             <h3>{{localize 'BITD.Turf'}}</h3>
@@ -97,7 +97,7 @@
         </div>
       {{/if}}
 
-      {{#if system.showNPC}}
+      {{#if system.npc.show}}
         <div class="npcs prop-block">
           <h3 class="bitd-header">{{localize 'BITD.NPCs'}}</h3>
           <div class="grid-2col">
@@ -116,7 +116,7 @@
         </div>
       {{/if}}
 
-      {{#if system.showRelatedFactions}}
+      {{#if system.relatedFactions.show}}
         <div class="related-faction prop-block grid-2col">
           <div class="allies">
             <h3 class="bitd-header">{{localize 'BITD.Allies'}}</h3>
@@ -135,11 +135,11 @@
     <div class="tab notes" data-group="primary" data-tab="notes">
       <div class="situation">
         <h3 class="bitd-header">{{localize 'BITD.Situation'}}</h3>
-        {{editor enrichedSituation target="system.situation" rollData=rollData button=true owner=owner editable=editable}}
+        {{editor enrichedSituation target="system.situation" rollData=rollData button=true engine="prosemirror" editable=editable collaborate=true}}
       </div>
       <div class="description">
         <h3 class="bitd-header">{{localize 'BITD.Description'}}</h3>
-        {{editor enrichedDescription target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+        {{editor enrichedDescription target="system.description" rollData=rollData button=true engine="prosemirror" editable=editable collaborate=true}}
       </div>
     </div>
 

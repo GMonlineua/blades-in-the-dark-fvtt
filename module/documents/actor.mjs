@@ -1,15 +1,13 @@
-import { defaultItemsID } from "../helpers/default-items.mjs";
+import { defaultItemsID } from "./default-items.mjs";
 
 /**
  * Extend the base Actor entity by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
  */
-export class BitdActor extends Actor {
+export default class BitdActor extends Actor {
 
   async _onCreate(data, options, userId) {
     super._onCreate(data, options, userId);
-    console.log(data)
-
     const defaultItems = [];
 
     if (this.type == "scoundrel") {
