@@ -351,7 +351,6 @@ async function renderRoll(renderData, speaker) {
     user: game.user.id,
     speaker: speaker,
     content: chatMessage,
-    type: CONST.CHAT_MESSAGE_TYPES.ROLL,
     sound: CONFIG.sounds.dice
   };
   ChatMessage.create(chatData);
