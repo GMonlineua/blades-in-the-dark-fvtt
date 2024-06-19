@@ -1,0 +1,34 @@
+name: Create Release
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Get Version
+        run: echo "RELEASE_VERSION=$(jq -r '.version' system.json)" >> $GITHUB_ENV
+
+      - name: Create Zip Archive
+        run: |
+          zip -r foundry.zip assets css lang module packs templates ui system.json template.json
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ env.RELEASE_VERSION }}
+          name: Beta Release ${{ env.RELEASE_VERSION }}
+          draft: false
+          prerelease: false
+          files: ./foundry.zip

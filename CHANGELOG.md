@@ -29,3 +29,34 @@ First official version
 
 - Claims as item in crew sheet
 - Claims as link in crew type sheet
+
+## Beta Version 0.3
+
+#### Minor updates and fixes
+
+- Update contacts
+- Description lenght
+- Upgrading outdated functions
+
+#### Data Model
+
+- Change faction and npc template to datamodel for easier future support
+
+### Factions
+
+- Tier
+- Hold
+- Status
+- Goals
+- Lair or HQ
+- Notable Assets
+- Quirks
+- Turf (Claims)
+- NPCs (items or actors)
+- Allies (only input)
+- Enemies (only input)
+- Situation
+
+### Limited sheet
+
+- Checkbox for each value. If you mark it value will be visible for players with limited access to this sheet.
