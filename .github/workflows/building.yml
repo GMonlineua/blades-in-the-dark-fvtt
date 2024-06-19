@@ -5,7 +5,7 @@ on:
     types:
       - opened
     branches:
-      - 'master'
+      - 'main'
 
 jobs:
   build:
@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          ref: development
 
       - name: Get Version
         run: echo "RELEASE_VERSION=$(jq -r '.version' system.json)" >> $GITHUB_ENV
