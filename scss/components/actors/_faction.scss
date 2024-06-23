@@ -11,7 +11,6 @@
     .profile-img {
       flex: 0 0 100px;
       height: 100px;
-      margin-right: 10px;
       border: none;
     }
 
@@ -39,6 +38,10 @@
         flex-wrap: wrap;
         justify-content: space-between;
         font-family: $font-secondary;
+
+        .summary {
+          font-size: small;
+        }
       }
     }
   }

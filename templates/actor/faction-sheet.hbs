@@ -3,30 +3,19 @@
   <header class="sheet-header actor-grid">
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
     <div class="header-fields">
-      <h1 class="character-name"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.ActorName'}}"/></h1>
+      <h1 class="character-name"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.ItemName'}}"/></h1>
       <div class="brief-info">
         <div class="prop">
           <label class="prop-label rollable" data-roll-type="fortune" for="system.tier.value">{{localize 'BITD.Tier'}}:</label>
           <input class="prop-input clear-input" type="number" name="system.tier.value" value="{{system.tier.value}}"></input>
           <select class="clear-select" name="system.hold">
-            {{#select system.hold}}
-              <option value="weak">{{localize 'BITD.Hold.Weak'}}</option>
-              <option value="strong">{{localize 'BITD.Hold.Strong'}}</option>
-            {{/select}}
+            {{selectOptions config.holdTypes selected=system.hold localize=true}}
           </select>
         </div>
         <div class="prop">
           <label class="prop-label" for="system.status">{{localize 'BITD.Status.Title'}}:</label>
           <select class="clear-select" name="system.status">
-            {{#select system.status}}
-              <option value="3">{{localize 'BITD.Status.Allies'}}</option>
-              <option value="2">{{localize 'BITD.Status.Friendly'}}</option>
-              <option value="1">{{localize 'BITD.Status.Helpful'}}</option>
-              <option value="0">{{localize 'BITD.Status.Neutral'}}</option>
-              <option value="-1">{{localize 'BITD.Status.Interfering'}}</option>
-              <option value="-2">{{localize 'BITD.Status.Hostile'}}</option>
-              <option value="-3">{{localize 'BITD.Status.War'}}</option>
-            {{/select}}
+            {{selectOptions config.statusTypes selected=system.status localize=true}}
           </select>
         </div>
         <input class="prop summary all-with" name="system.summary" type="text" value="{{system.summary}}" placeholder="{{localize 'BITD.Summary'}}" data-dtype="String"></input>
@@ -71,7 +60,7 @@
           <input class="show-checkbox" type="checkbox" name="system.assets.show" {{checked system.assets.show}}></input>
         </div>
         <label class="prop-lable" for="system.assets">{{localize 'BITD.NotableAssets'}}:</label>
-        <input class="all-with" name="system.assets.value" type="text" value="{{system.assets.value}}"></input>
+        <textarea name="system.assets.value">{{system.assets.value}}</textarea>
       </div>
 
       <div class="quirks prop-field">
@@ -80,7 +69,7 @@
           <input class="show-checkbox" type="checkbox" name="system.quirks.show" {{checked system.quirks.show}}></input>
         </div>
         <label class="prop-lable" for="system.quirks">{{localize 'BITD.Quirks'}}:</label>
-        <input class="all-with" name="system.quirks.value" type="text" value="{{system.quirks.value}}"></input>
+        <textarea name="system.quirks.value">{{system.quirks.value}}</textarea>
       </div>
 
       <div class="turf prop-field items-block full-size">
@@ -122,7 +111,7 @@
           {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
           <div class="links">
             <div class="item-header bitd-header">
-              <h3 class="contacts-title">{{localize 'BITD.ActorPlural'}}</h3>
+              <h3 class="contacts-title">{{localize 'BITD.Actor.Plural'}}</h3>
             </div>
           </div>
         </div>
@@ -134,11 +123,11 @@
         </div>
         <div class="allies">
           <h3 class="bitd-header">{{localize 'BITD.Allies'}}</h3>
-          <input class="clear-input all-with" name="system.relatedFactions.allies" type="text" value="{{system.relatedFactions.allies}}" placeholder="{{localize 'BITD.Allies'}}"></input>
+        <textarea name="system.relatedFactions.allies">{{system.relatedFactions.allies}}</textarea>
         </div>
         <div class="enemies">
           <h3 class="bitd-header">{{localize 'BITD.Enemies'}}</h3>
-          <input class="clear-input all-with" name="system.relatedFactions.enemies" type="text" value="{{system.relatedFactions.enemies}}" placeholder="{{localize 'BITD.Enemies'}}"></input>
+        <textarea name="system.relatedFactions.enemies">{{system.relatedFactions.enemies}}</textarea>
         </div>
       </div>
 

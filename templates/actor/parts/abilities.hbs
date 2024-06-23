@@ -2,7 +2,7 @@
   {{#each abilities as |item id|}}
     <li class="item {{item.type}} {{#if item.system.active}}active{{/if}}" data-item-id="{{item._id}}">
       <div class="item-description">
-        <input class="item-checkbox" data-key="active" type="checkbox" name="item.system.active" data-dtype="Boolean" {{#if item.system.active}} checked {{/if}}></input>
+        <input class="item-checkbox" data-key="active" type="checkbox" name="item.system.active" data-dtype="Boolean" {{checked item.system.active}}></input>
         <span class="item-name">{{item.name}}</span>
       </div>
 

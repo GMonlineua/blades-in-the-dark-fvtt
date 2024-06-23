@@ -1,5 +1,3 @@
-import { defaultItemsID } from "./default-items.mjs";
-
 /**
  * Extend the base Actor entity by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
@@ -8,16 +6,17 @@ export default class BitdActor extends Actor {
 
   async _onCreate(data, options, userId) {
     super._onCreate(data, options, userId);
+    const defaultItemsID = CONFIG.BITD.defaultItems;
     const defaultItems = [];
 
     if (this.type == "scoundrel") {
-      for (const id of defaultItemsID.scoundrelInventory) {
+      for (const id of defaultItemsID.scoundrel) {
         const uuid = "Compendium.bitd.items.Item." + id;
         const item = await fromUuid(uuid);
         defaultItems.push(item);
       }
     } else if (this.type == "crew") {
-      for (const id of defaultItemsID.crewUpgrades) {
+      for (const id of defaultItemsID.crew) {
         const uuid = "Compendium.bitd.upgrades.Item." + id;
         const item = await fromUuid(uuid);
         defaultItems.push(item);

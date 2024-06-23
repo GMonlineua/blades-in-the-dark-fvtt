@@ -80,10 +80,7 @@
         <div class="hold">
           <label for="system.hold">{{localize 'BITD.Hold.Title'}}:</label>
           <select class="clear-select" name="system.hold">
-            {{#select system.hold}}
-              <option value="weak">{{localize 'BITD.Hold.Weak'}}</option>
-              <option value="strong">{{localize 'BITD.Hold.Strong'}}</option>
-            {{/select}}
+            {{selectOptions config.holdTypes selected=system.hold localize=true}}
           </select>
         </div>
         <div class="tier">

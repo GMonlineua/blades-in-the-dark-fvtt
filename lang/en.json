@@ -20,14 +20,18 @@
     }
   },
   "BITD": {
+    "Actor": {
+      "Title": "Actor",
+      "Plural": "Actors",
+      "Name": "Name",
+      "Alias": "Alias",
+      "Aka": "Aka"
+    },
     "General": "General",
     "Description": "Description",
     "Summary": "Summary",
     "Links": "Links",
-    "ActorPlural": "Actors",
 
-    "ActorName": "Name",
-    "ScoundrelAlias": "Alias",
     "CrewName": "Name",
     "ItemName": "Name",
 
@@ -178,13 +182,13 @@
     },
     "Status": {
       "Title": "Status",
-      "Allies": "Allies",
-      "Friendly": "Friendly",
-      "Helpful": "Helpful",
+      "Allies": "Allies (+3)",
+      "Friendly": "Friendly (+2)",
+      "Helpful": "Helpful (+1)",
       "Neutral": "Neutral",
-      "Interfering": "Interfering",
-      "Hostile": "Hostile",
-      "War": "War"
+      "Interfering": "Interfering (-1)",
+      "Hostile": "Hostile (-2)",
+      "War": "War (-3)"
     },
     "Rep": "Rep",
     "RepType": "Reputation",

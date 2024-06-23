@@ -5,10 +5,7 @@
       <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.ItemName'}}"/></h1>
       <div class="brief-info">
         <select class="prop clear-select" name="system.type">
-          {{#select system.type}}
-            <option value="common">{{localize 'BITD.Tool.Common'}}</option>
-            <option value="special">{{localize 'BITD.Tool.Special'}}</option>
-          {{/select}}
+          {{selectOptions config.toolType selected=system.type localize=true}}
         </select>
         <div class="prop">
           <label class="prop-label" for="system.loadout">{{localize 'BITD.Tool.Loadout'}}:</label>
@@ -16,11 +13,11 @@
         </div>
         <div class="prop">
           <label class="prop-label" for="system.equipped">{{localize 'BITD.Tool.Equipped'}}</label>
-          <input class="prop-input" type="checkbox" name="system.equipped" data-dtype="Boolean" {{#if system.equipped}} checked {{/if}}></input>
+          <input class="prop-input" type="checkbox" name="system.equipped" data-dtype="Boolean" {{checked system.equipped}}></input>
         </div>
         <div class="prop">
           <label class="prop-label" for="system.broken">{{localize 'BITD.Tool.Broken'}}</label>
-          <input class="prop-input" type="checkbox" name="system.broken" data-dtype="Boolean" {{#if system.broken}} checked {{/if}}></input>
+          <input class="prop-input" type="checkbox" name="system.broken" data-dtype="Boolean" {{checked system.broken}}></input>
         </div>
       </div>
     </div>
