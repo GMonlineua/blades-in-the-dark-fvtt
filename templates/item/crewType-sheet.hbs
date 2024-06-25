@@ -32,18 +32,10 @@
     <div class="tab claims" data-group="primary" data-tab="claims">
       <div class="claims-block">
         {{#each system.claims}}
-          {{#if this.uuid}}
-            <div class="claim claim-link">
-              <a class="content-link" draggable="true" data-uuid={{this.uuid}} data-id={{this.id}} data-type="Item" data-tooltip={{this.title}}><i class="fas fa-suitcase"></i>{{this.name}}</a>
-              <a class="link-control link-delete" title="{{localize 'BITD.ItemDelete'}}"><i class="fas fa-trash"></i></a>
-            </div>
-          {{else}}
-            {{#iff this "==" "Lair"}}
-              <div class="claim claim-lair">{{localize 'BITD.Lair'}}</div>
-            {{else}}
-              <div class="claim claim-turf">{{localize 'BITD.Turf'}}</div>
-            {{/iff}}
-          {{/if}}
+          <div class="claim claim-link">
+            <a class="content-link" draggable="true" data-uuid={{this.uuid}} data-id={{this.id}} data-type="Item" data-tooltip={{this.title}}><i class="fas fa-suitcase"></i>{{this.name}}</a>
+            <a class="link-control link-delete" title="{{localize 'BITD.ItemDelete'}}"><i class="fas fa-trash"></i></a>
+          </div>
         {{/each}}
       </div>
     </div>

@@ -29,5 +29,59 @@ export const BITD = {
   toolType: {
     common: "BITD.Tool.Common",
     special: "BITD.Tool.Special"
+  },
+
+  rolls: {
+    type: {
+      action: "BITD.Roll.Type.Action",
+      resistance: "BITD.Roll.Type.Resistance",
+      fortune: "BITD.Roll.Type.Fortune",
+      information: "BITD.Roll.Type.GatherInformation",
+      engagement: "BITD.Roll.Type.Engagement",
+      asset: "BITD.Roll.Type.AcquireAsset",
+      vice: "BITD.Roll.Type.IndulgeVice"
+    },
+    rollAs: {
+      action: "BITD.Roll.Type.Action",
+      fortune: "BITD.Roll.Type.Fortune"
+    },
+    attributes: {
+      insight: "BITD.Insight",
+      prowess: "BITD.Prowess",
+      resolve: "BITD.Resolve"
+    },
+    actions: {
+      hunt: "BITD.Hunt",
+      study: "BITD.Study",
+      survey: "BITD.Survey",
+      tinker: "BITD.Tinker",
+      finesse: "BITD.Finesse",
+      prowl: "BITD.Prowl",
+      skirmish: "BITD.Skirmish",
+      wreck: "BITD.Wreck",
+      attune: "BITD.Attune",
+      command: "BITD.Command",
+      consort: "BITD.Consort",
+      sway: "BITD.Sway"
+    },
+    position: {
+      controlled: "BITD.Roll.Position.Controlled",
+      risky: "BITD.Roll.Position.Risky",
+      desperate: "BITD.Roll.Position.Desperate"
+    },
+    effect: {
+      zero: "BITD.Roll.Effect.Zero",
+      limited: "BITD.Roll.Effect.Limited",
+      standard: "BITD.Roll.Effect.Standard",
+      great: "BITD.Roll.Effect.Great",
+      extreme: "BITD.Roll.Effect.Extreme"
+    },
+    fortuneRollResult: {
+      fail: "Zero",
+      mixed: "Limited",
+      success: "Standard",
+      critical: "Great"
+    },
+    effectSequence: ["zero", "limited", "standard", "great", "extreme"]
   }
 };

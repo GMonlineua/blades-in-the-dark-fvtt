@@ -10,10 +10,7 @@
     <div class="roll-as optional" data-connected="information">
       <label for="roll-as">{{localize 'BITD.Roll.GatherInformation.RollAs'}}: </label>
       <select id="roll-as" class="clear-select" name="rollAs" data-type="String">
-        {{#select rollAs}}
-          <option value="action">{{localize "BITD.Roll.Type.Action"}}</option>
-          <option value="fortune">{{localize "BITD.Roll.Type.Fortune"}}</option>
-        {{/select}}
+        {{selectOptions rollAs selected="action" localize=true}}
       </select>
     </div>
 
@@ -70,7 +67,7 @@
     </div>
   </div>
 
-  <div class="position-and-effect optional" data-connected="action,information">
+  <div class="position-and-effect optional" data-connected="action">
     <h4 for="position-and-effect">{{localize 'BITD.Roll.PositionEffect'}}</h4>
 
     <div class="position optional" data-connected="action">
@@ -80,7 +77,7 @@
       </select>
     </div>
 
-    <div class="effect optional" data-connected="action,information">
+    <div class="effect optional" data-connected="action">
       <label>{{localize 'BITD.Roll.Effect.Title'}}:</label>
       <select id="effect" class="clear-select" name="effect" data-type="Number">
         {{selectOptions effect selected="standard" localize=true}}
