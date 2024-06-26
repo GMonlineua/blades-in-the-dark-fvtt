@@ -5,12 +5,8 @@ export default class FactionData extends foundry.abstract.TypeDataModel {
     const fields = foundry.data.fields;
     const requiredInteger = {required: true, nullable: false, integer: true};
     const requiredPositiveInteger = {...requiredInteger, min: 0};
-    const textFiled = {
-      value: new fields.StringField(),
-      show: new fields.BooleanField({ initial: false })
-    };
 
-    const schema = {
+    return {
       tier: new fields.SchemaField({
         value: new fields.NumberField({requiredPositiveInteger, initial: 1 }),
         max: new fields.NumberField({requiredPositiveInteger, initial: 5 }),
@@ -36,30 +32,21 @@ export default class FactionData extends foundry.abstract.TypeDataModel {
         show: new fields.BooleanField({ initial: false })
       }),
 
+      showTurf: new fields.BooleanField({ initial: false }),
+
+      npc: new fields.SchemaField({
+        actors: new fields.ArrayField(new fields.ForeignDocumentField(BitdActor, {idOnly: true})),
+        show: new fields.BooleanField({ initial: false })
+      }),
+
+      relatedFactions: new fields.SchemaField({
+        allies: new fields.StringField(),
+        enemies: new fields.StringField(),
+        show: new fields.BooleanField({ initial: false })
+      }),
+
       situation: new fields.HTMLField(),
       description: new fields.HTMLField()
-    };
-
-    // NPC connected to faction
-    schema.npc = new fields.SchemaField({
-      // items: new fields.ForeignDocumentField(BitdItem, {idOnly: true}),
-      // actors: new fields.ForeignDocumentField(BitdActor, {idOnly: true}),
-      show: new fields.BooleanField({ initial: false })
-    });
-
-    // Claims connected to faction
-    schema.turf = new fields.SchemaField({
-      // items: new fields.ForeignDocumentField(BitdItem, {idOnly: true}),
-      show: new fields.BooleanField({ initial: false })
-    });
-
-    // Claims connected to faction
-    schema.relatedFactions = new fields.SchemaField({
-      allies: new fields.StringField(),
-      enemies: new fields.StringField(),
-      show: new fields.BooleanField({ initial: false })
-    });
-
-    return schema;
+    }
   }
 }

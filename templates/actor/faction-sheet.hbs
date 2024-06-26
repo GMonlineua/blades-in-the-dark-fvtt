@@ -18,7 +18,7 @@
             {{selectOptions config.statusTypes selected=system.status localize=true}}
           </select>
         </div>
-        <input class="prop summary all-with" name="system.summary" type="text" value="{{system.summary}}" placeholder="{{localize 'BITD.Summary'}}" data-dtype="String"></input>
+        <input class="prop summary all-width" name="system.summary" type="text" value="{{system.summary}}" placeholder="{{localize 'BITD.Summary'}}" data-dtype="String"></input>
       </div>
     </div>
 
@@ -42,7 +42,7 @@
           <input class="show-checkbox" type="checkbox" name="system.goals.show" {{checked system.goals.show}}></input>
         </div>
         <label class="prop-lable" for="system.goals">{{localize 'BITD.Goals'}}:</label>
-        <input class="all-with" name="system.goals.value" type="text" value="{{system.goals.value}}"></input>
+        <input class="all-width" name="system.goals.value" type="text" value="{{system.goals.value}}"></input>
       </div>
 
       <div class="lair prop-field">
@@ -51,7 +51,7 @@
           <input class="show-checkbox" type="checkbox" name="system.lair.show" {{checked system.lair.show}}></input>
         </div>
         <label class="prop-lable" for="system.lair">{{localize 'BITD.Lair'}}:</label>
-        <input class="all-with" name="system.lair.value" type="text" value="{{system.lair.value}}"></input>
+        <input class="all-width" name="system.lair.value" type="text" value="{{system.lair.value}}"></input>
       </div>
 
       <div class="notable-assets prop-field">

@@ -15,8 +15,16 @@ export const BITD = {
   },
   cohort: {
     types: {
+      none: "",
       gang: "BITD.Cohort.Gang",
       expert: "BITD.Cohort.Expert"
+    },
+    gangTypes: {
+      adepts: "BITD.Cohort.GangType.Adepts",
+      rooks: "BITD.Cohort.GangType.Rooks",
+      rovers: "BITD.Cohort.GangType.Rovers",
+      skulks: "BITD.Cohort.GangType.Skulks",
+      thugs: "BITD.Cohort.GangType.Thugs"
     },
     harm: {
       none: "BITD.Cohort.NoHarm",

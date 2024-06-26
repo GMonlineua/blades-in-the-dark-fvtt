@@ -26,13 +26,23 @@ Hooks.once('init', async function() {
 
   CONFIG.BITD = BITD;
 
-  // Define custom Entity classes
+  // Define custom Entity classes and Data Models
   CONFIG.Actor.documentClass = BitdActor;
   CONFIG.Actor.dataModels = {
-    'npc': models.NpcData,
-    'faction': models.FactionData
+    'faction': models.FactionData,
+    'npc': models.NpcData
   };
+
   CONFIG.Item.documentClass = BitdItem;
+  CONFIG.Item.dataModels = {
+    'abilityScoundrel': models.AbilityScoundrelData,
+    'abilityCrew': models.AbilityCrewData,
+    'claim': models.ClaimData,
+    'cohort': models.CohortData,
+    'tool': models.ToolData,
+    'upgrade': models.UpgradeData
+  };
+
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);

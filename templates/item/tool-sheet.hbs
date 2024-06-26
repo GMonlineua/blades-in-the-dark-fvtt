@@ -9,15 +9,15 @@
         </select>
         <div class="prop">
           <label class="prop-label" for="system.loadout">{{localize 'BITD.Tool.Loadout'}}:</label>
-          <input class="prop-input clear-input" type="number" name="system.loadout" value="{{system.loadout}}" data-dtype="Number" placeholder="0"></input>
+          <input class="prop-input clear-input" type="number" name="system.loadout" value="{{system.loadout}}"></input>
         </div>
         <div class="prop">
           <label class="prop-label" for="system.equipped">{{localize 'BITD.Tool.Equipped'}}</label>
-          <input class="prop-input" type="checkbox" name="system.equipped" data-dtype="Boolean" {{checked system.equipped}}></input>
+          <input class="prop-input" type="checkbox" name="system.equipped" {{checked system.equipped}}></input>
         </div>
         <div class="prop">
           <label class="prop-label" for="system.broken">{{localize 'BITD.Tool.Broken'}}</label>
-          <input class="prop-input" type="checkbox" name="system.broken" data-dtype="Boolean" {{checked system.broken}}></input>
+          <input class="prop-input" type="checkbox" name="system.broken" {{checked system.broken}}></input>
         </div>
       </div>
     </div>
@@ -26,7 +26,7 @@
   {{!-- Sheet Body --}}
   <section class="sheet-body">
     <hr>
-    {{editor enrichedDescription target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+    {{editor enrichedDescription target="system.description" rollData=rollData button=true engine="prosemirror" editable=editable collaborate=true}}
   </section>
 
 </form>

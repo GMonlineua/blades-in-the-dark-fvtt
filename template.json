@@ -117,81 +117,15 @@
     }
   },
   "Item": {
-    "types": ["playbook", "crewType", "abilityScoundrel", "abilityCrew", "claim", "cohort", "contact", "tool", "upgrade"],
-    "templates": {},
-    "playbook": {
-      "attributes": {
-        "insight": {
-          "hunt": 0,
-          "study": 0,
-          "survey": 0,
-          "tinker": 0
-        },
-        "prowess": {
-          "finesse": 0,
-          "prowl": 0,
-          "skirmish": 0,
-          "wreck": 0
-        },
-        "resolve": {
-          "attune": 0,
-          "command": 0,
-          "consort": 0,
-          "sway": 0
-        }
-      },
-      "abilities": [],
-      "contacts": [],
-      "inventory": [],
-      "exp": "",
-      "summary": "",
-      "description": ""
-    },
-    "crewType": {
-      "abilities": [],
-      "claims": [],
-      "contacts": [],
-      "upgrades": [],
-      "exp": "",
-      "description": ""
-    },
-    "abilityScoundrel": {
-      "active": false,
-      "description": ""
-    },
-    "abilityCrew": {
-      "active": false,
-      "description": ""
-    },
-    "claim": {
-      "effect": "",
-      "description": ""
-    },
-    "cohort": {
-      "type": "",
-      "gangType": "",
-      "elite": false,
-      "armor": false,
-      "harm": 0,
-      "edges": "",
-      "flaws": ""
-    },
-    "contact": {
-      "type": "",
-      "summary": "",
-      "description": ""
-    },
-    "tool": {
-      "type": "special",
-      "loadout": 1,
-      "equipped": false,
-      "broken": false,
-      "description": ""
-    },
-    "upgrade": {
-      "active": false,
-      "price": 1,
-      "description": ""
-    }
+    "types": [
+      "playbook",
+      "crewType",
+      "abilityScoundrel",
+      "abilityCrew",
+      "claim",
+      "cohort",
+      "tool",
+      "upgrade"
+    ]
   }
 }

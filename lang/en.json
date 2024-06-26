@@ -14,7 +14,6 @@
       "abilityCrew": "Crew's Ability",
       "claim": "Claim",
       "cohort": "Cohort",
-      "contact": "Contact",
       "tool": "Tool",
       "upgrade": "Upgrade"
     }
@@ -229,6 +228,13 @@
     "Cohort": {
       "Plural": "Cohorts",
       "Gang": "Gang",
+      "GangType": {
+        "Adepts": "Adepts",
+        "Rooks": "Rooks",
+        "Rovers": "Rovers",
+        "Skulks": "Skulks",
+        "Thugs": "Thugs"
+      },
       "Expert": "Expert",
       "Elite": "Elite",
       "Armor": "Armor",

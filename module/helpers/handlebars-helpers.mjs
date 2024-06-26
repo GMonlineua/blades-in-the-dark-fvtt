@@ -9,6 +9,45 @@ export const registerHandlebarsHelpers = function() {
     return result;
   });
 
+  Handlebars.registerHelper("iff", function (a, operator, b, opts) {
+    let bool = false;
+    switch (operator) {
+      case "==":
+        bool = a == b;
+        break;
+      case ">":
+        bool = a > b;
+        break;
+      case "<":
+        bool = a < b;
+        break;
+      case ">=":
+        bool = parseInt(a) >= parseInt(b);
+        break;
+      case "<=":
+        bool = a <= b;
+        break;
+      case "!=":
+        bool = a != b;
+        break;
+      case "contains":
+        if (a && b) {
+          bool = a.includes(b);
+        } else {
+          bool = false;
+        }
+        break;
+      default:
+      throw "Unknown operator " + operator;
+    }
+
+    if (bool) {
+      return opts.fn(this);
+    } else {
+      return opts.inverse(this);
+    }
+  });
+
   Handlebars.registerHelper("getLocalizeName", function (key) {
     const name = "BITD." + key.charAt(0).toUpperCase() + key.slice(1);
     const localizeName = game.i18n.localize(name);

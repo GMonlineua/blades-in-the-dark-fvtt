@@ -6,7 +6,7 @@
       <div class="brief-info">
         <div class="prop">
           <label class="prop-label" for="system.active">{{localize 'BITD.Ability.IsActive'}}</label>
-          <input class="prop-input" type="checkbox" name="system.active" data-dtype="Boolean" {{checked system.active}}></input>
+          <input class="prop-input" type="checkbox" name="system.active" {{checked system.active}}></input>
         </div>
       </div>
     </div>
@@ -15,7 +15,7 @@
   {{!-- Sheet Body --}}
   <section class="sheet-body">
     <hr>
-    {{editor enrichedDescription target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+    {{editor enrichedDescription target="system.description" rollData=rollData button=true engine="prosemirror" editable=editable collaborate=true}}
   </section>
 
 </form>

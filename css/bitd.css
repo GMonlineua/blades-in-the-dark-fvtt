@@ -579,7 +579,7 @@ select.clear-select {
   font-weight: normal;
 }
 
-.bitd.actor input.all-with {
+.bitd.actor input.all-width {
   width: 100%;
 }
 .bitd.actor .actor-grid {
@@ -1080,7 +1080,7 @@ select.clear-select {
   row-gap: 0;
 }
 
-.bitd.item input.all-with {
+.bitd.item input.all-width {
   width: 100%;
 }
 .bitd.item .cohort .harm {
