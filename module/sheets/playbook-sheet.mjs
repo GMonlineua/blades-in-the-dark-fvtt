@@ -21,7 +21,8 @@ export class BitdPlaybookSheet extends BitdItemSheet {
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
-
+    // Everything below here is only needed if the sheet is editable
+    if (!this.options.editable) return;
     // Delete linked item
     html.find('.link-delete').click(this._onRemoveLink.bind(this));
   }

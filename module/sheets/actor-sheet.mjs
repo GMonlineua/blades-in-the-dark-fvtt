@@ -78,6 +78,9 @@ export class BitdActorSheet extends ActorSheet
       }
     });
 
+    // Open external link
+    html.on('click', 'a.actor-open[data-uuid]', this._onClickLink.bind(this));
+
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
 
@@ -97,6 +100,14 @@ export class BitdActorSheet extends ActorSheet
       item.sheet.render(true);
     });
 
+    // Show items in chat
+    html.find('.item-show').click(ev => {
+      const button = ev.currentTarget;
+      const itemId = button.closest('.item').dataset.itemId;
+      const item = this.actor.items.get(itemId);
+      if (item) return item.show();
+    });
+
     // Delete Item
     html.find('.item-delete').click(ev => {
       const button = ev.currentTarget;
@@ -105,16 +116,11 @@ export class BitdActorSheet extends ActorSheet
       return item.delete();
     });
 
+    // Delete external link
+    html.on('click', 'a.actor-delete', this._onRemoveLink.bind(this));
+
     // Roll dice
     html.find('.rollable').click(this._onRoll.bind(this));
-
-    // Show items in chat
-    html.find('.show-item').click(ev => {
-      const button = ev.currentTarget;
-      const itemId = button.closest('.item').dataset.itemId;
-      const item = this.actor.items.get(itemId);
-      if (item) return item.show();
-    });
 
     // Drag events for macros
     if (this.actor.isOwner) {
@@ -130,6 +136,32 @@ export class BitdActorSheet extends ActorSheet
   /* -------------------------------------------- */
 
   /**
+   * Handle clicking on a content link to preview the content.
+   * @param {MouseEvent} event  The triggering event.
+   * @protected
+   */
+  async _onClickLink(event) {
+    event.preventDefault();
+    const uuid = event.currentTarget.dataset.uuid;
+    const content = await fromUuid(uuid);
+    content?.sheet.render(true);
+  }
+
+  _onRemoveLink(event) {
+    const button = event.currentTarget;
+    const parent = $(button.parentNode);
+    const item = parent.closest("li.item");
+    const targetId = item[0].dataset.id;
+
+    const block = button.closest(".items-list");
+    const key = block.dataset.array;
+    const path = "system." + key;
+    const newArray = this.actor.system[key].filter(link => link.id !== targetId);
+
+    this.actor.update({ [path]: newArray });
+  }
+
+  /**
    * Handle creating a new Owned Item for the actor using initial data defined in the HTML dataset
    * @param {Event} the originating click event
    * @private
@@ -138,7 +170,7 @@ export class BitdActorSheet extends ActorSheet
     event.preventDefault();
     const header = event.currentTarget;
     const type = header.dataset.type;
-    const data = duplicate(header.dataset);
+    const data = foundry.utils.duplicate(header.dataset);
     const name = game.i18n.localize("BITD.NewItem");
     // Prepare the item object.
     const itemData = {

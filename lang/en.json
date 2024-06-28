@@ -29,7 +29,6 @@
     "General": "General",
     "Description": "Description",
     "Summary": "Summary",
-    "Links": "Links",
 
     "CrewName": "Name",
     "ItemName": "Name",
@@ -251,11 +250,18 @@
       "Title": "Show",
       "Tooltip": "Show this field in limited sheet"
     },
-    "ItemShow": "Show",
-    "ItemAdd": "Add",
-    "ItemDelete": "Delete",
-    "ItemEdit": "Edit",
-    "NewItem": "Item",
+    "Item": {
+      "Add": "Add",
+      "New": "Item",
+      "Delete": "Delete",
+      "Edit": "Edit",
+      "Show": "Show"
+    },
+    "Link": {
+      "Plural": "Links",
+      "Open": "Open link",
+      "Delete": "Delete"
+    },
 
     "Roll": {
       "Title": "Roll Dice",

@@ -30,18 +30,12 @@ export default class BitdActor extends Actor {
     }
   }
 
-  /** @override */
-  prepareData() {
-    super.prepareData();
-  }
-
   /** @override*/
   prepareDerivedData() {
     const actorData = this;
     const systemData = actorData.system;
 
     if (actorData.type == 'scoundrel') this._prepareScoundrelData(actorData, systemData);
-    if (actorData.type == 'crew') this._prepareCrewData(systemData);
   }
 
   _prepareScoundrelData(actorData, systemData) {
@@ -68,15 +62,6 @@ export default class BitdActor extends Actor {
     systemData.load.value = load;
   }
 
-  _prepareCrewData(systemData) {
-    if (systemData.turf < 0) {
-      systemData.turf = 0;
-    } else if (systemData.turf > 6) {
-      systemData.turf = 6;
-    }
-    systemData.rep.max = 12 - systemData.turf;
-  }
-
   _onCreateDescendantDocuments(parent, collection, documents, data, options, userId) {
     super._onCreateDescendantDocuments(parent, collection, documents, data, options, userId);
 
@@ -90,7 +75,7 @@ export default class BitdActor extends Actor {
       if (this.type == "crew") {
         target.actor = "crew",
         target.item = "crewType",
-        target.forLoad = ["abilities", "contacts", "upgrades"]
+        target.forLoad = ["abilities", "claims", "cohorts", "upgrades"]
       }
 
       for (const dataItem of data) {
@@ -120,12 +105,14 @@ export default class BitdActor extends Actor {
         if (!this.items.find(i => i.name === item.name && i.type === item.type)) {
           toCreate.push(item)
         } else {
-          ui.notifications.warn(game.i18n.localize("BITD.ItemExistsName"));
+          ui.notifications.warn(game.i18n.localize("BITD.Errors.Item.ExistsName"));
         }
       }
     }
-
     this.createEmbeddedDocuments('Item', toCreate)
+
+    const relationship = this.system.relationship;
+    await this.update({ "system.relationship": relationship.concat(container.system.relationship) });
 
     if (container.type == "playbook") {
       for (const [attrKey, targetAttr] of Object.entries(systemData.attributes)) {

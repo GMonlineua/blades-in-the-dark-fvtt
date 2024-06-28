@@ -30,6 +30,7 @@ Hooks.once('init', async function() {
   // Define custom Entity classes and Data Models
   CONFIG.Actor.documentClass = BitdActor;
   CONFIG.Actor.dataModels = {
+    'crew': models.CrewData,
     'faction': models.FactionData,
     'npc': models.NpcData
   };

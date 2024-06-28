@@ -10,10 +10,6 @@
         "exp": 0,
         "coins": 0,
         "playbook": {}
-      },
-      "group": {
-        "tier": 0,
-        "hold": "strong"
       }
     },
     "scoundrel": {
@@ -97,23 +93,6 @@
           }
         }
       }
-    },
-    "crew": {
-      "templates": ["base", "players", "group"],
-      "lair": "",
-      "hunting": {
-       "ground": "",
-       "operation": ""
-      },
-      "repType": "",
-      "vault": 0,
-      "heat": 0,
-      "wanted": 0,
-      "tier": 0,
-      "rep": {
-        "value": 0
-      },
-      "turf": 0
     }
   },
   "Item": {
