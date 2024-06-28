@@ -19,17 +19,17 @@
     {{!-- Owned Playbook Tab --}}
     <div class="tab general" data-group="primary" data-tab="general">
       <div class="attribute-block grid-3col">
-        {{#each system.attributes as |attribute key|}}
+        {{#each config.attributeLinks as |attribute key|}}
           <div class="attribute {{key}}">
             <h3 class="attribute-name" data-tooltip="{{getLocalizeDescription 'attribute' key}}">{{getLocalizeName key}}</h3>
-            {{#each attribute as |action subKey|}}
-              <div class="action {{subKey}}">
-                <div class="value-step-block" data-value="{{action}}" data-key="system.attributes.{{key}}.{{subKey}}">
+            {{#each attribute as |action|}}
+              <div class="action {{action}}">
+                <div class="value-step-block" data-value="{{getValue @root.system.actions action}}" data-key="system.actions.{{action}}">
                   {{#numLoop 4}}
                     <span class="value-step value-dot" data-index="{{this}}"></span>
                   {{/numLoop}}
                 </div>
-                <label class="action-label" data-tooltip="{{getLocalizeDescription 'action' subKey}}">{{getLocalizeName subKey}}</label>
+                <label class="action-label" data-tooltip="{{getLocalizeDescription 'action' action}}">{{getLocalizeName action}}</label>
               </div>
             {{/each}}
           </div>
@@ -56,19 +56,19 @@
         </div>
       </div>
 
-      <div class="contacts-block linked-items" data-array="contacts">
-        <h3>{{localize 'BITD.Contact.Plural'}}</h3>
+      <div class="inventory-block linked-items" data-array="inventory">
+        <h3>{{localize 'BITD.Playbook.Items'}}</h3>
         <div class="link-block">
-          {{#each system.contacts}}
+          {{#each system.inventory}}
             {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
           {{/each}}
         </div>
       </div>
 
-      <div class="inventory-block linked-items" data-array="inventory">
-        <h3>{{localize 'BITD.Playbook.Items'}}</h3>
+      <div class="relationship-block linked-items" data-array="relationship">
+        <h3>{{localize 'BITD.Contact.Plural'}}</h3>
         <div class="link-block">
-          {{#each system.inventory}}
+          {{#each system.relationship}}
             {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
           {{/each}}
         </div>

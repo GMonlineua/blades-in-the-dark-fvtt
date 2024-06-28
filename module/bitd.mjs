@@ -9,6 +9,7 @@ import { BitdScoundrelSheet } from "./sheets/scoundrel-sheet.mjs";
 
 // Import Item Sheet
 import { BitdItemSheet } from "./sheets/item-sheet.mjs";
+import { BitdPlaybookSheet } from "./sheets/playbook-sheet.mjs";
 
 // Import modules
 import { preprocessChatMessage, renderChatMessage } from "./applications/chat-portraits.mjs";
@@ -35,6 +36,7 @@ Hooks.once('init', async function() {
 
   CONFIG.Item.documentClass = BitdItem;
   CONFIG.Item.dataModels = {
+    'playbook': models.PlaybookData,
     'abilityScoundrel': models.AbilityScoundrelData,
     'abilityCrew': models.AbilityCrewData,
     'claim': models.ClaimData,
@@ -52,6 +54,7 @@ Hooks.once('init', async function() {
   Actors.registerSheet("bitd", BitdScoundrelSheet, { types: ["scoundrel"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("bitd", BitdItemSheet, { makeDefault: true });
+  Items.registerSheet("bitd", BitdPlaybookSheet, { types: ["playbook", "crewType"], makeDefault: true });
 
   registerHandlebarsHelpers();
 

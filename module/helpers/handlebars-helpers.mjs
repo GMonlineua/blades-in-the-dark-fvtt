@@ -48,6 +48,10 @@ export const registerHandlebarsHelpers = function() {
     }
   });
 
+  Handlebars.registerHelper("getValue", function (parent, key) {
+    return parent[key]
+  });
+
   Handlebars.registerHelper("getLocalizeName", function (key) {
     const name = "BITD." + key.charAt(0).toUpperCase() + key.slice(1);
     const localizeName = game.i18n.localize(name);

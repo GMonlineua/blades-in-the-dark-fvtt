@@ -257,10 +257,6 @@
     "ItemEdit": "Edit",
     "NewItem": "Item",
 
-    "ItemExistsId": "Item with the same id already exists in the container.",
-    "ItemExistsName": "Item with the same name already exists in the container.",
-    "ItemNotAdd": "The <b>{item}</b> has not been added to the actor. The item with <b>this ID does not</b> exist.",
-
     "Roll": {
       "Title": "Roll Dice",
       "Submit": "Roll",
@@ -389,6 +385,18 @@
       }
     },
 
-    "Cancel": "Cancel"
+    "Cancel": "Cancel",
+    "Errors": {
+      "Item": {
+        "ExistsId": "Item with the same id already exists in the container.",
+        "ExistsName": "Item with the same name already exists in the container.",
+        "NotSupported": "The <b>{item}</b> can't be added to this container."
+      },
+      "Actor": {
+        "ExistsId": "Item with the same id already exists in the container.",
+        "ExistsName": "Item with the same name already exists in the container.",
+        "NotSupported": "The <b>{actor}</b> can't be added to this container."
+      }
+    }
   }
 }
