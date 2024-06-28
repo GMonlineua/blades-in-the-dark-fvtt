@@ -10,7 +10,8 @@ export class BitdPlaybookSheet extends BitdItemSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       dragDrop: [
-        {dragSelector: ".item", dropSelector: ".playbook"}
+        {dragSelector: ".item", dropSelector: ".playbook"},
+        {dragSelector: ".item", dropSelector: ".crewType"}
       ]
     });
   }
@@ -39,14 +40,20 @@ export class BitdPlaybookSheet extends BitdItemSheet {
       let key = "";
 
       switch (item.type) {
-        case 'abilityCrew':
-          if (this.item.type == "crewType") key = "abilities";
-          break;
         case 'abilityScoundrel':
           if (this.item.type == "playbook") key = "abilities";
           break;
         case 'tool':
           if (this.item.type == "playbook") key = "inventory";
+          break;
+        case 'abilityCrew':
+          if (this.item.type == "crewType") key = "abilities";
+          break;
+        case 'claim':
+          if (this.item.type == "crewType") key = "claims";
+          break;
+        case 'cohort':
+          if (this.item.type == "crewType") key = "cohorts";
           break;
         case 'upgrade':
           if (this.item.type == "crewType") key = "upgrades";

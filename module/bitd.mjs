@@ -37,6 +37,7 @@ Hooks.once('init', async function() {
   CONFIG.Item.documentClass = BitdItem;
   CONFIG.Item.dataModels = {
     'playbook': models.PlaybookData,
+    'crewType': models.CrewTypeData,
     'abilityScoundrel': models.AbilityScoundrelData,
     'abilityCrew': models.AbilityCrewData,
     'claim': models.ClaimData,

@@ -9,3 +9,4 @@ export {ToolData as ToolData} from "./items-data.mjs";
 export {UpgradeData as UpgradeData} from "./items-data.mjs";
 
 export {default as PlaybookData} from "./playbook-data.mjs";
+export {default as CrewTypeData} from "./crew-type-data.mjs";
