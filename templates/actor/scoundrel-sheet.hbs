@@ -108,8 +108,8 @@
           <div class="item-header bitd-header">
             <a class="item-create" title="{{localize 'BITD.Item.Add'}}" data-type="abilityScoundrel"><i class="fas fa-plus"></i></a>
             <h3>{{localize 'BITD.Ability.Special'}}</h3>
-            <div class="value-step-block exp-block" data-value="{{system.exp}}" data-key="system.exp">
-              {{#numLoop 8}}
+            <div class="value-step-block exp-block" data-value="{{system.exp.value}}" data-key="system.exp.value">
+              {{#numLoop system.exp.max}}
                 <span class="value-step value-tooth simple-red-tooth" data-index="{{this}}"></span>
               {{/numLoop}}
             </div>

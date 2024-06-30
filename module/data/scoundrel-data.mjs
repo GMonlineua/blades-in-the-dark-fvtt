@@ -48,10 +48,7 @@ export default class ScoundrelData extends foundry.abstract.TypeDataModel {
           validate: v => v.length <= 2,
           validationError: "must only have 2 Moderate harms"
         }),
-        severe: new fields.ArrayField(new fields.StringField(), {
-          validate: v => v.length <= 1,
-          validationError: "must only have 1 Severe harm"
-        })
+        severe: new fields.StringField()
       }),
 
       attributes: new fields.SchemaField({
