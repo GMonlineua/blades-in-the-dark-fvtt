@@ -7,24 +7,20 @@
       <div class="money">
         <div class="resource coins">
           <label for="system.coins">{{localize 'BITD.Coins'}}:</label>
-          <input class="clear-input" type="number" name="system.coins" value="{{system.coins}}"/>
-          <span>/4</span>
+          <input class="clear-input" type="number" name="system.coins.value" value="{{system.coins.value}}"/>
+          <span>/{{system.coins.max}}</span>
         </div>
         <div class="resource stash">
           <label for="system.stash">{{localize 'BITD.Stash'}}:</label>
-          <input class="clear-input" type="number" name="system.stash" value="{{system.stash}}" data-dtype="Number"/>
-          <span>/30</span>
+          <input class="clear-input" type="number" name="system.stash.value" value="{{system.stash.value}}" data-dtype="Number"/>
+          <span>/{{system.stash.max}}</span>
         </div>
       </div>
 
       <div class="load">
         <span>{{localize 'BITD.Load.Title'}}: {{system.load.value}}/{{system.load.max}}</span>
         <select class="clear-select" name="system.load.max">
-          {{#select system.load.max}}
-            <option value="3">{{localize 'BITD.Load.Light'}}</option>
-            <option value="5">{{localize 'BITD.Load.Normal'}}</option>
-            <option value="6">{{localize 'BITD.Load.Heavy'}}</option>
-          {{/select}}
+          {{selectOptions config.load selected=system.load.max localize=true}}
         </select>
       </div>
     </div>
@@ -32,29 +28,29 @@
     <div class="header-fields">
       <div class="name-alias grid-2col">
         <h1 class="scoundrel-name">
-          <input class="clear-input" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.Actor.Name'}}" data-dtype="String"/>
+          <input class="clear-input" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.Actor.Name'}}"/>
         </h1>
         <h2 class="scoundrel-alias">
-          <input class="clear-input" name="system.alias" type="text" value="{{system.alias}}" placeholder="{{localize 'BITD.Actor.Alias'}}" data-dtype="String"/>
+          <input class="clear-input" name="system.alias" type="text" value="{{system.alias}}" placeholder="{{localize 'BITD.Actor.Alias'}}"/>
         </h2>
       </div>
 
       <div class="brief-info grid-2col">
         <div class="prop">
           <label class="prop-label" for="system.heritage">{{localize 'BITD.Heritage'}}:</label>
-          <input class="prop-input clear-input" type="text" name="system.heritage" value="{{system.heritage}}" data-dtype="String" placeholder="{{localize 'BITD.Heritage'}}"/>
+          <input class="prop-input clear-input" type="text" name="system.heritage" value="{{system.heritage}}" placeholder="{{localize 'BITD.Heritage'}}"/>
         </div>
         <div class="prop">
           <label class="prop-label" for="system.vice">{{localize 'BITD.Vice'}}:</label>
-          <input class="prop-input clear-input" type="text" name="system.vice" value="{{system.vice}}" data-dtype="String" placeholder="{{localize 'BITD.Vice'}}"/>
+          <input class="prop-input clear-input" type="text" name="system.vice" value="{{system.vice}}" placeholder="{{localize 'BITD.Vice'}}"/>
         </div>
         <div class="prop">
           <label class="prop-label" for="system.background">{{localize 'BITD.Background'}}:</label>
-          <input class="prop-input clear-input all-row" type="text" name="system.background" value="{{system.background}}" data-dtype="String" placeholder="{{localize 'BITD.Background'}}"/>
+          <input class="prop-input clear-input all-row" type="text" name="system.background" value="{{system.background}}" placeholder="{{localize 'BITD.Background'}}"/>
         </div>
         <div class="prop">
           <label class="prop-label" for="system.look">{{localize 'BITD.Look'}}:</label>
-          <input class="prop-input clear-input all-row" type="text" name="system.look" value="{{system.look}}" data-dtype="String" placeholder="{{localize 'BITD.Look'}}"/>
+          <input class="prop-input clear-input all-row" type="text" name="system.look" value="{{system.look}}" placeholder="{{localize 'BITD.Look'}}"/>
         </div>
       </div>
 

@@ -30,38 +30,6 @@ export default class BitdActor extends Actor {
     }
   }
 
-  /** @override*/
-  prepareDerivedData() {
-    const actorData = this;
-    const systemData = actorData.system;
-
-    if (actorData.type == 'scoundrel') this._prepareScoundrelData(actorData, systemData);
-  }
-
-  _prepareScoundrelData(actorData, systemData) {
-    for (const [attrKey, attribute] of Object.entries(systemData.attributes)) {
-      attribute.value = 0;
-
-      for (const [actionKey, action] of Object.entries(attribute.actions)) {
-        action.max = 4;
-        systemData[actionKey] = foundry.utils.deepClone(action);
-
-        if (action.value > 0) {
-          attribute.value += 1;
-        }
-      }
-    }
-
-    // Inventory slots
-    let load = 0;
-    for (let i of actorData.items) {
-      if (i.system.loadout && i.system.equipped) {
-        load += i.system.loadout;
-      }
-    }
-    systemData.load.value = load;
-  }
-
   _onCreateDescendantDocuments(parent, collection, documents, data, options, userId) {
     super._onCreateDescendantDocuments(parent, collection, documents, data, options, userId);
 

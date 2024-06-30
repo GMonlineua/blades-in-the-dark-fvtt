@@ -1,99 +1,12 @@
 {
   "Actor": {
-    "types": ["scoundrel", "crew", "faction", "npc"],
-    "htmlFields": ["description"],
-    "templates": {
-      "base": {
-        "description": ""
-      },
-      "players": {
-        "exp": 0,
-        "coins": 0,
-        "playbook": {}
-      }
-    },
-    "scoundrel": {
-      "templates": ["base", "players"],
-      "alias": "",
-      "heritage": "",
-      "vice": "",
-      "belives": "",
-      "drives": "",
-      "background": "",
-      "look": "",
-      "stress": 0,
-      "trauma": [],
-      "coins": 0,
-      "stash": 0,
-      "load": {
-        "max": 5
-      },
-      "harm": {
-        "light": {
-          "first": "",
-          "second": ""
-        },
-        "medium": {
-          "first": "",
-          "second": ""
-        },
-        "heavy": ""
-      },
-      "healing": 0,
-      "attributes": {
-        "insight": {
-          "exp": 0,
-          "actions": {
-            "hunt": {
-              "value": 0
-            },
-            "study": {
-              "value": 0
-            },
-            "survey": {
-              "value": 0
-            },
-            "tinker": {
-              "value": 0
-            }
-          }
-        },
-        "prowess": {
-          "exp": 0,
-          "actions": {
-            "finesse": {
-              "value": 0
-            },
-            "prowl": {
-              "value": 0
-            },
-            "skirmish": {
-              "value": 0
-            },
-            "wreck": {
-              "value": 0
-            }
-          }
-        },
-        "resolve": {
-          "exp": 0,
-          "actions": {
-            "attune": {
-              "value": 0
-            },
-            "command": {
-              "value": 0
-            },
-            "consort": {
-              "value": 0
-            },
-            "sway": {
-              "value": 0
-            }
-          }
-        }
-      }
-    }
+    "types": [
+      "scoundrel",
+      "crew",
+      "faction",
+      "npc"
+    ],
+    "htmlFields": ["description"]
   },
   "Item": {
     "types": [
