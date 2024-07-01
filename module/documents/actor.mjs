@@ -37,7 +37,7 @@ export default class BitdActor extends Actor {
       const target = {
         actor: "scoundrel",
         item: "playbook",
-        forLoad: ["abilities", "contacts", "inventory"]
+        forLoad: ["abilities", "inventory"]
       }
 
       if (this.type == "crew") {
@@ -79,21 +79,45 @@ export default class BitdActor extends Actor {
     }
     this.createEmbeddedDocuments('Item', toCreate)
 
-    const relationship = this.system.relationship;
-    await this.update({ "system.relationship": relationship.concat(container.system.relationship) });
+    for (const contact of container.system.contacts) {
+      this.addContact(contact);
+    }
 
-    if (container.type == "playbook") {
-      for (const [attrKey, targetAttr] of Object.entries(systemData.attributes)) {
-        const playbookAttr = container.system.attributes[attrKey];
-        for (const [actionKey, targetAct] of Object.entries(targetAttr.actions)) {
-          const playbookAct = playbookAttr[actionKey];
-
-          if (playbookAct > targetAct.value) {
-            const path = "system.attributes." + attrKey + ".actions." + actionKey + ".value";
-            await this.update({ [path]: playbookAct });
-          }
+    if (container.type === "playbook") {
+      for (const action in systemData.actions) {
+        const playbookValue = container.system.actions[action];
+        const actorValue = systemData.actions[action].value;
+        if (playbookValue > actorValue) {
+          const path = "system.actions." + action + ".value";
+          await this.update({ [path]: playbookValue });
         }
       }
     }
+  }
+
+  async addContact(npc) {
+    const localizeType = game.i18n.localize("TYPES.Actor." + npc.type);
+    if (!npc) return;
+    if (npc.type != "npc") return ui.notifications.error(game.i18n.format("BITD.Errors.Actor.NotSupported", { type: localizeType, actor: npc.name }));
+    if (npc.pack) return ui.notifications.error(game.i18n.localize("BITD.Errors.Actor.InPack"));
+
+    const contacts = this.system.contacts;
+
+    const idExist = contacts.some(existingActor => existingActor.id === npc.id);
+    const nameExist = contacts.some(existingActor => existingActor.name === npc.name);
+
+    if (idExist) return ui.notifications.error(game.i18n.localize("BITD.Errors.Actor.ExistsId"));
+    if (nameExist) ui.notifications.warn(game.i18n.localize("BITD.Errors.Actor.ExistsName"));
+
+    const link = {
+      id: npc.id,
+      uuid: npc.uuid,
+      name: npc.name,
+      title: localizeType
+    }
+    contacts.push(link);
+    await this.update({ "system.contacts": contacts });
+
+    console.log(this.system.contacts)
   }
 }

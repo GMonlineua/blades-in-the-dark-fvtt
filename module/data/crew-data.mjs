@@ -48,12 +48,13 @@ export default class CrewData extends foundry.abstract.TypeDataModel {
       }),
 
       playbook: new fields.ForeignDocumentField(BitdItem, {idOnly: true}),
-      relationship: new fields.ArrayField(new fields.SchemaField({
+      contacts: new fields.ArrayField(new fields.SchemaField({
         id: new fields.ForeignDocumentField(BitdActor, {idOnly: true}),
         uuid: new fields.StringField(),
         name: new fields.StringField(),
         type: new fields.StringField(),
         title: new fields.StringField(),
+        relationship: new fields.NumberField({requiredInteger, min: -1, max: 1, initial: 0 })
       })),
 
       description: new fields.HTMLField()

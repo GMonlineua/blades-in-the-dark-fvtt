@@ -69,9 +69,10 @@ export class BitdPlaybookSheet extends BitdItemSheet {
           const link = {
             id: item.id,
             uuid: item.uuid,
-            type: "Item",
+            type: item.type,
             name: item.name,
-            title: game.i18n.localize("TYPES.Item." + item.type)
+            title: game.i18n.localize("TYPES.Item." + item.type),
+            docType: "Item"
           }
           container.push(link);
           await this.item.update({ [path]: container });
@@ -84,19 +85,20 @@ export class BitdPlaybookSheet extends BitdItemSheet {
     } else if (data.type === "Actor") {
       const actor = await fromUuid(data.uuid);
       if (actor.type === "npc") {
-        const container = this.item.system.relationship;
+        const container = this.item.system.contacts;
         const actorExist = container.some(existingActor => existingActor.id === actor.id);
 
         if (!actorExist) {
           const link = {
             id: actor.id,
             uuid: actor.uuid,
-            type: "Actor",
+            type: actor.type,
             name: actor.name,
-            title: game.i18n.localize("TYPES.Actor." + actor.type)
+            title: game.i18n.localize("TYPES.Actor." + actor.type),
+            docType: "Actor"
           }
           container.push(link);
-          await this.item.update({ "system.relationship": container });
+          await this.item.update({ "system.contacts": container });
         } else {
           ui.notifications.warn(game.i18n.localize("BITD.Errors.Item.ExistsId"));
         }

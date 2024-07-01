@@ -1,14 +1,25 @@
 <div class="contacts items-block">
   <h3 class="item-header bitd-header contacts-title">{{localize 'BITD.Contact.Plural'}}</h3>
-  <ol class="items-list" data-array="relationship">
-    {{#each system.relationship}}
-      <li class="item {{this.type}}" data-id="{{this.id}}">
+  <ol class="items-list" data-array="contacts">
+    {{#each system.contacts as |contact|}}
+      <li class="item {{contact.type}}" data-id="{{contact.id}}">
         <div class="item-description">
-          <span class="item-name">{{this.name}}</span>
+{{!--          {{#if contact.relationship includeZero=true}}
+            <label class="friend">
+              <input type="radio" value="1" name="system.contacts.[{{@index}}].relationship">
+            </label>
+            <label class="rival">
+              <input type="radio" value="-1" name="system.contacts.[{{@index}}].relationship">
+            </label>
+            <label class="custom">
+              <input type="radio" value="0" name="system.contacts.[{{@index}}].relationship">
+            </label>
+          {{/if}}--}}
+          <span class="item-name">{{contact.name}}</span>
         </div>
 
         <div class="item-controls">
-          <a class="item-control actor-open" title="{{localize 'BITD.Link.Open'}}" data-uuid="{{this.uuid}}"><i class="fa fa-external-link"></i></a>
+          <a class="item-control actor-open" title="{{localize 'BITD.Link.Open'}}" data-uuid="{{contact.uuid}}"><i class="fa fa-external-link"></i></a>
           <a class="item-control actor-delete" title="{{localize 'BITD.Link.Delete'}}"><i class="fas fa-trash"></i></a>
         </div>
       </li>

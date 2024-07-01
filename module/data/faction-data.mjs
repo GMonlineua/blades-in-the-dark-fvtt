@@ -39,6 +39,14 @@ export default class FactionData extends foundry.abstract.TypeDataModel {
         show: new fields.BooleanField({ initial: false })
       }),
 
+      contacts: new fields.ArrayField(new fields.SchemaField({
+        id: new fields.ForeignDocumentField(BitdActor, {idOnly: true}),
+        uuid: new fields.StringField(),
+        name: new fields.StringField(),
+        type: new fields.StringField(),
+        title: new fields.StringField(),
+      })),
+
       relatedFactions: new fields.SchemaField({
         allies: new fields.StringField(),
         enemies: new fields.StringField(),

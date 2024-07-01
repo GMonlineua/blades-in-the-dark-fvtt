@@ -72,4 +72,13 @@ export class BitdCrewSheet extends BitdActorSheet
     context.playbook = playbook;
     context.upgrades = upgrades;
   }
+
+  /** @override */
+  async _onDropActor(event, data) {
+    if (!this.isEditable) return;
+    const cls = getDocumentClass("Actor");
+    const sourceActor = await cls.fromDropData(data);
+
+    this.actor.addContact(sourceActor);
+  }
 }

@@ -46,6 +46,7 @@ export class BitdActorSheet extends ActorSheet
     context.flags = context.actor.flags;
     context.config = CONFIG.BITD;
 
+    console.log(context.system.contacts)
     return context;
   }
 

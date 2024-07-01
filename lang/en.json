@@ -401,7 +401,8 @@
       "Actor": {
         "ExistsId": "Item with the same id already exists in the container.",
         "ExistsName": "Item with the same name already exists in the container.",
-        "NotSupported": "The <b>{actor}</b> can't be added to this container."
+        "InPack": "You may only add Friends to the Character which exist in the World.",
+        "NotSupported": "The <b>{type} {actor}</b> can't be added to this container."
       }
     }
   }
