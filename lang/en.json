@@ -322,7 +322,7 @@
         "Description": "You get {stress} stress, so you suffer a level of <b>trauma</b>. You’re <i>left for dead</i> or otherwise dropped out of the current conflict, only to come back later, shaken and drained. When you return, you have <b>zero stress</b> and your vice has been satisfied for the next downtime (see <b>Vice</b> on page 156)."
       },
       "Result": {
-        "Exp": "{actor} gains 1 experiences",
+        "Exp": "{actor} gains 1 experiences in {attribute}",
         "Critical": "Critical",
         "Success": "Full Success",
         "Mixed": "Partial Success",
