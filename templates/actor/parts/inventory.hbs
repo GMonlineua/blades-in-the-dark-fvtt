@@ -1,12 +1,14 @@
-<li class="item {{item.type}} {{toolClass item.system}}" data-item-id="{{item._id}}">
+<li class="item {{item.type}}{{toolClass item.system}}" data-item-id="{{item._id}}">
   <div class="item-description">
-    {{#if item.system.loadout}}
-      <div class="item-checkbox item-loadout {{#if item.system.equipped}}active{{/if}}" data-key="equipped">
+    <div class="item-checkbox item-loadout" data-key="equipped">
+      {{#if item.system.loadout}}
         {{#numLoop item.system.loadout}}
           <span class="loadout-box"></span>
         {{/numLoop}}
-      </div>
-    {{/if}}
+      {{else}}
+        <span class="loadout-box"></span>
+      {{/if}}
+    </div>
     <span class="item-name" data-tooltip="{{item.system.description}}">{{item.name}}</span>
   </div>
 

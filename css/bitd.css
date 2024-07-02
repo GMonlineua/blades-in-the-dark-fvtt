@@ -999,6 +999,7 @@ select.clear-select {
 }
 .bitd.actor .scoundrel .sheet-header .harm .healing .healing-input {
   height: 24px;
+  max-width: 20px;
 }
 .bitd.actor .scoundrel .sheet-header .harm .harm-table {
   display: grid;
@@ -1051,11 +1052,14 @@ select.clear-select {
   height: 1px;
   background-color: #222;
 }
-.bitd.actor .scoundrel .sheet-body .general-container .item-checkbox.active .loadout-box {
+.bitd.actor .scoundrel .sheet-body .general-container .item.tool.active .loadout-box {
   background: black;
 }
 .bitd.actor .scoundrel .sheet-body .general-container .item.tool.broken .item-name {
   text-decoration: line-through;
+}
+.bitd.actor .scoundrel .sheet-body .general-container .item.tool.light .item-name {
+  font-style: italic;
 }
 .bitd.actor .scoundrel .sheet-body .general-container .spec-inventory {
   grid-area: 1;
@@ -1072,19 +1076,10 @@ select.clear-select {
   right: 5px;
 }
 .bitd.actor .scoundrel .sheet-body .notes-container {
-  grid-template-areas: "1 main" "2 main";
+  row-gap: 10px;
 }
 .bitd.actor .scoundrel .sheet-body .notes-container .bitd-header {
   padding: 3px;
-}
-.bitd.actor .scoundrel .sheet-body .notes-container .description {
-  grid-area: main;
-}
-.bitd.actor .scoundrel .sheet-body .notes-container .expirience {
-  grid-area: 1;
-}
-.bitd.actor .scoundrel .sheet-body .notes-container .rules {
-  grid-area: 2;
 }
 .bitd.actor .scoundrel .sheet-body .notes-container .rules ul {
   margin-top: 0;
@@ -1096,6 +1091,19 @@ select.clear-select {
 }
 .bitd.actor .scoundrel .sheet-body .notes-container .rules .teamwork .grid-2col {
   row-gap: 0;
+}
+.bitd.actor .scoundrel .sheet-body .notes-container .description .brief-info .prop {
+  margin-top: 5px;
+}
+.bitd.actor .scoundrel .sheet-body .notes-container .description .brief-info .prop .prop-label {
+  color: black;
+  font-family: "Spectral SC", serif;
+}
+.bitd.actor .scoundrel .sheet-body .notes-container .description .brief-info .prop .prop-input {
+  border-bottom: 1px solid #b5b3a4;
+}
+.bitd.actor .scoundrel .sheet-body .notes-container .description .bitd-header {
+  margin-top: 5px;
 }
 
 .bitd.item input.all-width {

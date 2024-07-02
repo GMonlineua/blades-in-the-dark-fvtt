@@ -84,16 +84,19 @@ export const registerHandlebarsHelpers = function() {
     return localizeName;
   });
 
-  Handlebars.registerHelper("toolClass", function (item) {
-    let classes;
+  Handlebars.registerHelper("toolClass", function (data) {
+    const conditions = [
+      { condition: data.equipped, className: "active" },
+      { condition: data.broken, className: "broken" },
+      { condition: !data.loadout, className: "light" }
+    ];
+    let classes = "";
 
-    if (item.equipped && item.broken) {
-      classes = "active broken";
-    } else if (item.equipped) {
-      classes = "active";
-    } else if (item.broken) {
-      classes = "broken";
-    }
+    conditions.forEach(({ condition, className }) => {
+      if (condition) {
+        classes += ` ${className}`;
+      }
+    });
 
     return classes
   });

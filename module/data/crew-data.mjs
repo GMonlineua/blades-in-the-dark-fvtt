@@ -23,7 +23,6 @@ export default class CrewData extends foundry.abstract.TypeDataModel {
       reputation: new fields.SchemaField({
         type: new fields.StringField(),
         value: new fields.NumberField({requiredPositiveInteger, initial: 0 }),
-        max: new fields.NumberField({requiredPositiveInteger, initial: 12 }),
       }),
       tier: new fields.SchemaField({
         value: new fields.NumberField({requiredPositiveInteger, initial: 0 }),
@@ -59,5 +58,12 @@ export default class CrewData extends foundry.abstract.TypeDataModel {
 
       description: new fields.HTMLField()
     };
+  }
+
+  /* -------------------------------------------- */
+
+  /** @inheritdoc */
+  prepareDerivedData() {
+    this.reputation.max = 12 - this.turf.value;
   }
 }
