@@ -113,11 +113,10 @@ export default class BitdActor extends Actor {
       id: npc.id,
       uuid: npc.uuid,
       name: npc.name,
+      type: npc.type,
       title: localizeType
     }
     contacts.push(link);
     await this.update({ "system.contacts": contacts });
-
-    console.log(this.system.contacts)
   }
 }

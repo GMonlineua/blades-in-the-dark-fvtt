@@ -64,7 +64,7 @@
         </div>
       {{/if}}
 
-      {{#if system.turf.show}}
+      {{#if system.showTurf}}
         <div class="turf prop-field items-block full-size">
           <div class="item-header bitd-header">
             <h3>{{localize 'BITD.Turf'}}</h3>
@@ -86,7 +86,7 @@
         </div>
       {{/if}}
 
-      {{#if system.npc.show}}
+      {{#if system.showNPC}}
         <div class="npcs prop-block">
           {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
         </div>

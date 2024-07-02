@@ -33,12 +33,7 @@ export default class FactionData extends foundry.abstract.TypeDataModel {
       }),
 
       showTurf: new fields.BooleanField({ initial: false }),
-
-      npc: new fields.SchemaField({
-        actors: new fields.ArrayField(new fields.ForeignDocumentField(BitdActor, {idOnly: true})),
-        show: new fields.BooleanField({ initial: false })
-      }),
-
+      showNPC: new fields.BooleanField({ initial: false }),
       contacts: new fields.ArrayField(new fields.SchemaField({
         id: new fields.ForeignDocumentField(BitdActor, {idOnly: true}),
         uuid: new fields.StringField(),

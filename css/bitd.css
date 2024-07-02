@@ -571,6 +571,24 @@ select.clear-select {
 .bitd .contacts.items-block .item {
   margin: 0;
 }
+.bitd .contacts.items-block .item .item-description .relationship {
+  display: inline-block;
+}
+.bitd .contacts.items-block .item .item-description .relationship .frien, .bitd .contacts.items-block .item .item-description .relationship .rival {
+  font-size: 1.25em;
+}
+.bitd .contacts.items-block .item .item-description .relationship .zero {
+  font-size: 0.75em;
+}
+.bitd .contacts.items-block .item .item-description .relationship .friend.active {
+  color: green;
+}
+.bitd .contacts.items-block .item .item-description .relationship .rival.active {
+  color: red;
+}
+.bitd .contacts.items-block .item .item-description .relationship .special.active {
+  color: blue;
+}
 .bitd .contacts.items-block .item .item-description .item-name {
   font-weight: 700;
 }

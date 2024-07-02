@@ -104,12 +104,10 @@
 
       <div class="npcs prop-field">
         <div class="show-for-limited" data-tooltip="{{localize 'BITD.ShowForPlayers.Tooltip'}}">
-          <input class="show-checkbox" type="checkbox" name="system.npc.show" {{checked system.npc.show}}></input>
+          <input class="show-checkbox" type="checkbox" name="system.showNPC" {{checked system.showNPC}}></input>
         </div>
         <h3 class="bitd-header">{{localize 'BITD.NPCs'}}</h3>
-        <div class="grid-2col">
           {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
-        </div>
       </div>
 
       <div class="related-faction prop-field grid-2col">

@@ -46,7 +46,6 @@ export class BitdActorSheet extends ActorSheet
     context.flags = context.actor.flags;
     context.config = CONFIG.BITD;
 
-    console.log(context.system.contacts)
     return context;
   }
 
@@ -64,6 +63,17 @@ export class BitdActorSheet extends ActorSheet
             $(this).addClass("active");
           }
         });
+    });
+
+    // Calculate relationship
+    html.find('.relationship').each(function () {
+      const targetValue = Number(this.dataset.value);
+      for (const option of this.children) {
+        const currentValue = Number(option.dataset.value);
+        if (currentValue === targetValue) {
+          option.classList.add("active");
+        }
+      }
     });
 
     // Show item summary
@@ -121,6 +131,9 @@ export class BitdActorSheet extends ActorSheet
 
     // Roll dice
     html.find('.rollable').click(this._onRoll.bind(this));
+
+    // Change contact's relationship
+    html.on('click', 'i.set-relationship', this._onChangeRelationship.bind(this));
 
     // Drag events for macros
     if (this.actor.isOwner) {
@@ -248,5 +261,28 @@ export class BitdActorSheet extends ActorSheet
 
     const checked = !item.system[key];
     await item.update({ [updateKey]: checked });
+  }
+
+  /**
+   * Handle clicking on a relationship buttons in contacts.
+   * @param {MouseEvent} event  The triggering event.
+   * @protected
+   */
+  async _onChangeRelationship(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    const value = element.dataset.value;
+    const parent = $(element.parentNode);
+
+    const index = Number(parent[0].dataset.index);
+    const contacts = this.actor.system.contacts;
+    contacts[index].relationship = value;
+    await this.actor.update({"system.contacts": contacts});
+
+    const options = parent.find(".set-relationship");
+    for (const option of options) {
+      option.classList.remove("active");
+    }
+    element.classList.add("active");
   }
 }

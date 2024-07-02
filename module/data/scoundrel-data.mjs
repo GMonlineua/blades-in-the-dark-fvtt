@@ -130,7 +130,7 @@ export default class ScoundrelData extends foundry.abstract.TypeDataModel {
         name: new fields.StringField(),
         type: new fields.StringField(),
         title: new fields.StringField(),
-        relationship: new fields.NumberField({requiredInteger, min: -1, max: 1, initial: 0 })
+        relationship: new fields.NumberField({requiredInteger, min: -1, max: 2, initial: 0 })
       })),
 
       description: new fields.HTMLField()
