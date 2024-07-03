@@ -99,7 +99,7 @@ export default class BitdActor extends Actor {
     const localizeType = game.i18n.localize("TYPES.Actor." + npc.type);
     if (!npc) return;
     if (npc.type != "npc") return ui.notifications.error(game.i18n.format("BITD.Errors.Actor.NotSupported", { type: localizeType, actor: npc.name }));
-    if (npc.pack) return ui.notifications.error(game.i18n.localize("BITD.Errors.Actor.InPack"));
+    // if (npc.pack) return ui.notifications.error(game.i18n.localize("BITD.Errors.Actor.InPack"));
 
     const contacts = this.system.contacts;
 

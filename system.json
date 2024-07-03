@@ -42,7 +42,18 @@
       "path": "packs/factions",
       "system": "bitd",
       "ownership": {
-        "PLAYER": "OBSERVER",
+        "PLAYER": "LIMITED",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "label": "NPCs",
+      "type": "Actor",
+      "name": "npcs",
+      "path": "packs/npcs",
+      "system": "bitd",
+      "ownership": {
+        "PLAYER": "LIMITED",
         "ASSISTANT": "OWNER"
       }
     },
@@ -69,10 +80,10 @@
       }
     },
     {
-      "label": "Cohorts",
+      "label": "Claims",
       "type": "Item",
-      "name": "cohorts",
-      "path": "packs/cohorts",
+      "name": "claims",
+      "path": "packs/claims",
       "system": "bitd",
       "ownership": {
         "PLAYER": "OBSERVER",
@@ -80,10 +91,10 @@
       }
     },
     {
-      "label": "Contacts",
+      "label": "Cohorts",
       "type": "Item",
-      "name": "contacts",
-      "path": "packs/contacts",
+      "name": "cohorts",
+      "path": "packs/cohorts",
       "system": "bitd",
       "ownership": {
         "PLAYER": "OBSERVER",
