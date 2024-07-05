@@ -116,14 +116,14 @@ function getDiceNumber(html, sheet) {
   switch (targetType) {
     case 'action':
       const action = data.action;
-      diceNumber = sheet.system.actions[action].value;
+      if (sheet.system.actions) diceNumber = sheet.system.actions[action].value;
       break;
     case 'resistance':
       const attribute = data.attribute;
-      diceNumber = sheet.system.attributes[attribute].value;
+      if (sheet.system.attributes) diceNumber = sheet.system.attributes[attribute].value;
       break;
     case 'vice':
-      diceNumber = sheet.system.attributes[0].value;
+      if (sheet.system.attributes) diceNumber = sheet.system.attributes[0].value;
       for (let [attrKey, attribute] of Object.entries(sheet.system.attributes)) {
         if (attribute.value < diceNumber) {
           diceNumber = attribute.value
@@ -392,6 +392,7 @@ async function sufferStress(sheet, addStress) {
 async function giveExp(rollData, sheet) {
   const speaker = ChatMessage.getSpeaker({ actor: sheet });
   const supported = rollData.type == "action" || rollData.rollAs.key == "action";
+  if (rollData.position.key != "desperate" || !supported) return;
 
   let conAttribute = "???";
   for (const [attribute, actions] of Object.entries(CONFIG.BITD.attributeLinks)) {
@@ -401,16 +402,14 @@ async function giveExp(rollData, sheet) {
     }
   }
 
-  if (rollData.position.key == "desperate" && supported) {
-    const actorName = speaker.actor ? speaker.alias : "???";
-    const message = game.i18n.format("BITD.Roll.Result.Exp", {actor: actorName, attribute: conAttribute});
-    const chatData = {
-      user: game.user.id,
-      speaker: speaker,
-      content: message
-    };
-    ChatMessage.create(chatData);
-  }
+  const actorName = speaker.actor ? speaker.alias : "???";
+  const message = game.i18n.format("BITD.Roll.Result.Exp", {actor: actorName, attribute: conAttribute});
+  const chatData = {
+    user: game.user.id,
+    speaker: speaker,
+    content: message
+  };
+  ChatMessage.create(chatData);
 
   if (sheet && sheet.system.attributes) {
     const exp = sheet.system.attributes[conAttribute].exp;
