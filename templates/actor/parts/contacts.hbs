@@ -1,24 +1,22 @@
-<div class="contacts items-block">
-  <div class="item-header bitd-header">
-    <h3 class="contacts-title">{{localize 'BITD.Contact.Plural'}}</h3>
-    <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="contact"><i class="fas fa-plus"></i></a>
-  </div>
-  <ol class="items-list">
-    {{#each contacts as |item id|}}
-      <li class="item {{item.type}}" data-item-id="{{item._id}}">
-        <div class="item-description" data-tooltip="{{item.system.summary}}">
-          <span class="item-name">{{item.name}}</span>
-          {{#if item.system.type}}
-            <span class="contact-type">{{item.system.type}}</span>
-          {{/if}}
-        </div>
+<ol class="items-list" data-array="contacts">
+  {{#each system.contacts as |contact|}}
+    <li class="item {{contact.type}}" data-id="{{contact.id}}">
+      <div class="item-description">
+        {{#if contact.relationship includeZero=true}}
+          <div class="relationship" data-value="{{contact.relationship}}" data-index="{{@index}}">
+            <i class="fa-solid fa-dash set-relationship special" data-value="2"></i>
+            <i class="fa fa-caret-up set-relationship friend" data-value="1" aria-hidden="true"></i>
+            <i class="fa fa-caret-down set-relationship rival" data-value="-1" aria-hidden="true"></i>
+            <i class="fa-brands fa-creative-commons-zero set-relationship zero" data-value="0"></i>
+          </div>
+        {{/if}}
+        <span class="item-name">{{contact.name}}</span>
+      </div>
 
-        <div class="item-controls">
-          <a class="item-control show-item" data-roll-type="show" title="{{localize 'BITD.ItemShow'}}"><i class="fa fa-comment"></i></a>
-          <a class="item-control item-edit" title="{{localize 'BITD.ItemEdit'}}"><i class="fas fa-edit"></i></a>
-          <a class="item-control item-delete" title="{{localize 'BITD.ItemDelete'}}"><i class="fas fa-trash"></i></a>
-        </div>
-      </li>
-    {{/each}}
-  </ol>
-</div>
+      <div class="item-controls">
+        <a class="item-control actor-open" title="{{localize 'BITD.Link.Open'}}" data-uuid="{{contact.uuid}}"><i class="fa fa-external-link"></i></a>
+        <a class="item-control actor-delete" title="{{localize 'BITD.Link.Delete'}}"><i class="fas fa-trash"></i></a>
+      </div>
+    </li>
+  {{/each}}
+</ol>

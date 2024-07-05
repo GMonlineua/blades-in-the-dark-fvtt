@@ -2,10 +2,10 @@
   "id": "bitd",
   "title": "Blades in the Dark",
   "description": "Blades in the Dark game system by GMonline",
-  "version": "0.3",
+  "version": "0.4",
   "compatibility": {
     "minimum": "11",
-    "verified": "12",
+    "verified": "12.328",
     "maximum": "12"
   },
   "authors": [
@@ -42,7 +42,18 @@
       "path": "packs/factions",
       "system": "bitd",
       "ownership": {
-        "PLAYER": "OBSERVER",
+        "PLAYER": "LIMITED",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "label": "NPCs",
+      "type": "Actor",
+      "name": "npcs",
+      "path": "packs/npcs",
+      "system": "bitd",
+      "ownership": {
+        "PLAYER": "LIMITED",
         "ASSISTANT": "OWNER"
       }
     },
@@ -69,10 +80,10 @@
       }
     },
     {
-      "label": "Cohorts",
+      "label": "Claims",
       "type": "Item",
-      "name": "cohorts",
-      "path": "packs/cohorts",
+      "name": "claims",
+      "path": "packs/claims",
       "system": "bitd",
       "ownership": {
         "PLAYER": "OBSERVER",
@@ -80,10 +91,10 @@
       }
     },
     {
-      "label": "Contacts",
+      "label": "Cohorts",
       "type": "Item",
-      "name": "contacts",
-      "path": "packs/contacts",
+      "name": "cohorts",
+      "path": "packs/cohorts",
       "system": "bitd",
       "ownership": {
         "PLAYER": "OBSERVER",
@@ -139,8 +150,8 @@
   "socket": true,
   "url": "https://github.com/GMonlineua/blades-in-the-dark-fvtt",
   "manifest": "https://raw.githubusercontent.com/GMonlineua/blades-in-the-dark-fvtt/main/system.json",
-  "download": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/releases/download/v0.3/foundry.zip",
+  "download": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/releases/download/v0.4/foundry.zip",
   "license": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/blob/main/LICENSE.md",
-  "changelog": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/blob/main/CHANGELOG.md",
+  "changelog": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/wiki/Changelog",
   "bugs": "https://github.com/MagpieRook/blades-in-the-dark/issues/new"
 }

@@ -1,12 +1,14 @@
-<li class="item {{item.type}} {{toolClass item.system}}" data-item-id="{{item._id}}">
+<li class="item {{item.type}}{{toolClass item.system}}" data-item-id="{{item._id}}">
   <div class="item-description">
-    {{#if item.system.loadout}}
-      <div class="item-checkbox item-loadout {{#if item.system.equipped}}active{{/if}}" data-key="equipped">
+    <div class="item-checkbox item-loadout" data-key="equipped">
+      {{#if item.system.loadout}}
         {{#numLoop item.system.loadout}}
           <span class="loadout-box"></span>
         {{/numLoop}}
-      </div>
-    {{/if}}
+      {{else}}
+        <span class="loadout-box"></span>
+      {{/if}}
+    </div>
     <span class="item-name" data-tooltip="{{item.system.description}}">{{item.name}}</span>
   </div>
 
@@ -15,8 +17,8 @@
   </div>
 
   <div class="item-controls">
-    <a class="item-control show-item" data-roll-type="show" title="{{localize 'BITD.ItemShow'}}"><i class="fa fa-comment"></i></a>
-    <a class="item-control item-edit" title="{{localize 'BITD.ItemEdit'}}"><i class="fas fa-edit"></i></a>
-    <a class="item-control item-delete" title="{{localize 'BITD.ItemDelete'}}"><i class="fas fa-trash"></i></a>
+    <a class="item-control item-show" title="{{localize 'BITD.Item.Show'}}"><i class="fa fa-comment"></i></a>
+    <a class="item-control item-edit" title="{{localize 'BITD.Item.Edit'}}"><i class="fas fa-edit"></i></a>
+    <a class="item-control item-delete" title="{{localize 'BITD.Item.Delete'}}"><i class="fas fa-trash"></i></a>
   </div>
 </li>

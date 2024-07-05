@@ -3,33 +3,22 @@
   <header class="sheet-header actor-grid">
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
     <div class="header-fields">
-      <h1 class="character-name"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.ActorName'}}"/></h1>
+      <h1 class="character-name"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.ItemName'}}"/></h1>
       <div class="brief-info">
         <div class="prop">
           <label class="prop-label rollable" data-roll-type="fortune" for="system.tier.value">{{localize 'BITD.Tier'}}:</label>
           <input class="prop-input clear-input" type="number" name="system.tier.value" value="{{system.tier.value}}"></input>
           <select class="clear-select" name="system.hold">
-            {{#select system.hold}}
-              <option value="weak">{{localize 'BITD.Hold.Weak'}}</option>
-              <option value="strong">{{localize 'BITD.Hold.Strong'}}</option>
-            {{/select}}
+            {{selectOptions config.holdTypes selected=system.hold localize=true}}
           </select>
         </div>
         <div class="prop">
           <label class="prop-label" for="system.status">{{localize 'BITD.Status.Title'}}:</label>
           <select class="clear-select" name="system.status">
-            {{#select system.status}}
-              <option value="3">{{localize 'BITD.Status.Allies'}}</option>
-              <option value="2">{{localize 'BITD.Status.Friendly'}}</option>
-              <option value="1">{{localize 'BITD.Status.Helpful'}}</option>
-              <option value="0">{{localize 'BITD.Status.Neutral'}}</option>
-              <option value="-1">{{localize 'BITD.Status.Interfering'}}</option>
-              <option value="-2">{{localize 'BITD.Status.Hostile'}}</option>
-              <option value="-3">{{localize 'BITD.Status.War'}}</option>
-            {{/select}}
+            {{selectOptions config.statusTypes selected=system.status localize=true}}
           </select>
         </div>
-        <input class="prop summary all-with" name="system.summary" type="text" value="{{system.summary}}" placeholder="{{localize 'BITD.Summary'}}" data-dtype="String"></input>
+        <input class="prop summary all-width" name="system.summary" type="text" value="{{system.summary}}" placeholder="{{localize 'BITD.Summary'}}" data-dtype="String"></input>
       </div>
     </div>
 
@@ -53,7 +42,7 @@
           <input class="show-checkbox" type="checkbox" name="system.goals.show" {{checked system.goals.show}}></input>
         </div>
         <label class="prop-lable" for="system.goals">{{localize 'BITD.Goals'}}:</label>
-        <input class="all-with" name="system.goals.value" type="text" value="{{system.goals.value}}"></input>
+        <input class="all-width" name="system.goals.value" type="text" value="{{system.goals.value}}"></input>
       </div>
 
       <div class="lair prop-field">
@@ -62,7 +51,7 @@
           <input class="show-checkbox" type="checkbox" name="system.lair.show" {{checked system.lair.show}}></input>
         </div>
         <label class="prop-lable" for="system.lair">{{localize 'BITD.Lair'}}:</label>
-        <input class="all-with" name="system.lair.value" type="text" value="{{system.lair.value}}"></input>
+        <input class="all-width" name="system.lair.value" type="text" value="{{system.lair.value}}"></input>
       </div>
 
       <div class="notable-assets prop-field">
@@ -71,7 +60,7 @@
           <input class="show-checkbox" type="checkbox" name="system.assets.show" {{checked system.assets.show}}></input>
         </div>
         <label class="prop-lable" for="system.assets">{{localize 'BITD.NotableAssets'}}:</label>
-        <input class="all-with" name="system.assets.value" type="text" value="{{system.assets.value}}"></input>
+        <textarea name="system.assets.value">{{system.assets.value}}</textarea>
       </div>
 
       <div class="quirks prop-field">
@@ -80,7 +69,7 @@
           <input class="show-checkbox" type="checkbox" name="system.quirks.show" {{checked system.quirks.show}}></input>
         </div>
         <label class="prop-lable" for="system.quirks">{{localize 'BITD.Quirks'}}:</label>
-        <input class="all-with" name="system.quirks.value" type="text" value="{{system.quirks.value}}"></input>
+        <textarea name="system.quirks.value">{{system.quirks.value}}</textarea>
       </div>
 
       <div class="turf prop-field items-block full-size">
@@ -88,7 +77,7 @@
           <input class="show-checkbox" type="checkbox" name="system.turf.show" {{checked system.turf.show}}></input>
         </div>
         <div class="item-header bitd-header">
-          <a class="item-create" title="{{localize 'BITD.ItemAdd'}}" data-type="claim"><i class="fas fa-plus"></i></a>
+          <a class="item-create" title="{{localize 'BITD.Item.Add'}}" data-type="claim"><i class="fas fa-plus"></i></a>
           <h3>{{localize 'BITD.Turf'}}</h3>
         </div>
         <ol class="items-list">
@@ -104,9 +93,9 @@
               </div>
 
               <div class="item-controls">
-                <a class="item-control show-item" data-roll-type="show" title="{{localize 'BITD.ItemShow'}}"><i class="fa fa-comment"></i></a>
-                <a class="item-control item-edit" title="{{localize 'BITD.ItemEdit'}}"><i class="fas fa-edit"></i></a>
-                <a class="item-control item-delete" title="{{localize 'BITD.ItemDelete'}}"><i class="fas fa-trash"></i></a>
+                <a class="item-control item-show" title="{{localize 'BITD.Item.Show'}}"><i class="fa fa-comment"></i></a>
+                <a class="item-control item-edit" title="{{localize 'BITD.Item.Edit'}}"><i class="fas fa-edit"></i></a>
+                <a class="item-control item-delete" title="{{localize 'BITD.Item.Delete'}}"><i class="fas fa-trash"></i></a>
               </div>
             </li>
           {{/each}}
@@ -115,17 +104,10 @@
 
       <div class="npcs prop-field">
         <div class="show-for-limited" data-tooltip="{{localize 'BITD.ShowForPlayers.Tooltip'}}">
-          <input class="show-checkbox" type="checkbox" name="system.npc.show" {{checked system.npc.show}}></input>
+          <input class="show-checkbox" type="checkbox" name="system.showNPC" {{checked system.showNPC}}></input>
         </div>
         <h3 class="bitd-header">{{localize 'BITD.NPCs'}}</h3>
-        <div class="grid-2col">
-          {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
-          <div class="links">
-            <div class="item-header bitd-header">
-              <h3 class="contacts-title">{{localize 'BITD.ActorPlural'}}</h3>
-            </div>
-          </div>
-        </div>
+        {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
       </div>
 
       <div class="related-faction prop-field grid-2col">
@@ -134,11 +116,11 @@
         </div>
         <div class="allies">
           <h3 class="bitd-header">{{localize 'BITD.Allies'}}</h3>
-          <input class="clear-input all-with" name="system.relatedFactions.allies" type="text" value="{{system.relatedFactions.allies}}" placeholder="{{localize 'BITD.Allies'}}"></input>
+        <textarea name="system.relatedFactions.allies">{{system.relatedFactions.allies}}</textarea>
         </div>
         <div class="enemies">
           <h3 class="bitd-header">{{localize 'BITD.Enemies'}}</h3>
-          <input class="clear-input all-with" name="system.relatedFactions.enemies" type="text" value="{{system.relatedFactions.enemies}}" placeholder="{{localize 'BITD.Enemies'}}"></input>
+        <textarea name="system.relatedFactions.enemies">{{system.relatedFactions.enemies}}</textarea>
         </div>
       </div>
 

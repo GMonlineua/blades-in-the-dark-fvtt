@@ -9,24 +9,13 @@
           <label class="prop-label rollable" data-roll-type="fortune" for="system.tier">{{localize 'BITD.Tier'}}:</label>
           <span>{{system.tier.value}}</span>
           <select class="clear-select" name="system.hold">
-            {{#select system.hold}}
-              <option value="weak">{{localize 'BITD.Hold.Weak'}}</option>
-              <option value="strong">{{localize 'BITD.Hold.Strong'}}</option>
-            {{/select}}
+            {{selectOptions config.holdTypes selected=system.hold localize=true}}
           </select>
         </div>
         <div class="prop">
           <label class="prop-label" for="system.status">{{localize 'BITD.Status.Title'}}:</label>
           <select class="clear-select" name="system.status">
-            {{#select system.status}}
-              <option value="3">{{localize 'BITD.Status.Allies'}}</option>
-              <option value="2">{{localize 'BITD.Status.Friendly'}}</option>
-              <option value="1">{{localize 'BITD.Status.Helpful'}}</option>
-              <option value="0">{{localize 'BITD.Status.Neutral'}}</option>
-              <option value="-1">{{localize 'BITD.Status.Interfering'}}</option>
-              <option value="-2">{{localize 'BITD.Status.Hostile'}}</option>
-              <option value="-3">{{localize 'BITD.Status.War'}}</option>
-            {{/select}}
+            {{selectOptions config.statusTypes selected=system.status localize=true}}
           </select>
         </div>
         <p class="summary">{{system.summary}}</p>
@@ -75,7 +64,7 @@
         </div>
       {{/if}}
 
-      {{#if system.turf.show}}
+      {{#if system.showTurf}}
         <div class="turf prop-field items-block full-size">
           <div class="item-header bitd-header">
             <h3>{{localize 'BITD.Turf'}}</h3>
@@ -97,22 +86,10 @@
         </div>
       {{/if}}
 
-      {{#if system.npc.show}}
-        <div class="npcs prop-block">
+      {{#if system.showNPC}}
+        <div class="npcs prop-field">
           <h3 class="bitd-header">{{localize 'BITD.NPCs'}}</h3>
-          <div class="grid-2col">
-            {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
-            <div class="links">
-              <div class="item-header bitd-header">
-                <h3 class="contacts-title">{{localize 'BITD.ActorPlural'}}</h3>
-              </div>
-              <div class="link-block">
-                {{#each system.npc}}
-                  <p>{{> "systems/bitd/templates/item/parts/linked-item.hbs"}}</p>
-                {{/each}}
-              </div>
-            </div>
-          </div>
+          {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
         </div>
       {{/if}}
 

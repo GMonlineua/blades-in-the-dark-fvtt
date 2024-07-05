@@ -3,15 +3,14 @@
     <img class="item-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
     <div class="header-fields">
       <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.ItemName'}}"/></h1>
-      <input class="summary all-with" name="system.summary" type="text" value="{{system.summary}}" placeholder="{{localize 'BITD.Summary'}}" data-dtype="String"></input>
+      <input class="summary all-width" name="system.summary" type="text" value="{{system.summary}}" placeholder="{{localize 'BITD.Summary'}}" data-dtype="String"></input>
     </div>
   </header>
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs flexrow" data-group="primary">
     <a class="item" data-tab="general">{{localize 'BITD.General'}}</a>
-    <a class="item" data-tab="claims">{{localize 'BITD.Claim.Title'}}</a>
-    <a class="item" data-tab="links">{{localize 'BITD.Links'}}</a>
+    <a class="item" data-tab="links">{{localize 'BITD.Link.Plural'}}</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -21,31 +20,11 @@
     <div class="tab general" data-group="primary" data-tab="general">
       <div class="exp-clues">
         <h3>{{localize 'BITD.CrewExp.Title'}}:</h3>
-        <input class="all-with" name="system.exp" type="text" value="{{system.exp}}" placeholder="{{localize 'BITD.CrewExp.Placeholder'}}" data-dtype="String"></input>
+        <input class="all-width" name="system.exp" type="text" value="{{system.exp}}" placeholder="{{localize 'BITD.CrewExp.Placeholder'}}" data-dtype="String"></input>
       </div>
 
       <h3>{{localize 'BITD.Description'}}</h3>
       {{editor enrichedDescription target="system.description" rollData=rollData button=true owner=owner editable=editable}}
-    </div>
-
-    {{!-- Owned Playbook Tab --}}
-    <div class="tab claims" data-group="primary" data-tab="claims">
-      <div class="claims-block">
-        {{#each system.claims}}
-          {{#if this.uuid}}
-            <div class="claim claim-link">
-              <a class="content-link" draggable="true" data-uuid={{this.uuid}} data-id={{this.id}} data-type="Item" data-tooltip={{this.title}}><i class="fas fa-suitcase"></i>{{this.name}}</a>
-              <a class="link-control link-delete" title="{{localize 'BITD.ItemDelete'}}"><i class="fas fa-trash"></i></a>
-            </div>
-          {{else}}
-            {{#iff this "==" "Lair"}}
-              <div class="claim claim-lair">{{localize 'BITD.Lair'}}</div>
-            {{else}}
-              <div class="claim claim-turf">{{localize 'BITD.Turf'}}</div>
-            {{/iff}}
-          {{/if}}
-        {{/each}}
-      </div>
     </div>
 
     {{!-- Owned Notes Tab --}}
@@ -59,19 +38,37 @@
         </div>
       </div>
 
-      <div class="contacts-block linked-items" data-array="contacts">
-        <h3>{{localize 'BITD.Contact.Plural'}}</h3>
+      <div class="upgrades-block linked-items" data-array="upgrades">
+        <h3>{{localize 'BITD.Upgrade.Plural'}}</h3>
         <div class="link-block">
-          {{#each system.contacts}}
+          {{#each system.upgrades}}
             {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
           {{/each}}
         </div>
       </div>
 
-      <div class="upgrades-block linked-items" data-array="upgrades">
-        <h3>{{localize 'BITD.Upgrade.Plural'}}</h3>
+      <div class="claims-block linked-items" data-array="claims">
+        <h3>{{localize 'BITD.Claim.Plural'}}</h3>
         <div class="link-block">
-          {{#each system.upgrades}}
+          {{#each system.claims}}
+            {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="cohorts-block linked-items" data-array="cohorts">
+        <h3>{{localize 'BITD.Cohort.Plural'}}</h3>
+        <div class="link-block">
+          {{#each system.cohorts}}
+            {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="contacts-block linked-items" data-array="contacts">
+        <h3>{{localize 'BITD.Contact.Plural'}}</h3>
+        <div class="link-block">
+          {{#each system.contacts}}
             {{> "systems/bitd/templates/item/parts/linked-item.hbs"}}
           {{/each}}
         </div>

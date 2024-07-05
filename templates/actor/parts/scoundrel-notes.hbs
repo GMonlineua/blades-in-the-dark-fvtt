@@ -1,19 +1,15 @@
 <div class="actor-grid notes-container">
-  <div class="description">
-    <h3 class="bitd-header">{{localize 'BITD.Notes'}}</h3>
-    {{editor enrichedDescription target="system.description" button=true owner=owner editable=editable}}
-  </div>
-  <div class="expirience">
-    <h3 class="bitd-header">{{localize 'BITD.Expirience.Title'}}</h3>
-    <p>{{localize 'BITD.Expirience.DesperateRoll'}}</p>
-    <p>{{localize 'BITD.Expirience.HowItWorks'}}</p>
-    <ul class="rule-tips">
-      <li>{{playbook.system.exp}}</li>
-      <li>{{localize 'BITD.Expirience.Character'}}</li>
-      <li>{{localize 'BITD.Expirience.Vice'}}</li>
-    </ul>
-  </div>
   <div class="rules">
+    <div class="expirience">
+      <h3 class="bitd-header">{{localize 'BITD.Expirience.Title'}}</h3>
+      <p>{{localize 'BITD.Expirience.DesperateRoll'}}</p>
+      <p>{{localize 'BITD.Expirience.HowItWorks'}}</p>
+      <ul class="rule-tips">
+        <li>{{playbook.system.exp}}</li>
+        <li>{{localize 'BITD.Expirience.Character'}}</li>
+        <li>{{localize 'BITD.Expirience.Vice'}}</li>
+      </ul>
+    </div>
     <h3 class="bitd-header">{{localize 'BITD.RulesRef.Title'}}</h3>
     <div class="gather-info">
       <h4>{{localize 'BITD.RulesRef.GatherInfo.Title'}}</h4>
@@ -27,5 +23,27 @@
         {{{localize 'BITD.RulesRef.Teamwork.Tips'}}}
       </div>
     </div>
+  </div>
+  <div class="description">
+    <div class="brief-info">
+      <div class="prop">
+        <label class="prop-label" for="system.belives">{{localize 'BITD.Belives'}}:</label>
+        <input class="prop-input clear-input all-width" type="text" name="system.belives" value="{{system.belives}}"/>
+      </div>
+      <div class="prop">
+        <label class="prop-label" for="system.drives">{{localize 'BITD.Drives'}}:</label>
+        <input class="prop-input clear-input all-width" type="text" name="system.drives" value="{{system.drives}}"/>
+      </div>
+      <div class="prop">
+        <label class="prop-label" for="system.heritage">{{localize 'BITD.Heritage'}}:</label>
+        <input class="prop-input clear-input all-width" type="text" name="system.heritage" value="{{system.heritage}}"/>
+      </div>
+      <div class="prop">
+        <label class="prop-label" for="system.background">{{localize 'BITD.Background'}}:</label>
+        <input class="prop-input clear-input all-width" type="text" name="system.background" value="{{system.background}}"/>
+      </div>
+    </div>
+    <h3 class="bitd-header">{{localize 'BITD.Notes'}}</h3>
+    {{editor enrichedDescription target="system.description" button=true owner=owner editable=editable}}
   </div>
 </div>

@@ -5,21 +5,23 @@
     <img class="item-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
 
     <div class="header-fields">
-      <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.ActorName'}}"/></h1>
+      <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.ItemName'}}"/></h1>
       <div class="brief-info">
         <select class="prop clear-select" name="system.type">
-          {{#select system.type}}
-            <option value="gang">{{localize 'BITD.Cohort.Gang'}}</option>
-            <option value="expert">{{localize 'BITD.Cohort.Expert'}}</option>
-          {{/select}}
+          {{selectOptions config.cohort.types selected=system.type localize=true}}
         </select>
+        {{#iff system.type "==" "gang"}}
+          <select class="prop clear-select" name="system.specialisation">
+            {{selectOptions config.cohort.gangTypes selected=system.specialisation localize=true}}
+          </select>
+        {{/iff}}
         <div class="prop">
           <label class="prop-label" for="system.elite">{{localize 'BITD.Cohort.Elite'}}</label>
-          <input class="prop-input" type="checkbox" name="system.elite" data-dtype="Boolean" {{#if system.elite}} checked {{/if}}></input>
+          <input class="prop-input" type="checkbox" name="system.elite" {{checked system.elite}}></input>
         </div>
         <div class="prop">
           <label class="prop-label" for="system.armor">{{localize 'BITD.Cohort.Armor'}}</label>
-          <input class="prop-input" type="checkbox" name="system.armor" data-dtype="Boolean" {{#if system.armor}} checked {{/if}}></input>
+          <input class="prop-input" type="checkbox" name="system.armor" {{checked system.armor}}></input>
         </div>
       </div>
     </div>
@@ -32,27 +34,27 @@
     <div class="harm">
       <label>{{localize 'BITD.Harm'}}:</label>
       <select class="clear-select" name="system.harm">
-        {{#select system.harm}}
-          <option value="0">{{localize 'BITD.Cohort.NoHarm'}}</option>
-          <option value="1">{{localize 'BITD.Cohort.Weakened'}}</option>
-          <option value="2">{{localize 'BITD.Cohort.Impaired'}}</option>
-          <option value="3">{{localize 'BITD.Cohort.Broken'}}</option>
-          <option value="4">{{localize 'BITD.Cohort.Dead'}}</option>
-        {{/select}}
+        {{selectOptions config.cohort.harm selected=system.harm localize=true}}
       </select>
     </div>
 
+    {{#iff system.type "==" "expert"}}
+      <div class="specialisation">
+        <input class="all-width" name="system.specialisation" type="text" value="{{system.specialisation}}"></input>
+      </div>
+    {{/iff}}
+
     <div class="edges">
       <h3>{{localize 'BITD.Cohort.Edges'}}:</h3>
-      <input class="all-with" name="system.edges" type="text" value="{{system.edges}}" placeholder="{{localize 'BITD.Cohort.Edges'}}" data-dtype="String"></input>
+      <textarea name="system.edges">{{system.edges}}</textarea>
     </div>
 
     <div class="flaws">
       <h3>{{localize 'BITD.Cohort.Flaws'}}:</h3>
-      <input class="all-with" name="system.flaws" type="text" value="{{system.flaws}}" placeholder="{{localize 'BITD.Cohort.Flaws'}}" data-dtype="String"></input>
+      <textarea name="system.flaws">{{system.flaws}}</textarea>
     </div>
 
     <h3>{{localize 'BITD.Description'}}</h3>
-    {{editor enrichedDescription target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+    {{editor enrichedDescription target="system.description" rollData=rollData button=true engine="prosemirror" editable=editable collaborate=true}}
   </section>
 </form>

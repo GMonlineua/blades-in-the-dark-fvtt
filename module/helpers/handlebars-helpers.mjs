@@ -1,7 +1,6 @@
 export const registerHandlebarsHelpers = function() {
   Handlebars.registerHelper("numLoop", function (num, options) {
     let result = "";
-
     for (let i = 0, j = num; i < j; i++) {
       result = result + options.fn(i);
     }
@@ -48,6 +47,20 @@ export const registerHandlebarsHelpers = function() {
     }
   });
 
+  Handlebars.registerHelper("getValue", function (parent, path) {
+    let value = parent;
+    if (path.string || path.includes(".")) {
+      const keys = path.string.split(".");
+
+      for (const key of keys) {
+        value = value[key];
+      }
+    } else {
+      value = value[path];
+    }
+    return value
+  });
+
   Handlebars.registerHelper("getLocalizeName", function (key) {
     const name = "BITD." + key.charAt(0).toUpperCase() + key.slice(1);
     const localizeName = game.i18n.localize(name);
@@ -71,16 +84,19 @@ export const registerHandlebarsHelpers = function() {
     return localizeName;
   });
 
-  Handlebars.registerHelper("toolClass", function (item) {
-    let classes;
+  Handlebars.registerHelper("toolClass", function (data) {
+    const conditions = [
+      { condition: data.equipped, className: "active" },
+      { condition: data.broken, className: "broken" },
+      { condition: !data.loadout, className: "light" }
+    ];
+    let classes = "";
 
-    if (item.equipped && item.broken) {
-      classes = "active broken";
-    } else if (item.equipped) {
-      classes = "active";
-    } else if (item.broken) {
-      classes = "broken";
-    }
+    conditions.forEach(({ condition, className }) => {
+      if (condition) {
+        classes += ` ${className}`;
+      }
+    });
 
     return classes
   });

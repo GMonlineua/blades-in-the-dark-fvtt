@@ -5,22 +5,23 @@
 
   <div class="healing bitd-header">
     <h3 class="healing-title">{{localize 'BITD.Healing'}}:</h3>
-    <input class="healing-input clear-input" type="number" name="system.healing" value="{{system.healing}}" data-dtype="Number" placeholder="0"></input>
+    <input class="healing-input clear-input" type="number" name="system.healing.value" value="{{system.healing.value}}"></input>
+    <span>/{{system.healing.max}}</span>
   </div>
 
   <div class="harm-table">
     <div class="harm-level">3</div>
-    <div class="harm-name full-with"><input class="clear-input" name="system.harm.heavy" type="text" value="{{system.harm.heavy}}"/></div>
+    <div class="harm-name full-with"><input class="clear-input" name="system.harm.severe" type="text" value="{{system.harm.severe}}"/></div>
     <div class="harm-effect">{{localize 'BITD.HarmEffect.Light'}}</div>
 
     <div class="harm-level">2</div>
-    <div class="harm-name"><input class="clear-input" name="system.harm.medium.first" type="text" value="{{system.harm.medium.first}}"/></div>
-    <div class="harm-name"><input class="clear-input" name="system.harm.medium.second" type="text" value="{{system.harm.medium.second}}"/></div>
+    <div class="harm-name"><input class="clear-input" name="system.harm.moderate.0" type="text" value="{{system.harm.moderate.[0]}}"/></div>
+    <div class="harm-name"><input class="clear-input" name="system.harm.moderate.1" type="text" value="{{system.harm.moderate.[1]}}"/></div>
     <div class="harm-effect">{{localize 'BITD.HarmEffect.Medium'}}</div>
 
     <div class="harm-level">1</div>
-    <div class="harm-name"><input class="clear-input" name="system.harm.light.first" type="text" value="{{system.harm.light.first}}"/></div>
-    <div class="harm-name"><input class="clear-input" name="system.harm.light.second" type="text" value="{{system.harm.light.second}}"/></div>
+    <div class="harm-name"><input class="clear-input" name="system.harm.lesser.0" type="text" value="{{system.harm.lesser.[0]}}"/></div>
+    <div class="harm-name"><input class="clear-input" name="system.harm.lesser.1" type="text" value="{{system.harm.lesser.[1]}}"/></div>
     <div class="harm-effect">{{localize 'BITD.HarmEffect.Heavy'}}</div>
   </div>
 </div>

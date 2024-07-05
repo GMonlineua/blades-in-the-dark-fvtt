@@ -34,7 +34,6 @@ export class BitdActorSheet extends ActorSheet
   /** @override */
   async getData() {
     const context = await super.getData();
-    const actorData = this.actor.toObject(false);
 
     // Encrich editor content
     context.enrichedDescription = await TextEditor.enrichHTML(this.object.system.description, {
@@ -43,8 +42,9 @@ export class BitdActorSheet extends ActorSheet
     })
 
     // Add the actor's data to context.data for easier access, as well as flags.
-    context.system = actorData.system;
-    context.flags = actorData.flags;
+    context.system = context.actor.system;
+    context.flags = context.actor.flags;
+    context.config = CONFIG.BITD;
 
     return context;
   }
@@ -65,6 +65,17 @@ export class BitdActorSheet extends ActorSheet
         });
     });
 
+    // Calculate relationship
+    html.find('.relationship').each(function () {
+      const targetValue = Number(this.dataset.value);
+      for (const option of this.children) {
+        const currentValue = Number(option.dataset.value);
+        if (currentValue === targetValue) {
+          option.classList.add("active");
+        }
+      }
+    });
+
     // Show item summary
     html.find('.item-name').click(ev => {
       const button = ev.currentTarget;
@@ -76,6 +87,9 @@ export class BitdActorSheet extends ActorSheet
         summary.classList.toggle("active");
       }
     });
+
+    // Open external link
+    html.on('click', 'a.actor-open[data-uuid]', this._onClickLink.bind(this));
 
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
@@ -96,6 +110,14 @@ export class BitdActorSheet extends ActorSheet
       item.sheet.render(true);
     });
 
+    // Show items in chat
+    html.find('.item-show').click(ev => {
+      const button = ev.currentTarget;
+      const itemId = button.closest('.item').dataset.itemId;
+      const item = this.actor.items.get(itemId);
+      if (item) return item.show();
+    });
+
     // Delete Item
     html.find('.item-delete').click(ev => {
       const button = ev.currentTarget;
@@ -104,16 +126,14 @@ export class BitdActorSheet extends ActorSheet
       return item.delete();
     });
 
+    // Delete external link
+    html.on('click', 'a.actor-delete', this._onRemoveLink.bind(this));
+
     // Roll dice
     html.find('.rollable').click(this._onRoll.bind(this));
 
-    // Show items in chat
-    html.find('.show-item').click(ev => {
-      const button = ev.currentTarget;
-      const itemId = button.closest('.item').dataset.itemId;
-      const item = this.actor.items.get(itemId);
-      if (item) return item.show();
-    });
+    // Change contact's relationship
+    html.on('click', 'i.set-relationship', this._onChangeRelationship.bind(this));
 
     // Drag events for macros
     if (this.actor.isOwner) {
@@ -129,6 +149,32 @@ export class BitdActorSheet extends ActorSheet
   /* -------------------------------------------- */
 
   /**
+   * Handle clicking on a content link to preview the content.
+   * @param {MouseEvent} event  The triggering event.
+   * @protected
+   */
+  async _onClickLink(event) {
+    event.preventDefault();
+    const uuid = event.currentTarget.dataset.uuid;
+    const content = await fromUuid(uuid);
+    content?.sheet.render(true);
+  }
+
+  _onRemoveLink(event) {
+    const button = event.currentTarget;
+    const parent = $(button.parentNode);
+    const item = parent.closest("li.item");
+    const targetId = item[0].dataset.id;
+
+    const block = button.closest(".items-list");
+    const key = block.dataset.array;
+    const path = "system." + key;
+    const newArray = this.actor.system[key].filter(link => link.id !== targetId);
+
+    this.actor.update({ [path]: newArray });
+  }
+
+  /**
    * Handle creating a new Owned Item for the actor using initial data defined in the HTML dataset
    * @param {Event} the originating click event
    * @private
@@ -137,7 +183,7 @@ export class BitdActorSheet extends ActorSheet
     event.preventDefault();
     const header = event.currentTarget;
     const type = header.dataset.type;
-    const data = duplicate(header.dataset);
+    const data = foundry.utils.duplicate(header.dataset);
     const name = game.i18n.localize("BITD.NewItem");
     // Prepare the item object.
     const itemData = {
@@ -215,5 +261,28 @@ export class BitdActorSheet extends ActorSheet
 
     const checked = !item.system[key];
     await item.update({ [updateKey]: checked });
+  }
+
+  /**
+   * Handle clicking on a relationship buttons in contacts.
+   * @param {MouseEvent} event  The triggering event.
+   * @protected
+   */
+  async _onChangeRelationship(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    const value = element.dataset.value;
+    const parent = $(element.parentNode);
+
+    const index = Number(parent[0].dataset.index);
+    const contacts = this.actor.system.contacts;
+    contacts[index].relationship = value;
+    await this.actor.update({"system.contacts": contacts});
+
+    const options = parent.find(".set-relationship");
+    for (const option of options) {
+      option.classList.remove("active");
+    }
+    element.classList.add("active");
   }
 }

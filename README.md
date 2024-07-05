@@ -21,14 +21,16 @@ To install a module, follow these instructions:
 
 ## Documentation
 
-[Changelog](https://github.com/GMonlineua/blades-in-the-dark-fvtt/blob/main/CHANGELOG.md)
+[Changelog](https://github.com/GMonlineua/blades-in-the-dark-fvtt/wiki/Changelog)
 
-[Roadmap](https://github.com/GMonlineua/blades-in-the-dark-fvtt/blob/main/ROADMAP.md)
+[Roadmap](https://github.com/GMonlineua/blades-in-the-dark-fvtt/wiki/Roadmap)
+
+[Data Structure](https://github.com/GMonlineua/blades-in-the-dark-fvtt/wiki/Documentation#data-structure)
 
 [Foundry Shield 11]: https://img.shields.io/badge/Foundry-12-informational?style=flat-square
 [Foundry URL]: https://foundryvtt.com
 
-[Version]: https://img.shields.io/badge/Version-0.3-orange?style=flat-square
+[Version]: https://img.shields.io/badge/Version-0.4-orange?style=flat-square
 [Version URL]: https://github.com/GMonlineua/blades-in-the-dark-fvtt
 
 [GNU License]: https://img.shields.io/badge/License-GNU-green?style=flat-square

@@ -165,6 +165,7 @@
 
         .healing-input {
           height: 24px;
+          max-width: 20px;
         }
       }
 
@@ -232,7 +233,7 @@
         }
       }
 
-      .item-checkbox.active {
+      .item.tool.active {
         .loadout-box {
           background: black;
         }
@@ -241,6 +242,12 @@
       .item.tool.broken {
         .item-name {
           text-decoration: line-through;
+        }
+      }
+
+      .item.tool.light {
+        .item-name {
+          font-style: italic;
         }
       }
 
@@ -264,25 +271,13 @@
     }
 
     .notes-container {
-      grid-template-areas:
-      "1 main"
-      "2 main";
+      row-gap: 10px;
 
       .bitd-header {
         padding: 3px;
       }
 
-      .description {
-        grid-area: main;
-      }
-
-      .expirience {
-        grid-area: 1;
-      }
-
       .rules {
-        grid-area: 2;
-
         ul {
           margin-top: 0;
         }
@@ -297,6 +292,27 @@
           .grid-2col {
             row-gap: 0;
           }
+        }
+      }
+
+      .description {
+        .brief-info {
+          .prop {
+            margin-top: 5px;
+
+            .prop-label {
+              color: black;
+              font-family: $font-secondary;
+            }
+
+            .prop-input {
+              border-bottom: $border;
+            }
+          }
+        }
+
+        .bitd-header {
+          margin-top: 5px;
         }
       }
     }

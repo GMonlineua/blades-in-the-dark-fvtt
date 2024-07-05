@@ -5,8 +5,17 @@
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
 
     <div class="header-fields">
-      <h1 class="character-name"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.ActorName'}}"/></h1>
-      <input class="summary all-with" name="system.summary" type="text" value="{{system.summary}}" placeholder="{{localize 'BITD.Summary'}}"></input>
+      <h1 class="character-name">
+        <input class="clear-input" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.Actor.Name'}}"/>
+      </h1>
+      <div class="character-aka">
+        <label for="system.aka">{{localize 'BITD.Actor.Aka'}}:</label>
+        <input class="clear-input" name="system.aka" type="text" value="{{system.aka}}" placeholder="{{localize 'BITD.Actor.Aka'}}"/>
+      </div>
+      <div class="character-summary">
+        <label for="system.summary">{{localize 'BITD.Summary'}}:</label>
+        <input class="clear-input" name="system.summary" type="text" value="{{system.summary}}" placeholder="{{localize 'BITD.Summary'}}"/>
+      </div>
     </div>
 
   </header>

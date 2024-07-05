@@ -5,22 +5,19 @@
       <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.ItemName'}}"/></h1>
       <div class="brief-info">
         <select class="prop clear-select" name="system.type">
-          {{#select system.type}}
-            <option value="common">{{localize 'BITD.Tool.Common'}}</option>
-            <option value="special">{{localize 'BITD.Tool.Special'}}</option>
-          {{/select}}
+          {{selectOptions config.toolType selected=system.type localize=true}}
         </select>
         <div class="prop">
           <label class="prop-label" for="system.loadout">{{localize 'BITD.Tool.Loadout'}}:</label>
-          <input class="prop-input clear-input" type="number" name="system.loadout" value="{{system.loadout}}" data-dtype="Number" placeholder="0"></input>
+          <input class="prop-input clear-input" type="number" name="system.loadout" value="{{system.loadout}}"></input>
         </div>
         <div class="prop">
           <label class="prop-label" for="system.equipped">{{localize 'BITD.Tool.Equipped'}}</label>
-          <input class="prop-input" type="checkbox" name="system.equipped" data-dtype="Boolean" {{#if system.equipped}} checked {{/if}}></input>
+          <input class="prop-input" type="checkbox" name="system.equipped" {{checked system.equipped}}></input>
         </div>
         <div class="prop">
           <label class="prop-label" for="system.broken">{{localize 'BITD.Tool.Broken'}}</label>
-          <input class="prop-input" type="checkbox" name="system.broken" data-dtype="Boolean" {{#if system.broken}} checked {{/if}}></input>
+          <input class="prop-input" type="checkbox" name="system.broken" {{checked system.broken}}></input>
         </div>
       </div>
     </div>
@@ -29,7 +26,7 @@
   {{!-- Sheet Body --}}
   <section class="sheet-body">
     <hr>
-    {{editor enrichedDescription target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+    {{editor enrichedDescription target="system.description" rollData=rollData button=true engine="prosemirror" editable=editable collaborate=true}}
   </section>
 
 </form>

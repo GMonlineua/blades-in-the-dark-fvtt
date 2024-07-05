@@ -14,23 +14,27 @@
       "abilityCrew": "Crew's Ability",
       "claim": "Claim",
       "cohort": "Cohort",
-      "contact": "Contact",
       "tool": "Tool",
       "upgrade": "Upgrade"
     }
   },
   "BITD": {
+    "Actor": {
+      "Title": "Actor",
+      "Plural": "Actors",
+      "Name": "Name",
+      "Alias": "Alias",
+      "Aka": "Aka"
+    },
     "General": "General",
     "Description": "Description",
     "Summary": "Summary",
-    "Links": "Links",
-    "ActorPlural": "Actors",
 
-    "ActorName": "Name",
-    "ScoundrelAlias": "Alias",
     "CrewName": "Name",
     "ItemName": "Name",
 
+    "Drives": "Drives",
+    "Belives": "Belives",
     "Heritage": "Heritage",
     "Background": "Background",
     "Vice": "Vice",
@@ -178,13 +182,13 @@
     },
     "Status": {
       "Title": "Status",
-      "Allies": "Allies",
-      "Friendly": "Friendly",
-      "Helpful": "Helpful",
+      "Allies": "Allies (+3)",
+      "Friendly": "Friendly (+2)",
+      "Helpful": "Helpful (+1)",
       "Neutral": "Neutral",
-      "Interfering": "Interfering",
-      "Hostile": "Hostile",
-      "War": "War"
+      "Interfering": "Interfering (-1)",
+      "Hostile": "Hostile (-2)",
+      "War": "War (-3)"
     },
     "Rep": "Rep",
     "RepType": "Reputation",
@@ -225,6 +229,13 @@
     "Cohort": {
       "Plural": "Cohorts",
       "Gang": "Gang",
+      "GangType": {
+        "Adepts": "Adepts",
+        "Rooks": "Rooks",
+        "Rovers": "Rovers",
+        "Skulks": "Skulks",
+        "Thugs": "Thugs"
+      },
       "Expert": "Expert",
       "Elite": "Elite",
       "Armor": "Armor",
@@ -241,15 +252,18 @@
       "Title": "Show",
       "Tooltip": "Show this field in limited sheet"
     },
-    "ItemShow": "Show",
-    "ItemAdd": "Add",
-    "ItemDelete": "Delete",
-    "ItemEdit": "Edit",
-    "NewItem": "Item",
-
-    "ItemExistsId": "Item with the same id already exists in the container.",
-    "ItemExistsName": "Item with the same name already exists in the container.",
-    "ItemNotAdd": "The <b>{item}</b> has not been added to the actor. The item with <b>this ID does not</b> exist.",
+    "Item": {
+      "Add": "Add",
+      "New": "Item",
+      "Delete": "Delete",
+      "Edit": "Edit",
+      "Show": "Show"
+    },
+    "Link": {
+      "Plural": "Links",
+      "Open": "Open link",
+      "Delete": "Delete"
+    },
 
     "Roll": {
       "Title": "Roll Dice",
@@ -308,7 +322,7 @@
         "Description": "You get {stress} stress, so you suffer a level of <b>trauma</b>. You’re <i>left for dead</i> or otherwise dropped out of the current conflict, only to come back later, shaken and drained. When you return, you have <b>zero stress</b> and your vice has been satisfied for the next downtime (see <b>Vice</b> on page 156)."
       },
       "Result": {
-        "Exp": "{actor} gains 1 experiences",
+        "Exp": "{actor} gains 1 experiences in {attribute}",
         "Critical": "Critical",
         "Success": "Full Success",
         "Mixed": "Partial Success",
@@ -379,6 +393,19 @@
       }
     },
 
-    "Cancel": "Cancel"
+    "Cancel": "Cancel",
+    "Errors": {
+      "Item": {
+        "ExistsId": "Item with the same id already exists in the container.",
+        "ExistsName": "Item with the same name already exists in the container.",
+        "NotSupported": "The <b>{item}</b> can't be added to this container."
+      },
+      "Actor": {
+        "ExistsId": "Item with the same id already exists in the container.",
+        "ExistsName": "Item with the same name already exists in the container.",
+        "InPack": "You may only add Friends to the Character which exist in the World.",
+        "NotSupported": "The <b>{type} {actor}</b> can't be added to this container."
+      }
+    }
   }
 }

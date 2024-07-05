@@ -89,7 +89,29 @@
     margin: 0;
 
     .item-description {
-      // font-family: $font-secondary;
+      .relationship {
+        display: inline-block;
+
+        .frien,.rival {
+          font-size: 1.25em;
+        }
+
+        .zero {
+          font-size: 0.75em;
+        }
+
+        .friend.active {
+          color: green;
+        }
+
+        .rival.active {
+          color: red;
+        }
+
+        .special.active {
+          color: blue;
+        }
+      }
 
       .item-name {
         font-weight: 700;

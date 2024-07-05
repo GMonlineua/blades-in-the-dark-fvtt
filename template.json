@@ -1,197 +1,23 @@
 {
   "Actor": {
-    "types": ["scoundrel", "crew", "faction", "npc"],
-    "htmlFields": ["description"],
-    "templates": {
-      "base": {
-        "description": ""
-      },
-      "players": {
-        "exp": 0,
-        "coins": 0,
-        "playbook": {}
-      },
-      "group": {
-        "tier": 0,
-        "hold": "strong"
-      }
-    },
-    "scoundrel": {
-      "templates": ["base", "players"],
-      "alias": "",
-      "heritage": "",
-      "vice": "",
-      "belives": "",
-      "drives": "",
-      "background": "",
-      "look": "",
-      "stress": 0,
-      "trauma": [],
-      "coins": 0,
-      "stash": 0,
-      "load": {
-        "max": 5
-      },
-      "harm": {
-        "light": {
-          "first": "",
-          "second": ""
-        },
-        "medium": {
-          "first": "",
-          "second": ""
-        },
-        "heavy": ""
-      },
-      "healing": 0,
-      "attributes": {
-        "insight": {
-          "exp": 0,
-          "actions": {
-            "hunt": {
-              "value": 0
-            },
-            "study": {
-              "value": 0
-            },
-            "survey": {
-              "value": 0
-            },
-            "tinker": {
-              "value": 0
-            }
-          }
-        },
-        "prowess": {
-          "exp": 0,
-          "actions": {
-            "finesse": {
-              "value": 0
-            },
-            "prowl": {
-              "value": 0
-            },
-            "skirmish": {
-              "value": 0
-            },
-            "wreck": {
-              "value": 0
-            }
-          }
-        },
-        "resolve": {
-          "exp": 0,
-          "actions": {
-            "attune": {
-              "value": 0
-            },
-            "command": {
-              "value": 0
-            },
-            "consort": {
-              "value": 0
-            },
-            "sway": {
-              "value": 0
-            }
-          }
-        }
-      }
-    },
-    "crew": {
-      "templates": ["base", "players", "group"],
-      "lair": "",
-      "hunting": {
-       "ground": "",
-       "operation": ""
-      },
-      "repType": "",
-      "vault": 0,
-      "heat": 0,
-      "wanted": 0,
-      "tier": 0,
-      "rep": {
-        "value": 0
-      },
-      "turf": 0
-    }
+    "types": [
+      "scoundrel",
+      "crew",
+      "faction",
+      "npc"
+    ],
+    "htmlFields": ["description"]
   },
   "Item": {
-    "types": ["playbook", "crewType", "abilityScoundrel", "abilityCrew", "claim", "cohort", "contact", "tool", "upgrade"],
-    "templates": {},
-    "playbook": {
-      "attributes": {
-        "insight": {
-          "hunt": 0,
-          "study": 0,
-          "survey": 0,
-          "tinker": 0
-        },
-        "prowess": {
-          "finesse": 0,
-          "prowl": 0,
-          "skirmish": 0,
-          "wreck": 0
-        },
-        "resolve": {
-          "attune": 0,
-          "command": 0,
-          "consort": 0,
-          "sway": 0
-        }
-      },
-      "abilities": [],
-      "contacts": [],
-      "inventory": [],
-      "exp": "",
-      "summary": "",
-      "description": ""
-    },
-    "crewType": {
-      "abilities": [],
-      "claims": [],
-      "contacts": [],
-      "upgrades": [],
-      "exp": "",
-      "description": ""
-    },
-    "abilityScoundrel": {
-      "active": false,
-      "description": ""
-    },
-    "abilityCrew": {
-      "active": false,
-      "description": ""
-    },
-    "claim": {
-      "effect": "",
-      "description": ""
-    },
-    "cohort": {
-      "type": "",
-      "gangType": "",
-      "elite": false,
-      "armor": false,
-      "harm": 0,
-      "edges": "",
-      "flaws": ""
-    },
-    "contact": {
-      "type": "",
-      "summary": "",
-      "description": ""
-    },
-    "tool": {
-      "type": "special",
-      "loadout": 1,
-      "equipped": false,
-      "broken": false,
-      "description": ""
-    },
-    "upgrade": {
-      "active": false,
-      "price": 1,
-      "description": ""
-    }
+    "types": [
+      "playbook",
+      "crewType",
+      "abilityScoundrel",
+      "abilityCrew",
+      "claim",
+      "cohort",
+      "tool",
+      "upgrade"
+    ]
   }
 }

@@ -71,67 +71,14 @@ export class BitdFactionSheet extends BitdActorSheet
 
     // Everything below here is only needed if the sheet is editable
     if (!this.isEditable) return;
-
-    // Delete linked item
-    html.find('.link-delete').click(this._onRemoveLink.bind(this));
-
-    // Create linked items by dropping onto item
-    this.form.ondrop = ev => this._onDropItem(ev);
   }
 
-  async _onDropItem(event) {
-    const actorData = JSON.parse(event.dataTransfer.getData('text/plain'));
+  /** @override */
+  async _onDropActor(event, data) {
+    if (!this.isEditable) return;
+    const cls = getDocumentClass("Actor");
+    const sourceActor = await cls.fromDropData(data);
 
-    if (actorData.type === 'Actor') {
-      const actor = await fromUuid(actorData.uuid);
-      let key = "";
-
-      switch (actor.type) {
-        case 'npc':
-          key = "npc";
-          break;
-      }
-
-      let container = [];
-      if (this.actor.system[key]) {
-        container = this.actor.system[key];
-      }
-
-      const link = {
-        uuid: actorData.uuid,
-        id: actor.id,
-        name: actor.name,
-        type: actor.type,
-        title: game.i18n.localize("TYPES.Actor." + actor.type)
-      }
-
-      if (key) {
-        const path = "system." + key;
-        let linkArr = Array.from(container);
-
-        const itemExists = linkArr.some(existingItem => existingItem.id === link.id);
-
-        if (!itemExists) {
-          linkArr.push(link);
-          await this.actor.update({ [path]: linkArr });
-        } else {
-          ui.notifications.warn(game.i18n.localize("BITD.ItemExistsId"));
-        }
-      }
-    }
-  }
-
-  _onRemoveLink(event) {
-    const button = event.currentTarget;
-    const parent = $(button.parentNode);
-    const link = parent.find(".content-link");
-    const itemId = link[0].dataset.id;
-
-    const block = button.closest(".linked-items");
-    const key = block.dataset.array;
-    const path = "system." + key;
-    const array = this.item.system[key].filter(item => item.id !== itemId);
-
-    this.item.update({ [path]: array });
+    this.actor.addContact(sourceActor);
   }
 }

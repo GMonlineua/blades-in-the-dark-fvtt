@@ -6,11 +6,11 @@
       <div class="brief-info">
         <div class="prop">
           <label class="prop-label" for="system.active">{{localize 'BITD.Upgrade.IsActive'}}</label>
-          <input class="prop-input" type="checkbox" name="system.active" data-dtype="Boolean" {{#if system.active}} checked {{/if}}></input>
+          <input class="prop-input" type="checkbox" name="system.active" {{checked system.active}}></input>
         </div>
         <div class="prop">
           <label class="prop-label" for="system.price">{{localize 'BITD.Upgrade.Price'}}:</label>
-          <input class="prop-input clear-input" type="number" name="system.price"  value="{{system.price}}" data-dtype="Number" placeholder="0"></input>
+          <input class="prop-input clear-input" type="number" name="system.price"  value="{{system.price}}"></input>
         </div>
       </div>
     </div>
@@ -19,7 +19,7 @@
   {{!-- Sheet Body --}}
   <section class="sheet-body">
     <hr>
-    {{editor enrichedDescription target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+    {{editor enrichedDescription target="system.description" rollData=rollData button=true engine="prosemirror" editable=editable collaborate=true}}
   </section>
 
 </form>

@@ -4,8 +4,8 @@
     <h3 class="stress-title rollable" data-roll-type="vice">{{localize 'BITD.Stress'}}</h3>
   </div>
 
-  <div class="value-step-block" data-value="{{system.stress}}" data-key="system.stress">
-    {{#numLoop 9}}
+  <div class="value-step-block" data-value="{{system.stress.value}}" data-key="system.stress.value">
+    {{#numLoop system.stress.max}}
       <span class="value-step value-tooth red-tooth" data-index="{{this}}"></span>
     {{/numLoop}}
   </div>
