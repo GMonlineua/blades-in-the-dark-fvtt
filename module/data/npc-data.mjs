@@ -4,6 +4,7 @@ export default class NpcData extends foundry.abstract.TypeDataModel {
     return {
       name: new fields.StringField(),
       aka: new fields.StringField(),
+      summary: new fields.StringField(),
       description: new fields.HTMLField()
     }
   }

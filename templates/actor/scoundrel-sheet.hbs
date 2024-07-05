@@ -50,7 +50,10 @@
       {{> "systems/bitd/templates/actor/parts/stress-trauma.hbs"}}
     </div>
 
-    {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
+    <div class="contacts items-block">
+      <h3 class="item-header bitd-header contacts-title">{{localize 'BITD.Contact.Plural'}}</h3>
+      {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
+    </div>
     {{> "systems/bitd/templates/actor/parts/harm.hbs"}}
 
   </header>

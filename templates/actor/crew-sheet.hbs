@@ -99,7 +99,10 @@
 
     </div>
 
-    {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
+    <div class="contacts items-block">
+      <h3 class="item-header bitd-header contacts-title">{{localize 'BITD.Contact.Plural'}}</h3>
+      {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
+    </div>
 
     <div class="exp-block">
       <h3 class="bitd-header">{{localize 'BITD.CrewExp.ShortTitle'}}</h3>
