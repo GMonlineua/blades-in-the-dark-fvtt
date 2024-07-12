@@ -393,6 +393,12 @@
       }
     },
 
+    "ImportActor": {
+      "Title": "Import actor",
+      "Description": "Import an actor from the compendium?",
+      "Submit": "Ok"
+    },
+
     "Cancel": "Cancel",
     "Errors": {
       "Item": {

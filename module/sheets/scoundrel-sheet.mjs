@@ -146,6 +146,6 @@ export class BitdScoundrelSheet extends BitdActorSheet
     const cls = getDocumentClass("Actor");
     const sourceActor = await cls.fromDropData(data);
 
-    this.actor.addContact(sourceActor);
+    this.actor.addLinkedActor(sourceActor);
   }
 }

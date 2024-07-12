@@ -95,11 +95,15 @@ export default class BitdActor extends Actor {
     }
   }
 
-  async addContact(npc) {
+  async addLinkedActor(npc) {
     const localizeType = game.i18n.localize("TYPES.Actor." + npc.type);
     if (!npc) return;
     if (npc.type != "npc") return ui.notifications.error(game.i18n.format("BITD.Errors.Actor.NotSupported", { type: localizeType, actor: npc.name }));
-    // if (npc.pack) return ui.notifications.error(game.i18n.localize("BITD.Errors.Actor.InPack"));
+
+    if (npc.pack) {
+      ui.notifications.warn(game.i18n.localize("BITD.Errors.Actor.InPack"));
+      return this.importActor(npc);
+    }
 
     const contacts = this.system.contacts;
 
@@ -109,14 +113,46 @@ export default class BitdActor extends Actor {
     if (idExist) return ui.notifications.error(game.i18n.localize("BITD.Errors.Actor.ExistsId"));
     if (nameExist) ui.notifications.warn(game.i18n.localize("BITD.Errors.Actor.ExistsName"));
 
+    const actor = await fromUuid(npc.uuid);
     const link = {
-      id: npc.id,
-      uuid: npc.uuid,
-      name: npc.name,
-      type: npc.type,
+      id: actor.id,
+      uuid: actor.uuid,
+      name: actor.name,
+      type: actor.type,
       title: localizeType
     }
     contacts.push(link);
     await this.update({ "system.contacts": contacts });
+  }
+
+  async importActor(sourceActor) {
+    const dialog = new Dialog({
+      title: game.i18n.localize("BITD.ImportActor.Title"),
+      content: game.i18n.localize("BITD.ImportActor.Description"),
+      buttons: {
+        import: {
+          label: game.i18n.localize("BITD.ImportActor.Submit"),
+          icon: '<i class="fas fa-check"></i>',
+          callback: async () => {
+            const actor = await BitdActor.create(sourceActor);
+            this.addLinkedActor(actor)
+          },
+        },
+        cancel: {
+          icon: '<i class="fas fa-times"></i>',
+          label: game.i18n.localize("BITD.Roll.Cancel"),
+          callback: () => {},
+        },
+      },
+      default: "import",
+      close: () => {}
+    },
+    {
+      classes: ["dialog", "bitd-import-dialog"],
+      width: 400,
+      height: 100
+    });
+
+    dialog.render(true);
   }
 }
