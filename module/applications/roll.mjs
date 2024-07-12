@@ -45,6 +45,7 @@ export async function createRollDialog (type, sheet, note) {
           rollResult.name = game.i18n.localize(rollConfig.type[data.rollType]);
 
           rollFunction(rollResult, sheet, data);
+          console.log(rollResult);
           await renderRoll(rollResult, sheet);
           giveExp(rollResult.data, sheet);
         },
@@ -123,7 +124,7 @@ function getDiceNumber(html, sheet) {
       if (sheet.system.attributes) diceNumber = sheet.system.attributes[attribute].value;
       break;
     case 'vice':
-      if (sheet.system.attributes) diceNumber = sheet.system.attributes[0].value;
+      if (sheet.system.attributes) diceNumber = sheet.system.attributes.insight.value;
       for (let [attrKey, attribute] of Object.entries(sheet.system.attributes)) {
         if (attribute.value < diceNumber) {
           diceNumber = attribute.value
@@ -349,17 +350,17 @@ async function indulgeVice(rollResult, sheet) {
   rollResult.data.countAs.show = false;
 
   const clearStress = rollResult.total;
-  rollResult.data.description = game.i18n.format("BITD.Roll.IndulgeVice.Regular", {stress: clearStress});
 
   if (sheet && sheet.system.stress) {
-    const stress = sheet.system.stress.value - clearStress
+    const stress = sheet.system.stress.value - clearStress;
 
     if (stress < 0) {
-      await sheet.update({ "system.stress.value ": 0 });
       rollResult.data.description = game.i18n.localize("BITD.Roll.IndulgeVice.Overindulgence");
       rollResult.data.description += "<ul>" + game.i18n.localize("BITD.Roll.IndulgeVice.Trouble") + game.i18n.localize("BITD.Roll.IndulgeVice.Brag") + game.i18n.localize("BITD.Roll.IndulgeVice.Lost") + game.i18n.localize("BITD.Roll.IndulgeVice.Trapped") + "</ul>";
+      await sheet.update({ "system.stress.value": 0 });
     } else {
-      await sheet.update({ "system.stress.value ": stress });
+      rollResult.data.description = game.i18n.format("BITD.Roll.IndulgeVice.Regular", {stress: clearStress});
+      await sheet.update({ "system.stress.value": stress });
     }
   }
 
@@ -391,7 +392,13 @@ async function sufferStress(sheet, addStress) {
 
 async function giveExp(rollData, sheet) {
   const speaker = ChatMessage.getSpeaker({ actor: sheet });
-  const supported = rollData.type == "action" || rollData.rollAs.key == "action";
+  let supported;
+  if (rollData.rollAs) {
+    supported = rollData.type == "action" || rollData.rollAs.key == "action";
+  } else {
+    supported = rollData.type == "action";
+  }
+
   if (rollData.position.key != "desperate" || !supported) return;
 
   let conAttribute = "???";

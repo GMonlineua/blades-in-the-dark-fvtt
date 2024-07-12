@@ -184,7 +184,7 @@ export class BitdActorSheet extends ActorSheet
     const header = event.currentTarget;
     const type = header.dataset.type;
     const data = foundry.utils.duplicate(header.dataset);
-    const name = game.i18n.localize("BITD.NewItem");
+    const name = game.i18n.localize("BITD.Item.New");
     // Prepare the item object.
     const itemData = {
       name: name,
