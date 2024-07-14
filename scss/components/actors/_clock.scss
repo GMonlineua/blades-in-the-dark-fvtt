@@ -1,0 +1,30 @@
+.clock {
+  .sheet-header {
+    display: block;
+
+    .clock-name {
+      text-align: center;
+      border: none;
+    }
+
+    .clock-img-block {
+      width: 90%;
+      margin: 0 auto;
+
+      .clock-img {
+        width: 100%;
+        height: auto;
+        border: none;
+      }
+    }
+
+    .clock-info {
+      text-align: center;
+      font-family: $font-secondary;
+
+      .clear-input {
+        max-width: 20px;
+      }
+    }
+  }
+}

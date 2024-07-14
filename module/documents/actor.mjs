@@ -4,8 +4,30 @@
  */
 export default class BitdActor extends Actor {
 
+  /** @inheritdoc */
+  async _preCreate(data, options, user) {
+    await super._preCreate(data, options, user);
+
+    const prototypeToken = {
+      actorLink: true,
+      disposition: CONST.TOKEN_DISPOSITIONS.NEUTRAL
+    }
+
+    if (this.type === "scoundrel" || this.type === "crew") {
+      prototypeToken.disposition = CONST.TOKEN_DISPOSITIONS.FRIENDLY;
+    } else if (this.type === "clock") {
+      prototypeToken.displayName = CONST.TOKEN_DISPLAY_MODES.ALWAYS;
+    }
+
+    this.updateSource({ prototypeToken });
+  }
+
   async _onCreate(data, options, userId) {
     super._onCreate(data, options, userId);
+
+    this.prototypeToken.actorLink = true;
+
+    // Load default items
     const defaultItemsID = CONFIG.BITD.defaultItems;
     const defaultItems = [];
 

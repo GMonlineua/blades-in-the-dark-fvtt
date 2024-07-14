@@ -1,0 +1,31 @@
+<form class="{{cssClass}} {{actor.type}}" autocomplete="off">
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <h2 class="clock-name">
+      <input class="clear-input" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.Item.Name'}}"/>
+    </h1>
+
+    <div class="clock-img-block">
+      <img class="clock-img" src="{{actor.img}}" title="{{actor.name}}"/>
+    </div>
+
+    <div class="clock-info grid-2col">
+      <div class="filled">
+        <label for="system.progress.value">{{localize 'BITD.Clock.Filled'}}:</label>
+        <input class="clear-input" name="system.progress.value" type="number" max="{{system.progress.max}}" value="{{system.progress.value}}"/>
+      </div>
+      <div class="size">
+        <label for="system.progress.max">{{localize 'BITD.Clock.Size'}}:</label>
+        <select class="clear-select" name="system.progress.max">
+        {{selectOptions config.clockTypes selected=system.progress.max}}
+      </div>
+    </div>
+
+  </header>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <hr>
+    {{editor enrichedDescription target="system.description" rollData=rollData button=true engine="prosemirror" editable=editable collaborate=true}}
+  </section>
+</form>

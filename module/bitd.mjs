@@ -3,9 +3,10 @@ import { BitdActor, BitdItem } from "./documents/_module.mjs";
 
 // Import Actor Sheet
 import { BitdActorSheet } from "./sheets/actor-sheet.mjs";
+import { BitdScoundrelSheet } from "./sheets/scoundrel-sheet.mjs";
 import { BitdCrewSheet } from "./sheets/crew-sheet.mjs";
 import { BitdFactionSheet } from "./sheets/faction-sheet.mjs";
-import { BitdScoundrelSheet } from "./sheets/scoundrel-sheet.mjs";
+import { BitdClockSheet } from "./sheets/clock-sheet.mjs";
 
 // Import Item Sheet
 import { BitdItemSheet } from "./sheets/item-sheet.mjs";
@@ -33,7 +34,8 @@ Hooks.once('init', async function() {
     'scoundrel': models.ScoundrelData,
     'crew': models.CrewData,
     'faction': models.FactionData,
-    'npc': models.NpcData
+    'npc': models.NpcData,
+    'clock': models.ClockData
   };
 
   CONFIG.Item.documentClass = BitdItem;
@@ -52,9 +54,10 @@ Hooks.once('init', async function() {
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("bitd", BitdActorSheet, { makeDefault: true });
+  Actors.registerSheet("bitd", BitdScoundrelSheet, { types: ["scoundrel"], makeDefault: true });
   Actors.registerSheet("bitd", BitdCrewSheet, { types: ["crew"], makeDefault: true });
   Actors.registerSheet("bitd", BitdFactionSheet, { types: ["faction"], makeDefault: true });
-  Actors.registerSheet("bitd", BitdScoundrelSheet, { types: ["scoundrel"], makeDefault: true });
+  Actors.registerSheet("bitd", BitdClockSheet, { types: ["clock"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("bitd", BitdItemSheet, { makeDefault: true });
   Items.registerSheet("bitd", BitdPlaybookSheet, { types: ["playbook", "crewType"], makeDefault: true });

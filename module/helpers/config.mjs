@@ -101,5 +101,12 @@ export const BITD = {
       critical: "Great"
     },
     effectSequence: ["zero", "limited", "standard", "great", "extreme"]
+  },
+  clockTypes: {
+    4: 4,
+    6: 6,
+    8: 8,
+    10: 10,
+    12: 12
   }
 };

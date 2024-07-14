@@ -3,9 +3,9 @@
     "Actor": {
       "scoundrel": "Scoundrel",
       "crew": "Crew",
-      "npc": "NPC",
       "faction": "Faction",
-      "factions": "Factions List"
+      "npc": "NPC",
+      "clock": "Clock"
     },
     "Item": {
       "playbook": "Playbook",
@@ -391,6 +391,11 @@
         "Lost": "<li><strong>Lost.</strong> Your character vanishes for a few weeks. Play a different character until this one returns from their bender. When your character returns, they've also healed any harm they had.</li>",
         "Trapped": "<li><strong>Tapped.</strong> Your current purveyor cuts you off. Find a new source for your vice.</li>"
       }
+    },
+
+    "Clock": {
+      "Filled": "Filled",
+      "Size": "Size"
     },
 
     "ImportActor": {
