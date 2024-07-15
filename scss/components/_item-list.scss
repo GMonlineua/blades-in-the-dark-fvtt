@@ -17,24 +17,24 @@
       align-items: center;
       margin-bottom: 5px;
 
-      .item-summary {
-        flex: auto;
-        margin: 0;
-        height: 0;
-        overflow: hidden;
-        transition: height 0.3s ease;
-
-        p {
-          margin: 0.5em;
-        }
-      }
-
       .item-description {
         padding-right: 55px;
 
         .item-name.active {
           font-weight: bold;
         }
+
+        .item-tags {
+          font-style: italic;
+        }
+      }
+
+      .item-summary {
+        flex: auto;
+        margin: 0;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease;
       }
 
       .item-controls {
@@ -77,9 +77,11 @@
       margin: 0;
     }
 
-    .item-name {
-      font-family: $font-secondary;
-      cursor: pointer;
+    .item-description {
+      .item-name {
+        cursor: pointer;
+        font-family: $font-secondary;
+      }
     }
   }
 }

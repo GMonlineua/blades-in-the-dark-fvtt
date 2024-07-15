@@ -122,8 +122,8 @@
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs flexrow" data-group="primary">
+    <a class="item" data-tab="general">{{localize 'BITD.General'}}</a>
     <a class="item" data-tab="claim">{{localize 'BITD.ClaimCohort'}}</a>
-    <a class="item" data-tab="abilities">{{localize 'BITD.Ability.Plural'}}</a>
     <a class="item" data-tab="notes">{{localize 'BITD.Notes'}}</a>
   </nav>
 
@@ -131,16 +131,33 @@
   <section class="sheet-body">
 
     {{!-- Owned Playbook Tab --}}
-    <div class="tab claim" data-group="primary" data-tab="claim">
-      <div class="claims-container grid-2col">
-        {{> "systems/bitd/templates/actor/parts/claims.hbs"}}
-        {{> "systems/bitd/templates/actor/parts/cohorts.hbs"}}
-      </div>
-    </div>
+    <div class="tab general-tab" data-group="primary" data-tab="general">
+      <div class="general-container grid-2col">
 
-    {{!-- Owned Playbook Tab --}}
-    <div class="tab abilities-tab" data-group="primary" data-tab="abilities">
-      <div class="abilities-container grid-2col">
+        <div class="spec-upgrades items-block full-size">
+          <div class="item-header bitd-header">
+            <a class="item-create" title="{{localize 'BITD.Item.Add'}}" data-type="upgrade"><i class="fas fa-plus"></i></a>
+            <h3>{{localize 'BITD.Upgrade.SpecialPlural'}}</h3>
+          </div>
+          <ol class="items-list">
+            {{#each specUpgrades as |item id|}}
+              {{> "systems/bitd/templates/actor/parts/upgrades.hbs" item=item}}
+            {{/each}}
+          </ol>
+        </div>
+
+        <div class="upgrades items-block full-size">
+          <div class="item-header bitd-header">
+            <a class="item-create" title="{{localize 'BITD.Item.Add'}}" data-type="upgrade"><i class="fas fa-plus"></i></a>
+            <h3>{{localize 'BITD.Upgrade.Plural'}}</h3>
+          </div>
+          <ol class="items-list">
+            {{#each upgrades as |item id|}}
+              {{> "systems/bitd/templates/actor/parts/upgrades.hbs" item=item}}
+            {{/each}}
+          </ol>
+        </div>
+
         <div class="abilities items-block full-size">
           <div class="item-header bitd-header">
             <a class="item-create" title="{{localize 'BITD.Item.Add'}}" data-type="abilityCrew"><i class="fas fa-plus"></i></a>
@@ -148,7 +165,15 @@
           </div>
           {{> "systems/bitd/templates/actor/parts/abilities.hbs"}}
         </div>
-        {{> "systems/bitd/templates/actor/parts/upgrades.hbs"}}
+
+      </div>
+    </div>
+
+    {{!-- Owned Playbook Tab --}}
+    <div class="tab claim" data-group="primary" data-tab="claim">
+      <div class="claims-container grid-2col">
+        {{> "systems/bitd/templates/actor/parts/claims.hbs"}}
+        {{> "systems/bitd/templates/actor/parts/cohorts.hbs"}}
       </div>
     </div>
 

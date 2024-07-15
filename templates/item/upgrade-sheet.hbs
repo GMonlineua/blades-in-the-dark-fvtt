@@ -4,6 +4,9 @@
     <div class="header-fields">
       <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.ItemName'}}"/></h1>
       <div class="brief-info">
+        <select class="prop clear-select" name="system.type">
+          {{selectOptions config.upgradeType selected=system.type localize=true}}
+        </select>
         <div class="prop">
           <label class="prop-label" for="system.active">{{localize 'BITD.Upgrade.IsActive'}}</label>
           <input class="prop-input" type="checkbox" name="system.active" {{checked system.active}}></input>

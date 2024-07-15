@@ -29,6 +29,8 @@
     "General": "General",
     "Description": "Description",
     "Summary": "Summary",
+    "Available": "Available",
+    "Used": "Used",
 
     "CrewName": "Name",
     "ItemName": "Name",
@@ -222,30 +224,33 @@
 
     "Upgrade": {
       "Plural": "Upgrades",
+      "SpecialPlural": "Special Upgrades",
+      "Common": "Common",
+      "Special": "Special",
       "IsActive": "Active",
       "Price": "Price"
     },
 
     "Cohort": {
       "Plural": "Cohorts",
-      "Gang": "Gang",
-      "GangType": {
-        "Adepts": "Adepts",
-        "Rooks": "Rooks",
-        "Rovers": "Rovers",
-        "Skulks": "Skulks",
-        "Thugs": "Thugs"
+      "Type": {
+        "Title": "Type",
+        "Gang": "Gang",
+        "Expert": "Expert"
       },
-      "Expert": "Expert",
       "Elite": "Elite",
+      "Specializations": "Specializations",
       "Armor": "Armor",
       "Edges": "Edges",
       "Flaws": "Flaws",
-      "NoHarm": "None",
-      "Weakened": "Weakened",
-      "Impaired": "Impaired",
-      "Broken": "Broken",
-      "Dead": "Dead"
+      "Harm": {
+        "Title": "Harm",
+        "NoHarm": "None",
+        "Weakened": "Weakened",
+        "Impaired": "Impaired",
+        "Broken": "Broken",
+        "Dead": "Dead"
+      }
     },
 
     "ShowForPlayers": {

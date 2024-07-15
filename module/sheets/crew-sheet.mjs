@@ -16,7 +16,7 @@ export class BitdCrewSheet extends BitdActorSheet
       tabs: [{
         navSelector: ".sheet-tabs",
         contentSelector: ".sheet-body",
-        initial: "abilities"
+        initial: "general"
       }]
     });
   }
@@ -41,6 +41,7 @@ export class BitdCrewSheet extends BitdActorSheet
     const claims = [];
     const cohorts = [];
     const upgrades = [];
+    const specUpgrades = [];
 
     const playbookId = this.actor.system.playbook;
 
@@ -62,7 +63,11 @@ export class BitdCrewSheet extends BitdActorSheet
         cohorts.push(i);
       }
       else if (i.type === 'upgrade') {
-        upgrades.push(i);
+        if (i.system.type === 'common') {
+          upgrades.push(i);
+        } else {
+          specUpgrades.push(i);
+        }
       }
     }
 
@@ -71,6 +76,7 @@ export class BitdCrewSheet extends BitdActorSheet
     context.cohorts = cohorts;
     context.playbook = playbook;
     context.upgrades = upgrades;
+    context.specUpgrades = specUpgrades;
   }
 
   /** @override */

@@ -25,28 +25,28 @@ export const BITD = {
   },
   cohort: {
     types: {
-      none: "",
-      gang: "BITD.Cohort.Gang",
-      expert: "BITD.Cohort.Expert"
-    },
-    gangTypes: {
-      adepts: "BITD.Cohort.GangType.Adepts",
-      rooks: "BITD.Cohort.GangType.Rooks",
-      rovers: "BITD.Cohort.GangType.Rovers",
-      skulks: "BITD.Cohort.GangType.Skulks",
-      thugs: "BITD.Cohort.GangType.Thugs"
+      gang: "BITD.Cohort.Type.Gang",
+      expert: "BITD.Cohort.Type.Expert"
     },
     harm: {
-      none: "BITD.Cohort.NoHarm",
-      weakened: "BITD.Cohort.Weakened",
-      impaired: "BITD.Cohort.Impaired",
-      broken: "BITD.Cohort.Broken",
-      dead: "BITD.Cohort.Dead"
+      0: "BITD.Cohort.Harm.NoHarm",
+      1: "BITD.Cohort.Harm.Weakened",
+      2: "BITD.Cohort.Harm.Impaired",
+      3: "BITD.Cohort.Harm.Broken",
+      4: "BITD.Cohort.Harm.Dead"
     }
   },
   toolType: {
     common: "BITD.Tool.Common",
     special: "BITD.Tool.Special"
+  },
+  toolType: {
+    common: "BITD.Tool.Common",
+    special: "BITD.Tool.Special"
+  },
+  upgradeType: {
+    common: "BITD.Upgrade.Common",
+    special: "BITD.Upgrade.Special"
   },
 
   rolls: {

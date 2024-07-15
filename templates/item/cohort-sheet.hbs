@@ -7,21 +7,15 @@
     <div class="header-fields">
       <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.ItemName'}}"/></h1>
       <div class="brief-info">
-        <select class="prop clear-select" name="system.type">
-          {{selectOptions config.cohort.types selected=system.type localize=true}}
-        </select>
-        {{#iff system.type "==" "gang"}}
-          <select class="prop clear-select" name="system.specialisation">
-            {{selectOptions config.cohort.gangTypes selected=system.specialisation localize=true}}
-          </select>
-        {{/iff}}
         <div class="prop">
-          <label class="prop-label" for="system.elite">{{localize 'BITD.Cohort.Elite'}}</label>
-          <input class="prop-input" type="checkbox" name="system.elite" {{checked system.elite}}></input>
+          <label class="prop-label" for="system.harm">{{localize 'BITD.Harm'}}:</label>
+          <select class="clear-select" name="system.harm">
+            {{selectOptions config.cohort.harm selected=system.harm localize=true}}
+          </select>
         </div>
         <div class="prop">
-          <label class="prop-label" for="system.armor">{{localize 'BITD.Cohort.Armor'}}</label>
           <input class="prop-input" type="checkbox" name="system.armor" {{checked system.armor}}></input>
+          <label class="prop-label" for="system.armor">{{localize 'BITD.Cohort.Armor'}}</label>
         </div>
       </div>
     </div>
@@ -31,18 +25,23 @@
   {{!-- Sheet Body --}}
   <section class="sheet-body">
     <hr>
-    <div class="harm">
-      <label>{{localize 'BITD.Harm'}}:</label>
-      <select class="clear-select" name="system.harm">
-        {{selectOptions config.cohort.harm selected=system.harm localize=true}}
-      </select>
-    </div>
 
-    {{#iff system.type "==" "expert"}}
-      <div class="specialisation">
-        <input class="all-width" name="system.specialisation" type="text" value="{{system.specialisation}}"></input>
+    <div class="brief-info">
+      <div class="prop">
+        <label class="prop-label" for="system.type">{{localize 'BITD.Cohort.Type.Title'}}:</label>
+        <select class="prop clear-select" name="system.type">
+          {{selectOptions config.cohort.types selected=system.type localize=true}}
+        </select>
       </div>
-    {{/iff}}
+      <div class="prop">
+        <input class="prop-input" type="checkbox" name="system.elite" {{checked system.elite}}></input>
+        <label class="prop-label" for="system.elite">{{localize 'BITD.Cohort.Elite'}}</label>
+      </div>
+      <div class="specialisation">
+        <label class="prop-label" for="system.specialisation">{{localize 'BITD.Cohort.Specializations'}}:</label>
+        <input class="prop-input clear-input" name="system.specialisation" type="text" value="{{system.specialisation}}"></input>
+      </div>
+    </div>
 
     <div class="edges">
       <h3>{{localize 'BITD.Cohort.Edges'}}:</h3>

@@ -538,21 +538,21 @@ select.clear-select {
   align-items: center;
   margin-bottom: 5px;
 }
+.bitd .items-block .items-list .item .item-description {
+  padding-right: 55px;
+}
+.bitd .items-block .items-list .item .item-description .item-name.active {
+  font-weight: bold;
+}
+.bitd .items-block .items-list .item .item-description .item-tags {
+  font-style: italic;
+}
 .bitd .items-block .items-list .item .item-summary {
   flex: auto;
   margin: 0;
   height: 0;
   overflow: hidden;
   transition: height 0.3s ease;
-}
-.bitd .items-block .items-list .item .item-summary p {
-  margin: 0.5em;
-}
-.bitd .items-block .items-list .item .item-description {
-  padding-right: 55px;
-}
-.bitd .items-block .items-list .item .item-description .item-name.active {
-  font-weight: bold;
 }
 .bitd .items-block .items-list .item .item-controls {
   position: absolute;
@@ -582,9 +582,9 @@ select.clear-select {
   width: 15px;
   margin: 0;
 }
-.bitd .items-block.full-size .items-list .item-name {
-  font-family: "Spectral SC", serif;
+.bitd .items-block.full-size .items-list .item-description .item-name {
   cursor: pointer;
+  font-family: "Spectral SC", serif;
 }
 .bitd .contacts.items-block .item {
   margin: 0;
@@ -987,12 +987,33 @@ select.clear-select {
 .bitd.actor .crew .sheet-header > div {
   height: 100%;
 }
-.bitd.actor .crew .notes .notes-container {
+.bitd.actor .crew .sheet-body .general-container {
+  grid-template-areas: "1 main" "2 main";
+}
+.bitd.actor .crew .sheet-body .general-container .spec-upgrades {
+  grid-area: 1;
+}
+.bitd.actor .crew .sheet-body .general-container .upgrades {
+  grid-area: 2;
+}
+.bitd.actor .crew .sheet-body .general-container .abilities {
+  grid-area: main;
+}
+.bitd.actor .crew .sheet-body .cohorts .item-name {
+  font-weight: bold;
+}
+.bitd.actor .crew .sheet-body .cohorts .specialisation {
+  text-transform: lowercase;
+}
+.bitd.actor .crew .sheet-body .cohorts .condition {
+  font-style: italic;
+}
+.bitd.actor .crew .sheet-body .notes .notes-container {
   display: grid;
   column-gap: 10px;
   grid-template-columns: 150px 1fr;
 }
-.bitd.actor .crew .notes .notes-container .description {
+.bitd.actor .crew .sheet-body .notes .notes-container .description {
   grid-column: 1/3;
 }
 .bitd.actor .faction .sheet-header {
@@ -1150,8 +1171,21 @@ select.clear-select {
 .bitd.item input.all-width {
   width: 100%;
 }
-.bitd.item .cohort .harm {
-  font-size: medium;
+.bitd.item .cohort .specialisation {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.bitd.item .cohort .specialisation .prop-input {
+  width: 100%;
+  margin-left: 5px;
+  border-bottom: 1px solid #b5b3a4;
+}
+.bitd.item .brief-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
   font-family: "Spectral SC", serif;
 }
 .bitd.item .items-header {
@@ -1187,11 +1221,6 @@ select.clear-select {
 }
 .bitd.item .items-header .header-fields .brief-info {
   margin-top: 10px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  font-family: "Spectral SC", serif;
 }
 .bitd.item .sheet-body .editor-block {
   flex: auto;
