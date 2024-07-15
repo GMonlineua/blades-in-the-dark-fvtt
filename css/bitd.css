@@ -366,8 +366,21 @@ select.clear-select {
 }
 
 .bitd.sheet.actor {
-  min-width: 550px;
+  min-width: 400px;
+  min-height: 375px;
+}
+
+.bitd.sheet.actor.scoundrel {
+  min-width: 750px;
   min-height: 500px;
+}
+
+.bitd.sheet.actor.crew {
+  min-width: 750px;
+}
+
+.bitd.sheet.actor.faction {
+  min-width: 550px;
 }
 
 .bitd.sheet.actor.clock {
@@ -919,7 +932,7 @@ select.clear-select {
   display: grid;
   column-gap: 10px;
   row-gap: 5px;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: auto 1fr;
   font-family: "Spectral SC", serif;
 }
 .bitd.actor .crew .sheet-header .header-fields .heat-block {

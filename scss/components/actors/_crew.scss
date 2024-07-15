@@ -68,7 +68,7 @@
       display: grid;
       column-gap: $padding-md;
       row-gap: $padding-sm;
-      grid-template-columns: 120px 1fr;
+      grid-template-columns: auto 1fr;
       font-family: $font-secondary;
 
       .heat-block {

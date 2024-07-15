@@ -6,7 +6,7 @@
       <h1 class="character-name"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.ItemName'}}"/></h1>
       <div class="brief-info">
         <div class="prop">
-          <label class="prop-label rollable" data-roll-type="fortune" for="system.tier.value">{{localize 'BITD.Tier'}}:</label>
+          <label class="prop-label rollable" data-roll-type="fortune" data-roll-note="{{system.tier.value}}" for="system.tier.value">{{localize 'BITD.Tier'}}:</label>
           <input class="prop-input clear-input" type="number" name="system.tier.value" value="{{system.tier.value}}"></input>
           <select class="clear-select" name="system.hold">
             {{selectOptions config.holdTypes selected=system.hold localize=true}}

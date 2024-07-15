@@ -15,6 +15,11 @@ export async function createRollDialog (type, sheet, note) {
   } else {
     rollConfig.defaultAction = "hunt";
     rollConfig.defaultAttribute = "insight";
+    if (!isNaN(note)) {
+      rollConfig.diceNumber = parseInt(note, 10);
+    } else {
+      rollConfig.diceNumber = 0;
+    }
   }
 
   const functions = {
@@ -133,7 +138,7 @@ function getDiceNumber(html, sheet) {
       break;
   }
 
-  if (diceNumber) html.find("#dice-number")[0].value = diceNumber;
+  if (diceNumber || diceNumber == 0) html.find("#dice-number")[0].value = diceNumber;
 }
 
 async function roll(formData, sheet) {

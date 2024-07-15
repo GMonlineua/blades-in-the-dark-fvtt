@@ -11,8 +11,8 @@ export class BitdActorSheet extends ActorSheet
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["bitd", "sheet", "actor"],
-      width: 550,
-      height: 650,
+      width: 450,
+      height: 450,
       tabs: [{
         navSelector: ".sheet-tabs",
         contentSelector: ".sheet-body",
