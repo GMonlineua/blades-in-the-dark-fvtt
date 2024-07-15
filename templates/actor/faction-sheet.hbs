@@ -102,26 +102,44 @@
         </ol>
       </div>
 
-      <div class="npcs prop-field">
+      <div class="members items-block prop-field">
         <div class="show-for-limited" data-tooltip="{{localize 'BITD.ShowForPlayers.Tooltip'}}">
-          <input class="show-checkbox" type="checkbox" name="system.showNPC" {{checked system.showNPC}}></input>
+          <input class="show-checkbox" type="checkbox" name="system.showMembers" {{checked system.showMembers}}></input>
         </div>
-        <h3 class="bitd-header">{{localize 'BITD.NPCs'}}</h3>
-        {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
+        <h3 class="bitd-header">{{localize 'BITD.Members'}}</h3>
+        <ol class="items-list" data-array="members">
+          {{#each system.members as |member|}}
+            <li class="item npc" data-id="{{member.id}}">
+              <div class="item-description">
+                <span class="item-name">{{member.name}}</span>
+              </div>
+              <div class="item-controls">
+                <a class="item-control actor-open" title="{{localize 'BITD.Link.Open'}}" data-uuid="{{member.uuid}}"><i class="fa fa-external-link"></i></a>
+                <a class="item-control actor-delete" title="{{localize 'BITD.Link.Delete'}}"><i class="fas fa-trash"></i></a>
+              </div>
+            </li>
+          {{/each}}
+        </ol>
       </div>
 
-      <div class="related-faction prop-field grid-2col">
+      <div class="related-faction items-block prop-field">
         <div class="show-for-limited" data-tooltip="{{localize 'BITD.ShowForPlayers.Tooltip'}}">
-          <input class="show-checkbox" type="checkbox" name="system.relatedFactions.show" {{checked system.relatedFactions.show}}></input>
+          <input class="show-checkbox" type="checkbox" name="system.showFactions" {{checked system.showFactions}}></input>
         </div>
-        <div class="allies">
-          <h3 class="bitd-header">{{localize 'BITD.Allies'}}</h3>
-        <textarea name="system.relatedFactions.allies">{{system.relatedFactions.allies}}</textarea>
-        </div>
-        <div class="enemies">
-          <h3 class="bitd-header">{{localize 'BITD.Enemies'}}</h3>
-        <textarea name="system.relatedFactions.enemies">{{system.relatedFactions.enemies}}</textarea>
-        </div>
+        <h3 class="bitd-header">{{localize 'BITD.Factions'}}</h3>
+        <ol class="items-list" data-array="relatedFactions">
+          {{#each system.relatedFactions as |faction|}}
+            <li class="item faction" data-id="{{faction.id}}">
+              <div class="item-description">
+                <span class="item-name">{{faction.name}}</span>
+              </div>
+              <div class="item-controls">
+                <a class="item-control actor-open" title="{{localize 'BITD.Link.Open'}}" data-uuid="{{faction.uuid}}"><i class="fa fa-external-link"></i></a>
+                <a class="item-control actor-delete" title="{{localize 'BITD.Link.Delete'}}"><i class="fas fa-trash"></i></a>
+              </div>
+            </li>
+          {{/each}}
+        </ol>
       </div>
 
     </div>

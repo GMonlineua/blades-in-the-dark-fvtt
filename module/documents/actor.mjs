@@ -117,34 +117,38 @@ export default class BitdActor extends Actor {
     }
   }
 
-  async addLinkedActor(npc) {
-    const localizeType = game.i18n.localize("TYPES.Actor." + npc.type);
-    if (!npc) return;
-    if (npc.type != "npc") return ui.notifications.error(game.i18n.format("BITD.Errors.Actor.NotSupported", { type: localizeType, actor: npc.name }));
+  async addLinkedActor(actor) {
+    if (!actor) return;
 
-    if (npc.pack) {
-      ui.notifications.warn(game.i18n.localize("BITD.Errors.Actor.InPack"));
-      return this.importActor(npc);
-    }
+    const localizeType = game.i18n.localize("TYPES.Actor." + actor.type);
+    const supported = CONFIG.BITD.supportedLinks[this.type];
+    const key = supported[actor.type];
 
-    const contacts = this.system.contacts;
+    if (!key) return ui.notifications.error(game.i18n.format("BITD.Errors.Actor.NotSupported", { type: localizeType, actor: actor.name }));
 
-    const idExist = contacts.some(existingActor => existingActor.id === npc.id);
-    const nameExist = contacts.some(existingActor => existingActor.name === npc.name);
+    const container = this.system[key];
+
+    const idExist = container.some(existingActor => existingActor.id === actor.id);
+    const nameExist = container.some(existingActor => existingActor.name === actor.name);
 
     if (idExist) return ui.notifications.error(game.i18n.localize("BITD.Errors.Actor.ExistsId"));
     if (nameExist) ui.notifications.warn(game.i18n.localize("BITD.Errors.Actor.ExistsName"));
 
-    const actor = await fromUuid(npc.uuid);
+    if (actor.pack) {
+      ui.notifications.warn(game.i18n.localize("BITD.Errors.Actor.InPack"));
+      return this.importActor(actor, key);
+    }
+
     const link = {
       id: actor.id,
       uuid: actor.uuid,
-      name: actor.name,
-      type: actor.type,
-      title: localizeType
+      name: actor.name
     }
-    contacts.push(link);
-    await this.update({ "system.contacts": contacts });
+    if (actor.type === "clock") link.progress = actor.system.progress;
+    container.push(link);
+
+    const path = "system." + key;
+    await this.update({ [path] : container });
   }
 
   async importActor(sourceActor) {

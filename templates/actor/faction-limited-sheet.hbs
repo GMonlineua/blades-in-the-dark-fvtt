@@ -86,23 +86,39 @@
         </div>
       {{/if}}
 
-      {{#if system.showNPC}}
-        <div class="npcs prop-field">
-          <h3 class="bitd-header">{{localize 'BITD.NPCs'}}</h3>
-          {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
+      {{#if system.showMembers}}
+        <div class="members items-block prop-field">
+          <h3 class="bitd-header">{{localize 'BITD.Members'}}</h3>
+          <ol class="items-list" data-array="members">
+            {{#each system.members as |member|}}
+              <li class="item npc" data-id="{{member.id}}">
+                <div class="item-description">
+                  <span class="item-name">{{member.name}}</span>
+                </div>
+                <div class="item-controls">
+                  <a class="item-control actor-open" title="{{localize 'BITD.Link.Open'}}" data-uuid="{{member.uuid}}"><i class="fa fa-external-link"></i></a>
+                </div>
+              </li>
+            {{/each}}
+          </ol>
         </div>
       {{/if}}
 
       {{#if system.relatedFactions.show}}
-        <div class="related-faction prop-block grid-2col">
-          <div class="allies">
-            <h3 class="bitd-header">{{localize 'BITD.Allies'}}</h3>
-            <span>{{system.allies}}</span>
-          </div>
-          <div class="enemies">
-            <h3 class="bitd-header">{{localize 'BITD.Enemies'}}</h3>
-            <span>{{system.enemies}}</span>
-          </div>
+        <div class="related-faction prop-block items-block">
+          <h3 class="bitd-header">{{localize 'BITD.Members'}}</h3>
+          <ol class="items-list" data-array="members">
+            {{#each system.members as |member|}}
+              <li class="item npc" data-id="{{member.id}}">
+                <div class="item-description">
+                  <span class="item-name">{{member.name}}</span>
+                </div>
+                <div class="item-controls">
+                  <a class="item-control actor-open" title="{{localize 'BITD.Link.Open'}}" data-uuid="{{member.uuid}}"><i class="fa fa-external-link"></i></a>
+                </div>
+              </li>
+            {{/each}}
+          </ol>
         </div>
       {{/if}}
 

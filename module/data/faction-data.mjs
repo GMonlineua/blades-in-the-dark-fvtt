@@ -15,10 +15,6 @@ export default class FactionData extends foundry.abstract.TypeDataModel {
       status: new fields.StringField({...requiredInteger, initial: "neutral" }),
       summary: new fields.StringField(),
 
-      goals: new fields.SchemaField({
-        value: new fields.StringField(),
-        show: new fields.BooleanField({ initial: false })
-      }),
       lair: new fields.SchemaField({
         value: new fields.StringField(),
         show: new fields.BooleanField({ initial: false })
@@ -33,20 +29,32 @@ export default class FactionData extends foundry.abstract.TypeDataModel {
       }),
 
       showTurf: new fields.BooleanField({ initial: false }),
-      showNPC: new fields.BooleanField({ initial: false }),
-      contacts: new fields.ArrayField(new fields.SchemaField({
+
+      showMembers: new fields.BooleanField({ initial: false }),
+      members: new fields.ArrayField(new fields.SchemaField({
+        id: new fields.ForeignDocumentField(BitdActor, {idOnly: true}),
+        uuid: new fields.StringField(),
+        name: new fields.StringField()
+      })),
+
+      showFactions: new fields.BooleanField({ initial: false }),
+      relatedFactions: new fields.ArrayField(new fields.SchemaField({
         id: new fields.ForeignDocumentField(BitdActor, {idOnly: true}),
         uuid: new fields.StringField(),
         name: new fields.StringField(),
-        type: new fields.StringField(),
-        title: new fields.StringField(),
+        relationship: new fields.NumberField({requiredInteger, min: -3, max: 3, initial: 0 })
       })),
 
-      relatedFactions: new fields.SchemaField({
-        allies: new fields.StringField(),
-        enemies: new fields.StringField(),
-        show: new fields.BooleanField({ initial: false })
-      }),
+      showGoals: new fields.BooleanField({ initial: false }),
+      goals: new fields.ArrayField(new fields.SchemaField({
+        id: new fields.ForeignDocumentField(BitdActor, {idOnly: true}),
+        uuid: new fields.StringField(),
+        name: new fields.StringField(),
+        progress: new fields.SchemaField({
+          value: new fields.NumberField({requiredPositiveInteger, initial: 0 }),
+          max: new fields.NumberField({requiredPositiveInteger, initial: 4 }),
+        })
+      })),
 
       situation: new fields.HTMLField(),
       description: new fields.HTMLField()

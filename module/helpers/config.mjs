@@ -49,6 +49,21 @@ export const BITD = {
     special: "BITD.Upgrade.Special"
   },
 
+  supportedLinks: {
+    scoundrel: {npc: "contacts"},
+    crew: {
+      scoundrel: "members",
+      npc: "contacts",
+      faction: "relatedFactions",
+      clock: "goals"
+    },
+    faction: {
+      npc: "members",
+      faction: "relatedFactions",
+      clock: "goals"
+    }
+  },
+
   rolls: {
     type: {
       action: "BITD.Roll.Type.Action",
@@ -102,6 +117,7 @@ export const BITD = {
     },
     effectSequence: ["zero", "limited", "standard", "great", "extreme"]
   },
+
   clockTypes: {
     4: 4,
     6: 6,

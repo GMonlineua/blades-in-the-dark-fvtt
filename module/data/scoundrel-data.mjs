@@ -128,8 +128,6 @@ export default class ScoundrelData extends foundry.abstract.TypeDataModel {
         id: new fields.ForeignDocumentField(BitdActor, {idOnly: true}),
         uuid: new fields.StringField(),
         name: new fields.StringField(),
-        type: new fields.StringField(),
-        title: new fields.StringField(),
         relationship: new fields.NumberField({requiredInteger, min: -1, max: 2, initial: 0 })
       })),
 
