@@ -17,24 +17,24 @@
       align-items: center;
       margin-bottom: 5px;
 
-      .item-summary {
-        flex: auto;
-        margin: 0;
-        height: 0;
-        overflow: hidden;
-        transition: height 0.3s ease;
-
-        p {
-          margin: 0.5em;
-        }
-      }
-
       .item-description {
         padding-right: 55px;
 
         .item-name.active {
           font-weight: bold;
         }
+
+        .item-tags {
+          font-style: italic;
+        }
+      }
+
+      .item-summary {
+        flex: auto;
+        margin: 0;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease;
       }
 
       .item-controls {
@@ -77,9 +77,11 @@
       margin: 0;
     }
 
-    .item-name {
-      font-family: $font-secondary;
-      cursor: pointer;
+    .item-description {
+      .item-name {
+        cursor: pointer;
+        font-family: $font-secondary;
+      }
     }
   }
 }
@@ -89,28 +91,28 @@
     margin: 0;
 
     .item-description {
-      .relationship {
+      .set-relationship {
         display: inline-block;
+        width: 12px;
+        height: 16px;
+        vertical-align: middle;
+        cursor: pointer;
+        background-size: 12px;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
 
-        .frien,.rival {
-          font-size: 1.25em;
-        }
-
-        .zero {
-          font-size: 0.75em;
-        }
-
-        .friend.active {
-          color: green;
-        }
-
-        .rival.active {
-          color: red;
-        }
-
-        .special.active {
-          color: blue;
-        }
+      .set-relationship.rival {
+        background-image: url("/systems/bitd/ui/relationship-icons/caret-down.svg");
+      }
+      .set-relationship.neutral {
+        background-image: url("/systems/bitd/ui/relationship-icons/minus.svg");
+      }
+      .set-relationship.friend {
+        background-image: url("/systems/bitd/ui/relationship-icons/caret-up.svg");
+      }
+      .set-relationship.special {
+        background-image: url("/systems/bitd/ui/relationship-icons/dot-circle.svg");
       }
 
       .item-name {
@@ -120,6 +122,23 @@
       .item-name:not(:last-child)::after {
         content: ",";
         font-weight: normal;
+      }
+    }
+  }
+}
+
+.related-faction.items-block {
+  .item {
+    .item-description {
+      padding-right: 40px;
+
+      .item-name {
+        font-family: $font-secondary;
+      }
+
+      .set-status {
+        margin: 0;
+        padding: 0;
       }
     }
   }

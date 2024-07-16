@@ -46,7 +46,6 @@ export class BitdFactionSheet extends BitdActorSheet
    */
   _prepareItems(context) {
     const claims = [];
-    const contacts = [];
 
     for (const i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
@@ -54,13 +53,9 @@ export class BitdFactionSheet extends BitdActorSheet
       if (i.type === 'claim') {
         claims.push(i);
       }
-      else if (i.type === 'contact') {
-        contacts.push(i);
-      }
     }
 
     context.claims = claims;
-    context.contacts = contacts;
   }
 
   /* -------------------------------------------- */
@@ -79,6 +74,6 @@ export class BitdFactionSheet extends BitdActorSheet
     const cls = getDocumentClass("Actor");
     const sourceActor = await cls.fromDropData(data);
 
-    this.actor.addContact(sourceActor);
+    this.actor.addLinkedActor(sourceActor);
   }
 }

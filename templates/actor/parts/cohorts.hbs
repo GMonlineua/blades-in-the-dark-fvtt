@@ -7,15 +7,34 @@
     {{#each cohorts as |item id|}}
       <li class="item {{item.type}} {{#if item.system.active}}active{{/if}}" data-item-id="{{item._id}}">
         <div class="item-description">
-          <input class="item-checkbox" data-key="active" type="checkbox" name="item.system.active" data-dtype="Boolean" {{checked item.system.active}}></input>
           <span class="item-name">{{item.name}}</span>
+          <div class="item-tags">
+            {{#if item.system.elite}}<span>{{localize 'BITD.Cohort.Elite'}}</span>{{/if}}
+            <span>{{item.system.type}}</span>{{#if item.system.specialisation}},
+            <span class="specialisation">{{item.system.specialisation}}</span>{{/if}}
+          </div>
+          <div class="condition">
+            {{#if item.system.harm}}
+              <label>{{localize 'BITD.Harm'}}:</label>
+              <span>{{getCohorHarm item.system.harm}}</span>,
+            {{/if}}
+            <label>{{localize 'BITD.Cohort.Armor'}}:</label>
+            {{#if item.system.armor}}
+              <span>{{localize 'BITD.Available'}}</span>
+            {{else}}
+              <span>{{localize 'BITD.Used'}}</span>
+            {{/if}}
+          </div>
         </div>
 
         <div class="item-summary">
+          <p><b>{{localize 'BITD.Cohort.Edges'}}:</b> <span>{{item.system.edges}}</span></p>
+          <p><b>{{localize 'BITD.Cohort.Flaws'}}:</b> <span>{{item.system.flaws}}</span></p>
           {{{item.system.description}}}
         </div>
 
         <div class="item-controls">
+          <a class="item-control rollable" data-roll-type="fortune" data-roll-note="{{@root.system.tier.value}}" title="{{localize 'BITD.Roll.Title'}}"><i class="fas fa-dice"></i></a>
           <a class="item-control item-show" title="{{localize 'BITD.Item.Show'}}"><i class="fa fa-comment"></i></a>
           <a class="item-control item-edit" title="{{localize 'BITD.Item.Edit'}}"><i class="fas fa-edit"></i></a>
           <a class="item-control item-delete" title="{{localize 'BITD.Item.Delete'}}"><i class="fas fa-trash"></i></a>

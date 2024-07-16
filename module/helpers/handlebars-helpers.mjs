@@ -100,4 +100,11 @@ export const registerHandlebarsHelpers = function() {
 
     return classes
   });
+
+  Handlebars.registerHelper("getCohorHarm", function (key) {
+    const name = CONFIG.BITD.cohort.harm[key];
+    const localizeName = game.i18n.localize(name);
+
+    return localizeName;
+  });
 }

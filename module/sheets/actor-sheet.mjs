@@ -11,8 +11,8 @@ export class BitdActorSheet extends ActorSheet
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["bitd", "sheet", "actor"],
-      width: 550,
-      height: 650,
+      width: 450,
+      height: 450,
       tabs: [{
         navSelector: ".sheet-tabs",
         contentSelector: ".sheet-body",
@@ -66,14 +66,10 @@ export class BitdActorSheet extends ActorSheet
     });
 
     // Calculate relationship
-    html.find('.relationship').each(function () {
-      const targetValue = Number(this.dataset.value);
-      for (const option of this.children) {
-        const currentValue = Number(option.dataset.value);
-        if (currentValue === targetValue) {
-          option.classList.add("active");
-        }
-      }
+    html.find('.set-relationship').each(function () {
+      const value = Number(this.dataset.value);
+      const classes = CONFIG.BITD.relationshipClasses;
+      this.classList.add(classes[value]);
     });
 
     // Show item summary
@@ -135,6 +131,9 @@ export class BitdActorSheet extends ActorSheet
     // Change contact's relationship
     html.on('click', 'i.set-relationship', this._onChangeRelationship.bind(this));
 
+    // Change status with factions
+    html.on('change', 'select.set-status', this._onChangeStatus.bind(this));
+
     // Drag events for macros
     if (this.actor.isOwner) {
       let handler = ev => this._onDragStart(ev);
@@ -184,7 +183,7 @@ export class BitdActorSheet extends ActorSheet
     const header = event.currentTarget;
     const type = header.dataset.type;
     const data = foundry.utils.duplicate(header.dataset);
-    const name = game.i18n.localize("BITD.NewItem");
+    const name = game.i18n.localize("BITD.Item.New");
     // Prepare the item object.
     const itemData = {
       name: name,
@@ -271,18 +270,35 @@ export class BitdActorSheet extends ActorSheet
   async _onChangeRelationship(event) {
     event.preventDefault();
     const element = event.currentTarget;
-    const value = element.dataset.value;
-    const parent = $(element.parentNode);
-
-    const index = Number(parent[0].dataset.index);
+    const dataset = element.dataset;
+    const currentValue = Number(dataset.value);
     const contacts = this.actor.system.contacts;
-    contacts[index].relationship = value;
+    const classes = CONFIG.BITD.relationshipClasses;
+
+    if (currentValue < 3) {
+      contacts[dataset.index].relationship = currentValue + 1;
+    } else {
+      contacts[dataset.index].relationship = 0;
+    }
     await this.actor.update({"system.contacts": contacts});
 
-    const options = parent.find(".set-relationship");
-    for (const option of options) {
-      option.classList.remove("active");
-    }
-    element.classList.add("active");
+    const relationship = contacts[dataset.index].relationship;
+    element.classList.add(classes[relationship]);
   }
+
+  /**
+   * Handle changing stuts with factions.
+   * @param {MouseEvent} event  The triggering event.
+   * @protected
+   */
+  async _onChangeStatus(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    const status = element.value;
+    const index = element.dataset.index;
+    const related = this.actor.system.relatedFactions;
+
+    related[index].status = status;
+    await this.actor.update({"system.relatedFactions": related});
+   }
 }

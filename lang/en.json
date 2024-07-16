@@ -3,9 +3,9 @@
     "Actor": {
       "scoundrel": "Scoundrel",
       "crew": "Crew",
-      "npc": "NPC",
       "faction": "Faction",
-      "factions": "Factions List"
+      "npc": "NPC",
+      "clock": "Clock"
     },
     "Item": {
       "playbook": "Playbook",
@@ -29,6 +29,8 @@
     "General": "General",
     "Description": "Description",
     "Summary": "Summary",
+    "Available": "Available",
+    "Used": "Used",
 
     "CrewName": "Name",
     "ItemName": "Name",
@@ -206,7 +208,8 @@
     },
 
     "Goals": "Goals",
-    "NPCs": "NPCs",
+    "Members": "Members",
+    "Factions": "Factions",
     "Allies": "Allies",
     "Enemies": "Enemies",
     "NotableAssets": "Notable Assets",
@@ -222,30 +225,33 @@
 
     "Upgrade": {
       "Plural": "Upgrades",
+      "SpecialPlural": "Special Upgrades",
+      "Common": "Common",
+      "Special": "Special",
       "IsActive": "Active",
       "Price": "Price"
     },
 
     "Cohort": {
       "Plural": "Cohorts",
-      "Gang": "Gang",
-      "GangType": {
-        "Adepts": "Adepts",
-        "Rooks": "Rooks",
-        "Rovers": "Rovers",
-        "Skulks": "Skulks",
-        "Thugs": "Thugs"
+      "Type": {
+        "Title": "Type",
+        "Gang": "Gang",
+        "Expert": "Expert"
       },
-      "Expert": "Expert",
       "Elite": "Elite",
+      "Specializations": "Specializations",
       "Armor": "Armor",
       "Edges": "Edges",
       "Flaws": "Flaws",
-      "NoHarm": "None",
-      "Weakened": "Weakened",
-      "Impaired": "Impaired",
-      "Broken": "Broken",
-      "Dead": "Dead"
+      "Harm": {
+        "Title": "Harm",
+        "NoHarm": "None",
+        "Weakened": "Weakened",
+        "Impaired": "Impaired",
+        "Broken": "Broken",
+        "Dead": "Dead"
+      }
     },
 
     "ShowForPlayers": {
@@ -391,6 +397,17 @@
         "Lost": "<li><strong>Lost.</strong> Your character vanishes for a few weeks. Play a different character until this one returns from their bender. When your character returns, they've also healed any harm they had.</li>",
         "Trapped": "<li><strong>Tapped.</strong> Your current purveyor cuts you off. Find a new source for your vice.</li>"
       }
+    },
+
+    "Clock": {
+      "Filled": "Filled",
+      "Size": "Size"
+    },
+
+    "ImportActor": {
+      "Title": "Import actor",
+      "Description": "Import an actor {actor} from the compendium?",
+      "Submit": "Ok"
     },
 
     "Cancel": "Cancel",

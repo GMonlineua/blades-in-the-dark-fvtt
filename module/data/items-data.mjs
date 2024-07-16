@@ -3,7 +3,7 @@ export class AbilityScoundrelData extends foundry.abstract.TypeDataModel {
     const fields = foundry.data.fields;
 
     return {
-      active: new fields.BooleanField(),
+      active: new fields.BooleanField({initial: false}),
       description: new fields.HTMLField()
     }
   }
@@ -14,7 +14,7 @@ export class AbilityCrewData extends foundry.abstract.TypeDataModel {
     const fields = foundry.data.fields;
 
     return {
-      active: new fields.BooleanField(),
+      active: new fields.BooleanField({initial: false}),
       description: new fields.HTMLField()
     }
   }
@@ -25,7 +25,7 @@ export class ClaimData extends foundry.abstract.TypeDataModel {
     const fields = foundry.data.fields;
 
     return {
-      active: new fields.BooleanField(),
+      active: new fields.BooleanField({initial: false}),
       effect: new fields.StringField(),
       description: new fields.HTMLField()
     }
@@ -37,14 +37,11 @@ export class CohortData extends foundry.abstract.TypeDataModel {
     const fields = foundry.data.fields;
 
     return {
-      type: new fields.StringField(),
+      type: new fields.StringField({initial: "gang"}),
       specialisation: new fields.StringField(),
-      elite: new fields.BooleanField(),
-      armor: new fields.BooleanField(),
-      harm: new fields.SchemaField({
-        value: new fields.NumberField({required: true, nullable: false, integer: true, min: 0, initial: 0 }),
-        max: new fields.NumberField({required: true, nullable: false, integer: true, min: 0, initial: 4 }),
-      }),
+      elite: new fields.BooleanField({initial: false}),
+      armor: new fields.BooleanField({initial: false}),
+      harm: new fields.NumberField({required: true, nullable: false, integer: true, min: 0, initial: 0 }),
       edges: new fields.StringField(),
       flaws: new fields.StringField(),
       description: new fields.HTMLField()
@@ -57,10 +54,10 @@ export class ToolData extends foundry.abstract.TypeDataModel {
     const fields = foundry.data.fields;
 
     return {
-      type: new fields.StringField(),
+      type: new fields.StringField({initial: "special"}),
       loadout: new fields.NumberField({required: true, nullable: false, integer: true, min: 0, initial: 1}),
-      equipped: new fields.BooleanField(),
-      broken: new fields.BooleanField(),
+      equipped: new fields.BooleanField({initial: false}),
+      broken: new fields.BooleanField({initial: false}),
       description: new fields.HTMLField()
     }
   }
@@ -71,7 +68,8 @@ export class UpgradeData extends foundry.abstract.TypeDataModel {
     const fields = foundry.data.fields;
 
     return {
-      active: new fields.BooleanField(),
+      active: new fields.BooleanField({initial: false}),
+      type: new fields.StringField({initial: "special"}),
       price: new fields.NumberField({required: true, nullable: false, integer: true, min: 0, initial: 1}),
       description: new fields.HTMLField()
     }

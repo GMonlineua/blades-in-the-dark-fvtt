@@ -34,6 +34,7 @@ export class BitdPlaybookSheet extends BitdItemSheet {
   /** @inheritdoc */
   async _onDrop(event) {
     super._onDrop(event);
+    if (!this.isEditable) return;
     const data = TextEditor.getDragEventData(event);
 
     if (data.type === "Item") {

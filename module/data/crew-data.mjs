@@ -47,13 +47,31 @@ export default class CrewData extends foundry.abstract.TypeDataModel {
       }),
 
       playbook: new fields.ForeignDocumentField(BitdItem, {idOnly: true}),
+      members: new fields.ArrayField(new fields.SchemaField({
+        id: new fields.ForeignDocumentField(BitdActor, {idOnly: true}),
+        uuid: new fields.StringField(),
+        name: new fields.StringField()
+      })),
       contacts: new fields.ArrayField(new fields.SchemaField({
         id: new fields.ForeignDocumentField(BitdActor, {idOnly: true}),
         uuid: new fields.StringField(),
         name: new fields.StringField(),
-        type: new fields.StringField(),
-        title: new fields.StringField(),
-        relationship: new fields.NumberField({requiredInteger, min: -1, max: 1, initial: 0 })
+        relationship: new fields.NumberField({requiredPositiveInteger, max: 3, initial: 1 })
+      })),
+      relatedFactions: new fields.ArrayField(new fields.SchemaField({
+        id: new fields.ForeignDocumentField(BitdActor, {idOnly: true}),
+        uuid: new fields.StringField(),
+        name: new fields.StringField(),
+        status: new fields.StringField({initial: "neutral"})
+      })),
+      goals: new fields.ArrayField(new fields.SchemaField({
+        id: new fields.ForeignDocumentField(BitdActor, {idOnly: true}),
+        uuid: new fields.StringField(),
+        name: new fields.StringField(),
+        progress: new fields.SchemaField({
+          value: new fields.NumberField({requiredPositiveInteger, initial: 0 }),
+          max: new fields.NumberField({requiredPositiveInteger, initial: 4 }),
+        })
       })),
 
       description: new fields.HTMLField()

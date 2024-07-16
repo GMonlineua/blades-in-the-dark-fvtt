@@ -4,8 +4,30 @@
  */
 export default class BitdActor extends Actor {
 
+  /** @inheritdoc */
+  async _preCreate(data, options, user) {
+    await super._preCreate(data, options, user);
+
+    const prototypeToken = {
+      actorLink: true,
+      disposition: CONST.TOKEN_DISPOSITIONS.NEUTRAL
+    }
+
+    if (this.type === "scoundrel" || this.type === "crew") {
+      prototypeToken.disposition = CONST.TOKEN_DISPOSITIONS.FRIENDLY;
+    } else if (this.type === "clock") {
+      prototypeToken.displayName = CONST.TOKEN_DISPLAY_MODES.ALWAYS;
+    }
+
+    this.updateSource({ prototypeToken });
+  }
+
   async _onCreate(data, options, userId) {
     super._onCreate(data, options, userId);
+
+    this.prototypeToken.actorLink = true;
+
+    // Load default items
     const defaultItemsID = CONFIG.BITD.defaultItems;
     const defaultItems = [];
 
@@ -50,8 +72,8 @@ export default class BitdActor extends Actor {
         if (dataItem.type == target.item && this.type == target.actor) {
           for (const i of this.items) {
             if (i.type === target.item && i._id != dataItem._id) {
-              const item2Delete = this.items.get(i._id);
-              item2Delete.delete();
+              const itemToDelete = this.items.get(i._id);
+              itemToDelete.delete();
             }
           }
           this.update({ "system.playbook": dataItem._id });
@@ -80,7 +102,7 @@ export default class BitdActor extends Actor {
     this.createEmbeddedDocuments('Item', toCreate)
 
     for (const contact of container.system.contacts) {
-      this.addContact(contact);
+      this.importActor(contact, "contacts");
     }
 
     if (container.type === "playbook") {
@@ -95,28 +117,68 @@ export default class BitdActor extends Actor {
     }
   }
 
-  async addContact(npc) {
-    const localizeType = game.i18n.localize("TYPES.Actor." + npc.type);
-    if (!npc) return;
-    if (npc.type != "npc") return ui.notifications.error(game.i18n.format("BITD.Errors.Actor.NotSupported", { type: localizeType, actor: npc.name }));
-    // if (npc.pack) return ui.notifications.error(game.i18n.localize("BITD.Errors.Actor.InPack"));
+  async addLinkedActor(actor) {
+    if (!actor) return;
 
-    const contacts = this.system.contacts;
+    const localizeType = game.i18n.localize("TYPES.Actor." + actor.type);
+    const supported = CONFIG.BITD.supportedLinks[this.type];
+    const key = supported[actor.type];
 
-    const idExist = contacts.some(existingActor => existingActor.id === npc.id);
-    const nameExist = contacts.some(existingActor => existingActor.name === npc.name);
+    if (!key) return ui.notifications.error(game.i18n.format("BITD.Errors.Actor.NotSupported", { type: localizeType, actor: actor.name }));
+
+    const container = this.system[key];
+
+    const idExist = container.some(existingActor => existingActor.id === actor.id);
+    const nameExist = container.some(existingActor => existingActor.name === actor.name);
 
     if (idExist) return ui.notifications.error(game.i18n.localize("BITD.Errors.Actor.ExistsId"));
     if (nameExist) ui.notifications.warn(game.i18n.localize("BITD.Errors.Actor.ExistsName"));
 
-    const link = {
-      id: npc.id,
-      uuid: npc.uuid,
-      name: npc.name,
-      type: npc.type,
-      title: localizeType
+    if (actor.pack) {
+      ui.notifications.warn(game.i18n.localize("BITD.Errors.Actor.InPack"));
+      return this.importActor(actor, key);
     }
-    contacts.push(link);
-    await this.update({ "system.contacts": contacts });
+
+    const link = {
+      id: actor.id,
+      uuid: actor.uuid,
+      name: actor.name
+    }
+    if (actor.type === "clock") link.progress = actor.system.progress;
+    container.push(link);
+
+    const path = "system." + key;
+    await this.update({ [path] : container });
+  }
+
+  async importActor(sourceActor) {
+    const dialog = new Dialog({
+      title: game.i18n.localize("BITD.ImportActor.Title"),
+      content: game.i18n.format("BITD.ImportActor.Description", { actor: sourceActor.name }),
+      buttons: {
+        import: {
+          label: game.i18n.localize("BITD.ImportActor.Submit"),
+          icon: '<i class="fas fa-check"></i>',
+          callback: async () => {
+            const actor = await BitdActor.create(sourceActor);
+            this.addLinkedActor(actor)
+          },
+        },
+        cancel: {
+          icon: '<i class="fas fa-times"></i>',
+          label: game.i18n.localize("BITD.Roll.Cancel"),
+          callback: () => {},
+        },
+      },
+      default: "import",
+      close: () => {}
+    },
+    {
+      classes: ["dialog", "bitd-import-dialog"],
+      width: 400,
+      height: 100
+    });
+
+    dialog.render(true);
   }
 }

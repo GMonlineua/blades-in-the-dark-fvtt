@@ -6,7 +6,7 @@
       <h1 class="character-name"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.ItemName'}}"/></h1>
       <div class="brief-info">
         <div class="prop">
-          <label class="prop-label rollable" data-roll-type="fortune" for="system.tier.value">{{localize 'BITD.Tier'}}:</label>
+          <label class="prop-label rollable" data-roll-type="fortune" data-roll-note="{{system.tier.value}}" for="system.tier.value">{{localize 'BITD.Tier'}}:</label>
           <input class="prop-input clear-input" type="number" name="system.tier.value" value="{{system.tier.value}}"></input>
           <select class="clear-select" name="system.hold">
             {{selectOptions config.holdTypes selected=system.hold localize=true}}
@@ -36,13 +36,24 @@
     {{!-- Owned Playbook Tab --}}
     <div class="tab general" data-group="primary" data-tab="general">
 
-      <div class="goals prop-field">
+      <div class="goals items-block prop-field">
         <div class="show-for-limited" data-tooltip="{{localize 'BITD.ShowForPlayers.Tooltip'}}">
-          <label for="system.goals.show">{{localize 'BITD.ShowForPlayers.Title'}}</label>
-          <input class="show-checkbox" type="checkbox" name="system.goals.show" {{checked system.goals.show}}></input>
+          <input class="show-checkbox" type="checkbox" name="system.showGoals" {{checked system.showGoals}}></input>
         </div>
-        <label class="prop-lable" for="system.goals">{{localize 'BITD.Goals'}}:</label>
-        <input class="all-width" name="system.goals.value" type="text" value="{{system.goals.value}}"></input>
+        <h3 class="bitd-header">{{localize 'BITD.Goals'}}</h3>
+        <ol class="items-list" data-array="goals">
+          {{#each system.goals as |goal|}}
+            <li class="item npc" data-id="{{goal.id}}">
+              <div class="item-description">
+                <span class="item-name">{{goal.name}}</span>
+              </div>
+              <div class="item-controls">
+                <a class="item-control actor-open" title="{{localize 'BITD.Link.Open'}}" data-uuid="{{goal.uuid}}"><i class="fa fa-external-link"></i></a>
+                <a class="item-control actor-delete" title="{{localize 'BITD.Link.Delete'}}"><i class="fas fa-trash"></i></a>
+              </div>
+            </li>
+          {{/each}}
+        </ol>
       </div>
 
       <div class="lair prop-field">
@@ -102,26 +113,47 @@
         </ol>
       </div>
 
-      <div class="npcs prop-field">
+      <div class="members items-block prop-field">
         <div class="show-for-limited" data-tooltip="{{localize 'BITD.ShowForPlayers.Tooltip'}}">
-          <input class="show-checkbox" type="checkbox" name="system.showNPC" {{checked system.showNPC}}></input>
+          <input class="show-checkbox" type="checkbox" name="system.showMembers" {{checked system.showMembers}}></input>
         </div>
-        <h3 class="bitd-header">{{localize 'BITD.NPCs'}}</h3>
-        {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
+        <h3 class="bitd-header">{{localize 'BITD.Members'}}</h3>
+        <ol class="items-list" data-array="members">
+          {{#each system.members as |member|}}
+            <li class="item npc" data-id="{{member.id}}">
+              <div class="item-description">
+                <span class="item-name">{{member.name}}</span>
+              </div>
+              <div class="item-controls">
+                <a class="item-control actor-open" title="{{localize 'BITD.Link.Open'}}" data-uuid="{{member.uuid}}"><i class="fa fa-external-link"></i></a>
+                <a class="item-control actor-delete" title="{{localize 'BITD.Link.Delete'}}"><i class="fas fa-trash"></i></a>
+              </div>
+            </li>
+          {{/each}}
+        </ol>
       </div>
 
-      <div class="related-faction prop-field grid-2col">
+      <div class="related-faction items-block prop-field">
         <div class="show-for-limited" data-tooltip="{{localize 'BITD.ShowForPlayers.Tooltip'}}">
-          <input class="show-checkbox" type="checkbox" name="system.relatedFactions.show" {{checked system.relatedFactions.show}}></input>
+          <input class="show-checkbox" type="checkbox" name="system.showFactions" {{checked system.showFactions}}></input>
         </div>
-        <div class="allies">
-          <h3 class="bitd-header">{{localize 'BITD.Allies'}}</h3>
-        <textarea name="system.relatedFactions.allies">{{system.relatedFactions.allies}}</textarea>
-        </div>
-        <div class="enemies">
-          <h3 class="bitd-header">{{localize 'BITD.Enemies'}}</h3>
-        <textarea name="system.relatedFactions.enemies">{{system.relatedFactions.enemies}}</textarea>
-        </div>
+        <h3 class="bitd-header">{{localize 'BITD.Factions'}}</h3>
+        <ol class="items-list" data-array="relatedFactions">
+          {{#each system.relatedFactions as |faction|}}
+            <li class="item faction" data-id="{{faction.id}}">
+              <div class="item-description">
+                <span class="item-name">{{faction.name}},</span>
+                <select class="clear-select set-status" data-index="{{@index}}">
+                  {{selectOptions @root.config.statusTypes selected=faction.status localize=true}}
+                </select>
+              </div>
+              <div class="item-controls">
+                <a class="item-control actor-open" title="{{localize 'BITD.Link.Open'}}" data-uuid="{{faction.uuid}}"><i class="fa fa-external-link"></i></a>
+                <a class="item-control actor-delete" title="{{localize 'BITD.Link.Delete'}}"><i class="fas fa-trash"></i></a>
+              </div>
+            </li>
+          {{/each}}
+        </ol>
       </div>
 
     </div>

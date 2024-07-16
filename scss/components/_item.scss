@@ -3,10 +3,25 @@ input.all-width {
 }
 
 .cohort {
-  .harm {
-    font-size: medium;
-    font-family: $font-secondary;
+  .specialisation {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .prop-input {
+      width: 100%;
+      margin-left: 5px;
+      border-bottom: $border;
+    }
   }
+}
+
+.brief-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: $font-secondary;
 }
 
 .items-header {
@@ -44,11 +59,6 @@ input.all-width {
 
     .brief-info {
       margin-top: 10px;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      font-family: $font-secondary;
     }
   }
 }
