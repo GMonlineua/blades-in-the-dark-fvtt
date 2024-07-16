@@ -178,14 +178,10 @@
       }
     }
 
-    .notes {
-      .notes-container {
-        display: grid;
-        column-gap: $padding-md;
-        grid-template-columns: 150px 1fr;
+    .crew-notes {
+      .related-faction {
+        .set-status {
 
-        .description {
-          grid-column: 1 / 3;
         }
       }
     }

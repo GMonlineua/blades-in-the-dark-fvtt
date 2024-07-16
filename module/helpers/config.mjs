@@ -58,11 +58,13 @@ export const BITD = {
       clock: "goals"
     },
     faction: {
-      npc: "members",
       faction: "relatedFactions",
+      npc: "members",
       clock: "goals"
     }
   },
+
+  relationshipClasses: ["rival", "neutral", "friend", "special"],
 
   rolls: {
     type: {

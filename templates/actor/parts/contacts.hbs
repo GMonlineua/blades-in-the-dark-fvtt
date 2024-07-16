@@ -2,14 +2,7 @@
   {{#each system.contacts as |contact|}}
     <li class="item {{contact.type}}" data-id="{{contact.id}}">
       <div class="item-description">
-        {{#if contact.relationship includeZero=true}}
-          <div class="relationship" data-value="{{contact.relationship}}" data-index="{{@index}}">
-            <i class="fa-solid fa-dash set-relationship special" data-value="2"></i>
-            <i class="fa fa-caret-up set-relationship friend" data-value="1" aria-hidden="true"></i>
-            <i class="fa fa-caret-down set-relationship rival" data-value="-1" aria-hidden="true"></i>
-            <i class="fa-brands fa-creative-commons-zero set-relationship zero" data-value="0"></i>
-          </div>
-        {{/if}}
+        <i class="set-relationship" data-value="{{contact.relationship}}" data-index="{{@index}}"></i>
         <span class="item-name">{{contact.name}}</span>
       </div>
 

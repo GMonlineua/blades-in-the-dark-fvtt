@@ -72,8 +72,8 @@ export default class BitdActor extends Actor {
         if (dataItem.type == target.item && this.type == target.actor) {
           for (const i of this.items) {
             if (i.type === target.item && i._id != dataItem._id) {
-              const item2Delete = this.items.get(i._id);
-              item2Delete.delete();
+              const itemToDelete = this.items.get(i._id);
+              itemToDelete.delete();
             }
           }
           this.update({ "system.playbook": dataItem._id });
@@ -102,7 +102,7 @@ export default class BitdActor extends Actor {
     this.createEmbeddedDocuments('Item', toCreate)
 
     for (const contact of container.system.contacts) {
-      this.addContact(contact);
+      this.importActor(contact, "contacts");
     }
 
     if (container.type === "playbook") {
@@ -154,7 +154,7 @@ export default class BitdActor extends Actor {
   async importActor(sourceActor) {
     const dialog = new Dialog({
       title: game.i18n.localize("BITD.ImportActor.Title"),
-      content: game.i18n.localize("BITD.ImportActor.Description"),
+      content: game.i18n.format("BITD.ImportActor.Description", { actor: sourceActor.name }),
       buttons: {
         import: {
           label: game.i18n.localize("BITD.ImportActor.Submit"),

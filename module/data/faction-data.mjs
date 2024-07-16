@@ -42,7 +42,7 @@ export default class FactionData extends foundry.abstract.TypeDataModel {
         id: new fields.ForeignDocumentField(BitdActor, {idOnly: true}),
         uuid: new fields.StringField(),
         name: new fields.StringField(),
-        relationship: new fields.NumberField({requiredInteger, min: -3, max: 3, initial: 0 })
+        status: new fields.StringField({initial: "neutral"})
       })),
 
       showGoals: new fields.BooleanField({ initial: false }),

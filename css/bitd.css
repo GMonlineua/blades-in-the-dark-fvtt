@@ -589,23 +589,27 @@ select.clear-select {
 .bitd .contacts.items-block .item {
   margin: 0;
 }
-.bitd .contacts.items-block .item .item-description .relationship {
+.bitd .contacts.items-block .item .item-description .set-relationship {
   display: inline-block;
+  width: 12px;
+  height: 16px;
+  vertical-align: middle;
+  cursor: pointer;
+  background-size: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.bitd .contacts.items-block .item .item-description .relationship .frien, .bitd .contacts.items-block .item .item-description .relationship .rival {
-  font-size: 1.25em;
+.bitd .contacts.items-block .item .item-description .set-relationship.rival {
+  background-image: url("/systems/bitd/ui/relationship-icons/caret-down.svg");
 }
-.bitd .contacts.items-block .item .item-description .relationship .zero {
-  font-size: 0.75em;
+.bitd .contacts.items-block .item .item-description .set-relationship.neutral {
+  background-image: url("/systems/bitd/ui/relationship-icons/minus.svg");
 }
-.bitd .contacts.items-block .item .item-description .relationship .friend.active {
-  color: green;
+.bitd .contacts.items-block .item .item-description .set-relationship.friend {
+  background-image: url("/systems/bitd/ui/relationship-icons/caret-up.svg");
 }
-.bitd .contacts.items-block .item .item-description .relationship .rival.active {
-  color: red;
-}
-.bitd .contacts.items-block .item .item-description .relationship .special.active {
-  color: blue;
+.bitd .contacts.items-block .item .item-description .set-relationship.special {
+  background-image: url("/systems/bitd/ui/relationship-icons/dot-circle.svg");
 }
 .bitd .contacts.items-block .item .item-description .item-name {
   font-weight: 700;
@@ -613,6 +617,16 @@ select.clear-select {
 .bitd .contacts.items-block .item .item-description .item-name:not(:last-child)::after {
   content: ",";
   font-weight: normal;
+}
+.bitd .related-faction.items-block .item .item-description {
+  padding-right: 40px;
+}
+.bitd .related-faction.items-block .item .item-description .item-name {
+  font-family: "Spectral SC", serif;
+}
+.bitd .related-faction.items-block .item .item-description .set-status {
+  margin: 0;
+  padding: 0;
 }
 
 .bitd.actor input.all-width {
@@ -1007,14 +1021,6 @@ select.clear-select {
 }
 .bitd.actor .crew .sheet-body .cohorts .condition {
   font-style: italic;
-}
-.bitd.actor .crew .sheet-body .notes .notes-container {
-  display: grid;
-  column-gap: 10px;
-  grid-template-columns: 150px 1fr;
-}
-.bitd.actor .crew .sheet-body .notes .notes-container .description {
-  grid-column: 1/3;
 }
 .bitd.actor .faction .sheet-header {
   flex: 100px auto;
