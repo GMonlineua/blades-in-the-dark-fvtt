@@ -296,7 +296,7 @@
         "or": "or",
         "AddDice": "Get bonus dice",
         "Push": "Push Yourself",
-        "PushEffect": "+1 level to effect",
+        "PushEffect": "Push for +1 effect",
         "DevilsBargain": "Devil’s Bargain",
         "Assistance": "Assistance"
       },
