@@ -50,7 +50,6 @@ export async function createRollDialog (type, sheet, note) {
           rollResult.name = game.i18n.localize(rollConfig.type[data.rollType]);
 
           rollFunction(rollResult, sheet, data);
-          console.log(rollResult);
           await renderRoll(rollResult, sheet);
           giveExp(rollResult.data, sheet);
         },
@@ -367,6 +366,8 @@ async function indulgeVice(rollResult, sheet) {
       rollResult.data.description = game.i18n.format("BITD.Roll.IndulgeVice.Regular", {stress: clearStress});
       await sheet.update({ "system.stress.value": stress });
     }
+  } else {
+    rollResult.data.description = game.i18n.format("BITD.Roll.IndulgeVice.Regular", {stress: clearStress});
   }
 
   return rollResult

@@ -72,6 +72,17 @@ export class BitdActorSheet extends ActorSheet
       this.classList.add(classes[value]);
     });
 
+    // Calculate text area height
+    html.find('textarea.auto-grow').each(function () {
+      this.style.height = 'auto';
+      this.style.height = this.scrollHeight + 5 + 'px';
+    });
+
+    html.find('textarea.auto-grow').on('input', function () {
+      this.style.height = 'auto';
+      this.style.height = this.scrollHeight + 5 + 'px';
+    });
+
     // Show item summary
     html.find('.item-name').click(ev => {
       const button = ev.currentTarget;

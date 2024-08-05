@@ -71,7 +71,7 @@
           <input class="show-checkbox" type="checkbox" name="system.assets.show" {{checked system.assets.show}}></input>
         </div>
         <label class="prop-lable" for="system.assets">{{localize 'BITD.NotableAssets'}}:</label>
-        <textarea name="system.assets.value">{{system.assets.value}}</textarea>
+        <textarea class="auto-grow" name="system.assets.value">{{system.assets.value}}</textarea>
       </div>
 
       <div class="quirks prop-field">
@@ -80,7 +80,7 @@
           <input class="show-checkbox" type="checkbox" name="system.quirks.show" {{checked system.quirks.show}}></input>
         </div>
         <label class="prop-lable" for="system.quirks">{{localize 'BITD.Quirks'}}:</label>
-        <textarea name="system.quirks.value">{{system.quirks.value}}</textarea>
+        <textarea class="auto-grow" name="system.quirks.value">{{system.quirks.value}}</textarea>
       </div>
 
       <div class="turf prop-field items-block full-size">
@@ -142,7 +142,8 @@
           {{#each system.relatedFactions as |faction|}}
             <li class="item faction" data-id="{{faction.id}}">
               <div class="item-description">
-                <span class="item-name">{{faction.name}},</span>
+                <span class="item-name">{{faction.name}}</span>
+                <span class="tier-styled" style="--tier:{{faction.tier}}"></span>
                 <select class="clear-select set-status" data-index="{{@index}}">
                   {{selectOptions @root.config.statusTypes selected=faction.status localize=true}}
                 </select>

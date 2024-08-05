@@ -50,6 +50,16 @@
   }
 }
 
+.tier-styled {
+  counter-increment: my-awesome-counter 0;
+  counter-reset: my-awesome-counter var(--tier);
+}
+
+.tier-styled:before {
+  content: counter(my-awesome-counter, upper-roman);
+  margin-right: 5px;
+}
+
 .value-step-block {
   display: inline-block;
 
@@ -126,6 +136,10 @@
 
 h1,h2,h3 {
   font-family: $font-secondary;
+}
+
+textarea {
+  resize: vertical;
 }
 
 .sheet-tabs {

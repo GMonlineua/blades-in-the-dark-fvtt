@@ -62,6 +62,7 @@ export default class CrewData extends foundry.abstract.TypeDataModel {
         id: new fields.ForeignDocumentField(BitdActor, {idOnly: true}),
         uuid: new fields.StringField(),
         name: new fields.StringField(),
+        tier: new fields.NumberField(),
         status: new fields.StringField({initial: "neutral"})
       })),
       goals: new fields.ArrayField(new fields.SchemaField({

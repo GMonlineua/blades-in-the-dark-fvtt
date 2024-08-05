@@ -71,6 +71,7 @@ export class BitdCrewSheet extends BitdActorSheet
       }
     }
 
+    console.log(abilities, upgrades);
     context.abilities = abilities;
     context.claims = claims;
     context.cohorts = cohorts;
