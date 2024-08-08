@@ -30,23 +30,22 @@ export default class FactionData extends foundry.abstract.TypeDataModel {
 
       showTurf: new fields.BooleanField({ initial: false }),
 
-      showMembers: new fields.BooleanField({ initial: false }),
       members: new fields.ArrayField(new fields.SchemaField({
         id: new fields.ForeignDocumentField(BitdActor, {idOnly: true}),
         uuid: new fields.StringField(),
-        name: new fields.StringField()
+        name: new fields.StringField(),
+        show: new fields.BooleanField({ initial: false })
       })),
 
-      showFactions: new fields.BooleanField({ initial: false }),
       relatedFactions: new fields.ArrayField(new fields.SchemaField({
         id: new fields.ForeignDocumentField(BitdActor, {idOnly: true}),
         uuid: new fields.StringField(),
         name: new fields.StringField(),
         tier: new fields.NumberField(),
-        status: new fields.StringField({initial: "neutral"})
+        status: new fields.StringField({initial: "neutral"}),
+        show: new fields.BooleanField({ initial: false })
       })),
 
-      showGoals: new fields.BooleanField({ initial: false }),
       goals: new fields.ArrayField(new fields.SchemaField({
         id: new fields.ForeignDocumentField(BitdActor, {idOnly: true}),
         uuid: new fields.StringField(),
@@ -54,7 +53,8 @@ export default class FactionData extends foundry.abstract.TypeDataModel {
         progress: new fields.SchemaField({
           value: new fields.NumberField({requiredPositiveInteger, initial: 0 }),
           max: new fields.NumberField({requiredPositiveInteger, initial: 4 }),
-        })
+        }),
+        show: new fields.BooleanField({ initial: false })
       })),
 
       situation: new fields.HTMLField(),

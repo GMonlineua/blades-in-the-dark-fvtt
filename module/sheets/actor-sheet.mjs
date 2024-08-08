@@ -33,6 +33,7 @@ export class BitdActorSheet extends ActorSheet
 
   /** @override */
   async getData() {
+    this.actor.loadLinkedData();
     const context = await super.getData();
 
     // Encrich editor content

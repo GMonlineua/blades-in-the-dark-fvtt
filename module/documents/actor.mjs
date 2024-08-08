@@ -182,4 +182,60 @@ export default class BitdActor extends Actor {
 
     dialog.render(true);
   }
+
+  async loadLinkedData() {
+    for (const key of CONFIG.BITD.linkedAtors[this.type]) {
+      const container = this.system[key];
+      const path = "system." + key;
+
+      // Factions
+      if (key === 'relatedFactions') {
+        for (const index in container) {
+          const data = await fromUuid(container[index].uuid);
+          if (data) {
+            container[index].name = data.name;
+            container[index].tier = data.system.tier.value;
+          } else {
+            const localizeType = game.i18n.localize("TYPES.Actor.faction");
+            ui.notifications.error(game.i18n.format("BITD.Errors.Actor.NotExist", {type: localizeType, actor: container[index].name}));
+            container.splice(index, 1);
+          }
+
+          await this.update({ [path] : container });
+        }
+      }
+
+      // Goal's Clocks
+      else if (key === 'goals') {
+        for (const index in container) {
+          const data = await fromUuid(container[index].uuid);
+          if (data) {
+            container[index].name = data.name;
+            container[index].progress = data.system.progress;
+          } else {
+            const localizeType = game.i18n.localize("TYPES.Actor.faction");
+            ui.notifications.error(game.i18n.format("BITD.Errors.Actor.NotExist", {type: localizeType, actor: container[index].name}));
+            container.splice(index, 1);
+          }
+
+          await this.update({ [path] : container });
+        }
+      }
+
+      else {
+        for (const index in container) {
+          const data = await fromUuid(container[index].uuid);
+          if (data) {
+            container[index].name = data.name;
+          } else {
+            const localizeType = game.i18n.localize("TYPES.Actor.faction");
+            ui.notifications.error(game.i18n.format("BITD.Errors.Actor.NotExist", {type: localizeType, actor: container[index].name}));
+            container.splice(index, 1);
+          }
+
+          await this.update({ [path] : container });
+        }
+      }
+    }
+  }
 }

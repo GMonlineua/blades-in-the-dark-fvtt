@@ -37,9 +37,6 @@
     <div class="tab general" data-group="primary" data-tab="general">
 
       <div class="goals items-block prop-field">
-        <div class="show-for-limited" data-tooltip="{{localize 'BITD.ShowForPlayers.Tooltip'}}">
-          <input class="show-checkbox" type="checkbox" name="system.showGoals" {{checked system.showGoals}}></input>
-        </div>
         <h3 class="bitd-header">{{localize 'BITD.Goals'}}</h3>
         <ol class="items-list" data-array="goals">
           {{#each system.goals as |goal|}}
@@ -114,9 +111,6 @@
       </div>
 
       <div class="members items-block prop-field">
-        <div class="show-for-limited" data-tooltip="{{localize 'BITD.ShowForPlayers.Tooltip'}}">
-          <input class="show-checkbox" type="checkbox" name="system.showMembers" {{checked system.showMembers}}></input>
-        </div>
         <h3 class="bitd-header">{{localize 'BITD.Members'}}</h3>
         <ol class="items-list" data-array="members">
           {{#each system.members as |member|}}
@@ -134,9 +128,6 @@
       </div>
 
       <div class="related-faction items-block prop-field">
-        <div class="show-for-limited" data-tooltip="{{localize 'BITD.ShowForPlayers.Tooltip'}}">
-          <input class="show-checkbox" type="checkbox" name="system.showFactions" {{checked system.showFactions}}></input>
-        </div>
         <h3 class="bitd-header">{{localize 'BITD.Factions'}}</h3>
         <ol class="items-list" data-array="relatedFactions">
           {{#each system.relatedFactions as |faction|}}
