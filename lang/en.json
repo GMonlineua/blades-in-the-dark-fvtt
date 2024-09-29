@@ -31,10 +31,8 @@
     "Summary": "Summary",
     "Available": "Available",
     "Used": "Used",
-
     "CrewName": "Name",
     "ItemName": "Name",
-
     "Drives": "Drives",
     "Belives": "Belives",
     "Heritage": "Heritage",
@@ -51,7 +49,6 @@
         "Other": "Other"
       }
     },
-
     "Stress": "Stress",
     "Trauma": "Trauma",
     "ChooseTrauma": "Choose Trauma",
@@ -67,7 +64,6 @@
       "Vicious": "Vicious",
       "Custom": "Custom"
     },
-
     "Load": {
       "Title": "Load",
       "Light": "Light",
@@ -77,7 +73,6 @@
     },
     "Coins": "Coins",
     "Stash": "Stash",
-
     "Attribute": "Attribute",
     "Insight": "Insight",
     "Prowess": "Prowess",
@@ -87,7 +82,6 @@
       "Prowess": "Consequences from physical strain or injury.",
       "Resolve": "Consequences from mental strain or willpower."
     },
-
     "Action": "Action",
     "Hunt": "Hunt",
     "Study": "Study",
@@ -115,7 +109,6 @@
       "Tinker": "When you <strong>Tinker</strong>, you fiddle with devices and mechanisms. <em>You might create a new gadget or alter an existing item. You might pick a lock or crack a safe. You might disable an alarm or trap. You might turn the spark- craft and electroplasmic devices around the city to your advantage. You could try to use your technical expertise to control a vehicle (but Finessing might be better).</em>",
       "Wreck": "When you <strong>Wreck</strong>, you unleash savage force. <em>You might smash down a door or wall with a sledgehammer, or use an explosive to do the same. You might employ chaos or sabotage to create a distraction or overcome an obstacle. You could try to overwhelm an enemy with sheer force in battle (but Skirmishing might be better).</em>"
     },
-
     "Harm": "Harm",
     "HarmEffect": {
       "Light": "Need Help",
@@ -123,7 +116,6 @@
       "Heavy": "Less Effect"
     },
     "Healing": "Healing",
-
     "Notes": "Notes",
     "Expirience": {
       "Title": "Expirience",
@@ -143,7 +135,6 @@
         "Tips": "<span><b>Assist</b> a teammate</span><span><b>Protect</b> a teammate</span><span>Lead a <b>group action</b></span><span><b>Set up</b> a teammate</span>"
       }
     },
-
     "Playbook": {
       "Summary": "Describe this playbook briefly",
       "Exp": {
@@ -152,13 +143,11 @@
       },
       "Items": "Items"
     },
-
     "Ability": {
       "Plural": "Abilities",
       "Special": "Special Abilities",
       "IsActive": "Active"
     },
-
     "Inventory": "Items",
     "InventorySpecial": "Special Items",
     "Tool": {
@@ -168,7 +157,6 @@
       "Equipped": "Equipped",
       "Broken": "Broken/Lost"
     },
-
     "CrewType": "Crew Type",
     "Lair": "Lair",
     "HuntingGround": {
@@ -206,7 +194,6 @@
       "HowItWorks": "Mark 1 xp for each item below, or 2 xp if it occurred multiple times.",
       "Tips": "<li>Contend with challenges above your current station.</li><li>Bolster your crew's reputation or develop a new one.</li><li>Express the goals, drives, inner conflict, or essential nature of the crew.</li>"
     },
-
     "Goals": "Goals",
     "Members": "Members",
     "Factions": "Factions",
@@ -215,14 +202,12 @@
     "NotableAssets": "Notable Assets",
     "Quirks": "Quirks",
     "Situation": "Situation",
-
     "ClaimCohort": "Claims and Cohorts",
     "Claim": {
       "Title": "Claim Map",
       "Plural": "Claims",
       "Effect": "Claim Effect"
     },
-
     "Upgrade": {
       "Plural": "Upgrades",
       "SpecialPlural": "Special Upgrades",
@@ -231,7 +216,6 @@
       "IsActive": "Active",
       "Price": "Price"
     },
-
     "Cohort": {
       "Plural": "Cohorts",
       "Type": {
@@ -253,7 +237,6 @@
         "Dead": "Dead"
       }
     },
-
     "ShowForPlayers": {
       "Title": "Show",
       "Tooltip": "Show this field in limited sheet"
@@ -270,7 +253,6 @@
       "Open": "Open link",
       "Delete": "Delete"
     },
-
     "Roll": {
       "Title": "Roll Dice",
       "Submit": "Roll",
@@ -374,7 +356,7 @@
         "Extreme": "You get more than you ever dared to think."
       },
       "Engagement": {
-        "Critical": "Exceptional result. <em>You’vealready overcome the first obstacle andyou’re in a controlled position for what’s next.</em>",
+        "Critical": "Exceptional result. <em>You’ve already overcome the first obstacle and you’re in a controlled position for what’s next.</em>",
         "Success": "Good result. <em>You’re in a controlled position when the action starts.</em>",
         "Mixed": "Mixed result. <em>You’re in a risky position when the action starts.</em>",
         "Fail": "Bad result. <em>You’re in a desperate position when the action starts.</em>",
@@ -398,18 +380,15 @@
         "Trapped": "<li><strong>Tapped.</strong> Your current purveyor cuts you off. Find a new source for your vice.</li>"
       }
     },
-
     "Clock": {
       "Filled": "Filled",
       "Size": "Size"
     },
-
     "ImportActor": {
       "Title": "Import actor",
       "Description": "Import an actor {actor} from the compendium?",
       "Submit": "Ok"
     },
-
     "Cancel": "Cancel",
     "Errors": {
       "Item": {
