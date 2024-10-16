@@ -1047,6 +1047,23 @@ select.clear-select {
 .bitd.actor .crew .sheet-body .cohorts .condition {
   font-style: italic;
 }
+.bitd.actor .crew .sheet-body .crew-notes .goals {
+  grid-column: 1/3;
+}
+.bitd.actor .crew .sheet-body .crew-notes .goals .items-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.bitd.actor .crew .sheet-body .crew-notes .goals .items-list .clock-img {
+  width: 50px;
+  height: 50px;
+  border: none;
+}
+.bitd.actor .crew .sheet-body .crew-notes .goals .items-list .link-controls {
+  font-size: smaller;
+}
 .bitd.actor .faction .sheet-header {
   flex: 100px auto;
   overflow: hidden;
