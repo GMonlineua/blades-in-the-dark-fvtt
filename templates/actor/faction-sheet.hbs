@@ -40,13 +40,14 @@
         <h3 class="bitd-header">{{localize 'BITD.Goals'}}</h3>
         <ol class="items-list" data-array="goals">
           {{#each system.goals as |goal|}}
-            <li class="item npc" data-id="{{goal.id}}">
+            <li class="item link goal" data-id="{{goal.id}}">
+              <img class="clock-img" src="{{goal.img}}"/>
               <div class="item-description">
-                <span class="item-name">{{goal.name}}</span>
-              </div>
-              <div class="item-controls">
-                <a class="item-control actor-open" title="{{localize 'BITD.Link.Open'}}" data-uuid="{{goal.uuid}}"><i class="fa fa-external-link"></i></a>
-                <a class="item-control actor-delete" title="{{localize 'BITD.Link.Delete'}}"><i class="fas fa-trash"></i></a>
+                <a class="clock-name actor-open" data-uuid="{{goal.uuid}}">{{goal.name}}</a>
+                <span class="link-controls">
+                  <input class="show-link" type="checkbox" title="{{localize 'BITD.ShowForPlayers.Title'}}" data-index="{{@index}}" data-value="{{goal.show}}"></input>
+                  <a class="item-control actor-delete" title="{{localize 'BITD.Link.Delete'}}"><i class="fas fa-trash"></i></a>
+                </span>
               </div>
             </li>
           {{/each}}
@@ -119,6 +120,7 @@
                 <span class="item-name">{{member.name}}</span>
               </div>
               <div class="item-controls">
+                <input class="show-link" type="checkbox" title="{{localize 'BITD.ShowForPlayers.Title'}}" data-index="{{@index}}" data-value="{{member.show}}"></input>
                 <a class="item-control actor-open" title="{{localize 'BITD.Link.Open'}}" data-uuid="{{member.uuid}}"><i class="fa fa-external-link"></i></a>
                 <a class="item-control actor-delete" title="{{localize 'BITD.Link.Delete'}}"><i class="fas fa-trash"></i></a>
               </div>
@@ -140,6 +142,7 @@
                 </select>
               </div>
               <div class="item-controls">
+                <input class="show-link" type="checkbox" title="{{localize 'BITD.ShowForPlayers.Title'}}" data-index="{{@index}}" data-value="{{faction.show}}"></input>
                 <a class="item-control actor-open" title="{{localize 'BITD.Link.Open'}}" data-uuid="{{faction.uuid}}"><i class="fa fa-external-link"></i></a>
                 <a class="item-control actor-delete" title="{{localize 'BITD.Link.Delete'}}"><i class="fas fa-trash"></i></a>
               </div>

@@ -36,23 +36,21 @@
     {{!-- Owned Playbook Tab --}}
     <div class="tab general" data-group="primary" data-tab="general">
 
-      {{#if system.showGoals}}
-        <div class="goals items-block prop-field">
-          <h3 class="bitd-header">{{localize 'BITD.Goals'}}</h3>
-          <ol class="items-list" data-array="goals">
-            {{#each system.goals as |goal|}}
-              <li class="item npc" data-id="{{goal.id}}">
+      <div class="goals items-block prop-field">
+        <h3 class="bitd-header">{{localize 'BITD.Goals'}}</h3>
+        <ol class="items-list" data-array="goals">
+          {{#each system.goals as |goal|}}
+            {{#if goal.show}}
+              <li class="item link goal" data-id="{{goal.id}}">
+                <img class="clock-img" src="{{goal.img}}"/>
                 <div class="item-description">
-                  <span class="item-name">{{goal.name}}</span>
-                </div>
-                <div class="item-controls">
-                  <a class="item-control actor-open" title="{{localize 'BITD.Link.Open'}}" data-uuid="{{goal.uuid}}"><i class="fa fa-external-link"></i></a>
+                  <a class="clock-name actor-open" data-uuid="{{goal.uuid}}">{{goal.name}}</a>
                 </div>
               </li>
-            {{/each}}
-          </ol>
-        </div>
-      {{/if}}
+            {{/if}}
+          {{/each}}
+        </ol>
+      </div>
 
       {{#if system.lair.show}}
         <div class="lair prop-field">
@@ -97,11 +95,11 @@
         </div>
       {{/if}}
 
-      {{#if system.showMembers}}
-        <div class="members items-block prop-field">
-          <h3 class="bitd-header">{{localize 'BITD.Members'}}</h3>
-          <ol class="items-list" data-array="members">
-            {{#each system.members as |member|}}
+      <div class="members items-block prop-field">
+        <h3 class="bitd-header">{{localize 'BITD.Members'}}</h3>
+        <ol class="items-list" data-array="members">
+          {{#each system.members as |member|}}
+            {{#if member.show}}
               <li class="item npc" data-id="{{member.id}}">
                 <div class="item-description">
                   <span class="item-name">{{member.name}}</span>
@@ -110,16 +108,16 @@
                   <a class="item-control actor-open" title="{{localize 'BITD.Link.Open'}}" data-uuid="{{member.uuid}}"><i class="fa fa-external-link"></i></a>
                 </div>
               </li>
-            {{/each}}
-          </ol>
-        </div>
-      {{/if}}
+            {{/if}}
+          {{/each}}
+        </ol>
+      </div>
 
-      {{#if system.showFactions}}
-        <div class="related-faction prop-block items-block">
-          <h3 class="bitd-header">{{localize 'BITD.Factions'}}</h3>
-          <ol class="items-list" data-array="relatedFactions">
-            {{#each system.relatedFactions as |faction|}}
+      <div class="related-faction prop-block items-block">
+        <h3 class="bitd-header">{{localize 'BITD.Factions'}}</h3>
+        <ol class="items-list" data-array="relatedFactions">
+          {{#each system.relatedFactions as |faction|}}
+            {{#if faction.show}}
               <li class="item faction" data-id="{{faction.id}}">
                 <div class="item-description">
                   <span class="item-name">{{faction.name}}</span>
@@ -132,10 +130,10 @@
                   <a class="item-control actor-open" title="{{localize 'BITD.Link.Open'}}" data-uuid="{{faction.uuid}}"><i class="fa fa-external-link"></i></a>
                 </div>
               </li>
-            {{/each}}
-          </ol>
-        </div>
-      {{/if}}
+            {{/if}}
+          {{/each}}
+        </ol>
+      </div>
 
     </div>
 

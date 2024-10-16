@@ -73,6 +73,12 @@ export class BitdActorSheet extends ActorSheet
       this.classList.add(classes[value]);
     });
 
+    // Set checked for external links
+    html.find('input.show-link').each(function () {
+      const value = this.dataset.value;
+      if (value === 'true') this.checked = true;
+    });
+
     // Calculate text area height
     html.find('textarea.auto-grow').each(function () {
       this.style.height = 'auto';
@@ -145,6 +151,8 @@ export class BitdActorSheet extends ActorSheet
 
     // Change status with factions
     html.on('change', 'select.set-status', this._onChangeStatus.bind(this));
+
+    html.on('change', '.show-link', this._onShowLinkChange.bind(this));
 
     // Drag events for macros
     if (this.actor.isOwner) {
@@ -312,5 +320,23 @@ export class BitdActorSheet extends ActorSheet
 
     related[index].status = status;
     await this.actor.update({"system.relatedFactions": related});
+   }
+
+  /**
+   * Handle changing show actor link for players.
+   * @param {MouseEvent} event  The triggering event.
+   * @protected
+   */
+  async _onShowLinkChange(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    const index = element.dataset.index;
+    const parent = element.closest("ol.items-list");
+    const name = parent.dataset.array;
+    const array = this.actor.system[name];
+    const path = "system." + name;
+
+    array[index].show = element.checked;
+    await this.actor.update({ [path] : array});
    }
 }

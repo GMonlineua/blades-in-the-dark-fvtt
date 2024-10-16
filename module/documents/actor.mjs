@@ -120,6 +120,8 @@ export default class BitdActor extends Actor {
   async addLinkedActor(actor) {
     if (!actor) return;
 
+    if (actor.uuid === this.uuid) return ui.notifications.error(game.i18n.localize("BITD.Errors.Actor.CantAddYourself"));
+
     const localizeType = game.i18n.localize("TYPES.Actor." + actor.type);
     const supported = CONFIG.BITD.supportedLinks[this.type];
     const key = supported[actor.type];
@@ -184,6 +186,8 @@ export default class BitdActor extends Actor {
   }
 
   async loadLinkedData() {
+    if (!CONFIG.BITD.linkedAtors[this.type]) return;
+
     for (const key of CONFIG.BITD.linkedAtors[this.type]) {
       const container = this.system[key];
       const path = "system." + key;
@@ -211,6 +215,7 @@ export default class BitdActor extends Actor {
           const data = await fromUuid(container[index].uuid);
           if (data) {
             container[index].name = data.name;
+            container[index].img = data.img;
             container[index].progress = data.system.progress;
           } else {
             const localizeType = game.i18n.localize("TYPES.Actor.faction");
