@@ -6,9 +6,12 @@ on:
       - opened
     branches:
       - 'main'
+    paths:
+      - 'system.json'
 
 jobs:
   build:
+    if: ${{ github.event.pull_request.head.repo.full_name == 'GMonlineua/blades-in-the-dark-fvtt' && github.event.pull_request.head.ref == 'development' }}
     permissions:
       contents: write
     runs-on: ubuntu-latest
