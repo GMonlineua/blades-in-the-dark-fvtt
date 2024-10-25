@@ -32,6 +32,11 @@
       "lang": "en",
       "name": "English",
       "path": "lang/en.json"
+    },
+    {
+      "lang": "uk",
+      "name": "Ukrainian",
+      "path": "lang/uk.json"
     }
   ],
   "packs": [

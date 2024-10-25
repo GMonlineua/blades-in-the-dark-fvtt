@@ -374,7 +374,7 @@
         "Extreme": "You get more than you ever dared to think."
       },
       "Engagement": {
-        "Critical": "Exceptional result. <em>You’vealready overcome the first obstacle andyou’re in a controlled position for what’s next.</em>",
+        "Critical": "Exceptional result. <em>You’ve already overcome the first obstacle and you’re in a controlled position for what’s next.</em>",
         "Success": "Good result. <em>You’re in a controlled position when the action starts.</em>",
         "Mixed": "Mixed result. <em>You’re in a risky position when the action starts.</em>",
         "Fail": "Bad result. <em>You’re in a desperate position when the action starts.</em>",
