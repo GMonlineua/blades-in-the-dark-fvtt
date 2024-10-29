@@ -5,6 +5,12 @@ export default class CrewData extends foundry.abstract.TypeDataModel {
     const fields = foundry.data.fields;
     const requiredInteger = {required: true, nullable: false, integer: true};
     const requiredPositiveInteger = {...requiredInteger, min: 0};
+    const defaultClaims = Array.from({ length: 15 }, () => ({
+      id: "",
+      name: "Turf",
+      active: false
+    }));
+    defaultClaims[7].name = "Lair";
 
     return {
       tier: new fields.SchemaField({
@@ -75,6 +81,19 @@ export default class CrewData extends foundry.abstract.TypeDataModel {
           max: new fields.NumberField({requiredPositiveInteger, initial: 4 }),
         })
       })),
+
+      claims: new fields.ArrayField(
+        new fields.SchemaField({
+          id: new fields.ForeignDocumentField(BitdItem, {idOnly: true, blank: true}),
+          name: new fields.StringField({ required: true }),
+          active: new fields.BooleanField({initial: false}),
+          effect: new fields.StringField()
+        }),
+        {
+          required: true,
+          initial: defaultClaims
+        }
+      ),
 
       description: new fields.HTMLField()
     };

@@ -539,6 +539,75 @@ select.clear-select {
   padding: 0 5px;
   border: 1px solid #b5b3a4;
 }
+.bitd .claims-map {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.bitd .claims-map .claim {
+  position: relative;
+  display: grid;
+  align-items: center;
+  height: 140px;
+  background: rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.bitd .claims-map .claim .name {
+  font-family: "Spectral SC", serif;
+  font-size: medium;
+  font-weight: bold;
+}
+.bitd .claims-map .claim .item-summary {
+  padding: 15px 3px 0 3px;
+  overflow: hidden;
+  height: 140px;
+}
+.bitd .claims-map .claim .item-summary .name {
+  font-size: small;
+}
+.bitd .claims-map .claim .item-summary p {
+  margin: 0;
+}
+.bitd .claims-map .claim .item-controls {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: smaller;
+}
+.bitd .claims-map .claim .item-controls .item-checkbox, .bitd .claims-map .claim .item-controls .claim-checkbox {
+  margin: 0;
+  height: 12px;
+  width: 10px;
+}
+.bitd .claims-map .claim .item-controls .item-control {
+  margin-right: 3px;
+}
+.bitd .claims-map .claim .claim-move {
+  position: absolute;
+  font-size: large;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+.bitd .claims-map .claim .move-left {
+  left: -3px;
+}
+.bitd .claims-map .claim .move-right {
+  right: -3px;
+}
+.bitd .claims-map .claim:first-child .move-left {
+  display: none;
+}
+.bitd .claims-map .claim:last-child .move-right {
+  display: none;
+}
+.bitd .claims-map .claim:hover .claim-move {
+  opacity: 1;
+}
+.bitd .claims-map .claim.active {
+  background: rgba(0, 0, 0, 0.3);
+}
 .bitd .items-block {
   position: relative;
 }

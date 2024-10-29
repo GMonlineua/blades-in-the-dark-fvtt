@@ -216,11 +216,13 @@
     "Quirks": "Quirks",
     "Situation": "Situation",
 
-    "ClaimCohort": "Claims and Cohorts",
     "Claim": {
       "Title": "Claim Map",
       "Plural": "Claims",
-      "Effect": "Claim Effect"
+      "Effect": "Claim Effect",
+      "NoFreeSpace": "There is no free space on the claims map for {name} ({id})",
+      "MoveLeft": "Move claim left",
+      "MoveRight": "Move claim right"
     },
 
     "Upgrade": {
@@ -415,7 +417,8 @@
       "Item": {
         "ExistsId": "Item with the same id already exists in the container.",
         "ExistsName": "Item with the same name already exists in the container.",
-        "NotSupported": "The <b>{item}</b> can't be added to this container."
+        "NotSupported": "The <b>{item}</b> can't be added to this container.",
+        "NotExist": "The item <b>{type} {item}</b> does not exist, so it is removed from the list"
       },
       "Actor": {
         "ExistsId": "Item with the same id already exists in the container.",

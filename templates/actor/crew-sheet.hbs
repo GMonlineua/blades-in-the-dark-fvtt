@@ -123,7 +123,7 @@
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs flexrow" data-group="primary">
     <a class="item" data-tab="general">{{localize 'BITD.General'}}</a>
-    <a class="item" data-tab="claim">{{localize 'BITD.ClaimCohort'}}</a>
+    <a class="item" data-tab="claims">{{localize 'BITD.Claim.Title'}}</a>
     <a class="item" data-tab="notes">{{localize 'BITD.Notes'}}</a>
   </nav>
 
@@ -166,15 +166,13 @@
           {{> "systems/bitd/templates/actor/parts/abilities.hbs"}}
         </div>
 
+        {{> "systems/bitd/templates/actor/parts/cohorts.hbs"}}
       </div>
     </div>
 
     {{!-- Owned Playbook Tab --}}
-    <div class="tab claim" data-group="primary" data-tab="claim">
-      <div class="claims-container grid-2col">
-        {{> "systems/bitd/templates/actor/parts/claims.hbs"}}
-        {{> "systems/bitd/templates/actor/parts/cohorts.hbs"}}
-      </div>
+    <div class="tab claims" data-group="primary" data-tab="claims">
+      {{> "systems/bitd/templates/actor/parts/claims-map.hbs"}}
     </div>
 
     {{!-- Owned Notes Tab --}}

@@ -152,6 +152,7 @@ export class BitdActorSheet extends ActorSheet
     // Change status with factions
     html.on('change', 'select.set-status', this._onChangeStatus.bind(this));
 
+    // Change data from link
     html.on('change', '.show-link', this._onShowLinkChange.bind(this));
 
     // Drag events for macros
@@ -338,5 +339,5 @@ export class BitdActorSheet extends ActorSheet
 
     array[index].show = element.checked;
     await this.actor.update({ [path] : array});
-   }
+  }
 }
