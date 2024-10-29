@@ -202,11 +202,13 @@
     "NotableAssets": "Важливі ресурси",
     "Quirks": "Дивацтва",
     "Situation": "Ситуація",
-    "ClaimCohort": "Активи та Когорти",
     "Claim": {
       "Title": "Мапа активів",
       "Plural": "Активи",
-      "Effect": "Ефект активу"
+      "Effect": "Ефект активу",
+      "NoFreeSpace": "There is no free space on the claims map for {name} ({id})",
+      "MoveLeft": "Move claim left",
+      "MoveRight": "Move claim right"
     },
     "Upgrade": {
       "Plural": "Вдосконалення",
@@ -394,7 +396,8 @@
       "Item": {
         "ExistsId": "Предмет із таким самим id вже існує.",
         "ExistsName": "Предмет із такою ж назвою вже існує.",
-        "NotSupported": "Предмет <b>{item}</b> не може бути доданий."
+        "NotSupported": "Предмет <b>{item}</b> не може бути доданий.",
+        "NotExist": "The item <b>{type} {item}</b> does not exist, so it is removed from the list"
       },
       "Actor": {
         "ExistsId": "Елемент із таким самим ідентифікатором вже існує в контейнері.",
