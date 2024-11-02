@@ -29,7 +29,7 @@ export class BitdCrewSheet extends BitdActorSheet
     // Prepare crew data and items.
     this._prepareItems(context);
     context.claims = claimMap(this.actor, true);
-    await this.actor.update({ "system.claims" : context.claims });
+    if (this.isEditable) await this.actor.update({ "system.claims" : context.claims });
 
     return context;
   }

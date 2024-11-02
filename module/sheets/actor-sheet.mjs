@@ -105,6 +105,17 @@ export class BitdActorSheet extends ActorSheet
     // Open external link
     html.on('click', 'a.actor-open[data-uuid]', this._onClickLink.bind(this));
 
+    // Change data from link
+    html.on('change', '.show-link', this._onShowLinkChange.bind(this));
+
+    // Show items in chat
+    html.find('.item-show').click(ev => {
+      const button = ev.currentTarget;
+      const itemId = button.closest('.item').dataset.itemId;
+      const item = this.actor.items.get(itemId);
+      if (item) return item.show();
+    });
+
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
 
@@ -122,14 +133,6 @@ export class BitdActorSheet extends ActorSheet
       const li = $(ev.currentTarget).parents(".item");
       const item = this.actor.items.get(li.data("itemId"));
       item.sheet.render(true);
-    });
-
-    // Show items in chat
-    html.find('.item-show').click(ev => {
-      const button = ev.currentTarget;
-      const itemId = button.closest('.item').dataset.itemId;
-      const item = this.actor.items.get(itemId);
-      if (item) return item.show();
     });
 
     // Delete Item
@@ -151,9 +154,6 @@ export class BitdActorSheet extends ActorSheet
 
     // Change status with factions
     html.on('change', 'select.set-status', this._onChangeStatus.bind(this));
-
-    // Change data from link
-    html.on('change', '.show-link', this._onShowLinkChange.bind(this));
 
     // Drag events for macros
     if (this.actor.isOwner) {

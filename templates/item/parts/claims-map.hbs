@@ -1,0 +1,18 @@
+<div class="claims-map">
+  {{#each claims}}
+    <div class="item claim" data-item-id="{{this.id}}" data-index={{@index}}>
+      <a class="claim-move move-left" title="{{localize 'BITD.Claim.MoveLeft'}}" data-direction="left"><i class="fa-solid fa-caret-left"></i></a>
+
+      <p class="name">{{this.name}}</p>
+
+      {{#if this.id}}
+        <div class="item-controls">
+          <a class="item-control claim-open" title="{{localize 'BITD.Item.Edit'}} " data-uuid="{{this.uuid}}"><i class="fa fa-external-link"></i></a>
+          <a class="item-control claim-delete" title="{{localize 'BITD.Item.Delete'}}"><i class="fas fa-trash"></i></a>
+        </div>
+      {{/if}}
+
+      <a class="claim-move move-right" title="{{localize 'BITD.Claim.MoveRight'}}" data-direction="right"><i class="fa-solid fa-caret-right"></i></a>
+    </div>
+  {{/each}}
+</div>

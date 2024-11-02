@@ -162,19 +162,25 @@
       .abilities {
         grid-area: main;
       }
+
+      .cohorts {
+        .item-name {
+          font-weight: bold;
+        }
+
+        .specialisation {
+          text-transform: lowercase;
+        }
+
+        .condition {
+          font-style: italic;
+        }
+      }
     }
 
-    .cohorts {
-      .item-name {
-        font-weight: bold;
-      }
-
-      .specialisation {
-        text-transform: lowercase;
-      }
-
-      .condition {
-        font-style: italic;
+    .claims-map {
+      .claim {
+        height: 140px;
       }
     }
 

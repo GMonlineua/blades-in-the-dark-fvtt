@@ -14,6 +14,7 @@
     "systems/bitd/templates/actor/parts/stress-trauma.hbs",
     "systems/bitd/templates/actor/parts/upgrades.hbs",
 
+    "systems/bitd/templates/item/parts/claims-map.hbs",
     "systems/bitd/templates/item/parts/linked-item.hbs",
   ]);
 };

@@ -4,10 +4,45 @@ export const BITD = {
     prowess: ["finesse", "prowl", "skirmish", "wreck"],
     resolve: ["attune", "command", "consort", "sway"]
   },
-  linkedAtors: {
+  linkedForeign: {
     scoundrel: ["contacts"],
     crew: ["members", "contacts", "relatedFactions", "goals"],
-    faction: ["members", "relatedFactions", "goals"]
+    faction: ["members", "relatedFactions", "goals"],
+    crewType: ["abilities", "cohorts", "claims", "upgrades", "contacts"]
+  },
+  supportedLinks: {
+    scoundrel: {npc: "contacts"},
+    crew: {
+      scoundrel: "members",
+      npc: "contacts",
+      faction: "relatedFactions",
+      clock: "goals"
+    },
+    faction: {
+      faction: "relatedFactions",
+      npc: "members",
+      clock: "goals"
+    },
+    playbook: {
+      abilityScoundrel: "abilities",
+      tool: "inventory"
+    },
+    crewType: {
+      abilityCrew: "abilities",
+      claim: "claims",
+      cohort: "cohorts",
+      upgrade: "upgrades"
+    }
+  },
+  forLoad: {
+    scoundrel: {
+      container: "playbook",
+      types: ["abilities", "inventory"]
+    },
+    crew: {
+      container: "crewType",
+      types: ["abilities", "cohorts", "upgrades"]
+    }
   },
   defaultItems: {
     scoundrel: ["HZxYeBCQ4bZ632WU", "2H0lH4IeGq22kDyg", "cF0hFmTlXxI8CKSC", "FFNGcKvAeOjoGyI8", "jWTVSlCXWeOiGbfg", "vgMbINvoCQJAYp4q", "6NrhTvPbJTJJUn4s", "vrPi03rFguHYueWZ", "gnv9k4enWnR13mW4", "SapwXYuraydiNjej", "P95oe4AZgSomPqPs", "brU5pWiXWlG5o1Mi", "6cUx1jXXq4dx3wln", "oZOplJcmR6CjQZbO", "Wxoq19qr9LEuuNp4", "IDUBdq7KVd3dxC5W"],
@@ -52,21 +87,6 @@ export const BITD = {
   upgradeType: {
     common: "BITD.Upgrade.Common",
     special: "BITD.Upgrade.Special"
-  },
-
-  supportedLinks: {
-    scoundrel: {npc: "contacts"},
-    crew: {
-      scoundrel: "members",
-      npc: "contacts",
-      faction: "relatedFactions",
-      clock: "goals"
-    },
-    faction: {
-      faction: "relatedFactions",
-      npc: "members",
-      clock: "goals"
-    }
   },
 
   relationshipClasses: ["rival", "neutral", "friend", "special"],
@@ -131,5 +151,24 @@ export const BITD = {
     8: 8,
     10: 10,
     12: 12
+  },
+
+  claims: {
+    empty: {
+      actor: {
+        id: "",
+        name: "Turf",
+        active: false,
+        effect: ""
+      },
+      item: {
+        id: "",
+        name: "Turf"
+      },
+      lair: {
+        id: "",
+        name: "Lair"
+      }
+    }
   }
 };
