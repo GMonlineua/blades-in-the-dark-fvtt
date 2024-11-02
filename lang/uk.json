@@ -396,7 +396,7 @@
       "Item": {
         "ExistsId": "Предмет із таким самим id вже існує.",
         "ExistsName": "Предмет із такою ж назвою вже існує.",
-        "NotSupported": "Предмет <b>{item}</b> не може бути доданий.",
+        "NotSupported": "The <b>{type} {item}</b> can't be added to this container",
         "NotExist": "The item <b>{type} {item}</b> does not exist, so it is removed from the list"
       },
       "Actor": {
@@ -405,7 +405,8 @@
         "InPack": "Ви можете додати Друзів до Персонажа, тільки якщо вони існують у світі.",
         "NotSupported": "<b>{type} {actor}</b> не може бути доданий до цього контейнера.",
         "NotExist": "Персонаж <b>{type} {actor}</b> не існує.",
-        "CantAddYourself": "Ви не можете додати посилання на себе до актора"
+        "CantAddYourself": "Ви не можете додати посилання на себе до актора",
+        "NoPermission": "You don't have permission to create actors, so you cannot import them from Crew Type"
       }
     }
   }
