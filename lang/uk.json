@@ -206,9 +206,9 @@
       "Title": "Мапа активів",
       "Plural": "Активи",
       "Effect": "Ефект активу",
-      "NoFreeSpace": "There is no free space on the claims map for {name} ({id})",
-      "MoveLeft": "Move claim left",
-      "MoveRight": "Move claim right"
+      "NoFreeSpace": "Немає вільного місця на мапі активів {name} ({id})",
+      "MoveLeft": "Перемістити актив вліво",
+      "MoveRight": "Перемістити актив вправо"
     },
     "Upgrade": {
       "Plural": "Вдосконалення",
@@ -396,8 +396,8 @@
       "Item": {
         "ExistsId": "Предмет із таким самим id вже існує.",
         "ExistsName": "Предмет із такою ж назвою вже існує.",
-        "NotSupported": "The <b>{type} {item}</b> can't be added to this container",
-        "NotExist": "The item <b>{type} {item}</b> does not exist, so it is removed from the list"
+        "NotSupported": "<b>{type} {item}</b> не може бути доданий до цього контейнера",
+        "NotExist": "Елемент <b>{type} {item}</b> не існує, тому він видалений зі списку"
       },
       "Actor": {
         "ExistsId": "Елемент із таким самим ідентифікатором вже існує в контейнері.",
@@ -406,7 +406,7 @@
         "NotSupported": "<b>{type} {actor}</b> не може бути доданий до цього контейнера.",
         "NotExist": "Персонаж <b>{type} {actor}</b> не існує.",
         "CantAddYourself": "Ви не можете додати посилання на себе до актора",
-        "NoPermission": "You don't have permission to create actors, so you cannot import them from Crew Type"
+        "NoPermission": "У вас немає дозволу на створення акторів, тому ви не можете імпортувати їх із Типу Ватаги"
       }
     }
   }
