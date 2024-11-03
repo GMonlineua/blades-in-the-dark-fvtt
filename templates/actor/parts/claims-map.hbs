@@ -1,0 +1,29 @@
+<div class="claims-map">
+  {{#each claims}}
+    <div class="item claim {{#if this.active}}active{{/if}}" data-item-id="{{this.id}}" data-index={{@index}}>
+      <a class="claim-move move-left" title="{{localize 'BITD.Claim.MoveLeft'}}" data-direction="left"><i class="fa-solid fa-caret-left"></i></a>
+
+      {{#if this.id}}
+        <div class="item-summary">
+          <p class="name">{{this.name}}</p>
+          <p class="effect">{{this.effect}}</p>
+        </div>
+
+        <div class="item-controls">
+          <input class="item-checkbox" data-key="active" type="checkbox" name="this.active" data-dtype="Boolean" {{checked this.active}}></input>
+          <a class="item-control item-show" title="{{localize 'BITD.Item.Show'}}"><i class="fa fa-comment"></i></a>
+          <a class="item-control item-edit" title="{{localize 'BITD.Item.Edit'}}"><i class="fas fa-edit"></i></a>
+          <a class="item-control claim-delete" title="{{localize 'BITD.Item.Delete'}}"><i class="fas fa-trash"></i></a>
+        </div>
+      {{else}}
+        <p class="name">{{this.name}}</p>
+
+        <div class="item-controls">
+          <input class="claim-checkbox" type="checkbox" name="this.active" data-dtype="Boolean" {{checked this.active}}></input>
+        </div>
+      {{/if}}
+
+      <a class="claim-move move-right" title="{{localize 'BITD.Claim.MoveRight'}}" data-direction="right"><i class="fa-solid fa-caret-right"></i></a>
+    </div>
+  {{/each}}
+</div>

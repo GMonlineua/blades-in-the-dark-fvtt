@@ -123,7 +123,7 @@
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs flexrow" data-group="primary">
     <a class="item" data-tab="general">{{localize 'BITD.General'}}</a>
-    <a class="item" data-tab="claim">{{localize 'BITD.ClaimCohort'}}</a>
+    <a class="item" data-tab="claims">{{localize 'BITD.Claim.Title'}}</a>
     <a class="item" data-tab="notes">{{localize 'BITD.Notes'}}</a>
   </nav>
 
@@ -166,27 +166,43 @@
           {{> "systems/bitd/templates/actor/parts/abilities.hbs"}}
         </div>
 
+        {{> "systems/bitd/templates/actor/parts/cohorts.hbs"}}
       </div>
     </div>
 
-    {{!-- Owned Playbook Tab --}}
-    <div class="tab claim" data-group="primary" data-tab="claim">
-      <div class="claims-container grid-2col">
-        {{> "systems/bitd/templates/actor/parts/claims.hbs"}}
-        {{> "systems/bitd/templates/actor/parts/cohorts.hbs"}}
-      </div>
+    {{!-- Owned Claims Tab --}}
+    <div class="tab claims" data-group="primary" data-tab="claims">
+      {{> "systems/bitd/templates/actor/parts/claims-map.hbs"}}
     </div>
 
     {{!-- Owned Notes Tab --}}
     <div class="tab crew-notes" data-group="primary" data-tab="notes">
       <div class="notes-container actor-grid">
+        <div class="goals items-block">
+          <h3 class="bitd-header">{{localize 'BITD.Goals'}}</h3>
+          <ol class="items-list" data-array="goals">
+            {{#each system.goals as |goal|}}
+              <li class="item link goal" data-id="{{goal.id}}">
+                <img class="clock-img" src="{{goal.img}}"/>
+                <div class="item-description">
+                  <a class="clock-name actor-open" data-uuid="{{goal.uuid}}">{{goal.name}}</a>
+                  <span class="link-controls">
+                    <a class="item-control actor-delete" title="{{localize 'BITD.Link.Delete'}}"><i class="fas fa-trash"></i></a>
+                  </span>
+                </div>
+              </li>
+            {{/each}}
+          </ol>
+        </div>
+
         <div class="related-faction items-block">
           <h3 class="bitd-header">{{localize 'BITD.Factions'}}</h3>
           <ol class="items-list" data-array="relatedFactions">
             {{#each system.relatedFactions as |faction|}}
               <li class="item faction" data-id="{{faction.id}}">
                 <div class="item-description">
-                  <span class="item-name">{{faction.name}},</span>
+                  <span class="item-name">{{faction.name}}</span>
+                  <span class="tier-styled" style="--tier:{{faction.tier}}"></span>
                   <select class="clear-select set-status" data-index="{{@index}}">
                     {{selectOptions @root.config.statusTypes selected=faction.status localize=true}}
                   </select>

@@ -1,4 +1,5 @@
 import { BitdActorSheet } from "./actor-sheet.mjs";
+import { claimMap } from "../applications/claims-map.mjs";
 
 /**
  * Extend the BitdActorSheet
@@ -16,7 +17,7 @@ export class BitdCrewSheet extends BitdActorSheet
       tabs: [{
         navSelector: ".sheet-tabs",
         contentSelector: ".sheet-body",
-        initial: "general"
+        initial: "claims"
       }]
     });
   }
@@ -27,6 +28,8 @@ export class BitdCrewSheet extends BitdActorSheet
 
     // Prepare crew data and items.
     this._prepareItems(context);
+    context.claims = claimMap(this.actor, true);
+    if (this.isEditable) await this.actor.update({ "system.claims" : context.claims });
 
     return context;
   }
@@ -38,7 +41,6 @@ export class BitdCrewSheet extends BitdActorSheet
   _prepareItems(context) {
     let playbook;
     const abilities = [];
-    const claims = [];
     const cohorts = [];
     const upgrades = [];
     const specUpgrades = [];
@@ -56,9 +58,6 @@ export class BitdCrewSheet extends BitdActorSheet
       else if (i.type === 'abilityCrew') {
         abilities.push(i);
       }
-      else if (i.type === 'claim') {
-        claims.push(i);
-      }
       else if (i.type === 'cohort') {
         cohorts.push(i);
       }
@@ -72,11 +71,75 @@ export class BitdCrewSheet extends BitdActorSheet
     }
 
     context.abilities = abilities;
-    context.claims = claims;
     context.cohorts = cohorts;
     context.playbook = playbook;
     context.upgrades = upgrades;
     context.specUpgrades = specUpgrades;
+  }
+
+  /* -------------------------------------------- */
+
+  /** @override */
+  activateListeners(html) {
+    super.activateListeners(html);
+
+    // Everything below here is only needed if the sheet is editable
+    if (!this.isEditable) return;
+
+    // Delete Item
+    html.find('.claim-delete').click(ev => {
+      const button = ev.currentTarget;
+      const div = button.closest(".item");
+      const item = this.actor.items.get(div?.dataset.itemId);
+      const claims = this.actor.system.claims;
+      const claim = claims.find(claim => claim.id === item.id);
+
+      if (claim) {
+        claim.id = '';
+        claim.name = 'Turf';
+        claim.active = false;
+        claim.effect = ""
+      }
+
+      this.actor.update({ "system.claims" : claims });
+      return item.delete();
+    });
+
+    // Move claim in map
+    html.find('a.claim-move').click(this._onMoveClaim.bind(this));
+
+    // Claim checkbox for turf
+    html.on('change', 'input.claim-checkbox', this._onActiveTurf.bind(this));
+  }
+
+  /* -------------------------------------------- */
+
+  async _onMoveClaim(event) {
+    const button = event.currentTarget;
+    const direction = button.dataset.direction;
+    const parent = $(button.parentNode);
+    const index = parseInt(parent[0].dataset.index, 10);
+    const claims = this.actor.system.claims;
+
+    if (direction === 'left' && index > 0) {
+      [claims[index], claims[index - 1]] = [claims[index - 1], claims[index]];
+    } else if (direction === 'right' && index < claims.length - 1) {
+      [claims[index], claims[index + 1]] = [claims[index + 1], claims[index]];
+    }
+
+    await this.actor.update({ "system.claims" : claims });
+  }
+
+  async _onActiveTurf(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    const parent = element.closest("div.item")
+    const active = element.checked;
+    const index = parent.dataset.index;
+    const claims = this.actor.system.claims;
+
+    claims[index].active = active;
+    await this.actor.update({ "system.claims" : claims });
   }
 
   /** @override */

@@ -56,30 +56,22 @@ export default class BitdActor extends Actor {
     super._onCreateDescendantDocuments(parent, collection, documents, data, options, userId);
 
     if (game.user.id === userId) {
-      const target = {
-        actor: "scoundrel",
-        item: "playbook",
-        forLoad: ["abilities", "inventory"]
-      }
-
-      if (this.type == "crew") {
-        target.actor = "crew",
-        target.item = "crewType",
-        target.forLoad = ["abilities", "claims", "cohorts", "upgrades"]
-      }
-
       for (const dataItem of data) {
-        if (dataItem.type == target.item && this.type == target.actor) {
-          for (const i of this.items) {
-            if (i.type === target.item && i._id != dataItem._id) {
-              const itemToDelete = this.items.get(i._id);
-              itemToDelete.delete();
-            }
-          }
-          this.update({ "system.playbook": dataItem._id });
+        if (!CONFIG.BITD.forLoad[this.type]) return
 
-          this._preCreateContainer(dataItem, target.forLoad);
+        const targetItem = CONFIG.BITD.forLoad[this.type].container
+        if (dataItem.type != targetItem) return
+        const forLoad = CONFIG.BITD.forLoad[this.type].types;
+
+        for (const i of this.items) {
+          if (i.type === targetItem && i._id != dataItem._id) {
+            const itemToDelete = this.items.get(i._id);
+            itemToDelete.delete();
+          }
         }
+        this.update({ "system.playbook": dataItem._id });
+
+        this._preCreateContainer(dataItem, forLoad);
       }
     }
   }
@@ -99,7 +91,6 @@ export default class BitdActor extends Actor {
         }
       }
     }
-    this.createEmbeddedDocuments('Item', toCreate)
 
     for (const contact of container.system.contacts) {
       this.importActor(contact, "contacts");
@@ -114,11 +105,33 @@ export default class BitdActor extends Actor {
           await this.update({ [path]: playbookValue });
         }
       }
+    } else if (container.type === "crewType") {
+      const map = container.system.claims;
+
+      for (const item of this.items) {
+        if (item.type === "claim") {
+          item.delete();
+        }
+      }
+
+      for (const itemData of map) {
+        if (itemData.id) {
+          const item = await fromUuid(itemData.uuid);
+          const newItem = await this.createEmbeddedDocuments('Item', [item]);
+          itemData.id = newItem[0]._id;
+        }
+      }
+
+      await this.update({ "system.claims": map });
     }
+
+    this.createEmbeddedDocuments('Item', toCreate)
   }
 
   async addLinkedActor(actor) {
     if (!actor) return;
+
+    if (actor.uuid === this.uuid) return ui.notifications.error(game.i18n.localize("BITD.Errors.Actor.CantAddYourself"));
 
     const localizeType = game.i18n.localize("TYPES.Actor." + actor.type);
     const supported = CONFIG.BITD.supportedLinks[this.type];
@@ -144,6 +157,7 @@ export default class BitdActor extends Actor {
       uuid: actor.uuid,
       name: actor.name
     }
+    if (actor.type === "faction") link.tier = actor.system.tier.value;
     if (actor.type === "clock") link.progress = actor.system.progress;
     container.push(link);
 
@@ -152,6 +166,8 @@ export default class BitdActor extends Actor {
   }
 
   async importActor(sourceActor) {
+    if (!game.user.hasPermission('ACTOR_CREATE')) return ui.notifications.warn(game.i18n.localize("BITD.Errors.Actor.NoPermission"));
+
     const dialog = new Dialog({
       title: game.i18n.localize("BITD.ImportActor.Title"),
       content: game.i18n.format("BITD.ImportActor.Description", { actor: sourceActor.name }),
@@ -180,5 +196,66 @@ export default class BitdActor extends Actor {
     });
 
     dialog.render(true);
+  }
+
+  async loadLinkedData() {
+    const access = this.isOwned || game.user.isGM;
+    if (!access) return
+    if (!CONFIG.BITD.linkedForeign[this.type]) return;
+
+    for (const key of CONFIG.BITD.linkedForeign[this.type]) {
+      const container = this.system[key];
+      const path = "system." + key;
+
+      // Factions
+      if (key === 'relatedFactions') {
+        for (const index in container) {
+          const data = await fromUuid(container[index].uuid);
+          if (data) {
+            container[index].name = data.name;
+            container[index].tier = data.system.tier.value;
+          } else {
+            const localizeType = game.i18n.localize("TYPES.Actor.faction");
+            ui.notifications.error(game.i18n.format("BITD.Errors.Actor.NotExist", {type: localizeType, actor: container[index].name}));
+            container.splice(index, 1);
+          }
+
+          await this.update({ [path] : container });
+        }
+      }
+
+      // Goal's Clocks
+      else if (key === 'goals') {
+        for (const index in container) {
+          const data = await fromUuid(container[index].uuid);
+          if (data) {
+            container[index].name = data.name;
+            container[index].img = data.img;
+            container[index].progress = data.system.progress;
+          } else {
+            const localizeType = game.i18n.localize("TYPES.Actor.faction");
+            ui.notifications.error(game.i18n.format("BITD.Errors.Actor.NotExist", {type: localizeType, actor: container[index].name}));
+            container.splice(index, 1);
+          }
+
+          await this.update({ [path] : container });
+        }
+      }
+
+      else {
+        for (const index in container) {
+          const data = await fromUuid(container[index].uuid);
+          if (data) {
+            container[index].name = data.name;
+          } else {
+            const localizeType = game.i18n.localize("TYPES.Actor.faction");
+            ui.notifications.error(game.i18n.format("BITD.Errors.Actor.NotExist", {type: localizeType, actor: container[index].name}));
+            container.splice(index, 1);
+          }
+
+          await this.update({ [path] : container });
+        }
+      }
+    }
   }
 }

@@ -1,8 +1,15 @@
-2024/07/16-20:26:56.296706 7effe22006c0 Recovering log #64
-2024/07/16-20:26:56.311353 7effe22006c0 Delete type=3 #62
-2024/07/16-20:26:56.311490 7effe22006c0 Delete type=0 #64
-2024/07/16-20:27:18.592377 7effcda006c0 Level-0 table #69: started
-2024/07/16-20:27:18.592454 7effcda006c0 Level-0 table #69: 0 bytes OK
-2024/07/16-20:27:18.601357 7effcda006c0 Delete type=0 #67
-2024/07/16-20:27:18.610966 7effcda006c0 Manual compaction at level-0 from '!actors!0NRhQzIIl6ABQ3fn' @ 72057594037927935 : 1 .. '!folders!vPUlmSw80Py8UM2Y' @ 0 : 0; will stop at (end)
-2024/07/16-20:27:18.611066 7effcda006c0 Manual compaction at level-1 from '!actors!0NRhQzIIl6ABQ3fn' @ 72057594037927935 : 1 .. '!folders!vPUlmSw80Py8UM2Y' @ 0 : 0; will stop at (end)
+2024/11/02-22:01:52.381053 7fb8b46006c0 Recovering log #98
+2024/11/02-22:01:52.395077 7fb8b46006c0 Delete type=3 #96
+2024/11/02-22:01:52.395152 7fb8b46006c0 Delete type=0 #98
+2024/11/02-23:31:48.542527 7fb8a60006c0 Level-0 table #104: started
+2024/11/02-23:31:48.547020 7fb8a60006c0 Level-0 table #104: 1361 bytes OK
+2024/11/02-23:31:48.555772 7fb8a60006c0 Delete type=0 #102
+2024/11/02-23:31:48.556044 7fb8a60006c0 Manual compaction at level-0 from '!actors!0NRhQzIIl6ABQ3fn' @ 72057594037927935 : 1 .. '!folders!vPUlmSw80Py8UM2Y' @ 0 : 0; will stop at (end)
+2024/11/02-23:31:48.573989 7fb8a60006c0 Manual compaction at level-1 from '!actors!0NRhQzIIl6ABQ3fn' @ 72057594037927935 : 1 .. '!folders!vPUlmSw80Py8UM2Y' @ 0 : 0; will stop at '!actors!ZJAeVC82vEH3dwiq' @ 159 : 1
+2024/11/02-23:31:48.574000 7fb8a60006c0 Compacting 1@1 + 1@2 files
+2024/11/02-23:31:48.578979 7fb8a60006c0 Generated table #105@1: 50 keys, 25872 bytes
+2024/11/02-23:31:48.579023 7fb8a60006c0 Compacted 1@1 + 1@2 files => 25872 bytes
+2024/11/02-23:31:48.587536 7fb8a60006c0 compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/11/02-23:31:48.587791 7fb8a60006c0 Delete type=2 #100
+2024/11/02-23:31:48.588220 7fb8a60006c0 Delete type=2 #104
+2024/11/02-23:31:48.596898 7fb8a60006c0 Manual compaction at level-1 from '!actors!ZJAeVC82vEH3dwiq' @ 159 : 1 .. '!folders!vPUlmSw80Py8UM2Y' @ 0 : 0; will stop at (end)

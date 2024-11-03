@@ -50,6 +50,16 @@
   }
 }
 
+.tier-styled {
+  counter-increment: my-awesome-counter 0;
+  counter-reset: my-awesome-counter var(--tier);
+}
+
+.tier-styled:before {
+  content: counter(my-awesome-counter, upper-roman);
+  margin-right: 5px;
+}
+
 .value-step-block {
   display: inline-block;
 
@@ -128,6 +138,10 @@ h1,h2,h3 {
   font-family: $font-secondary;
 }
 
+textarea {
+  resize: vertical;
+}
+
 .sheet-tabs {
   font-family: $font-secondary;
   font-size: medium;
@@ -158,4 +172,94 @@ h1,h2,h3 {
   min-height: 200px;
   padding: 0 $padding-sm;
   border: $border;
+}
+
+.claims-map {
+  display: grid;
+  gap: $padding-md;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  .claim {
+    position: relative;
+    display: grid;
+    align-items: center;
+    background: $dark-paper;
+    text-align: center;
+
+    .name {
+      font-family: $font-secondary;
+      font-size: medium;
+      font-weight: bold;
+    }
+
+    .item-summary {
+      padding: 15px 3px 0 3px;
+      overflow: hidden;
+      height: 140px;
+
+      .name {
+        font-size: small;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .item-controls {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      display: flex;
+      justify-content: flex-end;
+      font-size: smaller;
+
+      .item-checkbox, .claim-checkbox {
+        margin: 0;
+        height: 12px;
+        width: 10px;
+      }
+
+      .item-control {
+        margin-right: 3px;
+      }
+    }
+
+    .claim-move {
+      position: absolute;
+      font-size: large;
+      opacity: 0;
+      transition: opacity 0.3s ease-in;
+    }
+
+    .move-left {
+      left: -3px;
+    }
+
+    .move-right {
+      right: -3px;
+    }
+  }
+
+  .claim:first-child {
+    .move-left {
+      display: none;
+    }
+  }
+
+  .claim:last-child {
+    .move-right {
+      display: none;
+    }
+  }
+
+  .claim:hover {
+    .claim-move {
+      opacity: 1;
+    }
+  }
+
+  .claim.active {
+    background: rgba(0, 0, 0, 0.3);
+  }
 }

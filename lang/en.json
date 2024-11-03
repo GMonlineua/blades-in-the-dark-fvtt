@@ -216,11 +216,13 @@
     "Quirks": "Quirks",
     "Situation": "Situation",
 
-    "ClaimCohort": "Claims and Cohorts",
     "Claim": {
       "Title": "Claim Map",
       "Plural": "Claims",
-      "Effect": "Claim Effect"
+      "Effect": "Claim Effect",
+      "NoFreeSpace": "There is no free space on the claims map for {name} ({id})",
+      "MoveLeft": "Move claim left",
+      "MoveRight": "Move claim right"
     },
 
     "Upgrade": {
@@ -314,7 +316,7 @@
         "or": "or",
         "AddDice": "Get bonus dice",
         "Push": "Push Yourself",
-        "PushEffect": "+1 level to effect",
+        "PushEffect": "Push for +1 effect",
         "DevilsBargain": "Devil’s Bargain",
         "Assistance": "Assistance"
       },
@@ -374,7 +376,7 @@
         "Extreme": "You get more than you ever dared to think."
       },
       "Engagement": {
-        "Critical": "Exceptional result. <em>You’vealready overcome the first obstacle andyou’re in a controlled position for what’s next.</em>",
+        "Critical": "Exceptional result. <em>You’ve already overcome the first obstacle and you’re in a controlled position for what’s next.</em>",
         "Success": "Good result. <em>You’re in a controlled position when the action starts.</em>",
         "Mixed": "Mixed result. <em>You’re in a risky position when the action starts.</em>",
         "Fail": "Bad result. <em>You’re in a desperate position when the action starts.</em>",
@@ -415,13 +417,17 @@
       "Item": {
         "ExistsId": "Item with the same id already exists in the container.",
         "ExistsName": "Item with the same name already exists in the container.",
-        "NotSupported": "The <b>{item}</b> can't be added to this container."
+        "NotSupported": "The <b>{type} {item}</b> can't be added to this container",
+        "NotExist": "The item <b>{type} {item}</b> does not exist, so it is removed from the list"
       },
       "Actor": {
         "ExistsId": "Item with the same id already exists in the container.",
         "ExistsName": "Item with the same name already exists in the container.",
         "InPack": "You may only add Friends to the Character which exist in the World.",
-        "NotSupported": "The <b>{type} {actor}</b> can't be added to this container."
+        "NotSupported": "The <b>{type} {actor}</b> can't be added to this container.",
+        "NotExist": "The actor <b>{type} {actor}</b> does not exist, so it is removed from the linked actors",
+        "CantAddYourself": "You cannot add a link to yourself to an actor",
+        "NoPermission": "You don't have permission to create actors, so you cannot import them from Crew Type"
       }
     }
   }

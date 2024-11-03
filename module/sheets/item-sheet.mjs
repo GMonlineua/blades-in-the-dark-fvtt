@@ -1,3 +1,5 @@
+import { claimMap } from "../applications/claims-map.mjs";
+
 /**
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
@@ -27,6 +29,7 @@ export class BitdItemSheet extends ItemSheet {
 
   /** @override */
   async getData() {
+    this.item.loadLinkedData();
     // Retrieve base data structure.
     const context = await super.getData();
 
@@ -74,8 +77,25 @@ export class BitdItemSheet extends ItemSheet {
     // Everything below here is only needed if the sheet is editable
     if (!this.isEditable) return;
 
+    // Delete linked item
+    html.find('.link-delete').click(this._onRemoveLink.bind(this));
+
     // Resource dots
     html.find(".value-step-block > .value-step").click(this._onDotChange.bind(this));
+  }
+
+  _onRemoveLink(event) {
+    const button = event.currentTarget;
+    const parent = $(button.parentNode);
+    const link = parent.find(".content-link");
+    const targetId = link[0].dataset.id;
+
+    const block = button.closest(".linked-items");
+    const key = block.dataset.array;
+    const path = "system." + key;
+    const newArray = this.item.system[key].filter(link => link.id !== targetId);
+
+    this.item.update({ [path]: newArray });
   }
 
   async _onDotChange(event) {

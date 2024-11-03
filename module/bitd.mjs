@@ -10,6 +10,7 @@ import { BitdClockSheet } from "./sheets/clock-sheet.mjs";
 
 // Import Item Sheet
 import { BitdItemSheet } from "./sheets/item-sheet.mjs";
+import { BitdCrewTypeSheet } from "./sheets/crew-type-sheet.mjs";
 import { BitdPlaybookSheet } from "./sheets/playbook-sheet.mjs";
 
 // Import modules
@@ -60,7 +61,8 @@ Hooks.once('init', async function() {
   Actors.registerSheet("bitd", BitdClockSheet, { types: ["clock"], makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("bitd", BitdItemSheet, { makeDefault: true });
-  Items.registerSheet("bitd", BitdPlaybookSheet, { types: ["playbook", "crewType"], makeDefault: true });
+  Items.registerSheet("bitd", BitdCrewTypeSheet, { types: ["crewType"], makeDefault: true });
+  Items.registerSheet("bitd", BitdPlaybookSheet, { types: ["playbook"], makeDefault: true });
 
   registerHandlebarsHelpers();
 

@@ -33,6 +33,7 @@ export class BitdActorSheet extends ActorSheet
 
   /** @override */
   async getData() {
+    this.actor.loadLinkedData();
     const context = await super.getData();
 
     // Encrich editor content
@@ -72,6 +73,23 @@ export class BitdActorSheet extends ActorSheet
       this.classList.add(classes[value]);
     });
 
+    // Set checked for external links
+    html.find('input.show-link').each(function () {
+      const value = this.dataset.value;
+      if (value === 'true') this.checked = true;
+    });
+
+    // Calculate text area height
+    html.find('textarea.auto-grow').each(function () {
+      this.style.height = 'auto';
+      this.style.height = this.scrollHeight + 5 + 'px';
+    });
+
+    html.find('textarea.auto-grow').on('input', function () {
+      this.style.height = 'auto';
+      this.style.height = this.scrollHeight + 5 + 'px';
+    });
+
     // Show item summary
     html.find('.item-name').click(ev => {
       const button = ev.currentTarget;
@@ -86,6 +104,17 @@ export class BitdActorSheet extends ActorSheet
 
     // Open external link
     html.on('click', 'a.actor-open[data-uuid]', this._onClickLink.bind(this));
+
+    // Change data from link
+    html.on('change', '.show-link', this._onShowLinkChange.bind(this));
+
+    // Show items in chat
+    html.find('.item-show').click(ev => {
+      const button = ev.currentTarget;
+      const itemId = button.closest('.item').dataset.itemId;
+      const item = this.actor.items.get(itemId);
+      if (item) return item.show();
+    });
 
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
@@ -104,14 +133,6 @@ export class BitdActorSheet extends ActorSheet
       const li = $(ev.currentTarget).parents(".item");
       const item = this.actor.items.get(li.data("itemId"));
       item.sheet.render(true);
-    });
-
-    // Show items in chat
-    html.find('.item-show').click(ev => {
-      const button = ev.currentTarget;
-      const itemId = button.closest('.item').dataset.itemId;
-      const item = this.actor.items.get(itemId);
-      if (item) return item.show();
     });
 
     // Delete Item
@@ -301,4 +322,22 @@ export class BitdActorSheet extends ActorSheet
     related[index].status = status;
     await this.actor.update({"system.relatedFactions": related});
    }
+
+  /**
+   * Handle changing show actor link for players.
+   * @param {MouseEvent} event  The triggering event.
+   * @protected
+   */
+  async _onShowLinkChange(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    const index = element.dataset.index;
+    const parent = element.closest("ol.items-list");
+    const name = parent.dataset.array;
+    const array = this.actor.system[name];
+    const path = "system." + name;
+
+    array[index].show = element.checked;
+    await this.actor.update({ [path] : array});
+  }
 }

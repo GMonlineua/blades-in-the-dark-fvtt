@@ -68,6 +68,8 @@ export class BitdFactionSheet extends BitdActorSheet
     if (!this.isEditable) return;
   }
 
+  /* -------------------------------------------- */
+
   /** @override */
   async _onDropActor(event, data) {
     if (!this.isEditable) return;

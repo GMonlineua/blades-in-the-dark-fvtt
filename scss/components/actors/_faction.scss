@@ -70,24 +70,43 @@
         }
       }
 
+      .goals {
+        .items-list {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-evenly;
+
+          .clock-img {
+            width: 50px;
+            height: 50px;
+            border: none;
+          }
+
+          .link-controls {
+            font-size: smaller;
+
+            .show-link {
+              position: relative;
+              margin: 0;
+              width: 15px;
+              top: 5px;
+            }
+          }
+        }
+      }
+
       .turf {
         margin: 5px 0;
       }
 
-      .npcs {
+      .members {
         margin: 5px 0;
 
-        .grid-2col{
-
-          .bitd-header {
-            margin-top: 3px;
-            font-size: small;
-
-            h3 {
-              padding: 0;
-              font-size: small;
-            }
-          }
+        .show-link {
+          margin: 0;
+          width: 15px;
+          height: 15px;
         }
       }
 
@@ -96,6 +115,12 @@
 
         .clear-input {
           border-bottom: $border;
+        }
+
+        .show-link {
+          margin: 0;
+          width: 15px;
+          height: 15px;
         }
       }
     }
