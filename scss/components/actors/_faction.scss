@@ -77,10 +77,19 @@
           flex-wrap: wrap;
           justify-content: space-evenly;
 
-          .clock-img {
-            width: 50px;
-            height: 50px;
-            border: none;
+          .item.goal {
+            display: flex;
+            flex-direction: column;
+
+            .clock-img {
+              width: 50px;
+              height: 50px;
+              border: none;
+            }
+
+            .item-description {
+              padding-right: 0;
+            }
           }
 
           .link-controls {

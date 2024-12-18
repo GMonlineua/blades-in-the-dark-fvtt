@@ -5,20 +5,20 @@ import { claimMap } from "../applications/claims-map.mjs";
  * Extend the BitdActorSheet
  * @extends {BitdActorSheet}
  */
-export class BitdCrewSheet extends BitdActorSheet
-{
-
+export class BitdCrewSheet extends BitdActorSheet {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["bitd", "sheet", "actor", "crew"],
-      width: 750,
+      width: 850,
       height: 900,
-      tabs: [{
-        navSelector: ".sheet-tabs",
-        contentSelector: ".sheet-body",
-        initial: "claims"
-      }]
+      tabs: [
+        {
+          navSelector: ".sheet-tabs",
+          contentSelector: ".sheet-body",
+          initial: "claims",
+        },
+      ],
     });
   }
 
@@ -29,12 +29,13 @@ export class BitdCrewSheet extends BitdActorSheet
     // Prepare crew data and items.
     this._prepareItems(context);
     context.claims = claimMap(this.actor, true);
-    if (this.isEditable) await this.actor.update({ "system.claims" : context.claims });
+    if (this.isEditable)
+      await this.actor.update({ "system.claims": context.claims });
 
     return context;
   }
 
-    /**
+  /**
    * @param {Object} actorData The actor to prepare.
    * @return {undefined}
    */
@@ -50,19 +51,16 @@ export class BitdCrewSheet extends BitdActorSheet
     for (const i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
 
-      if (i.type === 'crewType') {
+      if (i.type === "crewType") {
         if (i._id === playbookId) {
           playbook = i;
         }
-      }
-      else if (i.type === 'abilityCrew') {
+      } else if (i.type === "abilityCrew") {
         abilities.push(i);
-      }
-      else if (i.type === 'cohort') {
+      } else if (i.type === "cohort") {
         cohorts.push(i);
-      }
-      else if (i.type === 'upgrade') {
-        if (i.system.type === 'common') {
+      } else if (i.type === "upgrade") {
+        if (i.system.type === "common") {
           upgrades.push(i);
         } else {
           specUpgrades.push(i);
@@ -87,29 +85,29 @@ export class BitdCrewSheet extends BitdActorSheet
     if (!this.isEditable) return;
 
     // Delete Item
-    html.find('.claim-delete').click(ev => {
+    html.find(".claim-delete").click((ev) => {
       const button = ev.currentTarget;
       const div = button.closest(".item");
       const item = this.actor.items.get(div?.dataset.itemId);
       const claims = this.actor.system.claims;
-      const claim = claims.find(claim => claim.id === item.id);
+      const claim = claims.find((claim) => claim.id === item.id);
 
       if (claim) {
-        claim.id = '';
-        claim.name = 'Turf';
+        claim.id = "";
+        claim.name = "Turf";
         claim.active = false;
-        claim.effect = ""
+        claim.effect = "";
       }
 
-      this.actor.update({ "system.claims" : claims });
+      this.actor.update({ "system.claims": claims });
       return item.delete();
     });
 
     // Move claim in map
-    html.find('a.claim-move').click(this._onMoveClaim.bind(this));
+    html.find("a.claim-move").click(this._onMoveClaim.bind(this));
 
     // Claim checkbox for turf
-    html.on('change', 'input.claim-checkbox', this._onActiveTurf.bind(this));
+    html.on("change", "input.claim-checkbox", this._onActiveTurf.bind(this));
   }
 
   /* -------------------------------------------- */
@@ -121,25 +119,25 @@ export class BitdCrewSheet extends BitdActorSheet
     const index = parseInt(parent[0].dataset.index, 10);
     const claims = this.actor.system.claims;
 
-    if (direction === 'left' && index > 0) {
+    if (direction === "left" && index > 0) {
       [claims[index], claims[index - 1]] = [claims[index - 1], claims[index]];
-    } else if (direction === 'right' && index < claims.length - 1) {
+    } else if (direction === "right" && index < claims.length - 1) {
       [claims[index], claims[index + 1]] = [claims[index + 1], claims[index]];
     }
 
-    await this.actor.update({ "system.claims" : claims });
+    await this.actor.update({ "system.claims": claims });
   }
 
   async _onActiveTurf(event) {
     event.preventDefault();
     const element = event.currentTarget;
-    const parent = element.closest("div.item")
+    const parent = element.closest("div.item");
     const active = element.checked;
     const index = parent.dataset.index;
     const claims = this.actor.system.claims;
 
     claims[index].active = active;
-    await this.actor.update({ "system.claims" : claims });
+    await this.actor.update({ "system.claims": claims });
   }
 
   /** @override */
