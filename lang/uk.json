@@ -257,6 +257,7 @@
     },
     "Roll": {
       "Title": "Кидок кісток",
+      "Button": "Roll",
       "Submit": "Кинути",
       "Cancel": "Скасувати",
       "DiceNumber": "Кількість кісток",
