@@ -19,6 +19,11 @@
     }
   },
   "BITD": {
+    "General": "General",
+    "Description": "Description",
+    "Summary": "Summary",
+    "Available": "Available",
+    "Used": "Used",
     "Actor": {
       "Title": "Actor",
       "Plural": "Actors",
@@ -26,12 +31,16 @@
       "Alias": "Alias",
       "Aka": "Aka"
     },
-    "General": "General",
-    "Description": "Description",
-    "Summary": "Summary",
-    "Available": "Available",
-    "Used": "Used",
-    "CrewName": "Name",
+    "Crew": {
+      "Name": "Name",
+      "Tabs": {
+        "Claims": "Claims Map",
+        "Prison": "Claims: Prison",
+        "Contacts": "Contacts",
+        "Abilities": "Abilities",
+        "Notes": "Notes"
+      }
+    },
     "ItemName": "Name",
     "Drives": "Drives",
     "Belives": "Belives",
@@ -162,6 +171,9 @@
     "HuntingGround": {
       "Title": "Hunting Grounds",
       "Operation": "Operation Type",
+      "Edit": "Edit Hunting Ground",
+      "Ok": "Ok",
+      "CustomName": "Custom name",
       "Tips": "<p>Get +1d to any gather information rolls when prepare to operation of your prefer type.</p><p>Free additional downtime activity to contribute to that operation.</p>"
     },
     "Tier": "Tier",
@@ -203,7 +215,8 @@
     "Quirks": "Quirks",
     "Situation": "Situation",
     "Claim": {
-      "Title": "Claim Map",
+      "Title": "Claims Map",
+      "Prison": "Claims: Prison",
       "Plural": "Claims",
       "Effect": "Claim Effect",
       "NoFreeSpace": "There is no free space on the claims map for {name} ({id})",

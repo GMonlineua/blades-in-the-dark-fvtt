@@ -55,8 +55,14 @@
     }
 
     .hunting-ground {
-      .clear-input {
-        padding: 0;
+      position: relative;
+      grid-row: 2 / 4;
+
+      .edit-hunting-ground {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        color: white;
       }
 
       .operation-header {
@@ -90,6 +96,16 @@
         .hold {
           .clear-select {
             padding: 0;
+          }
+        }
+
+        .tier {
+          display: flex;
+          justify-content: space-between;
+
+          .value-step-block {
+            padding-top: 2px;
+            padding-right: $padding-sm;
           }
         }
       }
@@ -184,26 +200,18 @@
       }
     }
 
+    .contacts-container {
+      .related-faction {
+        margin-top: $padding-md;
+      }
+    }
+
     .crew-notes {
       .goals {
-        grid-column: 1 / 3;
         margin-bottom: $padding-md;
 
-        .items-list {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          justify-content: space-evenly;
-
-          .clock-img {
-            width: 50px;
-            height: 50px;
-            border: none;
-          }
-
-          .link-controls {
-            font-size: smaller;
-          }
+        .item-description {
+          padding-top: $padding-sm;
         }
       }
     }

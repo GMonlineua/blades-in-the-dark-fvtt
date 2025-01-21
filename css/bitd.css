@@ -19,6 +19,13 @@
   text-shadow: 0 0 8px red;
 }
 
+.edit-hunting-form .custom-name.clear-input {
+  border-bottom: 1px solid #222;
+}
+.edit-hunting-form label {
+  font-weight: bold;
+}
+
 .bitd-roll-dialog {
   height: auto;
 }
@@ -643,7 +650,7 @@ select.clear-select {
 }
 .bitd .items-block .items-list .item .item-controls {
   position: absolute;
-  top: 4px;
+  top: 3px;
   right: 0;
   display: flex;
   justify-content: flex-end;
@@ -672,6 +679,9 @@ select.clear-select {
 .bitd .items-block.full-size .items-list .item-description .item-name {
   cursor: pointer;
   font-family: "Spectral SC", serif;
+}
+.bitd .items-block.full-size .items-list .item-controls {
+  top: 6px;
 }
 .bitd .contacts.items-block .item {
   margin: 0;
@@ -706,14 +716,26 @@ select.clear-select {
   font-weight: normal;
 }
 .bitd .related-faction.items-block .item .item-description {
-  padding-right: 40px;
+  display: grid;
+  grid-template-columns: 1fr 100px 150px;
+  margin-right: 40px;
 }
 .bitd .related-faction.items-block .item .item-description .item-name {
   font-family: "Spectral SC", serif;
+  padding-top: 3px;
+}
+.bitd .related-faction.items-block .item .item-description .tier {
+  padding-top: 6px;
 }
 .bitd .related-faction.items-block .item .item-description .set-status {
   margin: 0;
   padding: 0;
+}
+.bitd .related-faction.items-block .item .item-controls {
+  top: 6px;
+}
+.bitd .related-faction.items-block .faction:not(:last-child) {
+  border-bottom: 1px solid #b5b3a4;
 }
 
 .bitd.actor input.all-width {
@@ -746,6 +768,27 @@ select.clear-select {
   position: absolute;
   top: 0;
   right: 0;
+}
+.bitd.actor .sheet-body .goals .items-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.bitd.actor .sheet-body .goals .items-list .item.goal {
+  display: flex;
+  flex-direction: column;
+}
+.bitd.actor .sheet-body .goals .items-list .item.goal .clock-img {
+  width: 50px;
+  height: 50px;
+  border: none;
+}
+.bitd.actor .sheet-body .goals .items-list .item.goal .item-description {
+  padding-right: 0;
+}
+.bitd.actor .sheet-body .goals .items-list .item.goal .link-controls {
+  font-size: smaller;
 }
 .bitd.actor .scoundrel .sheet-header {
   flex: 0 auto;
@@ -1029,8 +1072,15 @@ select.clear-select {
   padding: 0;
   font-size: small;
 }
-.bitd.actor .crew .sheet-header .hunting-ground .clear-input {
-  padding: 0;
+.bitd.actor .crew .sheet-header .hunting-ground {
+  position: relative;
+  grid-row: 2/4;
+}
+.bitd.actor .crew .sheet-header .hunting-ground .edit-hunting-ground {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: white;
 }
 .bitd.actor .crew .sheet-header .hunting-ground .operation-header {
   font-family: "Spectral SC", serif;
@@ -1056,6 +1106,14 @@ select.clear-select {
 }
 .bitd.actor .crew .sheet-header .header-fields .tier-block .hold .clear-select {
   padding: 0;
+}
+.bitd.actor .crew .sheet-header .header-fields .tier-block .tier {
+  display: flex;
+  justify-content: space-between;
+}
+.bitd.actor .crew .sheet-header .header-fields .tier-block .tier .value-step-block {
+  padding-top: 2px;
+  padding-right: 5px;
 }
 .bitd.actor .crew .sheet-header .header-fields .reputation-block {
   display: flex;
@@ -1118,23 +1176,14 @@ select.clear-select {
 .bitd.actor .crew .sheet-body .claims-map .claim {
   height: 140px;
 }
+.bitd.actor .crew .sheet-body .contacts-container .related-faction {
+  margin-top: 10px;
+}
 .bitd.actor .crew .sheet-body .crew-notes .goals {
-  grid-column: 1/3;
   margin-bottom: 10px;
 }
-.bitd.actor .crew .sheet-body .crew-notes .goals .items-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-.bitd.actor .crew .sheet-body .crew-notes .goals .items-list .clock-img {
-  width: 50px;
-  height: 50px;
-  border: none;
-}
-.bitd.actor .crew .sheet-body .crew-notes .goals .items-list .link-controls {
-  font-size: smaller;
+.bitd.actor .crew .sheet-body .crew-notes .goals .item-description {
+  padding-top: 5px;
 }
 .bitd.actor .faction .sheet-header {
   flex: 100px auto;
@@ -1195,28 +1244,7 @@ select.clear-select {
   height: 15px;
   width: 15px;
 }
-.bitd.actor .faction .sheet-body .general .goals .items-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-.bitd.actor .faction .sheet-body .general .goals .items-list .item.goal {
-  display: flex;
-  flex-direction: column;
-}
-.bitd.actor .faction .sheet-body .general .goals .items-list .item.goal .clock-img {
-  width: 50px;
-  height: 50px;
-  border: none;
-}
-.bitd.actor .faction .sheet-body .general .goals .items-list .item.goal .item-description {
-  padding-right: 0;
-}
-.bitd.actor .faction .sheet-body .general .goals .items-list .link-controls {
-  font-size: smaller;
-}
-.bitd.actor .faction .sheet-body .general .goals .items-list .link-controls .show-link {
+.bitd.actor .faction .sheet-body .general .goals .show-link {
   position: relative;
   margin: 0;
   width: 15px;

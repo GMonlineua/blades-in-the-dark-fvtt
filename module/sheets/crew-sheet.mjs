@@ -84,6 +84,11 @@ export class BitdCrewSheet extends BitdActorSheet {
     // Everything below here is only needed if the sheet is editable
     if (!this.isEditable) return;
 
+    // Change hunting ground
+    html
+      .find("a.edit-hunting-ground")
+      .click(this._onEditHuntingGround.bind(this));
+
     // Delete Item
     html.find(".claim-delete").click((ev) => {
       const button = ev.currentTarget;
@@ -111,6 +116,50 @@ export class BitdCrewSheet extends BitdActorSheet {
   }
 
   /* -------------------------------------------- */
+
+  /**
+   * Handle editing hunting ground and operation type.
+   * @param {Event} the originating click event
+   * @private
+   */
+  async _onEditHuntingGround(event) {
+    const data = this.actor.system.hunting;
+
+    const template = await renderTemplate(
+      "systems/bitd/templates/apps/hunting.hbs",
+      data,
+    );
+
+    const dialog = new Dialog(
+      {
+        title: game.i18n.localize("BITD.HuntingGround.Edit"),
+        content: template,
+        buttons: {
+          ok: {
+            label: game.i18n.localize("BITD.HuntingGround.Ok"),
+            callback: async (html) => {
+              const formData = new FormData(html[0].querySelector("form"));
+              const newData = Object.fromEntries(formData.entries());
+              newData["ground"] = newData["ground"].replace(/\n/g, "<br>");
+              newData["operation"] = newData["operation"].replace(
+                /\n/g,
+                "<br>",
+              );
+
+              await this.actor.update({ "system.hunting": newData });
+            },
+          },
+        },
+        default: "add",
+        close: () => {},
+      },
+      {
+        width: 500,
+      },
+    );
+
+    dialog.render(true);
+  }
 
   async _onMoveClaim(event) {
     const button = event.currentTarget;

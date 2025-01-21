@@ -56,7 +56,6 @@ export class BitdActorSheet extends ActorSheet {
   _getHeaderButtons() {
     // Get the default buttons from the parent class
     const buttons = super._getHeaderButtons();
-    console.log(buttons);
 
     // Add a custom button
     buttons.unshift({
