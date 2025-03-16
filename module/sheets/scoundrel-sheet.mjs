@@ -4,20 +4,20 @@ import { BitdActorSheet } from "./actor-sheet.mjs";
  * Extend the BitdActorSheet
  * @extends {BitdActorSheet}
  */
-export class BitdScoundrelSheet extends BitdActorSheet
-{
-
+export class BitdScoundrelSheet extends BitdActorSheet {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["bitd", "sheet", "actor", "scoundrel"],
-      width: 750,
+      width: 900,
       height: 900,
-      tabs: [{
-        navSelector: ".sheet-tabs",
-        contentSelector: ".sheet-body",
-        initial: "general"
-      }]
+      tabs: [
+        {
+          navSelector: ".sheet-tabs",
+          contentSelector: ".sheet-body",
+          initial: "general",
+        },
+      ],
     });
   }
 
@@ -31,7 +31,7 @@ export class BitdScoundrelSheet extends BitdActorSheet
     return context;
   }
 
-    /**
+  /**
    * @param {Object} actorData The actor to prepare.
    * @return {undefined}
    */
@@ -47,19 +47,16 @@ export class BitdScoundrelSheet extends BitdActorSheet
     for (const i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
 
-      if (i.type === 'playbook') {
+      if (i.type === "playbook") {
         if (i._id === playbookId) {
           playbook = i;
         }
-      }
-      else if (i.type === 'abilityScoundrel') {
+      } else if (i.type === "abilityScoundrel") {
         abilities.push(i);
-      }
-      else if (i.type === 'contact') {
+      } else if (i.type === "contact") {
         contacts.push(i);
-      }
-      else if (i.type === 'tool') {
-        if (i.system.type === 'common') {
+      } else if (i.type === "tool") {
+        if (i.system.type === "common") {
           inventory.push(i);
         } else {
           specInventory.push(i);
@@ -79,8 +76,12 @@ export class BitdScoundrelSheet extends BitdActorSheet
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
+
+    // Everything below here is only needed if the sheet is editable
+    if (!this.isEditable) return;
+
     // Add Trauma
-    html.find('.add-trauma').click(this._onAddTrauma.bind(this));
+    html.find(".add-trauma").click(this._onAddTrauma.bind(this));
   }
 
   /* -------------------------------------------- */
@@ -102,40 +103,47 @@ export class BitdScoundrelSheet extends BitdActorSheet
       "BITD.Traumas.Unstable",
       "BITD.Traumas.Vicious",
     ];
-    const filteredTraumas = defaultTraumas.filter(trauma => !currentTraumas.includes(trauma));
+    const filteredTraumas = defaultTraumas.filter(
+      (trauma) => !currentTraumas.includes(trauma),
+    );
 
-    const template = await renderTemplate("systems/bitd/templates/apps/trauma.hbs", { currentTraumas, filteredTraumas });
+    const template = await renderTemplate(
+      "systems/bitd/templates/apps/trauma.hbs",
+      { currentTraumas, filteredTraumas },
+    );
 
-    const dialog = new Dialog({
-      title: game.i18n.localize("BITD.ChooseTrauma"),
-      content: template,
-      buttons: {
-        add: {
-          label: game.i18n.localize("BITD.AddTrauma"),
-          callback: async (html) => {
-            const elements = Array.from(html.find(".trauma.active"));
-            const newTraumas = elements.map(el => el.dataset.value);
+    const dialog = new Dialog(
+      {
+        title: game.i18n.localize("BITD.ChooseTrauma"),
+        content: template,
+        buttons: {
+          add: {
+            label: game.i18n.localize("BITD.AddTrauma"),
+            callback: async (html) => {
+              const elements = Array.from(html.find(".trauma.active"));
+              const newTraumas = elements.map((el) => el.dataset.value);
 
-            const customTrauma = html.find("input.custom-trauma")[0].value;
-            if (customTrauma) {
-              newTraumas.push(customTrauma);
-            }
+              const customTrauma = html.find("input.custom-trauma")[0].value;
+              if (customTrauma) {
+                newTraumas.push(customTrauma);
+              }
 
-            await this.actor.update({ "system.trauma": newTraumas });
-          }
-        }
+              await this.actor.update({ "system.trauma": newTraumas });
+            },
+          },
+        },
+        default: "add",
+        close: () => {},
+        render: (html) => {
+          html.find(".trauma").on("click", function () {
+            $(this).toggleClass("active");
+          });
+        },
       },
-      default: "add",
-      close: () => {},
-      render: (html) => {
-        html.find(".trauma").on("click", function() {
-          $(this).toggleClass("active");
-        });
-      }
-    },
-    {
-      width: 220
-    });
+      {
+        width: 220,
+      },
+    );
 
     dialog.render(true);
   }

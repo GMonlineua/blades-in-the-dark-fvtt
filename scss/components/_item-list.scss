@@ -39,7 +39,7 @@
 
       .item-controls {
         position: absolute;
-        top: 4px;
+        top: 3px;
         right: 0;
         display: flex;
         justify-content: flex-end;
@@ -82,6 +82,10 @@
         cursor: pointer;
         font-family: $font-secondary;
       }
+    }
+
+    .item-controls {
+      top: 6px;
     }
   }
 }
@@ -130,10 +134,17 @@
 .related-faction.items-block {
   .item {
     .item-description {
-      padding-right: 40px;
+      display: grid;
+      grid-template-columns: 1fr 100px 150px;
+      margin-right: 40px;
 
       .item-name {
         font-family: $font-secondary;
+        padding-top: 3px;
+      }
+
+      .tier {
+        padding-top: 6px;
       }
 
       .set-status {
@@ -141,5 +152,13 @@
         padding: 0;
       }
     }
+
+    .item-controls {
+      top: 6px;
+    }
+  }
+
+  .faction:not(:last-child) {
+    border-bottom: $border;
   }
 }

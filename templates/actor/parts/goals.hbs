@@ -1,0 +1,19 @@
+<div class="goals items-block{{#if isFaction}} prop-field{{/if}}">
+  <h3 class="bitd-header">{{localize 'BITD.Goals'}}</h3>
+  <ol class="items-list" data-array="goals">
+    {{#each system.goals as |goal|}}
+      <li class="item link goal" data-id="{{goal.id}}">
+        <img class="clock-img" src="{{goal.img}}"/>
+        <div class="item-description">
+          <a class="clock-name actor-open" data-uuid="{{goal.uuid}}">{{goal.name}}</a>
+          <span class="link-controls">
+            {{#if ../isFaction}}
+              <input class="show-link" type="checkbox" title="{{localize 'BITD.ShowForPlayers.Title'}}" data-index="{{@index}}" data-value="{{goal.show}}"></input>
+            {{/if}}
+            <a class="item-control actor-delete" title="{{localize 'BITD.Link.Delete'}}"><i class="fas fa-trash"></i></a>
+          </span>
+        </div>
+      </li>
+    {{/each}}
+  </ol>
+</div>

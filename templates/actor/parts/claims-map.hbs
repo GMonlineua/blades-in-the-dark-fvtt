@@ -1,5 +1,5 @@
-<div class="claims-map">
-  {{#each claims}}
+<div class="claims-map" data-container={{container}}>
+  {{#each claim}}
     <div class="item claim {{#if this.active}}active{{/if}}" data-item-id="{{this.id}}" data-index={{@index}}>
       <a class="claim-move move-left" title="{{localize 'BITD.Claim.MoveLeft'}}" data-direction="left"><i class="fa-solid fa-caret-left"></i></a>
 
@@ -17,7 +17,6 @@
         </div>
       {{else}}
         <p class="name">{{this.name}}</p>
-
         <div class="item-controls">
           <input class="claim-checkbox" type="checkbox" name="this.active" data-dtype="Boolean" {{checked this.active}}></input>
         </div>

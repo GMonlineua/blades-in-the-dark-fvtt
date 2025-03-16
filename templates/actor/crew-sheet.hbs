@@ -25,21 +25,28 @@
       <div class="brief-info grid-2col">
         <div class="prop">
           <label class="prop-label" for="system.lair">{{localize 'BITD.Lair'}}</label>
-          <input class="prop-input clear-input" type="text" name="system.lair" value="{{system.lair}}" placeholder="{{localize 'BITD.Lair'}}"/>
+          <input class="prop-input clear-input all-width" type="text" name="system.lair" value="{{system.lair}}" placeholder="{{localize 'BITD.Lair'}}"/>
         </div>
 
         <div class="prop">
           <label class="prop-label" for="system.reputation.type">{{localize 'BITD.RepType'}}</label>
-          <input class="prop-input clear-input" type="text" name="system.reputation.type" value="{{system.reputation.type}}" placeholder="{{localize 'BITD.RepDescription'}}"/>
+          <input class="prop-input clear-input all-width" type="text" name="system.reputation.type" value="{{system.reputation.type}}" placeholder="{{localize 'BITD.RepDescription'}}"/>
         </div>
       </div>
     </div>
 
     <div class="hunting-ground">
-      <h3 class="bitd-header">{{localize 'BITD.HuntingGround.Title'}}</h3>
-      <input class="clear-input all-width" type="text" name="system.hunting.ground" value="{{system.hunting.ground}}" placeholder="{{localize 'BITD.HuntingGround.Title'}}"/>
+      <h3 class="bitd-header">
+        {{#if system.hunting.customName}}
+          {{system.hunting.customName}}
+        {{else}}
+          {{localize 'BITD.HuntingGround.Title'}}
+        {{/if}}
+      </h3>
+      <a class="edit-hunting-ground" title="{{localize 'BITD.HuntingGround.Edit'}}"><i class="fas fa-edit"></i></a>
+      <p class="ground" name="system.hunting.ground">{{{system.hunting.ground}}}</p>
       <label class="operation-header" for="system.hunting.operation">{{localize 'BITD.HuntingGround.Operation'}}</label>
-      <input class="clear-input all-width" type="text" name="system.hunting.operation" value="{{system.hunting.operation}}" placeholder="{{localize 'BITD.HuntingGround.Operation'}}"/>
+      <p class="operation" name="system.hunting.operation">{{system.hunting.operation}}</p>
     </div>
 
     <div class="header-fields">
@@ -71,14 +78,18 @@
 
       <div class="tier-block">
         <div class="hold">
-          <label for="system.hold">{{localize 'BITD.Hold.Title'}}:</label>
+          <label for="system.hold">{{localize 'BITD.Hold.Title'}}</label>
           <select class="clear-select" name="system.hold">
             {{selectOptions config.holdTypes selected=system.hold localize=true}}
           </select>
         </div>
         <div class="tier">
-          <label for="system.tier" class="rollable" data-roll-type="fortune" data-roll-note="{{system.tier.value}}">{{localize 'BITD.Tier'}}:</label>
-          <input class="clear-input" type="number" name="system.tier.value" value="{{system.tier.value}}" data-dtype="Number"/>
+          <label for="system.tier" class="rollable" data-roll-type="fortune" data-roll-note="{{system.tier.value}}">{{localize 'BITD.Tier'}}</label>
+          <div class="value-step-block" data-value="{{system.tier.value}}" data-key="system.tier.value">
+            {{#numLoop system.tier.max}}
+              <span class="value-step value-dot" data-index="{{this}}"></span>
+            {{/numLoop}}
+          </div>
         </div>
       </div>
 
@@ -99,11 +110,6 @@
 
     </div>
 
-    <div class="contacts items-block">
-      <h3 class="item-header bitd-header contacts-title">{{localize 'BITD.Contact.Plural'}}</h3>
-      {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
-    </div>
-
     <div class="exp-block">
       <h3 class="bitd-header">{{localize 'BITD.CrewExp.ShortTitle'}}</h3>
       <p class="bitd-subheader">{{localize 'BITD.CrewExp.HowItWorks'}}</p>
@@ -122,16 +128,29 @@
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs flexrow" data-group="primary">
-    <a class="item" data-tab="general">{{localize 'BITD.General'}}</a>
-    <a class="item" data-tab="claims">{{localize 'BITD.Claim.Title'}}</a>
-    <a class="item" data-tab="notes">{{localize 'BITD.Notes'}}</a>
+    <a class="item" data-tab="claims">{{localize 'BITD.Crew.Tabs.Claims'}}</a>
+    <a class="item" data-tab="prison">{{localize 'BITD.Crew.Tabs.Prison'}}</a>
+    <a class="item" data-tab="abilities">{{localize 'BITD.Crew.Tabs.Abilities'}}</a>
+    <a class="item" data-tab="contacts">{{localize 'BITD.Crew.Tabs.Contacts'}}</a>
+    <a class="item" data-tab="notes">{{localize 'BITD.Crew.Tabs.Notes'}}</a>
   </nav>
 
   {{!-- Sheet Body --}}
   <section class="sheet-body">
 
-    {{!-- Owned Playbook Tab --}}
-    <div class="tab general-tab" data-group="primary" data-tab="general">
+    {{!-- Owned Claims Tab --}}
+    <div class="tab claims" data-group="primary" data-tab="claims">
+      {{> "systems/bitd/templates/actor/parts/claims-map.hbs" claim=claims container="claims"}}
+    </div>
+
+    {{!-- Owned Prisons Claims Tab --}}
+    <div class="tab prison" data-group="primary" data-tab="prison">
+      {{> "systems/bitd/templates/actor/parts/claims-map.hbs" claim=prison container="prison"}}
+      <div class="load-prison-block align-center"><a class="load-prison">{{localize 'BITD.Claim.LoadPrison'}}</a></div>
+    </div>
+
+    {{!-- Owned Abilities and Upgrades Tab --}}
+    <div class="tab abilities-tab" data-group="primary" data-tab="abilities">
       <div class="general-container grid-2col">
 
         <div class="spec-upgrades items-block full-size">
@@ -165,56 +184,27 @@
           </div>
           {{> "systems/bitd/templates/actor/parts/abilities.hbs"}}
         </div>
-
-        {{> "systems/bitd/templates/actor/parts/cohorts.hbs"}}
       </div>
     </div>
 
-    {{!-- Owned Claims Tab --}}
-    <div class="tab claims" data-group="primary" data-tab="claims">
-      {{> "systems/bitd/templates/actor/parts/claims-map.hbs"}}
+    {{!-- Owned Contacts and Cohorts Tab --}}
+    <div class="tab contacts-tab" data-group="primary" data-tab="contacts">
+      <div class="contacts-container actor-grid">
+        <div class="contacts items-block">
+          <h3 class="item-header bitd-header contacts-title">{{localize 'BITD.Contact.Plural'}}</h3>
+          {{> "systems/bitd/templates/actor/parts/contacts.hbs"}}
+        </div>
+        <div>
+          {{> "systems/bitd/templates/actor/parts/cohorts.hbs"}}
+          {{> "systems/bitd/templates/actor/parts/factions.hbs"}}
+        </div>
+      </div>
     </div>
 
     {{!-- Owned Notes Tab --}}
     <div class="tab crew-notes" data-group="primary" data-tab="notes">
-      <div class="notes-container actor-grid">
-        <div class="goals items-block">
-          <h3 class="bitd-header">{{localize 'BITD.Goals'}}</h3>
-          <ol class="items-list" data-array="goals">
-            {{#each system.goals as |goal|}}
-              <li class="item link goal" data-id="{{goal.id}}">
-                <img class="clock-img" src="{{goal.img}}"/>
-                <div class="item-description">
-                  <a class="clock-name actor-open" data-uuid="{{goal.uuid}}">{{goal.name}}</a>
-                  <span class="link-controls">
-                    <a class="item-control actor-delete" title="{{localize 'BITD.Link.Delete'}}"><i class="fas fa-trash"></i></a>
-                  </span>
-                </div>
-              </li>
-            {{/each}}
-          </ol>
-        </div>
-
-        <div class="related-faction items-block">
-          <h3 class="bitd-header">{{localize 'BITD.Factions'}}</h3>
-          <ol class="items-list" data-array="relatedFactions">
-            {{#each system.relatedFactions as |faction|}}
-              <li class="item faction" data-id="{{faction.id}}">
-                <div class="item-description">
-                  <span class="item-name">{{faction.name}}</span>
-                  <span class="tier-styled" style="--tier:{{faction.tier}}"></span>
-                  <select class="clear-select set-status" data-index="{{@index}}">
-                    {{selectOptions @root.config.statusTypes selected=faction.status localize=true}}
-                  </select>
-                </div>
-                <div class="item-controls">
-                  <a class="item-control actor-open" title="{{localize 'BITD.Link.Open'}}" data-uuid="{{faction.uuid}}"><i class="fa fa-external-link"></i></a>
-                  <a class="item-control actor-delete" title="{{localize 'BITD.Link.Delete'}}"><i class="fas fa-trash"></i></a>
-                </div>
-              </li>
-            {{/each}}
-          </ol>
-        </div>
+      <div class="notes-container">
+        {{> "systems/bitd/templates/actor/parts/goals.hbs"}}
 
         <div class="description">
           <h3 class="bitd-header">{{localize 'BITD.Notes'}}</h3>
