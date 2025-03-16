@@ -22,52 +22,53 @@ import { BITD } from './helpers/config.mjs';
 
 Hooks.once('init', async function() {
 
-  game.bitd = {
-    BitdActor,
-    BitdItem
-  };
+    game.bitd = {
+        BitdActor,
+        BitdItem
+    };
 
-  CONFIG.BITD = BITD;
+    CONFIG.BITD = BITD;
 
-  // Define custom Entity classes and Data Models
-  CONFIG.Actor.documentClass = BitdActor;
-  CONFIG.Actor.dataModels = {
-    'scoundrel': models.ScoundrelData,
-    'crew': models.CrewData,
-    'faction': models.FactionData,
-    'npc': models.NpcData,
-    'clock': models.ClockData
-  };
+    // Define custom Entity classes and Data Models
+    CONFIG.Actor.documentClass = BitdActor;
+    CONFIG.Actor.dataModels = {
+        'scoundrel': models.ScoundrelData,
+        'crew': models.CrewData,
+        'faction': models.FactionData,
+        'npc': models.NpcData,
+        'clock': models.ClockData
+    };
 
-  CONFIG.Item.documentClass = BitdItem;
-  CONFIG.Item.dataModels = {
-    'playbook': models.PlaybookData,
-    'crewType': models.CrewTypeData,
-    'abilityScoundrel': models.AbilityScoundrelData,
-    'abilityCrew': models.AbilityCrewData,
-    'claim': models.ClaimData,
-    'cohort': models.CohortData,
-    'tool': models.ToolData,
-    'upgrade': models.UpgradeData
-  };
+    CONFIG.Item.documentClass = BitdItem;
+    CONFIG.Item.dataModels = {
+        'playbook': models.PlaybookData,
+        'crewType': models.CrewTypeData,
+        'abilityScoundrel': models.AbilityScoundrelData,
+        'abilityCrew': models.AbilityCrewData,
+        'claim': models.ClaimData,
+        'prisonClaim': models.PrisonClaimData,
+        'cohort': models.CohortData,
+        'tool': models.ToolData,
+        'upgrade': models.UpgradeData
+    };
 
 
-  // Register sheet application classes
-  Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("bitd", BitdActorSheet, { makeDefault: true });
-  Actors.registerSheet("bitd", BitdScoundrelSheet, { types: ["scoundrel"], makeDefault: true });
-  Actors.registerSheet("bitd", BitdCrewSheet, { types: ["crew"], makeDefault: true });
-  Actors.registerSheet("bitd", BitdFactionSheet, { types: ["faction"], makeDefault: true });
-  Actors.registerSheet("bitd", BitdClockSheet, { types: ["clock"], makeDefault: true });
-  Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("bitd", BitdItemSheet, { makeDefault: true });
-  Items.registerSheet("bitd", BitdCrewTypeSheet, { types: ["crewType"], makeDefault: true });
-  Items.registerSheet("bitd", BitdPlaybookSheet, { types: ["playbook"], makeDefault: true });
+    // Register sheet application classes
+    Actors.unregisterSheet("core", ActorSheet);
+    Actors.registerSheet("bitd", BitdActorSheet, { makeDefault: true });
+    Actors.registerSheet("bitd", BitdScoundrelSheet, { types: ["scoundrel"], makeDefault: true });
+    Actors.registerSheet("bitd", BitdCrewSheet, { types: ["crew"], makeDefault: true });
+    Actors.registerSheet("bitd", BitdFactionSheet, { types: ["faction"], makeDefault: true });
+    Actors.registerSheet("bitd", BitdClockSheet, { types: ["clock"], makeDefault: true });
+    Items.unregisterSheet("core", ItemSheet);
+    Items.registerSheet("bitd", BitdItemSheet, { makeDefault: true });
+    Items.registerSheet("bitd", BitdCrewTypeSheet, { types: ["crewType"], makeDefault: true });
+    Items.registerSheet("bitd", BitdPlaybookSheet, { types: ["playbook"], makeDefault: true });
 
-  registerHandlebarsHelpers();
+    registerHandlebarsHelpers();
 
-  // Preload Handlebars templates.
-  return preloadHandlebarsTemplates();
+    // Preload Handlebars templates.
+    return preloadHandlebarsTemplates();
 });
 
 // Preprocess chat message before it is created hook
@@ -78,13 +79,13 @@ Hooks.on("renderChatMessage", renderChatMessage);
 
 // Add scene controls
 Hooks.on("renderSceneControls", async (app, html) => {
-  const diceRollButton = $(`
+    const diceRollButton = $(`
     <li class="scene-control" data-control="bitd-dice" title="BitD Dice Roller">
     <i class="fas fa-dice"></i>
     </li>
   `);
-  diceRollButton.click( async function() {
-    await createRollDialog("fortune");
-  });
-  html.children().first().append( diceRollButton );
+    diceRollButton.click(async function() {
+        await createRollDialog("fortune");
+    });
+    html.children().first().append(diceRollButton);
 });

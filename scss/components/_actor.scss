@@ -12,7 +12,7 @@ textarea.auto-grow {
 .actor-grid {
   display: grid;
   column-gap: $padding-md;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 250px 1fr;
 }
 
 .sheet-header {
@@ -38,6 +38,34 @@ textarea.auto-grow {
       position: absolute;
       top: 0;
       right: 0;
+    }
+  }
+
+  .goals {
+    .items-list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+
+      .item.goal {
+        display: flex;
+        flex-direction: column;
+
+        .clock-img {
+          width: 50px;
+          height: 50px;
+          border: none;
+        }
+
+        .item-description {
+          padding-right: 0;
+        }
+
+        .link-controls {
+          font-size: smaller;
+        }
+      }
     }
   }
 }

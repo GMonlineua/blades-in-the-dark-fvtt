@@ -4,31 +4,31 @@ import { createRollDialog } from "../applications/roll.mjs";
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class BitdActorSheet extends ActorSheet
-{
-
+export class BitdActorSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["bitd", "sheet", "actor"],
       width: 450,
       height: 450,
-      tabs: [{
-        navSelector: ".sheet-tabs",
-        contentSelector: ".sheet-body",
-        initial: "general"
-      }]
+      tabs: [
+        {
+          navSelector: ".sheet-tabs",
+          contentSelector: ".sheet-body",
+          initial: "general",
+        },
+      ],
     });
   }
 
   /** @override */
   get template() {
     let sheetTemplate = `systems/bitd/templates/actor/${this.actor.type}-sheet.hbs`;
-    if ( !game.user.isGM && this.actor.limited && this.actor.type == "faction" ) {
+    if (!game.user.isGM && this.actor.limited && this.actor.type == "faction") {
       sheetTemplate = `systems/bitd/templates/actor/faction-limited-sheet.hbs`;
     }
 
-    return sheetTemplate
+    return sheetTemplate;
   }
 
   /** @override */
@@ -37,10 +37,13 @@ export class BitdActorSheet extends ActorSheet
     const context = await super.getData();
 
     // Encrich editor content
-    context.enrichedDescription = await TextEditor.enrichHTML(this.object.system.description, {
-      async: true,
-      secrets: this.actor.isOwner
-    })
+    context.enrichedDescription = await TextEditor.enrichHTML(
+      this.object.system.description,
+      {
+        async: true,
+        secrets: this.actor.isOwner,
+      },
+    );
 
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = context.actor.system;
@@ -50,12 +53,29 @@ export class BitdActorSheet extends ActorSheet
     return context;
   }
 
+  _getHeaderButtons() {
+    // Get the default buttons from the parent class
+    const buttons = super._getHeaderButtons();
+
+    // Add a custom button
+    buttons.unshift({
+      label: game.i18n.localize("BITD.Roll.Button"),
+      class: "bitd-dice-sheet",
+      icon: "fas fa-dice",
+      onclick: () => {
+        createRollDialog("fortune", this.actor);
+      },
+    });
+
+    return buttons;
+  }
+
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
 
     // Count dot
-    html.find('.value-step-block').each(function () {
+    html.find(".value-step-block").each(function () {
       const value = Number(this.dataset.value);
       $(this)
         .find(".value-step")
@@ -67,51 +87,53 @@ export class BitdActorSheet extends ActorSheet
     });
 
     // Calculate relationship
-    html.find('.set-relationship').each(function () {
+    html.find(".set-relationship").each(function () {
       const value = Number(this.dataset.value);
       const classes = CONFIG.BITD.relationshipClasses;
       this.classList.add(classes[value]);
     });
 
     // Set checked for external links
-    html.find('input.show-link').each(function () {
+    html.find("input.show-link").each(function () {
       const value = this.dataset.value;
-      if (value === 'true') this.checked = true;
+      if (value === "true") this.checked = true;
     });
 
     // Calculate text area height
-    html.find('textarea.auto-grow').each(function () {
-      this.style.height = 'auto';
-      this.style.height = this.scrollHeight + 5 + 'px';
+    html.find("textarea.auto-grow").each(function () {
+      this.style.height = "auto";
+      this.style.height = this.scrollHeight + 5 + "px";
     });
 
-    html.find('textarea.auto-grow').on('input', function () {
-      this.style.height = 'auto';
-      this.style.height = this.scrollHeight + 5 + 'px';
+    html.find("textarea.auto-grow").on("input", function () {
+      this.style.height = "auto";
+      this.style.height = this.scrollHeight + 5 + "px";
     });
 
     // Show item summary
-    html.find('.item-name').click(ev => {
+    html.find(".item-name").click((ev) => {
       const button = ev.currentTarget;
       const li = button.closest(".item");
       const summary = li.getElementsByClassName("item-summary")[0];
       if (summary) {
         const contentHeight = summary.scrollHeight;
-        summary.style.height = summary.classList.contains("active") ? "0" : `${contentHeight}px`;
+        summary.style.height = summary.classList.contains("active")
+          ? "0"
+          : `${contentHeight}px`;
         summary.classList.toggle("active");
       }
     });
 
     // Open external link
-    html.on('click', 'a.actor-open[data-uuid]', this._onClickLink.bind(this));
+    html.on("click", "a.actor-open[data-uuid]", this._onClickLink.bind(this));
 
     // Change data from link
-    html.on('change', '.show-link', this._onShowLinkChange.bind(this));
+    html.on("change", ".show-link", this._onShowLinkChange.bind(this));
 
     // Show items in chat
-    html.find('.item-show').click(ev => {
+    html.find(".item-show").click((ev) => {
       const button = ev.currentTarget;
-      const itemId = button.closest('.item').dataset.itemId;
+      const itemId = button.closest(".item").dataset.itemId;
       const item = this.actor.items.get(itemId);
       if (item) return item.show();
     });
@@ -120,23 +142,25 @@ export class BitdActorSheet extends ActorSheet
     if (!this.options.editable) return;
 
     // Resource dots
-    html.find(".value-step-block > .value-step").click(this._onDotChange.bind(this));
+    html
+      .find(".value-step-block > .value-step")
+      .click(this._onDotChange.bind(this));
 
     // Item checkbox in Actor Sheet
-    html.find('.item-checkbox').click(this._onItemCheckbox.bind(this));
+    html.find(".item-checkbox").click(this._onItemCheckbox.bind(this));
 
     // Add Item
-    html.find('.item-create').click(this._onItemCreate.bind(this));
+    html.find(".item-create").click(this._onItemCreate.bind(this));
 
     // Update Item
-    html.find('.item-edit').click(ev => {
+    html.find(".item-edit").click((ev) => {
       const li = $(ev.currentTarget).parents(".item");
       const item = this.actor.items.get(li.data("itemId"));
       item.sheet.render(true);
     });
 
     // Delete Item
-    html.find('.item-delete').click(ev => {
+    html.find(".item-delete").click((ev) => {
       const button = ev.currentTarget;
       const li = button.closest(".item");
       const item = this.actor.items.get(li?.dataset.itemId);
@@ -144,21 +168,25 @@ export class BitdActorSheet extends ActorSheet
     });
 
     // Delete external link
-    html.on('click', 'a.actor-delete', this._onRemoveLink.bind(this));
+    html.on("click", "a.actor-delete", this._onRemoveLink.bind(this));
 
     // Roll dice
-    html.find('.rollable').click(this._onRoll.bind(this));
+    html.find(".rollable").click(this._onRoll.bind(this));
 
     // Change contact's relationship
-    html.on('click', 'i.set-relationship', this._onChangeRelationship.bind(this));
+    html.on(
+      "click",
+      "i.set-relationship",
+      this._onChangeRelationship.bind(this),
+    );
 
     // Change status with factions
-    html.on('change', 'select.set-status', this._onChangeStatus.bind(this));
+    html.on("change", "select.set-status", this._onChangeStatus.bind(this));
 
     // Drag events for macros
     if (this.actor.isOwner) {
-      let handler = ev => this._onDragStart(ev);
-      html.find('li.item').each((i, li) => {
+      let handler = (ev) => this._onDragStart(ev);
+      html.find("li.item").each((i, li) => {
         if (li.classList.contains("inventory-header")) return;
         li.setAttribute("draggable", true);
         li.addEventListener("dragstart", handler, false);
@@ -189,7 +217,9 @@ export class BitdActorSheet extends ActorSheet
     const block = button.closest(".items-list");
     const key = block.dataset.array;
     const path = "system." + key;
-    const newArray = this.actor.system[key].filter(link => link.id !== targetId);
+    const newArray = this.actor.system[key].filter(
+      (link) => link.id !== targetId,
+    );
 
     this.actor.update({ [path]: newArray });
   }
@@ -209,13 +239,13 @@ export class BitdActorSheet extends ActorSheet
     const itemData = {
       name: name,
       type: type,
-      data: data
+      data: data,
     };
     // Remove the type from the dataset since it's in the itemData.type prop.
     delete itemData.data["type"];
 
     const cls = getDocumentClass("Item");
-    return cls.create(itemData, {parent: this.actor});
+    return cls.create(itemData, { parent: this.actor });
   }
 
   /**
@@ -228,7 +258,7 @@ export class BitdActorSheet extends ActorSheet
     const element = event.currentTarget;
     const dataset = element.dataset;
 
-    createRollDialog(dataset.rollType, this.actor, dataset.rollNote)
+    createRollDialog(dataset.rollType, this.actor, dataset.rollNote);
   }
 
   /**
@@ -248,7 +278,9 @@ export class BitdActorSheet extends ActorSheet
 
     let value = index + 1;
 
-    const nextElement = (index === steps.length - 1) || !steps[index + 1].classList.contains("active");
+    const nextElement =
+      index === steps.length - 1 ||
+      !steps[index + 1].classList.contains("active");
 
     if (element.classList.contains("active") && nextElement) {
       steps.removeClass("active");
@@ -301,7 +333,7 @@ export class BitdActorSheet extends ActorSheet
     } else {
       contacts[dataset.index].relationship = 0;
     }
-    await this.actor.update({"system.contacts": contacts});
+    await this.actor.update({ "system.contacts": contacts });
 
     const relationship = contacts[dataset.index].relationship;
     element.classList.add(classes[relationship]);
@@ -320,8 +352,8 @@ export class BitdActorSheet extends ActorSheet
     const related = this.actor.system.relatedFactions;
 
     related[index].status = status;
-    await this.actor.update({"system.relatedFactions": related});
-   }
+    await this.actor.update({ "system.relatedFactions": related });
+  }
 
   /**
    * Handle changing show actor link for players.
@@ -338,6 +370,6 @@ export class BitdActorSheet extends ActorSheet
     const path = "system." + name;
 
     array[index].show = element.checked;
-    await this.actor.update({ [path] : array});
+    await this.actor.update({ [path]: array });
   }
 }

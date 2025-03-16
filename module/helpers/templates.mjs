@@ -1,13 +1,15 @@
- /**
-  *@return {Promise}
-  */
- export const preloadHandlebarsTemplates = async function() {
+/**
+ *@return {Promise}
+ */
+export const preloadHandlebarsTemplates = async function () {
   return loadTemplates([
     "systems/bitd/templates/actor/parts/abilities.hbs",
     "systems/bitd/templates/actor/parts/attributes.hbs",
     "systems/bitd/templates/actor/parts/claims-map.hbs",
     "systems/bitd/templates/actor/parts/cohorts.hbs",
     "systems/bitd/templates/actor/parts/contacts.hbs",
+    "systems/bitd/templates/actor/parts/factions.hbs",
+    "systems/bitd/templates/actor/parts/goals.hbs",
     "systems/bitd/templates/actor/parts/harm.hbs",
     "systems/bitd/templates/actor/parts/inventory.hbs",
     "systems/bitd/templates/actor/parts/scoundrel-notes.hbs",

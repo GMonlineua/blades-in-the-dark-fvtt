@@ -19,6 +19,16 @@
   }
 }
 
+.edit-hunting-form {
+  .custom-name.clear-input {
+    border-bottom: $border-black;
+  }
+
+  label {
+    font-weight: bold;
+  }
+}
+
 .bitd-roll-dialog {
   height: auto;
 
