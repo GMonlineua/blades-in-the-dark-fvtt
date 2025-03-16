@@ -33,13 +33,13 @@
             "Aka": "Відомий як"
         },
         "Crew": {
-            "Name": "Name",
+            "Name": "Назва",
             "Tabs": {
-                "Claims": "Claims Map",
-                "Prison": "Claims: Prison",
-                "Contacts": "Contacts",
-                "Abilities": "Abilities",
-                "Notes": "Notes"
+                "Claims": "Мапа активів",
+                "Prison": "Активи в'язниці",
+                "Contacts": "Контакти",
+                "Abilities": "Здібності",
+                "Notes": "Нотатки"
             }
         },
         "ItemName": "Назва",
@@ -172,9 +172,9 @@
         "HuntingGround": {
             "Title": "Мисливські угіддя",
             "Operation": "Тип операції",
-            "Edit": "Edit Hunting Ground",
-            "Ok": "Ok",
-            "CustomName": "Custom name",
+            "Edit": "Редагувати мисливські угіддя",
+            "Ok": "Добре",
+            "CustomName": "Назва",
             "Tips": "<p>Отримайте +1к до будь-яких перевірок збору інформації, готуючись до операції свого улюбленого типу.</p><p>Безкоштовна додаткова дія у перепочинку для внеску в цю операцію.</p>"
         },
         "Tier": "Рівень",
@@ -217,8 +217,8 @@
         "Situation": "Ситуація",
         "Claim": {
             "Title": "Мапа активів",
-            "Prison": "Claims: Prison",
-            "LoadPrison": "Load Default Prison",
+            "Prison": "Активи в'язниці",
+            "LoadPrison": "Завантажити стандартну в'язницю",
             "Plural": "Активи",
             "Effect": "Ефект активу",
             "NoFreeSpace": "Немає вільного місця на мапі активів {name} ({id})",
