@@ -162,6 +162,28 @@
   }
 
   .sheet-body {
+    .claims-map {
+      .claim {
+        height: 140px;
+      }
+    }
+
+    .prison {
+      .claims-map {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .load-prison-block {
+        margin-top: 10px;
+
+        .load-prison {
+          padding: 3px;
+          background: $dark-paper;
+          border: $border;
+        }
+      }
+    }
+
     .general-container {
       grid-template-areas:
       "1 main"
@@ -191,12 +213,6 @@
         .condition {
           font-style: italic;
         }
-      }
-    }
-
-    .claims-map {
-      .claim {
-        height: 140px;
       }
     }
 

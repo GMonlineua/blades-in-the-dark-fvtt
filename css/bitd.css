@@ -1152,6 +1152,20 @@ select.clear-select {
 .bitd.actor .crew .sheet-header > div {
   height: 100%;
 }
+.bitd.actor .crew .sheet-body .claims-map .claim {
+  height: 140px;
+}
+.bitd.actor .crew .sheet-body .prison .claims-map {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.bitd.actor .crew .sheet-body .prison .load-prison-block {
+  margin-top: 10px;
+}
+.bitd.actor .crew .sheet-body .prison .load-prison-block .load-prison {
+  padding: 3px;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid #b5b3a4;
+}
 .bitd.actor .crew .sheet-body .general-container {
   grid-template-areas: "1 main" "2 main";
 }
@@ -1172,9 +1186,6 @@ select.clear-select {
 }
 .bitd.actor .crew .sheet-body .general-container .cohorts .condition {
   font-style: italic;
-}
-.bitd.actor .crew .sheet-body .claims-map .claim {
-  height: 140px;
 }
 .bitd.actor .crew .sheet-body .contacts-container .related-faction {
   margin-top: 10px;

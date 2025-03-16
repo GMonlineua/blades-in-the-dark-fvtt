@@ -1,24 +1,27 @@
 {
-  "Actor": {
-    "types": [
-      "scoundrel",
-      "crew",
-      "faction",
-      "npc",
-      "clock"
-    ],
-    "htmlFields": ["description"]
-  },
-  "Item": {
-    "types": [
-      "playbook",
-      "crewType",
-      "abilityScoundrel",
-      "abilityCrew",
-      "claim",
-      "cohort",
-      "tool",
-      "upgrade"
-    ]
-  }
+    "Actor": {
+        "types": [
+            "scoundrel",
+            "crew",
+            "faction",
+            "npc",
+            "clock"
+        ],
+        "htmlFields": [
+            "description"
+        ]
+    },
+    "Item": {
+        "types": [
+            "playbook",
+            "crewType",
+            "abilityScoundrel",
+            "abilityCrew",
+            "claim",
+            "prisonClaim",
+            "cohort",
+            "tool",
+            "upgrade"
+        ]
+    }
 }
