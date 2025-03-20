@@ -5,14 +5,13 @@ import { BitdItemSheet } from "./item-sheet.mjs";
  * @extends {BitdItemSheet}
  */
 export class BitdPlaybookSheet extends BitdItemSheet {
-
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       dragDrop: [
-        {dragSelector: ".item", dropSelector: ".playbook"},
-        {dragSelector: ".item", dropSelector: ".crewType"}
-      ]
+        { dragSelector: ".item", dropSelector: ".playbook" },
+        { dragSelector: ".item", dropSelector: ".crewType" },
+      ],
     });
   }
 
@@ -22,9 +21,9 @@ export class BitdPlaybookSheet extends BitdItemSheet {
   activateListeners(html) {
     super.activateListeners(html);
     // Everything below here is only needed if the sheet is editable
-    if (!this.options.editable) return;
+    if (!this.isEditable) return;
     // Delete linked item
-    html.find('.link-delete').click(this._onRemoveLink.bind(this));
+    html.find(".link-delete").click(this._onRemoveLink.bind(this));
   }
 
   /* -------------------------------------------- */
@@ -39,9 +38,9 @@ export class BitdPlaybookSheet extends BitdItemSheet {
     const data = TextEditor.getDragEventData(event);
 
     if (data.type === "Item") {
-      this.item.addLinkedItem(data)
+      this.item.addLinkedItem(data);
     } else if (data.type === "Actor") {
-      this.item.addLinkedActor(data)
+      this.item.addLinkedActor(data);
     }
   }
 }

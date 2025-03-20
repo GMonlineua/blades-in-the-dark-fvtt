@@ -19,6 +19,7 @@
         <p class="name">{{this.name}}</p>
         <div class="item-controls">
           <input class="claim-checkbox" type="checkbox" name="this.active" data-dtype="Boolean" {{checked this.active}}></input>
+          <a class="item-create" title="{{localize 'BITD.Item.Add'}}" data-type="{{../itemType}}"><i class="fas fa-plus"></i></a>
         </div>
       {{/if}}
 

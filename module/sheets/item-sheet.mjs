@@ -5,18 +5,19 @@ import { claimMap } from "../applications/claims-map.mjs";
  * @extends {ItemSheet}
  */
 export class BitdItemSheet extends ItemSheet {
-
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["bitd", "sheet", "item"],
       width: 550,
       height: 550,
-      tabs: [{
-        navSelector: ".sheet-tabs",
-        contentSelector: ".sheet-body",
-        initial: "general"
-      }]
+      tabs: [
+        {
+          navSelector: ".sheet-tabs",
+          contentSelector: ".sheet-body",
+          initial: "general",
+        },
+      ],
     });
   }
 
@@ -33,7 +34,10 @@ export class BitdItemSheet extends ItemSheet {
     // Retrieve base data structure.
     const context = await super.getData();
 
-    context.enrichedDescription = await TextEditor.enrichHTML(this.object.system.description, { async: true });
+    context.enrichedDescription = await TextEditor.enrichHTML(
+      this.object.system.description,
+      { async: true },
+    );
 
     // Use a safe clone of the item data for further operations.
     const itemData = context.item;
@@ -46,7 +50,10 @@ export class BitdItemSheet extends ItemSheet {
     }
 
     // Encrich editor content
-    context.enrichedDescription = await TextEditor.enrichHTML(this.object.system.description, {async: true})
+    context.enrichedDescription = await TextEditor.enrichHTML(
+      this.object.system.description,
+      { async: true },
+    );
 
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = itemData.system;
@@ -63,7 +70,7 @@ export class BitdItemSheet extends ItemSheet {
     super.activateListeners(html);
 
     // Count dot
-    html.find('.value-step-block').each(function () {
+    html.find(".value-step-block").each(function () {
       const value = Number(this.dataset.value);
       $(this)
         .find(".value-step")
@@ -78,10 +85,12 @@ export class BitdItemSheet extends ItemSheet {
     if (!this.isEditable) return;
 
     // Delete linked item
-    html.find('.link-delete').click(this._onRemoveLink.bind(this));
+    html.find(".link-delete").click(this._onRemoveLink.bind(this));
 
     // Resource dots
-    html.find(".value-step-block > .value-step").click(this._onDotChange.bind(this));
+    html
+      .find(".value-step-block > .value-step")
+      .click(this._onDotChange.bind(this));
   }
 
   _onRemoveLink(event) {
@@ -93,7 +102,9 @@ export class BitdItemSheet extends ItemSheet {
     const block = button.closest(".linked-items");
     const key = block.dataset.array;
     const path = "system." + key;
-    const newArray = this.item.system[key].filter(link => link.id !== targetId);
+    const newArray = this.item.system[key].filter(
+      (link) => link.id !== targetId,
+    );
 
     this.item.update({ [path]: newArray });
   }
@@ -110,7 +121,9 @@ export class BitdItemSheet extends ItemSheet {
 
     let value = index + 1;
 
-    const nextElement = (index === steps.length - 1) || !steps[index + 1].classList.contains("active");
+    const nextElement =
+      index === steps.length - 1 ||
+      !steps[index + 1].classList.contains("active");
 
     if (element.classList.contains("active") && nextElement) {
       steps.removeClass("active");

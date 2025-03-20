@@ -21,17 +21,15 @@ To install a module, follow these instructions:
 
 ## Documentation
 
-[Changelog](https://github.com/GMonlineua/blades-in-the-dark-fvtt/wiki/Changelog)
-
-[Roadmap](https://github.com/GMonlineua/blades-in-the-dark-fvtt/wiki/Roadmap)
-
-[Data Structure](https://github.com/GMonlineua/blades-in-the-dark-fvtt/wiki/Documentation#data-structure)
+- [Changelog](https://github.com/GMonlineua/blades-in-the-dark-fvtt/wiki/Changelog)
+- [Roadmap](https://github.com/GMonlineua/blades-in-the-dark-fvtt/wiki/Roadmap)
+- [Data Structure](https://github.com/GMonlineua/blades-in-the-dark-fvtt/wiki/Documentation#data-structure)
 
 ## Credits
 
 - This work is based on [Blades in the Dark](http://www.bladesinthedark.com), product of One Seven Design, developed and authored by John Harper, and licensed for our use under the [Creative Commons Attribution 3.0 Unported](http://creativecommons.org/licenses/by/3.0/) license.
 - Author: [Vlad Dracula](https://bsky.app/profile/gmonline-ua.bsky.social) (GMonline-ua)
-- Design: Kem
+- Design: [Kem](https://bsky.app/profile/kemrian.bsky.social)
 - Ukrainian traslation: Ivan Biletskyi
 
 [Foundry Shield]: https://img.shields.io/badge/Foundry-12-informational?style=flat-square
