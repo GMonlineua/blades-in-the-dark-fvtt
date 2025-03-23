@@ -1,429 +1,442 @@
 {
-    "TYPES": {
-        "Actor": {
-            "scoundrel": "Негідник",
-            "crew": "Ватага",
-            "faction": "Фракція",
-            "npc": "НІП",
-            "clock": "Таймер"
-        },
-        "Item": {
-            "playbook": "Буклет",
-            "crewType": "Тип ватаги",
-            "abilityScoundrel": "Здібність негідника",
-            "abilityCrew": "Здібність ватаги",
-            "claim": "Актив",
-            "prisonClaim": "Активи в тюрмі",
-            "cohort": "Когорта",
-            "tool": "Інструмент",
-            "upgrade": "Вдосконалення"
-        }
+  "TYPES": {
+    "Actor": {
+      "scoundrel": "Негідник",
+      "crew": "Ватага",
+      "faction": "Фракція",
+      "npc": "НІП",
+      "clock": "Таймер"
     },
-    "BITD": {
-        "General": "Загальне",
-        "Description": "Опис",
-        "Summary": "Резюме",
-        "Available": "Доступний",
-        "Used": "Використано",
-        "Actor": {
-            "Title": "Персонаж",
-            "Plural": "Персонажі",
-            "Name": "Ім'я",
-            "Alias": "Прізвисько",
-            "Aka": "Відомий як"
-        },
-        "Crew": {
-            "Name": "Назва",
-            "Tabs": {
-                "Claims": "Мапа активів",
-                "Prison": "Активи в'язниці",
-                "Contacts": "Контакти",
-                "Abilities": "Здібності",
-                "Notes": "Нотатки"
-            }
-        },
-        "ItemName": "Назва",
-        "Drives": "Мотиви",
-        "Belives": "Переконання",
-        "Heritage": "Походження",
-        "Background": "Передісторія",
-        "Vice": "Порок",
-        "Look": "Зовнішність",
-        "Contact": {
-            "Plural": "Контакти",
-            "Types": {
-                "Friend": "Друг",
-                "Rival": "Суперник",
-                "Enemy": "Ворог",
-                "VicePurveyor": "Постачальник пороку",
-                "Other": "Інший"
-            }
-        },
-        "Stress": "Стрес",
-        "Trauma": "Травма",
-        "ChooseTrauma": "Оберіть травму",
-        "AddTrauma": "Додати травму",
-        "Traumas": {
-            "Cold": "Байдужий",
-            "Haunted": "Надломлений",
-            "Obsessed": "Схиблений",
-            "Paranoid": "Параноїдальний",
-            "Reckless": "Нерозважливий",
-            "Soft": "Розм'яклий",
-            "Unstable": "Нестабільний",
-            "Vicious": "Жорстокий",
-            "Custom": "Своя"
-        },
-        "Load": {
-            "Title": "Навант.",
-            "Light": "Легке",
-            "Normal": "Звичайне",
-            "Heavy": "Важке",
-            "Encumbered": "Надмірне"
-        },
-        "Coins": "Золоті",
-        "Stash": "Заначка",
-        "Attribute": "Атрибут",
-        "Insight": "Проникливість",
-        "Prowess": "Завзятість",
-        "Resolve": "Рішучість",
-        "AttributeDescription": {
-            "Insight": "Наслідки через обман або розуміння.",
-            "Prowess": "Наслідки через фізичну напругу або поранення.",
-            "Resolve": "Наслідки через психічну напругу або силу волі."
-        },
-        "Action": "Дія",
-        "Hunt": "Полювання",
-        "Study": "Вивчення",
-        "Survey": "Розвідка",
-        "Tinker": "Майстрування",
-        "Finesse": "Вправність",
-        "Prowl": "Скрадання",
-        "Skirmish": "Бійка",
-        "Wreck": "Погром",
-        "Attune": "Фокусування",
-        "Command": "Наказ",
-        "Consort": "Спілкування",
-        "Sway": "Маніпуляція",
-        "ActionDescription": {
-            "Attune": "Коли ви <strong>Фокусуєтесь</strong>, ви відкриваєте свій розум до примарного поля або проводите електроплазматичну енергію через своє тіло. <em>Ви можете спілкуватися з примарою або зрозуміти аспекти спектрології. Ви можете спробувати побачити щось поза межами звичайного зору, щоб краще зрозуміти ситуацію (але Розвідка може бути кращою).</em>",
-            "Command": "Коли ви <strong>Наказуєте</strong>, ви змушуєте до швидкого підкорення. <em>Ви можете залякати або пригрозити, щоб отримати бажане. Ви можете очолити банду в груповій дії. Ви можете спробувати командувати людьми, щоб переконати їх (але Спілкування може бути кращим).</em>",
-            "Consort": "Коли ви <strong>Спілкуєтесь</strong>, ви взаємодієте з друзями та контактами. <em>Ви можете отримати доступ до ресурсів, інформації, людей або місць. Ви можете справити хороше враження або переконати когось своїм шармом і стилем. Ви можете знайти нових друзів або встановити зв'язок зі своїм походженням чи передісторією. Ви можете спробувати впливати на друзів соціальним тиском (але Наказування може бути кращим).</em>",
-            "Finesse": "Коли ви застосовуєте <strong>Вправність</strong>, ви використовуєте спритність або тонкі відволікання. <em>Ви можете залізти до кишені комусь. Ви можете керувати транспортом або конем. Ви можете вести формальний поєдинок за допомогою витонченого бойового мистецтва. Ви можете спробувати застосувати це мистецтво в хаотичній сутичці (але Бійка може бути кращою). Ви можете спробувати відкрити замок (але Майстрування може бути кращим).</em>",
-            "Hunt": "Коли ви <strong>Полюєте</strong>, ви ретельно відстежуєте ціль. <em>Ви можете переслідувати людину або дізнатися її місцезнаходження. Ви можете організувати засідку. Ви можете атакувати з точним пострілом здалеку. Ви можете спробувати застосувати зброю в ближньому бою (але Бійка може бути кращою).</em>",
-            "Prowl": "Коли ви <strong>Скрадаєтесь</strong>, ви майстерно й тихо пересуваєтесь. <em>Ви можете проскочити повз охоронця або сховатися в тіні. Ви можете бігати й стрибати по дахах. Ви можете атакувати когось із засідки ножем у спину або кийком. Ви можете спробувати зловити жертву зненацька під час бою (але Бійка може бути кращою).</em>",
-            "Skirmish": "Коли ви <strong>Б'єтесь</strong>, ви вступаєте в ближній бій із супротивником, щоб він не зміг легко втекти. <em>Ви можете боротися або захоплювати їх. Ви можете рубати й різати. Ви можете зайняти або утримати позицію в бою. Ви можете спробувати вести формальний поєдинок (але Вправність може бути кращою).</em>",
-            "Study": "Коли ви <strong>Вивчаєте</strong>, ви ретельно аналізуєте деталі й інтерпретуєте докази. <em>Ви можете збирати інформацію з документів, газет і книг. Ви можете досліджувати езотеричну тему. Ви можете ретельно аналізувати людину, щоб виявити брехню чи справжні почуття. Ви можете спробувати дослідити події, щоб зрозуміти невідкладну ситуацію (але Розвідка може бути кращою).</em>",
-            "Survey": "Коли ви <strong>Розвідуєте</strong>, ви спостерігаєте за ситуацією і передбачаєте результати. <em>Ви можете помітити явні ознаки небезпеки, перш ніж вона станеться. Ви можете виявити можливості або слабкі місця. Ви можете визначити мотиви або наміри людини (але Вивчення може бути кращим). Ви можете спробувати знайти хороше місце для засідки (але Полювання може бути кращим).</em>",
-            "Sway": "Коли ви <strong>Маніпулюєте</strong>, ви впливаєте на когось за допомогою хитрощів, шарму або аргументів. <em>Ви можете переконливо збрехати. Ви можете переконати когось зробити те, що вам потрібно. Ви можете висунути аргументи, які залишать суперника без чіткої відповіді. Ви можете спробувати змусити когось полюбити вас або підкоритися (але Спілкування або Наказування може бути кращим).</em>",
-            "Tinker": "Коли ви <strong>Майструєте</strong>, ви працюєте з пристроями та механізмами. <em>Ви можете створити новий пристрій або змінити існуючий. Ви можете відкрити замок або зламати сейф. Ви можете вимкнути сигналізацію або пастку. Ви можете використовувати іскротворення та електроплазматичні пристрої у місті на свою користь. Ви можете спробувати використовувати свої технічні знання для керування транспортом (але Вправність може бути кращою).</em>",
-            "Wreck": "Коли ви <strong>Ламаєте</strong>, ви використовуєте грубу силу. <em>Ви можете зламати двері або стіну за допомогою кувалди або вибухівки. Ви можете використовувати хаос або саботаж для створення відволікаючих маневрів або подолання перешкоди. Ви можете спробувати перемогти супротивника грубою силою в бою (але Бійка може бути кращою).</em>"
-        },
-        "Harm": "Поранення",
-        "HarmEffect": {
-            "Light": "Потребує допомоги",
-            "Medium": "-1 К",
-            "Heavy": "Менший ефект"
-        },
-        "Healing": "Відновлення",
-        "Notes": "Нотатки",
-        "Expirience": {
-            "Title": "Досвід",
-            "HowItWorks": "Наприкінці кожної сесії відзначте 1 ПД (у своєму буклеті або атрибуті) або 2 ПД, якщо цей пункт зустрічався кілька разів.",
-            "DesperateRoll": "Кожного разу, коли ви здійснюєте відчайдушну дію, відзначайте ПД у відповідному атрибуті.",
-            "Character": "Ви висловили свої переконання, мотиви, походження або передісторію.",
-            "Vice": "Ви боролися з проблемами, пов'язаними з вашим пороком або травмами протягом сесії."
-        },
-        "RulesRef": {
-            "Title": "Правила",
-            "GatherInfo": {
-                "Title": "Збір інформації",
-                "Tips": "<li>Що вони мають намір зробити?</li><li>Як я можу змусити їх зробити [X]?</li><li>На що мені слід звернути увагу?</li><li>Який найкращий шлях сюди?</li><li>Де я можу сховатися?</li><li>Як я можу знайти [X]?</li><li>Що тут насправді відбувається?</li>"
-            },
-            "Teamwork": {
-                "Title": "Командна робота",
-                "Tips": "<span><b>Допоможіть</b> товаришу по команді</span><span><b>Захистіть</b> товариша по команді</span><span>Ведіть <b>групову дію</b></span><span><b>Підготуйте</b> товариша по команді</span>"
-            }
-        },
-        "Playbook": {
-            "Summary": "Короткий опис цього буклету",
-            "Exp": {
-                "Title": "Підказка досвіду",
-                "Placeholder": "Підказка досвіду, що залежить від буклету персонажа"
-            },
-            "Items": "Предмети"
-        },
-        "Ability": {
-            "Plural": "Здібності",
-            "Special": "Особливі здібності",
-            "IsActive": "Активна"
-        },
-        "Inventory": "Предмети",
-        "InventorySpecial": "Особливі предмети",
-        "Tool": {
-            "Common": "Звичайний",
-            "Special": "Особливий",
-            "Loadout": "Спорядження",
-            "Equipped": "Екіпіровано",
-            "Broken": "Зламано/Втрачено"
-        },
-        "CrewType": "Тип ватаги",
-        "Lair": "Лігво",
-        "HuntingGround": {
-            "Title": "Мисливські угіддя",
-            "Operation": "Тип операції",
-            "Edit": "Редагувати мисливські угіддя",
-            "Ok": "Добре",
-            "CustomName": "Назва",
-            "Tips": "<p>Отримайте +1к до будь-яких перевірок збору інформації, готуючись до операції свого улюбленого типу.</p><p>Безкоштовна додаткова дія у перепочинку для внеску в цю операцію.</p>"
-        },
-        "Tier": "Рівень",
-        "Hold": {
-            "Title": "Вплив",
-            "Weak": "Слабкий",
-            "Strong": "Сильний"
-        },
-        "Status": {
-            "Title": "Статус",
-            "Allies": "Союзники (+3)",
-            "Friendly": "Приязний (+2)",
-            "Helpful": "Корисний (+1)",
-            "Neutral": "Нейтральний",
-            "Interfering": "Заважає (-1)",
-            "Hostile": "Ворожий (-2)",
-            "War": "Війна (-3)"
-        },
-        "Rep": "Реп",
-        "RepType": "Репутація",
-        "RepDescription": "Яка початкова репутація у ватаги?",
-        "Vaults": "Сховище",
-        "Heat": "Палево",
-        "WantedLvl": "Рівень розшуку",
-        "Turf": "Територія",
-        "CrewExp": {
-            "ShortTitle": "ПД",
-            "Title": "Підказка досвіду",
-            "Placeholder": "Підказка досвіду, що залежить від буклету ватаги",
-            "HowItWorks": "Відзначте 1 ПД за кожен з перелічених пунктів або 2 ПД, якщо пункт зустрічався кілька разів.",
-            "Tips": "<li>Змагайтесь із викликами, що перевищують ваш поточний рівень.</li><li>Підтримуйте репутацію ватаги або розвивайте нову.</li><li>Висловлюйте цілі, мотиви, внутрішні конфлікти або сутнісну природу ватаги.</li>"
-        },
-        "Goals": "Цілі",
-        "Members": "Члени",
-        "Factions": "Фракції",
-        "Allies": "Союзники",
-        "Enemies": "Вороги",
-        "NotableAssets": "Важливі ресурси",
-        "Quirks": "Дивацтва",
-        "Situation": "Ситуація",
-        "Claim": {
-            "Title": "Мапа активів",
-            "Prison": "Активи в'язниці",
-            "LoadPrison": "Завантажити стандартну в'язницю",
-            "Plural": "Активи",
-            "Effect": "Ефект активу",
-            "NoFreeSpace": "Немає вільного місця на мапі активів {name} ({id})",
-            "MoveLeft": "Перемістити актив вліво",
-            "MoveRight": "Перемістити актив вправо"
-        },
-        "Upgrade": {
-            "Plural": "Вдосконалення",
-            "SpecialPlural": "Особливі вдосконалення",
-            "Common": "Звичайне",
-            "Special": "Особливе",
-            "IsActive": "Активне",
-            "Price": "Ціна"
-        },
-        "Cohort": {
-            "Plural": "Когорти",
-            "Type": {
-                "Title": "Тип",
-                "Gang": "Банда",
-                "Expert": "Експерт"
-            },
-            "Elite": "Елітна",
-            "Specializations": "Спеціалізації",
-            "Armor": "Броня",
-            "Edges": "Козирі",
-            "Flaws": "Хиби",
-            "Harm": {
-                "Title": "Поранення",
-                "NoHarm": "Немає",
-                "Weakened": "Ослаблений",
-                "Impaired": "Пошкоджений",
-                "Broken": "Зламаний",
-                "Dead": "Мертвий"
-            }
-        },
-        "ShowForPlayers": {
-            "Title": "Показати",
-            "Tooltip": "Показати це поле в обмеженому аркуші"
-        },
-        "Item": {
-            "Add": "Додати",
-            "New": "Предмет",
-            "Delete": "Видалити",
-            "Edit": "Редагувати",
-            "Show": "Показати"
-        },
-        "Link": {
-            "Plural": "Посилання",
-            "Open": "Відкрити посилання",
-            "Delete": "Видалити"
-        },
-        "Roll": {
-            "Title": "Кидок кісток",
-            "Button": "Кидок",
-            "Submit": "Кинути",
-            "Cancel": "Скасувати",
-            "DiceNumber": "Кількість кісток",
-            "Modifier": "Модифікатор",
-            "Type": {
-                "Title": "Тип кидка",
-                "Action": "Перевірка дії",
-                "Resistance": "Перевірка супротиву",
-                "Fortune": "Перевірка на удачу",
-                "GatherInformation": "Збір інформації",
-                "Engagement": "Перевірка ситуації",
-                "IndulgeVice": "Потурання пороку",
-                "AcquireAsset": "Отримати ресурс"
-            },
-            "PositionEffect": "Обставини та ефект",
-            "Position": {
-                "Title": "Обставини",
-                "Controlled": "Контрольовані",
-                "Risky": "Ризиковані",
-                "Desperate": "Безнадійні"
-            },
-            "Effect": {
-                "Title": "Ефект",
-                "Zero": "Нульовий",
-                "Limited": "Обмежений",
-                "Standard": "Звичайний",
-                "Great": "Значний",
-                "Extreme": "Екстремальний"
-            },
-            "EffectDescription": {
-                "Title": "Ефект",
-                "Zero": "Ця дія має слабкий, незначний або навіть нульовий ефект. 0 відміток",
-                "Limited": "Ви досягаєте часткового або слабкого ефекту. Як саме ваш вплив зменшується? Яких зусиль ще треба докласти, щоб досягти мети? 1 відмітка",
-                "Standard": "Ви досягаєте того, що можна очікувати як «нормальний» результат для цієї дії. Чи цього достатньо, чи ще є що робити? 2 відмітки",
-                "Great": "Ви досягаєте більшого, ніж зазвичай. Як проявляється додаткова робота? Які додаткові переваги ви отримуєте? 3 відмітки",
-                "Extreme": "Екстремальний ефект! 5 відміток"
-            },
-            "Bonus": {
-                "or": "або",
-                "AddDice": "Отримати бонусні кістки",
-                "Push": "Докласти зусиль",
-                "PushEffect": "Докласти зусиль для +1 ефекту",
-                "DevilsBargain": "Угода з дияволом",
-                "Assistance": "Допомога"
-            },
-            "BonusDescription": {
-                "Push": "Ви отримуєте {stress} стресу.",
-                "DevilsBargain": "Угода з дияволом виконується незалежно від результату кидка.",
-                "Assistance": "Персонаж, який допомагає, отримує 1 стрес і може також постраждати від будь-яких наслідків, що виникають через кидок."
-            },
-            "SufferTrauma": {
-                "Title": "Отримати травму",
-                "Description": "Ви отримуєте {stress} стресу, тому страждаєте від отриманої <b>травми</b>. Вас <i>залишають на смерть</i> або ви іншим чином вибуваєте з поточного конфлікту, щоб повернутися пізніше, спустошеним і розгубленим. Коли ви повертаєтеся, у вас <b>нуль стресу</b>, і ваш порок буде задоволений під час наступного перепочинку (див. <b>Порок</b> на сторінці 156)."
-            },
-            "Result": {
-                "Exp": "{actor} отримує 1 досвід у {attribute}",
-                "Critical": "Критичний успіх",
-                "Success": "Повний успіх",
-                "Mixed": "Частковий успіх",
-                "Fail": "Поганий результат"
-            },
-            "Action": {
-                "Controlled": {
-                    "Critical": "Ви робите це з <strong>посиленим ефектом</strong>.",
-                    "Success": "Ви це робите.",
-                    "Mixed": "Ви вагаєтесь. Відійдіть і спробуйте інший підхід, або ж зробіть це з незначним наслідком: відбувається незначне <strong>ускладнення</strong>, ви маєте <strong>послаблений ефект</strong>, ви отримуєте <strong>незначне поранення</strong>, або опиняєтесь у <strong>ризикованих</strong> обставинах.",
-                    "Fail": "Ви вагатись. Продовжуйте, скориставшись <strong>ризикованою</strong> можливістю, або відійдіть і спробуйте інший підхід."
-                },
-                "Risky": {
-                    "Critical": "Ви робите це з <strong>посиленим ефектом</strong>.",
-                    "Success": "Ви це робите.",
-                    "Mixed": "Ви це робите, але є наслідок: ви отримуєте <strong>поранення</strong>, відбувається <strong>ускладнення</strong>, ви маєте <strong>послаблений ефект</strong>, або опиняєтесь у <strong>безнадійних</strong> обставинах.",
-                    "Fail": "Все йде погано. Ви отримуєте <strong>поранення</strong>, відбувається <strong>ускладнення</strong>, ви опиняєтесь у <strong>безнадійних</strong> обставинах, або <strong>втрачаєте цю можливість</strong>."
-                },
-                "Desperate": {
-                    "Critical": "Ви робите це з <strong>посиленим ефектом</strong>.",
-                    "Success": "Ви це робите.",
-                    "Mixed": "Ви це робите, але є наслідок: ви отримуєте <strong>серйозне поранення</strong>, відбувається <strong>серйозне ускладнення</strong>, ви маєте <strong>послаблений ефект</strong>.",
-                    "Fail": "Це найгірший результат. Ви отримуєте <strong>серйозне поранення</strong>, відбувається <strong>серйозне ускладнення</strong>, ви <strong>втрачаєте можливість</strong> для дії."
-                }
-            },
-            "Resistance": {
-                "Result": "<p>Ви <strong>зменшуєте</strong> або <strong>уникаєте</strong> наслідків (Майстер вибирає).</p>",
-                "Regular": "<p>Отримати <strong>{stress}</strong> стресу</p>",
-                "Critical": "<p>Зніміть 1 стрес.</p>"
-            },
-            "Fortune": {
-                "Critical": "Видатний результат / Значний, екстремальний ефект.",
-                "Success": "Хороший результат / Звичайний ефект.",
-                "Mixed": "Змішаний результат / Обмежений ефект.",
-                "Fail": "Поганий результат / Невеликий ефект."
-            },
-            "GatherInformation": {
-                "RollAs": "Кидок як",
-                "Zero": "Ви отримуєте мало або неповну інформацію.",
-                "Limited": "Ви отримуєте неповну або часткову інформацію. Для отримання всіх відповідей буде потрібно ще більше збору інформації.",
-                "Standard": "Ви отримуєте хороші деталі. Можливі уточнюючі та подальші питання.",
-                "Great": "Ви отримуєте виняткові деталі. Інформація є повною, і подальші питання можуть розширити її на суміжні теми або розкрити більше, ніж ви очікували.",
-                "Extreme": "Ви отримуєте більше, ніж коли-небудь могли сподіватися."
-            },
-            "Engagement": {
-                "Critical": "Надзвичайний результат. <em>Ви вже подолали першу перешкоду і опинилися в контрольованих обставинах для наступних дій.</em>",
-                "Success": "Гарний результат. <em>Ви знаходитесь в контрольованих обставинах, коли починається дія.</em>",
-                "Mixed": "Змішаний результат. <em>Ви знаходитесь у ризикованих обставинах, коли починається дія.</em>",
-                "Fail": "Поганий результат. <em>Ви знаходитесь у безнадійних обставинах, коли починається дія.</em>",
-                "Operation": "Чи є ця операція особливо сміливою або зухвалою? Отримайте <strong>+1к</strong>. Чи є ця операція надто складною або залежною від багатьох факторів? Отримайте <strong>-1к</strong>.",
-                "Plan": "Чи <strong>деталь плану</strong> розкриває вразливість цілі або вражає її в найслабкішому місці? Отримайте <strong>+1к</strong>. Чи ціль найбільш захищена від цього підходу, або має особливий захист чи підготовку? Отримайте <strong>-1к</strong>.",
-                "Contact": "Чи може хтось із ваших <strong>друзів</strong> або <strong>контактів</strong> надати допомогу або інсайдерську інформацію для цієї операції? Отримайте <strong>+1к</strong>. Чи втручаються в операцію якісь <strong>вороги</strong> або <strong>суперники</strong>? Отримайте <strong>-1к</strong>.",
-                "Other": "Чи є якісь <strong>інші елементи</strong>, які ви хочете врахувати? Можливо, ціль нижчого рівня дасть вам +1к. Можливо, ціль вищого рівня дасть вам -1к. Можливо, в районі є ситуація, яка робить операцію складнішою або простішою."
-            },
-            "AcquireAsset": {
-                "Critical": "Ви отримуєте ресурс якості <strong>Рівень +2</strong>.<br>Щоб підвищити результат вище критичного, ви можете витратити <strong>2 золоті</strong> за кожен додатковий +1 бонус до Рівня.",
-                "Success": "Ви отримуєте ресурс якості <strong>Рівень +1</strong>",
-                "Mixed": "Ви отримуєте ресурс якості <strong>Рівень</strong>",
-                "Fail": "Ви отримуєте ресурс якості <strong>Рівень -1</strong>"
-            },
-            "IndulgeVice": {
-                "Regular": "Ви потураєте своєму пороку. Зніміть <strong>{stress} стресу</strong>.",
-                "Overindulgence": "<p>Ви <strong>зловживаєте</strong>. Зніміть <strong>весь стрес</strong> і виберіть <strong>один</strong> із наступних наслідків:</p>",
-                "Trouble": "<li><strong>Влипнути в халепу.</strong> Виберіть або киньте додаткове <strong>хитросплетіння.</strong></li>",
-                "Brag": "<li><strong>Вихваляєтесь</strong> своїми досягненнями. <strong>+2 Палево</strong></li>",
-                "Lost": "<li><strong>Зникнення.</strong> Ваш персонаж зникає на кілька тижнів. Грайте іншим персонажем, поки цей не повернеться зі своєї гульні. Коли персонаж повертається, всі його поранення також вилікувані.</li>",
-                "Trapped": "<li><strong>Відрізаний.</strong> Ваш теперішній постачальник більше не надає вам послуг. Знайдіть нове джерело для свого пороку.</li>"
-            }
-        },
-        "Clock": {
-            "Filled": "Заповнено",
-            "Size": "Розмір"
-        },
-        "ImportActor": {
-            "Title": "Імпорт персонажа",
-            "Description": "Імпортувати персонажа {actor}?",
-            "Submit": "Ок"
-        },
-        "Cancel": "Скасувати",
-        "Errors": {
-            "Item": {
-                "ExistsId": "Предмет із таким самим id вже існує.",
-                "ExistsName": "Предмет із такою ж назвою вже існує.",
-                "NotSupported": "<b>{type} {item}</b> не може бути доданий до цього контейнера",
-                "NotExist": "Елемент <b>{type} {item}</b> не існує, тому він видалений зі списку"
-            },
-            "Actor": {
-                "ExistsId": "Елемент із таким самим ідентифікатором вже існує в контейнері.",
-                "ExistsName": "Елемент із таким самим ім'ям вже існує в контейнері.",
-                "InPack": "Ви можете додати Друзів до Персонажа, тільки якщо вони існують у світі.",
-                "NotSupported": "<b>{type} {actor}</b> не може бути доданий до цього контейнера.",
-                "NotExist": "Персонаж <b>{type} {actor}</b> не існує.",
-                "CantAddYourself": "Ви не можете додати посилання на себе до актора",
-                "NoPermission": "У вас немає дозволу на створення акторів, тому ви не можете імпортувати їх із Типу Ватаги"
-            }
-        }
+    "Item": {
+      "playbook": "Буклет",
+      "crewType": "Тип ватаги",
+      "abilityScoundrel": "Здібність негідника",
+      "abilityCrew": "Здібність ватаги",
+      "claim": "Актив",
+      "prisonClaim": "Активи в тюрмі",
+      "cohort": "Когорта",
+      "tool": "Інструмент",
+      "upgrade": "Вдосконалення"
     }
+  },
+  "BITD": {
+    "General": "Загальне",
+    "Description": "Опис",
+    "Notes": "Нотатки",
+    "Summary": "Резюме",
+    "Available": "Доступний",
+    "Used": "Використано",
+    "Uses": "Uses",
+    "Actor": {
+      "HumanName": "Name",
+      "StructureName": "Name",
+      "Alias": "Прізвисько",
+      "Aka": "Відомий як",
+      "Coins": "Coins",
+      "Tier": "Tier"
+    },
+    "Item": {
+      "Plural": "Items",
+      "Name": "Name",
+      "Add": "Додати",
+      "New": "Предмет",
+      "Delete": "Видалити",
+      "Edit": "Редагувати",
+      "Show": "Показати"
+    },
+    "Scoundrel": {
+      "Drives": "Drives",
+      "Beliefs": "Beliefs",
+      "Heritage": "Heritage",
+      "Background": "Background",
+      "Vice": "Vice",
+      "Look": "Look",
+      "Stress": "Stress",
+      "Traumas": {
+        "Trauma": "Trauma",
+        "ChooseTrauma": "Choose Trauma",
+        "AddTrauma": "Add Trauma",
+        "Cold": "Cold",
+        "Haunted": "Haunted",
+        "Obsessed": "Obsessed",
+        "Paranoid": "Paranoid",
+        "Reckless": "Reckless",
+        "Soft": "Soft",
+        "Unstable": "Unstable",
+        "Vicious": "Vicious",
+        "Custom": "Custom"
+      },
+      "Harms": {
+        "Harm": "Harm",
+        "Healing": "Healing",
+        "Effect": {
+          "Light": "Need Help",
+          "Medium": "-1 D",
+          "Heavy": "Less Effect"
+        }
+      },
+      "Stash": "Stash",
+      "Load": {
+        "Title": "Load",
+        "Light": "Light",
+        "Normal": "Normal",
+        "Heavy": "Heavy",
+        "Encumbered": "Encumbered"
+      },
+      "Exp": {
+        "XP": "Experience",
+        "HowItWorks": "At the end of each session, for these three items, mark 1 xp (in your playbook or an attribute) or 2 xp if that item occurred multiple times.",
+        "DesperateRoll": "Every time you roll a desperate action, mark xp in that action's attribute.",
+        "Character": "You expressed your beliefs, drives, heritage, or background.",
+        "Vice": "You struggled with issues from your vice or traumas during the session."
+      },
+      "Inventory": {
+        "Common": "Items",
+        "Special": "Special Items"
+      },
+      "RulesRef": {
+        "Title": "Rules Reference",
+        "GatherInfo": {
+          "Title": "Gather Information",
+          "Tips": "<li>What do they intend to do?</li><li>How can I get them to [X]?</li><li>What should I look out for?</li><li>What's the best way in?</li><li>Where can I hide here?</li><li>How can I find [X]?</li><li>What's really going on here?</li>"
+        },
+        "Teamwork": {
+          "Title": "Teamwork",
+          "Tips": "<span><b>Assist</b> a teammate</span><span><b>Protect</b> a teammate</span><span>Lead a <b>group action</b></span><span><b>Set up</b> a teammate</span>"
+        }
+      }
+    },
+    "Crew": {
+      "Tabs": {
+        "Claims": "Мапа активів",
+        "Prison": "Активи в'язниці",
+        "Abilities": "Здібності",
+        "Contacts": "Контакти",
+        "Notes": "Нотатки"
+      },
+      "Lair": "Lair",
+      "HuntingGround": {
+        "Title": "Hunting Grounds",
+        "Operation": "Operation Type",
+        "Edit": "Edit Hunting Ground",
+        "Ok": "Ok",
+        "CustomName": "Custom name",
+        "Tips": "<p>Get +1d to any gather information rolls when prepare to operation of your prefer type.</p><p>Free additional downtime activity to contribute to that operation.</p>"
+      },
+      "Hold": {
+        "Title": "Hold",
+        "Weak": "Weak",
+        "Strong": "Strong"
+      },
+      "Reputation": {
+        "Rep": "Rep",
+        "Type": "Reputation",
+        "Description": "What initial reputation crew have?"
+      },
+      "Vaults": "Vaults",
+      "Heat": "Heat",
+      "WantedLvl": "Wanted Level",
+      "Exp": {
+        "XP": "XP",
+        "HowItWorks": "Mark 1 xp for each item below, or 2 xp if it occurred multiple times.",
+        "Challenge": "Contend with challenges above your current station.",
+        "Reputation": "Bolster your crew's reputation or develop a new one.",
+        "Nature": "Express the goals, drives, inner conflict, or essential nature of the crew."
+      }
+    },
+    "Faction": {
+      "Status": {
+        "Title": "Status",
+        "Allies": "Allies (+3)",
+        "Friendly": "Friendly (+2)",
+        "Helpful": "Helpful (+1)",
+        "Neutral": "Neutral",
+        "Interfering": "Interfering (-1)",
+        "Hostile": "Hostile (-2)",
+        "War": "War (-3)"
+      },
+      "Goals": "Goals",
+      "Members": "Members",
+      "Factions": "Factions",
+      "Allies": "Allies",
+      "Enemies": "Enemies",
+      "NotableAssets": "Notable Assets",
+      "Quirks": "Quirks",
+      "Situation": "Situation",
+      "ShowForPlayers": {
+        "Title": "Show",
+        "Tooltip": "Show this field in limited sheet"
+      }
+    },
+    "Clock": {
+      "Filled": "Заповнено",
+      "Size": "Розмір"
+    },
+    "Playbook": {
+      "Summary": "Короткий опис цього буклету",
+      "Exp": {
+        "Clue": "Expirience Clue",
+        "Placeholder": "Підказка досвіду, що залежить від буклету персонажа"
+      }
+    },
+    "CrewType": {
+      "ExpClue": "Expirience clue which depend on crew's playbook"
+    },
+    "Ability": {
+      "Plural": "Здібності",
+      "PluralSpecial": "Special Abilities",
+      "IsActive": "Активна"
+    },
+    "Upgrade": {
+      "Plural": "Вдосконалення",
+      "SpecialPlural": "Особливі вдосконалення",
+      "Common": "Звичайне",
+      "Special": "Особливе",
+      "IsActive": "Активне",
+      "Price": "Ціна"
+    },
+    "Contact": {
+      "Plural": "Контакти",
+      "Types": {
+        "Friend": "Друг",
+        "Rival": "Суперник",
+        "Enemy": "Ворог",
+        "VicePurveyor": "Постачальник пороку",
+        "Other": "Інший"
+      }
+    },
+    "Claim": {
+      "Title": "Мапа активів",
+      "Turf": "Turf",
+      "Plural": "Активи",
+      "Effect": "Ефект активу",
+      "Prison": "Активи в'язниці",
+      "LoadPrison": "Завантажити стандартну в'язницю",
+      "NoFreeSpace": "Немає вільного місця на мапі активів {name} ({id})",
+      "MoveLeft": "Перемістити актив вліво",
+      "MoveRight": "Перемістити актив вправо"
+    },
+    "Cohort": {
+      "Plural": "Когорти",
+      "Type": {
+        "Title": "Тип",
+        "Gang": "Банда",
+        "Expert": "Експерт"
+      },
+      "Elite": "Елітна",
+      "Specializations": "Спеціалізації",
+      "Armor": "Броня",
+      "Edges": "Козирі",
+      "Flaws": "Хиби",
+      "Harms": {
+        "Harm": "Harm",
+        "NoHarm": "None",
+        "Weakened": "Weakened",
+        "Impaired": "Impaired",
+        "Broken": "Broken",
+        "Dead": "Dead"
+      }
+    },
+    "Tool": {
+      "Common": "Звичайний",
+      "Special": "Особливий",
+      "Loadout": "Спорядження",
+      "Equipped": "Екіпіровано",
+      "Broken": "Зламано/Втрачено"
+    },
+    "Attributes": {
+      "Attribute": "Attribute",
+      "Insight": "Insight",
+      "Prowess": "Prowess",
+      "Resolve": "Resolve",
+      "Description": {
+        "Insight": "Consequences from deception or understanding.",
+        "Prowess": "Consequences from physical strain or injury.",
+        "Resolve": "Consequences from mental strain or willpower."
+      }
+    },
+    "Actions": {
+      "Action": "Action",
+      "Hunt": "Hunt",
+      "Study": "Study",
+      "Survey": "Survey",
+      "Tinker": "Tinker",
+      "Finesse": "Finesse",
+      "Prowl": "Prowl",
+      "Skirmish": "Skirmish",
+      "Wreck": "Wreck",
+      "Attune": "Attune",
+      "Command": "Command",
+      "Consort": "Consort",
+      "Sway": "Sway",
+      "Description": {
+        "Hunt": "When you <strong>Hunt</strong>, you carefully track a target. <em>You might follow a person or discover their location. You might arrange an ambush. You might attack with precision shooting from a distance. You could try to bring your guns to bear in a melee (but Skirmishing might be better).</em>",
+        "Study": "When you <strong>Study</strong>, you scrutinize details and interpret evidence. <em>You might gather information from documents, newspapers, and books. You might do research on an esoteric topic. You might closely analyze a person to detect lies or true feelings. You could try to examine events to understand a pressing situation (but Surveying might be better).</em>",
+        "Survey": "When you <wrap>Survey</wrap>, you observe the situation and anticipate outcomes. <em>You might spot telltale signs of trouble before it happens. You might uncover opportunities or weaknesses. You might detect a person's motivations or intentions (but Studying might be better). You could try to spot a good ambush point (but Hunting might be better).</em>",
+        "Tinker": "When you <strong>Tinker</strong>, you fiddle with devices and mechanisms. <em>You might create a new gadget or alter an existing item. You might pick a lock or crack a safe. You might disable an alarm or trap. You might turn the spark- craft and electroplasmic devices around the city to your advantage. You could try to use your technical expertise to control a vehicle (but Finessing might be better).</em>",
+        "Finesse": "When you <strong>Finesse</strong>, you employ dextrous manipulation or subtle misdirection. <em>You might pick someone's pocket. You might handle the controls of a vehicle or direct a mount. You might formally duel an opponent with graceful fighting arts. You could try to employ those arts in a chaotic melee (but Skirmishing might be better). You could try to pick a lock (but Tinkering might be better).</em>",
+        "Prowl": "When you <strong>Prowl</strong>, you traverse skillfully and quietly. <em>You might sneak past a guard or hide in the shadows. You might run and leap across the rooftops. You might attack someone from hiding with a back-stab or blackjack. You could try to waylay a victim in the midst of battle (but Skirmishing might be better).</em>",
+        "Skirmish": "When you <strong>Skirmish</strong>, you entangle a target in close combat so they can't easily escape. <em>You might brawl or wrestle with them. You might hack and slash. You might seize or hold a position in battle. You could try to fight in a formal duel (but Finessing might be better).</em>",
+        "Wreck": "When you <strong>Wreck</strong>, you unleash savage force. <em>You might smash down a door or wall with a sledgehammer, or use an explosive to do the same. You might employ chaos or sabotage to create a distraction or overcome an obstacle. You could try to overwhelm an enemy with sheer force in battle (but Skirmishing might be better).</em>",
+        "Attune": "When you <strong>Attune</strong>, you open your mind to the ghost field or channel nearby electroplasmic energy through your body. <em>You might communicate with a ghost or understand aspects of spectrology. You could try to perceive beyond sight in order to better understand your situation (but Surveying might be better).</em>",
+        "Command": "When you <strong>Command</strong>, you compel swift obedience. <em>You might intimidate or threaten to get what you want. You might lead a gang in a group action. You could try to order people around to persuade them (but Consorting might be better).</em>",
+        "Consort": "When you <strong>Consort</strong>, you socialize with friends and contacts. <em>You might gain access to resources, information, people, or places. You might make a good impression or win someone over with your charm and style. You might make new friends or connect with your heritage or background. You could try to direct your friends with social pressure (but Commanding might be better).</em>",
+        "Sway": "When you <strong>Sway</strong>, you influence someone with guile, charm, or argument. <em>You might lie convincingly. You might persuade someone to do what you want. You might argue a case that leaves no clear rebuttal. You could try to trick people into affection or obedience (but Consorting or Commanding might be better).</em>"
+      }
+    },
+    "Link": {
+      "Plural": "Посилання",
+      "Open": "Відкрити посилання",
+      "Delete": "Видалити",
+      "ImportActor": {
+        "Title": "Import actor",
+        "Description": "Import an actor {actor} from the compendium?",
+        "Submit": "Ok"
+      }
+    },
+    "Roll": {
+      "Title": "Кидок кісток",
+      "Button": "Кидок",
+      "Submit": "Кинути",
+      "Cancel": "Скасувати",
+      "DiceNumber": "Кількість кісток",
+      "Modifier": "Модифікатор",
+      "Type": {
+        "Title": "Тип кидка",
+        "Action": "Перевірка дії",
+        "Resistance": "Перевірка супротиву",
+        "Fortune": "Перевірка на удачу",
+        "GatherInformation": "Збір інформації",
+        "Engagement": "Перевірка ситуації",
+        "IndulgeVice": "Потурання пороку",
+        "AcquireAsset": "Отримати ресурс"
+      },
+      "PositionEffect": "Обставини та ефект",
+      "Position": {
+        "Title": "Обставини",
+        "Controlled": "Контрольовані",
+        "Risky": "Ризиковані",
+        "Desperate": "Безнадійні"
+      },
+      "Effect": {
+        "Title": "Effect",
+        "Zero": "Нульовий",
+        "Limited": "Обмежений",
+        "Standard": "Звичайний",
+        "Great": "Значний",
+        "Extreme": "Екстремальний",
+        "Description": {
+          "Zero": "This action has poor, little or even zero effect. 0 Tick",
+          "Limited": "You achieve a partial or weak effect. How is your impact diminished? What effort remains to achieve your goal? 1 Tick",
+          "Standard": "You achieve what we’d expect as “normal” with this action. Is that enough, or is there more left to do? 2 Ticks",
+          "Great": "You achieve more than usual. How does the extra effort manifest? What additional benefit do you enjoy? 3 Ticks",
+          "Extreme": "Extreme Effect! 5 Ticks"
+        }
+      },
+      "Bonus": {
+        "or": "або",
+        "AddDice": "Отримати бонусні кістки",
+        "Push": "Докласти зусиль",
+        "PushEffect": "Докласти зусиль для +1 ефекту",
+        "DevilsBargain": "Угода з дияволом",
+        "Assistance": "Допомога",
+        "Description": {
+          "Push": "You suffer {stress} stress.",
+          "DevilsBargain": "The Devil’s Bargain occurs regardless of the outcome of the roll.",
+          "Assistance": "Character who helps suffer 1 stress and might also suffer any consequences that occur because of the roll."
+        }
+      },
+      "SufferTrauma": {
+        "Title": "Отримати травму",
+        "Description": "Ви отримуєте {stress} стресу, тому страждаєте від отриманої <b>травми</b>. Вас <i>залишають на смерть</i> або ви іншим чином вибуваєте з поточного конфлікту, щоб повернутися пізніше, спустошеним і розгубленим. Коли ви повертаєтеся, у вас <b>нуль стресу</b>, і ваш порок буде задоволений під час наступного перепочинку (див. <b>Порок</b> на сторінці 156)."
+      },
+      "Result": {
+        "Exp": "{actor} отримує 1 досвід у {attribute}",
+        "Critical": "Критичний успіх",
+        "Success": "Повний успіх",
+        "Mixed": "Частковий успіх",
+        "Fail": "Поганий результат"
+      },
+      "Action": {
+        "Controlled": {
+          "Critical": "Ви робите це з <strong>посиленим ефектом</strong>.",
+          "Success": "Ви це робите.",
+          "Mixed": "Ви вагаєтесь. Відійдіть і спробуйте інший підхід, або ж зробіть це з незначним наслідком: відбувається незначне <strong>ускладнення</strong>, ви маєте <strong>послаблений ефект</strong>, ви отримуєте <strong>незначне поранення</strong>, або опиняєтесь у <strong>ризикованих</strong> обставинах.",
+          "Fail": "Ви вагатись. Продовжуйте, скориставшись <strong>ризикованою</strong> можливістю, або відійдіть і спробуйте інший підхід."
+        },
+        "Risky": {
+          "Critical": "Ви робите це з <strong>посиленим ефектом</strong>.",
+          "Success": "Ви це робите.",
+          "Mixed": "Ви це робите, але є наслідок: ви отримуєте <strong>поранення</strong>, відбувається <strong>ускладнення</strong>, ви маєте <strong>послаблений ефект</strong>, або опиняєтесь у <strong>безнадійних</strong> обставинах.",
+          "Fail": "Все йде погано. Ви отримуєте <strong>поранення</strong>, відбувається <strong>ускладнення</strong>, ви опиняєтесь у <strong>безнадійних</strong> обставинах, або <strong>втрачаєте цю можливість</strong>."
+        },
+        "Desperate": {
+          "Critical": "Ви робите це з <strong>посиленим ефектом</strong>.",
+          "Success": "Ви це робите.",
+          "Mixed": "Ви це робите, але є наслідок: ви отримуєте <strong>серйозне поранення</strong>, відбувається <strong>серйозне ускладнення</strong>, ви маєте <strong>послаблений ефект</strong>.",
+          "Fail": "Це найгірший результат. Ви отримуєте <strong>серйозне поранення</strong>, відбувається <strong>серйозне ускладнення</strong>, ви <strong>втрачаєте можливість</strong> для дії."
+        }
+      },
+      "Resistance": {
+        "Result": "<p>Ви <strong>зменшуєте</strong> або <strong>уникаєте</strong> наслідків (Майстер вибирає).</p>",
+        "Regular": "<p>Отримати <strong>{stress}</strong> стресу</p>",
+        "Critical": "<p>Зніміть 1 стрес.</p>"
+      },
+      "Fortune": {
+        "Critical": "Видатний результат / Значний, екстремальний ефект.",
+        "Success": "Хороший результат / Звичайний ефект.",
+        "Mixed": "Змішаний результат / Обмежений ефект.",
+        "Fail": "Поганий результат / Невеликий ефект."
+      },
+      "GatherInformation": {
+        "RollAs": "Кидок як",
+        "Zero": "Ви отримуєте мало або неповну інформацію.",
+        "Limited": "Ви отримуєте неповну або часткову інформацію. Для отримання всіх відповідей буде потрібно ще більше збору інформації.",
+        "Standard": "Ви отримуєте хороші деталі. Можливі уточнюючі та подальші питання.",
+        "Great": "Ви отримуєте виняткові деталі. Інформація є повною, і подальші питання можуть розширити її на суміжні теми або розкрити більше, ніж ви очікували.",
+        "Extreme": "Ви отримуєте більше, ніж коли-небудь могли сподіватися."
+      },
+      "Engagement": {
+        "Critical": "Надзвичайний результат. <em>Ви вже подолали першу перешкоду і опинилися в контрольованих обставинах для наступних дій.</em>",
+        "Success": "Гарний результат. <em>Ви знаходитесь в контрольованих обставинах, коли починається дія.</em>",
+        "Mixed": "Змішаний результат. <em>Ви знаходитесь у ризикованих обставинах, коли починається дія.</em>",
+        "Fail": "Поганий результат. <em>Ви знаходитесь у безнадійних обставинах, коли починається дія.</em>",
+        "Operation": "Чи є ця операція особливо сміливою або зухвалою? Отримайте <strong>+1к</strong>. Чи є ця операція надто складною або залежною від багатьох факторів? Отримайте <strong>-1к</strong>.",
+        "Plan": "Чи <strong>деталь плану</strong> розкриває вразливість цілі або вражає її в найслабкішому місці? Отримайте <strong>+1к</strong>. Чи ціль найбільш захищена від цього підходу, або має особливий захист чи підготовку? Отримайте <strong>-1к</strong>.",
+        "Contact": "Чи може хтось із ваших <strong>друзів</strong> або <strong>контактів</strong> надати допомогу або інсайдерську інформацію для цієї операції? Отримайте <strong>+1к</strong>. Чи втручаються в операцію якісь <strong>вороги</strong> або <strong>суперники</strong>? Отримайте <strong>-1к</strong>.",
+        "Other": "Чи є якісь <strong>інші елементи</strong>, які ви хочете врахувати? Можливо, ціль нижчого рівня дасть вам +1к. Можливо, ціль вищого рівня дасть вам -1к. Можливо, в районі є ситуація, яка робить операцію складнішою або простішою."
+      },
+      "AcquireAsset": {
+        "Critical": "Ви отримуєте ресурс якості <strong>Рівень +2</strong>.<br>Щоб підвищити результат вище критичного, ви можете витратити <strong>2 золоті</strong> за кожен додатковий +1 бонус до Рівня.",
+        "Success": "Ви отримуєте ресурс якості <strong>Рівень +1</strong>",
+        "Mixed": "Ви отримуєте ресурс якості <strong>Рівень</strong>",
+        "Fail": "Ви отримуєте ресурс якості <strong>Рівень -1</strong>"
+      },
+      "IndulgeVice": {
+        "Regular": "Ви потураєте своєму пороку. Зніміть <strong>{stress} стресу</strong>.",
+        "Overindulgence": "<p>Ви <strong>зловживаєте</strong>. Зніміть <strong>весь стрес</strong> і виберіть <strong>один</strong> із наступних наслідків:</p>",
+        "Trouble": "<li><strong>Влипнути в халепу.</strong> Виберіть або киньте додаткове <strong>хитросплетіння.</strong></li>",
+        "Brag": "<li><strong>Вихваляєтесь</strong> своїми досягненнями. <strong>+2 Палево</strong></li>",
+        "Lost": "<li><strong>Зникнення.</strong> Ваш персонаж зникає на кілька тижнів. Грайте іншим персонажем, поки цей не повернеться зі своєї гульні. Коли персонаж повертається, всі його поранення також вилікувані.</li>",
+        "Trapped": "<li><strong>Відрізаний.</strong> Ваш теперішній постачальник більше не надає вам послуг. Знайдіть нове джерело для свого пороку.</li>"
+      }
+    },
+    "Errors": {
+      "Item": {
+        "ExistsId": "Предмет із таким самим id вже існує.",
+        "ExistsName": "Предмет із такою ж назвою вже існує.",
+        "NotSupported": "<b>{type} {item}</b> не може бути доданий до цього контейнера",
+        "NotExist": "Елемент <b>{type} {item}</b> не існує, тому він видалений зі списку"
+      },
+      "Actor": {
+        "ExistsId": "Елемент із таким самим ідентифікатором вже існує в контейнері.",
+        "ExistsName": "Елемент із таким самим ім'ям вже існує в контейнері.",
+        "InPack": "Ви можете додати Друзів до Персонажа, тільки якщо вони існують у світі.",
+        "NotSupported": "<b>{type} {actor}</b> не може бути доданий до цього контейнера.",
+        "NotExist": "Персонаж <b>{type} {actor}</b> не існує.",
+        "CantAddYourself": "Ви не можете додати посилання на себе до актора",
+        "NoPermission": "У вас немає дозволу на створення акторів, тому ви не можете імпортувати їх із Типу Ватаги"
+      }
+    }
+  }
 }
