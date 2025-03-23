@@ -6,14 +6,14 @@
       <h1 class="character-name">{{actor.name}}</h1>
       <div class="brief-info">
         <div class="prop">
-          <label class="prop-label rollable" data-roll-type="fortune" for="system.tier">{{localize 'BITD.Tier'}}:</label>
+          <label class="prop-label rollable" data-roll-type="fortune" for="system.tier">{{localize 'BITD.Actor.Tier'}}:</label>
           <span>{{system.tier.value}}</span>
           <select class="clear-select" name="system.hold">
             {{selectOptions config.holdTypes selected=system.hold localize=true}}
           </select>
         </div>
         <div class="prop">
-          <label class="prop-label" for="system.status">{{localize 'BITD.Status.Title'}}:</label>
+          <label class="prop-label" for="system.status">{{localize 'BITD.Faction.Status.Title'}}:</label>
           <select class="clear-select" name="system.status">
             {{selectOptions config.statusTypes selected=system.status localize=true}}
           </select>
@@ -21,7 +21,6 @@
         <p class="summary">{{system.summary}}</p>
       </div>
     </div>
-
   </header>
 
   {{!-- Sheet Tab Navigation --}}
@@ -35,9 +34,8 @@
 
     {{!-- Owned Playbook Tab --}}
     <div class="tab general" data-group="primary" data-tab="general">
-
       <div class="goals items-block prop-field">
-        <h3 class="bitd-header">{{localize 'BITD.Goals'}}</h3>
+        <h3 class="bitd-header">{{localize 'BITD.Faction.Goals'}}</h3>
         <ol class="items-list" data-array="goals">
           {{#each system.goals as |goal|}}
             {{#if goal.show}}
@@ -54,21 +52,21 @@
 
       {{#if system.lair.show}}
         <div class="lair prop-field">
-          <label class="prop-lable" for="system.lair">{{localize 'BITD.Lair'}}:</label>
+          <label class="prop-label" for="system.lair">{{localize 'BITD.Faction.Lair'}}:</label>
           <span>{{system.lair.value}}</span>
         </div>
       {{/if}}
 
       {{#if system.assets.show}}
         <div class="notable-assets prop-field">
-          <label class="prop-lable" for="system.assets">{{localize 'BITD.NotableAssets'}}:</label>
+          <label class="prop-label" for="system.assets">{{localize 'BITD.Faction.NotableAssets'}}:</label>
           <span>{{system.assets.value}}</span>
         </div>
       {{/if}}
 
       {{#if system.quirks.show}}
         <div class="quirks prop-field">
-          <label class="prop-lable" for="system.quirks">{{localize 'BITD.Quirks'}}:</label>
+          <label class="prop-label" for="system.quirks">{{localize 'BITD.Faction.Quirks'}}:</label>
           <span>{{system.quirks.value}}</span>
         </div>
       {{/if}}
@@ -76,7 +74,7 @@
       {{#if system.showTurf}}
         <div class="turf prop-field items-block full-size">
           <div class="item-header bitd-header">
-            <h3>{{localize 'BITD.Turf'}}</h3>
+            <h3>{{localize 'BITD.Claim.Turf'}}</h3>
           </div>
           <ol class="items-list">
             {{#each claims as |item id|}}
@@ -84,7 +82,6 @@
                 <div class="item-description">
                   <span class="item-name">{{item.name}}</span>
                 </div>
-
                 <div class="item-summary">
                   <p class="effect"><b>{{localize 'BITD.Claim.Effect'}}:</b> {{system.effect}}</p>
                   {{{item.system.description}}}
@@ -96,7 +93,7 @@
       {{/if}}
 
       <div class="members items-block prop-field">
-        <h3 class="bitd-header">{{localize 'BITD.Members'}}</h3>
+        <h3 class="bitd-header">{{localize 'BITD.Faction.Members'}}</h3>
         <ol class="items-list" data-array="members">
           {{#each system.members as |member|}}
             {{#if member.show}}
@@ -114,7 +111,7 @@
       </div>
 
       <div class="related-faction prop-block items-block">
-        <h3 class="bitd-header">{{localize 'BITD.Factions'}}</h3>
+        <h3 class="bitd-header">{{localize 'BITD.Faction.Factions'}}</h3>
         <ol class="items-list" data-array="relatedFactions">
           {{#each system.relatedFactions as |faction|}}
             {{#if faction.show}}
@@ -134,13 +131,12 @@
           {{/each}}
         </ol>
       </div>
-
     </div>
 
     {{!-- Owned Notes Tab --}}
     <div class="tab notes" data-group="primary" data-tab="notes">
       <div class="situation">
-        <h3 class="bitd-header">{{localize 'BITD.Situation'}}</h3>
+        <h3 class="bitd-header">{{localize 'BITD.Faction.Situation'}}</h3>
         {{editor enrichedSituation target="system.situation" rollData=rollData button=true engine="prosemirror" editable=editable collaborate=true}}
       </div>
       <div class="description">
@@ -148,6 +144,5 @@
         {{editor enrichedDescription target="system.description" rollData=rollData button=true engine="prosemirror" editable=editable collaborate=true}}
       </div>
     </div>
-
   </section>
 </form>
