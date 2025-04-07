@@ -214,8 +214,12 @@
       "PrisonMap": "Claims: Prison",
       "LoadPrison": "Завантажити стандартну в'язницю",
       "NoFreeSpace": "Немає вільного місця на мапі активів {name} ({id})",
-      "MoveLeft": "Перемістити актив вліво",
-      "MoveRight": "Перемістити актив вправо"
+      "Move": {
+        "Left": "Move claim left",
+        "Up": "Move claim up",
+        "Right": "Move claim right",
+        "Down": "Move claim down"
+      }
     },
     "Cohort": {
       "Plural": "Когорти",
