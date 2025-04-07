@@ -114,11 +114,11 @@ export class BitdScoundrelSheet extends BitdActorSheet {
 
     const dialog = new Dialog(
       {
-        title: game.i18n.localize("BITD.ChooseTrauma"),
+        title: game.i18n.localize("BITD.Scoundrel.Traumas.Choose"),
         content: template,
         buttons: {
           add: {
-            label: game.i18n.localize("BITD.AddTrauma"),
+            label: game.i18n.localize("BITD.Scoundrel.Traumas.Add"),
             callback: async (html) => {
               const elements = Array.from(html.find(".trauma.active"));
               const newTraumas = elements.map((el) => el.dataset.value);

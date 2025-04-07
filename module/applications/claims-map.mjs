@@ -1,133 +1,184 @@
-export function claimMap(parent, type) {
-    const functions = {
-        crew: actorClaimsCheck,
-        crewType: itemClaimsCheck
-    }
-    const map = (type == "claim") ? parent.system.claims : parent.system.prison;
-    const checkFunction = functions[parent.type];
-    const requirement = CONFIG.BITD.claims.mapLength[type];
-    const isActor = (parent.type == "crew");
+export function claimMap(parent) {
+  const functions = {
+    crew: actorClaimsCheck,
+    crewType: itemClaimsCheck,
+  };
 
-    checkFunction(map, parent, type);
-    checkArrayLength(map, requirement, isActor);
+  const checkFunction = functions[parent.type];
+  const isActor = parent.type == "crew";
 
-    updateMap(map, parent, type);
+  const claims = parent.system.claims;
+  checkFunction(claims, parent, "claim");
+  checkArrayLength(claims, isActor);
+  updateMap(claims, parent, "claims");
+
+  if (isActor) {
+    const container = parent.system.prison;
+
+    checkFunction(container, parent, "prisonClaim");
+    checkArrayLength(container, isActor);
+    updateMap(container, parent, "prison");
+  }
 }
 
-function actorClaimsCheck(map, actor, type) {
-    const home = CONFIG.BITD.claims.empty.home[type];
+function actorClaimsCheck(container, actor, type) {
+  const map = container.map;
 
-    const items = [];
-    for (const i of actor.items) {
-        if (i.type === type) {
-            items.push(i);
-        }
+  const items = [];
+  for (const i of actor.items) {
+    if (i.type === type) {
+      items.push(i);
     }
+  }
 
-    // Compare claims in items and map
-    for (const item of items) {
-        const exists = map.some(claim => claim.id === item._id);
+  let noHome = true;
 
-        if (exists) {
-            const claim = map.find(claim => claim.id === item._id);
-            claim.name = item.name;
-            claim.active = item.system.active;
-            claim.effect = item.system.effect;
-        } else {
-            const emptyClaim = map.find(claim => !claim.id && claim.name != home.name);
-            if (emptyClaim) {
-                emptyClaim.id = item._id;
-                emptyClaim.name = item.name;
-                emptyClaim.active = item.system.active;
-                emptyClaim.effect = item.system.effect;
-            } else {
-                ui.notifications.warn(game.i18n.format("BITD.Claim.NoFreeSpace", { name: item.name, id: item._id }));
-                item.delete();
-            }
-        }
+  // Check all claims in map
+  for (const claim of map) {
+    if (claim.type === "home") {
+      if (noHome) {
+        makeEmpty(claim);
+        claim.type = "home";
+        noHome = false;
+      } else {
+        makeEmpty(claim);
+      }
+    } else if (claim.type === "claim") {
+      const item = items.find((i) => i._id === claim.id);
+      loadData(claim, item, true);
+    } else {
+      makeEmpty(claim);
     }
+  }
 
-    const idArray = [];
-    for (const [index, claim] of Array.from(map.entries())) {
-        const exists = items.some(item => item._id === claim.id);
-
-        if (idArray.includes(claim.id) && claim.name != home.name) {
-            makeEmpty(claim); // remove dublicates
-        } else if (idArray.includes(claim.name)) {
-            makeEmpty(claim);
-        } else if (claim.name === home.name) {
-            idArray.push(claim.name);
-        } else if (!exists) {
-            if (claim.id) {
-                const localizeType = game.i18n.localize("TYPES.Item.claim");
-                ui.notifications.warn(game.i18n.format("BITD.Errors.Item.NotExist", { type: localizeType, item: claim.name }));
-                makeEmpty(claim); // remove not exists
-            }
-        } else {
-            idArray.push(claim.id);
-        }
+  // Add home if doesn't exists
+  if (noHome) {
+    const emptyClaim = map.find((claim) => claim.type === "turf");
+    if (emptyClaim) {
+      makeEmpty(emptyClaim);
+      emptyClaim.type = "home";
+    } else {
+      makeEmpty(map[-1]);
+      map[-1].type = "home";
     }
+  }
 
-    if (!idArray.includes(home.name)) map.push(home);
+  // Check if all claims are in map
+  for (const item of items) {
+    const exists = map.some((claim) => claim.id === item._id);
+    if (!exists) {
+      const emptyClaim = map.find((claim) => claim.type === "turf");
 
-    return map
+      if (emptyClaim) {
+        loadData(emptyClaim, item, true);
+      } else {
+        ui.notifications.warn(
+          game.i18n.format("BITD.Claim.NoFreeSpace", {
+            name: item.name,
+            id: item._id,
+          }),
+        );
+        item.delete();
+      }
+    }
+  }
+
+  return container;
 }
 
-function itemClaimsCheck(map) {
+async function itemClaimsCheck(container, item) {
+  const map = container.map;
 
-    const idArray = [];
-
-    for (const [index, claim] of Array.from(map.entries())) {
-        if (idArray.includes(claim.id) && claim.name != "Lair") {
-            makeEmpty(claim); // remove dublicates
-        } else if (idArray.includes(claim.name)) {
-            makeEmpty(claim);
-        } else if (claim.name === "Lair") {
-            idArray.push(claim.name);
-        } else {
-            idArray.push(claim.id);
-        }
+  let noHome = true;
+  // Check all claims in map
+  for (const claim of map) {
+    if (claim.type === "home") {
+      if (noHome) {
+        makeEmpty(claim);
+        claim.type = "home";
+        noHome = false;
+      } else {
+        makeEmpty(claim);
+      }
+    } else if (claim.type === "claim") {
+      const data = await fromUuid(claim.uuid);
+      loadData(claim, data, false);
+    } else {
+      makeEmpty(claim);
     }
+  }
 
-    if (!idArray.includes("Lair")) map.push(CONFIG.BITD.claims.empty.home.item)
-
-    return map
-}
-
-function checkArrayLength(map, requirement, isActor) {
-    while (map.length != requirement) {
-        if (map.length > requirement) {
-            const index = map.findLastIndex(item => item.id === "" && item.name != "Lair" && item.name != "Prison");
-            if (index >= 0) {
-                map.splice(index, 1);
-            } else {
-                const data = map.pop();
-
-                // Delete original item if it's actor
-                if (isActor) {
-                    const item = parent.items.get(data.id);
-                    item.delete();
-                }
-            }
-        } else {
-            map.push(isActor ? CONFIG.BITD.claims.empty.actor : CONFIG.BITD.claims.empty.item);
-        }
+  // Add home if doesn't exists
+  if (noHome) {
+    const emptyClaim = map.find((claim) => claim.type === "turf");
+    if (emptyClaim) {
+      makeEmpty(emptyClaim);
+      emptyClaim.type = "home";
+    } else {
+      makeEmpty(map[-1]);
+      map[-1].type = "home";
     }
+  }
 
-    return map
+  return container;
 }
 
-function makeEmpty(claim) {
-    claim.id = '';
-    claim.name = 'Turf';
-    claim.active = false;
-    claim.effect = ""
+function checkArrayLength(container, isActor) {
+  const map = container.map;
+  const requirement = container.rows * container.columns;
 
-    return claim
+  while (map.length != requirement) {
+    if (map.length > requirement) {
+      const index = map.findLastIndex(
+        (item) =>
+          item.id === "" && item.name != "Lair" && item.name != "Prison",
+      );
+      if (index >= 0) {
+        map.splice(index, 1);
+      } else {
+        const data = map.pop();
+
+        // Delete original item if it's actor
+        if (isActor) {
+          const item = parent.items.get(data.id);
+          item.delete();
+        }
+      }
+    } else {
+      map.push(
+        isActor
+          ? CONFIG.BITD.claims.empty.actor
+          : CONFIG.BITD.claims.empty.item,
+      );
+    }
+  }
+
+  return map;
 }
 
-async function updateMap(map, parent, type) {
-    const containerName = (type == "claim") ? "claims" : "prison";
-    const path = "system." + containerName;
-    await parent.update({ [path]: map });
+function makeEmpty(claim, isActor) {
+  claim.id = "";
+  if (!isActor) claim.uuid = "";
+  claim.name = "";
+  claim.type = "turf";
+  claim.active = false;
+  if (isActor) claim.effect = "";
+
+  return claim;
+}
+
+function loadData(claim, data, isActor) {
+  claim.id = data._id;
+  if (!isActor) claim.uuid = data.uuid;
+  claim.name = data.name;
+  claim.type = "claim";
+  claim.active = data.system.active;
+  if (isActor) claim.effect = data.system.effect;
+
+  return claim;
+}
+
+async function updateMap(container, parent, containerName) {
+  const path = "system." + containerName;
+  await parent.update({ [path]: container });
 }

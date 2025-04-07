@@ -177,7 +177,6 @@ textarea {
 .claims-map {
   display: grid;
   gap: $padding-md;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
 
   .claim {
     position: relative;
@@ -236,19 +235,29 @@ textarea {
       left: -3px;
     }
 
+    .move-up {
+      top: -7px;
+      left: 47%;
+    }
+
     .move-right {
       right: -3px;
+    }
+
+    .move-down {
+      bottom: -7px;
+      left: 47%;
     }
   }
 
   .claim:first-child {
-    .move-left {
+    .move-left,.move-up {
       display: none;
     }
   }
 
   .claim:last-child {
-    .move-right {
+    .move-right,.move-down {
       display: none;
     }
   }

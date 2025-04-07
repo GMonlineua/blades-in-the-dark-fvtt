@@ -54,8 +54,8 @@
       "Stress": "Stress",
       "Traumas": {
         "Trauma": "Trauma",
-        "ChooseTrauma": "Choose Trauma",
-        "AddTrauma": "Add Trauma",
+        "Choose": "Choose Trauma",
+        "Add": "Add Trauma",
         "Cold": "Cold",
         "Haunted": "Haunted",
         "Obsessed": "Obsessed",
@@ -210,11 +210,16 @@
       "Turf": "Turf",
       "Plural": "Claims",
       "Effect": "Claim Effect",
-      "Prison": "Claims: Prison",
+      "Prison": "Prison",
+      "PrisonMap": "Claims: Prison",
       "LoadPrison": "Load Default Prison",
       "NoFreeSpace": "There is no free space on the claims map for {name} ({id})",
-      "MoveLeft": "Move claim left",
-      "MoveRight": "Move claim right"
+      "Move": {
+        "Left": "Move claim left",
+        "Up": "Move claim up",
+        "Right": "Move claim right",
+        "Down": "Move claim down"
+      }
     },
     "Cohort": {
       "Plural": "Cohorts",

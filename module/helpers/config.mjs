@@ -197,40 +197,17 @@ export const BITD = {
     empty: {
       actor: {
         id: "",
-        name: "Turf",
+        name: "",
+        type: "turf",
         active: false,
         effect: "",
       },
       item: {
         id: "",
-        name: "Turf",
+        name: "",
+        type: "turf",
+        active: false,
       },
-      home: {
-        item: {
-          id: "",
-          name: "Lair",
-        },
-        claim: {
-          id: "",
-          name: "Lair",
-          active: true,
-          effect: "",
-        },
-        prisonClaim: {
-          id: "",
-          name: "Prison",
-          active: true,
-          effect: "",
-        },
-      },
-    },
-    mapLength: {
-      claim: 15,
-      prisonClaim: 12,
-    },
-    home: {
-      claim: "Lair",
-      prisonClaim: "Prison",
     },
   },
 };
