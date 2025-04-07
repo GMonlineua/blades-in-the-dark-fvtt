@@ -1,7 +1,7 @@
 <div class="attribute-block grid-3col">
   {{#each config.attributeLinks as |attribute key|}}
     <div class="attribute {{key}}">
-        <h3 class="attribute-name bitd-header rollable" data-roll-type="resistance" data-roll-note="{{key}}" data-tooltip="{{getLocalizeDescription 'attribute' key}}">{{getLocalizeName key}}</h3>
+        <h3 class="attribute-name bitd-header rollable" data-roll-type="resistance" data-roll-note="{{key}}" data-tooltip="{{getLocalize "BITD.Attributes.Description." key}}">{{getLocalize "BITD.Attributes." key}}</h3>
       <div class="value-step-block exp-block" data-value="{{getValue @root.system.attributes (concat key ".exp.value")}}" data-key="system.attributes.{{key}}.exp.value">
         {{#numLoop (getValue @root.system.attributes (concat key ".exp.max"))}}
           <span class="value-step value-tooth simple-red-tooth" data-index="{{this}}"></span>
@@ -14,7 +14,7 @@
               <span class="value-step value-dot" data-index="{{this}}"></span>
             {{/numLoop}}
           </div>
-          <label class="action-label rollable" data-roll-type="action" data-roll-note="{{action}}" data-tooltip="{{getLocalizeDescription 'action' action}}">{{getLocalizeName action}}</label>
+          <label class="action-label rollable" data-roll-type="action" data-roll-note="{{action}}" data-tooltip="{{getLocalize "BITD.Actions.Description." action}}">{{getLocalize "BITD.Actions." action}}</label>
         </div>
       {{/each}}
     </div>

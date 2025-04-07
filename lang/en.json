@@ -1,429 +1,442 @@
 {
-    "TYPES": {
-        "Actor": {
-            "scoundrel": "Scoundrel",
-            "crew": "Crew",
-            "faction": "Faction",
-            "npc": "NPC",
-            "clock": "Clock"
-        },
-        "Item": {
-            "playbook": "Playbook",
-            "crewType": "Crew Type",
-            "abilityScoundrel": "Scoundrel's Ability",
-            "abilityCrew": "Crew's Ability",
-            "claim": "Claim",
-            "prisonClaim": "Prison Claim",
-            "cohort": "Cohort",
-            "tool": "Tool",
-            "upgrade": "Upgrade"
-        }
+  "TYPES": {
+    "Actor": {
+      "scoundrel": "Scoundrel",
+      "crew": "Crew",
+      "faction": "Faction",
+      "npc": "NPC",
+      "clock": "Clock"
     },
-    "BITD": {
-        "General": "General",
-        "Description": "Description",
-        "Summary": "Summary",
-        "Available": "Available",
-        "Used": "Used",
-        "Actor": {
-            "Title": "Actor",
-            "Plural": "Actors",
-            "Name": "Name",
-            "Alias": "Alias",
-            "Aka": "Aka"
-        },
-        "Crew": {
-            "Name": "Name",
-            "Tabs": {
-                "Claims": "Claims Map",
-                "Prison": "Claims: Prison",
-                "Contacts": "Contacts",
-                "Abilities": "Abilities",
-                "Notes": "Notes"
-            }
-        },
-        "ItemName": "Name",
-        "Drives": "Drives",
-        "Belives": "Belives",
-        "Heritage": "Heritage",
-        "Background": "Background",
-        "Vice": "Vice",
-        "Look": "Look",
-        "Contact": {
-            "Plural": "Contacts",
-            "Types": {
-                "Friend": "Friend",
-                "Rival": "Rival",
-                "Enemy": "Enemy",
-                "VicePurveyor": "Vice Purveyor",
-                "Other": "Other"
-            }
-        },
-        "Stress": "Stress",
+    "Item": {
+      "playbook": "Playbook",
+      "crewType": "Crew Type",
+      "abilityScoundrel": "Scoundrel's Ability",
+      "abilityCrew": "Crew's Ability",
+      "claim": "Claim",
+      "prisonClaim": "Prison Claim",
+      "cohort": "Cohort",
+      "tool": "Tool",
+      "upgrade": "Upgrade"
+    }
+  },
+  "BITD": {
+    "General": "General",
+    "Description": "Description",
+    "Notes": "Notes",
+    "Summary": "Summary",
+    "Available": "Available",
+    "Used": "Used",
+    "Uses": "Uses",
+    "Actor": {
+      "HumanName": "Name",
+      "StructureName": "Name",
+      "Alias": "Alias",
+      "Aka": "Aka",
+      "Coins": "Coins",
+      "Tier": "Tier"
+    },
+    "Item": {
+      "Plural": "Items",
+      "Name": "Name",
+      "Add": "Add",
+      "New": "Item",
+      "Delete": "Delete",
+      "Edit": "Edit",
+      "Show": "Show"
+    },
+    "Scoundrel": {
+      "Drives": "Drives",
+      "Beliefs": "Beliefs",
+      "Heritage": "Heritage",
+      "Background": "Background",
+      "Vice": "Vice",
+      "Look": "Look",
+      "Stress": "Stress",
+      "Traumas": {
         "Trauma": "Trauma",
         "ChooseTrauma": "Choose Trauma",
         "AddTrauma": "Add Trauma",
-        "Traumas": {
-            "Cold": "Cold",
-            "Haunted": "Haunted",
-            "Obsessed": "Obsessed",
-            "Paranoid": "Paranoid",
-            "Reckless": "Reckless",
-            "Soft": "Soft",
-            "Unstable": "Unstable",
-            "Vicious": "Vicious",
-            "Custom": "Custom"
-        },
-        "Load": {
-            "Title": "Load",
-            "Light": "Light",
-            "Normal": "Normal",
-            "Heavy": "Heavy",
-            "Encumbered": "Encumbered"
-        },
-        "Coins": "Coins",
-        "Stash": "Stash",
-        "Attribute": "Attribute",
-        "Insight": "Insight",
-        "Prowess": "Prowess",
-        "Resolve": "Resolve",
-        "AttributeDescription": {
-            "Insight": "Consequences from deception or understanding.",
-            "Prowess": "Consequences from physical strain or injury.",
-            "Resolve": "Consequences from mental strain or willpower."
-        },
-        "Action": "Action",
-        "Hunt": "Hunt",
-        "Study": "Study",
-        "Survey": "Survey",
-        "Tinker": "Tinker",
-        "Finesse": "Finesse",
-        "Prowl": "Prowl",
-        "Skirmish": "Skirmish",
-        "Wreck": "Wreck",
-        "Attune": "Attune",
-        "Command": "Command",
-        "Consort": "Consort",
-        "Sway": "Sway",
-        "ActionDescription": {
-            "Attune": "When you <strong>Attune</strong>, you open your mind to the ghost field or channel nearby electroplasmic energy through your body. <em>You might communicate with a ghost or understand aspects of spectrology. You could try to perceive beyond sight in order to better understand your situation (but Surveying might be better).</em>",
-            "Command": "When you <strong>Command</strong>, you compel swift obedience. <em>You might intimidate or threaten to get what you want. You might lead a gang in a group action. You could try to order people around to persuade them (but Consorting might be better).</em>",
-            "Consort": "When you <strong>Consort</strong>, you socialize with friends and contacts. <em>You might gain access to resources, information, people, or places. You might make a good impression or win someone over with your charm and style. You might make new friends or connect with your heritage or background. You could try to direct your friends with social pressure (but Commanding might be better).</em>",
-            "Finesse": "When you <strong>Finesse</strong>, you employ dextrous manipulation or subtle misdirection. <em>You might pick someone's pocket. You might handle the controls of a vehicle or direct a mount. You might formally duel an opponent with graceful fighting arts. You could try to employ those arts in a chaotic melee (but Skirmishing might be better). You could try to pick a lock (but Tinkering might be better).</em>",
-            "Hunt": "When you <strong>Hunt</strong>, you carefully track a target. <em>You might follow a person or discover their location. You might arrange an ambush. You might attack with precision shooting from a distance. You could try to bring your guns to bear in a melee (but Skirmishing might be better).</em>",
-            "Prowl": "When you <strong>Prowl</strong>, you traverse skillfully and quietly. <em>You might sneak past a guard or hide in the shadows. You might run and leap across the rooftops. You might attack someone from hiding with a back-stab or blackjack. You could try to waylay a victim in the midst of battle (but Skirmishing might be better).</em>",
-            "Skirmish": "When you <strong>Skirmish</strong>, you entangle a target in close combat so they can't easily escape. <em>You might brawl or wrestle with them. You might hack and slash. You might seize or hold a position in battle. You could try to fight in a formal duel (but Finessing might be better).</em>",
-            "Study": "When you <strong>Study</strong>, you scrutinize details and interpret evidence. <em>You might gather information from documents, newspapers, and books. You might do research on an esoteric topic. You might closely analyze a person to detect lies or true feelings. You could try to examine events to understand a pressing situation (but Surveying might be better).</em>",
-            "Survey": "When you <wrap>Survey</wrap>, you observe the situation and anticipate outcomes. <em>You might spot telltale signs of trouble before it happens. You might uncover opportunities or weaknesses. You might detect a person's motivations or intentions (but Studying might be better). You could try to spot a good ambush point (but Hunting might be better).</em>",
-            "Sway": "When you <strong>Sway</strong>, you influence someone with guile, charm, or argument. <em>You might lie convincingly. You might persuade someone to do what you want. You might argue a case that leaves no clear rebuttal. You could try to trick people into affection or obedience (but Consorting or Commanding might be better).</em>",
-            "Tinker": "When you <strong>Tinker</strong>, you fiddle with devices and mechanisms. <em>You might create a new gadget or alter an existing item. You might pick a lock or crack a safe. You might disable an alarm or trap. You might turn the spark- craft and electroplasmic devices around the city to your advantage. You could try to use your technical expertise to control a vehicle (but Finessing might be better).</em>",
-            "Wreck": "When you <strong>Wreck</strong>, you unleash savage force. <em>You might smash down a door or wall with a sledgehammer, or use an explosive to do the same. You might employ chaos or sabotage to create a distraction or overcome an obstacle. You could try to overwhelm an enemy with sheer force in battle (but Skirmishing might be better).</em>"
-        },
+        "Cold": "Cold",
+        "Haunted": "Haunted",
+        "Obsessed": "Obsessed",
+        "Paranoid": "Paranoid",
+        "Reckless": "Reckless",
+        "Soft": "Soft",
+        "Unstable": "Unstable",
+        "Vicious": "Vicious",
+        "Custom": "Custom"
+      },
+      "Harms": {
         "Harm": "Harm",
-        "HarmEffect": {
-            "Light": "Need Help",
-            "Medium": "-1 D",
-            "Heavy": "Less Effect"
-        },
         "Healing": "Healing",
-        "Notes": "Notes",
-        "Expirience": {
-            "Title": "Expirience",
-            "HowItWorks": "At the end of each session, for these three items, mark 1 xp (in your playbook or an attribute) or 2 xp if that item occurred multiple times.",
-            "DesperateRoll": "Every time you roll a desperate action, mark xp in that action's attribute.",
-            "Character": "You expressed your beliefs, drives, heritage, or background.",
-            "Vice": "You struggled with issues from your vice or traumas during the session."
-        },
-        "RulesRef": {
-            "Title": "Rules Reference",
-            "GatherInfo": {
-                "Title": "Gather Information",
-                "Tips": "<li>What do they intend to do?</li><li>How can I get them to [X]?</li><li>What should I look out for?</li><li>What's the best way in?</li><li>Where can I hide here?</li><li>How can I find [X]?</li><li>What's really going on here?</li>"
-            },
-            "Teamwork": {
-                "Title": "Teamwork",
-                "Tips": "<span><b>Assist</b> a teammate</span><span><b>Protect</b> a teammate</span><span>Lead a <b>group action</b></span><span><b>Set up</b> a teammate</span>"
-            }
-        },
-        "Playbook": {
-            "Summary": "Describe this playbook briefly",
-            "Exp": {
-                "Title": "Expirience Clue",
-                "Placeholder": "Expirience clue which depend on character's playbook"
-            },
-            "Items": "Items"
-        },
-        "Ability": {
-            "Plural": "Abilities",
-            "Special": "Special Abilities",
-            "IsActive": "Active"
-        },
-        "Inventory": "Items",
-        "InventorySpecial": "Special Items",
-        "Tool": {
-            "Common": "Common",
-            "Special": "Special",
-            "Loadout": "Loadout",
-            "Equipped": "Equipped",
-            "Broken": "Broken/Lost"
-        },
-        "CrewType": "Crew Type",
-        "Lair": "Lair",
-        "HuntingGround": {
-            "Title": "Hunting Grounds",
-            "Operation": "Operation Type",
-            "Edit": "Edit Hunting Ground",
-            "Ok": "Ok",
-            "CustomName": "Custom name",
-            "Tips": "<p>Get +1d to any gather information rolls when prepare to operation of your prefer type.</p><p>Free additional downtime activity to contribute to that operation.</p>"
-        },
-        "Tier": "Tier",
-        "Hold": {
-            "Title": "Hold",
-            "Weak": "Weak",
-            "Strong": "Strong"
-        },
-        "Status": {
-            "Title": "Status",
-            "Allies": "Allies (+3)",
-            "Friendly": "Friendly (+2)",
-            "Helpful": "Helpful (+1)",
-            "Neutral": "Neutral",
-            "Interfering": "Interfering (-1)",
-            "Hostile": "Hostile (-2)",
-            "War": "War (-3)"
-        },
-        "Rep": "Rep",
-        "RepType": "Reputation",
-        "RepDescription": "What initial reputation crew have?",
-        "Vaults": "Vaults",
-        "Heat": "Heat",
-        "WantedLvl": "Wanted Level",
-        "Turf": "Turf",
-        "CrewExp": {
-            "ShortTitle": "Xp",
-            "Title": "Expirience Clue",
-            "Placeholder": "Expirience clue which depend on crew's playbook",
-            "HowItWorks": "Mark 1 xp for each item below, or 2 xp if it occurred multiple times.",
-            "Tips": "<li>Contend with challenges above your current station.</li><li>Bolster your crew's reputation or develop a new one.</li><li>Express the goals, drives, inner conflict, or essential nature of the crew.</li>"
-        },
-        "Goals": "Goals",
-        "Members": "Members",
-        "Factions": "Factions",
-        "Allies": "Allies",
-        "Enemies": "Enemies",
-        "NotableAssets": "Notable Assets",
-        "Quirks": "Quirks",
-        "Situation": "Situation",
-        "Claim": {
-            "Title": "Claims Map",
-            "Prison": "Claims: Prison",
-            "LoadPrison": "Load Default Prison",
-            "Plural": "Claims",
-            "Effect": "Claim Effect",
-            "NoFreeSpace": "There is no free space on the claims map for {name} ({id})",
-            "MoveLeft": "Move claim left",
-            "MoveRight": "Move claim right"
-        },
-        "Upgrade": {
-            "Plural": "Upgrades",
-            "SpecialPlural": "Special Upgrades",
-            "Common": "Common",
-            "Special": "Special",
-            "IsActive": "Active",
-            "Price": "Price"
-        },
-        "Cohort": {
-            "Plural": "Cohorts",
-            "Type": {
-                "Title": "Type",
-                "Gang": "Gang",
-                "Expert": "Expert"
-            },
-            "Elite": "Elite",
-            "Specializations": "Specializations",
-            "Armor": "Armor",
-            "Edges": "Edges",
-            "Flaws": "Flaws",
-            "Harm": {
-                "Title": "Harm",
-                "NoHarm": "None",
-                "Weakened": "Weakened",
-                "Impaired": "Impaired",
-                "Broken": "Broken",
-                "Dead": "Dead"
-            }
-        },
-        "ShowForPlayers": {
-            "Title": "Show",
-            "Tooltip": "Show this field in limited sheet"
-        },
-        "Item": {
-            "Add": "Add",
-            "New": "Item",
-            "Delete": "Delete",
-            "Edit": "Edit",
-            "Show": "Show"
-        },
-        "Link": {
-            "Plural": "Links",
-            "Open": "Open link",
-            "Delete": "Delete"
-        },
-        "Roll": {
-            "Title": "Roll Dice",
-            "Button": "Roll",
-            "Submit": "Roll",
-            "Cancel": "Cancel",
-            "DiceNumber": "Dice Number",
-            "Modifier": "Modifier",
-            "Type": {
-                "Title": "Roll Type",
-                "Action": "Action Roll",
-                "Resistance": "Resistance Roll",
-                "Fortune": "Fortune Roll",
-                "GatherInformation": "Gather Information",
-                "Engagement": "Engagement Roll",
-                "IndulgeVice": "Indulge Vice",
-                "AcquireAsset": "Acquire Asset"
-            },
-            "PositionEffect": "Position & Effect",
-            "Position": {
-                "Title": "Position",
-                "Controlled": "Controlled",
-                "Risky": "Risky",
-                "Desperate": "Desperate"
-            },
-            "Effect": {
-                "Title": "Effcet",
-                "Zero": "Zero",
-                "Limited": "Limited",
-                "Standard": "Standard",
-                "Great": "Great",
-                "Extreme": "Extreme"
-            },
-            "EffectDescription": {
-                "Title": "Effcet",
-                "Zero": "This action has poor, little or even zero effect. 0 Tick",
-                "Limited": "You achieve a partial or weak effect. How is your impact diminished? What effort remains to achieve your goal? 1 Tick",
-                "Standard": "You achieve what we’d expect as “normal” with this action. Is that enough, or is there more left to do? 2 Ticks",
-                "Great": "You achieve more than usual. How does the extra effort manifest? What additional benefit do you enjoy? 3 Ticks",
-                "Extreme": "Extreme Effect! 5 Ticks"
-            },
-            "Bonus": {
-                "or": "or",
-                "AddDice": "Get bonus dice",
-                "Push": "Push Yourself",
-                "PushEffect": "Push for +1 effect",
-                "DevilsBargain": "Devil’s Bargain",
-                "Assistance": "Assistance"
-            },
-            "BonusDescription": {
-                "Push": "You suffer {stress} stress.",
-                "DevilsBargain": "The Devil’s Bargain occurs regardless of the outcome of the roll.",
-                "Assistance": "Character who helps suffer 1 stress and might also suffer any consequences that occur because of the roll."
-            },
-            "SufferTrauma": {
-                "Title": "Suffer Trauma",
-                "Description": "You get {stress} stress, so you suffer a level of <b>trauma</b>. You’re <i>left for dead</i> or otherwise dropped out of the current conflict, only to come back later, shaken and drained. When you return, you have <b>zero stress</b> and your vice has been satisfied for the next downtime (see <b>Vice</b> on page 156)."
-            },
-            "Result": {
-                "Exp": "{actor} gains 1 experiences in {attribute}",
-                "Critical": "Critical",
-                "Success": "Full Success",
-                "Mixed": "Partial Success",
-                "Fail": "Bad Outcome"
-            },
-            "Action": {
-                "Controlled": {
-                    "Critical": "You do it with <strong>increased effect</strong>.",
-                    "Success": "You do it.",
-                    "Mixed": "You hesitate. Withdraw and try a different approach, or else do it with a minor consequence: a minor <strong>complication</strong> occurs, you have <strong>reduced effect</strong>, you suffer <strong>lesser harm</strong>, you end up in a <strong>risky</strong> position.",
-                    "Fail": "You falter. Press on by seizing a <strong>risky</strong> opportunity, or withdraw and try a different approach."
-                },
-                "Risky": {
-                    "Critical": "You do it with <strong>increased effect</strong>.",
-                    "Success": "You do it.",
-                    "Mixed": "You do it, but there’s a consequence: you suffer <strong>harm</strong>, a <strong>complication</strong> occurs, you have <strong>reduced effect</strong>, you end up in a <strong>desperate</strong> position.",
-                    "Fail": "Things go badly. You suffer <strong>harm</strong>, a <strong>complication</strong> occurs, you end up in a <strong>desperate</strong> position, you <strong>lose this opportunity</strong>."
-                },
-                "Desperate": {
-                    "Critical": "You do it with <strong>increased effect</strong>.",
-                    "Success": "You do it.",
-                    "Mixed": "You do it, but there’s a consequence: you suffer <strong>severe harm</strong>, a <strong>serious complication</strong> occurs, you have <strong>reduced effect</strong>.",
-                    "Fail": "It’s the worst outcome. You suffer <strong>severe harm</strong>, a <strong>serious complication</strong> occurs, you <strong>lose this opportunity</strong> for action."
-                }
-            },
-            "Resistance": {
-                "Result": "<p>You <strong>reduce</strong> or <strong>avoid</strong> the effects of the consequence (GM chooses).</p>",
-                "Regular": "<p>Suffer <strong>{stress}</strong> stress</p>",
-                "Critical": "<p>Clear 1 stress.</p>"
-            },
-            "Fortune": {
-                "Critical": "Exceptional result / Great, extreme effect.",
-                "Success": "Good result / Standard, full effect.",
-                "Mixed": "Mixed result / Limited, partial effect.",
-                "Fail": "Bad result / Poor, little effect."
-            },
-            "GatherInformation": {
-                "RollAs": "Roll as",
-                "Zero": "You get little, incomplete information.",
-                "Limited": "You get incomplete or partial information. More information gathering will be needed to get all the answers.",
-                "Standard": "You get good details. Clarifying and follow-up questions are possible.",
-                "Great": "You get exceptional details. The information is complete and follow-up questions may expand into related areas or reveal more than you hoped for.",
-                "Extreme": "You get more than you ever dared to think."
-            },
-            "Engagement": {
-                "Critical": "Exceptional result. <em>You’ve already overcome the first obstacle and you’re in a controlled position for what’s next.</em>",
-                "Success": "Good result. <em>You’re in a controlled position when the action starts.</em>",
-                "Mixed": "Mixed result. <em>You’re in a risky position when the action starts.</em>",
-                "Fail": "Bad result. <em>You’re in a desperate position when the action starts.</em>",
-                "Operation": "Is this operation particularly bold or daring? Take <strong>+1d</strong>. Is this operation overly complex or contingent on many factors? Take <strong>-1d</strong>.",
-                "Plan": "Does the <strong>plan’s detail</strong> expose a vulnerability of the target or hit them where they’re weakest? Take <strong>+1d</strong>. Is the target strongest against this approach, or do they have particular defenses or special preparations? Take <strong>-1d</strong>.",
-                "Contact": "Can any of your <strong>friends</strong> or <strong>contacts</strong> provide aid or insight for this operation? Take <strong>+1d</strong>. Are any <strong>enemies</strong> or <strong>rivals</strong> interfering in the operation? Take <strong>-1d</strong>.",
-                "Other": "Are there any <strong>other elements</strong> that you want to consider? Maybe a lower-Tier target will give you +1d. Maybe a higher-Tier target will give you -1d. Maybe there’s a situation in the district that makes the operation more or less tricky."
-            },
-            "AcquireAsset": {
-                "Critical": "You acquire asset with quality <strong>Tier +2</strong>.<br>To raise the result beyond critical, you may spend <strong>2 coin</strong> per +1 Tier bonus.",
-                "Success": "You acquire asset with quality <strong>Tier +1</strong>",
-                "Mixed": "You acquire asset with quality <strong>Tier</strong>",
-                "Fail": "You acquire asset with quality <strong>Tier -1</strong>"
-            },
-            "IndulgeVice": {
-                "Regular": "You indulge your vice. Clear <strong>{stress} stress</strong>.",
-                "Overindulgence": "<p>You <strong>overindulge</strong>. Clear <strong>all stress</strong> and choose <strong>one</strong> of the following consequences:</p>",
-                "Trouble": "<li><strong>Attract Trouble.</strong> Select or roll an additional <strong>entanglement.</strong></li>",
-                "Brag": "<li><strong>Brag</strong> about your exploits. <strong>+2 Heat</strong></li>",
-                "Lost": "<li><strong>Lost.</strong> Your character vanishes for a few weeks. Play a different character until this one returns from their bender. When your character returns, they've also healed any harm they had.</li>",
-                "Trapped": "<li><strong>Tapped.</strong> Your current purveyor cuts you off. Find a new source for your vice.</li>"
-            }
-        },
-        "Clock": {
-            "Filled": "Filled",
-            "Size": "Size"
-        },
-        "ImportActor": {
-            "Title": "Import actor",
-            "Description": "Import an actor {actor} from the compendium?",
-            "Submit": "Ok"
-        },
-        "Cancel": "Cancel",
-        "Errors": {
-            "Item": {
-                "ExistsId": "Item with the same id already exists in the container.",
-                "ExistsName": "Item with the same name already exists in the container.",
-                "NotSupported": "The <b>{type} {item}</b> can't be added to this container",
-                "NotExist": "The item <b>{type} {item}</b> does not exist, so it is removed from the list"
-            },
-            "Actor": {
-                "ExistsId": "Item with the same id already exists in the container.",
-                "ExistsName": "Item with the same name already exists in the container.",
-                "InPack": "You may only add Friends to the Character which exist in the World.",
-                "NotSupported": "The <b>{type} {actor}</b> can't be added to this container.",
-                "NotExist": "The actor <b>{type} {actor}</b> does not exist, so it is removed from the linked actors",
-                "CantAddYourself": "You cannot add a link to yourself to an actor",
-                "NoPermission": "You don't have permission to create actors, so you cannot import them from Crew Type"
-            }
+        "Effect": {
+          "Light": "Need Help",
+          "Medium": "-1 D",
+          "Heavy": "Less Effect"
         }
+      },
+      "Stash": "Stash",
+      "Load": {
+        "Title": "Load",
+        "Light": "Light",
+        "Normal": "Normal",
+        "Heavy": "Heavy",
+        "Encumbered": "Encumbered"
+      },
+      "Exp": {
+        "XP": "Experience",
+        "HowItWorks": "At the end of each session, for these three items, mark 1 xp (in your playbook or an attribute) or 2 xp if that item occurred multiple times.",
+        "DesperateRoll": "Every time you roll a desperate action, mark xp in that action's attribute.",
+        "Character": "You expressed your beliefs, drives, heritage, or background.",
+        "Vice": "You struggled with issues from your vice or traumas during the session."
+      },
+      "Inventory": {
+        "Common": "Items",
+        "Special": "Special Items"
+      },
+      "RulesRef": {
+        "Title": "Rules Reference",
+        "GatherInfo": {
+          "Title": "Gather Information",
+          "Tips": "<li>What do they intend to do?</li><li>How can I get them to [X]?</li><li>What should I look out for?</li><li>What's the best way in?</li><li>Where can I hide here?</li><li>How can I find [X]?</li><li>What's really going on here?</li>"
+        },
+        "Teamwork": {
+          "Title": "Teamwork",
+          "Tips": "<span><b>Assist</b> a teammate</span><span><b>Protect</b> a teammate</span><span>Lead a <b>group action</b></span><span><b>Set up</b> a teammate</span>"
+        }
+      }
+    },
+    "Crew": {
+      "Tabs": {
+        "Claims": "Claims Map",
+        "Prison": "Claims: Prison",
+        "Abilities": "Abilities",
+        "Contacts": "Contacts",
+        "Notes": "Notes"
+      },
+      "Lair": "Lair",
+      "HuntingGround": {
+        "Title": "Hunting Grounds",
+        "Operation": "Operation Type",
+        "Edit": "Edit Hunting Ground",
+        "Ok": "Ok",
+        "CustomName": "Custom name",
+        "Tips": "<p>Get +1d to any gather information rolls when prepare to operation of your prefer type.</p><p>Free additional downtime activity to contribute to that operation.</p>"
+      },
+      "Hold": {
+        "Title": "Hold",
+        "Weak": "Weak",
+        "Strong": "Strong"
+      },
+      "Reputation": {
+        "Rep": "Rep",
+        "Type": "Reputation",
+        "Description": "What initial reputation crew have?"
+      },
+      "Vaults": "Vaults",
+      "Heat": "Heat",
+      "WantedLvl": "Wanted Level",
+      "Exp": {
+        "XP": "XP",
+        "HowItWorks": "Mark 1 xp for each item below, or 2 xp if it occurred multiple times.",
+        "Challenge": "Contend with challenges above your current station.",
+        "Reputation": "Bolster your crew's reputation or develop a new one.",
+        "Nature": "Express the goals, drives, inner conflict, or essential nature of the crew."
+      }
+    },
+    "Faction": {
+      "Status": {
+        "Title": "Status",
+        "Allies": "Allies (+3)",
+        "Friendly": "Friendly (+2)",
+        "Helpful": "Helpful (+1)",
+        "Neutral": "Neutral",
+        "Interfering": "Interfering (-1)",
+        "Hostile": "Hostile (-2)",
+        "War": "War (-3)"
+      },
+      "Goals": "Goals",
+      "Members": "Members",
+      "Factions": "Factions",
+      "Allies": "Allies",
+      "Enemies": "Enemies",
+      "NotableAssets": "Notable Assets",
+      "Quirks": "Quirks",
+      "Situation": "Situation",
+      "ShowForPlayers": {
+        "Title": "Show",
+        "Tooltip": "Show this field in limited sheet"
+      }
+    },
+    "Clock": {
+      "Filled": "Filled",
+      "Size": "Size"
+    },
+    "Playbook": {
+      "Summary": "Describe this playbook briefly",
+      "Exp": {
+        "Clue": "Expirience Clue",
+        "Placeholder": "Expirience clue which depend on character's playbook"
+      }
+    },
+    "CrewType": {
+      "ExpClue": "Expirience clue which depend on crew's playbook"
+    },
+    "Ability": {
+      "Plural": "Abilities",
+      "PluralSpecial": "Special Abilities",
+      "IsActive": "Active"
+    },
+    "Upgrade": {
+      "Plural": "Upgrades",
+      "SpecialPlural": "Special Upgrades",
+      "Common": "Common",
+      "Special": "Special",
+      "IsActive": "Active",
+      "Price": "Price"
+    },
+    "Contact": {
+      "Plural": "Contacts",
+      "Types": {
+        "Friend": "Friend",
+        "Rival": "Rival",
+        "Enemy": "Enemy",
+        "VicePurveyor": "Vice Purveyor",
+        "Other": "Other"
+      }
+    },
+    "Claim": {
+      "Title": "Claims Map",
+      "Turf": "Turf",
+      "Plural": "Claims",
+      "Effect": "Claim Effect",
+      "Prison": "Claims: Prison",
+      "LoadPrison": "Load Default Prison",
+      "NoFreeSpace": "There is no free space on the claims map for {name} ({id})",
+      "MoveLeft": "Move claim left",
+      "MoveRight": "Move claim right"
+    },
+    "Cohort": {
+      "Plural": "Cohorts",
+      "Type": {
+        "Title": "Type",
+        "Gang": "Gang",
+        "Expert": "Expert"
+      },
+      "Elite": "Elite",
+      "Specializations": "Specializations",
+      "Armor": "Armor",
+      "Edges": "Edges",
+      "Flaws": "Flaws",
+      "Harms": {
+        "Harm": "Harm",
+        "NoHarm": "None",
+        "Weakened": "Weakened",
+        "Impaired": "Impaired",
+        "Broken": "Broken",
+        "Dead": "Dead"
+      }
+    },
+    "Tool": {
+      "Common": "Common",
+      "Special": "Special",
+      "Loadout": "Loadout",
+      "Equipped": "Equipped",
+      "Broken": "Broken/Lost"
+    },
+    "Attributes": {
+      "Attribute": "Attribute",
+      "Insight": "Insight",
+      "Prowess": "Prowess",
+      "Resolve": "Resolve",
+      "Description": {
+        "Insight": "Consequences from deception or understanding.",
+        "Prowess": "Consequences from physical strain or injury.",
+        "Resolve": "Consequences from mental strain or willpower."
+      }
+    },
+    "Actions": {
+      "Action": "Action",
+      "Hunt": "Hunt",
+      "Study": "Study",
+      "Survey": "Survey",
+      "Tinker": "Tinker",
+      "Finesse": "Finesse",
+      "Prowl": "Prowl",
+      "Skirmish": "Skirmish",
+      "Wreck": "Wreck",
+      "Attune": "Attune",
+      "Command": "Command",
+      "Consort": "Consort",
+      "Sway": "Sway",
+      "Description": {
+        "Hunt": "When you <strong>Hunt</strong>, you carefully track a target. <em>You might follow a person or discover their location. You might arrange an ambush. You might attack with precision shooting from a distance. You could try to bring your guns to bear in a melee (but Skirmishing might be better).</em>",
+        "Study": "When you <strong>Study</strong>, you scrutinize details and interpret evidence. <em>You might gather information from documents, newspapers, and books. You might do research on an esoteric topic. You might closely analyze a person to detect lies or true feelings. You could try to examine events to understand a pressing situation (but Surveying might be better).</em>",
+        "Survey": "When you <wrap>Survey</wrap>, you observe the situation and anticipate outcomes. <em>You might spot telltale signs of trouble before it happens. You might uncover opportunities or weaknesses. You might detect a person's motivations or intentions (but Studying might be better). You could try to spot a good ambush point (but Hunting might be better).</em>",
+        "Tinker": "When you <strong>Tinker</strong>, you fiddle with devices and mechanisms. <em>You might create a new gadget or alter an existing item. You might pick a lock or crack a safe. You might disable an alarm or trap. You might turn the spark- craft and electroplasmic devices around the city to your advantage. You could try to use your technical expertise to control a vehicle (but Finessing might be better).</em>",
+        "Finesse": "When you <strong>Finesse</strong>, you employ dextrous manipulation or subtle misdirection. <em>You might pick someone's pocket. You might handle the controls of a vehicle or direct a mount. You might formally duel an opponent with graceful fighting arts. You could try to employ those arts in a chaotic melee (but Skirmishing might be better). You could try to pick a lock (but Tinkering might be better).</em>",
+        "Prowl": "When you <strong>Prowl</strong>, you traverse skillfully and quietly. <em>You might sneak past a guard or hide in the shadows. You might run and leap across the rooftops. You might attack someone from hiding with a back-stab or blackjack. You could try to waylay a victim in the midst of battle (but Skirmishing might be better).</em>",
+        "Skirmish": "When you <strong>Skirmish</strong>, you entangle a target in close combat so they can't easily escape. <em>You might brawl or wrestle with them. You might hack and slash. You might seize or hold a position in battle. You could try to fight in a formal duel (but Finessing might be better).</em>",
+        "Wreck": "When you <strong>Wreck</strong>, you unleash savage force. <em>You might smash down a door or wall with a sledgehammer, or use an explosive to do the same. You might employ chaos or sabotage to create a distraction or overcome an obstacle. You could try to overwhelm an enemy with sheer force in battle (but Skirmishing might be better).</em>",
+        "Attune": "When you <strong>Attune</strong>, you open your mind to the ghost field or channel nearby electroplasmic energy through your body. <em>You might communicate with a ghost or understand aspects of spectrology. You could try to perceive beyond sight in order to better understand your situation (but Surveying might be better).</em>",
+        "Command": "When you <strong>Command</strong>, you compel swift obedience. <em>You might intimidate or threaten to get what you want. You might lead a gang in a group action. You could try to order people around to persuade them (but Consorting might be better).</em>",
+        "Consort": "When you <strong>Consort</strong>, you socialize with friends and contacts. <em>You might gain access to resources, information, people, or places. You might make a good impression or win someone over with your charm and style. You might make new friends or connect with your heritage or background. You could try to direct your friends with social pressure (but Commanding might be better).</em>",
+        "Sway": "When you <strong>Sway</strong>, you influence someone with guile, charm, or argument. <em>You might lie convincingly. You might persuade someone to do what you want. You might argue a case that leaves no clear rebuttal. You could try to trick people into affection or obedience (but Consorting or Commanding might be better).</em>"
+      }
+    },
+    "Link": {
+      "Plural": "Links",
+      "Open": "Open link",
+      "Delete": "Delete",
+      "ImportActor": {
+        "Title": "Import actor",
+        "Description": "Import an actor {actor} from the compendium?",
+        "Submit": "Ok"
+      }
+    },
+    "Roll": {
+      "Title": "Roll Dice",
+      "Button": "Roll",
+      "Submit": "Roll",
+      "Cancel": "Cancel",
+      "DiceNumber": "Dice Number",
+      "Modifier": "Modifier",
+      "Type": {
+        "Title": "Roll Type",
+        "Action": "Action Roll",
+        "Resistance": "Resistance Roll",
+        "Fortune": "Fortune Roll",
+        "GatherInformation": "Gather Information",
+        "Engagement": "Engagement Roll",
+        "IndulgeVice": "Indulge Vice",
+        "AcquireAsset": "Acquire Asset"
+      },
+      "PositionEffect": "Position & Effect",
+      "Position": {
+        "Title": "Position",
+        "Controlled": "Controlled",
+        "Risky": "Risky",
+        "Desperate": "Desperate"
+      },
+      "Effect": {
+        "Title": "Effect",
+        "Zero": "Zero",
+        "Limited": "Limited",
+        "Standard": "Standard",
+        "Great": "Great",
+        "Extreme": "Extreme",
+        "Description": {
+          "Zero": "This action has poor, little or even zero effect. 0 Tick",
+          "Limited": "You achieve a partial or weak effect. How is your impact diminished? What effort remains to achieve your goal? 1 Tick",
+          "Standard": "You achieve what we’d expect as “normal” with this action. Is that enough, or is there more left to do? 2 Ticks",
+          "Great": "You achieve more than usual. How does the extra effort manifest? What additional benefit do you enjoy? 3 Ticks",
+          "Extreme": "Extreme Effect! 5 Ticks"
+        }
+      },
+      "Bonus": {
+        "or": "or",
+        "AddDice": "Get bonus dice",
+        "Push": "Push Yourself",
+        "PushEffect": "Push for +1 effect",
+        "DevilsBargain": "Devil’s Bargain",
+        "Assistance": "Assistance",
+        "Description": {
+          "Push": "You suffer {stress} stress.",
+          "DevilsBargain": "The Devil’s Bargain occurs regardless of the outcome of the roll.",
+          "Assistance": "Character who helps suffer 1 stress and might also suffer any consequences that occur because of the roll."
+        }
+      },
+      "SufferTrauma": {
+        "Title": "Suffer Trauma",
+        "Description": "You get {stress} stress, so you suffer a level of <b>trauma</b>. You’re <i>left for dead</i> or otherwise dropped out of the current conflict, only to come back later, shaken and drained. When you return, you have <b>zero stress</b> and your vice has been satisfied for the next downtime (see <b>Vice</b> on page 156)."
+      },
+      "Result": {
+        "Exp": "{actor} gains 1 experiences in {attribute}",
+        "Critical": "Critical",
+        "Success": "Full Success",
+        "Mixed": "Partial Success",
+        "Fail": "Bad Outcome"
+      },
+      "Action": {
+        "Controlled": {
+          "Critical": "You do it with <strong>increased effect</strong>.",
+          "Success": "You do it.",
+          "Mixed": "You hesitate. Withdraw and try a different approach, or else do it with a minor consequence: a minor <strong>complication</strong> occurs, you have <strong>reduced effect</strong>, you suffer <strong>lesser harm</strong>, you end up in a <strong>risky</strong> position.",
+          "Fail": "You falter. Press on by seizing a <strong>risky</strong> opportunity, or withdraw and try a different approach."
+        },
+        "Risky": {
+          "Critical": "You do it with <strong>increased effect</strong>.",
+          "Success": "You do it.",
+          "Mixed": "You do it, but there’s a consequence: you suffer <strong>harm</strong>, a <strong>complication</strong> occurs, you have <strong>reduced effect</strong>, you end up in a <strong>desperate</strong> position.",
+          "Fail": "Things go badly. You suffer <strong>harm</strong>, a <strong>complication</strong> occurs, you end up in a <strong>desperate</strong> position, you <strong>lose this opportunity</strong>."
+        },
+        "Desperate": {
+          "Critical": "You do it with <strong>increased effect</strong>.",
+          "Success": "You do it.",
+          "Mixed": "You do it, but there’s a consequence: you suffer <strong>severe harm</strong>, a <strong>serious complication</strong> occurs, you have <strong>reduced effect</strong>.",
+          "Fail": "It’s the worst outcome. You suffer <strong>severe harm</strong>, a <strong>serious complication</strong> occurs, you <strong>lose this opportunity</strong> for action."
+        }
+      },
+      "Resistance": {
+        "Result": "<p>You <strong>reduce</strong> or <strong>avoid</strong> the effects of the consequence (GM chooses).</p>",
+        "Regular": "<p>Suffer <strong>{stress}</strong> stress</p>",
+        "Critical": "<p>Clear 1 stress.</p>"
+      },
+      "Fortune": {
+        "Critical": "Exceptional result / Great, extreme effect.",
+        "Success": "Good result / Standard, full effect.",
+        "Mixed": "Mixed result / Limited, partial effect.",
+        "Fail": "Bad result / Poor, little effect."
+      },
+      "GatherInformation": {
+        "RollAs": "Roll as",
+        "Zero": "You get little, incomplete information.",
+        "Limited": "You get incomplete or partial information. More information gathering will be needed to get all the answers.",
+        "Standard": "You get good details. Clarifying and follow-up questions are possible.",
+        "Great": "You get exceptional details. The information is complete and follow-up questions may expand into related areas or reveal more than you hoped for.",
+        "Extreme": "You get more than you ever dared to think."
+      },
+      "Engagement": {
+        "Critical": "Exceptional result. <em>You’ve already overcome the first obstacle and you’re in a controlled position for what’s next.</em>",
+        "Success": "Good result. <em>You’re in a controlled position when the action starts.</em>",
+        "Mixed": "Mixed result. <em>You’re in a risky position when the action starts.</em>",
+        "Fail": "Bad result. <em>You’re in a desperate position when the action starts.</em>",
+        "Operation": "Is this operation particularly bold or daring? Take <strong>+1d</strong>. Is this operation overly complex or contingent on many factors? Take <strong>-1d</strong>.",
+        "Plan": "Does the <strong>plan’s detail</strong> expose a vulnerability of the target or hit them where they’re weakest? Take <strong>+1d</strong>. Is the target strongest against this approach, or do they have particular defenses or special preparations? Take <strong>-1d</strong>.",
+        "Contact": "Can any of your <strong>friends</strong> or <strong>contacts</strong> provide aid or insight for this operation? Take <strong>+1d</strong>. Are any <strong>enemies</strong> or <strong>rivals</strong> interfering in the operation? Take <strong>-1d</strong>.",
+        "Other": "Are there any <strong>other elements</strong> that you want to consider? Maybe a lower-Tier target will give you +1d. Maybe a higher-Tier target will give you -1d. Maybe there’s a situation in the district that makes the operation more or less tricky."
+      },
+      "AcquireAsset": {
+        "Critical": "You acquire asset with quality <strong>Tier +2</strong>.<br>To raise the result beyond critical, you may spend <strong>2 coin</strong> per +1 Tier bonus.",
+        "Success": "You acquire asset with quality <strong>Tier +1</strong>",
+        "Mixed": "You acquire asset with quality <strong>Tier</strong>",
+        "Fail": "You acquire asset with quality <strong>Tier -1</strong>"
+      },
+      "IndulgeVice": {
+        "Regular": "You indulge your vice. Clear <strong>{stress} stress</strong>.",
+        "Overindulgence": "<p>You <strong>overindulge</strong>. Clear <strong>all stress</strong> and choose <strong>one</strong> of the following consequences:</p>",
+        "Trouble": "<li><strong>Attract Trouble.</strong> Select or roll an additional <strong>entanglement.</strong></li>",
+        "Brag": "<li><strong>Brag</strong> about your exploits. <strong>+2 Heat</strong></li>",
+        "Lost": "<li><strong>Lost.</strong> Your character vanishes for a few weeks. Play a different character until this one returns from their bender. When your character returns, they've also healed any harm they had.</li>",
+        "Trapped": "<li><strong>Tapped.</strong> Your current purveyor cuts you off. Find a new source for your vice.</li>"
+      }
+    },
+    "Errors": {
+      "Item": {
+        "ExistsId": "Item with the same id already exists in the container.",
+        "ExistsName": "Item with the same name already exists in the container.",
+        "NotSupported": "The <b>{type} {item}</b> can't be added to this container",
+        "NotExist": "The item <b>{type} {item}</b> does not exist, so it is removed from the list"
+      },
+      "Actor": {
+        "ExistsId": "Item with the same id already exists in the container.",
+        "ExistsName": "Item with the same name already exists in the container.",
+        "InPack": "You may only add Friends to the Character which exist in the World.",
+        "NotSupported": "The <b>{type} {actor}</b> can't be added to this container.",
+        "NotExist": "The actor <b>{type} {actor}</b> does not exist, so it is removed from the linked actors",
+        "CantAddYourself": "You cannot add a link to yourself to an actor",
+        "NoPermission": "You don't have permission to create actors, so you cannot import them from Crew Type"
+      }
     }
+  }
 }

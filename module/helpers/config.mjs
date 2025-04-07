@@ -1,197 +1,236 @@
 export const BITD = {
-    attributeLinks: {
-        insight: ["hunt", "study", "survey", "tinker"],
-        prowess: ["finesse", "prowl", "skirmish", "wreck"],
-        resolve: ["attune", "command", "consort", "sway"]
+  attributeLinks: {
+    insight: ["hunt", "study", "survey", "tinker"],
+    prowess: ["finesse", "prowl", "skirmish", "wreck"],
+    resolve: ["attune", "command", "consort", "sway"],
+  },
+  linkedForeign: {
+    scoundrel: ["contacts"],
+    crew: ["members", "contacts", "relatedFactions", "goals"],
+    faction: ["members", "relatedFactions", "goals"],
+    crewType: ["abilities", "cohorts", "claims", "upgrades", "contacts"],
+  },
+  supportedLinks: {
+    scoundrel: { npc: "contacts" },
+    crew: {
+      scoundrel: "members",
+      npc: "contacts",
+      faction: "relatedFactions",
+      clock: "goals",
     },
-    linkedForeign: {
-        scoundrel: ["contacts"],
-        crew: ["members", "contacts", "relatedFactions", "goals"],
-        faction: ["members", "relatedFactions", "goals"],
-        crewType: ["abilities", "cohorts", "claims", "upgrades", "contacts"]
+    faction: {
+      faction: "relatedFactions",
+      npc: "members",
+      clock: "goals",
     },
-    supportedLinks: {
-        scoundrel: { npc: "contacts" },
-        crew: {
-            scoundrel: "members",
-            npc: "contacts",
-            faction: "relatedFactions",
-            clock: "goals"
-        },
-        faction: {
-            faction: "relatedFactions",
-            npc: "members",
-            clock: "goals"
-        },
-        playbook: {
-            abilityScoundrel: "abilities",
-            tool: "inventory"
-        },
-        crewType: {
-            abilityCrew: "abilities",
-            claim: "claims",
-            cohort: "cohorts",
-            upgrade: "upgrades"
-        }
+    playbook: {
+      abilityScoundrel: "abilities",
+      tool: "inventory",
     },
-    forLoad: {
-        scoundrel: {
-            container: "playbook",
-            types: ["abilities", "inventory"]
-        },
-        crew: {
-            container: "crewType",
-            types: ["abilities", "cohorts", "upgrades"]
-        }
+    crewType: {
+      abilityCrew: "abilities",
+      claim: "claims",
+      cohort: "cohorts",
+      upgrade: "upgrades",
     },
-    defaultItems: {
-        scoundrel: ["HZxYeBCQ4bZ632WU", "2H0lH4IeGq22kDyg", "cF0hFmTlXxI8CKSC", "FFNGcKvAeOjoGyI8", "jWTVSlCXWeOiGbfg", "vgMbINvoCQJAYp4q", "6NrhTvPbJTJJUn4s", "vrPi03rFguHYueWZ", "gnv9k4enWnR13mW4", "SapwXYuraydiNjej", "P95oe4AZgSomPqPs", "brU5pWiXWlG5o1Mi", "6cUx1jXXq4dx3wln", "oZOplJcmR6CjQZbO", "Wxoq19qr9LEuuNp4", "IDUBdq7KVd3dxC5W"],
-        crew: ["QYT0VHUnH7NvELXE", "0jzSjAD7aC7sTJWB", "JRUITBP7ejrAS7DE", "a78hFI8IrZ4GvmMO", "gwPjJVlyOdpHHkSZ", "iK5vthVkcbBjwl9W", "eOYEeQFnf0Lpflst", "sIzU9C2J8Ff888hZ", "LGG0DCb9qv2Pijy7", "BJG1pPeOQQHc4Sxb", "DYvuI3w5fSwLstvG", "LOPmlnXrAI5baXOx"],
-        prison: ["DyZp6G4WpZ5Kfq0C", "rOKYroipfUkG3KWV", "wzF9qDYgEhPwK4EP", "gZZkjnypiaQXVqCv", "axBT7dgd8ILdxTuR", "", "axBT7dgd8ILdxTuR", "wzF9qDYgEhPwK4EP", "pZ8NipIv4FzvesCm", "rOKYroipfUkG3KWV", "wzF9qDYgEhPwK4EP", "wzF9qDYgEhPwK4EP"]
+  },
+  forLoad: {
+    scoundrel: {
+      container: "playbook",
+      types: ["abilities", "inventory"],
     },
-    load: {
-        "3": "BITD.Load.Light",
-        "5": "BITD.Load.Normal",
-        "6": "BITD.Load.Heavy"
+    crew: {
+      container: "crewType",
+      types: ["abilities", "cohorts", "upgrades"],
     },
-    holdTypes: { strong: "BITD.Hold.Strong", weak: "BITD.Hold.Weak" },
-    statusTypes: {
-        allies: "BITD.Status.Allies",
-        friendly: "BITD.Status.Friendly",
-        helpful: "BITD.Status.Helpful",
-        neutral: "BITD.Status.Neutral",
-        interfering: "BITD.Status.Interfering",
-        hostile: "BITD.Status.Hostile",
-        war: "BITD.Status.War"
+  },
+  defaultItems: {
+    scoundrel: [
+      "HZxYeBCQ4bZ632WU",
+      "2H0lH4IeGq22kDyg",
+      "cF0hFmTlXxI8CKSC",
+      "FFNGcKvAeOjoGyI8",
+      "jWTVSlCXWeOiGbfg",
+      "vgMbINvoCQJAYp4q",
+      "6NrhTvPbJTJJUn4s",
+      "vrPi03rFguHYueWZ",
+      "gnv9k4enWnR13mW4",
+      "SapwXYuraydiNjej",
+      "P95oe4AZgSomPqPs",
+      "brU5pWiXWlG5o1Mi",
+      "6cUx1jXXq4dx3wln",
+      "oZOplJcmR6CjQZbO",
+      "Wxoq19qr9LEuuNp4",
+      "IDUBdq7KVd3dxC5W",
+    ],
+    crew: [
+      "QYT0VHUnH7NvELXE",
+      "0jzSjAD7aC7sTJWB",
+      "JRUITBP7ejrAS7DE",
+      "a78hFI8IrZ4GvmMO",
+      "gwPjJVlyOdpHHkSZ",
+      "iK5vthVkcbBjwl9W",
+      "eOYEeQFnf0Lpflst",
+      "sIzU9C2J8Ff888hZ",
+      "LGG0DCb9qv2Pijy7",
+      "BJG1pPeOQQHc4Sxb",
+      "DYvuI3w5fSwLstvG",
+      "LOPmlnXrAI5baXOx",
+    ],
+    prison: [
+      "DyZp6G4WpZ5Kfq0C",
+      "rOKYroipfUkG3KWV",
+      "wzF9qDYgEhPwK4EP",
+      "gZZkjnypiaQXVqCv",
+      "axBT7dgd8ILdxTuR",
+      "",
+      "axBT7dgd8ILdxTuR",
+      "wzF9qDYgEhPwK4EP",
+      "pZ8NipIv4FzvesCm",
+      "rOKYroipfUkG3KWV",
+      "wzF9qDYgEhPwK4EP",
+      "wzF9qDYgEhPwK4EP",
+    ],
+  },
+  load: {
+    3: "BITD.Scoundrel.Load.Light",
+    5: "BITD.Scoundrel.Load.Normal",
+    6: "BITD.Scoundrel.Load.Heavy",
+  },
+  holdTypes: { strong: "BITD.Crew.Hold.Strong", weak: "BITD.Crew.Hold.Weak" },
+  statusTypes: {
+    allies: "BITD.Faction.Status.Allies",
+    friendly: "BITD.Faction.Status.Friendly",
+    helpful: "BITD.Faction.Status.Helpful",
+    neutral: "BITD.Faction.Status.Neutral",
+    interfering: "BITD.Faction.Status.Interfering",
+    hostile: "BITD.Faction.Status.Hostile",
+    war: "BITD.Faction.Status.War",
+  },
+  cohort: {
+    types: {
+      gang: "BITD.Cohort.Type.Gang",
+      expert: "BITD.Cohort.Type.Expert",
     },
-    cohort: {
-        types: {
-            gang: "BITD.Cohort.Type.Gang",
-            expert: "BITD.Cohort.Type.Expert"
-        },
-        harm: {
-            0: "BITD.Cohort.Harm.NoHarm",
-            1: "BITD.Cohort.Harm.Weakened",
-            2: "BITD.Cohort.Harm.Impaired",
-            3: "BITD.Cohort.Harm.Broken",
-            4: "BITD.Cohort.Harm.Dead"
-        }
+    harm: {
+      0: "BITD.Cohort.Harms.NoHarm",
+      1: "BITD.Cohort.Harms.Weakened",
+      2: "BITD.Cohort.Harms.Impaired",
+      3: "BITD.Cohort.Harms.Broken",
+      4: "BITD.Cohort.Harms.Dead",
     },
-    toolType: {
-        common: "BITD.Tool.Common",
-        special: "BITD.Tool.Special"
-    },
-    toolType: {
-        common: "BITD.Tool.Common",
-        special: "BITD.Tool.Special"
-    },
-    upgradeType: {
-        common: "BITD.Upgrade.Common",
-        special: "BITD.Upgrade.Special"
-    },
+  },
+  toolType: {
+    common: "BITD.Tool.Common",
+    special: "BITD.Tool.Special",
+  },
+  upgradeType: {
+    common: "BITD.Upgrade.Common",
+    special: "BITD.Upgrade.Special",
+  },
 
-    relationshipClasses: ["rival", "neutral", "friend", "special"],
+  relationshipClasses: ["rival", "neutral", "friend", "special"],
 
-    rolls: {
-        type: {
-            action: "BITD.Roll.Type.Action",
-            resistance: "BITD.Roll.Type.Resistance",
-            fortune: "BITD.Roll.Type.Fortune",
-            information: "BITD.Roll.Type.GatherInformation",
-            engagement: "BITD.Roll.Type.Engagement",
-            asset: "BITD.Roll.Type.AcquireAsset",
-            vice: "BITD.Roll.Type.IndulgeVice"
-        },
-        rollAs: {
-            action: "BITD.Roll.Type.Action",
-            fortune: "BITD.Roll.Type.Fortune"
-        },
-        attributes: {
-            insight: "BITD.Insight",
-            prowess: "BITD.Prowess",
-            resolve: "BITD.Resolve"
-        },
-        actions: {
-            hunt: "BITD.Hunt",
-            study: "BITD.Study",
-            survey: "BITD.Survey",
-            tinker: "BITD.Tinker",
-            finesse: "BITD.Finesse",
-            prowl: "BITD.Prowl",
-            skirmish: "BITD.Skirmish",
-            wreck: "BITD.Wreck",
-            attune: "BITD.Attune",
-            command: "BITD.Command",
-            consort: "BITD.Consort",
-            sway: "BITD.Sway"
-        },
-        position: {
-            controlled: "BITD.Roll.Position.Controlled",
-            risky: "BITD.Roll.Position.Risky",
-            desperate: "BITD.Roll.Position.Desperate"
-        },
-        effect: {
-            zero: "BITD.Roll.Effect.Zero",
-            limited: "BITD.Roll.Effect.Limited",
-            standard: "BITD.Roll.Effect.Standard",
-            great: "BITD.Roll.Effect.Great",
-            extreme: "BITD.Roll.Effect.Extreme"
-        },
-        fortuneRollResult: {
-            fail: "Zero",
-            mixed: "Limited",
-            success: "Standard",
-            critical: "Great"
-        },
-        effectSequence: ["zero", "limited", "standard", "great", "extreme"]
+  rolls: {
+    type: {
+      action: "BITD.Roll.Type.Action",
+      resistance: "BITD.Roll.Type.Resistance",
+      fortune: "BITD.Roll.Type.Fortune",
+      information: "BITD.Roll.Type.GatherInformation",
+      engagement: "BITD.Roll.Type.Engagement",
+      asset: "BITD.Roll.Type.AcquireAsset",
+      vice: "BITD.Roll.Type.IndulgeVice",
     },
-
-    clockTypes: {
-        4: 4,
-        6: 6,
-        8: 8,
-        10: 10,
-        12: 12
+    rollAs: {
+      action: "BITD.Roll.Type.Action",
+      fortune: "BITD.Roll.Type.Fortune",
     },
+    attributes: {
+      insight: "BITD.Attributes.Insight",
+      prowess: "BITD.Attributes.Prowess",
+      resolve: "BITD.Attributes.Resolve",
+    },
+    actions: {
+      hunt: "BITD.Actions.Hunt",
+      study: "BITD.Actions.Study",
+      survey: "BITD.Actions.Survey",
+      tinker: "BITD.Actions.Tinker",
+      finesse: "BITD.Actions.Finesse",
+      prowl: "BITD.Actions.Prowl",
+      skirmish: "BITD.Actions.Skirmish",
+      wreck: "BITD.Actions.Wreck",
+      attune: "BITD.Actions.Attune",
+      command: "BITD.Actions.Command",
+      consort: "BITD.Actions.Consort",
+      sway: "BITD.Actions.Sway",
+    },
+    position: {
+      controlled: "BITD.Roll.Position.Controlled",
+      risky: "BITD.Roll.Position.Risky",
+      desperate: "BITD.Roll.Position.Desperate",
+    },
+    effect: {
+      zero: "BITD.Roll.Effect.Zero",
+      limited: "BITD.Roll.Effect.Limited",
+      standard: "BITD.Roll.Effect.Standard",
+      great: "BITD.Roll.Effect.Great",
+      extreme: "BITD.Roll.Effect.Extreme",
+    },
+    fortuneRollResult: {
+      fail: "Zero",
+      mixed: "Limited",
+      success: "Standard",
+      critical: "Great",
+    },
+    effectSequence: ["zero", "limited", "standard", "great", "extreme"],
+  },
 
-    claims: {
-        empty: {
-            actor: {
-                id: "",
-                name: "Turf",
-                active: false,
-                effect: ""
-            },
-            item: {
-                id: "",
-                name: "Turf"
-            },
-            home: {
-                item: {
-                    id: "",
-                    name: "Lair"
-                },
-                claim: {
-                    id: "",
-                    name: "Lair",
-                    active: true,
-                    effect: ""
-                },
-                prisonClaim: {
-                    id: "",
-                    name: "Prison",
-                    active: true,
-                    effect: ""
-                }
-            }
+  clockTypes: {
+    4: 4,
+    6: 6,
+    8: 8,
+    10: 10,
+    12: 12,
+  },
+
+  claims: {
+    empty: {
+      actor: {
+        id: "",
+        name: "Turf",
+        active: false,
+        effect: "",
+      },
+      item: {
+        id: "",
+        name: "Turf",
+      },
+      home: {
+        item: {
+          id: "",
+          name: "Lair",
         },
-        mapLength: {
-            claim: 15,
-            prisonClaim: 12
+        claim: {
+          id: "",
+          name: "Lair",
+          active: true,
+          effect: "",
         },
-        home: {
-            claim: "Lair",
-            prisonClaim: "Prison"
-        }
-    }
+        prisonClaim: {
+          id: "",
+          name: "Prison",
+          active: true,
+          effect: "",
+        },
+      },
+    },
+    mapLength: {
+      claim: 15,
+      prisonClaim: 12,
+    },
+    home: {
+      claim: "Lair",
+      prisonClaim: "Prison",
+    },
+  },
 };
