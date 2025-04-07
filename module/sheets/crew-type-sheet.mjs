@@ -22,7 +22,7 @@ export class BitdCrewTypeSheet extends BitdItemSheet {
     // Retrieve base data structure.
     const context = await super.getData();
     claimMap(this.item);
-    context.claims = this.item.system.claims;
+    context.claims = this.item.system.claimsMap;
 
     return context;
   }
@@ -105,7 +105,7 @@ export class BitdCrewTypeSheet extends BitdItemSheet {
     const direction = button.dataset.direction;
     const parent = $(button.parentNode);
     const index = parseInt(parent[0].dataset.index, 10);
-    const container = this.item.system.claims;
+    const container = this.item.system.claimsMap;
     const map = container.map;
     const columns = container.columns;
 
@@ -119,6 +119,6 @@ export class BitdCrewTypeSheet extends BitdItemSheet {
       [map[index], map[index + columns]] = [map[index + columns], map[index]];
     }
 
-    await this.item.update({ "system.claims.map": map });
+    await this.item.update({ "system.claimsMap.map": map });
   }
 }

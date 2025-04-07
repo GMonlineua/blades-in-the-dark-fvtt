@@ -8,7 +8,7 @@ export const BITD = {
     scoundrel: ["contacts"],
     crew: ["members", "contacts", "relatedFactions", "goals"],
     faction: ["members", "relatedFactions", "goals"],
-    crewType: ["abilities", "cohorts", "claims", "upgrades", "contacts"],
+    crewType: ["abilities", "cohorts", "claimsMap", "upgrades", "contacts"],
   },
   supportedLinks: {
     scoundrel: { npc: "contacts" },
@@ -29,7 +29,7 @@ export const BITD = {
     },
     crewType: {
       abilityCrew: "abilities",
-      claim: "claims",
+      claim: "claimsMap",
       cohort: "cohorts",
       upgrade: "upgrades",
     },
@@ -204,6 +204,7 @@ export const BITD = {
       },
       item: {
         id: "",
+        uuid: "",
         name: "",
         type: "turf",
         active: false,

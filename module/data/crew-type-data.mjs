@@ -5,7 +5,11 @@ export default class CrewTypeData extends foundry.abstract.TypeDataModel {
     const fields = foundry.data.fields;
     const requiredInteger = { required: true, nullable: false, integer: true };
     const defaultClaims = Array.from({ length: 15 }, () => ({
-      ...CONFIG.BITD.claims.empty.item,
+      id: "",
+      uuid: "",
+      name: "",
+      type: "turf",
+      active: false
     }));
     defaultClaims[7].type = "home";
 
@@ -30,7 +34,7 @@ export default class CrewTypeData extends foundry.abstract.TypeDataModel {
           docType: new fields.StringField({ initial: "Item" }),
         }),
       ),
-      claims: new fields.SchemaField({
+      claimsMap: new fields.SchemaField({
         rows: new fields.NumberField({
           requiredInteger,
           min: 3,
@@ -85,5 +89,63 @@ export default class CrewTypeData extends foundry.abstract.TypeDataModel {
       exp: new fields.StringField(),
       description: new fields.HTMLField(),
     };
+  }
+
+  /* -------------------------------------------- */
+
+  /**
+   * Migrate legacy data to the new structure.
+   * @param {object} source - The source data to migrate.
+   * @returns {object} The migrated data.
+   */
+  static migrateData(source) {
+    if (source.claims) {
+      console.log(source.claims);
+      const map = this.migrateMap(source.claims)
+
+      source.claimsMap = {
+        rows: 3,
+        columns: 5,
+        map: map,
+      };
+
+      console.log(source.claimsMap);
+    }
+
+    return super.migrateData(source);
+  }
+
+  /** Migrate map method */
+  static migrateMap(data) {
+    const map = [];
+    for (const claim of data) {
+      if (claim.name === "Lair") {
+        map.push({
+          id: "",
+          uuid: "",
+          name: "",
+          type: "home",
+          active: false
+        });
+      } else if (claim.id) {
+        map.push({
+          id: claim.id,
+          uuid: claim.uuid,
+          name: claim.name,
+          type: "claim",
+          active: claim.active,
+        });
+      } else {
+        map.push({
+          id: "",
+          uuid: "",
+          name: "",
+          type: "turf",
+          active: false,
+        });
+      }
+    }
+
+    return map;
   }
 }

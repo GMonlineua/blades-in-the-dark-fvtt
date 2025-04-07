@@ -28,9 +28,10 @@ export class BitdCrewSheet extends BitdActorSheet {
 
     // Prepare crew data and items.
     this._prepareItems(context);
-    context.claims = this.actor.system.claims;
-    context.prison = this.actor.system.prison;
+    context.claims = this.actor.system.claimsMap;
+    context.prison = this.actor.system.prisonMap;
 
+    console.log(context)
     return context;
   }
 
@@ -224,13 +225,13 @@ export class BitdCrewSheet extends BitdActorSheet {
   async _onLoadPrison(event) {
     event.preventDefault();
     const data = CONFIG.BITD.defaultItems.prison;
-    const container = this.actor.system.prison;
+    const container = this.actor.system.prisonMap;
     const map = container.map;
 
     // Update container length
     container.rows = 3;
     container.columns = 4;
-    await this.actor.update({ "system.prison": container });
+    await this.actor.update({ "system.prisonMap": container });
 
     // delete exist prison claims
     for (const item of this.actor.items) {
@@ -244,7 +245,7 @@ export class BitdCrewSheet extends BitdActorSheet {
       ...CONFIG.BITD.claims.empty.actor,
     }));
     defaultPrison[5].type = "home";
-    await this.actor.update({ "system.prison.map": defaultPrison });
+    await this.actor.update({ "system.prisonMap.map": defaultPrison });
 
     // load new
     for (const index in data) {
@@ -265,7 +266,7 @@ export class BitdCrewSheet extends BitdActorSheet {
       }
     }
 
-    await this.actor.update({ "system.prison.map": map });
+    await this.actor.update({ "system.prisonMap.map": map });
     claimMap(this.actor);
   }
 

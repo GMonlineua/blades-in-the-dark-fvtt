@@ -52,7 +52,7 @@ export default class BitdItem extends Item {
 
     // Handle claims separately due to new structure
     if (key === "claims") {
-      const claims = this.system.claims;
+      const claims = this.system.claimsMap;
       const map = claims.map;
 
       const idExist = map.some((existingItem) => existingItem.id === item.id);
@@ -69,7 +69,7 @@ export default class BitdItem extends Item {
           game.i18n.localize("BITD.Errors.Item.ExistsName"),
         );
 
-      const path = "system.claims.map";
+      const path = "system.claimsMap.map";
       const link = {
         id: item.id,
         uuid: item.uuid,

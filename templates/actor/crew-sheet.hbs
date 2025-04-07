@@ -142,12 +142,12 @@
 
     {{!-- Owned Claims Tab --}}
     <div class="tab claims" data-group="primary" data-tab="claims">
-      {{> "systems/bitd/templates/actor/parts/claims-map.hbs" data=claims itemType="claim" container="claims"}}
+      {{> "systems/bitd/templates/actor/parts/claims-map.hbs" data=claims itemType="claim" container="claimsMap"}}
     </div>
 
     {{!-- Owned Prisons Claims Tab --}}
     <div class="tab prison" data-group="primary" data-tab="prison">
-      {{> "systems/bitd/templates/actor/parts/claims-map.hbs" data=prison itemType="prisonClaim" container="prison"}}
+      {{> "systems/bitd/templates/actor/parts/claims-map.hbs" data=prison itemType="prisonClaim" container="prisonMap"}}
       <div class="load-prison-block align-center"><a class="load-prison">{{localize 'BITD.Claim.LoadPrison'}}</a></div>
     </div>
 

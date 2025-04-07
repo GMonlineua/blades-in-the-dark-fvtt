@@ -7,17 +7,17 @@ export function claimMap(parent) {
   const checkFunction = functions[parent.type];
   const isActor = parent.type == "crew";
 
-  const claims = parent.system.claims;
+  const claims = parent.system.claimsMap;
   checkFunction(claims, parent, "claim");
   checkArrayLength(claims, isActor);
-  updateMap(claims, parent, "claims");
+  updateMap(claims, parent, "claimsMap");
 
   if (isActor) {
-    const container = parent.system.prison;
+    const container = parent.system.prisonMap;
 
     checkFunction(container, parent, "prisonClaim");
     checkArrayLength(container, isActor);
-    updateMap(container, parent, "prison");
+    updateMap(container, parent, "prisonMap");
   }
 }
 
@@ -131,7 +131,7 @@ function checkArrayLength(container, isActor) {
     if (map.length > requirement) {
       const index = map.findLastIndex(
         (item) =>
-          item.id === "" && item.name != "Lair" && item.name != "Prison",
+          item.type != "home" && item.type != "claim",
       );
       if (index >= 0) {
         map.splice(index, 1);

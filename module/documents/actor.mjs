@@ -153,7 +153,7 @@ export default class BitdActor extends Actor {
         }
       }
     } else if (container.type === "crewType") {
-      const map = container.system.claims;
+      const map = container.system.claimsMap;
 
       for (const item of this.items) {
         if (item.type === "claim") {
@@ -167,7 +167,7 @@ export default class BitdActor extends Actor {
       }));
       defaultClaims[7].name = "Lair";
       defaultClaims[7].active = true;
-      await this.update({ "system.claims": defaultClaims });
+      await this.update({ "system.claimsMap": defaultClaims });
 
       for (const itemData of map) {
         if (itemData.id) {
@@ -177,7 +177,7 @@ export default class BitdActor extends Actor {
         }
       }
 
-      await this.update({ "system.claims": map });
+      await this.update({ "system.claimsMap": map });
       claimMap(this);
     }
 
@@ -262,11 +262,11 @@ export default class BitdActor extends Actor {
           cancel: {
             icon: '<i class="fas fa-times"></i>',
             label: game.i18n.localize("BITD.Roll.Cancel"),
-            callback: () => {},
+            callback: () => { },
           },
         },
         default: "import",
-        close: () => {},
+        close: () => { },
       },
       {
         classes: ["dialog", "bitd-import-dialog"],

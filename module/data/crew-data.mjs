@@ -6,14 +6,22 @@ export default class CrewData extends foundry.abstract.TypeDataModel {
     const requiredInteger = { required: true, nullable: false, integer: true };
     const requiredPositiveInteger = { ...requiredInteger, min: 0 };
     const defaultClaims = Array.from({ length: 15 }, () => ({
-      ...CONFIG.BITD.claims.empty.actor,
+      id: "",
+      name: "",
+      type: "turf",
+      active: false,
+      effect: "",
     }));
     defaultClaims[7].type = "home";
 
     const defaultPrison = Array.from({ length: 12 }, () => ({
-      ...CONFIG.BITD.claims.empty.actor,
+      id: "",
+      name: "",
+      type: "turf",
+      active: false,
+      effect: "",
     }));
-    defaultClaims[5].type = "home";
+    defaultPrison[5].type = "home";
 
     return {
       tier: new fields.SchemaField({
@@ -85,7 +93,7 @@ export default class CrewData extends foundry.abstract.TypeDataModel {
           uuid: new fields.StringField(),
           name: new fields.StringField(),
           tier: new fields.NumberField(),
-          status: new fields.StringField(),
+          status: new fields.StringField({ initial: "neutral" }),
         }),
       ),
 
@@ -108,7 +116,7 @@ export default class CrewData extends foundry.abstract.TypeDataModel {
         }),
       ),
 
-      claims: new fields.SchemaField({
+      claimsMap: new fields.SchemaField({
         rows: new fields.NumberField({
           requiredInteger,
           min: 3,
@@ -139,7 +147,7 @@ export default class CrewData extends foundry.abstract.TypeDataModel {
         ),
       }),
 
-      prison: new fields.SchemaField({
+      prisonMap: new fields.SchemaField({
         rows: new fields.NumberField({
           requiredInteger,
           min: 3,
@@ -175,6 +183,41 @@ export default class CrewData extends foundry.abstract.TypeDataModel {
   }
 
   /* -------------------------------------------- */
+
+  /**
+   * Migrate legacy data to the new structure.
+   * @param {object} source - The source data to migrate.
+   * @returns {object} The migrated data.
+   */
+  static migrateData(source) {
+    if (source.claims) {
+      console.log(source.claims);
+      const map = this.migrateMap(source.claims)
+
+      source.claimsMap = {
+        rows: 3,
+        columns: 5,
+        map: map,
+      };
+
+      console.log(source.claimsMap);
+    }
+
+    if (source.prison) {
+      const map = this.migrateMap(source.prison)
+      console.log(map);
+
+      source.prisonMap = {
+        rows: 3,
+        columns: 4,
+        map: map,
+      };
+
+      console.log(source.prisonMap);
+    }
+
+    return super.migrateData(source);
+  }
 
   /** @inheritdoc */
   prepareDerivedData() {
