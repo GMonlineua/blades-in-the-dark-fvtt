@@ -31,7 +31,6 @@ export class BitdCrewSheet extends BitdActorSheet {
     context.claims = this.actor.system.claimsMap;
     context.prison = this.actor.system.prisonMap;
 
-    console.log(context)
     return context;
   }
 
@@ -252,7 +251,7 @@ export class BitdCrewSheet extends BitdActorSheet {
       if (index != 5) {
         const uuid = "Compendium.bitd.claims.Item." + data[index];
         const item = await fromUuid(uuid);
-        const array = await this.actor.createEmbeddedDocuments("Item", [item]);
+        const array = await this.actor.createEmbeddedDocuments("Item", [item], { skipClaimUpdate: true });
         const newItem = array[0];
 
         map[index].id = newItem._id;

@@ -100,7 +100,6 @@ export default class CrewTypeData extends foundry.abstract.TypeDataModel {
    */
   static migrateData(source) {
     if (source.claims) {
-      console.log(source.claims);
       const map = this.migrateMap(source.claims)
 
       source.claimsMap = {
@@ -108,8 +107,6 @@ export default class CrewTypeData extends foundry.abstract.TypeDataModel {
         columns: 5,
         map: map,
       };
-
-      console.log(source.claimsMap);
     }
 
     return super.migrateData(source);

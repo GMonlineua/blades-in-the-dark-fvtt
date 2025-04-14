@@ -69,6 +69,8 @@ export default class BitdActor extends Actor {
       userId,
     );
 
+    if (options?.skipClaimUpdate) return;
+
     if (game.user.id === userId) {
       for (const dataItem of data) {
         if (dataItem.type === "claim") claimMap(this);
@@ -146,10 +148,8 @@ export default class BitdActor extends Actor {
       const fromCompendium = contact.uuid.includes("Compendium");
 
       if (fromCompendium) {
-        console.log("Import to world (Compentium):", contact)
         toImport.push(contact)
       } else {
-        console.log("Direct add:", contact)
         const contactActor = await fromUuid(contact.uuid);
         this.addLinkedActor(contactActor);
       }
@@ -167,7 +167,7 @@ export default class BitdActor extends Actor {
         }
       }
     } else if (container.type === "crewType") {
-      const map = container.system.claimsMap;
+      const claimsMap = container.system.claimsMap;
 
       for (const item of this.items) {
         if (item.type === "claim") {
@@ -179,19 +179,22 @@ export default class BitdActor extends Actor {
       const defaultClaims = Array.from({ length: 15 }, () => ({
         ...CONFIG.BITD.claims.empty.actor,
       }));
-      defaultClaims[7].name = "Lair";
-      defaultClaims[7].active = true;
+      defaultClaims[7].type = "home";
       await this.update({ "system.claimsMap": defaultClaims });
 
-      for (const itemData of map) {
+      console.log("before update:", claimsMap)
+
+      for (const itemData of claimsMap.map) {
         if (itemData.id) {
           const item = await fromUuid(itemData.uuid);
-          const newItem = await this.createEmbeddedDocuments("Item", [item]);
+          const newItem = await this.createEmbeddedDocuments("Item", [item], { skipClaimUpdate: true });
           itemData.id = newItem[0]._id;
         }
       }
 
-      await this.update({ "system.claimsMap": map });
+      console.log("after update:", claimsMap)
+
+      await this.update({ "system.claimsMap": claimsMap });
       claimMap(this);
     }
 
@@ -274,7 +277,6 @@ export default class BitdActor extends Actor {
             callback: async (html) => {
               const selectedIds = html.find('input[name="actor"]:checked').map((_, el) => el.value).get();
               const selectedActors = actors.filter(a => selectedIds.includes(a.id));
-              console.log(selectedActors);
               for (const actorData of selectedActors) {
                 const actor = await BitdActor.create(actorData);
                 this.addLinkedActor(actor);
