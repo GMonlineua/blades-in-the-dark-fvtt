@@ -295,7 +295,7 @@
       "Delete": "Delete",
       "ImportActor": {
         "Title": "Import actor",
-        "Description": "Import an actor {actor} from the compendium?",
+        "Description": "Choose which actor you wanna import from compendium",
         "Submit": "Ok"
       }
     },

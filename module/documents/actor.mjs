@@ -139,10 +139,24 @@ export default class BitdActor extends Actor {
       }
     }
 
-    for (const contact of container.system.contacts) {
-      this.importActor(contact, "contacts");
-    }
+    // Import contancts to world and add to actor
+    const toImport = [];
 
+    for (const contact of container.system.contacts) {
+      const fromCompendium = contact.uuid.includes("Compendium");
+
+      if (fromCompendium) {
+        console.log("Import to world (Compentium):", contact)
+        toImport.push(contact)
+      } else {
+        console.log("Direct add:", contact)
+        const contactActor = await fromUuid(contact.uuid);
+        this.addLinkedActor(contactActor);
+      }
+    }
+    if (toImport) this.importActors(toImport)
+
+    // Handle specific data
     if (container.type === "playbook") {
       for (const action in systemData.actions) {
         const playbookValue = container.system.actions[action];
@@ -238,31 +252,38 @@ export default class BitdActor extends Actor {
     await this.update({ [path]: container });
   }
 
-  async importActor(sourceActor) {
+  async importActors(actors) {
     if (!game.user.hasPermission("ACTOR_CREATE"))
       return ui.notifications.warn(
         game.i18n.localize("BITD.Errors.Actor.NoPermission"),
       );
 
+    const template = await renderTemplate(
+      "systems/bitd/templates/apps/importActor.hbs",
+      { actors },
+    );
+
     const dialog = new Dialog(
       {
         title: game.i18n.localize("BITD.Link.ImportActor.Title"),
-        content: game.i18n.format("BITD.Link.ImportActor.Description", {
-          actor: sourceActor.name,
-        }),
+        content: template,
         buttons: {
           import: {
             label: game.i18n.localize("BITD.Link.ImportActor.Submit"),
             icon: '<i class="fas fa-check"></i>',
-            callback: async () => {
-              const actor = await BitdActor.create(sourceActor);
-              this.addLinkedActor(actor);
+            callback: async (html) => {
+              const selectedIds = html.find('input[name="actor"]:checked').map((_, el) => el.value).get();
+              const selectedActors = actors.filter(a => selectedIds.includes(a.id));
+              console.log(selectedActors);
+              for (const actorData of selectedActors) {
+                const actor = await BitdActor.create(actorData);
+                this.addLinkedActor(actor);
+              }
             },
           },
           cancel: {
             icon: '<i class="fas fa-times"></i>',
             label: game.i18n.localize("BITD.Roll.Cancel"),
-            callback: () => { },
           },
         },
         default: "import",
@@ -271,7 +292,7 @@ export default class BitdActor extends Actor {
       {
         classes: ["dialog", "bitd-import-dialog"],
         width: 400,
-        height: 100,
+        height: "auto",
       },
     );
 

@@ -26,6 +26,17 @@
   font-weight: bold;
 }
 
+.import-actors-form {
+  margin-bottom: 5px;
+}
+.import-actors-form .actor-checkboxes {
+  font-size: medium;
+  font-family: "Spectral SC", serif;
+}
+.import-actors-form .actor-checkboxes .flexrow {
+  align-items: center;
+}
+
 .bitd-roll-dialog {
   height: auto;
 }
