@@ -36,6 +36,7 @@
 }
 
 .rollable {
+
   &:hover,
   &:focus {
     color: black;
@@ -44,6 +45,7 @@
 }
 
 .bitd-header.rollable {
+
   &:hover,
   &:focus {
     color: white;
@@ -97,7 +99,8 @@
     background-image: url("../assets/tooth/tooth-black-red.svg");
   }
 
-  .simple-tooth, .simple-red-tooth {
+  .simple-tooth,
+  .simple-red-tooth {
     height: 30px;
     width: 9px;
     background-image: url("../assets/tooth/tooth-white.svg");
@@ -134,7 +137,9 @@
   }
 }
 
-h1,h2,h3 {
+h1,
+h2,
+h3 {
   font-family: $font-secondary;
 }
 
@@ -213,7 +218,8 @@ textarea {
       justify-content: flex-end;
       font-size: smaller;
 
-      .item-checkbox, .claim-checkbox {
+      .item-checkbox,
+      .claim-checkbox {
         margin: 0;
         height: 12px;
         width: 10px;
@@ -251,13 +257,17 @@ textarea {
   }
 
   .claim:first-child {
-    .move-left,.move-up {
+
+    .move-left,
+    .move-up {
       display: none;
     }
   }
 
   .claim:last-child {
-    .move-right,.move-down {
+
+    .move-right,
+    .move-down {
       display: none;
     }
   }
