@@ -5,13 +5,16 @@ export const BITD = {
     resolve: ["attune", "command", "consort", "sway"],
   },
   linkedForeign: {
-    scoundrel: ["contacts"],
+    scoundrel: ["contacts", "goals"],
     crew: ["members", "contacts", "relatedFactions", "goals"],
     faction: ["members", "relatedFactions", "goals"],
     crewType: ["abilities", "cohorts", "claimsMap", "upgrades", "contacts"],
   },
   supportedLinks: {
-    scoundrel: { npc: "contacts" },
+    scoundrel: {
+      npc: "contacts",
+      clock: "goals",
+    },
     crew: {
       scoundrel: "members",
       npc: "contacts",
@@ -49,6 +52,7 @@ export const BITD = {
       "HZxYeBCQ4bZ632WU",
       "2H0lH4IeGq22kDyg",
       "cF0hFmTlXxI8CKSC",
+      "0k2HLJEIIc2MT7cH",
       "FFNGcKvAeOjoGyI8",
       "jWTVSlCXWeOiGbfg",
       "vgMbINvoCQJAYp4q",
@@ -58,7 +62,6 @@ export const BITD = {
       "SapwXYuraydiNjej",
       "P95oe4AZgSomPqPs",
       "brU5pWiXWlG5o1Mi",
-      "6cUx1jXXq4dx3wln",
       "oZOplJcmR6CjQZbO",
       "Wxoq19qr9LEuuNp4",
       "IDUBdq7KVd3dxC5W",

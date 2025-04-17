@@ -41,6 +41,7 @@ export class BitdScoundrelSheet extends BitdActorSheet {
     const contacts = [];
     const inventory = [];
     const specInventory = [];
+    const cohorts = [];
 
     const playbookId = this.actor.system.playbook;
 
@@ -61,14 +62,17 @@ export class BitdScoundrelSheet extends BitdActorSheet {
         } else {
           specInventory.push(i);
         }
+      } else if (i.type === "cohort") {
+        cohorts.push(i);
       }
     }
 
     context.abilities = abilities;
     context.contacts = contacts;
-    context.inventory = inventory;
     context.playbook = playbook;
+    context.inventory = inventory;
     context.specInventory = specInventory;
+    context.cohorts = cohorts;
   }
 
   /* -------------------------------------------- */
@@ -76,6 +80,13 @@ export class BitdScoundrelSheet extends BitdActorSheet {
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
+
+    // Lifestyle track
+    html.find(".stash-box").each(function(i) {
+      const parent = $(this.parentNode);
+      const lifestyle = parent[0].dataset.value;
+      if (i < lifestyle) $(this).addClass("filled");
+    });
 
     // Everything below here is only needed if the sheet is editable
     if (!this.isEditable) return;
@@ -133,9 +144,9 @@ export class BitdScoundrelSheet extends BitdActorSheet {
           },
         },
         default: "add",
-        close: () => {},
+        close: () => { },
         render: (html) => {
-          html.find(".trauma").on("click", function () {
+          html.find(".trauma").on("click", function() {
             $(this).toggleClass("active");
           });
         },

@@ -25,7 +25,7 @@ export default class ScoundrelData extends foundry.abstract.TypeDataModel {
       }),
       stash: new fields.SchemaField({
         value: new fields.NumberField({ requiredPositiveInteger, initial: 0 }),
-        max: new fields.NumberField({ requiredPositiveInteger, initial: 30 }),
+        max: new fields.NumberField({ requiredPositiveInteger, initial: 40 }),
       }),
       exp: new fields.SchemaField({
         value: new fields.NumberField({ requiredPositiveInteger, initial: 0 }),
@@ -191,6 +191,25 @@ export default class ScoundrelData extends foundry.abstract.TypeDataModel {
         }),
       ),
 
+      goals: new fields.ArrayField(
+        new fields.SchemaField({
+          id: new fields.ForeignDocumentField(BitdActor, { idOnly: true }),
+          uuid: new fields.StringField(),
+          name: new fields.StringField(),
+          img: new fields.StringField(),
+          progress: new fields.SchemaField({
+            value: new fields.NumberField({
+              requiredPositiveInteger,
+              initial: 0,
+            }),
+            max: new fields.NumberField({
+              requiredPositiveInteger,
+              initial: 4,
+            }),
+          }),
+        }),
+      ),
+
       description: new fields.HTMLField(),
     };
   }
@@ -199,6 +218,7 @@ export default class ScoundrelData extends foundry.abstract.TypeDataModel {
 
   /** @inheritdoc */
   prepareDerivedData() {
+    // Count attribute value (dices for resist roll)
     for (const [attrKey, attribute] of Object.entries(this.attributes)) {
       attribute.value = 0;
       const linkedActions = CONFIG.BITD.attributeLinks[attrKey];
@@ -208,6 +228,7 @@ export default class ScoundrelData extends foundry.abstract.TypeDataModel {
       }
     }
 
+    // Count how much item the character is carrying
     const load = this.load;
     load.value = 0;
     for (const i of this.parent.items) {
@@ -215,5 +236,9 @@ export default class ScoundrelData extends foundry.abstract.TypeDataModel {
         load.value += i.system.loadout;
       }
     }
+
+    // Count lifestyle
+    const stash = this.stash
+    stash.lifestyle = Math.floor(stash.value / 10);
   }
 }

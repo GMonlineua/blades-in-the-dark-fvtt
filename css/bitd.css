@@ -497,7 +497,8 @@ select.clear-select {
 .bitd .value-step-block .red-tooth.active {
   background-image: url("../assets/tooth/tooth-black-red.svg");
 }
-.bitd .value-step-block .simple-tooth, .bitd .value-step-block .simple-red-tooth {
+.bitd .value-step-block .simple-tooth,
+.bitd .value-step-block .simple-red-tooth {
   height: 30px;
   width: 9px;
   background-image: url("../assets/tooth/tooth-white.svg");
@@ -526,7 +527,9 @@ select.clear-select {
 .bitd .value-step-block .value-box.active {
   background: black;
 }
-.bitd h1, .bitd h2, .bitd h3 {
+.bitd h1,
+.bitd h2,
+.bitd h3 {
   font-family: "Spectral SC", serif;
 }
 .bitd textarea {
@@ -592,7 +595,8 @@ select.clear-select {
   justify-content: flex-end;
   font-size: smaller;
 }
-.bitd .claims-map .claim .item-controls .item-checkbox, .bitd .claims-map .claim .item-controls .claim-checkbox {
+.bitd .claims-map .claim .item-controls .item-checkbox,
+.bitd .claims-map .claim .item-controls .claim-checkbox {
   margin: 0;
   height: 12px;
   width: 10px;
@@ -620,10 +624,12 @@ select.clear-select {
   bottom: -7px;
   left: 47%;
 }
-.bitd .claims-map .claim:first-child .move-left, .bitd .claims-map .claim:first-child .move-up {
+.bitd .claims-map .claim:first-child .move-left,
+.bitd .claims-map .claim:first-child .move-up {
   display: none;
 }
-.bitd .claims-map .claim:last-child .move-right, .bitd .claims-map .claim:last-child .move-down {
+.bitd .claims-map .claim:last-child .move-right,
+.bitd .claims-map .claim:last-child .move-down {
   display: none;
 }
 .bitd .claims-map .claim:hover .claim-move {
@@ -688,15 +694,18 @@ select.clear-select {
   position: static;
   margin: 0 3px;
 }
-.bitd .items-block.full-size .items-list .item-checkbox {
+.bitd .items-block.full-size .items-list .item-description .item-checkbox {
   position: relative;
-  top: 4px;
+  top: 5px;
   width: 15px;
   margin: 0;
 }
 .bitd .items-block.full-size .items-list .item-description .item-name {
   cursor: pointer;
   font-family: "Spectral SC", serif;
+}
+.bitd .items-block.full-size .items-list .item-description .item-uses {
+  margin: 0;
 }
 .bitd .items-block.full-size .items-list .item-controls {
   top: 6px;
@@ -822,6 +831,21 @@ select.clear-select {
   height: 100%;
   width: 100%;
   border: none;
+}
+.bitd.actor .scoundrel .sheet-header .img-block .stash-track {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 3px;
+}
+.bitd.actor .scoundrel .sheet-header .img-block .stash-box {
+  width: 20px;
+  height: 5px;
+  border: 1px solid #999;
+  background-color: transparent;
+}
+.bitd.actor .scoundrel .sheet-header .img-block .stash-box.filled {
+  border-color: black;
+  background-color: black;
 }
 .bitd.actor .scoundrel .sheet-header .img-block .load select {
   width: 100%;
@@ -960,14 +984,12 @@ select.clear-select {
 .bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-name.full-with input {
   width: 100%;
 }
-.bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-level, .bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-effect {
+.bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-level,
+.bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-effect {
   background: rgba(0, 0, 0, 0.05);
 }
 .bitd.actor .scoundrel .sheet-body {
   position: relative;
-}
-.bitd.actor .scoundrel .sheet-body .general-container {
-  grid-template-areas: "1 main" "2 main";
 }
 .bitd.actor .scoundrel .sheet-body .general-container .item-header {
   margin-bottom: 5px;
@@ -1003,17 +1025,10 @@ select.clear-select {
 .bitd.actor .scoundrel .sheet-body .general-container .item.tool.light .item-name {
   font-style: italic;
 }
-.bitd.actor .scoundrel .sheet-body .general-container .spec-inventory {
-  grid-area: 1;
-}
-.bitd.actor .scoundrel .sheet-body .general-container .inventory {
-  grid-area: 2;
-}
-.bitd.actor .scoundrel .sheet-body .general-container .abilities {
+.bitd.actor .scoundrel .sheet-body .general-container .abilities-cohorts .abilities {
   position: relative;
-  grid-area: main;
 }
-.bitd.actor .scoundrel .sheet-body .general-container .abilities .exp-block {
+.bitd.actor .scoundrel .sheet-body .general-container .abilities-cohorts .abilities .exp-block {
   position: absolute;
   right: 5px;
 }
@@ -1046,6 +1061,9 @@ select.clear-select {
 }
 .bitd.actor .scoundrel .sheet-body .notes-container .description .bitd-header {
   margin-top: 5px;
+}
+.bitd.actor .scoundrel .sheet-body .notes-container .goals {
+  grid-column: 1/3;
 }
 .bitd.actor .crew .sheet-header {
   row-gap: 5px;

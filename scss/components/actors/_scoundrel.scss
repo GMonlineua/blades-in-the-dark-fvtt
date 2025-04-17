@@ -16,10 +16,30 @@
         border: none;
       }
 
+      .stash-track {
+        display: flex;
+        gap: 2px;
+        margin-bottom: 3px;
+      }
+
+      .stash-box {
+        width: 20px;
+        height: 5px;
+        border: 1px solid $grey;
+        background-color: transparent;
+      }
+
+      .stash-box.filled {
+        border-color: black;
+        background-color: black;
+      }
+
+
       .load {
         select {
           width: 100%;
         }
+
         span {
           display: block;
           height: 26px;
@@ -129,6 +149,7 @@
           }
 
           .stress-title {
+
             &:hover,
             &:focus {
               color: white;
@@ -189,7 +210,8 @@
           }
         }
 
-        .harm-level, .harm-effect {
+        .harm-level,
+        .harm-effect {
           background: rgba(0, 0, 0, 0.05);
         }
       }
@@ -200,10 +222,6 @@
     position: relative;
 
     .general-container {
-      grid-template-areas:
-      "1 main"
-      "2 main";
-
       .item-header {
         margin-bottom: 5px;
       }
@@ -251,21 +269,14 @@
         }
       }
 
-      .spec-inventory {
-        grid-area: 1;
-      }
+      .abilities-cohorts {
+        .abilities {
+          position: relative;
 
-      .inventory {
-        grid-area: 2;
-      }
-
-      .abilities {
-        position: relative;
-        grid-area: main;
-
-        .exp-block {
-          position: absolute;
-          right: 5px;
+          .exp-block {
+            position: absolute;
+            right: 5px;
+          }
         }
       }
     }
@@ -314,6 +325,10 @@
         .bitd-header {
           margin-top: 5px;
         }
+      }
+
+      .goals {
+        grid-column: 1 / 3;
       }
     }
   }

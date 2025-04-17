@@ -11,9 +11,14 @@
           <span>/{{system.coins.max}}</span>
         </div>
         <div class="resource stash">
-          <label for="system.stash">{{localize 'BITD.Scoundrel.Stash'}}:</label>
+          <label class="rollable" data-roll-type="fortune" data-roll-note="{{system.stash.lifestyle}}" title="{{localize 'BITD.Roll.Title'}}" for="system.stash">{{localize 'BITD.Scoundrel.Stash'}}:</label>
           <input class="clear-input" type="number" name="system.stash.value" value="{{system.stash.value}}" data-dtype="Number"/>
           <span>/{{system.stash.max}}</span>
+        </div>
+        <div class="stash-track" data-value="{{system.stash.lifestyle}}">
+          {{#numLoop 4}}
+            <div class="stash-box" data-index="{{this}}"></div>
+          {{/numLoop}}
         </div>
       </div>
 
@@ -76,40 +81,50 @@
     {{!-- Owned Playbook Tab --}}
     <div class="tab general" data-group="primary" data-tab="general">
       <div class="general-container actor-grid">
-        <div class="spec-inventory items-block">
-          <div class="item-header bitd-header">
-            <h3>{{localize 'BITD.Scoundrel.Inventory.Special'}}</h3>
-            <a class="item-create" title="{{localize 'BITD.Item.Add'}}" data-type="tool"><i class="fas fa-plus"></i></a>
-          </div>
-          <ol class="items-list">
-            {{#each specInventory as |item id|}}
-              {{> "systems/bitd/templates/actor/parts/inventory.hbs" item=item}}
-            {{/each}}
-          </ol>
-        </div>
 
-        <div class="inventory items-block">
-          <div class="item-header bitd-header">
-            <h3>{{localize 'BITD.Scoundrel.Inventory.Common'}}</h3>
-          </div>
-          <ol class="items-list">
-            {{#each inventory as |item id|}}
-              {{> "systems/bitd/templates/actor/parts/inventory.hbs" item=item}}
-            {{/each}}
-          </ol>
-        </div>
+        <div class="inventory-container">
 
-        <div class="abilities items-block full-size">
-          <div class="item-header bitd-header">
-            <a class="item-create" title="{{localize 'BITD.Item.Add'}}" data-type="abilityScoundrel"><i class="fas fa-plus"></i></a>
-            <h3>{{localize 'BITD.Ability.PluralSpecial'}}</h3>
-            <div class="value-step-block exp-block" data-value="{{system.exp.value}}" data-key="system.exp.value">
-              {{#numLoop system.exp.max}}
-                <span class="value-step value-tooth simple-red-tooth" data-index="{{this}}"></span>
-              {{/numLoop}}
+          <div class="spec-inventory items-block">
+            <div class="item-header bitd-header">
+              <h3>{{localize 'BITD.Scoundrel.Inventory.Special'}}</h3>
+              <a class="item-create" title="{{localize 'BITD.Item.Add'}}" data-type="tool"><i class="fas fa-plus"></i></a>
             </div>
+            <ol class="items-list">
+              {{#each specInventory as |item id|}}
+                {{> "systems/bitd/templates/actor/parts/inventory.hbs" item=item}}
+              {{/each}}
+            </ol>
           </div>
-          {{> "systems/bitd/templates/actor/parts/abilities.hbs"}}
+
+          <div class="inventory items-block">
+            <div class="item-header bitd-header">
+              <h3>{{localize 'BITD.Scoundrel.Inventory.Common'}}</h3>
+            </div>
+            <ol class="items-list">
+              {{#each inventory as |item id|}}
+                {{> "systems/bitd/templates/actor/parts/inventory.hbs" item=item}}
+              {{/each}}
+            </ol>
+          </div>
+
+        </div>
+
+        <div class="abilities-cohorts">
+
+          <div class="abilities items-block full-size">
+            <div class="item-header bitd-header">
+              <a class="item-create" title="{{localize 'BITD.Item.Add'}}" data-type="abilityScoundrel"><i class="fas fa-plus"></i></a>
+              <h3>{{localize 'BITD.Ability.PluralSpecial'}}</h3>
+              <div class="value-step-block exp-block" data-value="{{system.exp.value}}" data-key="system.exp.value">
+                {{#numLoop system.exp.max}}
+                  <span class="value-step value-tooth simple-red-tooth" data-index="{{this}}"></span>
+                {{/numLoop}}
+              </div>
+            </div>
+            {{> "systems/bitd/templates/actor/parts/abilities.hbs"}}
+          </div>
+
+          {{> "systems/bitd/templates/actor/parts/cohorts.hbs"}}
         </div>
       </div>
     </div>
