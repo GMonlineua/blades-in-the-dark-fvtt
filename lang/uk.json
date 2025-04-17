@@ -26,18 +26,18 @@
     "Summary": "Резюме",
     "Available": "Доступний",
     "Used": "Використано",
-    "Uses": "Uses",
+    "Uses": "Використання",
     "Actor": {
-      "HumanName": "Name",
-      "StructureName": "Name",
+      "HumanName": "Ім’я",
+      "StructureName": "Назва",
       "Alias": "Прізвисько",
       "Aka": "Відомий як",
-      "Coins": "Coins",
-      "Tier": "Tier"
+      "Coins": "Золоті",
+      "Tier": "Рівень"
     },
     "Item": {
       "Plural": "Items",
-      "Name": "Name",
+      "Name": "Назва",
       "Add": "Додати",
       "New": "Предмет",
       "Delete": "Видалити",
@@ -45,7 +45,7 @@
       "Show": "Показати"
     },
     "Scoundrel": {
-      "Drives": "Drives",
+      "Drives": "Мотиви",
       "Beliefs": "Beliefs",
       "Heritage": "Heritage",
       "Background": "Background",
