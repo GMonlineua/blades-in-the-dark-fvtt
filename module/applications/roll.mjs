@@ -63,11 +63,11 @@ export async function createRollDialog(type, sheet, note) {
         cancel: {
           icon: '<i class="fas fa-times"></i>',
           label: game.i18n.localize("BITD.Roll.Cancel"),
-          callback: () => {},
+          callback: () => { },
         },
       },
       default: "roll",
-      close: () => {},
+      close: () => { },
       render: (html) => {
         optionalBlocks(html);
 
@@ -75,12 +75,12 @@ export async function createRollDialog(type, sheet, note) {
           getDiceNumber(html, sheet);
           html
             .find("#roll-type, #roll-as, #attribute, #action")
-            .on("change", function () {
+            .on("change", function() {
               getDiceNumber(html, sheet);
             });
         }
 
-        html.find("#roll-type, #roll-as").on("change", function () {
+        html.find("#roll-type, #roll-as").on("change", function() {
           optionalBlocks(html);
         });
       },
@@ -289,9 +289,9 @@ function actionRoll(rollResult, sheet, formData) {
 
   rollData.description = game.i18n.localize(
     "BITD.Roll.Action." +
-      rollData.position.localizeKey +
-      "." +
-      rollData.countAs.localizeKey,
+    rollData.position.localizeKey +
+    "." +
+    rollData.countAs.localizeKey,
   );
 
   if (rollData.countAs.key != "fail") {
@@ -309,7 +309,7 @@ async function resistanceRoll(rollResult, sheet, formData) {
   rollData.countAs.show = false;
   const attributeKey =
     formData.attribute.charAt(0).toUpperCase() + formData.attribute.slice(1);
-  rollResult.name += ": " + game.i18n.localize("BITD." + attributeKey);
+  rollResult.name += ": " + game.i18n.localize("BITD.Attributes." + attributeKey);
   rollData.description = game.i18n.localize("BITD.Roll.Resistance.Result");
 
   let addStress = 6 - rollResult.total;
@@ -360,9 +360,9 @@ function gatherInformation(rollResult, sheet, formData) {
 
     rollData.description = game.i18n.localize(
       "BITD.Roll.Action." +
-        rollData.position.localizeKey +
-        "." +
-        rollData.countAs.localizeKey,
+      rollData.position.localizeKey +
+      "." +
+      rollData.countAs.localizeKey,
     );
 
     switch (rollData.countAs.key) {

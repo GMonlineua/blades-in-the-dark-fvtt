@@ -96,9 +96,10 @@ export const BITD = {
     ],
   },
   load: {
-    3: "BITD.Scoundrel.Load.Light",
-    5: "BITD.Scoundrel.Load.Normal",
-    6: "BITD.Scoundrel.Load.Heavy",
+    light: "BITD.Scoundrel.Load.Light",
+    normal: "BITD.Scoundrel.Load.Normal",
+    heavy: "BITD.Scoundrel.Load.Heavy",
+    encumbered: "BITD.Scoundrel.Load.Encumbered",
   },
   holdTypes: { strong: "BITD.Crew.Hold.Strong", weak: "BITD.Crew.Hold.Weak" },
   statusTypes: {

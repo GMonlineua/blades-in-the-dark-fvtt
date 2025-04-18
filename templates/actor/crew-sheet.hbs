@@ -93,18 +93,12 @@
         </div>
       </div>
 
-      <div class="reputation-block">
-        <div class="reputation">
-          <h3 class="bitd-header">{{localize 'BITD.Crew.Reputation.Rep'}}</h3>
-          <div class="value-step-block" data-value="{{system.reputation.value}}" data-key="system.reputation.value">
-            {{#numLoop system.reputation.max}}
-              <span class="value-step value-tooth red-tooth" data-index="{{this}}"></span>
-            {{/numLoop}}
-          </div>
-        </div>
-        <div class="turf bitd-header">
-          <h3>{{localize 'BITD.Claim.Turf'}}:</h3>
-          <input class="clear-input" type="number" name="system.turf.value" value="{{system.turf.value}}"/>
+      <div class="reputation">
+        <h3 class="bitd-header">{{localize 'BITD.Crew.Reputation.Rep'}}</h3>
+        <div class="value-step-block" data-value="{{system.reputation.value}}" data-key="system.reputation.value">
+          {{#numLoop system.reputation.max}}
+            <span class="value-step value-tooth red-tooth" data-index="{{this}}"></span>
+          {{/numLoop}}
         </div>
       </div>
 

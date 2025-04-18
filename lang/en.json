@@ -104,6 +104,18 @@
           "Title": "Teamwork",
           "Tips": "<span><b>Assist</b> a teammate</span><span><b>Protect</b> a teammate</span><span>Lead a <b>group action</b></span><span><b>Set up</b> a teammate</span>"
         }
+      },
+      "Settings": {
+        "Title": "Scoundrel Settings",
+        "StressMax": "Stress max",
+        "CoinsMax": "Coins max",
+        "StashMax": "Stash max",
+        "ExpMax": "Experience max",
+        "HealingMax": "Healing clock max",
+        "Load": "Load Maximum",
+        "AttributeBonuses": "Attribute Bonuses",
+        "AttributeExpMax": "Attribute XP track max",
+        "ActionsMax": "Actions Maximum"
       }
     },
     "Crew": {
@@ -142,6 +154,15 @@
         "Challenge": "Contend with challenges above your current station.",
         "Reputation": "Bolster your crew's reputation or develop a new one.",
         "Nature": "Express the goals, drives, inner conflict, or essential nature of the crew."
+      },
+      "Settings": {
+        "Title": "Crew Settings",
+        "TierMax": "Tier max",
+        "RepMod": "Reputation max modifier",
+        "ExpMax": "Experience max",
+        "CoinsMax": "Coins max",
+        "HeatMax": "Heat max",
+        "WantedMax": "Wanted level max"
       }
     },
     "Faction": {
@@ -277,7 +298,7 @@
       "Description": {
         "Hunt": "When you <strong>Hunt</strong>, you carefully track a target. <em>You might follow a person or discover their location. You might arrange an ambush. You might attack with precision shooting from a distance. You could try to bring your guns to bear in a melee (but Skirmishing might be better).</em>",
         "Study": "When you <strong>Study</strong>, you scrutinize details and interpret evidence. <em>You might gather information from documents, newspapers, and books. You might do research on an esoteric topic. You might closely analyze a person to detect lies or true feelings. You could try to examine events to understand a pressing situation (but Surveying might be better).</em>",
-        "Survey": "When you <wrap>Survey</wrap>, you observe the situation and anticipate outcomes. <em>You might spot telltale signs of trouble before it happens. You might uncover opportunities or weaknesses. You might detect a person's motivations or intentions (but Studying might be better). You could try to spot a good ambush point (but Hunting might be better).</em>",
+        "Survey": "When you <strong>Survey</strong>, you observe the situation and anticipate outcomes. <em>You might spot telltale signs of trouble before it happens. You might uncover opportunities or weaknesses. You might detect a person's motivations or intentions (but Studying might be better). You could try to spot a good ambush point (but Hunting might be better).</em>",
         "Tinker": "When you <strong>Tinker</strong>, you fiddle with devices and mechanisms. <em>You might create a new gadget or alter an existing item. You might pick a lock or crack a safe. You might disable an alarm or trap. You might turn the spark- craft and electroplasmic devices around the city to your advantage. You could try to use your technical expertise to control a vehicle (but Finessing might be better).</em>",
         "Finesse": "When you <strong>Finesse</strong>, you employ dextrous manipulation or subtle misdirection. <em>You might pick someone's pocket. You might handle the controls of a vehicle or direct a mount. You might formally duel an opponent with graceful fighting arts. You could try to employ those arts in a chaotic melee (but Skirmishing might be better). You could try to pick a lock (but Tinkering might be better).</em>",
         "Prowl": "When you <strong>Prowl</strong>, you traverse skillfully and quietly. <em>You might sneak past a guard or hide in the shadows. You might run and leap across the rooftops. You might attack someone from hiding with a back-stab or blackjack. You could try to waylay a victim in the midst of battle (but Skirmishing might be better).</em>",
@@ -425,6 +446,10 @@
         "Lost": "<li><strong>Lost.</strong> Your character vanishes for a few weeks. Play a different character until this one returns from their bender. When your character returns, they've also healed any harm they had.</li>",
         "Trapped": "<li><strong>Tapped.</strong> Your current purveyor cuts you off. Find a new source for your vice.</li>"
       }
+    },
+    "Settings": {
+      "HeaderButton": "Settings",
+      "Submit": "Submit"
     },
     "Errors": {
       "Item": {

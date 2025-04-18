@@ -40,14 +40,11 @@ export default class CrewData extends foundry.abstract.TypeDataModel {
       reputation: new fields.SchemaField({
         type: new fields.StringField(),
         value: new fields.NumberField({ requiredPositiveInteger, initial: 0 }),
+        modifier: new fields.NumberField({ requiredInteger, initial: 0 }),
       }),
       tier: new fields.SchemaField({
         value: new fields.NumberField({ requiredPositiveInteger, initial: 0 }),
         max: new fields.NumberField({ requiredPositiveInteger, initial: 4 }),
-      }),
-      turf: new fields.SchemaField({
-        value: new fields.NumberField({ requiredPositiveInteger, initial: 0 }),
-        max: new fields.NumberField({ requiredPositiveInteger, initial: 6 }),
       }),
       heat: new fields.SchemaField({
         value: new fields.NumberField({ requiredPositiveInteger, initial: 0 }),
@@ -191,29 +188,23 @@ export default class CrewData extends foundry.abstract.TypeDataModel {
    */
   static migrateData(source) {
     if (source.claims) {
-      console.log(source.claims);
-      const map = this.migrateMap(source.claims)
+      const map = this.migrateMap(source.claims);
 
       source.claimsMap = {
         rows: 3,
         columns: 5,
         map: map,
       };
-
-      console.log(source.claimsMap);
     }
 
     if (source.prison) {
-      const map = this.migrateMap(source.prison)
-      console.log(map);
+      const map = this.migrateMap(source.prison);
 
       source.prisonMap = {
         rows: 3,
         columns: 4,
         map: map,
       };
-
-      console.log(source.prisonMap);
     }
 
     return super.migrateData(source);
@@ -221,6 +212,14 @@ export default class CrewData extends foundry.abstract.TypeDataModel {
 
   /** @inheritdoc */
   prepareDerivedData() {
-    this.reputation.max = 12 - this.turf.value;
+    // Count turfs
+    this.turfs = 0;
+    for (const claim of this.claimsMap.map) {
+      if (claim.type == "turf" && claim.active) this.turfs++
+    }
+
+    // Count max reputation
+    const rep = this.reputation;
+    rep.max = 12 - this.turfs + rep.modifier;
   }
 }

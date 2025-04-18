@@ -139,6 +139,12 @@
   text-align: center;
 }
 
+.bitd.dialog.sheet-settings .actions-max .actions-list {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  grid-auto-flow: column;
+}
+
 .flex-group-left {
   justify-content: flex-start;
   text-align: left;
@@ -1150,23 +1156,12 @@ select.clear-select {
 .bitd.actor .crew .sheet-header .header-fields .tier-block .tier .value-step-block {
   padding-top: 2px;
   padding-right: 5px;
+  margin-left: 5px;
 }
-.bitd.actor .crew .sheet-header .header-fields .reputation-block {
+.bitd.actor .crew .sheet-header .header-fields .reputation {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
   border-top: 2px solid black;
-}
-.bitd.actor .crew .sheet-header .header-fields .reputation-block .turf > h3, .bitd.actor .crew .sheet-header .header-fields .reputation-block .bitd-header, .bitd.actor .crew .sheet-header .header-fields .reputation-block .value-step-block {
-  display: inline-block;
-}
-.bitd.actor .crew .sheet-header .header-fields .reputation-block .reputation {
-  display: flex;
-  align-items: flex-start;
-}
-.bitd.actor .crew .sheet-header .header-fields .reputation-block .turf input {
-  max-width: 20px;
-  padding: 0;
 }
 .bitd.actor .crew .sheet-header .header-fields > div {
   background: rgba(0, 0, 0, 0.1);
@@ -1179,7 +1174,8 @@ select.clear-select {
   top: 0;
   right: 5px;
 }
-.bitd.actor .crew .sheet-header .exp-block .bitd-subheader, .bitd.actor .crew .sheet-header .exp-block .exp-tips {
+.bitd.actor .crew .sheet-header .exp-block .bitd-subheader,
+.bitd.actor .crew .sheet-header .exp-block .exp-tips {
   font-size: small;
 }
 .bitd.actor .crew .sheet-header h3.bitd-header {

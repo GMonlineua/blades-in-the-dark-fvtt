@@ -32,7 +32,13 @@ export default class ScoundrelData extends foundry.abstract.TypeDataModel {
         max: new fields.NumberField({ requiredPositiveInteger, initial: 8 }),
       }),
       load: new fields.SchemaField({
-        max: new fields.NumberField({ requiredPositiveInteger, initial: 5 }),
+        status: new fields.StringField({ initial: "normal" }),
+        config: new fields.SchemaField({
+          light: new fields.NumberField({ requiredPositiveInteger, initial: 3 }),
+          normal: new fields.NumberField({ requiredPositiveInteger, initial: 5 }),
+          heavy: new fields.NumberField({ requiredPositiveInteger, initial: 6 }),
+          encumbered: new fields.NumberField({ requiredPositiveInteger, initial: 9 }),
+        }),
       }),
 
       healing: new fields.SchemaField({
@@ -63,6 +69,10 @@ export default class ScoundrelData extends foundry.abstract.TypeDataModel {
               initial: 6,
             }),
           }),
+          bonus: new fields.NumberField({
+            requiredInteger,
+            initial: 0,
+          }),
         }),
         prowess: new fields.SchemaField({
           exp: new fields.SchemaField({
@@ -75,6 +85,10 @@ export default class ScoundrelData extends foundry.abstract.TypeDataModel {
               initial: 6,
             }),
           }),
+          bonus: new fields.NumberField({
+            requiredInteger,
+            initial: 0,
+          }),
         }),
         resolve: new fields.SchemaField({
           exp: new fields.SchemaField({
@@ -86,6 +100,10 @@ export default class ScoundrelData extends foundry.abstract.TypeDataModel {
               requiredPositiveInteger,
               initial: 6,
             }),
+          }),
+          bonus: new fields.NumberField({
+            requiredInteger,
+            initial: 0,
           }),
         }),
       }),
@@ -220,12 +238,14 @@ export default class ScoundrelData extends foundry.abstract.TypeDataModel {
   prepareDerivedData() {
     // Count attribute value (dices for resist roll)
     for (const [attrKey, attribute] of Object.entries(this.attributes)) {
-      attribute.value = 0;
+      attribute.baseValue = 0;
       const linkedActions = CONFIG.BITD.attributeLinks[attrKey];
       for (const key of linkedActions) {
         const action = this.actions[key];
-        if (action.value > 0) attribute.value += 1;
+        if (action.value > 0) attribute.baseValue += 1;
       }
+
+      attribute.value = attribute.baseValue + attribute.bonus;
     }
 
     // Count how much item the character is carrying
@@ -236,6 +256,7 @@ export default class ScoundrelData extends foundry.abstract.TypeDataModel {
         load.value += i.system.loadout;
       }
     }
+    load.max = load.config[load.status];
 
     // Count lifestyle
     const stash = this.stash
