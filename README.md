@@ -25,6 +25,8 @@ To install a module, follow these instructions:
 - [Roadmap](https://github.com/GMonlineua/blades-in-the-dark-fvtt/wiki/Roadmap)
 - [Data Structure](https://github.com/GMonlineua/blades-in-the-dark-fvtt/wiki/Documentation#data-structure)
 
+![Screenshot with actors sheet](https://github.com/GMonlineua/blades-in-the-dark-fvtt/blob/main/screenshots/screenshot-1.jpg)
+
 ## Credits
 
 - This work is based on [Blades in the Dark](http://www.bladesinthedark.com), product of One Seven Design, developed and authored by John Harper, and licensed for our use under the [Creative Commons Attribution 3.0 Unported](http://creativecommons.org/licenses/by/3.0/) license.

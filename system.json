@@ -151,6 +151,7 @@
       }
     }
   ],
+  "background": "systems/bitd/ui/background.jpg",
   "packFolders": [],
   "socket": true,
   "url": "https://github.com/GMonlineua/blades-in-the-dark-fvtt",
