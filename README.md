@@ -25,7 +25,7 @@ To install a module, follow these instructions:
 - [Roadmap](https://github.com/GMonlineua/blades-in-the-dark-fvtt/wiki/Roadmap)
 - [Data Structure](https://github.com/GMonlineua/blades-in-the-dark-fvtt/wiki/Documentation#data-structure)
 
-![Screenshot with actors sheet](https://github.com/GMonlineua/blades-in-the-dark-fvtt/blob/main/screenshots/screenshot-1.jpg)
+![Screenshot with actors sheet](screenshots/screenshot-1.jpg)
 
 ## Credits
 

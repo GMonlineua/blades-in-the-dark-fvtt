@@ -104,16 +104,7 @@ export class BitdScoundrelSheet extends BitdActorSheet {
    */
   async _onAddTrauma(event) {
     const currentTraumas = (this.actor.system.trauma || []).filter(Boolean);
-    const defaultTraumas = [
-      "BITD.Traumas.Cold",
-      "BITD.Traumas.Haunted",
-      "BITD.Traumas.Obsessed",
-      "BITD.Traumas.Paranoid",
-      "BITD.Traumas.Reckless",
-      "BITD.Traumas.Soft",
-      "BITD.Traumas.Unstable",
-      "BITD.Traumas.Vicious",
-    ];
+    const defaultTraumas = CONFIG.BITD.defaultTraumas;
     const filteredTraumas = defaultTraumas.filter(
       (trauma) => !currentTraumas.includes(trauma),
     );

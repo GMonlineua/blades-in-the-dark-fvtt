@@ -239,7 +239,7 @@ export default class BitdActor extends Actor {
 
     if (actor.pack) {
       ui.notifications.warn(game.i18n.localize("BITD.Errors.Actor.InPack"));
-      return this.importActor(actor, key);
+      return this.importActors([actor]);
     }
 
     const link = {

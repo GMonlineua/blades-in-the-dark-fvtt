@@ -95,6 +95,16 @@ export const BITD = {
       "wzF9qDYgEhPwK4EP",
     ],
   },
+  defaultTraumas: [
+    "BITD.Scoundrel.Traumas.Cold",
+    "BITD.Scoundrel.Traumas.Haunted",
+    "BITD.Scoundrel.Traumas.Obsessed",
+    "BITD.Scoundrel.Traumas.Paranoid",
+    "BITD.Scoundrel.Traumas.Reckless",
+    "BITD.Scoundrel.Traumas.Soft",
+    "BITD.Scoundrel.Traumas.Unstable",
+    "BITD.Scoundrel.Traumas.Vicious",
+  ],
   load: {
     light: "BITD.Scoundrel.Load.Light",
     normal: "BITD.Scoundrel.Load.Normal",
