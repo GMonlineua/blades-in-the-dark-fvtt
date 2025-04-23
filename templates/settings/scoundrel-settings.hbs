@@ -1,0 +1,78 @@
+<form class="settings">
+  <div class="general-settings">
+    <div class="stress-max">
+      <label for="system.stress.max">{{localize "BITD.Scoundrel.Settings.StressMax"}}:</label>
+      <input class="clear-input" type="number" name="system.stress.max" value="{{system.stress.max}}"/>
+    </div>
+
+    <div class="coins-max">
+      <label for="system.coins.max">{{localize "BITD.Scoundrel.Settings.CoinsMax"}}:</label>
+      <input class="clear-input" type="number" name="system.coins.max" value="{{system.coins.max}}"/>
+    </div>
+
+    <div class="stash-max">
+      <label for="system.stash.max">{{localize "BITD.Scoundrel.Settings.StashMax"}}:</label>
+      <input class="clear-input" type="number" name="system.stash.max" value="{{system.stash.max}}"/>
+    </div>
+
+    <div class="exp-max">
+      <label for="system.exp.max">{{localize "BITD.Scoundrel.Settings.ExpMax"}}:</label>
+      <input class="clear-input" type="number" name="system.exp.max" value="{{system.exp.max}}"/>
+    </div>
+
+    <div class="healing-max">
+      <label for="system.healing.max">{{localize "BITD.Scoundrel.Settings.HealingMax"}}:</label>
+      <input class="clear-input" type="number" name="system.healing.max" value="{{system.healing.max}}"/>
+    </div>
+  </div>
+
+  <div class="load-config">
+    <h3>{{localize "BITD.Scoundrel.Settings.Load"}}</h3>
+    <div class="grid-4col">
+      {{#each system.load.config as |value key|}}
+        <div class="{{key}}-max">
+          <label for="system.load.config.{{key}}">{{getLocalize "BITD.Scoundrel.Load." key}}:</label>
+          <input class="clear-input" type="number" name="system.load.config.{{key}}" value="{{value}}"/>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="attributes-bonuses">
+    <h3>{{localize "BITD.Scoundrel.Settings.AttributeBonuses"}}</h3>
+    <div class="grid-3col">
+      {{#each system.attributes as |attribute key|}}
+        <div class="{{key}}-bonus">
+          <label for="system.attributes.{{key}}.bonus">{{getLocalize "BITD.Attributes." key}}:</label>
+          <input class="clear-input" type="number" name="system.attributes.{{key}}.bonus" value="{{attribute.bonus}}"/>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="attributes-max">
+    <h3>{{localize "BITD.Scoundrel.Settings.AttributeExpMax"}}</h3>
+    <div class="attributes-list grid-3col">
+      {{#each system.attributes as |attribute key|}}
+        <div class="{{key}}-max">
+          <label for="system.attributes.{{key}}.exp.max">{{getLocalize "BITD.Attributes." key}}:</label>
+          <input class="clear-input" type="number" name="system.attributes.{{key}}.exp.max" value="{{attribute.exp.max}}"/>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="actions-max">
+    <h3>{{localize "BITD.Scoundrel.Settings.ActionsMax"}}</h3>
+    <div class="actions-list">
+      {{#each system.actions as |action key|}}
+        <div class="{{key}}-max">
+          <label for="system.actions.{{key}}.max">{{getLocalize "BITD.Actions." key}}:</label>
+          <input class="clear-input" type="number" name="system.actions.{{key}}.max" value="{{action.max}}"/>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+
+  <button type="submit"><i class="fa-solid fa-check"></i><label>{{localize "BITD.Settings.Submit"}}</label></button>
+</form>

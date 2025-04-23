@@ -5,13 +5,16 @@ export const BITD = {
     resolve: ["attune", "command", "consort", "sway"],
   },
   linkedForeign: {
-    scoundrel: ["contacts"],
+    scoundrel: ["contacts", "goals"],
     crew: ["members", "contacts", "relatedFactions", "goals"],
     faction: ["members", "relatedFactions", "goals"],
-    crewType: ["abilities", "cohorts", "claims", "upgrades", "contacts"],
+    crewType: ["abilities", "cohorts", "claimsMap", "upgrades", "contacts"],
   },
   supportedLinks: {
-    scoundrel: { npc: "contacts" },
+    scoundrel: {
+      npc: "contacts",
+      clock: "goals",
+    },
     crew: {
       scoundrel: "members",
       npc: "contacts",
@@ -29,7 +32,7 @@ export const BITD = {
     },
     crewType: {
       abilityCrew: "abilities",
-      claim: "claims",
+      claim: "claimsMap",
       cohort: "cohorts",
       upgrade: "upgrades",
     },
@@ -49,6 +52,7 @@ export const BITD = {
       "HZxYeBCQ4bZ632WU",
       "2H0lH4IeGq22kDyg",
       "cF0hFmTlXxI8CKSC",
+      "0k2HLJEIIc2MT7cH",
       "FFNGcKvAeOjoGyI8",
       "jWTVSlCXWeOiGbfg",
       "vgMbINvoCQJAYp4q",
@@ -58,7 +62,6 @@ export const BITD = {
       "SapwXYuraydiNjej",
       "P95oe4AZgSomPqPs",
       "brU5pWiXWlG5o1Mi",
-      "6cUx1jXXq4dx3wln",
       "oZOplJcmR6CjQZbO",
       "Wxoq19qr9LEuuNp4",
       "IDUBdq7KVd3dxC5W",
@@ -92,10 +95,21 @@ export const BITD = {
       "wzF9qDYgEhPwK4EP",
     ],
   },
+  defaultTraumas: [
+    "BITD.Scoundrel.Traumas.Cold",
+    "BITD.Scoundrel.Traumas.Haunted",
+    "BITD.Scoundrel.Traumas.Obsessed",
+    "BITD.Scoundrel.Traumas.Paranoid",
+    "BITD.Scoundrel.Traumas.Reckless",
+    "BITD.Scoundrel.Traumas.Soft",
+    "BITD.Scoundrel.Traumas.Unstable",
+    "BITD.Scoundrel.Traumas.Vicious",
+  ],
   load: {
-    3: "BITD.Scoundrel.Load.Light",
-    5: "BITD.Scoundrel.Load.Normal",
-    6: "BITD.Scoundrel.Load.Heavy",
+    light: "BITD.Scoundrel.Load.Light",
+    normal: "BITD.Scoundrel.Load.Normal",
+    heavy: "BITD.Scoundrel.Load.Heavy",
+    encumbered: "BITD.Scoundrel.Load.Encumbered",
   },
   holdTypes: { strong: "BITD.Crew.Hold.Strong", weak: "BITD.Crew.Hold.Weak" },
   statusTypes: {
@@ -197,40 +211,18 @@ export const BITD = {
     empty: {
       actor: {
         id: "",
-        name: "Turf",
+        name: "",
+        type: "turf",
         active: false,
         effect: "",
       },
       item: {
         id: "",
-        name: "Turf",
+        uuid: "",
+        name: "",
+        type: "turf",
+        active: false,
       },
-      home: {
-        item: {
-          id: "",
-          name: "Lair",
-        },
-        claim: {
-          id: "",
-          name: "Lair",
-          active: true,
-          effect: "",
-        },
-        prisonClaim: {
-          id: "",
-          name: "Prison",
-          active: true,
-          effect: "",
-        },
-      },
-    },
-    mapLength: {
-      claim: 15,
-      prisonClaim: 12,
-    },
-    home: {
-      claim: "Lair",
-      prisonClaim: "Prison",
     },
   },
 };

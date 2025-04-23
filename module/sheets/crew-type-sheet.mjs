@@ -21,7 +21,8 @@ export class BitdCrewTypeSheet extends BitdItemSheet {
   async getData() {
     // Retrieve base data structure.
     const context = await super.getData();
-    context.claims = this.item.system.claims;
+    claimMap(this.item);
+    context.claims = this.item.system.claimsMap;
 
     return context;
   }
@@ -50,15 +51,18 @@ export class BitdCrewTypeSheet extends BitdItemSheet {
       const button = ev.currentTarget;
       const div = button.closest(".item");
       const id = div?.dataset.itemId;
-      const claims = this.item.system.claims;
-      const claim = claims.find((claim) => claim.id === id);
+      const map = this.item.system.claims.map;
+      const claim = map.find((claim) => claim.id === id);
 
       if (claim) {
         claim.id = "";
-        claim.name = "Turf";
+        claim.uuid = "";
+        claim.name = "";
+        claim.type = "turf";
+        claim.active = false;
       }
 
-      this.item.update({ "system.claims": claims });
+      this.item.update({ "system.claims.map": map });
       claimMap(this.item, "claim");
     });
 
@@ -101,14 +105,20 @@ export class BitdCrewTypeSheet extends BitdItemSheet {
     const direction = button.dataset.direction;
     const parent = $(button.parentNode);
     const index = parseInt(parent[0].dataset.index, 10);
-    const claims = this.item.system.claims;
+    const container = this.item.system.claimsMap;
+    const map = container.map;
+    const columns = container.columns;
 
     if (direction === "left" && index > 0) {
-      [claims[index], claims[index - 1]] = [claims[index - 1], claims[index]];
-    } else if (direction === "right" && index < claims.length - 1) {
-      [claims[index], claims[index + 1]] = [claims[index + 1], claims[index]];
+      [map[index], map[index - 1]] = [map[index - 1], map[index]];
+    } else if (direction === "up" && index >= columns) {
+      [map[index], map[index - columns]] = [map[index - columns], map[index]];
+    } else if (direction === "right" && index < map.length - 1) {
+      [map[index], map[index + 1]] = [map[index + 1], map[index]];
+    } else if (direction === "down" && index <= map.length - columns) {
+      [map[index], map[index + columns]] = [map[index + columns], map[index]];
     }
 
-    await this.item.update({ "system.claims": claims });
+    await this.item.update({ "system.claimsMap.map": map });
   }
 }

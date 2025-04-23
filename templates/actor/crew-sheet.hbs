@@ -93,18 +93,12 @@
         </div>
       </div>
 
-      <div class="reputation-block">
-        <div class="reputation">
-          <h3 class="bitd-header">{{localize 'BITD.Crew.Reputation.Rep'}}</h3>
-          <div class="value-step-block" data-value="{{system.reputation.value}}" data-key="system.reputation.value">
-            {{#numLoop system.reputation.max}}
-              <span class="value-step value-tooth red-tooth" data-index="{{this}}"></span>
-            {{/numLoop}}
-          </div>
-        </div>
-        <div class="turf bitd-header">
-          <h3>{{localize 'BITD.Claim.Turf'}}:</h3>
-          <input class="clear-input" type="number" name="system.turf.value" value="{{system.turf.value}}"/>
+      <div class="reputation">
+        <h3 class="bitd-header">{{localize 'BITD.Crew.Reputation.Rep'}}</h3>
+        <div class="value-step-block" data-value="{{system.reputation.value}}" data-key="system.reputation.value">
+          {{#numLoop system.reputation.max}}
+            <span class="value-step value-tooth red-tooth" data-index="{{this}}"></span>
+          {{/numLoop}}
         </div>
       </div>
 
@@ -142,12 +136,12 @@
 
     {{!-- Owned Claims Tab --}}
     <div class="tab claims" data-group="primary" data-tab="claims">
-      {{> "systems/bitd/templates/actor/parts/claims-map.hbs" claim=claims itemType="claim" container="claims"}}
+      {{> "systems/bitd/templates/actor/parts/claims-map.hbs" data=claims itemType="claim" container="claimsMap"}}
     </div>
 
     {{!-- Owned Prisons Claims Tab --}}
     <div class="tab prison" data-group="primary" data-tab="prison">
-      {{> "systems/bitd/templates/actor/parts/claims-map.hbs" claim=prison type="prisonClaim" container="prison"}}
+      {{> "systems/bitd/templates/actor/parts/claims-map.hbs" data=prison itemType="prisonClaim" container="prisonMap"}}
       <div class="load-prison-block align-center"><a class="load-prison">{{localize 'BITD.Claim.LoadPrison'}}</a></div>
     </div>
 

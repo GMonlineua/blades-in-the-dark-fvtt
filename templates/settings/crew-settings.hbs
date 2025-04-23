@@ -1,0 +1,35 @@
+<form class="settings">
+  <div class="general-settings">
+    <div class="tier-max">
+      <label for="system.tier.max">{{localize "BITD.Crew.Settings.TierMax"}}:</label>
+      <input class="clear-input" type="number" name="system.tier.max" value="{{system.tier.max}}"/>
+    </div>
+
+    <div class="rep-modifier">
+      <label for="system.reputation.modifier">{{localize "BITD.Crew.Settings.RepMod"}}:</label>
+      <input class="clear-input" type="number" name="system.reputation.modifier" value="{{system.reputation.modifier}}"/>
+    </div>
+
+    <div class="exp-max">
+      <label for="system.exp.max">{{localize "BITD.Crew.Settings.ExpMax"}}:</label>
+      <input class="clear-input" type="number" name="system.exp.max" value="{{system.exp.max}}"/>
+    </div>
+
+    <div class="coins-max">
+       <label for="system.coins.max">{{localize "BITD.Crew.Settings.CoinsMax"}}:</label>
+      <input class="clear-input" type="number" name="system.coins.max" value="{{system.coins.max}}"/>
+    </div>
+
+    <div class="heat-max">
+      <label for="system.heat.max">{{localize "BITD.Crew.Settings.HeatMax"}}:</label>
+      <input class="clear-input" type="number" name="system.heat.max" value="{{system.heat.max}}"/>
+    </div>
+
+    <div class="wanted-max">
+      <label for="system.wanted.max">{{localize "BITD.Crew.Settings.WantedMax"}}:</label>
+      <input class="clear-input" type="number" name="system.wanted.max" value="{{system.wanted.max}}"/>
+    </div>
+  </div>
+
+  <button type="submit"><i class="fa-solid fa-check"></i><label>{{localize "BITD.Settings.Submit"}}</label></button>
+</form>

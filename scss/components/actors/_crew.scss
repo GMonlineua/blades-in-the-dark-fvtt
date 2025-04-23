@@ -106,31 +106,15 @@
           .value-step-block {
             padding-top: 2px;
             padding-right: $padding-sm;
+            margin-left: $padding-sm;
           }
         }
       }
 
-      .reputation-block {
+      .reputation {
         display: flex;
         align-items: flex-start;
-        justify-content: space-between;
         border-top: $border-hard;
-
-        .turf > h3, .bitd-header, .value-step-block {
-          display: inline-block;
-        }
-
-        .reputation {
-          display: flex;
-          align-items: flex-start;
-        }
-
-        .turf {
-          input {
-            max-width: 20px;
-            padding: 0;
-          }
-        }
       }
     }
 
@@ -147,7 +131,8 @@
         right: $padding-sm;
       }
 
-      .bitd-subheader, .exp-tips {
+      .bitd-subheader,
+      .exp-tips {
         font-size: small;
       }
     }
@@ -186,8 +171,8 @@
 
     .general-container {
       grid-template-areas:
-      "1 main"
-      "2 main";
+        "1 main"
+        "2 main";
 
       .spec-upgrades {
         grid-area: 1;

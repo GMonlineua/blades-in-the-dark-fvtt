@@ -1,0 +1,13 @@
+<form>
+  <div class="import-actors-form">
+    <p>{{localize 'BITD.Link.ImportActor.Description'}}</p>
+    <div class="actor-checkboxes">
+      {{#each actors}}
+        <div class="flexrow">
+          <input type="checkbox" name="actor" value="{{this.id}}"/>
+          <label>{{this.name}}</label>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</form>
