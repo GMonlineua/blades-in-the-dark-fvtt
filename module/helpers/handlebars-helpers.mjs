@@ -5,8 +5,8 @@ export const registerHandlebarsHelpers = function() {
       result = result + options.fn(i);
     }
 
-        return result;
-    });
+    return result;
+  });
 
   Handlebars.registerHelper("iff", function(a, operator, b, opts) {
     let bool = false;
@@ -35,24 +35,38 @@ export const registerHandlebarsHelpers = function() {
         } else {
           bool = false;
         }
+        break;
+      default:
+        throw "Unknown operator " + operator;
+    }
+
+    if (bool) {
+      return opts.fn(this);
+    } else {
+      return opts.inverse(this);
+    }
+  });
 
   Handlebars.registerHelper("getValue", function(parent, path) {
     let value = parent;
     if (path.string || path.includes(".")) {
       const keys = path.string.split(".");
 
-    Handlebars.registerHelper("getValue", function(parent, path) {
-        let value = parent;
-        if (path.string || path.includes(".")) {
-            const keys = path.string.split(".");
+      for (const key of keys) {
+        value = value[key];
+      }
+    } else {
+      value = value[path];
+    }
+    return value;
+  });
 
   Handlebars.registerHelper("getLocalize", function(path, key) {
     const name = path + key.charAt(0).toUpperCase() + key.slice(1);
     const localizeName = game.i18n.localize(name);
 
-    Handlebars.registerHelper("getLocalize", function(path, key) {
-        const name = path + key.charAt(0).toUpperCase() + key.slice(1);
-        const localizeName = game.i18n.localize(name);
+    return localizeName;
+  });
 
   Handlebars.registerHelper("toolClass", function(data) {
     const conditions = [
@@ -62,9 +76,12 @@ export const registerHandlebarsHelpers = function() {
     ];
     let classes = "";
 
-        return classes;
+    conditions.forEach(({ condition, className }) => {
+      if (condition) {
+        classes += ` ${className}`;
+      }
     });
- 
+
     return classes;
   });
 
@@ -72,6 +89,6 @@ export const registerHandlebarsHelpers = function() {
     const name = CONFIG.BITD.cohort.harm[key];
     const localizeName = game.i18n.localize(name);
 
-        return localizeName;
-    });
+    return localizeName;
+  });
 };
