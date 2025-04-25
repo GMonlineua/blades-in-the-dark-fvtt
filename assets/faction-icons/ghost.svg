@@ -1,18 +1,47 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 width="800px" height="800px" viewBox="0 0 32 31.924" enable-background="new 0 0 32 31.924" xml:space="preserve">
-<g id="ghost">
-	<path d="M24,28c-1.009-1.517-2.238-5.195-2-7c0.189-1.445,1.932-4.01,3-5c0.41-0.38,1.65-0.563,2-1c0.645-0.805,0.254-3.289,1-4
-		c0.923-0.88,4-1,4-1s-1-7-6-7c-1.525,0-4.41,1.965-6.271,3.5C19.896,5.97,20,5.399,20,4.8c0-2.65-1.791-4.8-4-4.8s-4,2.148-4,4.8
-		c0,0.905,0.222,1.742,0.584,2.465C10.482,6.219,10,5,5,5c-3,0-5,7-5,7s3.897-0.59,5,0c0.795,0.426,1.264,2.479,2,3
-		c0.843,0.594,3.289,0.254,4,1c0.88,0.923,0.227,3.986,1,5c1.018,1.333,4.77,1.859,6,3c1.068,0.99,1.971,3.97,3,5
-		c2.111,2.111,5.216,2.736,6.868,2.922c0.137,0.016,0.267-0.064,0.313-0.193s0.002-0.272-0.111-0.352
-		C26.805,30.507,24.618,28.929,24,28z M16,9c-0.553,0-1-0.896-1-2c0-1.104,0.447-2,1-2c0.553,0,1,0.896,1,2C17,8.104,16.553,9,16,9z
-		"/>
+
+<svg
+   fill="#000000"
+   version="1.1"
+   id="Layer_1"
+   width="800px"
+   height="800px"
+   viewBox="0 0 32 31.924"
+   enable-background="new 0 0 32 31.924"
+   xml:space="preserve"
+   sodipodi:docname="ghost.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs1" /><sodipodi:namedview
+   id="namedview1"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="1.02"
+   inkscape:cx="400"
+   inkscape:cy="400"
+   inkscape:window-width="1920"
+   inkscape:window-height="1024"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="ghost" />
+<g
+   id="ghost">
+	<path
+   d="M24,28c-1.009-1.517-2.238-5.195-2-7c0.189-1.445,1.932-4.01,3-5c0.41-0.38,1.65-0.563,2-1c0.645-0.805,0.254-3.289,1-4   c0.923-0.88,4-1,4-1s-1-7-6-7c-1.525,0-4.41,1.965-6.271,3.5C19.896,5.97,20,5.399,20,4.8c0-2.65-1.791-4.8-4-4.8s-4,2.148-4,4.8   c0,0.905,0.222,1.742,0.584,2.465C10.482,6.219,10,5,5,5c-3,0-5,7-5,7s3.897-0.59,5,0c0.795,0.426,1.264,2.479,2,3   c0.843,0.594,3.289,0.254,4,1c0.88,0.923,0.227,3.986,1,5c1.018,1.333,4.77,1.859,6,3c1.068,0.99,1.971,3.97,3,5   c2.111,2.111,5.216,2.736,6.868,2.922c0.137,0.016,0.267-0.064,0.313-0.193s0.002-0.272-0.111-0.352   C26.805,30.507,24.618,28.929,24,28z M16,9c-0.553,0-1-0.896-1-2c0-1.104,0.447-2,1-2c0.553,0,1,0.896,1,2C17,8.104,16.553,9,16,9z   "
+   id="path1"
+   style="stroke:#ffffff;stroke-opacity:1;stroke-width:0.12;stroke-dasharray:none" />
 </g>
-<g id="Layer_1_1_">
+<g
+   id="Layer_1_1_">
 </g>
 </svg>

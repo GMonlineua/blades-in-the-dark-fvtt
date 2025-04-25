@@ -112,6 +112,13 @@ export const BITD = {
     encumbered: "BITD.Scoundrel.Load.Encumbered",
   },
   holdTypes: { strong: "BITD.Crew.Hold.Strong", weak: "BITD.Crew.Hold.Weak" },
+  factionTypes: {
+    underworld: "BITD.Faction.Types.Underworld",
+    fringe: "BITD.Faction.Types.Fringe",
+    institution: "BITD.Faction.Types.Institution",
+    laborTrade: "BITD.Faction.Types.LaborTrade",
+    other: "BITD.Faction.Types.Other"
+  },
   statusTypes: {
     allies: "BITD.Faction.Status.Allies",
     friendly: "BITD.Faction.Status.Friendly",

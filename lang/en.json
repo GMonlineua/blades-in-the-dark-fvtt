@@ -166,6 +166,14 @@
       }
     },
     "Faction": {
+      "Types": {
+        "Type": "Type",
+        "Underworld": "Underworld",
+        "Fringe": "The Fringe",
+        "Institution": "Institution",
+        "LaborTrade": "Labor & Trade",
+        "Other": "Other"
+      },
       "Status": {
         "Title": "Status",
         "Allies": "Allies (+3)",
