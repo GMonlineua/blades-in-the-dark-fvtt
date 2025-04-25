@@ -370,7 +370,8 @@
           "Push": "You suffer {stress} stress.",
           "DevilsBargain": "The Devil’s Bargain occurs regardless of the outcome of the roll.",
           "Assistance": "Character who helps suffer 1 stress and might also suffer any consequences that occur because of the roll."
-        }
+        },
+        "PushAndDevils": "You cannot cannot get bonus dice from push and devil's bargain in the same roll"
       },
       "SufferTrauma": {
         "Title": "Suffer Trauma",

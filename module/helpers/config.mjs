@@ -225,4 +225,5 @@ export const BITD = {
       },
     },
   },
+  settingsSupported: ["scoundrel", "crew"]
 };

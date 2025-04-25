@@ -145,16 +145,16 @@ export default class BitdActor extends Actor {
     const toImport = [];
 
     for (const contact of container.system.contacts) {
-      const fromCompendium = contact.uuid.includes("Compendium");
+      const contactActor = await fromUuid(contact.uuid);
 
-      if (fromCompendium) {
-        toImport.push(contact)
+      if (contactActor.compendium) {
+        toImport.push(contactActor);
       } else {
-        const contactActor = await fromUuid(contact.uuid);
         this.addLinkedActor(contactActor);
       }
     }
-    if (toImport) this.importActors(toImport)
+
+    if (toImport.length) this.importActors(toImport);
 
     // Handle specific data
     if (container.type === "playbook") {
@@ -182,8 +182,6 @@ export default class BitdActor extends Actor {
       defaultClaims[7].type = "home";
       await this.update({ "system.claimsMap": defaultClaims });
 
-      console.log("before update:", claimsMap)
-
       for (const itemData of claimsMap.map) {
         if (itemData.id) {
           const item = await fromUuid(itemData.uuid);
@@ -191,8 +189,6 @@ export default class BitdActor extends Actor {
           itemData.id = newItem[0]._id;
         }
       }
-
-      console.log("after update:", claimsMap)
 
       await this.update({ "system.claimsMap": claimsMap });
       claimMap(this);
@@ -278,6 +274,7 @@ export default class BitdActor extends Actor {
               const selectedIds = html.find('input[name="actor"]:checked').map((_, el) => el.value).get();
               const selectedActors = actors.filter(a => selectedIds.includes(a.id));
               for (const actorData of selectedActors) {
+                console.log(actorData)
                 const actor = await BitdActor.create(actorData);
                 this.addLinkedActor(actor);
               }

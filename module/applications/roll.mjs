@@ -160,6 +160,7 @@ async function roll(formData, sheet) {
 
   if (formData.assistance) diceToRoll++;
   if (formData.pushDice || formData.devisBargain) diceToRoll++;
+  if (formData.pushDice && formData.devisBargain) ui.notifications.info(game.i18n.format("BITD.Roll.Bonus.PushAndDevils"))
 
   let formula = "2d6kl";
   if (diceToRoll > 0) {
@@ -170,7 +171,7 @@ async function roll(formData, sheet) {
   await rollResult.evaluate();
 
   rollResult.data = getRollData(rollResult, formData, diceToRoll);
-  sufferStress(sheet, rollResult.data.push.stress);
+  sufferStress(rollResult, sheet);
 
   return rollResult;
 }
@@ -187,6 +188,10 @@ function getRollData(rollResult, formData, diceToRoll) {
       effect: formData.pushEffect,
       dice: formData.pushDice,
     },
+    resistance: {
+      stress: 0,
+    },
+    stress: 0,
     devisBargain: formData.devisBargain,
     position: {
       key: formData.position,
@@ -209,7 +214,7 @@ function getRollData(rollResult, formData, diceToRoll) {
   }
 
   data.push.stress = data.push.count * 2;
-  data.push.description = game.i18n.format("BITD.Roll.BonusDescription.Push", {
+  data.push.description = game.i18n.format("BITD.Roll.Bonus.Description.Push", {
     stress: data.push.stress,
   });
 
@@ -296,7 +301,7 @@ function actionRoll(rollResult, sheet, formData) {
 
   if (rollData.countAs.key != "fail") {
     rollData.effect.description = game.i18n.localize(
-      "BITD.Roll.EffectDescription." + rollData.effect.localizeKey,
+      "BITD.Roll.Effect.Description." + rollData.effect.localizeKey,
     );
   }
 
@@ -321,7 +326,9 @@ async function resistanceRoll(rollResult, sheet, formData) {
       stress: addStress,
     });
   }
-  sufferStress(sheet, addStress);
+
+  rollData.resistanceStress = addStress;
+  sufferStress(rollResult, sheet);
 
   return rollResult;
 }
@@ -353,8 +360,8 @@ function gatherInformation(rollResult, sheet, formData) {
   );
 
   if (rollData.rollAs.key == "action") {
-    rollData.effectShow = true;
-    rollData.positionShow = true;
+    rollData.effect.show = true;
+    rollData.position.show = true;
     rollData.action = formData.action;
     rollData.rollAs.localize = game.i18n.localize("BITD.Roll.Type.Action");
 
@@ -456,11 +463,13 @@ async function renderRoll(renderData, sheet) {
   });
 }
 
-async function sufferStress(sheet, addStress) {
-  if (!sheet || !sheet.system.stress) return;
-  const stress = sheet.system.stress.value + addStress;
+async function sufferStress(rollResult, sheet) {
+  rollResult.data.stress = rollResult.data.push.stress + rollResult.data.resistance.stress;
+  if (!sheet) return;
+  if (!sheet.system.stress) return;
+  const stress = sheet.system.stress.value + rollResult.data.stress;
 
-  if (stress < 9) {
+  if (stress < sheet.systems.stress.max) {
     await sheet.update({ "system.stress.value": stress });
   } else {
     rollResult.data.trauma.suffer = true;

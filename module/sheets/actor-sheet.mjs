@@ -68,6 +68,9 @@ export class BitdActorSheet extends ActorSheet {
       },
     });
 
+    if (!this.actor.testUserPermission(game.user, "OBSERVER")) return buttons;
+    if (!CONFIG.BITD.settingsSupported.includes(this.actor.type)) return buttons;
+
     // Add a custom button for settings
     buttons.unshift({
       label: game.i18n.localize("BITD.Settings.HeaderButton"),

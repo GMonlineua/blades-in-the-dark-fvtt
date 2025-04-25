@@ -7,6 +7,7 @@ export default class BITDChangeSettings extends FormApplication {
   /** @override */
   constructor(object, options = {}) {
     super(object, options);
+    this._editable = object.testUserPermission(game.user, "OWNER");
   }
 
   /** @override */
@@ -16,6 +17,11 @@ export default class BITDChangeSettings extends FormApplication {
       width: "500",
       height: "fit-content"
     });
+  }
+
+  /** @override */
+  get isEditable() {
+    return this._editable;
   }
 
   /** @override */
