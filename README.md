@@ -37,7 +37,7 @@ To install a module, follow these instructions:
 [Foundry Shield]: https://img.shields.io/badge/Foundry-12-informational?style=flat-square
 [Foundry URL]: https://foundryvtt.com
 
-[Version]: https://img.shields.io/badge/Version-0.7-orange?style=flat-square
+[Version]: https://img.shields.io/badge/Version-0.8-orange?style=flat-square
 [Version URL]: https://github.com/GMonlineua/blades-in-the-dark-fvtt
 
 [GNU License]: https://img.shields.io/badge/License-GNU-green?style=flat-square

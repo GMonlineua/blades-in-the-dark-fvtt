@@ -469,7 +469,8 @@ async function sufferStress(rollResult, sheet) {
   if (!sheet.system.stress) return;
   const stress = sheet.system.stress.value + rollResult.data.stress;
 
-  if (stress < sheet.systems.stress.max) {
+  console.log(stress, sheet.system.stress)
+  if (stress < sheet.system.stress.max) {
     await sheet.update({ "system.stress.value": stress });
   } else {
     rollResult.data.trauma.suffer = true;
