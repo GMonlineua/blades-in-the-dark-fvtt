@@ -167,12 +167,12 @@
     },
     "Faction": {
       "Types": {
-        "Type": "Type",
-        "Underworld": "Underworld",
-        "Fringe": "The Fringe",
-        "Institution": "Institution",
-        "LaborTrade": "Labor & Trade",
-        "Other": "Other"
+        "Type": "Типи",
+        "Underworld": "Злочинний світ",
+        "Fringe": "Маргінали",
+        "Institution": "Установи",
+        "LaborTrade": "Робота і Торгівля",
+        "Other": "Інше"
       },
       "Status": {
         "Title": "Статус",
@@ -379,7 +379,7 @@
           "DevilsBargain": "Угода з дияволом виконується незалежно від результату кидка.",
           "Assistance": "Персонаж, який допомагає, отримує 1 стрес і може також постраждати від будь-яких наслідків, що виникають через кидок."
         },
-        "PushAndDevils": "You cannot cannot get bonus dice from push and devil's bargain in the same roll"
+        "PushAndDevils": "В одному кидку не можна отримати бонусну кістку від докладання зусиль і угоди з дияволом"
       },
       "SufferTrauma": {
         "Title": "Отримати травму",
