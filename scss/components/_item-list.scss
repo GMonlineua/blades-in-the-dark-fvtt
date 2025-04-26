@@ -43,6 +43,7 @@
         right: 0;
         display: flex;
         justify-content: flex-end;
+
         a {
           font-size: 12px;
           text-align: center;
@@ -70,17 +71,21 @@
   }
 
   .items-list {
-    .item-checkbox {
-      position: relative;
-      top: 4px;
-      width: 15px;
-      margin: 0;
-    }
-
     .item-description {
+      .item-checkbox {
+        position: relative;
+        top: 5px;
+        width: 15px;
+        margin: 0;
+      }
+
       .item-name {
         cursor: pointer;
         font-family: $font-secondary;
+      }
+
+      .item-uses {
+        margin: 0;
       }
     }
 
@@ -109,12 +114,15 @@
       .set-relationship.rival {
         background-image: url("/systems/bitd/ui/relationship-icons/caret-down.svg");
       }
+
       .set-relationship.neutral {
         background-image: url("/systems/bitd/ui/relationship-icons/minus.svg");
       }
+
       .set-relationship.friend {
         background-image: url("/systems/bitd/ui/relationship-icons/caret-up.svg");
       }
+
       .set-relationship.special {
         background-image: url("/systems/bitd/ui/relationship-icons/dot-circle.svg");
       }

@@ -1,4 +1,5 @@
 import { createRollDialog } from "../applications/roll.mjs";
+import BITDChangeSettings from "../applications/sheet-settings.mjs";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -57,13 +58,29 @@ export class BitdActorSheet extends ActorSheet {
     // Get the default buttons from the parent class
     const buttons = super._getHeaderButtons();
 
-    // Add a custom button
+    // Add a custom button for roll
     buttons.unshift({
       label: game.i18n.localize("BITD.Roll.Button"),
       class: "bitd-dice-sheet",
       icon: "fas fa-dice",
       onclick: () => {
         createRollDialog("fortune", this.actor);
+      },
+    });
+
+    if (!this.actor.testUserPermission(game.user, "OBSERVER")) return buttons;
+    if (!CONFIG.BITD.settingsSupported.includes(this.actor.type)) return buttons;
+
+    // Add a custom button for settings
+    buttons.unshift({
+      label: game.i18n.localize("BITD.Settings.HeaderButton"),
+      class: "bitd-settings-sheet",
+      icon: "fa-solid fa-screwdriver-wrench",
+      onclick: () => {
+        const settingsForm = new BITDChangeSettings(this.actor, {
+          system: this.actor.system
+        });
+        return settingsForm.render(true);
       },
     });
 
@@ -75,11 +92,11 @@ export class BitdActorSheet extends ActorSheet {
     super.activateListeners(html);
 
     // Count dot
-    html.find(".value-step-block").each(function () {
+    html.find(".value-step-block").each(function() {
       const value = Number(this.dataset.value);
       $(this)
         .find(".value-step")
-        .each(function (i) {
+        .each(function(i) {
           if (i + 1 <= value) {
             $(this).addClass("active");
           }
@@ -87,25 +104,25 @@ export class BitdActorSheet extends ActorSheet {
     });
 
     // Calculate relationship
-    html.find(".set-relationship").each(function () {
+    html.find(".set-relationship").each(function() {
       const value = Number(this.dataset.value);
       const classes = CONFIG.BITD.relationshipClasses;
       this.classList.add(classes[value]);
     });
 
     // Set checked for external links
-    html.find("input.show-link").each(function () {
+    html.find("input.show-link").each(function() {
       const value = this.dataset.value;
       if (value === "true") this.checked = true;
     });
 
     // Calculate text area height
-    html.find("textarea.auto-grow").each(function () {
+    html.find("textarea.auto-grow").each(function() {
       this.style.height = "auto";
       this.style.height = this.scrollHeight + 5 + "px";
     });
 
-    html.find("textarea.auto-grow").on("input", function () {
+    html.find("textarea.auto-grow").on("input", function() {
       this.style.height = "auto";
       this.style.height = this.scrollHeight + 5 + "px";
     });
@@ -139,7 +156,7 @@ export class BitdActorSheet extends ActorSheet {
     });
 
     // Everything below here is only needed if the sheet is editable
-    if (!this.options.editable) return;
+    if (!this.isEditable) return;
 
     // Resource dots
     html
@@ -284,7 +301,7 @@ export class BitdActorSheet extends ActorSheet {
 
     if (element.classList.contains("active") && nextElement) {
       steps.removeClass("active");
-      steps.each(function (i) {
+      steps.each(function(i) {
         if (i < index) {
           $(this).addClass("active");
         }
@@ -292,7 +309,7 @@ export class BitdActorSheet extends ActorSheet {
       value = index;
     } else {
       steps.removeClass("active");
-      steps.each(function (i) {
+      steps.each(function(i) {
         if (i <= index) {
           $(this).addClass("active");
         }

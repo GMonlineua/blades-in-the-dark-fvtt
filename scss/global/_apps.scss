@@ -29,6 +29,19 @@
   }
 }
 
+.import-actors-form {
+  margin-bottom: 5px;
+
+  .actor-checkboxes {
+    font-size: medium;
+    font-family: $font-secondary;
+
+    .flexrow {
+      align-items: center;
+    }
+  }
+}
+
 .bitd-roll-dialog {
   height: auto;
 
@@ -119,7 +132,7 @@
   .roll-results {
     h4 {
       text-transform: uppercase;
-      font-family:$font-secondary;
+      font-family: $font-secondary;
       font-size: medium;
       font-weight: bold;
     }
@@ -127,7 +140,7 @@
     h5 {
       margin: 10px 0 0 0;
       text-transform: uppercase;
-      font-family:$font-secondary;
+      font-family: $font-secondary;
       font-weight: bold;
     }
   }
@@ -150,6 +163,16 @@
       font-size: 16px;
       font-weight: bold;
       text-align: center;
+    }
+  }
+}
+
+.bitd.dialog.sheet-settings {
+  .actions-max {
+    .actions-list {
+      display: grid;
+      grid-template-rows: repeat(4, auto);
+      grid-auto-flow: column;
     }
   }
 }

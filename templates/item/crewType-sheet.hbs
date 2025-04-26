@@ -2,7 +2,7 @@
   <header class="items-header">
     <img class="item-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
     <div class="header-fields">
-      <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.ItemName'}}"/></h1>
+      <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.Item.Name'}}"/></h1>
       <input class="summary all-width" name="system.summary" type="text" value="{{system.summary}}" placeholder="{{localize 'BITD.Summary'}}" data-dtype="String"></input>
     </div>
   </header>
@@ -20,8 +20,8 @@
     {{!-- Owned Playbook Tab --}}
     <div class="tab general" data-group="primary" data-tab="general">
       <div class="exp-clues">
-        <h3>{{localize 'BITD.CrewExp.Title'}}:</h3>
-        <input class="all-width" name="system.exp" type="text" value="{{system.exp}}" placeholder="{{localize 'BITD.CrewExp.Placeholder'}}" data-dtype="String"></input>
+        <h3>{{localize 'BITD.Playbook.Exp.Clue'}}:</h3>
+        <input class="all-width" name="system.exp" type="text" value="{{system.exp}}" placeholder="{{localize 'BITD.CrewType.ExpClue'}}" data-dtype="String"></input>
       </div>
 
       <h3>{{localize 'BITD.Description'}}</h3>
@@ -69,7 +69,7 @@
 
     {{!-- Owned Claims Tab --}}
     <div class="tab claims" data-group="primary" data-tab="claims">
-      {{> "systems/bitd/templates/item/parts/claims-map.hbs"}}
+      {{> "systems/bitd/templates/item/parts/claims-map.hbs" data=claims}}
     </div>
 
   </section>

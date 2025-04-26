@@ -2,11 +2,11 @@
   "id": "bitd",
   "title": "Blades in the Dark",
   "description": "Blades in the Dark game system by GMonline",
-  "version": "0.7",
+  "version": "0.8",
   "compatibility": {
     "minimum": "12",
     "verified": "12.331",
-    "maximum": "12"
+    "maximum": "13"
   },
   "authors": [
     {
@@ -151,11 +151,12 @@
       }
     }
   ],
+  "background": "systems/bitd/ui/background.jpg",
   "packFolders": [],
   "socket": true,
   "url": "https://github.com/GMonlineua/blades-in-the-dark-fvtt",
   "manifest": "https://raw.githubusercontent.com/GMonlineua/blades-in-the-dark-fvtt/main/system.json",
-  "download": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/releases/download/v0.7/foundry.zip",
+  "download": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/releases/download/v0.8/foundry.zip",
   "license": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/blob/main/LICENSE.md",
   "changelog": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/wiki/Changelog",
   "bugs": "https://github.com/MagpieRook/blades-in-the-dark/issues/new"

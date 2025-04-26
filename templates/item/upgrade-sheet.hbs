@@ -2,7 +2,7 @@
   <header class="items-header">
     <img class="item-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
     <div class="header-fields">
-      <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.ItemName'}}"/></h1>
+      <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.Item.Name'}}"/></h1>
       <div class="brief-info">
         <select class="prop clear-select" name="system.type">
           {{selectOptions config.upgradeType selected=system.type localize=true}}
@@ -14,6 +14,12 @@
         <div class="prop">
           <label class="prop-label" for="system.price">{{localize 'BITD.Upgrade.Price'}}:</label>
           <input class="prop-input clear-input" type="number" name="system.price"  value="{{system.price}}"></input>
+        </div>
+        <div class="prop uses">
+          <label class="prop-label" for="system.uses">{{localize 'BITD.Uses'}}:</label>
+          <input class="prop-input clear-input" type="number" name="system.uses.used" value="{{system.uses.used}}"></input>
+          <span>/</span>
+          <input class="prop-input clear-input" type="number" name="system.uses.max" value="{{system.uses.max}}"></input>
         </div>
       </div>
     </div>

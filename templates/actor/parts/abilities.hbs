@@ -4,6 +4,11 @@
       <div class="item-description">
         <input class="item-checkbox" data-key="active" type="checkbox" name="item.system.active" data-dtype="Boolean" {{checked item.system.active}}></input>
         <span class="item-name">{{item.name}}</span>
+        {{#if system.active}}
+          {{#if system.uses.max}}
+            <p class="item-uses"><b>{{localize 'BITD.Uses'}}:</b> {{system.uses.used}}/{{system.uses.max}}</p>
+          {{/if}}
+        {{/if}}
       </div>
 
       <div class="item-summary">

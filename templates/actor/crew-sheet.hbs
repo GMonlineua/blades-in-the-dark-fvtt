@@ -8,7 +8,7 @@
           {{#if playbook}}
             {{playbook.name}}
           {{else}}
-            {{localize 'BITD.CrewType'}}
+            {{localize 'TYPES.Item.crewType'}}
           {{/if}}
         </h1>
         {{#if playbook}}
@@ -19,18 +19,18 @@
 
     <div class="name-container">
       <h1 class="crew-name">
-        <input class="clear-input" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.CrewName'}}"/>
+        <input class="clear-input" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.Actor.StructureName'}}"/>
       </h1>
 
       <div class="brief-info grid-2col">
         <div class="prop">
-          <label class="prop-label" for="system.lair">{{localize 'BITD.Lair'}}</label>
-          <input class="prop-input clear-input all-width" type="text" name="system.lair" value="{{system.lair}}" placeholder="{{localize 'BITD.Lair'}}"/>
+          <label class="prop-label" for="system.lair">{{localize 'BITD.Crew.Lair'}}</label>
+          <input class="prop-input clear-input all-width" type="text" name="system.lair" value="{{system.lair}}" placeholder="{{localize 'BITD.Crew.Lair'}}"/>
         </div>
 
         <div class="prop">
-          <label class="prop-label" for="system.reputation.type">{{localize 'BITD.RepType'}}</label>
-          <input class="prop-input clear-input all-width" type="text" name="system.reputation.type" value="{{system.reputation.type}}" placeholder="{{localize 'BITD.RepDescription'}}"/>
+          <label class="prop-label" for="system.reputation.type">{{localize 'BITD.Crew.Reputation.Type'}}</label>
+          <input class="prop-input clear-input all-width" type="text" name="system.reputation.type" value="{{system.reputation.type}}" placeholder="{{localize 'BITD.Crew.Reputation.Description'}}"/>
         </div>
       </div>
     </div>
@@ -40,26 +40,26 @@
         {{#if system.hunting.customName}}
           {{system.hunting.customName}}
         {{else}}
-          {{localize 'BITD.HuntingGround.Title'}}
+          {{localize 'BITD.Crew.HuntingGround.Title'}}
         {{/if}}
       </h3>
-      <a class="edit-hunting-ground" title="{{localize 'BITD.HuntingGround.Edit'}}"><i class="fas fa-edit"></i></a>
+      <a class="edit-hunting-ground" title="{{localize 'BITD.Crew.HuntingGround.Edit'}}"><i class="fas fa-edit"></i></a>
       <p class="ground" name="system.hunting.ground">{{{system.hunting.ground}}}</p>
-      <label class="operation-header" for="system.hunting.operation">{{localize 'BITD.HuntingGround.Operation'}}</label>
+      <label class="operation-header" for="system.hunting.operation">{{localize 'BITD.Crew.HuntingGround.Operation'}}</label>
       <p class="operation" name="system.hunting.operation">{{system.hunting.operation}}</p>
     </div>
 
     <div class="header-fields">
 
       <div class="storage">
-        <label for="system.coins">{{localize 'BITD.Coins'}}:</label>
+        <label for="system.coins">{{localize 'BITD.Actor.Coins'}}:</label>
         <input class="clear-input" type="number" name="system.coins.value" value="{{system.coins.value}}" data-dtype="Number"/>
         <span>/{{system.coins.max}}</span>
       </div>
 
       <div class="heat-block">
         <div class="heat flexrow">
-          <h3 class="bitd-header flexshrink">{{localize 'BITD.Heat'}}</h3>
+          <h3 class="bitd-header flexshrink">{{localize 'BITD.Crew.Heat'}}</h3>
           <div class="value-step-block" data-value="{{system.heat.value}}" data-key="system.heat.value">
             {{#numLoop system.heat.max}}
               <span class="value-step value-tooth red-tooth" data-index="{{this}}"></span>
@@ -67,7 +67,7 @@
           </div>
         </div>
         <div class="wanted-lvl">
-          <h3 class="bitd-header">{{localize 'BITD.WantedLvl'}}</h3>
+          <h3 class="bitd-header">{{localize 'BITD.Crew.WantedLvl'}}</h3>
           <div class="value-step-block" data-value="{{system.wanted.value}}" data-key="system.wanted.value">
             {{#numLoop system.wanted.max}}
               <span class="value-step value-tooth small-tooth" data-index="{{this}}"></span>
@@ -78,13 +78,13 @@
 
       <div class="tier-block">
         <div class="hold">
-          <label for="system.hold">{{localize 'BITD.Hold.Title'}}</label>
+          <label for="system.hold">{{localize 'BITD.Crew.Hold.Title'}}</label>
           <select class="clear-select" name="system.hold">
             {{selectOptions config.holdTypes selected=system.hold localize=true}}
           </select>
         </div>
         <div class="tier">
-          <label for="system.tier" class="rollable" data-roll-type="fortune" data-roll-note="{{system.tier.value}}">{{localize 'BITD.Tier'}}</label>
+          <label for="system.tier" class="rollable" data-roll-type="fortune" data-roll-note="{{system.tier.value}}">{{localize 'BITD.Actor.Tier'}}</label>
           <div class="value-step-block" data-value="{{system.tier.value}}" data-key="system.tier.value">
             {{#numLoop system.tier.max}}
               <span class="value-step value-dot" data-index="{{this}}"></span>
@@ -93,26 +93,20 @@
         </div>
       </div>
 
-      <div class="reputation-block">
-        <div class="reputation">
-          <h3 class="bitd-header">{{localize 'BITD.Rep'}}</h3>
-          <div class="value-step-block" data-value="{{system.reputation.value}}" data-key="system.reputation.value">
-            {{#numLoop system.reputation.max}}
-              <span class="value-step value-tooth red-tooth" data-index="{{this}}"></span>
-            {{/numLoop}}
-          </div>
-        </div>
-        <div class="turf bitd-header">
-          <h3>{{localize 'BITD.Turf'}}:</h3>
-          <input class="clear-input" type="number" name="system.turf.value" value="{{system.turf.value}}"/>
+      <div class="reputation">
+        <h3 class="bitd-header">{{localize 'BITD.Crew.Reputation.Rep'}}</h3>
+        <div class="value-step-block" data-value="{{system.reputation.value}}" data-key="system.reputation.value">
+          {{#numLoop system.reputation.max}}
+            <span class="value-step value-tooth red-tooth" data-index="{{this}}"></span>
+          {{/numLoop}}
         </div>
       </div>
 
     </div>
 
     <div class="exp-block">
-      <h3 class="bitd-header">{{localize 'BITD.CrewExp.ShortTitle'}}</h3>
-      <p class="bitd-subheader">{{localize 'BITD.CrewExp.HowItWorks'}}</p>
+      <h3 class="bitd-header">{{localize 'BITD.Crew.Exp.XP'}}</h3>
+      <p class="bitd-subheader">{{localize 'BITD.Crew.Exp.HowItWorks'}}</p>
       <div class="value-step-block" data-value="{{system.exp.value}}" data-key="system.exp.value">
         {{#numLoop system.exp.max}}
           <span class="value-step value-tooth simple-red-tooth" data-index="{{this}}"></span>
@@ -120,7 +114,9 @@
       </div>
       <ul class="exp-tips">
         <li>{{playbook.system.exp}}</li>
-        {{{localize 'BITD.CrewExp.Tips'}}}
+        <li>{{localize 'BITD.Crew.Exp.Challenge'}}</li>
+        <li>{{localize 'BITD.Crew.Exp.Reputation'}}</li>
+        <li>{{localize 'BITD.Crew.Exp.Nature'}}</li>
       </ul>
     </div>
 
@@ -140,12 +136,12 @@
 
     {{!-- Owned Claims Tab --}}
     <div class="tab claims" data-group="primary" data-tab="claims">
-      {{> "systems/bitd/templates/actor/parts/claims-map.hbs" claim=claims container="claims"}}
+      {{> "systems/bitd/templates/actor/parts/claims-map.hbs" data=claims itemType="claim" container="claimsMap"}}
     </div>
 
     {{!-- Owned Prisons Claims Tab --}}
     <div class="tab prison" data-group="primary" data-tab="prison">
-      {{> "systems/bitd/templates/actor/parts/claims-map.hbs" claim=prison container="prison"}}
+      {{> "systems/bitd/templates/actor/parts/claims-map.hbs" data=prison itemType="prisonClaim" container="prisonMap"}}
       <div class="load-prison-block align-center"><a class="load-prison">{{localize 'BITD.Claim.LoadPrison'}}</a></div>
     </div>
 

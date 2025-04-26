@@ -1,5 +1,5 @@
-export const registerHandlebarsHelpers = function () {
-  Handlebars.registerHelper("numLoop", function (num, options) {
+export const registerHandlebarsHelpers = function() {
+  Handlebars.registerHelper("numLoop", function(num, options) {
     let result = "";
     for (let i = 0, j = num; i < j; i++) {
       result = result + options.fn(i);
@@ -8,7 +8,7 @@ export const registerHandlebarsHelpers = function () {
     return result;
   });
 
-  Handlebars.registerHelper("iff", function (a, operator, b, opts) {
+  Handlebars.registerHelper("iff", function(a, operator, b, opts) {
     let bool = false;
     switch (operator) {
       case "==":
@@ -47,7 +47,7 @@ export const registerHandlebarsHelpers = function () {
     }
   });
 
-  Handlebars.registerHelper("getValue", function (parent, path) {
+  Handlebars.registerHelper("getValue", function(parent, path) {
     let value = parent;
     if (path.string || path.includes(".")) {
       const keys = path.string.split(".");
@@ -61,30 +61,14 @@ export const registerHandlebarsHelpers = function () {
     return value;
   });
 
-  Handlebars.registerHelper("getLocalizeName", function (key) {
-    const name = "BITD." + key.charAt(0).toUpperCase() + key.slice(1);
+  Handlebars.registerHelper("getLocalize", function(path, key) {
+    const name = path + key.charAt(0).toUpperCase() + key.slice(1);
     const localizeName = game.i18n.localize(name);
 
     return localizeName;
   });
 
-  Handlebars.registerHelper("getLocalizeDescription", function (type, key) {
-    const localizeKey = key.charAt(0).toUpperCase() + key.slice(1);
-    let name;
-    switch (type) {
-      case "attribute":
-        name = "BITD.AttributeDescription." + localizeKey;
-        break;
-      case "action":
-        name = "BITD.ActionDescription." + localizeKey;
-        break;
-    }
-    const localizeName = game.i18n.localize(name);
-
-    return localizeName;
-  });
-
-  Handlebars.registerHelper("toolClass", function (data) {
+  Handlebars.registerHelper("toolClass", function(data) {
     const conditions = [
       { condition: data.equipped, className: "active" },
       { condition: data.broken, className: "broken" },
@@ -101,7 +85,7 @@ export const registerHandlebarsHelpers = function () {
     return classes;
   });
 
-  Handlebars.registerHelper("getCohorHarm", function (key) {
+  Handlebars.registerHelper("getCohorHarm", function(key) {
     const name = CONFIG.BITD.cohort.harm[key];
     const localizeName = game.i18n.localize(name);
 

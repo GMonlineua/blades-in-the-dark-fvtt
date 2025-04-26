@@ -1,49 +1,51 @@
 <div class="actor-grid notes-container">
   <div class="rules">
     <div class="expirience">
-      <h3 class="bitd-header">{{localize 'BITD.Expirience.Title'}}</h3>
-      <p>{{localize 'BITD.Expirience.DesperateRoll'}}</p>
-      <p>{{localize 'BITD.Expirience.HowItWorks'}}</p>
+      <h3 class="bitd-header">{{localize 'BITD.Scoundrel.Exp.XP'}}</h3>
+      <p>{{localize 'BITD.Scoundrel.Exp.DesperateRoll'}}</p>
+      <p>{{localize 'BITD.Scoundrel.Exp.HowItWorks'}}</p>
       <ul class="rule-tips">
         <li>{{playbook.system.exp}}</li>
-        <li>{{localize 'BITD.Expirience.Character'}}</li>
-        <li>{{localize 'BITD.Expirience.Vice'}}</li>
+        <li>{{localize 'BITD.Scoundrel.Exp.Character'}}</li>
+        <li>{{localize 'BITD.Scoundrel.Exp.Vice'}}</li>
       </ul>
     </div>
-    <h3 class="bitd-header">{{localize 'BITD.RulesRef.Title'}}</h3>
+    <h3 class="bitd-header">{{localize 'BITD.Scoundrel.RulesRef.Title'}}</h3>
     <div class="gather-info">
-      <h4>{{localize 'BITD.RulesRef.GatherInfo.Title'}}</h4>
+      <h4>{{localize 'BITD.Scoundrel.RulesRef.GatherInfo.Title'}}</h4>
       <ul class="rule-tips">
-        {{{localize 'BITD.RulesRef.GatherInfo.Tips'}}}
+        {{{localize 'BITD.Scoundrel.RulesRef.GatherInfo.Tips'}}}
       </ul>
     </div>
     <div class="teamwork">
-      <h4>{{localize 'BITD.RulesRef.Teamwork.Title'}}</h4>
+      <h4>{{localize 'BITD.Scoundrel.RulesRef.Teamwork.Title'}}</h4>
       <div class="grid-2col">
-        {{{localize 'BITD.RulesRef.Teamwork.Tips'}}}
+        {{{localize 'BITD.Scoundrel.RulesRef.Teamwork.Tips'}}}
       </div>
     </div>
   </div>
   <div class="description">
     <div class="brief-info">
       <div class="prop">
-        <label class="prop-label" for="system.belives">{{localize 'BITD.Belives'}}:</label>
-        <input class="prop-input clear-input all-width" type="text" name="system.belives" value="{{system.belives}}"/>
+        <label class="prop-label" for="system.beliefs">{{localize 'BITD.Scoundrel.Beliefs'}}:</label>
+        <input class="prop-input clear-input all-width" type="text" name="system.beliefs" value="{{system.beliefs}}"/>
       </div>
       <div class="prop">
-        <label class="prop-label" for="system.drives">{{localize 'BITD.Drives'}}:</label>
+        <label class="prop-label" for="system.drives">{{localize 'BITD.Scoundrel.Drives'}}:</label>
         <input class="prop-input clear-input all-width" type="text" name="system.drives" value="{{system.drives}}"/>
       </div>
       <div class="prop">
-        <label class="prop-label" for="system.heritage">{{localize 'BITD.Heritage'}}:</label>
+        <label class="prop-label" for="system.heritage">{{localize 'BITD.Scoundrel.Heritage'}}:</label>
         <input class="prop-input clear-input all-width" type="text" name="system.heritage" value="{{system.heritage}}"/>
       </div>
       <div class="prop">
-        <label class="prop-label" for="system.background">{{localize 'BITD.Background'}}:</label>
+        <label class="prop-label" for="system.background">{{localize 'BITD.Scoundrel.Background'}}:</label>
         <input class="prop-input clear-input all-width" type="text" name="system.background" value="{{system.background}}"/>
       </div>
     </div>
     <h3 class="bitd-header">{{localize 'BITD.Notes'}}</h3>
     {{editor enrichedDescription target="system.description" button=true owner=owner editable=editable}}
   </div>
+
+  {{> "systems/bitd/templates/actor/parts/goals.hbs"}}
 </div>
