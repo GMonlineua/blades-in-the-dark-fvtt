@@ -42,25 +42,26 @@
   }
 }
 
-.bitd-roll-dialog {
+.bitd-rolls {
   height: auto;
 
-  .window-content {
-    overflow: visible;
-  }
-
-  .roll-dice-form {
+  .inputs-block {
     font-family: $font-secondary;
 
+    select {
+      width: auto;
+    }
+
     .roll-type {
-      margin-bottom: 5px;
+      display: flex;
+      margin-bottom: $padding-sm;
       font-size: medium;
       font-weight: bold;
       text-align: center;
       text-transform: uppercase;
 
-      #roll-type {
-        font-weight: bold;
+      label {
+        margin-top: $padding-sm;
       }
     }
 

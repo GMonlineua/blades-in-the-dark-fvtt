@@ -153,6 +153,12 @@ export const BITD = {
   relationshipClasses: ["rival", "neutral", "friend", "special"],
 
   rolls: {
+    defaults: {
+      type: "fortune",
+      action: "hunt",
+      attribute: "insight",
+      dice: 0,
+    },
     type: {
       action: "BITD.Roll.Type.Action",
       resistance: "BITD.Roll.Type.Resistance",

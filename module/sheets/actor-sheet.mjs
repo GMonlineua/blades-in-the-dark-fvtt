@@ -1,4 +1,4 @@
-import { createRollDialog } from "../applications/roll.mjs";
+import BitdRollerApp from "../applications/roll.mjs";
 import BITDChangeSettings from "../applications/sheet-settings.mjs";
 
 /**
@@ -63,9 +63,7 @@ export class BitdActorSheet extends ActorSheet {
       label: game.i18n.localize("BITD.Roll.Button"),
       class: "bitd-dice-sheet",
       icon: "fas fa-dice",
-      onclick: () => {
-        createRollDialog("fortune", this.actor);
-      },
+      onclick: () => new BitdRollerApp().render(true),
     });
 
     if (!this.actor.testUserPermission(game.user, "OBSERVER")) return buttons;
@@ -275,7 +273,13 @@ export class BitdActorSheet extends ActorSheet {
     const element = event.currentTarget;
     const dataset = element.dataset;
 
-    createRollDialog(dataset.rollType, this.actor, dataset.rollNote);
+    const rollApp = new BitdRollerApp({
+      type: dataset.rollType,
+      actor: this.actor,
+      note: dataset.rollNote
+    });
+
+    rollApp.render(true);
   }
 
   /**

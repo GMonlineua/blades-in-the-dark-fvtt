@@ -15,7 +15,6 @@ import { BitdPlaybookSheet } from "./sheets/playbook-sheet.mjs";
 
 // Import modules
 import { preprocessChatMessage, renderChatMessage } from "./applications/chat-portraits.mjs";
-import { createRollDialog } from "./applications/roll.mjs";
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { registerHandlebarsHelpers } from "./helpers/handlebars-helpers.mjs";
 import { BITD } from './helpers/config.mjs';
@@ -88,15 +87,3 @@ Hooks.on("preCreateChatMessage", preprocessChatMessage);
 // Render chat message hook
 Hooks.on("renderChatMessage", renderChatMessage);
 
-// Add scene controls
-Hooks.on("renderSceneControls", async (app, html) => {
-  const diceRollButton = $(`
-    <li class="scene-control" data-control="bitd-dice" title="BitD Dice Roller">
-    <i class="fas fa-dice"></i>
-    </li>
-  `);
-  diceRollButton.click(async function() {
-    await createRollDialog("fortune");
-  });
-  html.children().first().append(diceRollButton);
-});
