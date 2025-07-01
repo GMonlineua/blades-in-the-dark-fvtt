@@ -14,6 +14,7 @@ import { BitdCrewTypeSheet } from "./sheets/crew-type-sheet.mjs";
 import { BitdPlaybookSheet } from "./sheets/playbook-sheet.mjs";
 
 // Import modules
+import BitdRollerApp from "./applications/roll.mjs";
 import { preprocessChatMessage, renderChatMessage } from "./applications/chat-portraits.mjs";
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { registerHandlebarsHelpers } from "./helpers/handlebars-helpers.mjs";
@@ -86,4 +87,27 @@ Hooks.on("preCreateChatMessage", preprocessChatMessage);
 
 // Render chat message hook
 Hooks.on("renderChatMessage", renderChatMessage);
+
+Hooks.on("renderHotbar", (app, html, data) => {
+  if (html.querySelector(".bitd-roller")) return;
+
+  const button = document.createElement("div");
+  button.classList.add("bitd-roller");
+  button.innerHTML = `
+    <a class="bitd-roller-btn" title="BitD Roller">
+      <img class="bitd-roller-icon" src="systems/bitd/ui/dice-white.svg" alt="BitD Roleer">
+    </a>
+  `;
+
+  // Add the click handler
+  button.querySelector("a").addEventListener("click", () => {
+    const rollApp = new BitdRollerApp();
+    rollApp.render(true);
+  });
+
+  // Append the button
+  html.prepend(button);
+});
+
+
 

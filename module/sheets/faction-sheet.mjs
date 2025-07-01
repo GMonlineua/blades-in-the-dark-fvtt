@@ -4,8 +4,7 @@ import { BitdActorSheet } from "./actor-sheet.mjs";
  * Extend the BitdActorSheet
  * @extends {BitdActorSheet}
  */
-export class BitdFactionSheet extends BitdActorSheet
-{
+export class BitdFactionSheet extends BitdActorSheet {
 
   /** @override */
   static get defaultOptions() {
@@ -40,10 +39,10 @@ export class BitdFactionSheet extends BitdActorSheet
     return context;
   }
 
-    /**
-   * @param {Object} actorData The actor to prepare.
-   * @return {undefined}
-   */
+  /**
+ * @param {Object} actorData The actor to prepare.
+ * @return {undefined}
+ */
   _prepareItems(context) {
     const claims = [];
 
@@ -56,16 +55,6 @@ export class BitdFactionSheet extends BitdActorSheet
     }
 
     context.claims = claims;
-  }
-
-  /* -------------------------------------------- */
-
-  /** @override */
-  activateListeners(html) {
-    super.activateListeners(html);
-
-    // Everything below here is only needed if the sheet is editable
-    if (!this.isEditable) return;
   }
 
   /* -------------------------------------------- */

@@ -37,6 +37,21 @@
   align-items: center;
 }
 
+#hotbar .bitd-roller {
+  width: var(--hotbar-size);
+  height: var(--hotbar-size);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: var(--slot-color, var(--color-cool-5-90));
+  cursor: var(--cursor-pointer);
+  z-index: 9999;
+  pointer-events: auto;
+}
+#hotbar .bitd-roller-btn:hover {
+  background: var(--color-cool-3);
+  border-radius: 10px;
+}
+
 .bitd-rolls {
   height: auto;
 }
