@@ -72,6 +72,9 @@
 .bitd-rolls .inputs-block .roll-type label {
   margin-top: 5px;
 }
+.bitd-rolls .inputs-block .roll-as {
+  margin-bottom: 5px;
+}
 .bitd-rolls .inputs-block .roll-dice {
   gap: 0;
 }

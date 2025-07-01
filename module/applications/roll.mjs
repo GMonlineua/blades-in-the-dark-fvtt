@@ -14,11 +14,8 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
     id: "bitd-rolls",
     classes: ["bitd-rolls"],
     tag: "form",
-    window: {
-      width: 400,
-      height: "auto",
-      minimizable: false,
-      resizable: false,
+    position: {
+      width: 500
     },
     form: {
       handler: this.#onSubmit,
