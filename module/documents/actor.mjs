@@ -185,7 +185,9 @@ export default class BitdActor extends Actor {
       for (const itemData of claimsMap.map) {
         if (itemData.id) {
           const item = await fromUuid(itemData.uuid);
-          const newItem = await this.createEmbeddedDocuments("Item", [item], { skipClaimUpdate: true });
+          const newItem = await this.createEmbeddedDocuments("Item", [item], {
+            skipClaimUpdate: true,
+          });
           itemData.id = newItem[0]._id;
         }
       }
@@ -271,10 +273,15 @@ export default class BitdActor extends Actor {
             label: game.i18n.localize("BITD.Link.ImportActor.Submit"),
             icon: '<i class="fas fa-check"></i>',
             callback: async (html) => {
-              const selectedIds = html.find('input[name="actor"]:checked').map((_, el) => el.value).get();
-              const selectedActors = actors.filter(a => selectedIds.includes(a.id));
+              const selectedIds = html
+                .find('input[name="actor"]:checked')
+                .map((_, el) => el.value)
+                .get();
+              const selectedActors = actors.filter((a) =>
+                selectedIds.includes(a.id),
+              );
               for (const actorData of selectedActors) {
-                console.log(actorData)
+                console.log(actorData);
                 const actor = await BitdActor.create(actorData);
                 this.addLinkedActor(actor);
               }
@@ -286,7 +293,7 @@ export default class BitdActor extends Actor {
           },
         },
         default: "import",
-        close: () => { },
+        close: () => {},
       },
       {
         classes: ["dialog", "bitd-import-dialog"],

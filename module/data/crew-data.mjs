@@ -215,7 +215,7 @@ export default class CrewData extends foundry.abstract.TypeDataModel {
     // Count turfs
     this.turfs = 0;
     for (const claim of this.claimsMap.map) {
-      if (claim.type == "turf" && claim.active) this.turfs++
+      if (claim.type == "turf" && claim.active) this.turfs++;
     }
 
     // Count max reputation

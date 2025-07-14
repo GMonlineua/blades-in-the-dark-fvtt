@@ -248,7 +248,7 @@
 
 .grid-9col {
   display: grid;
-  grid-column: span 9/span 9;
+  grid-column: span 9 / span 9;
   grid-template-columns: repeat(9, minmax(0, 1fr));
   gap: 10px;
 }
@@ -383,14 +383,15 @@ select.clear-select {
   font-family: "Lora", serif;
 }
 
-.window-content input[type=number] {
+.window-content input[type="number"] {
   max-width: 35px;
 }
-.window-content input[type=text] {
+.window-content input[type="text"] {
   width: auto;
 }
 
-.bitd-header, .bitd-header > h3 {
+.bitd-header,
+.bitd-header > h3 {
   margin: 0;
   padding: 0 3px;
   background-color: #222;
@@ -401,7 +402,8 @@ select.clear-select {
   font-family: "Spectral SC", serif;
   border: none;
 }
-.bitd-header input, .bitd-header > h3 input {
+.bitd-header input,
+.bitd-header > h3 input {
   color: #eee;
 }
 
@@ -479,11 +481,13 @@ select.clear-select {
 .bitd .detail-window .detail-block:not(.active) {
   display: none;
 }
-.bitd .rollable:hover, .bitd .rollable:focus {
+.bitd .rollable:hover,
+.bitd .rollable:focus {
   color: black;
   cursor: pointer;
 }
-.bitd .bitd-header.rollable:hover, .bitd .bitd-header.rollable:focus {
+.bitd .bitd-header.rollable:hover,
+.bitd .bitd-header.rollable:focus {
   color: white;
 }
 .bitd .tier-styled {
@@ -766,7 +770,11 @@ select.clear-select {
 .bitd .contacts.items-block .item .item-description .item-name {
   font-weight: 700;
 }
-.bitd .contacts.items-block .item .item-description .item-name:not(:last-child)::after {
+.bitd
+  .contacts.items-block
+  .item
+  .item-description
+  .item-name:not(:last-child)::after {
   content: ",";
   font-weight: normal;
 }
@@ -807,13 +815,15 @@ select.clear-select {
   column-gap: 10px;
   grid-template-columns: 250px 1fr;
 }
-.bitd.actor .sheet-header .money input, .bitd.actor .sheet-header .storage input {
+.bitd.actor .sheet-header .money input,
+.bitd.actor .sheet-header .storage input {
   margin-left: 3px;
   padding: 0;
   min-width: 10px;
   max-width: 15px;
 }
-.bitd.actor .sheet-header .money .coins > input, .bitd.actor .sheet-header .storage .coins > input {
+.bitd.actor .sheet-header .money .coins > input,
+.bitd.actor .sheet-header .storage .coins > input {
   max-width: 10px;
 }
 .bitd.actor .sheet-body .items-block {
@@ -898,10 +908,20 @@ select.clear-select {
   margin: 0;
   padding: 0;
 }
-.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-name {
+.bitd.actor
+  .scoundrel
+  .sheet-header
+  .header-fields
+  .name-alias
+  .scoundrel-name {
   position: relative;
 }
-.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-name::after {
+.bitd.actor
+  .scoundrel
+  .sheet-header
+  .header-fields
+  .name-alias
+  .scoundrel-name::after {
   content: "";
   position: absolute;
   right: -5px;
@@ -909,43 +929,94 @@ select.clear-select {
   height: 40px;
   background-color: #222;
 }
-.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-alias {
+.bitd.actor
+  .scoundrel
+  .sheet-header
+  .header-fields
+  .name-alias
+  .scoundrel-alias {
   text-align: right;
   border-bottom: none;
 }
-.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-alias input {
+.bitd.actor
+  .scoundrel
+  .sheet-header
+  .header-fields
+  .name-alias
+  .scoundrel-alias
+  input {
   width: 200px;
 }
 .bitd.actor .scoundrel .sheet-header .header-fields .brief-info {
   gap: 0 10px;
 }
-.bitd.actor .scoundrel .sheet-header .header-fields .brief-info .prop-input.all-row {
+.bitd.actor
+  .scoundrel
+  .sheet-header
+  .header-fields
+  .brief-info
+  .prop-input.all-row {
   font-size: small;
 }
 .bitd.actor .scoundrel .sheet-header .header-fields .attribute-block {
   font-size: small;
 }
-.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute {
+.bitd.actor
+  .scoundrel
+  .sheet-header
+  .header-fields
+  .attribute-block
+  .attribute {
   position: relative;
 }
-.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .attribute-name {
+.bitd.actor
+  .scoundrel
+  .sheet-header
+  .header-fields
+  .attribute-block
+  .attribute
+  .attribute-name {
   margin-bottom: 3px;
   font-size: medium;
 }
-.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .exp-block {
+.bitd.actor
+  .scoundrel
+  .sheet-header
+  .header-fields
+  .attribute-block
+  .attribute
+  .exp-block {
   position: absolute;
   right: 0;
   top: 0;
 }
-.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .value-dot {
+.bitd.actor
+  .scoundrel
+  .sheet-header
+  .header-fields
+  .attribute-block
+  .attribute
+  .value-dot {
   position: relative;
   height: 12px;
   width: 12px;
 }
-.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .value-dot:first-child {
+.bitd.actor
+  .scoundrel
+  .sheet-header
+  .header-fields
+  .attribute-block
+  .attribute
+  .value-dot:first-child {
   margin-right: 3px;
 }
-.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .value-dot:first-child::after {
+.bitd.actor
+  .scoundrel
+  .sheet-header
+  .header-fields
+  .attribute-block
+  .attribute
+  .value-dot:first-child::after {
   content: "";
   position: absolute;
   top: -3px;
@@ -964,10 +1035,29 @@ select.clear-select {
 .bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma .stress {
   display: flex;
 }
-.bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma .stress .add-trauma {
+.bitd.actor
+  .scoundrel
+  .sheet-header
+  .header-fields
+  .stress-trauma
+  .stress
+  .add-trauma {
   margin: 0 3px;
 }
-.bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma .stress .stress-title:hover, .bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma .stress .stress-title:focus {
+.bitd.actor
+  .scoundrel
+  .sheet-header
+  .header-fields
+  .stress-trauma
+  .stress
+  .stress-title:hover,
+.bitd.actor
+  .scoundrel
+  .sheet-header
+  .header-fields
+  .stress-trauma
+  .stress
+  .stress-title:focus {
   color: white;
 }
 .bitd.actor .scoundrel .sheet-header .header-fields .value-step-block {
@@ -1009,7 +1099,13 @@ select.clear-select {
 .bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-name.full-with {
   grid-column: 2/4;
 }
-.bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-name.full-with input {
+.bitd.actor
+  .scoundrel
+  .sheet-header
+  .harm
+  .harm-table
+  .harm-name.full-with
+  input {
   width: 100%;
 }
 .bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-level,
@@ -1025,7 +1121,12 @@ select.clear-select {
 .bitd.actor .scoundrel .sheet-body .general-container .item-checkbox {
   display: inline-block;
 }
-.bitd.actor .scoundrel .sheet-body .general-container .item-checkbox .loadout-box {
+.bitd.actor
+  .scoundrel
+  .sheet-body
+  .general-container
+  .item-checkbox
+  .loadout-box {
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -1035,7 +1136,12 @@ select.clear-select {
   border-radius: 0;
   background: white;
 }
-.bitd.actor .scoundrel .sheet-body .general-container .item-checkbox .loadout-box:not(:last-child)::after {
+.bitd.actor
+  .scoundrel
+  .sheet-body
+  .general-container
+  .item-checkbox
+  .loadout-box:not(:last-child)::after {
   content: "";
   position: absolute;
   top: 5px;
@@ -1044,19 +1150,45 @@ select.clear-select {
   height: 1px;
   background-color: #222;
 }
-.bitd.actor .scoundrel .sheet-body .general-container .item.tool.active .loadout-box {
+.bitd.actor
+  .scoundrel
+  .sheet-body
+  .general-container
+  .item.tool.active
+  .loadout-box {
   background: black;
 }
-.bitd.actor .scoundrel .sheet-body .general-container .item.tool.broken .item-name {
+.bitd.actor
+  .scoundrel
+  .sheet-body
+  .general-container
+  .item.tool.broken
+  .item-name {
   text-decoration: line-through;
 }
-.bitd.actor .scoundrel .sheet-body .general-container .item.tool.light .item-name {
+.bitd.actor
+  .scoundrel
+  .sheet-body
+  .general-container
+  .item.tool.light
+  .item-name {
   font-style: italic;
 }
-.bitd.actor .scoundrel .sheet-body .general-container .abilities-cohorts .abilities {
+.bitd.actor
+  .scoundrel
+  .sheet-body
+  .general-container
+  .abilities-cohorts
+  .abilities {
   position: relative;
 }
-.bitd.actor .scoundrel .sheet-body .general-container .abilities-cohorts .abilities .exp-block {
+.bitd.actor
+  .scoundrel
+  .sheet-body
+  .general-container
+  .abilities-cohorts
+  .abilities
+  .exp-block {
   position: absolute;
   right: 5px;
 }
@@ -1074,17 +1206,43 @@ select.clear-select {
   font-family: "Spectral SC", serif;
   font-weight: bold;
 }
-.bitd.actor .scoundrel .sheet-body .notes-container .rules .teamwork .grid-2col {
+.bitd.actor
+  .scoundrel
+  .sheet-body
+  .notes-container
+  .rules
+  .teamwork
+  .grid-2col {
   row-gap: 0;
 }
-.bitd.actor .scoundrel .sheet-body .notes-container .description .brief-info .prop {
+.bitd.actor
+  .scoundrel
+  .sheet-body
+  .notes-container
+  .description
+  .brief-info
+  .prop {
   margin-top: 5px;
 }
-.bitd.actor .scoundrel .sheet-body .notes-container .description .brief-info .prop .prop-label {
+.bitd.actor
+  .scoundrel
+  .sheet-body
+  .notes-container
+  .description
+  .brief-info
+  .prop
+  .prop-label {
   color: black;
   font-family: "Spectral SC", serif;
 }
-.bitd.actor .scoundrel .sheet-body .notes-container .description .brief-info .prop .prop-input {
+.bitd.actor
+  .scoundrel
+  .sheet-body
+  .notes-container
+  .description
+  .brief-info
+  .prop
+  .prop-input {
   border-bottom: 1px solid #b5b3a4;
 }
 .bitd.actor .scoundrel .sheet-body .notes-container .description .bitd-header {
@@ -1109,7 +1267,12 @@ select.clear-select {
 .bitd.actor .crew .sheet-header .type-container .crew-type {
   font-family: "Spectral SC", serif;
 }
-.bitd.actor .crew .sheet-header .type-container .crew-type .playbook-description {
+.bitd.actor
+  .crew
+  .sheet-header
+  .type-container
+  .crew-type
+  .playbook-description {
   margin: 0;
   font-size: medium;
 }
@@ -1175,7 +1338,13 @@ select.clear-select {
   display: flex;
   justify-content: space-between;
 }
-.bitd.actor .crew .sheet-header .header-fields .tier-block .tier .value-step-block {
+.bitd.actor
+  .crew
+  .sheet-header
+  .header-fields
+  .tier-block
+  .tier
+  .value-step-block {
   padding-top: 2px;
   padding-right: 5px;
   margin-left: 5px;
@@ -1302,7 +1471,13 @@ select.clear-select {
   position: absolute;
   right: 0;
 }
-.bitd.actor .faction .sheet-body .general .prop-field .show-for-limited .show-checkbox {
+.bitd.actor
+  .faction
+  .sheet-body
+  .general
+  .prop-field
+  .show-for-limited
+  .show-checkbox {
   position: relative;
   top: 2px;
   margin: 0;
@@ -1473,14 +1648,17 @@ select.clear-select {
 .bitd.item .sheet-body .editor-block {
   flex: auto;
 }
-.bitd.item .playbook .summary, .bitd.item .crewType .summary {
+.bitd.item .playbook .summary,
+.bitd.item .crewType .summary {
   margin-top: 10px;
   margin-bottom: 0;
 }
-.bitd.item .playbook .linked-items, .bitd.item .crewType .linked-items {
+.bitd.item .playbook .linked-items,
+.bitd.item .crewType .linked-items {
   margin-bottom: 10px;
 }
-.bitd.item .playbook .linked-items .link-block, .bitd.item .crewType .linked-items .link-block {
+.bitd.item .playbook .linked-items .link-block,
+.bitd.item .crewType .linked-items .link-block {
   line-height: 1.5;
 }
 .bitd.item .playbook .attribute-block {

@@ -67,7 +67,8 @@ export class BitdActorSheet extends ActorSheet {
     });
 
     if (!this.actor.testUserPermission(game.user, "OBSERVER")) return buttons;
-    if (!CONFIG.BITD.settingsSupported.includes(this.actor.type)) return buttons;
+    if (!CONFIG.BITD.settingsSupported.includes(this.actor.type))
+      return buttons;
 
     // Add a custom button for settings
     buttons.unshift({
@@ -76,7 +77,7 @@ export class BitdActorSheet extends ActorSheet {
       icon: "fa-solid fa-screwdriver-wrench",
       onclick: () => {
         const settingsForm = new BITDChangeSettings(this.actor, {
-          system: this.actor.system
+          system: this.actor.system,
         });
         return settingsForm.render(true);
       },
@@ -90,11 +91,11 @@ export class BitdActorSheet extends ActorSheet {
     super.activateListeners(html);
 
     // Count dot
-    html.find(".value-step-block").each(function() {
+    html.find(".value-step-block").each(function () {
       const value = Number(this.dataset.value);
       $(this)
         .find(".value-step")
-        .each(function(i) {
+        .each(function (i) {
           if (i + 1 <= value) {
             $(this).addClass("active");
           }
@@ -102,25 +103,25 @@ export class BitdActorSheet extends ActorSheet {
     });
 
     // Calculate relationship
-    html.find(".set-relationship").each(function() {
+    html.find(".set-relationship").each(function () {
       const value = Number(this.dataset.value);
       const classes = CONFIG.BITD.relationshipClasses;
       this.classList.add(classes[value]);
     });
 
     // Set checked for external links
-    html.find("input.show-link").each(function() {
+    html.find("input.show-link").each(function () {
       const value = this.dataset.value;
       if (value === "true") this.checked = true;
     });
 
     // Calculate text area height
-    html.find("textarea.auto-grow").each(function() {
+    html.find("textarea.auto-grow").each(function () {
       this.style.height = "auto";
       this.style.height = this.scrollHeight + 5 + "px";
     });
 
-    html.find("textarea.auto-grow").on("input", function() {
+    html.find("textarea.auto-grow").on("input", function () {
       this.style.height = "auto";
       this.style.height = this.scrollHeight + 5 + "px";
     });
@@ -276,7 +277,7 @@ export class BitdActorSheet extends ActorSheet {
     const rollApp = new BitdRollerApp({
       type: dataset.rollType,
       actor: this.actor,
-      note: dataset.rollNote
+      note: dataset.rollNote,
     });
 
     rollApp.render(true);
@@ -305,7 +306,7 @@ export class BitdActorSheet extends ActorSheet {
 
     if (element.classList.contains("active") && nextElement) {
       steps.removeClass("active");
-      steps.each(function(i) {
+      steps.each(function (i) {
         if (i < index) {
           $(this).addClass("active");
         }
@@ -313,7 +314,7 @@ export class BitdActorSheet extends ActorSheet {
       value = index;
     } else {
       steps.removeClass("active");
-      steps.each(function(i) {
+      steps.each(function (i) {
         if (i <= index) {
           $(this).addClass("active");
         }

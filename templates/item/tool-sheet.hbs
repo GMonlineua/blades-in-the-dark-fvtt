@@ -1,32 +1,71 @@
-<form class="{{cssClass}} {{item.type}}" autocomplete="off">
-  <header class="items-header">
-    <img class="item-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
-    <div class="header-fields">
-      <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'BITD.Item.Name'}}"/></h1>
-      <div class="brief-info">
-        <select class="prop clear-select" name="system.type">
+<form class='{{cssClass}} {{item.type}}' autocomplete='off'>
+  <header class='items-header'>
+    <img
+      class='item-img'
+      src='{{item.img}}'
+      data-edit='img'
+      title='{{item.name}}'
+    />
+    <div class='header-fields'>
+      <h1 class='item-name'><input
+          name='name'
+          type='text'
+          value='{{item.name}}'
+          placeholder='{{localize "BITD.Item.Name"}}'
+        /></h1>
+      <div class='brief-info'>
+        <select class='prop clear-select' name='system.type'>
           {{selectOptions config.toolType selected=system.type localize=true}}
         </select>
-        <div class="prop">
-          <label class="prop-label" for="system.loadout">{{localize 'BITD.Tool.Loadout'}}:</label>
-          <input class="prop-input clear-input" type="number" name="system.loadout" value="{{system.loadout}}"></input>
+        <div class='prop'>
+          <label class='prop-label' for='system.loadout'>{{localize
+              'BITD.Tool.Loadout'
+            }}:</label>
+          <input
+            class='prop-input clear-input'
+            type='number'
+            name='system.loadout'
+            value='{{system.loadout}}'
+          />
         </div>
-        <div class="prop">
-          <label class="prop-label" for="system.equipped">{{localize 'BITD.Tool.Equipped'}}</label>
-          <input class="prop-input" type="checkbox" name="system.equipped" {{checked system.equipped}}></input>
+        <div class='prop'>
+          <label class='prop-label' for='system.equipped'>{{localize
+              'BITD.Tool.Equipped'
+            }}</label>
+          <input
+            class='prop-input'
+            type='checkbox'
+            name='system.equipped'
+            {{checked system.equipped}}
+          />
         </div>
-        <div class="prop">
-          <label class="prop-label" for="system.broken">{{localize 'BITD.Tool.Broken'}}</label>
-          <input class="prop-input" type="checkbox" name="system.broken" {{checked system.broken}}></input>
+        <div class='prop'>
+          <label class='prop-label' for='system.broken'>{{localize
+              'BITD.Tool.Broken'
+            }}</label>
+          <input
+            class='prop-input'
+            type='checkbox'
+            name='system.broken'
+            {{checked system.broken}}
+          />
         </div>
       </div>
     </div>
   </header>
 
-  {{!-- Sheet Body --}}
-  <section class="sheet-body">
-    <hr>
-    {{editor enrichedDescription target="system.description" rollData=rollData button=true engine="prosemirror" editable=editable collaborate=true}}
+  {{! Sheet Body }}
+  <section class='sheet-body'>
+    <hr />
+    {{editor
+      enrichedDescription
+      target='system.description'
+      rollData=rollData
+      button=true
+      engine='prosemirror'
+      editable=editable
+      collaborate=true
+    }}
   </section>
 
 </form>

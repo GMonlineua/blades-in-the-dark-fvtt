@@ -1,5 +1,4 @@
 .scoundrel {
-
   .sheet-header {
     flex: 0 auto;
     overflow: hidden;
@@ -33,7 +32,6 @@
         border-color: black;
         background-color: black;
       }
-
 
       .load {
         select {
@@ -149,7 +147,6 @@
           }
 
           .stress-title {
-
             &:hover,
             &:focus {
               color: white;

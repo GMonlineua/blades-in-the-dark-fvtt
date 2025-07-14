@@ -5,18 +5,19 @@ import { BitdActorSheet } from "./actor-sheet.mjs";
  * @extends {BitdActorSheet}
  */
 export class BitdFactionSheet extends BitdActorSheet {
-
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["bitd", "sheet", "actor", "faction"],
       width: 550,
       height: 650,
-      tabs: [{
-        navSelector: ".sheet-tabs",
-        contentSelector: ".sheet-body",
-        initial: "general"
-      }]
+      tabs: [
+        {
+          navSelector: ".sheet-tabs",
+          contentSelector: ".sheet-body",
+          initial: "general",
+        },
+      ],
     });
   }
 
@@ -28,10 +29,13 @@ export class BitdFactionSheet extends BitdActorSheet {
     context.flags = actorData.flags;
 
     // Encrich editor content
-    context.enrichedSituation = await TextEditor.enrichHTML(this.object.system.situation, {
-      async: true,
-      secrets: this.actor.isOwner
-    })
+    context.enrichedSituation = await TextEditor.enrichHTML(
+      this.object.system.situation,
+      {
+        async: true,
+        secrets: this.actor.isOwner,
+      },
+    );
 
     // Prepare faction data and items.
     this._prepareItems(context);
@@ -40,16 +44,16 @@ export class BitdFactionSheet extends BitdActorSheet {
   }
 
   /**
- * @param {Object} actorData The actor to prepare.
- * @return {undefined}
- */
+   * @param {Object} actorData The actor to prepare.
+   * @return {undefined}
+   */
   _prepareItems(context) {
     const claims = [];
 
     for (const i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
 
-      if (i.type === 'claim') {
+      if (i.type === "claim") {
         claims.push(i);
       }
     }

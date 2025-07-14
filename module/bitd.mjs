@@ -1,4 +1,4 @@
-import * as models from './data/_module.mjs';
+import * as models from "./data/_module.mjs";
 import { BitdActor, BitdItem } from "./documents/_module.mjs";
 
 // Import Actor Sheet
@@ -15,16 +15,18 @@ import { BitdPlaybookSheet } from "./sheets/playbook-sheet.mjs";
 
 // Import modules
 import BitdRollerApp from "./applications/roll.mjs";
-import { preprocessChatMessage, renderChatMessage } from "./applications/chat-portraits.mjs";
+import {
+  preprocessChatMessage,
+  renderChatMessage,
+} from "./applications/chat-portraits.mjs";
 import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
 import { registerHandlebarsHelpers } from "./helpers/handlebars-helpers.mjs";
-import { BITD } from './helpers/config.mjs';
+import { BITD } from "./helpers/config.mjs";
 
-Hooks.once('init', async function() {
-
+Hooks.once("init", async function () {
   game.bitd = {
     BitdActor,
-    BitdItem
+    BitdItem,
   };
 
   CONFIG.BITD = BITD;
@@ -32,49 +34,75 @@ Hooks.once('init', async function() {
   // Define custom Entity classes and Data Models
   CONFIG.Actor.documentClass = BitdActor;
   CONFIG.Actor.dataModels = {
-    'scoundrel': models.ScoundrelData,
-    'crew': models.CrewData,
-    'faction': models.FactionData,
-    'npc': models.NpcData,
-    'clock': models.ClockData
+    scoundrel: models.ScoundrelData,
+    crew: models.CrewData,
+    faction: models.FactionData,
+    npc: models.NpcData,
+    clock: models.ClockData,
   };
 
   CONFIG.Item.documentClass = BitdItem;
   CONFIG.Item.dataModels = {
-    'playbook': models.PlaybookData,
-    'crewType': models.CrewTypeData,
-    'abilityScoundrel': models.AbilityScoundrelData,
-    'abilityCrew': models.AbilityCrewData,
-    'claim': models.ClaimData,
-    'prisonClaim': models.PrisonClaimData,
-    'cohort': models.CohortData,
-    'tool': models.ToolData,
-    'upgrade': models.UpgradeData
+    playbook: models.PlaybookData,
+    crewType: models.CrewTypeData,
+    abilityScoundrel: models.AbilityScoundrelData,
+    abilityCrew: models.AbilityCrewData,
+    claim: models.ClaimData,
+    prisonClaim: models.PrisonClaimData,
+    cohort: models.CohortData,
+    tool: models.ToolData,
+    upgrade: models.UpgradeData,
   };
-
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("bitd", BitdActorSheet, { makeDefault: true });
-  Actors.registerSheet("bitd", BitdScoundrelSheet, { types: ["scoundrel"], makeDefault: true });
-  Actors.registerSheet("bitd", BitdCrewSheet, { types: ["crew"], makeDefault: true });
-  Actors.registerSheet("bitd", BitdFactionSheet, { types: ["faction"], makeDefault: true });
-  Actors.registerSheet("bitd", BitdClockSheet, { types: ["clock"], makeDefault: true });
+  Actors.registerSheet("bitd", BitdScoundrelSheet, {
+    types: ["scoundrel"],
+    makeDefault: true,
+  });
+  Actors.registerSheet("bitd", BitdCrewSheet, {
+    types: ["crew"],
+    makeDefault: true,
+  });
+  Actors.registerSheet("bitd", BitdFactionSheet, {
+    types: ["faction"],
+    makeDefault: true,
+  });
+  Actors.registerSheet("bitd", BitdClockSheet, {
+    types: ["clock"],
+    makeDefault: true,
+  });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("bitd", BitdItemSheet, { makeDefault: true });
-  Items.registerSheet("bitd", BitdCrewTypeSheet, { types: ["crewType"], makeDefault: true });
-  Items.registerSheet("bitd", BitdPlaybookSheet, { types: ["playbook"], makeDefault: true });
+  Items.registerSheet("bitd", BitdCrewTypeSheet, {
+    types: ["crewType"],
+    makeDefault: true,
+  });
+  Items.registerSheet("bitd", BitdPlaybookSheet, {
+    types: ["playbook"],
+    makeDefault: true,
+  });
 
   // Custom buners for compendiums
-  CONFIG.Actor.compendiumBanner = "systems/bitd/ui/compendium-banners/actor-banner.jpg";
-  CONFIG.Adventure.compendiumBanner = "systems/bitd/ui/compendium-banners/adventure-banner.jpg";
-  CONFIG.Card.compendiumBanner = "systems/bitd/ui/compendium-banners/card-banner.jpg";
-  CONFIG.JournalEntry.compendiumBanner = "systems/bitd/ui/compendium-banners/journalentry-banner.jpg";
-  CONFIG.Item.compendiumBanner = "systems/bitd/ui/compendium-banners/item-banner.jpg";
-  CONFIG.Macro.compendiumBanner = "systems/bitd/ui/compendium-banners/macro-banner.jpg";
-  CONFIG.Playlist.compendiumBanner = "systems/bitd/ui/compendium-banners/playlist-banner.jpg";
-  CONFIG.RollTable.compendiumBanner = "systems/bitd/ui/compendium-banners/rolltable-banner.jpg";
-  CONFIG.Scene.compendiumBanner = "systems/bitd/ui/compendium-banners/scene-banner.jpg";
+  CONFIG.Actor.compendiumBanner =
+    "systems/bitd/ui/compendium-banners/actor-banner.jpg";
+  CONFIG.Adventure.compendiumBanner =
+    "systems/bitd/ui/compendium-banners/adventure-banner.jpg";
+  CONFIG.Card.compendiumBanner =
+    "systems/bitd/ui/compendium-banners/card-banner.jpg";
+  CONFIG.JournalEntry.compendiumBanner =
+    "systems/bitd/ui/compendium-banners/journalentry-banner.jpg";
+  CONFIG.Item.compendiumBanner =
+    "systems/bitd/ui/compendium-banners/item-banner.jpg";
+  CONFIG.Macro.compendiumBanner =
+    "systems/bitd/ui/compendium-banners/macro-banner.jpg";
+  CONFIG.Playlist.compendiumBanner =
+    "systems/bitd/ui/compendium-banners/playlist-banner.jpg";
+  CONFIG.RollTable.compendiumBanner =
+    "systems/bitd/ui/compendium-banners/rolltable-banner.jpg";
+  CONFIG.Scene.compendiumBanner =
+    "systems/bitd/ui/compendium-banners/scene-banner.jpg";
 
   registerHandlebarsHelpers();
 
@@ -108,6 +136,3 @@ Hooks.on("renderHotbar", (app, html, data) => {
   // Append the button
   html.prepend(button);
 });
-
-
-

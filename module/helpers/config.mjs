@@ -117,7 +117,7 @@ export const BITD = {
     fringe: "BITD.Faction.Types.Fringe",
     institution: "BITD.Faction.Types.Institution",
     laborTrade: "BITD.Faction.Types.LaborTrade",
-    other: "BITD.Faction.Types.Other"
+    other: "BITD.Faction.Types.Other",
   },
   statusTypes: {
     allies: "BITD.Faction.Status.Allies",
@@ -238,5 +238,5 @@ export const BITD = {
       },
     },
   },
-  settingsSupported: ["scoundrel", "crew"]
+  settingsSupported: ["scoundrel", "crew"],
 };

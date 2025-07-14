@@ -1,6 +1,8 @@
 // Create image or video element for portraits
 function createPortraitElement(src, isVideo) {
-  const element = isVideo ? document.createElement("video") : document.createElement("img");
+  const element = isVideo
+    ? document.createElement("video")
+    : document.createElement("img");
   element.src = src;
   element.width = 36;
   element.height = 36;
@@ -27,8 +29,8 @@ export function preprocessChatMessage(messageData, options, userId, diff) {
     portraitSource = game.user.avatar;
   }
 
-  messageData.updateSource({ flags: { "portrait": { src: portraitSource } } });
-};
+  messageData.updateSource({ flags: { portrait: { src: portraitSource } } });
+}
 
 // Render chat message
 export function renderChatMessage(message, html, data) {
@@ -48,4 +50,4 @@ export function renderChatMessage(message, html, data) {
   if (senderElement) {
     senderElement.style.alignSelf = "center";
   }
-};
+}

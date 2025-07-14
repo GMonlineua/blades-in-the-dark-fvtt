@@ -9,7 +9,7 @@ export default class CrewTypeData extends foundry.abstract.TypeDataModel {
       uuid: "",
       name: "",
       type: "turf",
-      active: false
+      active: false,
     }));
     defaultClaims[7].type = "home";
 
@@ -100,7 +100,7 @@ export default class CrewTypeData extends foundry.abstract.TypeDataModel {
    */
   static migrateData(source) {
     if (source.claims) {
-      const map = this.migrateMap(source.claims)
+      const map = this.migrateMap(source.claims);
 
       source.claimsMap = {
         rows: 3,
@@ -122,7 +122,7 @@ export default class CrewTypeData extends foundry.abstract.TypeDataModel {
           uuid: "",
           name: "",
           type: "home",
-          active: false
+          active: false,
         });
       } else if (claim.id) {
         map.push({

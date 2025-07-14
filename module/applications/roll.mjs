@@ -1,9 +1,11 @@
-const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api
+const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 
 /**
  * A Foundry VTT ApplicationV2 for handling custom dice rolls.
  */
-export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2) {
+export default class BitdRolls extends HandlebarsApplicationMixin(
+  ApplicationV2,
+) {
   /**
    * Default ApplicationV2 options.
    * @returns {object} Default options for this application.
@@ -15,19 +17,19 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
     classes: ["bitd-rolls"],
     tag: "form",
     position: {
-      width: 500
+      width: 500,
     },
     form: {
       handler: this.#onSubmit,
       closeOnSubmit: true,
-    }
+    },
   };
 
   static PARTS = {
     form: {
-      template: "systems/bitd/templates/apps/rollDialog.hbs"
-    }
-  }
+      template: "systems/bitd/templates/apps/rollDialog.hbs",
+    },
+  };
 
   constructor(options = {}) {
     super(options);
@@ -56,7 +58,8 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
     const custom = this.options;
     if (custom.type) defaults.type = custom.type;
     if (custom.type == "action" && custom.note) defaults.action = custom.note;
-    if (custom.type == "resistance" && custom.note) defaults.attribute = custom.note;
+    if (custom.type == "resistance" && custom.note)
+      defaults.attribute = custom.note;
     if (!isNaN(custom.note)) defaults.dice = parseInt(custom.note);
 
     context.actor = this.actor;
@@ -78,20 +81,19 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
 
   _onRender(context, options) {
     this._handleOptional("initial");
-    const optionalDepends = this.element.querySelectorAll('.optional-listen');
+    const optionalDepends = this.element.querySelectorAll(".optional-listen");
     for (const select of optionalDepends) {
       select.addEventListener("change", this._handleOptional.bind(this));
     }
 
     if (this.actor) {
       this.getDiceNumber("initial");
-      const diceDepends = this.element.querySelectorAll('.dice-listen');
+      const diceDepends = this.element.querySelectorAll(".dice-listen");
       for (const select of diceDepends) {
         select.addEventListener("change", this.getDiceNumber.bind(this));
       }
     }
   }
-
 
   /* -------------------------------------------- */
   /* Event Handlers                              */
@@ -102,7 +104,7 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
     const rollAs = html.querySelector("#roll-as").value;
 
     const optionalBlocks = html.querySelectorAll(".optional");
-    optionalBlocks.forEach(el => el.classList.remove("active"));
+    optionalBlocks.forEach((el) => el.classList.remove("active"));
 
     for (const block of optionalBlocks) {
       const supportedType = block.dataset.connected.split(",");
@@ -120,7 +122,8 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
     const data = this.toIntData(Object.fromEntries(formData.entries()));
 
     let diceNumber;
-    const targetType = data.rollType == "information" ? data.rollAs : data.rollType;
+    const targetType =
+      data.rollType == "information" ? data.rollAs : data.rollType;
     switch (targetType) {
       case "action":
         const action = data.action;
@@ -128,15 +131,12 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
         break;
       case "resistance":
         const attribute = data.attribute;
-        if (actor.attributes)
-          diceNumber = actor.attributes[attribute].value;
+        if (actor.attributes) diceNumber = actor.attributes[attribute].value;
         break;
       case "vice":
         if (actor.attributes) {
           diceNumber = actor.attributes.insight.value;
-          for (let [attrKey, attribute] of Object.entries(
-            actor.attributes,
-          )) {
+          for (let [attrKey, attribute] of Object.entries(actor.attributes)) {
             if (attribute.value < diceNumber) {
               diceNumber = attribute.value;
             }
@@ -148,7 +148,6 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
     if (diceNumber || diceNumber == 0)
       html.querySelector("#dice-number").value = diceNumber;
   }
-
 
   /* -------------------------------------------- */
   /* Helpers                              */
@@ -167,17 +166,16 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
     return key.charAt(0).toUpperCase() + key.slice(1);
   }
 
-
   /* -------------------------------------------- */
   /* Event Handlers                              */
   /* -------------------------------------------- */
   /**
-  * Handle form submission (if not using specific action buttons or if a submit button is used without data-action).
-  * This is defined in DEFAULT_OPTIONS.form.handler.
-  * @param {SubmitEvent} event - The form submission event.
-  * @param {HTMLFormElement} form - The form element.
-  * @private
-  */
+   * Handle form submission (if not using specific action buttons or if a submit button is used without data-action).
+   * This is defined in DEFAULT_OPTIONS.form.handler.
+   * @param {SubmitEvent} event - The form submission event.
+   * @param {HTMLFormElement} form - The form element.
+   * @private
+   */
   static async #onSubmit(event, form) {
     const formData = new FormData(form);
     const data = this.toIntData(Object.fromEntries(formData.entries()));
@@ -194,16 +192,13 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
     };
 
     const rollResult = await this.roll(data);
-    rollResult.name = game.i18n.localize(
-      this.rollConfig.type[data.rollType],
-    );
+    rollResult.name = game.i18n.localize(this.rollConfig.type[data.rollType]);
 
     const rollFunction = functions[data.rollType];
     rollFunction(rollResult, data);
     await this.renderRoll(rollResult);
     this._giveExp(rollResult.data);
   }
-
 
   /* -------------------------------------------- */
   /* Roll Functions                              */
@@ -214,7 +209,8 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
 
     if (formData.assistance) diceToRoll++;
     if (formData.pushDice || formData.devisBargain) diceToRoll++;
-    if (formData.pushDice && formData.devisBargain) ui.notifications.info(game.i18n.format("BITD.Roll.Bonus.PushAndDevils"))
+    if (formData.pushDice && formData.devisBargain)
+      ui.notifications.info(game.i18n.format("BITD.Roll.Bonus.PushAndDevils"));
 
     let formula = "2d6kl";
     if (diceToRoll > 0) {
@@ -273,9 +269,12 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
 
     // Push stres and description
     data.push.stress = data.push.count * 2;
-    data.push.description = game.i18n.format("BITD.Roll.Bonus.Description.Push", {
-      stress: data.push.stress,
-    });
+    data.push.description = game.i18n.format(
+      "BITD.Roll.Bonus.Description.Push",
+      {
+        stress: data.push.stress,
+      },
+    );
 
     // Add classes to dices and cout sixes for crit
     let numSixes = 0;
@@ -353,9 +352,9 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
 
     rollData.description = game.i18n.localize(
       "BITD.Roll.Action." +
-      rollData.position.localizeKey +
-      "." +
-      rollData.countAs.localizeKey,
+        rollData.position.localizeKey +
+        "." +
+        rollData.countAs.localizeKey,
     );
 
     if (rollData.countAs.key != "fail") {
@@ -373,12 +372,15 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
     rollData.countAs.show = false;
     const attributeKey =
       formData.attribute.charAt(0).toUpperCase() + formData.attribute.slice(1);
-    rollResult.name += ": " + game.i18n.localize("BITD.Attributes." + attributeKey);
+    rollResult.name +=
+      ": " + game.i18n.localize("BITD.Attributes." + attributeKey);
     rollData.description = game.i18n.localize("BITD.Roll.Resistance.Result");
 
     let addStress = 6 - rollResult.total;
     if (rollData.countAs.key == "critical") {
-      rollData.description += game.i18n.localize("BITD.Roll.Resistance.Critical");
+      rollData.description += game.i18n.localize(
+        "BITD.Roll.Resistance.Critical",
+      );
       addStress = -1;
     } else {
       rollData.description += game.i18n.format("BITD.Roll.Resistance.Regular", {
@@ -399,7 +401,8 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
       "BITD.Roll.Fortune." + rollData.countAs.localizeKey,
     );
 
-    const rollEffect = CONFIG.BITD.rolls.fortuneRollResult[rollData.countAs.key];
+    const rollEffect =
+      CONFIG.BITD.rolls.fortuneRollResult[rollData.countAs.key];
     rollData.effect.description = game.i18n.localize(
       "BITD.Roll.Effect.Description." + rollEffect,
     );
@@ -426,9 +429,9 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
 
       rollData.description = game.i18n.localize(
         "BITD.Roll.Action." +
-        rollData.position.localizeKey +
-        "." +
-        rollData.countAs.localizeKey,
+          rollData.position.localizeKey +
+          "." +
+          rollData.countAs.localizeKey,
       );
 
       switch (rollData.countAs.key) {
@@ -525,12 +528,13 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
   }
 
   async _sufferStress(rollResult) {
-    rollResult.data.stress = rollResult.data.push.stress + rollResult.data.resistance.stress;
+    rollResult.data.stress =
+      rollResult.data.push.stress + rollResult.data.resistance.stress;
     if (!this.actor) return;
     if (!this.actor.system.stress) return;
     const stress = this.actor.system.stress.value + rollResult.data.stress;
 
-    console.log(stress, this.actor.system.stress)
+    console.log(stress, this.actor.system.stress);
     if (stress < this.actor.system.stress.max) {
       await this.actor.update({ "system.stress.value": stress });
     } else {
@@ -547,7 +551,8 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
     const speaker = ChatMessage.getSpeaker({ actor: this.actor });
     let supported;
     if (rollData.rollAs) {
-      supported = rollData.type == "information" || rollData.rollAs.key == "action";
+      supported =
+        rollData.type == "information" || rollData.rollAs.key == "action";
     } else {
       supported = rollData.type == "action";
     }

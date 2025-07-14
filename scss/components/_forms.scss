@@ -36,7 +36,6 @@
 }
 
 .rollable {
-
   &:hover,
   &:focus {
     color: black;
@@ -45,7 +44,6 @@
 }
 
 .bitd-header.rollable {
-
   &:hover,
   &:focus {
     color: white;
@@ -257,7 +255,6 @@ textarea {
   }
 
   .claim:first-child {
-
     .move-left,
     .move-up {
       display: none;
@@ -265,7 +262,6 @@ textarea {
   }
 
   .claim:last-child {
-
     .move-right,
     .move-down {
       display: none;

@@ -34,10 +34,22 @@ export default class ScoundrelData extends foundry.abstract.TypeDataModel {
       load: new fields.SchemaField({
         status: new fields.StringField({ initial: "normal" }),
         config: new fields.SchemaField({
-          light: new fields.NumberField({ requiredPositiveInteger, initial: 3 }),
-          normal: new fields.NumberField({ requiredPositiveInteger, initial: 5 }),
-          heavy: new fields.NumberField({ requiredPositiveInteger, initial: 6 }),
-          encumbered: new fields.NumberField({ requiredPositiveInteger, initial: 9 }),
+          light: new fields.NumberField({
+            requiredPositiveInteger,
+            initial: 3,
+          }),
+          normal: new fields.NumberField({
+            requiredPositiveInteger,
+            initial: 5,
+          }),
+          heavy: new fields.NumberField({
+            requiredPositiveInteger,
+            initial: 6,
+          }),
+          encumbered: new fields.NumberField({
+            requiredPositiveInteger,
+            initial: 9,
+          }),
         }),
       }),
 
@@ -259,7 +271,7 @@ export default class ScoundrelData extends foundry.abstract.TypeDataModel {
     load.max = load.config[load.status];
 
     // Count lifestyle
-    const stash = this.stash
+    const stash = this.stash;
     stash.lifestyle = Math.floor(stash.value / 10);
   }
 }
