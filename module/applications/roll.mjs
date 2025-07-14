@@ -93,6 +93,9 @@ export default class BitdRolls extends HandlebarsApplicationMixin(
         select.addEventListener("change", this.getDiceNumber.bind(this));
       }
     }
+
+    this._summary();
+    this.element.addEventListener("change", this._summary.bind(this));
   }
 
   /* -------------------------------------------- */
@@ -145,13 +148,65 @@ export default class BitdRolls extends HandlebarsApplicationMixin(
         break;
     }
 
-    if (diceNumber || diceNumber == 0)
-      html.querySelector("#dice-number").value = diceNumber;
+    if (diceNumber || diceNumber == 0) {
+      const diceInput = html.querySelector("#dice-number");
+      diceInput.value = diceNumber;
+      diceInput.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+  }
+
+  _summary(e) {
+    const html = this.element;
+    const formData = new FormData(html);
+    const data = this.toIntData(Object.fromEntries(formData.entries()));
+    data.harm = html.querySelector("#harm").value;
+
+    const diceToRoll = this.countDice(data);
+    html.querySelector("#summary-dice").textContent = diceToRoll;
+
+    const { localize: effectLocalize } = this.effectCalculation(data);
+    html.querySelector("#summary-effect").textContent = effectLocalize;
   }
 
   /* -------------------------------------------- */
   /* Helpers                              */
   /* -------------------------------------------- */
+  countDice(data) {
+    let result = (data.diceNumber || 0) + (data.modifier || 0);
+    if (data.assistance) result++;
+    if (data.pushDice || data.devisBargain) result++;
+    if (data.pushDice && data.devisBargain)
+      ui.notifications.info(game.i18n.format("BITD.Roll.Bonus.PushAndDevils"));
+
+    if (!data.harm) return result;
+
+    // Count harm
+    if (data.harm.includes("moderate1")) result--;
+    if (data.harm.includes("moderate2")) result--;
+
+    return Math.max(0, result);
+  }
+
+  effectCalculation(data) {
+    const effectSequence = this.rollConfig.effectSequence;
+    let effectIndex = effectSequence.indexOf(data.effect);
+    if (data.pushEffect) effectIndex++;
+
+    // Count harm
+    if (data.harm) {
+      if (data.harm.includes("lesser1")) effectIndex--;
+      if (data.harm.includes("lesser2")) effectIndex--;
+    }
+
+    console.log(effectIndex);
+    const effect = effectSequence[Math.max(0, effectIndex)];
+    console.log(effect);
+    const localizeKey = this.getLokalizeKey(effect);
+    const localize = game.i18n.localize("BITD.Roll.Effect." + localizeKey);
+
+    return { effect, localizeKey, localize };
+  }
+
   toIntData(data) {
     for (const prop in data) {
       if (data.hasOwnProperty(prop) && !isNaN(data[prop])) {
@@ -167,7 +222,7 @@ export default class BitdRolls extends HandlebarsApplicationMixin(
   }
 
   /* -------------------------------------------- */
-  /* Event Handlers                              */
+  /* Submit Handler                            */
   /* -------------------------------------------- */
   /**
    * Handle form submission (if not using specific action buttons or if a submit button is used without data-action).
@@ -205,17 +260,8 @@ export default class BitdRolls extends HandlebarsApplicationMixin(
   /* -------------------------------------------- */
   // Handling dice roll
   async roll(formData) {
-    let diceToRoll = formData.diceNumber + formData.modifier;
-
-    if (formData.assistance) diceToRoll++;
-    if (formData.pushDice || formData.devisBargain) diceToRoll++;
-    if (formData.pushDice && formData.devisBargain)
-      ui.notifications.info(game.i18n.format("BITD.Roll.Bonus.PushAndDevils"));
-
-    let formula = "2d6kl";
-    if (diceToRoll > 0) {
-      formula = diceToRoll + "d6kh";
-    }
+    const diceToRoll = this.countDice(formData);
+    const formula = diceToRoll ? diceToRoll + "d6kh" : "2d6kl";
 
     const rollResult = new Roll(formula);
     await rollResult.evaluate();
@@ -260,13 +306,6 @@ export default class BitdRolls extends HandlebarsApplicationMixin(
     if (formData.pushEffect) data.push.count++;
     if (formData.pushDice) data.push.count++;
 
-    // Increase effect if pushed for this
-    const effectSequence = this.rollConfig.effectSequence;
-    if (data.push.effect) {
-      const index = effectSequence.indexOf(data.effect.key);
-      data.effect.key = effectSequence[index + 1];
-    }
-
     // Push stres and description
     data.push.stress = data.push.count * 2;
     data.push.description = game.i18n.format(
@@ -275,6 +314,10 @@ export default class BitdRolls extends HandlebarsApplicationMixin(
         stress: data.push.stress,
       },
     );
+
+    // Count effect depends on pus hand got localize value
+    data.effect = this.effectCalculation(formData);
+    console.log(data.effect);
 
     // Add classes to dices and cout sixes for crit
     let numSixes = 0;
@@ -328,10 +371,6 @@ export default class BitdRolls extends HandlebarsApplicationMixin(
     data.position.localizeKey = this.getLokalizeKey(data.position.key);
     data.position.localize = game.i18n.localize(
       "BITD.Roll.Position." + data.position.localizeKey,
-    );
-    data.effect.localizeKey = this.getLokalizeKey(data.effect.key);
-    data.effect.localize = game.i18n.localize(
-      "BITD.Roll.Effect." + data.effect.localizeKey,
     );
 
     Object.assign(data, rollResult.data);
@@ -534,7 +573,6 @@ export default class BitdRolls extends HandlebarsApplicationMixin(
     if (!this.actor.system.stress) return;
     const stress = this.actor.system.stress.value + rollResult.data.stress;
 
-    console.log(stress, this.actor.system.stress);
     if (stress < this.actor.system.stress.max) {
       await this.actor.update({ "system.stress.value": stress });
     } else {

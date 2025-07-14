@@ -2,8 +2,8 @@
 /* Global styles */
 .portrait {
   flex: none;
-  border-width: 0;
   margin-right: 5px;
+  border-width: 0;
 }
 
 .add-trauma-form {
@@ -38,24 +38,22 @@
 }
 
 #hotbar .bitd-roller {
-  width: var(--hotbar-size);
-  height: var(--hotbar-size);
+  z-index: 9999;
+  cursor: var(--cursor-pointer);
   border: 2px solid transparent;
   border-radius: 10px;
   background: var(--slot-color, var(--color-cool-5-90));
-  cursor: var(--cursor-pointer);
-  z-index: 9999;
+  width: var(--hotbar-size);
+  height: var(--hotbar-size);
   pointer-events: auto;
 }
 #hotbar .bitd-roller-btn:hover {
-  background: var(--color-cool-3);
   border-radius: 10px;
+  background: var(--color-cool-3);
 }
 
 .bitd-rolls {
   height: auto;
-}
-.bitd-rolls .inputs-block {
   font-family: "Spectral SC", serif;
 }
 .bitd-rolls .inputs-block select {
@@ -64,8 +62,8 @@
 .bitd-rolls .inputs-block .roll-type {
   display: flex;
   margin-bottom: 5px;
-  font-size: medium;
   font-weight: bold;
+  font-size: medium;
   text-align: center;
   text-transform: uppercase;
 }
@@ -101,16 +99,23 @@
   font-family: "Lora", serif;
 }
 .bitd-rolls .inputs-block h4 {
-  width: 100%;
   margin: 0.5rem 0 0 0;
-  text-align: center;
+  width: 100%;
   font-weight: bold;
+  text-align: center;
 }
 .bitd-rolls .inputs-block .checkbox-label {
   position: relative;
   top: -5px;
 }
-.bitd-rolls .inputs-block .optional:not(.active) {
+.bitd-rolls .roll-summary {
+  margin-bottom: 5px;
+}
+.bitd-rolls .roll-summary h4 {
+  margin-top: 0;
+  text-align: center;
+}
+.bitd-rolls .optional:not(.active) {
   display: none;
 }
 
@@ -130,34 +135,34 @@
   font-weight: bold;
 }
 .roll-message .roll-results h4 {
-  text-transform: uppercase;
-  font-family: "Spectral SC", serif;
-  font-size: medium;
   font-weight: bold;
+  font-size: medium;
+  font-family: "Spectral SC", serif;
+  text-transform: uppercase;
 }
 .roll-message .roll-results h5 {
   margin: 10px 0 0 0;
-  text-transform: uppercase;
-  font-family: "Spectral SC", serif;
   font-weight: bold;
+  font-family: "Spectral SC", serif;
+  text-transform: uppercase;
 }
 .roll-message .roll-dice {
-  list-style: none;
   margin: 5px 0;
   padding: 0;
   overflow: hidden;
+  list-style: none;
 }
 .roll-message .roll-dice .dice {
-  min-width: 30px;
-  line-height: 30px;
   float: left;
   margin-right: 1px;
   background-image: url(/icons/svg/d6-grey.svg);
-  background-repeat: no-repeat;
   background-size: 30px 30px;
+  background-repeat: no-repeat;
+  min-width: 30px;
   color: #222;
-  font-size: 16px;
   font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
   text-align: center;
 }
 
@@ -248,8 +253,8 @@
 
 .grid-9col {
   display: grid;
-  grid-column: span 9 / span 9;
   grid-template-columns: repeat(9, minmax(0, 1fr));
+  grid-column: span 9/span 9;
   gap: 10px;
 }
 
@@ -360,13 +365,13 @@
 }
 
 input.clear-input {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
   border-width: 0;
   border-radius: 0;
   background-image: none;
   background-color: transparent;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
   --color-shadow-primary: none;
 }
 
@@ -383,24 +388,24 @@ select.clear-select {
   font-family: "Lora", serif;
 }
 
-.window-content input[type="number"] {
+.window-content input[type=number] {
   max-width: 35px;
 }
-.window-content input[type="text"] {
+.window-content input[type=text] {
   width: auto;
 }
 
 .bitd-header,
 .bitd-header > h3 {
   margin: 0;
-  padding: 0 3px;
-  background-color: #222;
-  color: #eee;
-  text-transform: uppercase;
-  font-size: medium;
-  font-weight: bold;
-  font-family: "Spectral SC", serif;
   border: none;
+  background-color: #222;
+  padding: 0 3px;
+  color: #eee;
+  font-weight: bold;
+  font-size: medium;
+  font-family: "Spectral SC", serif;
+  text-transform: uppercase;
 }
 .bitd-header input,
 .bitd-header > h3 input {
@@ -481,13 +486,11 @@ select.clear-select {
 .bitd .detail-window .detail-block:not(.active) {
   display: none;
 }
-.bitd .rollable:hover,
-.bitd .rollable:focus {
-  color: black;
+.bitd .rollable:hover, .bitd .rollable:focus {
   cursor: pointer;
+  color: black;
 }
-.bitd .bitd-header.rollable:hover,
-.bitd .bitd-header.rollable:focus {
+.bitd .bitd-header.rollable:hover, .bitd .bitd-header.rollable:focus {
   color: white;
 }
 .bitd .tier-styled {
@@ -495,8 +498,8 @@ select.clear-select {
   counter-reset: my-awesome-counter var(--tier);
 }
 .bitd .tier-styled:before {
-  content: counter(my-awesome-counter, upper-roman);
   margin-right: 5px;
+  content: counter(my-awesome-counter, upper-roman);
 }
 .bitd .value-step-block {
   display: inline-block;
@@ -506,22 +509,22 @@ select.clear-select {
   cursor: pointer;
 }
 .bitd .value-step-block .value-dot {
-  height: 14px;
-  width: 14px;
   border: 1px solid black;
   border-radius: 50%;
   background: white;
+  width: 14px;
+  height: 14px;
 }
 .bitd .value-step-block .value-dot.active {
   background: black;
 }
 .bitd .value-step-block .value-tooth {
-  height: 40px;
-  width: 14px;
   background-image: url("../assets/tooth/tooth-black-white.svg");
-  background-size: 14px;
   background-position: center;
+  background-size: 14px;
   background-repeat: no-repeat;
+  width: 14px;
+  height: 40px;
 }
 .bitd .value-step-block .value-tooth.active {
   background-image: url("../assets/tooth/tooth-black.svg");
@@ -531,10 +534,10 @@ select.clear-select {
 }
 .bitd .value-step-block .simple-tooth,
 .bitd .value-step-block .simple-red-tooth {
-  height: 30px;
-  width: 9px;
   background-image: url("../assets/tooth/tooth-white.svg");
   background-size: 9px;
+  width: 9px;
+  height: 30px;
 }
 .bitd .value-step-block .simple-tooth.active {
   background-image: url("../assets/tooth/tooth-black.svg");
@@ -543,18 +546,18 @@ select.clear-select {
   background-image: url("../assets/tooth/tooth-red.svg");
 }
 .bitd .value-step-block .small-tooth {
-  height: 20px;
   background-image: url("../assets/tooth/tooth-small-grey.svg");
+  height: 20px;
 }
 .bitd .value-step-block .small-tooth.active {
   background-image: url("../assets/tooth/tooth-small-black.svg");
 }
 .bitd .value-step-block .value-box {
-  height: 12px;
-  width: 12px;
   border: 1px solid black;
   border-radius: 0;
   background: white;
+  width: 12px;
+  height: 12px;
 }
 .bitd .value-step-block .value-box.active {
   background: black;
@@ -568,8 +571,8 @@ select.clear-select {
   resize: vertical;
 }
 .bitd .sheet-tabs {
-  font-family: "Spectral SC", serif;
   font-size: medium;
+  font-family: "Spectral SC", serif;
 }
 .bitd .sheet-tabs .item.active {
   background: rgba(0, 0, 0, 0.1);
@@ -588,30 +591,30 @@ select.clear-select {
   padding: 0 5px;
 }
 .bitd .editor {
-  min-height: 200px;
-  padding: 0 5px;
   border: 1px solid #b5b3a4;
+  padding: 0 5px;
+  min-height: 200px;
 }
 .bitd .claims-map {
   display: grid;
   gap: 10px;
 }
 .bitd .claims-map .claim {
-  position: relative;
   display: grid;
+  position: relative;
   align-items: center;
   background: rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 .bitd .claims-map .claim .name {
-  font-family: "Spectral SC", serif;
-  font-size: medium;
   font-weight: bold;
+  font-size: medium;
+  font-family: "Spectral SC", serif;
 }
 .bitd .claims-map .claim .item-summary {
   padding: 15px 3px 0 3px;
-  overflow: hidden;
   height: 140px;
+  overflow: hidden;
 }
 .bitd .claims-map .claim .item-summary .name {
   font-size: small;
@@ -620,27 +623,27 @@ select.clear-select {
   margin: 0;
 }
 .bitd .claims-map .claim .item-controls {
+  display: flex;
   position: absolute;
   top: 5px;
   right: 5px;
-  display: flex;
   justify-content: flex-end;
   font-size: smaller;
 }
 .bitd .claims-map .claim .item-controls .item-checkbox,
 .bitd .claims-map .claim .item-controls .claim-checkbox {
   margin: 0;
-  height: 12px;
   width: 10px;
+  height: 12px;
 }
 .bitd .claims-map .claim .item-controls .item-control {
   margin-right: 3px;
 }
 .bitd .claims-map .claim .claim-move {
   position: absolute;
-  font-size: large;
   opacity: 0;
   transition: opacity 0.3s ease-in;
+  font-size: large;
 }
 .bitd .claims-map .claim .move-left {
   left: -3px;
@@ -679,9 +682,9 @@ select.clear-select {
   right: 5px;
 }
 .bitd .items-block .items-list {
-  list-style: none;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 .bitd .items-block .items-list .item {
   position: relative;
@@ -699,22 +702,22 @@ select.clear-select {
 }
 .bitd .items-block .items-list .item .item-summary {
   flex: auto;
+  transition: height 0.3s ease;
   margin: 0;
   height: 0;
   overflow: hidden;
-  transition: height 0.3s ease;
 }
 .bitd .items-block .items-list .item .item-controls {
+  display: flex;
   position: absolute;
   top: 3px;
   right: 0;
-  display: flex;
   justify-content: flex-end;
 }
 .bitd .items-block .items-list .item .item-controls a {
+  margin: 0 3px;
   font-size: 12px;
   text-align: center;
-  margin: 0 3px;
 }
 .bitd .items-block .items-list .item.active .item-name {
   font-weight: bold;
@@ -729,8 +732,8 @@ select.clear-select {
 .bitd .items-block.full-size .items-list .item-description .item-checkbox {
   position: relative;
   top: 5px;
-  width: 15px;
   margin: 0;
+  width: 15px;
 }
 .bitd .items-block.full-size .items-list .item-description .item-name {
   cursor: pointer;
@@ -747,13 +750,13 @@ select.clear-select {
 }
 .bitd .contacts.items-block .item .item-description .set-relationship {
   display: inline-block;
-  width: 12px;
-  height: 16px;
   vertical-align: middle;
   cursor: pointer;
-  background-size: 12px;
   background-position: center;
+  background-size: 12px;
   background-repeat: no-repeat;
+  width: 12px;
+  height: 16px;
 }
 .bitd .contacts.items-block .item .item-description .set-relationship.rival {
   background-image: url("/systems/bitd/ui/relationship-icons/caret-down.svg");
@@ -770,11 +773,7 @@ select.clear-select {
 .bitd .contacts.items-block .item .item-description .item-name {
   font-weight: 700;
 }
-.bitd
-  .contacts.items-block
-  .item
-  .item-description
-  .item-name:not(:last-child)::after {
+.bitd .contacts.items-block .item .item-description .item-name:not(:last-child)::after {
   content: ",";
   font-weight: normal;
 }
@@ -784,8 +783,8 @@ select.clear-select {
   margin-right: 40px;
 }
 .bitd .related-faction.items-block .item .item-description .item-name {
-  font-family: "Spectral SC", serif;
   padding-top: 3px;
+  font-family: "Spectral SC", serif;
 }
 .bitd .related-faction.items-block .item .item-description .tier {
   padding-top: 6px;
@@ -805,15 +804,15 @@ select.clear-select {
   width: 100%;
 }
 .bitd.actor textarea.auto-grow {
-  width: 100%;
   box-sizing: border-box;
+  width: 100%;
   overflow: hidden;
   resize: vertical;
 }
 .bitd.actor .actor-grid {
   display: grid;
-  column-gap: 10px;
   grid-template-columns: 250px 1fr;
+  column-gap: 10px;
 }
 .bitd.actor .sheet-header .money input,
 .bitd.actor .sheet-header .storage input {
@@ -845,9 +844,9 @@ select.clear-select {
   flex-direction: column;
 }
 .bitd.actor .sheet-body .goals .items-list .item.goal .clock-img {
+  border: none;
   width: 50px;
   height: 50px;
-  border: none;
 }
 .bitd.actor .sheet-body .goals .items-list .item.goal .item-description {
   padding-right: 0;
@@ -857,8 +856,8 @@ select.clear-select {
 }
 .bitd.actor .scoundrel .sheet-header {
   flex: 0 auto;
-  overflow: hidden;
   margin-bottom: 10px;
+  overflow: hidden;
 }
 .bitd.actor .scoundrel .sheet-header .img-block {
   padding-right: 10px;
@@ -866,9 +865,9 @@ select.clear-select {
 }
 .bitd.actor .scoundrel .sheet-header .img-block .profile-img {
   grid-column: 1/3;
-  height: 100%;
-  width: 100%;
   border: none;
+  width: 100%;
+  height: 100%;
 }
 .bitd.actor .scoundrel .sheet-header .img-block .stash-track {
   display: flex;
@@ -876,10 +875,10 @@ select.clear-select {
   margin-bottom: 3px;
 }
 .bitd.actor .scoundrel .sheet-header .img-block .stash-box {
-  width: 20px;
-  height: 5px;
   border: 1px solid #999;
   background-color: transparent;
+  width: 20px;
+  height: 5px;
 }
 .bitd.actor .scoundrel .sheet-header .img-block .stash-box.filled {
   border-color: black;
@@ -890,9 +889,9 @@ select.clear-select {
 }
 .bitd.actor .scoundrel .sheet-header .img-block .load span {
   display: block;
-  height: 26px;
-  width: 100%;
   padding-top: 3px;
+  width: 100%;
+  height: 26px;
   text-align: center;
 }
 .bitd.actor .scoundrel .sheet-header .header-fields {
@@ -904,126 +903,65 @@ select.clear-select {
   gap: 10px;
 }
 .bitd.actor .scoundrel .sheet-header .header-fields .name-alias input {
-  text-decoration-line: underline;
   margin: 0;
   padding: 0;
+  text-decoration-line: underline;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-header
-  .header-fields
-  .name-alias
-  .scoundrel-name {
+.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-name {
   position: relative;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-header
-  .header-fields
-  .name-alias
-  .scoundrel-name::after {
-  content: "";
+.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-name::after {
   position: absolute;
   right: -5px;
+  background-color: #222;
   width: 2px;
   height: 40px;
-  background-color: #222;
+  content: "";
 }
-.bitd.actor
-  .scoundrel
-  .sheet-header
-  .header-fields
-  .name-alias
-  .scoundrel-alias {
-  text-align: right;
+.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-alias {
   border-bottom: none;
+  text-align: right;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-header
-  .header-fields
-  .name-alias
-  .scoundrel-alias
-  input {
+.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-alias input {
   width: 200px;
 }
 .bitd.actor .scoundrel .sheet-header .header-fields .brief-info {
   gap: 0 10px;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-header
-  .header-fields
-  .brief-info
-  .prop-input.all-row {
+.bitd.actor .scoundrel .sheet-header .header-fields .brief-info .prop-input.all-row {
   font-size: small;
 }
 .bitd.actor .scoundrel .sheet-header .header-fields .attribute-block {
   font-size: small;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-header
-  .header-fields
-  .attribute-block
-  .attribute {
+.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute {
   position: relative;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-header
-  .header-fields
-  .attribute-block
-  .attribute
-  .attribute-name {
+.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .attribute-name {
   margin-bottom: 3px;
   font-size: medium;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-header
-  .header-fields
-  .attribute-block
-  .attribute
-  .exp-block {
+.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .exp-block {
   position: absolute;
-  right: 0;
   top: 0;
+  right: 0;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-header
-  .header-fields
-  .attribute-block
-  .attribute
-  .value-dot {
+.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .value-dot {
   position: relative;
-  height: 12px;
   width: 12px;
+  height: 12px;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-header
-  .header-fields
-  .attribute-block
-  .attribute
-  .value-dot:first-child {
+.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .value-dot:first-child {
   margin-right: 3px;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-header
-  .header-fields
-  .attribute-block
-  .attribute
-  .value-dot:first-child::after {
-  content: "";
+.bitd.actor .scoundrel .sheet-header .header-fields .attribute-block .attribute .value-dot:first-child::after {
   position: absolute;
   top: -3px;
   right: -5px;
+  background-color: #222;
   width: 1px;
   height: 20px;
-  background-color: #222;
+  content: "";
 }
 .bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma {
   display: flex;
@@ -1035,29 +973,10 @@ select.clear-select {
 .bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma .stress {
   display: flex;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-header
-  .header-fields
-  .stress-trauma
-  .stress
-  .add-trauma {
+.bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma .stress .add-trauma {
   margin: 0 3px;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-header
-  .header-fields
-  .stress-trauma
-  .stress
-  .stress-title:hover,
-.bitd.actor
-  .scoundrel
-  .sheet-header
-  .header-fields
-  .stress-trauma
-  .stress
-  .stress-title:focus {
+.bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma .stress .stress-title:hover, .bitd.actor .scoundrel .sheet-header .header-fields .stress-trauma .stress .stress-title:focus {
   color: white;
 }
 .bitd.actor .scoundrel .sheet-header .header-fields .value-step-block {
@@ -1082,15 +1001,15 @@ select.clear-select {
   right: 0;
 }
 .bitd.actor .scoundrel .sheet-header .harm .healing .healing-input {
-  height: 24px;
   max-width: 20px;
+  height: 24px;
 }
 .bitd.actor .scoundrel .sheet-header .harm .harm-table {
   display: grid;
   grid-template-columns: auto auto auto auto;
   border: 1px solid #222;
-  text-align: center;
   font-family: "Spectral SC", serif;
+  text-align: center;
 }
 .bitd.actor .scoundrel .sheet-header .harm .harm-table div {
   border: 1px solid #222;
@@ -1099,13 +1018,7 @@ select.clear-select {
 .bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-name.full-with {
   grid-column: 2/4;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-header
-  .harm
-  .harm-table
-  .harm-name.full-with
-  input {
+.bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-name.full-with input {
   width: 100%;
 }
 .bitd.actor .scoundrel .sheet-header .harm .harm-table .harm-level,
@@ -1121,74 +1034,38 @@ select.clear-select {
 .bitd.actor .scoundrel .sheet-body .general-container .item-checkbox {
   display: inline-block;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-body
-  .general-container
-  .item-checkbox
-  .loadout-box {
-  position: relative;
+.bitd.actor .scoundrel .sheet-body .general-container .item-checkbox .loadout-box {
   display: inline-block;
+  position: relative;
   cursor: pointer;
-  height: 12px;
-  width: 12px;
   border: 1px solid black;
   border-radius: 0;
   background: white;
+  width: 12px;
+  height: 12px;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-body
-  .general-container
-  .item-checkbox
-  .loadout-box:not(:last-child)::after {
-  content: "";
+.bitd.actor .scoundrel .sheet-body .general-container .item-checkbox .loadout-box:not(:last-child)::after {
   position: absolute;
   top: 5px;
   right: -5px;
+  background-color: #222;
   width: 5px;
   height: 1px;
-  background-color: #222;
+  content: "";
 }
-.bitd.actor
-  .scoundrel
-  .sheet-body
-  .general-container
-  .item.tool.active
-  .loadout-box {
+.bitd.actor .scoundrel .sheet-body .general-container .item.tool.active .loadout-box {
   background: black;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-body
-  .general-container
-  .item.tool.broken
-  .item-name {
+.bitd.actor .scoundrel .sheet-body .general-container .item.tool.broken .item-name {
   text-decoration: line-through;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-body
-  .general-container
-  .item.tool.light
-  .item-name {
+.bitd.actor .scoundrel .sheet-body .general-container .item.tool.light .item-name {
   font-style: italic;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-body
-  .general-container
-  .abilities-cohorts
-  .abilities {
+.bitd.actor .scoundrel .sheet-body .general-container .abilities-cohorts .abilities {
   position: relative;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-body
-  .general-container
-  .abilities-cohorts
-  .abilities
-  .exp-block {
+.bitd.actor .scoundrel .sheet-body .general-container .abilities-cohorts .abilities .exp-block {
   position: absolute;
   right: 5px;
 }
@@ -1203,46 +1080,20 @@ select.clear-select {
 }
 .bitd.actor .scoundrel .sheet-body .notes-container .rules h4 {
   margin: 0;
-  font-family: "Spectral SC", serif;
   font-weight: bold;
+  font-family: "Spectral SC", serif;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-body
-  .notes-container
-  .rules
-  .teamwork
-  .grid-2col {
+.bitd.actor .scoundrel .sheet-body .notes-container .rules .teamwork .grid-2col {
   row-gap: 0;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-body
-  .notes-container
-  .description
-  .brief-info
-  .prop {
+.bitd.actor .scoundrel .sheet-body .notes-container .description .brief-info .prop {
   margin-top: 5px;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-body
-  .notes-container
-  .description
-  .brief-info
-  .prop
-  .prop-label {
+.bitd.actor .scoundrel .sheet-body .notes-container .description .brief-info .prop .prop-label {
   color: black;
   font-family: "Spectral SC", serif;
 }
-.bitd.actor
-  .scoundrel
-  .sheet-body
-  .notes-container
-  .description
-  .brief-info
-  .prop
-  .prop-input {
+.bitd.actor .scoundrel .sheet-body .notes-container .description .brief-info .prop .prop-input {
   border-bottom: 1px solid #b5b3a4;
 }
 .bitd.actor .scoundrel .sheet-body .notes-container .description .bitd-header {
@@ -1256,23 +1107,18 @@ select.clear-select {
 }
 .bitd.actor .crew .sheet-header .type-container {
   display: grid;
-  column-gap: 10px;
   grid-template-columns: 60px 1fr;
+  column-gap: 10px;
   height: -webkit-fill-available;
 }
 .bitd.actor .crew .sheet-header .type-container .profile-img {
-  width: 100%;
   border: none;
+  width: 100%;
 }
 .bitd.actor .crew .sheet-header .type-container .crew-type {
   font-family: "Spectral SC", serif;
 }
-.bitd.actor
-  .crew
-  .sheet-header
-  .type-container
-  .crew-type
-  .playbook-description {
+.bitd.actor .crew .sheet-header .type-container .crew-type .playbook-description {
   margin: 0;
   font-size: medium;
 }
@@ -1280,9 +1126,9 @@ select.clear-select {
   margin: 0;
 }
 .bitd.actor .crew .sheet-header .name-container .crew-name input {
-  height: 90%;
   margin: 0;
   padding: 0;
+  height: 90%;
 }
 .bitd.actor .crew .sheet-header .name-container .brief-info {
   row-gap: 0;
@@ -1305,8 +1151,8 @@ select.clear-select {
 }
 .bitd.actor .crew .sheet-header .hunting-ground .edit-hunting-ground {
   position: absolute;
-  right: 5px;
   top: 5px;
+  right: 5px;
   color: white;
 }
 .bitd.actor .crew .sheet-header .hunting-ground .operation-header {
@@ -1314,15 +1160,15 @@ select.clear-select {
 }
 .bitd.actor .crew .sheet-header .header-fields {
   display: grid;
+  grid-template-columns: auto 1fr;
   column-gap: 10px;
   row-gap: 5px;
-  grid-template-columns: auto 1fr;
   font-family: "Spectral SC", serif;
 }
 .bitd.actor .crew .sheet-header .header-fields .heat-block {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
+  align-items: flex-start;
   border-top: 2px solid black;
 }
 .bitd.actor .crew .sheet-header .header-fields .heat-block .wanted-lvl {
@@ -1338,16 +1184,10 @@ select.clear-select {
   display: flex;
   justify-content: space-between;
 }
-.bitd.actor
-  .crew
-  .sheet-header
-  .header-fields
-  .tier-block
-  .tier
-  .value-step-block {
+.bitd.actor .crew .sheet-header .header-fields .tier-block .tier .value-step-block {
+  margin-left: 5px;
   padding-top: 2px;
   padding-right: 5px;
-  margin-left: 5px;
 }
 .bitd.actor .crew .sheet-header .header-fields .reputation {
   display: flex;
@@ -1385,9 +1225,9 @@ select.clear-select {
   margin-top: 10px;
 }
 .bitd.actor .crew .sheet-body .prison .load-prison-block .load-prison {
-  padding: 3px;
-  background: rgba(0, 0, 0, 0.1);
   border: 1px solid #b5b3a4;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 3px;
 }
 .bitd.actor .crew .sheet-body .general-container {
   grid-template-areas: "1 main" "2 main";
@@ -1420,41 +1260,41 @@ select.clear-select {
   padding-top: 5px;
 }
 .bitd.actor .faction .sheet-header {
-  flex: 100px auto;
-  overflow: hidden;
   display: flex;
+  flex: 100px auto;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-bottom: 10px;
+  overflow: hidden;
 }
 .bitd.actor .faction .sheet-header .profile-img {
   flex: 0 0 100px;
-  height: 100px;
   border: none;
+  height: 100px;
 }
 .bitd.actor .faction .sheet-header .header-fields {
   flex: 1;
 }
 .bitd.actor .faction .sheet-header .header-fields .character-name {
-  height: 35px;
-  padding: 0px;
   margin: 5px 0;
   border-bottom: 0;
-  font-family: "Spectral SC", serif;
+  padding: 0px;
+  height: 35px;
   font-weight: 700;
+  font-family: "Spectral SC", serif;
 }
 .bitd.actor .faction .sheet-header .header-fields .character-name input {
+  margin: 0;
   width: 100%;
   height: 100%;
-  margin: 0;
 }
 .bitd.actor .faction .sheet-header .header-fields .brief-info {
-  margin-top: 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 10px;
   font-family: "Spectral SC", serif;
 }
 .bitd.actor .faction .sheet-header .header-fields .brief-info .summary {
@@ -1464,31 +1304,25 @@ select.clear-select {
   position: relative;
 }
 .bitd.actor .faction .sheet-body .general .prop-field .prop-lable {
-  font-family: "Spectral SC", serif;
   font-weight: 700;
+  font-family: "Spectral SC", serif;
 }
 .bitd.actor .faction .sheet-body .general .prop-field .show-for-limited {
   position: absolute;
   right: 0;
 }
-.bitd.actor
-  .faction
-  .sheet-body
-  .general
-  .prop-field
-  .show-for-limited
-  .show-checkbox {
+.bitd.actor .faction .sheet-body .general .prop-field .show-for-limited .show-checkbox {
   position: relative;
   top: 2px;
   margin: 0;
-  height: 15px;
   width: 15px;
+  height: 15px;
 }
 .bitd.actor .faction .sheet-body .general .goals .show-link {
   position: relative;
+  top: 5px;
   margin: 0;
   width: 15px;
-  top: 5px;
 }
 .bitd.actor .faction .sheet-body .general .turf {
   margin: 5px 0;
@@ -1519,46 +1353,46 @@ select.clear-select {
   margin-bottom: 5px;
 }
 .bitd.actor .npc .sheet-header {
-  flex: 100px auto;
-  overflow: hidden;
   display: flex;
+  flex: 100px auto;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-bottom: 10px;
+  overflow: hidden;
 }
 .bitd.actor .npc .sheet-header .profile-img {
   flex: 0 0 100px;
-  height: 100px;
   margin-right: 10px;
   border: none;
+  height: 100px;
 }
 .bitd.actor .npc .sheet-header .header-fields {
   flex: 1;
 }
 .bitd.actor .npc .sheet-header .header-fields .character-name {
-  height: 35px;
-  padding: 0px;
   margin: 5px 0;
   border-bottom: 0;
-  font-family: "Spectral SC", serif;
+  padding: 0px;
+  height: 35px;
   font-weight: 700;
+  font-family: "Spectral SC", serif;
 }
 .bitd.actor .npc .sheet-header .header-fields .character-name input {
-  width: 100%;
-  height: 100%;
   margin: 0;
   padding-left: 0;
+  width: 100%;
+  height: 100%;
 }
 .bitd.actor .npc .sheet-header .header-fields .character-aka {
   font-family: "Spectral SC", serif;
 }
 .bitd.actor .npc .sheet-header .header-fields .brief-info {
-  margin-top: 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 10px;
   font-family: "Spectral SC", serif;
 }
 .bitd.actor .clock .header-button {
@@ -1571,21 +1405,21 @@ select.clear-select {
   display: block;
 }
 .bitd.actor .clock .sheet-header .clock-name {
-  text-align: center;
   border: none;
+  text-align: center;
 }
 .bitd.actor .clock .sheet-header .clock-img-block {
-  width: 90%;
   margin: 0 auto;
+  width: 90%;
 }
 .bitd.actor .clock .sheet-header .clock-img-block .clock-img {
+  border: none;
   width: 100%;
   height: auto;
-  border: none;
 }
 .bitd.actor .clock .sheet-header .clock-info {
-  text-align: center;
   font-family: "Spectral SC", serif;
+  text-align: center;
 }
 .bitd.actor .clock .sheet-header .clock-info .clear-input {
   max-width: 20px;
@@ -1600,9 +1434,9 @@ select.clear-select {
   width: 100%;
 }
 .bitd.item .cohort .specialisation .prop-input {
-  width: 100%;
   margin-left: 5px;
   border-bottom: 1px solid #b5b3a4;
+  width: 100%;
 }
 .bitd.item .brief-info {
   display: flex;
@@ -1612,35 +1446,35 @@ select.clear-select {
   font-family: "Spectral SC", serif;
 }
 .bitd.item .items-header {
-  flex: 100px auto;
-  overflow: hidden;
   display: flex;
+  flex: 100px auto;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-bottom: 10px;
+  overflow: hidden;
 }
 .bitd.item .items-header .item-img {
   flex: 0 0 100px;
-  height: 100px;
   margin-right: 10px;
   border: none;
+  height: 100px;
 }
 .bitd.item .items-header .header-fields {
   flex: 1;
 }
 .bitd.item .items-header .header-fields .item-name {
-  height: 35px;
-  padding: 0px;
   margin: 5px 0;
   border-bottom: 0;
-  font-family: "Spectral SC", serif;
+  padding: 0px;
+  height: 35px;
   font-weight: 700;
+  font-family: "Spectral SC", serif;
 }
 .bitd.item .items-header .header-fields .item-name input {
+  margin: 0;
   width: 100%;
   height: 100%;
-  margin: 0;
 }
 .bitd.item .items-header .header-fields .brief-info {
   margin-top: 10px;

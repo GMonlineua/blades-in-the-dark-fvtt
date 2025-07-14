@@ -1,7 +1,7 @@
 .portrait {
   flex: none;
-  border-width: 0;
   margin-right: 5px;
+  border-width: 0;
 }
 
 .add-trauma-form {
@@ -44,28 +44,27 @@
 
 #hotbar {
   .bitd-roller {
-    width: var(--hotbar-size);
-    height: var(--hotbar-size);
+    z-index: 9999;
+    cursor: var(--cursor-pointer);
     border: 2px solid transparent;
     border-radius: 10px;
     background: var(--slot-color, var(--color-cool-5-90));
-    cursor: var(--cursor-pointer);
-    z-index: 9999;
+    width: var(--hotbar-size);
+    height: var(--hotbar-size);
     pointer-events: auto;
   }
 
   .bitd-roller-btn:hover {
-    background: var(--color-cool-3);
     border-radius: 10px;
+    background: var(--color-cool-3);
   }
 }
 
 .bitd-rolls {
   height: auto;
+  font-family: $font-secondary;
 
   .inputs-block {
-    font-family: $font-secondary;
-
     select {
       width: auto;
     }
@@ -73,8 +72,8 @@
     .roll-type {
       display: flex;
       margin-bottom: $padding-sm;
-      font-size: medium;
       font-weight: bold;
+      font-size: medium;
       text-align: center;
       text-transform: uppercase;
 
@@ -119,20 +118,29 @@
     }
 
     h4 {
-      width: 100%;
       margin: 0.5rem 0 0 0;
-      text-align: center;
+      width: 100%;
       font-weight: bold;
+      text-align: center;
     }
 
     .checkbox-label {
       position: relative;
       top: -5px;
     }
+  }
 
-    .optional:not(.active) {
-      display: none;
+  .roll-summary {
+    margin-bottom: $padding-sm;
+
+    h4 {
+      margin-top: 0;
+      text-align: center;
     }
+  }
+
+  .optional:not(.active) {
+    display: none;
   }
 }
 
@@ -158,37 +166,37 @@
 
   .roll-results {
     h4 {
-      text-transform: uppercase;
-      font-family: $font-secondary;
-      font-size: medium;
       font-weight: bold;
+      font-size: medium;
+      font-family: $font-secondary;
+      text-transform: uppercase;
     }
 
     h5 {
       margin: 10px 0 0 0;
-      text-transform: uppercase;
-      font-family: $font-secondary;
       font-weight: bold;
+      font-family: $font-secondary;
+      text-transform: uppercase;
     }
   }
 
   .roll-dice {
-    list-style: none;
     margin: 5px 0;
     padding: 0;
     overflow: hidden;
+    list-style: none;
 
     .dice {
-      min-width: 30px;
-      line-height: 30px;
       float: left;
       margin-right: 1px;
       background-image: url(/icons/svg/d6-grey.svg);
-      background-repeat: no-repeat;
       background-size: 30px 30px;
+      background-repeat: no-repeat;
+      min-width: 30px;
       color: $light-black;
-      font-size: 16px;
       font-weight: bold;
+      font-size: 16px;
+      line-height: 30px;
       text-align: center;
     }
   }
