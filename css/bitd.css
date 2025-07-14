@@ -94,6 +94,9 @@
   justify-content: space-between;
   margin-bottom: 5px;
 }
+.bitd-rolls .inputs-block .harm {
+  margin-bottom: 5px;
+}
 .bitd-rolls .inputs-block .useful-info {
   font-family: "Lora", serif;
 }

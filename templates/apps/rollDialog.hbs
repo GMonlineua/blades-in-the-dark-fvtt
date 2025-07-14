@@ -86,6 +86,15 @@
       </div>
     </div>
 
+    {{#if harm}}
+      <div class="harm optional" data-connected="action">
+        <label>{{localize 'BITD.Scoundrel.Harms.Harm'}}</label>
+        <multi-select id="harm" name="harm" data-type="String">
+          {{selectOptions harm}}
+        </multi-select>
+      </div>
+    {{/if}}
+
     <div class="useful-info">
       <ul class="optional" data-connected="engagement">
         <li>{{{localize 'BITD.Roll.Engagement.Operation'}}}</li>

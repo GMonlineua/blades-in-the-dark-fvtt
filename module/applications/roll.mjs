@@ -53,12 +53,25 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
     context.rollConfig = this.rollConfig;
     const defaults = context.rollConfig.defaults;
 
-    if (options.type) defaults.type = options.type;
-    if (options.type == "action" && options.note) defaults.action = options.note;
-    if (options.type == "resistance" && options.note) defaults.attribute = options.note;
-    if (!isNaN(options.note)) defaults.dice = parseInt(options.note);
+    const custom = this.options;
+    if (custom.type) defaults.type = custom.type;
+    if (custom.type == "action" && custom.note) defaults.action = custom.note;
+    if (custom.type == "resistance" && custom.note) defaults.attribute = custom.note;
+    if (!isNaN(custom.note)) defaults.dice = parseInt(custom.note);
 
     context.actor = this.actor;
+
+    // Add harm to context
+    context.harm = {};
+    if (this.actor && this.actor.system.harm) {
+      const actorHarm = this.actor.system.harm;
+
+      if (actorHarm.lesser[0]) context.harm.lesser1 = actorHarm.lesser[0];
+      if (actorHarm.lesser[1]) context.harm.lesser2 = actorHarm.lesser[1];
+      if (actorHarm.moderate[0]) context.harm.moderate1 = actorHarm.moderate[0];
+      if (actorHarm.moderate[1]) context.harm.moderate2 = actorHarm.moderate[1];
+      if (actorHarm.severe) context.harm.severe = actorHarm.severe;
+    }
 
     return context;
   }
@@ -168,6 +181,7 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
   static async #onSubmit(event, form) {
     const formData = new FormData(form);
     const data = this.toIntData(Object.fromEntries(formData.entries()));
+    data.harm = form.querySelector("#harm").value;
 
     const functions = {
       action: this._actionRoll.bind(this),
@@ -186,7 +200,6 @@ export default class BitdRolls extends HandlebarsApplicationMixin(ApplicationV2)
 
     const rollFunction = functions[data.rollType];
     rollFunction(rollResult, data);
-    console.log(rollResult)
     await this.renderRoll(rollResult);
     this._giveExp(rollResult.data);
   }
