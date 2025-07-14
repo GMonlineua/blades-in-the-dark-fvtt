@@ -1,8 +1,8 @@
 .scoundrel {
   .sheet-header {
     flex: 0 auto;
-    overflow: hidden;
     margin-bottom: $padding-md;
+    overflow: hidden;
 
     .img-block {
       padding-right: $padding-md;
@@ -10,9 +10,9 @@
 
       .profile-img {
         grid-column: 1 / 3;
-        height: 100%;
-        width: 100%;
         border: none;
+        width: 100%;
+        height: 100%;
       }
 
       .stash-track {
@@ -22,10 +22,10 @@
       }
 
       .stash-box {
-        width: 20px;
-        height: 5px;
         border: 1px solid $grey;
         background-color: transparent;
+        width: 20px;
+        height: 5px;
       }
 
       .stash-box.filled {
@@ -40,9 +40,9 @@
 
         span {
           display: block;
-          height: 26px;
-          width: 100%;
           padding-top: 3px;
+          width: 100%;
+          height: 26px;
           text-align: center;
         }
       }
@@ -57,9 +57,9 @@
         gap: $padding-md;
 
         input {
-          text-decoration-line: underline;
           margin: 0;
           padding: 0;
+          text-decoration-line: underline;
         }
 
         .scoundrel-name {
@@ -67,17 +67,17 @@
         }
 
         .scoundrel-name::after {
-          content: "";
           position: absolute;
           right: -5px;
+          background-color: $light-black;
           width: 2px;
           height: 40px;
-          background-color: $light-black;
+          content: "";
         }
 
         .scoundrel-alias {
-          text-align: right;
           border-bottom: none;
+          text-align: right;
 
           input {
             width: 200px;
@@ -106,14 +106,14 @@
 
           .exp-block {
             position: absolute;
-            right: 0;
             top: 0;
+            right: 0;
           }
 
           .value-dot {
             position: relative;
-            height: 12px;
             width: 12px;
+            height: 12px;
           }
 
           .value-dot:first-child {
@@ -121,13 +121,13 @@
           }
 
           .value-dot:first-child::after {
-            content: "";
             position: absolute;
             top: -3px;
             right: -5px;
+            background-color: $light-black;
             width: 1px;
             height: 20px;
-            background-color: $light-black;
+            content: "";
           }
         }
       }
@@ -182,8 +182,8 @@
         right: 0;
 
         .healing-input {
-          height: 24px;
           max-width: 20px;
+          height: 24px;
         }
       }
 
@@ -191,8 +191,8 @@
         display: grid;
         grid-template-columns: auto auto auto auto;
         border: $border-black;
-        text-align: center;
         font-family: $font-secondary;
+        text-align: center;
 
         div {
           border: $border-black;
@@ -227,24 +227,24 @@
         display: inline-block;
 
         .loadout-box {
-          position: relative;
           display: inline-block;
+          position: relative;
           cursor: pointer;
-          height: 12px;
-          width: 12px;
           border: 1px solid black;
           border-radius: 0;
           background: white;
+          width: 12px;
+          height: 12px;
         }
 
         .loadout-box:not(:last-child)::after {
-          content: "";
           position: absolute;
           top: 5px;
           right: -5px;
+          background-color: $light-black;
           width: 5px;
           height: 1px;
-          background-color: $light-black;
+          content: "";
         }
       }
 
@@ -292,8 +292,8 @@
 
         h4 {
           margin: 0;
-          font-family: $font-secondary;
           font-weight: bold;
+          font-family: $font-secondary;
         }
 
         .teamwork {

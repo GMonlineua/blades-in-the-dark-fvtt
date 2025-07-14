@@ -1,11 +1,11 @@
 input.clear-input {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
   border-width: 0;
   border-radius: 0;
   background-image: none;
   background-color: transparent;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
   --color-shadow-primary: none;
 }
 
@@ -35,14 +35,14 @@ select.clear-select {
 .bitd-header,
 .bitd-header > h3 {
   margin: 0;
-  padding: 0 3px;
-  background-color: $light-black;
-  color: $light-white;
-  text-transform: uppercase;
-  font-size: medium;
-  font-weight: bold;
-  font-family: $font-secondary;
   border: none;
+  background-color: $light-black;
+  padding: 0 3px;
+  color: $light-white;
+  font-weight: bold;
+  font-size: medium;
+  font-family: $font-secondary;
+  text-transform: uppercase;
 
   input {
     color: $light-white;

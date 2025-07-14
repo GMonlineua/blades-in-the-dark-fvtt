@@ -1,27 +1,27 @@
-<form class='{{cssClass}} {{item.type}}' autocomplete='off'>
+<form class="{{cssClass}} {{item.type}}" autocomplete="off">
   {{! Sheet Header }}
-  <header class='items-header'>
+  <header class="items-header">
 
     <img
-      class='item-img'
-      src='{{item.img}}'
-      data-edit='img'
-      title='{{item.name}}'
+      class="item-img"
+      src="{{item.img}}"
+      data-edit="img"
+      title="{{item.name}}"
     />
 
-    <div class='header-fields'>
-      <h1 class='item-name'><input
-          name='name'
-          type='text'
-          value='{{item.name}}'
-          placeholder='{{localize "BITD.Item.Name"}}'
+    <div class="header-fields">
+      <h1 class="item-name"><input
+          name="name"
+          type="text"
+          value="{{item.name}}"
+          placeholder="{{localize 'BITD.Item.Name'}}"
         /></h1>
-      <div class='brief-info'>
-        <div class='prop'>
-          <label class='prop-label' for='system.harm'>{{localize
-              'BITD.Cohort.Harms.Harm'
+      <div class="brief-info">
+        <div class="prop">
+          <label class="prop-label" for="system.harm">{{localize
+              "BITD.Cohort.Harms.Harm"
             }}:</label>
-          <select class='clear-select' name='system.harm'>
+          <select class="clear-select" name="system.harm">
             {{selectOptions
               config.cohort.harm
               selected=system.harm
@@ -29,15 +29,15 @@
             }}
           </select>
         </div>
-        <div class='prop'>
+        <div class="prop">
           <input
-            class='prop-input'
-            type='checkbox'
-            name='system.armor'
+            class="prop-input"
+            type="checkbox"
+            name="system.armor"
             {{checked system.armor}}
           />
-          <label class='prop-label' for='system.armor'>{{localize
-              'BITD.Cohort.Armor'
+          <label class="prop-label" for="system.armor">{{localize
+              "BITD.Cohort.Armor"
             }}</label>
         </div>
       </div>
@@ -46,15 +46,15 @@
   </header>
 
   {{! Sheet Body }}
-  <section class='sheet-body'>
+  <section class="sheet-body">
     <hr />
 
-    <div class='brief-info'>
-      <div class='prop'>
-        <label class='prop-label' for='system.type'>{{localize
-            'BITD.Cohort.Type.Title'
+    <div class="brief-info">
+      <div class="prop">
+        <label class="prop-label" for="system.type">{{localize
+            "BITD.Cohort.Type.Title"
           }}:</label>
-        <select class='prop clear-select' name='system.type'>
+        <select class="prop clear-select" name="system.type">
           {{selectOptions
             config.cohort.types
             selected=system.type
@@ -62,47 +62,47 @@
           }}
         </select>
       </div>
-      <div class='prop'>
+      <div class="prop">
         <input
-          class='prop-input'
-          type='checkbox'
-          name='system.elite'
+          class="prop-input"
+          type="checkbox"
+          name="system.elite"
           {{checked system.elite}}
         />
-        <label class='prop-label' for='system.elite'>{{localize
-            'BITD.Cohort.Elite'
+        <label class="prop-label" for="system.elite">{{localize
+            "BITD.Cohort.Elite"
           }}</label>
       </div>
-      <div class='specialisation'>
-        <label class='prop-label' for='system.specialisation'>{{localize
-            'BITD.Cohort.Specializations'
+      <div class="specialisation">
+        <label class="prop-label" for="system.specialisation">{{localize
+            "BITD.Cohort.Specializations"
           }}:</label>
         <input
-          class='prop-input clear-input'
-          name='system.specialisation'
-          type='text'
-          value='{{system.specialisation}}'
+          class="prop-input clear-input"
+          name="system.specialisation"
+          type="text"
+          value="{{system.specialisation}}"
         />
       </div>
     </div>
 
-    <div class='edges'>
-      <h3>{{localize 'BITD.Cohort.Edges'}}:</h3>
-      <textarea name='system.edges'>{{system.edges}}</textarea>
+    <div class="edges">
+      <h3>{{localize "BITD.Cohort.Edges"}}:</h3>
+      <textarea name="system.edges">{{system.edges}}</textarea>
     </div>
 
-    <div class='flaws'>
-      <h3>{{localize 'BITD.Cohort.Flaws'}}:</h3>
-      <textarea name='system.flaws'>{{system.flaws}}</textarea>
+    <div class="flaws">
+      <h3>{{localize "BITD.Cohort.Flaws"}}:</h3>
+      <textarea name="system.flaws">{{system.flaws}}</textarea>
     </div>
 
-    <h3>{{localize 'BITD.Description'}}</h3>
+    <h3>{{localize "BITD.Description"}}</h3>
     {{editor
       enrichedDescription
-      target='system.description'
+      target="system.description"
       rollData=rollData
       button=true
-      engine='prosemirror'
+      engine="prosemirror"
       editable=editable
       collaborate=true
     }}

@@ -1,28 +1,28 @@
-<form class='{{cssClass}} {{item.type}}' autocomplete='off'>
-  <header class='items-header'>
+<form class="{{cssClass}} {{item.type}}" autocomplete="off">
+  <header class="items-header">
     <img
-      class='item-img'
-      src='{{item.img}}'
-      data-edit='img'
-      title='{{item.name}}'
+      class="item-img"
+      src="{{item.img}}"
+      data-edit="img"
+      title="{{item.name}}"
     />
-    <div class='header-fields'>
-      <h1 class='item-name'><input
-          name='name'
-          type='text'
-          value='{{item.name}}'
-          placeholder='{{localize "BITD.Item.Name"}}'
+    <div class="header-fields">
+      <h1 class="item-name"><input
+          name="name"
+          type="text"
+          value="{{item.name}}"
+          placeholder="{{localize 'BITD.Item.Name'}}"
         /></h1>
-      <div class='brief-info'>
-        <div class='prop'>
-          <label class='prop-label' for='system.active'>{{localize
-              'BITD.Ability.IsActive'
+      <div class="brief-info">
+        <div class="prop">
+          <label class="prop-label" for="system.active">{{localize
+              "BITD.Ability.IsActive"
             }}</label>
           <input
-            class='prop-input'
-            type='checkbox'
-            name='system.active'
-            data-dtype='Boolean'
+            class="prop-input"
+            type="checkbox"
+            name="system.active"
+            data-dtype="Boolean"
             {{checked system.active}}
           />
         </div>
@@ -31,20 +31,20 @@
   </header>
 
   {{! Sheet Body }}
-  <section class='sheet-body'>
+  <section class="sheet-body">
     <hr />
-    <div class='effect'>
-      <h3>{{localize 'BITD.Claim.Effect'}}:</h3>
-      <textarea name='system.effect'>{{system.effect}}</textarea>
+    <div class="effect">
+      <h3>{{localize "BITD.Claim.Effect"}}:</h3>
+      <textarea name="system.effect">{{system.effect}}</textarea>
     </div>
 
-    <h3>{{localize 'BITD.Description'}}</h3>
+    <h3>{{localize "BITD.Description"}}</h3>
     {{editor
       enrichedDescription
-      target='system.description'
+      target="system.description"
       rollData=rollData
       button=true
-      engine='prosemirror'
+      engine="prosemirror"
       editable=editable
       collaborate=true
     }}

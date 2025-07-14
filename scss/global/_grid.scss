@@ -43,8 +43,8 @@
 
 .grid-9col {
   display: grid;
-  grid-column: span 9 / span 9;
   grid-template-columns: repeat(9, minmax(0, 1fr));
+  grid-column: span 9 / span 9;
   gap: 10px;
 }
 

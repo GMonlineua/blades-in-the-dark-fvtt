@@ -4,13 +4,13 @@
 
     .type-container {
       display: grid;
-      column-gap: $padding-md;
       grid-template-columns: 60px 1fr;
+      column-gap: $padding-md;
       height: -webkit-fill-available;
 
       .profile-img {
-        width: 100%;
         border: none;
+        width: 100%;
       }
 
       .crew-type {
@@ -28,9 +28,9 @@
         margin: 0;
 
         input {
-          height: 90%;
           margin: 0;
           padding: 0;
+          height: 90%;
         }
       }
 
@@ -60,8 +60,8 @@
 
       .edit-hunting-ground {
         position: absolute;
-        right: 5px;
         top: 5px;
+        right: 5px;
         color: white;
       }
 
@@ -72,15 +72,15 @@
 
     .header-fields {
       display: grid;
+      grid-template-columns: auto 1fr;
       column-gap: $padding-md;
       row-gap: $padding-sm;
-      grid-template-columns: auto 1fr;
       font-family: $font-secondary;
 
       .heat-block {
         display: flex;
-        align-items: flex-start;
         justify-content: space-between;
+        align-items: flex-start;
         border-top: $border-hard;
 
         .wanted-lvl {
@@ -104,9 +104,9 @@
           justify-content: space-between;
 
           .value-step-block {
+            margin-left: $padding-sm;
             padding-top: 2px;
             padding-right: $padding-sm;
-            margin-left: $padding-sm;
           }
         }
       }
@@ -162,9 +162,9 @@
         margin-top: 10px;
 
         .load-prison {
-          padding: 3px;
-          background: $dark-paper;
           border: $border;
+          background: $dark-paper;
+          padding: 3px;
         }
       }
     }

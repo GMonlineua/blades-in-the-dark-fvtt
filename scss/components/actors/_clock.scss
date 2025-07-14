@@ -11,24 +11,24 @@
     display: block;
 
     .clock-name {
-      text-align: center;
       border: none;
+      text-align: center;
     }
 
     .clock-img-block {
-      width: 90%;
       margin: 0 auto;
+      width: 90%;
 
       .clock-img {
+        border: none;
         width: 100%;
         height: auto;
-        border: none;
       }
     }
 
     .clock-info {
-      text-align: center;
       font-family: $font-secondary;
+      text-align: center;
 
       .clear-input {
         max-width: 20px;

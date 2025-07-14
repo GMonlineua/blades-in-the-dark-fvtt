@@ -1,23 +1,23 @@
-<div class='roll-message'>
-  <div class='roll-header'>
-    <h3 class='roll-name bitd-header'>{{name}}</h3>
-    <div class='roll-subheader bitd-subheader'>
+<div class="roll-message">
+  <div class="roll-header">
+    <h3 class="roll-name bitd-header">{{name}}</h3>
+    <div class="roll-subheader bitd-subheader">
       {{#if data.position.show}}
-        <h4 class='position'>{{data.position.localize}}</h4>
+        <h4 class="position">{{data.position.localize}}</h4>
         <span>|</span>
       {{/if}}
       {{#if data.effect.show}}
-        <h4 class='effect'>{{data.effect.localize}}</h4>
+        <h4 class="effect">{{data.effect.localize}}</h4>
       {{/if}}
     </div>
   </div>
 
-  <div class='roll-results'>
+  <div class="roll-results">
     {{#if data.countAs.show}}
       <h4>{{data.countAs.localize}}</h4>
     {{/if}}
     {{#if data.rollAs}}
-      <p>{{localize 'BITD.Roll.GatherInformation.RollAs'}}:
+      <p>{{localize "BITD.Roll.GatherInformation.RollAs"}}:
         {{data.rollAs.localize}}</p>
     {{/if}}
     {{#if data.description}}
@@ -27,26 +27,26 @@
       <p>{{{data.effect.description}}}</p>
     {{/if}}
     {{#if data.devisBargain}}
-      <h5>{{localize 'BITD.Roll.Bonus.DevilsBargain'}}</h5>
-      <p>{{localize 'BITD.Roll.Bonus.Description.DevilsBargain'}}</p>
+      <h5>{{localize "BITD.Roll.Bonus.DevilsBargain"}}</h5>
+      <p>{{localize "BITD.Roll.Bonus.Description.DevilsBargain"}}</p>
     {{/if}}
     {{#if data.assistance}}
-      <h5>{{localize 'BITD.Roll.Bonus.Assistance'}}</h5>
-      <p>{{localize 'BITD.Roll.Bonus.Description.Assistance'}}</p>
+      <h5>{{localize "BITD.Roll.Bonus.Assistance"}}</h5>
+      <p>{{localize "BITD.Roll.Bonus.Description.Assistance"}}</p>
     {{/if}}
     {{#if data.push.count}}
-      <h5>{{localize 'BITD.Roll.Bonus.Push'}}</h5>
+      <h5>{{localize "BITD.Roll.Bonus.Push"}}</h5>
       <p>{{data.push.description}}</p>
     {{/if}}
     {{#if data.trauma.suffer}}
-      <h5>{{localize 'BITD.Roll.SufferTrauma.Title'}}</h5>
+      <h5>{{localize "BITD.Roll.SufferTrauma.Title"}}</h5>
       <p>{{{data.trauma.description}}}</p>
     {{/if}}
   </div>
 
-  <ol class='roll-dice'>
+  <ol class="roll-dice">
     {{#each renderDice}}
-      <li class='dice {{classes}}'>{{result}}</li>
+      <li class="dice {{classes}}">{{result}}</li>
     {{/each}}
   </ol>
 </div>
