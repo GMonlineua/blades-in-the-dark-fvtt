@@ -444,8 +444,6 @@ select.clear-select {
   font-size: 0;
 }
 .bitd.sheet.actor.clock .header-button i {
-  position: relative;
-  top: 0.35rem;
   font-size: medium;
 }
 
@@ -1394,12 +1392,6 @@ select.clear-select {
   justify-content: space-between;
   margin-top: 10px;
   font-family: "Spectral SC", serif;
-}
-.bitd.actor .clock .header-button {
-  font-size: 0;
-}
-.bitd.actor .clock .header-button i {
-  font-size: medium;
 }
 .bitd.actor .clock .sheet-header {
   display: block;
