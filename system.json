@@ -21,8 +21,12 @@
       "discord": "kemrian"
     }
   ],
-  "esmodules": ["module/bitd.mjs"],
-  "styles": ["css/bitd.css"],
+  "esmodules": [
+    "module/bitd.mjs"
+  ],
+  "styles": [
+    "css/bitd.css"
+  ],
   "languages": [
     {
       "lang": "en",
