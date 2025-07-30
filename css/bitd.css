@@ -1468,7 +1468,6 @@ select.clear-select {
   border-bottom: 0;
   padding: 0px;
   height: 35px;
-  font-weight: 700;
   font-family: "Spectral SC", serif;
 }
 .bitd.item .items-header .header-fields .item-name input {
