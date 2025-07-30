@@ -34,10 +34,10 @@ To install a module, follow these instructions:
 - Design: [Kem](https://bsky.app/profile/kemrian.bsky.social)
 - Ukrainian traslation: Ivan Biletskyi
 
-[Foundry Shield]: https://img.shields.io/badge/Foundry-12-informational?style=flat-square
+[Foundry Shield]: https://img.shields.io/badge/Foundry-13-orange?style=flat-square
 [Foundry URL]: https://foundryvtt.com
 
-[Version]: https://img.shields.io/badge/Version-0.8-orange?style=flat-square
+[Version]: https://img.shields.io/badge/Version-0.9-informational?style=flat-square
 [Version URL]: https://github.com/GMonlineua/blades-in-the-dark-fvtt
 
 [GNU License]: https://img.shields.io/badge/License-GNU-green?style=flat-square

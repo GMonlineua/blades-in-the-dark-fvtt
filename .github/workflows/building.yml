@@ -32,7 +32,7 @@ jobs:
       - name: Update Readme
         run: |
           VERSION=$(jq -r '.version' system.json | sed 's/-//g')
-          LINK="https://img.shields.io/badge/Version-${VERSION}-orange?style=flat-square"
+          LINK="https://img.shields.io/badge/Version-${VERSION}-informational?style=flat-square"
           sed -i "s|\[Version\]:.*|\[Version\]: $LINK|" README.md
 
       - name: Compile CSS from SCSS
