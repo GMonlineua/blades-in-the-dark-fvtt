@@ -63,7 +63,10 @@ export class BitdActorSheet extends ActorSheet {
       label: game.i18n.localize("BITD.Roll.Button"),
       class: "bitd-dice-sheet",
       icon: "fas fa-dice",
-      onclick: () => new BitdRollerApp().render(true),
+      onclick: () => {
+        const rollApp = new BitdRollerApp({actor: this.actor});
+        rollApp.render(true);
+      },
     });
 
     if (!this.actor.testUserPermission(game.user, "OBSERVER")) return buttons;
