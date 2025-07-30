@@ -31,7 +31,6 @@ export class BitdItemSheet extends ItemSheet {
   /** @override */
   async getData() {
     this.item.loadLinkedData();
-    // Retrieve base data structure.
     const context = await super.getData();
 
     context.enrichedDescription = await TextEditor.enrichHTML(

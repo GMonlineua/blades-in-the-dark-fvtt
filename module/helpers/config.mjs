@@ -6,6 +6,7 @@ export const BITD = {
   },
   linkedForeign: {
     scoundrel: ["contacts", "goals"],
+    playbook: ["abilities", "contacts", "inventory"],
     crew: ["members", "contacts", "relatedFactions", "goals"],
     faction: ["members", "relatedFactions", "goals"],
     crewType: ["abilities", "cohorts", "claimsMap", "upgrades", "contacts"],

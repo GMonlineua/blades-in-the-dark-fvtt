@@ -306,8 +306,7 @@ export default class BitdActor extends Actor {
   }
 
   async loadLinkedData() {
-    const access = this.isOwned || game.user.isGM;
-    if (!access) return;
+    if (!this.sheet.isEditable) return;
     if (!CONFIG.BITD.linkedForeign[this.type]) return;
 
     for (const key of CONFIG.BITD.linkedForeign[this.type]) {
