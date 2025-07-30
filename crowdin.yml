@@ -1,7 +1,4 @@
-"files": [
-  {
-    "source": "/lang/en.json",
-    "translation": "/lang/%two_letters_code%.json"
-  }
-]
-"commit_message": "feat(lang): new translations %file_name% (%language%)"
+files:
+  - source: /lang/en.json
+    translation: /lang/%two_letters_code%.json
+commit_message: 'feat(lang): new translations %file_name% (%language%)'
