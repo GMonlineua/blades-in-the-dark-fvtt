@@ -1,6 +1,6 @@
 "files": [
   {
-    "source": "/en.json",
+    "source": "/lang/en.json",
     "translation": "/lang/%two_letters_code%.json"
   }
 ]
