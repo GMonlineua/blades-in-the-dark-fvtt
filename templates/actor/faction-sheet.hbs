@@ -7,7 +7,7 @@
       <div class="brief-info">
         <div class="prop">
           <label class="prop-label rollable" data-roll-type="fortune" data-roll-note="{{system.tier.value}}" for="system.tier.value">{{localize 'BITD.Actor.Tier'}}:</label>
-          <input class="prop-input clear-input" type="number" name="system.tier.value" value="{{system.tier.value}}"></input>
+          <input class="prop-input clear-input" type="number" name="system.tier.value" value="{{system.tier.value}}">
           <select class="clear-select" name="system.hold">
             {{selectOptions config.holdTypes selected=system.hold localize=true}}
           </select>
@@ -24,7 +24,7 @@
             {{selectOptions config.statusTypes selected=system.status localize=true}}
           </select>
         </div>
-        <input class="prop summary all-width" name="system.summary" type="text" value="{{system.summary}}" placeholder="{{localize 'BITD.Summary'}}" data-dtype="String"></input>
+        <input class="prop summary all-width" name="system.summary" type="text" value="{{system.summary}}" placeholder="{{localize 'BITD.Summary'}}" data-dtype="String">
       </div>
     </div>
 

@@ -137,7 +137,7 @@ export class BitdCrewSheet extends BitdActorSheet {
           },
         },
         default: "add",
-        close: () => { },
+        close: () => {},
       },
       {
         width: 500,
@@ -166,12 +166,8 @@ export class BitdCrewSheet extends BitdActorSheet {
 
     await this.actor.update({ [path]: container });
 
-    try {
-      const item = this.actor.items.get(itemID);
-      await item.delete();
-    } catch {
-      console.log("item doesn't exist");
-    }
+    const item = this.actor.items.get(itemID);
+    if (item) item.delete();
 
     claimMap(this.actor);
   }
@@ -251,7 +247,9 @@ export class BitdCrewSheet extends BitdActorSheet {
       if (index != 5) {
         const uuid = "Compendium.bitd.claims.Item." + data[index];
         const item = await fromUuid(uuid);
-        const array = await this.actor.createEmbeddedDocuments("Item", [item], { skipClaimUpdate: true });
+        const array = await this.actor.createEmbeddedDocuments("Item", [item], {
+          skipClaimUpdate: true,
+        });
         const newItem = array[0];
 
         map[index].id = newItem._id;

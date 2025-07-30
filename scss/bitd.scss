@@ -1,29 +1,29 @@
 // Import utilities.
-@import 'utils/variables';
+@import "utils/variables";
 
 /* Global styles */
-@import 'global/apps';
-@import 'global/flex';
-@import 'global/grid';
-@import 'global/window';
+@import "global/apps";
+@import "global/flex";
+@import "global/grid";
+@import "global/window";
 
 /* Styles limited to system sheets */
 .bitd {
   font-family: $font-primary;
 
-  @import 'components/forms';
-  @import 'components/item-list';
+  @import "components/forms";
+  @import "components/item-list";
 }
 
 .bitd.actor {
-  @import 'components/actor';
-  @import 'components/actors/scoundrel';
-  @import 'components/actors/crew';
-  @import 'components/actors/faction';
-  @import 'components/actors/npc';
-  @import 'components/actors/clock';
+  @import "components/actor";
+  @import "components/actors/scoundrel";
+  @import "components/actors/crew";
+  @import "components/actors/faction";
+  @import "components/actors/npc";
+  @import "components/actors/clock";
 }
 
 .bitd.item {
-  @import 'components/item';
+  @import "components/item";
 }

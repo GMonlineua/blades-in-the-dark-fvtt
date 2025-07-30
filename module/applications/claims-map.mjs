@@ -130,8 +130,7 @@ function checkArrayLength(container, isActor) {
   while (map.length != requirement) {
     if (map.length > requirement) {
       const index = map.findLastIndex(
-        (item) =>
-          item.type != "home" && item.type != "claim",
+        (item) => item.type != "home" && item.type != "claim",
       );
       if (index >= 0) {
         map.splice(index, 1);

@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "prettier": "3.6.2",
+    "prettier-plugin-css-order": "^2.1.2",
+    "prettier-plugin-hbs": "^1.0.1"
+  }
+}

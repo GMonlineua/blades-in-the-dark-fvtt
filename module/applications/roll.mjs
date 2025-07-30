@@ -1,526 +1,640 @@
-export async function createRollDialog(type, sheet, note) {
-  if (!sheet && game.user.character) {
-    sheet = game.user.character;
-  } else if (!sheet && canvas.tokens.controlled[0]) {
-    sheet = canvas.tokens.controlled[0].actor;
-  }
+const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
 
-  const rollConfig = CONFIG.BITD.rolls;
-  rollConfig.defaultType = type ? type : "fortune";
-
-  if (type == "action") {
-    rollConfig.defaultAction = note ? note : "hunt";
-  } else if (type == "resistance") {
-    rollConfig.defaultAttribute = note ? note : "insight";
-  } else {
-    rollConfig.defaultAction = "hunt";
-    rollConfig.defaultAttribute = "insight";
-    if (!isNaN(note)) {
-      rollConfig.diceNumber = parseInt(note, 10);
-    } else {
-      rollConfig.diceNumber = 0;
-    }
-  }
-
-  const functions = {
-    action: actionRoll,
-    resistance: resistanceRoll,
-    fortune: fortuneRoll,
-    information: gatherInformation,
-    engagement: engagementRoll,
-    asset: acquireAsset,
-    vice: indulgeVice,
-  };
-
-  const html = await renderTemplate(
-    "systems/bitd/templates/apps/rollDialog.hbs",
-    rollConfig,
-  );
-
-  const dialog = new Dialog(
-    {
-      title: game.i18n.localize("BITD.Roll.Title"),
-      content: html,
-      buttons: {
-        roll: {
-          label: game.i18n.localize("BITD.Roll.Submit"),
-          icon: '<i class="fas fa-dice"></i>',
-          callback: async (html) => {
-            const formData = new FormData(html[0].querySelector("form"));
-            const data = toIntData(Object.fromEntries(formData.entries()));
-
-            const rollFunction = functions[data.rollType];
-            const rollResult = await roll(data, sheet);
-            rollResult.name = game.i18n.localize(
-              rollConfig.type[data.rollType],
-            );
-
-            rollFunction(rollResult, sheet, data);
-            await renderRoll(rollResult, sheet);
-            giveExp(rollResult.data, sheet);
-          },
-        },
-        cancel: {
-          icon: '<i class="fas fa-times"></i>',
-          label: game.i18n.localize("BITD.Roll.Cancel"),
-          callback: () => { },
-        },
-      },
-      default: "roll",
-      close: () => { },
-      render: (html) => {
-        optionalBlocks(html);
-
-        if (sheet) {
-          getDiceNumber(html, sheet);
-          html
-            .find("#roll-type, #roll-as, #attribute, #action")
-            .on("change", function() {
-              getDiceNumber(html, sheet);
-            });
-        }
-
-        html.find("#roll-type, #roll-as").on("change", function() {
-          optionalBlocks(html);
-        });
-      },
-    },
-    {
-      classes: ["dialog", "bitd-roll-dialog"],
-      width: 400,
-      height: 200,
-    },
-  );
-  dialog.render(true);
-}
-
-function toIntData(data) {
-  for (const prop in data) {
-    if (data.hasOwnProperty(prop) && !isNaN(data[prop])) {
-      data[prop] = parseInt(data[prop], 10);
-    }
-  }
-
-  return data;
-}
-
-function optionalBlocks(html) {
-  const type = html.find("#roll-type")[0].value;
-  const rollAs = html.find("#roll-as")[0].value;
-
-  const blocksArr = html.find(".optional");
-  blocksArr.removeClass("active");
-
-  for (const block of blocksArr) {
-    const supportedType = block.dataset.connected.split(",");
-
-    if (supportedType.includes(type)) block.classList.add("active");
-    if (type == "information" && supportedType.includes(rollAs))
-      block.classList.add("active");
-  }
-}
-
-function getDiceNumber(html, sheet) {
-  const formData = new FormData(html[0].querySelector("form"));
-  const data = toIntData(Object.fromEntries(formData.entries()));
-  const type = data.rollType;
-  const rollAs = data.rollAs;
-
-  let diceNumber;
-  const targetType = type == "information" ? rollAs : type;
-  switch (targetType) {
-    case "action":
-      const action = data.action;
-      if (sheet.system.actions) diceNumber = sheet.system.actions[action].value;
-      break;
-    case "resistance":
-      const attribute = data.attribute;
-      if (sheet.system.attributes)
-        diceNumber = sheet.system.attributes[attribute].value;
-      break;
-    case "vice":
-      if (sheet.system.attributes)
-        diceNumber = sheet.system.attributes.insight.value;
-      for (let [attrKey, attribute] of Object.entries(
-        sheet.system.attributes,
-      )) {
-        if (attribute.value < diceNumber) {
-          diceNumber = attribute.value;
-        }
-      }
-      break;
-  }
-
-  if (diceNumber || diceNumber == 0)
-    html.find("#dice-number")[0].value = diceNumber;
-}
-
-async function roll(formData, sheet) {
-  let diceToRoll = formData.diceNumber + formData.modifier;
-
-  if (formData.assistance) diceToRoll++;
-  if (formData.pushDice || formData.devisBargain) diceToRoll++;
-  if (formData.pushDice && formData.devisBargain) ui.notifications.info(game.i18n.format("BITD.Roll.Bonus.PushAndDevils"))
-
-  let formula = "2d6kl";
-  if (diceToRoll > 0) {
-    formula = diceToRoll + "d6kh";
-  }
-
-  const rollResult = new Roll(formula);
-  await rollResult.evaluate();
-
-  rollResult.data = getRollData(rollResult, formData, diceToRoll);
-  sufferStress(rollResult, sheet);
-
-  return rollResult;
-}
-
-function getRollData(rollResult, formData, diceToRoll) {
-  const data = {
-    type: formData.rollType,
-    countAs: {
-      show: true,
-    },
-    assistance: formData.assistance,
-    push: {
-      count: 0,
-      effect: formData.pushEffect,
-      dice: formData.pushDice,
-    },
-    resistance: {
-      stress: 0,
-    },
-    stress: 0,
-    devisBargain: formData.devisBargain,
+/**
+ * A Foundry VTT ApplicationV2 for handling custom dice rolls.
+ */
+export default class BitdRolls extends HandlebarsApplicationMixin(
+  ApplicationV2,
+) {
+  /**
+   * Default ApplicationV2 options.
+   * @returns {object} Default options for this application.
+   * @see {foundry.applications.api.ApplicationV2.DEFAULT_OPTIONS}
+   */
+  static DEFAULT_OPTIONS = {
+    ...super.DEFAULT_OPTIONS,
+    id: "bitd-rolls",
+    classes: ["bitd-rolls"],
+    tag: "form",
     position: {
-      key: formData.position,
+      width: 500,
     },
-    effect: {
-      key: formData.effect,
-    },
-    trauma: {
-      suffer: false,
+    form: {
+      handler: this.#onSubmit,
+      closeOnSubmit: true,
     },
   };
 
-  if (formData.pushEffect) data.push.count++;
-  if (formData.pushDice) data.push.count++;
+  static PARTS = {
+    form: {
+      template: "systems/bitd/templates/apps/rollDialog.hbs",
+    },
+  };
 
-  const effectSequence = CONFIG.BITD.rolls.effectSequence;
-  if (data.push.effect) {
-    const index = effectSequence.indexOf(data.effect.key);
-    data.effect.key = effectSequence[index + 1];
+  constructor(options = {}) {
+    super(options);
+    this.actor =
+      options.actor ??
+      game.user.character ??
+      (canvas.ready ? canvas.tokens.controlled[0]?.actor : null) ??
+      null;
+    this.rollConfig = { ...CONFIG.BITD.rolls };
   }
 
-  data.push.stress = data.push.count * 2;
-  data.push.description = game.i18n.format("BITD.Roll.Bonus.Description.Push", {
-    stress: data.push.stress,
-  });
+  get title() {
+    return game.i18n.localize("BITD.Roll.Title");
+  }
 
-  let numSixes = 0;
-  rollResult.terms.map((t) =>
-    t.results.map((r) => {
-      if (r.result <= 3) {
-        r.classes = ["failure"];
-      } else if (r.result <= 5) {
-        r.classes = ["partial"];
-      } else {
-        numSixes += 1;
-        r.classes = ["success"];
+  /**
+   * Data to be passed to the Handlebars template.
+   * @param {object} [options] - Options passed to the render call.
+   * @returns {Promise<object>} Data for the template.
+   */
+  async _prepareContext(options) {
+    const context = await super._prepareContext(options);
+    context.rollConfig = this.rollConfig;
+    const defaults = context.rollConfig.defaults;
+
+    const custom = this.options;
+    if (custom.type) defaults.type = custom.type;
+    if (custom.type == "action" && custom.note) defaults.action = custom.note;
+    if (custom.type == "resistance" && custom.note)
+      defaults.attribute = custom.note;
+    if (!isNaN(custom.note)) defaults.dice = parseInt(custom.note);
+
+    context.actor = this.actor;
+
+    // Add harm to context
+    context.harm = {};
+    if (this.actor && this.actor.system.harm) {
+      const actorHarm = this.actor.system.harm;
+
+      if (actorHarm.lesser[0]) context.harm.lesser1 = actorHarm.lesser[0];
+      if (actorHarm.lesser[1]) context.harm.lesser2 = actorHarm.lesser[1];
+      if (actorHarm.moderate[0]) context.harm.moderate1 = actorHarm.moderate[0];
+      if (actorHarm.moderate[1]) context.harm.moderate2 = actorHarm.moderate[1];
+      if (actorHarm.severe) context.harm.severe = actorHarm.severe;
+    }
+
+    return context;
+  }
+
+  _onRender(context, options) {
+    this._handleOptional("initial");
+    const optionalDepends = this.element.querySelectorAll(".optional-listen");
+    for (const select of optionalDepends) {
+      select.addEventListener("change", this._handleOptional.bind(this));
+    }
+
+    if (this.actor) {
+      this.getDiceNumber("initial");
+      const diceDepends = this.element.querySelectorAll(".dice-listen");
+      for (const select of diceDepends) {
+        select.addEventListener("change", this.getDiceNumber.bind(this));
       }
+    }
 
-      if (r.active) {
-        r.classes.push("active");
-      } else {
-        r.classes.push("inactive");
-      }
+    this._summary();
+    this.element.addEventListener("change", this._summary.bind(this));
+  }
 
-      r.classes = r.classes.join(" ");
-    }),
-  );
+  /* -------------------------------------------- */
+  /* Event Handlers                              */
+  /* -------------------------------------------- */
+  _handleOptional(e) {
+    const html = this.element;
+    const type = html.querySelector("#roll-type").value;
+    const rollAs = html.querySelector("#roll-as").value;
 
-  if (numSixes > 1 && diceToRoll > 1) {
-    data.countAs.key = "critical";
-    const index = effectSequence.indexOf(data.effect.key);
-    data.effect.key = effectSequence[index + 1];
-  } else {
-    switch (rollResult.total) {
-      case 6:
-        data.countAs.key = "success";
-        break;
-      case 4:
-      case 5:
-        data.countAs.key = "mixed";
-        break;
-      case 1:
-      case 2:
-      case 3:
-        data.countAs.key = "fail";
+    const optionalBlocks = html.querySelectorAll(".optional");
+    optionalBlocks.forEach((el) => el.classList.remove("active"));
+
+    for (const block of optionalBlocks) {
+      const supportedType = block.dataset.connected.split(",");
+
+      if (supportedType.includes(type)) block.classList.add("active");
+      if (type == "information" && supportedType.includes(rollAs))
+        block.classList.add("active");
     }
   }
 
-  data.countAs.localizeKey = getLokalizeKey(data.countAs.key);
-  data.countAs.localize = game.i18n.localize(
-    "BITD.Roll.Result." + data.countAs.localizeKey,
-  );
-  data.position.localizeKey = getLokalizeKey(data.position.key);
-  data.position.localize = game.i18n.localize(
-    "BITD.Roll.Position." + data.position.localizeKey,
-  );
-  data.effect.localizeKey = getLokalizeKey(data.effect.key);
-  data.effect.localize = game.i18n.localize(
-    "BITD.Roll.Effect." + data.effect.localizeKey,
-  );
+  getDiceNumber(e) {
+    const actor = this.actor.system;
+    const html = this.element;
+    const formData = new FormData(html);
+    const data = this.toIntData(Object.fromEntries(formData.entries()));
 
-  Object.assign(data, rollResult.data);
+    let diceNumber;
+    const targetType =
+      data.rollType == "information" ? data.rollAs : data.rollType;
+    switch (targetType) {
+      case "action":
+        const action = data.action;
+        if (actor.actions) diceNumber = actor.actions[action].value;
+        break;
+      case "resistance":
+        const attribute = data.attribute;
+        if (actor.attributes) diceNumber = actor.attributes[attribute].value;
+        break;
+      case "vice":
+        if (actor.attributes) {
+          diceNumber = actor.attributes.insight.value;
+          for (let [attrKey, attribute] of Object.entries(actor.attributes)) {
+            if (attribute.value < diceNumber) {
+              diceNumber = attribute.value;
+            }
+          }
+        }
+        break;
+    }
 
-  return data;
-}
+    if (diceNumber || diceNumber == 0) {
+      const diceInput = html.querySelector("#dice-number");
+      diceInput.value = diceNumber;
+      diceInput.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+  }
 
-function getLokalizeKey(key) {
-  return key.charAt(0).toUpperCase() + key.slice(1);
-}
+  _summary(e) {
+    const html = this.element;
+    const formData = new FormData(html);
+    const data = this.toIntData(Object.fromEntries(formData.entries()));
+    data.harm = html.querySelector("#harm").value;
 
-function actionRoll(rollResult, sheet, formData) {
-  const rollData = rollResult.data;
+    const diceToRoll = this.diceCalculation(data);
+    html.querySelector("#summary-dice").textContent = diceToRoll;
 
-  rollData.effect.show = true;
-  rollData.position.show = true;
-  rollData.action = formData.action;
-  const actionKey =
-    rollData.action.charAt(0).toUpperCase() + rollData.action.slice(1);
-  rollResult.name += ": " + game.i18n.localize("BITD.Actions." + actionKey);
+    const { localize: effectLocalize } = this.effectCalculation(data);
+    html.querySelector("#summary-effect").textContent = effectLocalize;
 
-  rollData.description = game.i18n.localize(
-    "BITD.Roll.Action." +
-    rollData.position.localizeKey +
-    "." +
-    rollData.countAs.localizeKey,
-  );
+    const stress = this.stressCalculation(data);
+    html.querySelector("#summary-stress").textContent = stress;
+  }
 
-  if (rollData.countAs.key != "fail") {
-    rollData.effect.description = game.i18n.localize(
-      "BITD.Roll.Effect.Description." + rollData.effect.localizeKey,
+  /* -------------------------------------------- */
+  /* Helpers                              */
+  /* -------------------------------------------- */
+  diceCalculation(data) {
+    let result = (data.diceNumber || 0) + (data.modifier || 0);
+    if (data.assistance) result++;
+    if (data.pushDice || data.devisBargain) result++;
+    if (data.pushDice && data.devisBargain)
+      ui.notifications.info(game.i18n.format("BITD.Roll.Bonus.PushAndDevils"));
+
+    if (!data.harm) return result;
+
+    // Count harm
+    if (data.harm.includes("moderate1")) result--;
+    if (data.harm.includes("moderate2")) result--;
+
+    return Math.max(0, result);
+  }
+
+  effectCalculation(data) {
+    const effectSequence = this.rollConfig.effectSequence;
+    let effectIndex = effectSequence.indexOf(data.effect);
+    if (data.pushEffect) effectIndex++;
+
+    // Count harm
+    if (data.harm) {
+      if (data.harm.includes("lesser1")) effectIndex--;
+      if (data.harm.includes("lesser2")) effectIndex--;
+    }
+
+    const effect = effectSequence[Math.max(0, effectIndex)];
+    const localizeKey = this.getLokalizeKey(effect);
+    const localize = game.i18n.localize("BITD.Roll.Effect." + localizeKey);
+
+    return { effect, localizeKey, localize };
+  }
+
+  stressCalculation(data) {
+    let stress = 0;
+    if (data.pushDice) stress+=2;
+    if (data.pushEffect) stress+=2;
+    if (data.harm.includes("severe")) stress+=2;
+
+    return stress
+  }
+
+  toIntData(data) {
+    for (const prop in data) {
+      if (data.hasOwnProperty(prop) && !isNaN(data[prop])) {
+        data[prop] = parseInt(data[prop]);
+      }
+    }
+
+    return data;
+  }
+
+  getLokalizeKey(key) {
+    return key.charAt(0).toUpperCase() + key.slice(1);
+  }
+
+  /* -------------------------------------------- */
+  /* Submit Handler                            */
+  /* -------------------------------------------- */
+  /**
+   * Handle form submission (if not using specific action buttons or if a submit button is used without data-action).
+   * This is defined in DEFAULT_OPTIONS.form.handler.
+   * @param {SubmitEvent} event - The form submission event.
+   * @param {HTMLFormElement} form - The form element.
+   * @private
+   */
+  static async #onSubmit(event, form) {
+    const formData = new FormData(form);
+    const data = this.toIntData(Object.fromEntries(formData.entries()));
+    data.harm = form.querySelector("#harm").value;
+
+    const functions = {
+      action: this._actionRoll.bind(this),
+      resistance: this._resistanceRoll.bind(this),
+      fortune: this._fortuneRoll.bind(this),
+      information: this._gatherInformation.bind(this),
+      engagement: this._engagementRoll.bind(this),
+      asset: this._acquireAsset.bind(this),
+      vice: this._indulgeVice.bind(this),
+    };
+
+    const rollResult = await this.roll(data);
+    rollResult.name = game.i18n.localize(this.rollConfig.type[data.rollType]);
+
+    const rollFunction = functions[data.rollType];
+    rollFunction(rollResult, data);
+    await this.renderRoll(rollResult);
+    this._giveExp(rollResult.data);
+  }
+
+  /* -------------------------------------------- */
+  /* Roll Functions                              */
+  /* -------------------------------------------- */
+  // Handling dice roll
+  async roll(formData) {
+    const diceToRoll = this.diceCalculation(formData);
+    const formula = diceToRoll ? diceToRoll + "d6kh" : "2d6kl";
+
+    const rollResult = new Roll(formula);
+    await rollResult.evaluate();
+
+    rollResult.data = this._getRollData(rollResult, formData, diceToRoll);
+    this._sufferStress(rollResult);
+
+    return rollResult;
+  }
+
+  // Create data object for future usage
+  _getRollData(rollResult, formData, diceToRoll) {
+    // Base object
+    const data = {
+      type: formData.rollType,
+      countAs: {
+        show: true,
+      },
+      assistance: formData.assistance,
+      push: {
+        count: 0,
+        effect: formData.pushEffect,
+        dice: formData.pushDice,
+      },
+      resistance: {
+        stress: 0,
+      },
+      stress: 0,
+      devisBargain: formData.devisBargain,
+      position: {
+        key: formData.position,
+      },
+      effect: {
+        key: formData.effect,
+      },
+      trauma: {
+        suffer: false,
+      },
+    };
+
+    // Counts how many times a character pushed
+    if (formData.pushEffect) data.push.count++;
+    if (formData.pushDice) data.push.count++;
+
+    // Push stres and description
+    data.push.stress = data.push.count * 2;
+    data.push.description = game.i18n.format(
+      "BITD.Roll.Bonus.Description.Push",
+      {
+        stress: data.push.stress,
+      },
     );
+
+    // Count effect depends on pus hand got localize value
+    data.effect = this.effectCalculation(formData);
+
+    // Add classes to dices and cout sixes for crit
+    let numSixes = 0;
+    rollResult.terms.map((t) =>
+      t.results.map((r) => {
+        if (r.result <= 3) {
+          r.classes = ["failure"];
+        } else if (r.result <= 5) {
+          r.classes = ["partial"];
+        } else {
+          numSixes += 1;
+          r.classes = ["success"];
+        }
+
+        if (r.active) {
+          r.classes.push("active");
+        } else {
+          r.classes.push("inactive");
+        }
+
+        r.classes = r.classes.join(" ");
+      }),
+    );
+
+    // Get key of result
+    if (numSixes > 1 && diceToRoll > 1) {
+      data.countAs.key = "critical";
+      const index = effectSequence.indexOf(data.effect.key);
+      data.effect.key = effectSequence[index + 1];
+    } else {
+      switch (rollResult.total) {
+        case 6:
+          data.countAs.key = "success";
+          break;
+        case 4:
+        case 5:
+          data.countAs.key = "mixed";
+          break;
+        case 1:
+        case 2:
+        case 3:
+          data.countAs.key = "fail";
+      }
+    }
+
+    // Localize key and localizations
+    data.countAs.localizeKey = this.getLokalizeKey(data.countAs.key);
+    data.countAs.localize = game.i18n.localize(
+      "BITD.Roll.Result." + data.countAs.localizeKey,
+    );
+    data.position.localizeKey = this.getLokalizeKey(data.position.key);
+    data.position.localize = game.i18n.localize(
+      "BITD.Roll.Position." + data.position.localizeKey,
+    );
+
+    Object.assign(data, rollResult.data);
+    return data;
   }
 
-  return rollResult;
-}
+  /* Roll type functions                          */
+  /* -------------------------------------------- */
+  _actionRoll(rollResult, formData) {
+    const rollData = rollResult.data;
 
-async function resistanceRoll(rollResult, sheet, formData) {
-  const rollData = rollResult.data;
-
-  rollData.countAs.show = false;
-  const attributeKey =
-    formData.attribute.charAt(0).toUpperCase() + formData.attribute.slice(1);
-  rollResult.name += ": " + game.i18n.localize("BITD.Attributes." + attributeKey);
-  rollData.description = game.i18n.localize("BITD.Roll.Resistance.Result");
-
-  let addStress = 6 - rollResult.total;
-  if (rollData.countAs.key == "critical") {
-    rollData.description += game.i18n.localize("BITD.Roll.Resistance.Critical");
-    addStress = -1;
-  } else {
-    rollData.description += game.i18n.format("BITD.Roll.Resistance.Regular", {
-      stress: addStress,
-    });
-  }
-
-  rollData.resistanceStress = addStress;
-  sufferStress(rollResult, sheet);
-
-  return rollResult;
-}
-
-function fortuneRoll(rollResult) {
-  const rollData = rollResult.data;
-
-  rollData.description = game.i18n.localize(
-    "BITD.Roll.Fortune." + rollData.countAs.localizeKey,
-  );
-
-  const rollEffect = CONFIG.BITD.rolls.fortuneRollResult[rollData.countAs.key];
-  rollData.effect.description = game.i18n.localize(
-    "BITD.Roll.Effect.Description." + rollEffect,
-  );
-
-  return rollResult;
-}
-
-function gatherInformation(rollResult, sheet, formData) {
-  const rollData = rollResult.data;
-
-  rollData.rollAs = {
-    key: formData.rollAs,
-    localizeKey: getLokalizeKey(formData.rollAs),
-  };
-  rollData.rollAs.localize = game.i18n.localize(
-    "BITD.Roll.Type." + rollData.rollAs.localizeKey,
-  );
-
-  if (rollData.rollAs.key == "action") {
     rollData.effect.show = true;
     rollData.position.show = true;
     rollData.action = formData.action;
-    rollData.rollAs.localize = game.i18n.localize("BITD.Roll.Type.Action");
+    const actionKey =
+      rollData.action.charAt(0).toUpperCase() + rollData.action.slice(1);
+    rollResult.name += ": " + game.i18n.localize("BITD.Actions." + actionKey);
 
     rollData.description = game.i18n.localize(
       "BITD.Roll.Action." +
-      rollData.position.localizeKey +
-      "." +
-      rollData.countAs.localizeKey,
+        rollData.position.localizeKey +
+        "." +
+        rollData.countAs.localizeKey,
     );
 
-    switch (rollData.countAs.key) {
-      case "critical":
-      case "success":
-      case "mixed":
-        rollData.effect.description = game.i18n.localize(
-          "BITD.Roll.GatherInformation." + rollData.effect.localizeKey,
-        );
-        break;
-      case "fail":
-        rollData.effect.description = game.i18n.localize(
-          "BITD.Roll.GatherInformation.Zero",
-        );
+    if (rollData.countAs.key != "fail") {
+      rollData.effect.description = game.i18n.localize(
+        "BITD.Roll.Effect.Description." + rollData.effect.localizeKey,
+      );
     }
-  } else if (rollData.rollAs.key == "fortune") {
+
+    return rollResult;
+  }
+
+  async _resistanceRoll(rollResult, formData) {
+    const rollData = rollResult.data;
+
+    rollData.countAs.show = false;
+    const attributeKey =
+      formData.attribute.charAt(0).toUpperCase() + formData.attribute.slice(1);
+    rollResult.name +=
+      ": " + game.i18n.localize("BITD.Attributes." + attributeKey);
+    rollData.description = game.i18n.localize("BITD.Roll.Resistance.Result");
+
+    let addStress = 6 - rollResult.total;
+    if (rollData.countAs.key == "critical") {
+      rollData.description += game.i18n.localize(
+        "BITD.Roll.Resistance.Critical",
+      );
+      addStress = -1;
+    } else {
+      rollData.description += game.i18n.format("BITD.Roll.Resistance.Regular", {
+        stress: addStress,
+      });
+    }
+
+    rollData.resistanceStress = addStress;
+    this._sufferStress(rollResult);
+
+    return rollResult;
+  }
+
+  _fortuneRoll(rollResult) {
+    const rollData = rollResult.data;
+
+    rollData.description = game.i18n.localize(
+      "BITD.Roll.Fortune." + rollData.countAs.localizeKey,
+    );
+
     const rollEffect =
       CONFIG.BITD.rolls.fortuneRollResult[rollData.countAs.key];
     rollData.effect.description = game.i18n.localize(
-      "BITD.Roll.GatherInformation." + rollEffect,
+      "BITD.Roll.Effect.Description." + rollEffect,
     );
+
+    return rollResult;
   }
 
-  return rollResult;
-}
+  _gatherInformation(rollResult, formData) {
+    const rollData = rollResult.data;
 
-function engagementRoll(rollResult) {
-  rollResult.data.description = game.i18n.localize(
-    "BITD.Roll.Engagement." + rollResult.data.countAs.localizeKey,
-  );
+    rollData.rollAs = {
+      key: formData.rollAs,
+      localizeKey: this.getLokalizeKey(formData.rollAs),
+    };
+    rollData.rollAs.localize = game.i18n.localize(
+      "BITD.Roll.Type." + rollData.rollAs.localizeKey,
+    );
 
-  return rollResult;
-}
+    if (rollData.rollAs.key == "action") {
+      rollData.effect.show = true;
+      rollData.position.show = true;
+      rollData.action = formData.action;
+      rollData.rollAs.localize = game.i18n.localize("BITD.Roll.Type.Action");
 
-function acquireAsset(rollResult) {
-  rollResult.data.countAs.show = false;
-  rollResult.data.description = game.i18n.localize(
-    "BITD.Roll.AcquireAsset." + rollResult.data.countAs.localizeKey,
-  );
-
-  return rollResult;
-}
-
-async function indulgeVice(rollResult, sheet) {
-  rollResult.data.countAs.show = false;
-
-  const clearStress = rollResult.total;
-
-  if (sheet && sheet.system.stress) {
-    const stress = sheet.system.stress.value - clearStress;
-
-    if (stress < 0) {
-      rollResult.data.description = game.i18n.localize(
-        "BITD.Roll.IndulgeVice.Overindulgence",
+      rollData.description = game.i18n.localize(
+        "BITD.Roll.Action." +
+          rollData.position.localizeKey +
+          "." +
+          rollData.countAs.localizeKey,
       );
-      rollResult.data.description +=
-        "<ul>" +
-        game.i18n.localize("BITD.Roll.IndulgeVice.Trouble") +
-        game.i18n.localize("BITD.Roll.IndulgeVice.Brag") +
-        game.i18n.localize("BITD.Roll.IndulgeVice.Lost") +
-        game.i18n.localize("BITD.Roll.IndulgeVice.Trapped") +
-        "</ul>";
-      await sheet.update({ "system.stress.value": 0 });
+
+      switch (rollData.countAs.key) {
+        case "critical":
+        case "success":
+        case "mixed":
+          rollData.effect.description = game.i18n.localize(
+            "BITD.Roll.GatherInformation." + rollData.effect.localizeKey,
+          );
+          break;
+        case "fail":
+          rollData.effect.description = game.i18n.localize(
+            "BITD.Roll.GatherInformation.Zero",
+          );
+      }
+    } else if (rollData.rollAs.key == "fortune") {
+      const rollEffect =
+        CONFIG.BITD.rolls.fortuneRollResult[rollData.countAs.key];
+      rollData.effect.description = game.i18n.localize(
+        "BITD.Roll.GatherInformation." + rollEffect,
+      );
+    }
+
+    return rollResult;
+  }
+
+  _engagementRoll(rollResult) {
+    rollResult.data.description = game.i18n.localize(
+      "BITD.Roll.Engagement." + rollResult.data.countAs.localizeKey,
+    );
+
+    return rollResult;
+  }
+
+  _acquireAsset(rollResult) {
+    rollResult.data.countAs.show = false;
+    rollResult.data.description = game.i18n.localize(
+      "BITD.Roll.AcquireAsset." + rollResult.data.countAs.localizeKey,
+    );
+
+    return rollResult;
+  }
+
+  async _indulgeVice(rollResult) {
+    rollResult.data.countAs.show = false;
+
+    const clearStress = rollResult.total;
+
+    if (this.actor && this.actor.system.stress) {
+      const stress = this.actor.system.stress.value - clearStress;
+
+      if (stress < 0) {
+        rollResult.data.description = game.i18n.localize(
+          "BITD.Roll.IndulgeVice.Overindulgence",
+        );
+        rollResult.data.description +=
+          "<ul>" +
+          game.i18n.localize("BITD.Roll.IndulgeVice.Trouble") +
+          game.i18n.localize("BITD.Roll.IndulgeVice.Brag") +
+          game.i18n.localize("BITD.Roll.IndulgeVice.Lost") +
+          game.i18n.localize("BITD.Roll.IndulgeVice.Trapped") +
+          "</ul>";
+        await this.actor.update({ "system.stress.value": 0 });
+      } else {
+        rollResult.data.description = game.i18n.format(
+          "BITD.Roll.IndulgeVice.Regular",
+          { stress: clearStress },
+        );
+        await this.actor.update({ "system.stress.value": stress });
+      }
     } else {
       rollResult.data.description = game.i18n.format(
         "BITD.Roll.IndulgeVice.Regular",
         { stress: clearStress },
       );
-      await sheet.update({ "system.stress.value": stress });
     }
-  } else {
-    rollResult.data.description = game.i18n.format(
-      "BITD.Roll.IndulgeVice.Regular",
-      { stress: clearStress },
+
+    return rollResult;
+  }
+
+  /* Helpers for handling rolls                   */
+  /* -------------------------------------------- */
+  async renderRoll(renderData) {
+    renderData.renderDice = renderData.dice[0].results;
+    const speaker = ChatMessage.getSpeaker({ actor: this.actor });
+    const rollTemplate = await foundry.applications.handlebars.renderTemplate(
+      "systems/bitd/templates/apps/rollResult.hbs",
+      renderData,
     );
+    renderData.toMessage({
+      speaker: speaker,
+      content: rollTemplate,
+    });
   }
 
-  return rollResult;
-}
+  async _sufferStress(rollResult) {
+    rollResult.data.stress =
+      rollResult.data.push.stress + rollResult.data.resistance.stress;
+    if (!this.actor) return;
+    if (!this.actor.system.stress) return;
+    const stress = this.actor.system.stress.value + rollResult.data.stress;
 
-async function renderRoll(renderData, sheet) {
-  renderData.renderDice = renderData.dice[0].results;
-  const speaker = ChatMessage.getSpeaker({ actor: sheet });
-  const rollTemplate = await renderTemplate(
-    "systems/bitd/templates/apps/rollResult.hbs",
-    renderData,
-  );
-  renderData.toMessage({
-    speaker: speaker,
-    content: rollTemplate,
-  });
-}
-
-async function sufferStress(rollResult, sheet) {
-  rollResult.data.stress = rollResult.data.push.stress + rollResult.data.resistance.stress;
-  if (!sheet) return;
-  if (!sheet.system.stress) return;
-  const stress = sheet.system.stress.value + rollResult.data.stress;
-
-  console.log(stress, sheet.system.stress)
-  if (stress < sheet.system.stress.max) {
-    await sheet.update({ "system.stress.value": stress });
-  } else {
-    rollResult.data.trauma.suffer = true;
-    rollResult.data.trauma.description = game.i18n.format(
-      "BITD.Roll.SufferTrauma.Description",
-      { stress: stress },
-    );
-    await sheet.update({ "system.stress.value": 0 });
-  }
-}
-
-async function giveExp(rollData, sheet) {
-  const speaker = ChatMessage.getSpeaker({ actor: sheet });
-  let supported;
-  if (rollData.rollAs) {
-    supported = rollData.type == "action" || rollData.rollAs.key == "action";
-  } else {
-    supported = rollData.type == "action";
-  }
-
-  if (rollData.position.key != "desperate" || !supported) return;
-
-  let conAttribute = "???";
-  for (const [attribute, actions] of Object.entries(
-    CONFIG.BITD.attributeLinks,
-  )) {
-    if (actions.includes(rollData.action)) {
-      conAttribute = attribute;
-      break;
+    if (stress < this.actor.system.stress.max) {
+      await this.actor.update({ "system.stress.value": stress });
+    } else {
+      rollResult.data.trauma.suffer = true;
+      rollResult.data.trauma.description = game.i18n.format(
+        "BITD.Roll.SufferTrauma.Description",
+        { stress: stress },
+      );
+      await this.actor.update({ "system.stress.value": 0 });
     }
   }
 
-  const actorName = speaker.actor ? speaker.alias : "???";
-  const message = game.i18n.format("BITD.Roll.Result.Exp", {
-    actor: actorName,
-    attribute: conAttribute,
-  });
-  const chatData = {
-    user: game.user.id,
-    speaker: speaker,
-    content: message,
-  };
-  ChatMessage.create(chatData);
+  async _giveExp(rollData) {
+    const speaker = ChatMessage.getSpeaker({ actor: this.actor });
+    let supported;
+    if (rollData.rollAs) {
+      supported =
+        rollData.type == "information" || rollData.rollAs.key == "action";
+    } else {
+      supported = rollData.type == "action";
+    }
 
-  if (sheet && sheet.system.attributes) {
-    const exp = sheet.system.attributes[conAttribute].exp;
-    if (exp.value < exp.max) {
-      exp.value++;
-      const path = "system.attributes." + conAttribute + ".exp.value";
-      await sheet.update({ [path]: exp.value });
+    if (rollData.position.key != "desperate" || !supported) return;
+
+    let conAttribute = "???";
+    for (const [attribute, actions] of Object.entries(
+      CONFIG.BITD.attributeLinks,
+    )) {
+      if (actions.includes(rollData.action)) {
+        conAttribute = attribute;
+        break;
+      }
+    }
+
+    const actorName = speaker.actor ? speaker.alias : "???";
+    const message = game.i18n.format("BITD.Roll.Result.Exp", {
+      actor: actorName,
+      attribute: conAttribute,
+    });
+    const chatData = {
+      user: game.user.id,
+      speaker: speaker,
+      content: message,
+    };
+    ChatMessage.create(chatData);
+
+    if (this.actor && this.actor.system.attributes) {
+      const exp = this.actor.system.attributes[conAttribute].exp;
+      if (exp.value < exp.max) {
+        exp.value++;
+        const path = "system.attributes." + conAttribute + ".exp.value";
+        await this.actor.update({ [path]: exp.value });
+      }
     }
   }
 }

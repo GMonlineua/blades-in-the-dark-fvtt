@@ -82,7 +82,7 @@ export class BitdScoundrelSheet extends BitdActorSheet {
     super.activateListeners(html);
 
     // Lifestyle track
-    html.find(".stash-box").each(function(i) {
+    html.find(".stash-box").each(function (i) {
       const parent = $(this.parentNode);
       const lifestyle = parent[0].dataset.value;
       if (i < lifestyle) $(this).addClass("filled");
@@ -135,9 +135,9 @@ export class BitdScoundrelSheet extends BitdActorSheet {
           },
         },
         default: "add",
-        close: () => { },
+        close: () => {},
         render: (html) => {
-          html.find(".trauma").on("click", function() {
+          html.find(".trauma").on("click", function () {
             $(this).toggleClass("active");
           });
         },

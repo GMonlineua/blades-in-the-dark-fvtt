@@ -1,21 +1,40 @@
 <form class="{{cssClass}} {{actor.type}}" autocomplete="off">
-  {{!-- Sheet Header --}}
+  {{! Sheet Header }}
   <header class="sheet-header actor-grid">
-    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+    <img
+      class="profile-img"
+      src="{{actor.img}}"
+      data-edit="img"
+      title="{{actor.name}}"
+    />
     <div class="header-fields">
       <h1 class="character-name">{{actor.name}}</h1>
       <div class="brief-info">
         <div class="prop">
-          <label class="prop-label rollable" data-roll-type="fortune" for="system.tier">{{localize 'BITD.Actor.Tier'}}:</label>
+          <label
+            class="prop-label rollable"
+            data-roll-type="fortune"
+            for="system.tier"
+          >{{localize "BITD.Actor.Tier"}}:</label>
           <span>{{system.tier.value}}</span>
           <select class="clear-select" name="system.hold">
-            {{selectOptions config.holdTypes selected=system.hold localize=true}}
+            {{selectOptions
+              config.holdTypes
+              selected=system.hold
+              localize=true
+            }}
           </select>
         </div>
         <div class="prop">
-          <label class="prop-label" for="system.status">{{localize 'BITD.Faction.Status.Title'}}:</label>
+          <label class="prop-label" for="system.status">{{localize
+              "BITD.Faction.Status.Title"
+            }}:</label>
           <select class="clear-select" name="system.status">
-            {{selectOptions config.statusTypes selected=system.status localize=true}}
+            {{selectOptions
+              config.statusTypes
+              selected=system.status
+              localize=true
+            }}
           </select>
         </div>
         <p class="summary">{{system.summary}}</p>
@@ -23,26 +42,29 @@
     </div>
   </header>
 
-  {{!-- Sheet Tab Navigation --}}
+  {{! Sheet Tab Navigation }}
   <nav class="sheet-tabs tabs flexrow" data-group="primary">
-    <a class="item" data-tab="general">{{localize 'BITD.General'}}</a>
-    <a class="item" data-tab="notes">{{localize 'BITD.Notes'}}</a>
+    <a class="item" data-tab="general">{{localize "BITD.General"}}</a>
+    <a class="item" data-tab="notes">{{localize "BITD.Notes"}}</a>
   </nav>
 
-  {{!-- Sheet Body --}}
+  {{! Sheet Body }}
   <section class="sheet-body">
 
-    {{!-- Owned Playbook Tab --}}
+    {{! Owned Playbook Tab }}
     <div class="tab general" data-group="primary" data-tab="general">
       <div class="goals items-block prop-field">
-        <h3 class="bitd-header">{{localize 'BITD.Faction.Goals'}}</h3>
+        <h3 class="bitd-header">{{localize "BITD.Faction.Goals"}}</h3>
         <ol class="items-list" data-array="goals">
           {{#each system.goals as |goal|}}
             {{#if goal.show}}
               <li class="item link goal" data-id="{{goal.id}}">
-                <img class="clock-img" src="{{goal.img}}"/>
+                <img class="clock-img" src="{{goal.img}}" />
                 <div class="item-description">
-                  <a class="clock-name actor-open" data-uuid="{{goal.uuid}}">{{goal.name}}</a>
+                  <a
+                    class="clock-name actor-open"
+                    data-uuid="{{goal.uuid}}"
+                  >{{goal.name}}</a>
                 </div>
               </li>
             {{/if}}
@@ -52,21 +74,27 @@
 
       {{#if system.lair.show}}
         <div class="lair prop-field">
-          <label class="prop-label" for="system.lair">{{localize 'BITD.Faction.Lair'}}:</label>
+          <label class="prop-label" for="system.lair">{{localize
+              "BITD.Faction.Lair"
+            }}:</label>
           <span>{{system.lair.value}}</span>
         </div>
       {{/if}}
 
       {{#if system.assets.show}}
         <div class="notable-assets prop-field">
-          <label class="prop-label" for="system.assets">{{localize 'BITD.Faction.NotableAssets'}}:</label>
+          <label class="prop-label" for="system.assets">{{localize
+              "BITD.Faction.NotableAssets"
+            }}:</label>
           <span>{{system.assets.value}}</span>
         </div>
       {{/if}}
 
       {{#if system.quirks.show}}
         <div class="quirks prop-field">
-          <label class="prop-label" for="system.quirks">{{localize 'BITD.Faction.Quirks'}}:</label>
+          <label class="prop-label" for="system.quirks">{{localize
+              "BITD.Faction.Quirks"
+            }}:</label>
           <span>{{system.quirks.value}}</span>
         </div>
       {{/if}}
@@ -74,7 +102,7 @@
       {{#if system.showTurf}}
         <div class="turf prop-field items-block full-size">
           <div class="item-header bitd-header">
-            <h3>{{localize 'BITD.Claim.Turf'}}</h3>
+            <h3>{{localize "BITD.Claim.Turf"}}</h3>
           </div>
           <ol class="items-list">
             {{#each claims as |item id|}}
@@ -83,7 +111,8 @@
                   <span class="item-name">{{item.name}}</span>
                 </div>
                 <div class="item-summary">
-                  <p class="effect"><b>{{localize 'BITD.Claim.Effect'}}:</b> {{system.effect}}</p>
+                  <p class="effect"><b>{{localize "BITD.Claim.Effect"}}:</b>
+                    {{system.effect}}</p>
                   {{{item.system.description}}}
                 </div>
               </li>
@@ -93,7 +122,7 @@
       {{/if}}
 
       <div class="members items-block prop-field">
-        <h3 class="bitd-header">{{localize 'BITD.Faction.Members'}}</h3>
+        <h3 class="bitd-header">{{localize "BITD.Faction.Members"}}</h3>
         <ol class="items-list" data-array="members">
           {{#each system.members as |member|}}
             {{#if member.show}}
@@ -102,7 +131,11 @@
                   <span class="item-name">{{member.name}}</span>
                 </div>
                 <div class="item-controls">
-                  <a class="item-control actor-open" title="{{localize 'BITD.Link.Open'}}" data-uuid="{{member.uuid}}"><i class="fa fa-external-link"></i></a>
+                  <a
+                    class="item-control actor-open"
+                    title="{{localize 'BITD.Link.Open'}}"
+                    data-uuid="{{member.uuid}}"
+                  ><i class="fa fa-external-link"></i></a>
                 </div>
               </li>
             {{/if}}
@@ -111,20 +144,34 @@
       </div>
 
       <div class="related-faction prop-block items-block">
-        <h3 class="bitd-header">{{localize 'BITD.Faction.Factions'}}</h3>
+        <h3 class="bitd-header">{{localize "BITD.Faction.Factions"}}</h3>
         <ol class="items-list" data-array="relatedFactions">
           {{#each system.relatedFactions as |faction|}}
             {{#if faction.show}}
               <li class="item faction" data-id="{{faction.id}}">
                 <div class="item-description">
                   <span class="item-name">{{faction.name}}</span>
-                  <span class="tier-styled" style="--tier:{{faction.tier}}"></span>
-                  <select class="clear-select set-status" data-index="{{@index}}">
-                    {{selectOptions @root.config.statusTypes selected=faction.status localize=true}}
+                  <span
+                    class="tier-styled"
+                    style="--tier:{{faction.tier}}"
+                  ></span>
+                  <select
+                    class="clear-select set-status"
+                    data-index="{{@index}}"
+                  >
+                    {{selectOptions
+                      @root.config.statusTypes
+                      selected=faction.status
+                      localize=true
+                    }}
                   </select>
                 </div>
                 <div class="item-controls">
-                  <a class="item-control actor-open" title="{{localize 'BITD.Link.Open'}}" data-uuid="{{faction.uuid}}"><i class="fa fa-external-link"></i></a>
+                  <a
+                    class="item-control actor-open"
+                    title="{{localize 'BITD.Link.Open'}}"
+                    data-uuid="{{faction.uuid}}"
+                  ><i class="fa fa-external-link"></i></a>
                 </div>
               </li>
             {{/if}}
@@ -133,15 +180,31 @@
       </div>
     </div>
 
-    {{!-- Owned Notes Tab --}}
+    {{! Owned Notes Tab }}
     <div class="tab notes" data-group="primary" data-tab="notes">
       <div class="situation">
-        <h3 class="bitd-header">{{localize 'BITD.Faction.Situation'}}</h3>
-        {{editor enrichedSituation target="system.situation" rollData=rollData button=true engine="prosemirror" editable=editable collaborate=true}}
+        <h3 class="bitd-header">{{localize "BITD.Faction.Situation"}}</h3>
+        {{editor
+          enrichedSituation
+          target="system.situation"
+          rollData=rollData
+          button=true
+          engine="prosemirror"
+          editable=editable
+          collaborate=true
+        }}
       </div>
       <div class="description">
-        <h3 class="bitd-header">{{localize 'BITD.Description'}}</h3>
-        {{editor enrichedDescription target="system.description" rollData=rollData button=true engine="prosemirror" editable=editable collaborate=true}}
+        <h3 class="bitd-header">{{localize "BITD.Description"}}</h3>
+        {{editor
+          enrichedDescription
+          target="system.description"
+          rollData=rollData
+          button=true
+          engine="prosemirror"
+          editable=editable
+          collaborate=true
+        }}
       </div>
     </div>
   </section>

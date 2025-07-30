@@ -3,7 +3,6 @@
  * @extends {FormApplication}
  */
 export default class BITDChangeSettings extends FormApplication {
-
   /** @override */
   constructor(object, options = {}) {
     super(object, options);
@@ -15,7 +14,7 @@ export default class BITDChangeSettings extends FormApplication {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["bitd", "dialog", "sheet-settings"],
       width: "500",
-      height: "fit-content"
+      height: "fit-content",
     });
   }
 

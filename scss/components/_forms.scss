@@ -36,16 +36,14 @@
 }
 
 .rollable {
-
   &:hover,
   &:focus {
-    color: black;
     cursor: pointer;
+    color: black;
   }
 }
 
 .bitd-header.rollable {
-
   &:hover,
   &:focus {
     color: white;
@@ -58,8 +56,8 @@
 }
 
 .tier-styled:before {
-  content: counter(my-awesome-counter, upper-roman);
   margin-right: 5px;
+  content: counter(my-awesome-counter, upper-roman);
 }
 
 .value-step-block {
@@ -71,11 +69,11 @@
   }
 
   .value-dot {
-    height: 14px;
-    width: 14px;
     border: 1px solid black;
     border-radius: 50%;
     background: white;
+    width: 14px;
+    height: 14px;
   }
 
   .value-dot.active {
@@ -83,12 +81,12 @@
   }
 
   .value-tooth {
-    height: 40px;
-    width: 14px;
     background-image: url("../assets/tooth/tooth-black-white.svg");
-    background-size: 14px;
     background-position: center;
+    background-size: 14px;
     background-repeat: no-repeat;
+    width: 14px;
+    height: 40px;
   }
 
   .value-tooth.active {
@@ -101,10 +99,10 @@
 
   .simple-tooth,
   .simple-red-tooth {
-    height: 30px;
-    width: 9px;
     background-image: url("../assets/tooth/tooth-white.svg");
     background-size: 9px;
+    width: 9px;
+    height: 30px;
   }
 
   .simple-tooth.active {
@@ -116,8 +114,8 @@
   }
 
   .small-tooth {
-    height: 20px;
     background-image: url("../assets/tooth/tooth-small-grey.svg");
+    height: 20px;
   }
 
   .small-tooth.active {
@@ -125,11 +123,11 @@
   }
 
   .value-box {
-    height: 12px;
-    width: 12px;
     border: 1px solid black;
     border-radius: 0;
     background: white;
+    width: 12px;
+    height: 12px;
   }
 
   .value-box.active {
@@ -148,8 +146,8 @@ textarea {
 }
 
 .sheet-tabs {
-  font-family: $font-secondary;
   font-size: medium;
+  font-family: $font-secondary;
 
   .item.active {
     background: $dark-paper;
@@ -174,9 +172,9 @@ textarea {
 }
 
 .editor {
-  min-height: 200px;
-  padding: 0 $padding-sm;
   border: $border;
+  padding: 0 $padding-sm;
+  min-height: 200px;
 }
 
 .claims-map {
@@ -184,22 +182,22 @@ textarea {
   gap: $padding-md;
 
   .claim {
-    position: relative;
     display: grid;
+    position: relative;
     align-items: center;
     background: $dark-paper;
     text-align: center;
 
     .name {
-      font-family: $font-secondary;
-      font-size: medium;
       font-weight: bold;
+      font-size: medium;
+      font-family: $font-secondary;
     }
 
     .item-summary {
       padding: 15px 3px 0 3px;
-      overflow: hidden;
       height: 140px;
+      overflow: hidden;
 
       .name {
         font-size: small;
@@ -211,18 +209,18 @@ textarea {
     }
 
     .item-controls {
+      display: flex;
       position: absolute;
       top: 5px;
       right: 5px;
-      display: flex;
       justify-content: flex-end;
       font-size: smaller;
 
       .item-checkbox,
       .claim-checkbox {
         margin: 0;
-        height: 12px;
         width: 10px;
+        height: 12px;
       }
 
       .item-control {
@@ -232,9 +230,9 @@ textarea {
 
     .claim-move {
       position: absolute;
-      font-size: large;
       opacity: 0;
       transition: opacity 0.3s ease-in;
+      font-size: large;
     }
 
     .move-left {
@@ -257,7 +255,6 @@ textarea {
   }
 
   .claim:first-child {
-
     .move-left,
     .move-up {
       display: none;
@@ -265,7 +262,6 @@ textarea {
   }
 
   .claim:last-child {
-
     .move-right,
     .move-down {
       display: none;

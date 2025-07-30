@@ -3,20 +3,21 @@ input.all-width {
 }
 
 textarea.auto-grow {
-  width: 100%;
   box-sizing: border-box;
+  width: 100%;
   overflow: hidden;
   resize: vertical;
 }
 
 .actor-grid {
   display: grid;
-  column-gap: $padding-md;
   grid-template-columns: 250px 1fr;
+  column-gap: $padding-md;
 }
 
 .sheet-header {
-  .money, .storage {
+  .money,
+  .storage {
     input {
       margin-left: 3px;
       padding: 0;
@@ -53,9 +54,9 @@ textarea.auto-grow {
         flex-direction: column;
 
         .clock-img {
+          border: none;
           width: 50px;
           height: 50px;
-          border: none;
         }
 
         .item-description {

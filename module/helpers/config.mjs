@@ -6,6 +6,7 @@ export const BITD = {
   },
   linkedForeign: {
     scoundrel: ["contacts", "goals"],
+    playbook: ["abilities", "contacts", "inventory"],
     crew: ["members", "contacts", "relatedFactions", "goals"],
     faction: ["members", "relatedFactions", "goals"],
     crewType: ["abilities", "cohorts", "claimsMap", "upgrades", "contacts"],
@@ -117,7 +118,7 @@ export const BITD = {
     fringe: "BITD.Faction.Types.Fringe",
     institution: "BITD.Faction.Types.Institution",
     laborTrade: "BITD.Faction.Types.LaborTrade",
-    other: "BITD.Faction.Types.Other"
+    other: "BITD.Faction.Types.Other",
   },
   statusTypes: {
     allies: "BITD.Faction.Status.Allies",
@@ -153,6 +154,12 @@ export const BITD = {
   relationshipClasses: ["rival", "neutral", "friend", "special"],
 
   rolls: {
+    defaults: {
+      type: "fortune",
+      action: "hunt",
+      attribute: "insight",
+      dice: 0,
+    },
     type: {
       action: "BITD.Roll.Type.Action",
       resistance: "BITD.Roll.Type.Resistance",
@@ -232,5 +239,5 @@ export const BITD = {
       },
     },
   },
-  settingsSupported: ["scoundrel", "crew"]
+  settingsSupported: ["scoundrel", "crew"],
 };
