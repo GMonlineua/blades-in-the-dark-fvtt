@@ -161,17 +161,20 @@ export default class BitdRolls extends HandlebarsApplicationMixin(
     const data = this.toIntData(Object.fromEntries(formData.entries()));
     data.harm = html.querySelector("#harm").value;
 
-    const diceToRoll = this.countDice(data);
+    const diceToRoll = this.diceCalculation(data);
     html.querySelector("#summary-dice").textContent = diceToRoll;
 
     const { localize: effectLocalize } = this.effectCalculation(data);
     html.querySelector("#summary-effect").textContent = effectLocalize;
+
+    const stress = this.stressCalculation(data);
+    html.querySelector("#summary-stress").textContent = stress;
   }
 
   /* -------------------------------------------- */
   /* Helpers                              */
   /* -------------------------------------------- */
-  countDice(data) {
+  diceCalculation(data) {
     let result = (data.diceNumber || 0) + (data.modifier || 0);
     if (data.assistance) result++;
     if (data.pushDice || data.devisBargain) result++;
@@ -203,6 +206,15 @@ export default class BitdRolls extends HandlebarsApplicationMixin(
     const localize = game.i18n.localize("BITD.Roll.Effect." + localizeKey);
 
     return { effect, localizeKey, localize };
+  }
+
+  stressCalculation(data) {
+    let stress = 0;
+    if (data.pushDice) stress+=2;
+    if (data.pushEffect) stress+=2;
+    if (data.harm.includes("severe")) stress+=2;
+
+    return stress
   }
 
   toIntData(data) {
@@ -258,7 +270,7 @@ export default class BitdRolls extends HandlebarsApplicationMixin(
   /* -------------------------------------------- */
   // Handling dice roll
   async roll(formData) {
-    const diceToRoll = this.countDice(formData);
+    const diceToRoll = this.diceCalculation(formData);
     const formula = diceToRoll ? diceToRoll + "d6kh" : "2d6kl";
 
     const rollResult = new Roll(formula);
