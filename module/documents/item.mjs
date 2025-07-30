@@ -159,7 +159,6 @@ export default class BitdItem extends Item {
   async loadLinkedData() {
     if (!this.sheet.isEditable) return;
     if (!CONFIG.BITD.linkedForeign[this.type]) return;
-    console.log("start loading")
 
     for (const key of CONFIG.BITD.linkedForeign[this.type]) {
       // Handle claims

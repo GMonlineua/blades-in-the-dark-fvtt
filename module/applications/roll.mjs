@@ -198,9 +198,7 @@ export default class BitdRolls extends HandlebarsApplicationMixin(
       if (data.harm.includes("lesser2")) effectIndex--;
     }
 
-    console.log(effectIndex);
     const effect = effectSequence[Math.max(0, effectIndex)];
-    console.log(effect);
     const localizeKey = this.getLokalizeKey(effect);
     const localize = game.i18n.localize("BITD.Roll.Effect." + localizeKey);
 
@@ -317,7 +315,6 @@ export default class BitdRolls extends HandlebarsApplicationMixin(
 
     // Count effect depends on pus hand got localize value
     data.effect = this.effectCalculation(formData);
-    console.log(data.effect);
 
     // Add classes to dices and cout sixes for crit
     let numSixes = 0;

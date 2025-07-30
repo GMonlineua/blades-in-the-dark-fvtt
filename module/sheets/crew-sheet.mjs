@@ -166,12 +166,8 @@ export class BitdCrewSheet extends BitdActorSheet {
 
     await this.actor.update({ [path]: container });
 
-    try {
-      const item = this.actor.items.get(itemID);
-      await item.delete();
-    } catch {
-      console.log("item doesn't exist");
-    }
+    const item = this.actor.items.get(itemID);
+    if (item) item.delete();
 
     claimMap(this.actor);
   }

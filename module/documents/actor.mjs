@@ -281,7 +281,6 @@ export default class BitdActor extends Actor {
                 selectedIds.includes(a.id),
               );
               for (const actorData of selectedActors) {
-                console.log(actorData);
                 const actor = await BitdActor.create(actorData);
                 this.addLinkedActor(actor);
               }

@@ -2,10 +2,10 @@
   "id": "bitd",
   "title": "Blades in the Dark",
   "description": "Blades in the Dark game system by GMonline",
-  "version": "0.8",
+  "version": "0.9",
   "compatibility": {
-    "minimum": "12",
-    "verified": "12.331",
+    "minimum": "13",
+    "verified": "13.346",
     "maximum": "13"
   },
   "authors": [
@@ -21,12 +21,8 @@
       "discord": "kemrian"
     }
   ],
-  "esmodules": [
-    "module/bitd.mjs"
-  ],
-  "styles": [
-    "css/bitd.css"
-  ],
+  "esmodules": ["module/bitd.mjs"],
+  "styles": ["css/bitd.css"],
   "languages": [
     {
       "lang": "en",
@@ -167,7 +163,7 @@
   "socket": true,
   "url": "https://github.com/GMonlineua/blades-in-the-dark-fvtt",
   "manifest": "https://raw.githubusercontent.com/GMonlineua/blades-in-the-dark-fvtt/main/system.json",
-  "download": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/releases/download/v0.8/foundry.zip",
+  "download": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/releases/download/v0.9/foundry.zip",
   "license": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/blob/main/LICENSE.md",
   "changelog": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/wiki/Changelog",
   "bugs": "https://github.com/MagpieRook/blades-in-the-dark/issues/new"
