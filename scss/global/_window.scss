@@ -90,3 +90,10 @@ select.clear-select {
   min-width: 450px;
   min-height: 400px;
 }
+
+.journal-entry.journal-sheet {
+  .journal-entry-page h1, .journal-entry-page h2, .journal-entry-page h3, .journal-entry-page h4, .journal-entry-page h5, .journal-entry-page h6 {
+    font-weight: bold;
+    font-family: "Spectral SC", serif;
+  }
+}

@@ -21,8 +21,12 @@
       "discord": "kemrian"
     }
   ],
-  "esmodules": ["module/bitd.mjs"],
-  "styles": ["css/bitd.css"],
+  "esmodules": [
+    "module/bitd.mjs"
+  ],
+  "styles": [
+    "css/bitd.css"
+  ],
   "languages": [
     {
       "lang": "en",
@@ -140,6 +144,17 @@
       "type": "Item",
       "name": "upgrades",
       "path": "packs/upgrades",
+      "system": "bitd",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "label": "SRD",
+      "type": "JournalEntry",
+      "name": "srd",
+      "path": "packs/srd",
       "system": "bitd",
       "ownership": {
         "PLAYER": "OBSERVER",
