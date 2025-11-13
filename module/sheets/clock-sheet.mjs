@@ -1,8 +1,8 @@
 /**
  * Extend the basic ActorSheet with some very simple modifications
- * @extends {ActorSheet}
+ * @extends {foundry.appv1.sheets.ActorSheet}
  */
-export class BitdClockSheet extends ActorSheet {
+export class BitdClockSheet extends foundry.appv1.sheets.ActorSheet {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
@@ -22,13 +22,14 @@ export class BitdClockSheet extends ActorSheet {
     const context = await super.getData();
 
     // Encrich editor content
-    context.enrichedDescription = await TextEditor.enrichHTML(
-      this.object.system.description,
-      {
-        async: true,
-        secrets: this.actor.isOwner,
-      },
-    );
+    context.enrichedDescription =
+      await foundry.applications.ux.TextEditor.implementation.enrichHTML(
+        this.object.system.description,
+        {
+          async: true,
+          secrets: this.actor.isOwner,
+        },
+      );
 
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = context.actor.system;

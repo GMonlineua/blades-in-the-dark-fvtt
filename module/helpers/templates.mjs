@@ -2,7 +2,7 @@
  *@return {Promise}
  */
 export const preloadHandlebarsTemplates = async function () {
-  return loadTemplates([
+  return foundry.applications.handlebars.loadTemplates([
     "systems/bitd/templates/actor/parts/abilities.hbs",
     "systems/bitd/templates/actor/parts/attributes.hbs",
     "systems/bitd/templates/actor/parts/claims-map.hbs",
