@@ -36,36 +36,6 @@ export class BitdClockSheet extends foundry.appv1.sheets.ActorSheet {
     context.flags = context.actor.flags;
     context.config = CONFIG.BITD;
 
-    this._prepareClock();
-
     return context;
-  }
-
-  async _prepareClock() {
-    const progress = this.actor.system.progress;
-    if (progress.value > progress.max) {
-      this.actor.update({ "system.progress.value": progress.max });
-      progress.value = progress.max;
-    }
-
-    const imagePath = `systems/bitd/assets/progress-clocks/black/size-${progress.max}/progress-${progress.value}.svg`;
-    this.actor.update({ img: imagePath });
-    this.actor.update({ "prototypeToken.texture.src": imagePath });
-
-    // Update tokens
-    const data = [];
-    const parents = [];
-    const toUpdate = {
-      "texture.src": imagePath,
-    };
-    const tokens = this.actor.getDependentTokens();
-    tokens.forEach(function (token) {
-      parents.push(token.parent);
-      data.push(foundry.utils.mergeObject({ _id: token.id }, toUpdate));
-    });
-
-    for (let i = 0; i < data.length; i++) {
-      await TokenDocument.updateDocuments([data[i]], { parent: parents[i] });
-    }
   }
 }
