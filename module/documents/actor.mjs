@@ -31,24 +31,43 @@ export default class BitdActor extends Actor {
     const defaultItemsID = CONFIG.BITD.defaultItems;
     const defaultItems = [];
 
-    if (this.type == "scoundrel") {
+    if (this.type === "scoundrel") {
       for (const id of defaultItemsID.scoundrel) {
         const uuid = "Compendium.bitd.items.Item." + id;
         const item = await fromUuid(uuid);
         defaultItems.push(item);
       }
-    } else if (this.type == "crew") {
+    } else if (this.type === "crew") {
       for (const id of defaultItemsID.crew) {
         const uuid = "Compendium.bitd.upgrades.Item." + id;
         const item = await fromUuid(uuid);
         defaultItems.push(item);
       }
+    } else if (this.type === "clock") {
+      this._setClockImage();
     }
 
     for (const [ownerId, permissions] of Object.entries(this.ownership)) {
       if (permissions === 3 && game.userId === ownerId) {
         this.createEmbeddedDocuments("Item", defaultItems);
       }
+    }
+  }
+
+  _onUpdate(changed, options, userId) {
+    super._onUpdate(changed, options, userId);
+
+    if (game.user.id != userId) return;
+    if (this.type != "clock") return;
+
+    if (changed?.system?.progress !== undefined) {
+      if (!this._debouncedClockUpdate) {
+        this._debouncedClockUpdate = foundry.utils.debounce(
+          this._setClockImage.bind(this),
+          50,
+        );
+      }
+      this._debouncedClockUpdate();
     }
   }
 
@@ -117,6 +136,49 @@ export default class BitdActor extends Actor {
         const item = this.items.get(changeData._id);
         if (item.type === "claim") claimMap(this);
         if (item.type === "prisonClaim") claimMap(this);
+      }
+    }
+  }
+
+  async _setClockImage() {
+    const progress = this.system.progress;
+    const imagePath = `systems/bitd/assets/progress-clocks/black/size-${progress.max}/progress-${progress.value}.svg`;
+
+    // Update actor avatar
+    const actorUpdates = {};
+    if (this.img !== imagePath) actorUpdates.img = imagePath;
+    if (this.prototypeToken.texture.src !== imagePath)
+      actorUpdates["prototypeToken.texture.src"] = imagePath;
+
+    // Only await if there is something to update
+    if (!foundry.utils.isEmpty(actorUpdates)) {
+      await this.update(actorUpdates);
+    }
+
+    // Update tokens
+    const updatesByScene = new Map();
+
+    for (const scene of game.scenes) {
+      const sceneTokens = scene.tokens.filter((t) => t.actorId === this.id);
+
+      for (const token of sceneTokens) {
+        if (token.texture.src === imagePath) continue;
+
+        if (!updatesByScene.has(scene.id)) {
+          updatesByScene.set(scene.id, []);
+        }
+
+        updatesByScene.get(scene.id).push({
+          _id: token.id,
+          "texture.src": imagePath,
+        });
+      }
+    }
+
+    for (const [sceneId, updates] of updatesByScene) {
+      const scene = game.scenes.get(sceneId);
+      if (scene && updates.length > 0) {
+        await scene.updateEmbeddedDocuments("Token", updates);
       }
     }
   }

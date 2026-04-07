@@ -17,4 +17,10 @@ export default class ClockData extends foundry.abstract.TypeDataModel {
       description: new fields.HTMLField(),
     };
   }
+
+  prepareDerivedData() {
+    if (this.progress.value > this.progress.max) {
+      this.progress.value = this.progress.max;
+    }
+  }
 }

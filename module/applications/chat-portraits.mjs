@@ -40,13 +40,13 @@ export function renderChatMessage(message, html, data) {
   const isVideo = isWebm(portraitSource);
   const portraitElement = createPortraitElement(portraitSource, isVideo);
 
-  const headerElement = html.find(".message-header")?.[0];
+  const headerElement = html.querySelectorAll(".message-header")?.[0];
   if (headerElement) {
     headerElement.prepend(portraitElement);
     headerElement.style.paddingBottom = "3px";
   }
 
-  const senderElement = html.find(".message-sender")?.[0];
+  const senderElement = html.querySelectorAll(".message-sender")?.[0];
   if (senderElement) {
     senderElement.style.alignSelf = "center";
   }

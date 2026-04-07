@@ -29,13 +29,14 @@ export class BitdFactionSheet extends BitdActorSheet {
     context.flags = actorData.flags;
 
     // Encrich editor content
-    context.enrichedSituation = await TextEditor.enrichHTML(
-      this.object.system.situation,
-      {
-        async: true,
-        secrets: this.actor.isOwner,
-      },
-    );
+    context.enrichedSituation =
+      await foundry.applications.ux.TextEditor.implementation.enrichHTML(
+        this.object.system.situation,
+        {
+          async: true,
+          secrets: this.actor.isOwner,
+        },
+      );
 
     // Prepare faction data and items.
     this._prepareItems(context);
