@@ -70,9 +70,9 @@
         "Harm": "Harm",
         "Healing": "Healing",
         "Effect": {
-          "Light": "Need Help",
+          "Light": "Less Effect",
           "Medium": "-1 D",
-          "Heavy": "Less Effect"
+          "Heavy": "Need Help"
         }
       },
       "Stash": "Stash",
