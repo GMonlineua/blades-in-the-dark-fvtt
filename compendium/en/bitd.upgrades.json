@@ -1,0 +1,193 @@
+{
+  "label": "Upgrades",
+  "mapping": {
+    "description": "system.description"
+  },
+  "entries": [
+    {
+      "id": "0jzSjAD7aC7sTJWB",
+      "name": "Carriage House",
+      "description": "<p>You have a carriage, two goats to pull it, and a stable. A second upgrade improves the carriage with armor and larger, swifter goats.</p>\n<p><em>Horses are very rare in Doskvol&mdash; most carriages in the city use the large Akorosian goat as their draft animal.</em></p>"
+    },
+    {
+      "id": "1hl9449pN5PRTN8N",
+      "name": "Camouflage",
+      "description": "<p>Your vehicles are perfectly concealed when at rest. They blend in as part of the environment, or as an uninteresting civilian vehicle (your choice).</p>"
+    },
+    {
+      "id": "4ghejF8CFXqNxd3b",
+      "name": "Assassin Rigging",
+      "description": "<p>You get 2 free load worth of weapon or gear items. <em>For example, you could carry a pistol (a weapon) and burglary tools (gear) for zero load.</em></p>"
+    },
+    {
+      "id": "5T8yvAbIZuFZlYTI",
+      "name": "Ironhook Contacts",
+      "description": "<p>Your Tier is effectively +1 higher in prison. <em>This counts for any Tier-related element in prison, including the incarceration roll (see page 148).</em></p>"
+    },
+    {
+      "id": "5znEBaxWJRriC2we",
+      "name": "Elite Rovers",
+      "description": "<p>All of your cohorts with the Rovers type get +1d to quality rolls for Rover-related actions.</p>"
+    },
+    {
+      "id": "A1uO3KCH82XRmQzg",
+      "name": "Ordained",
+      "description": "<p>Each PC gets <strong>+1 trauma box</strong>. This costs three upgrades to unlock, not just one. <em>This may bring a PC with 4 <strong>trauma</strong> back into play if you wish.</em></p>"
+    },
+    {
+      "id": "BJG1pPeOQQHc4Sxb",
+      "name": "Training: Playbook",
+      "description": "<p>If you have a Training upgrade, you earn 2 xp (instead of 1) when you train a&nbsp;<strong>Playbook</strong> during downtime. This upgrade essentially helps you advance more quickly. See Advancement, page 48.</p>"
+    },
+    {
+      "id": "C8HllG6fUNG1uOTU",
+      "name": "Smuggler Rigging",
+      "description": "<p>Two of your carried items are perfectly concealed. <em>You could carry 1 load of contraband and a pistol, perfectly concealed, even against a pat down.</em></p>"
+    },
+    {
+      "id": "DYvuI3w5fSwLstvG",
+      "name": "Vault",
+      "description": "<p>Your lair has a secure vault, increasing your storage capacity for <strong>coin</strong> to 8. A second upgrade increases &nbsp;your capacity to 16. A separate part of your vault can be used as a holding cell.</p>"
+    },
+    {
+      "id": "DzHQMps56wE6YsuK",
+      "name": "Ironhook Contacts",
+      "description": "<p>Your Tier is effectively +1 higher in prison. This counts for any Tier-related element in prison, including the incarceration roll (see page 148).</p>"
+    },
+    {
+      "id": "IaU2NOFwrrTdiuWQ",
+      "name": "Elite Adepts",
+      "description": "<p>All of your cohorts with the Adepts type get <strong>+1d</strong> to quality rolls for Adept-related actions.</p>"
+    },
+    {
+      "id": "JRUITBP7ejrAS7DE",
+      "name": "Hidden Lair",
+      "description": "<p>Your lair has a secret location and is disguised to hide it from view. If your lair is discovered, use two downtime activities and pay <strong>coin</strong> equal to your Tier to relocate it and hide it once again.</p>"
+    },
+    {
+      "id": "KLhvY3z5BiVq7JKW",
+      "name": "Hardened",
+      "description": "<p>Each PC gets <strong>+1 trauma box</strong>. This costs three upgrades to unlock, not just one. <em>This may bring a PC with <strong>4 trauma</strong> back into play if you wish.</em></p>"
+    },
+    {
+      "id": "LGG0DCb9qv2Pijy7",
+      "name": "Training: Prowess",
+      "description": "<p>If you have a Training upgrade, you earn 2 xp (instead of 1) when you train a&nbsp;<strong>Prowess</strong> during downtime. This upgrade essentially helps you advance more quickly. See Advancement, page 48.</p>"
+    },
+    {
+      "id": "LOPmlnXrAI5baXOx",
+      "name": "Workshop",
+      "description": "<p>Your lair has a workshop appointed with tools for tinkering and alchemy, as well as a small library of books, documents, and maps. You may accomplish long-term projects with these assets without leaving your lair.</p>"
+    },
+    {
+      "id": "Lgk7H7MFtExbkfSR",
+      "name": "Elite Thugs",
+      "description": "<p>All of your cohorts with the Thugs type get <strong>+1d</strong> to quality rolls for Thug-related actions.</p>"
+    },
+    {
+      "id": "OS5fQT5qaXA9ILZs",
+      "name": "Cult Rigging",
+      "description": "<p>You get 2 free load worth of document or implement items. <em>For example, you could carry a profane book of curses and a demon’s hand for zero load.</em></p>"
+    },
+    {
+      "id": "QYT0VHUnH7NvELXE",
+      "name": "Boat House",
+      "description": "<p>You have a boat, adock on a waterway, and a small shack to store boating supplies. A second upgrade improves the boat with armor and more cargo capacity.</p>"
+    },
+    {
+      "id": "Qs5TipGxHmZkkhnZ",
+      "name": "Bravos Rigging",
+      "description": "<p>You get 2 free load worth of weapon or armor items. For example, you could carry a sword & pistol or wear normal armor for zero load.</p>"
+    },
+    {
+      "id": "XAQvvYsUNkTk0MqG",
+      "name": "Thief Rigging",
+      "description": "<p>You get 2 free load worth of tool or gear items. <em>For example, you could carry burglary gear and tinkering tools for zero load.</em></p>"
+    },
+    {
+      "id": "a78hFI8IrZ4GvmMO",
+      "name": "Mastery",
+      "description": "<p>Your crew has access to master level training. You may advance your PCs&rsquo; action ratings to 4 (until you unlock this upgrade, PC action ratings are capped at 3). This costs four upgrade boxes to unlock.</p>"
+    },
+    {
+      "id": "dcef1ScudP0ahNHP",
+      "name": "Hawker Rigging",
+      "description": "<p>One carried item is concealed and has no load. <em>For example, you could carry a load of drugs or a weapon, perfectly concealed, for zero load.</em></p>"
+    },
+    {
+      "id": "df0UnibXULyv3eJw",
+      "name": "Ritual Sanctum in Lair",
+      "description": "<p>This counts as a sacred and arcane <strong>workshop</strong> for occult practices and rituals.</p>"
+    },
+    {
+      "id": "eOYEeQFnf0Lpflst",
+      "name": "Secure Lair",
+      "description": "<p>Your lair has locks, alarms, and traps to thwart intruders. A second upgrade improves the defenses to include arcane measures that work against spirits.</p>\n<p><em>&nbsp;You might roll your crew&rsquo;s Tier if these measures are ever put to the test, to see how well they thwart an intruder.</em></p>"
+    },
+    {
+      "id": "gAkqLc2VPnjEKkYn",
+      "name": "Underground Maps and Passkeys",
+      "description": "<p>You have easy passage through the underground canals, tunnels, and basements of the city.</p>"
+    },
+    {
+      "id": "gwPjJVlyOdpHHkSZ",
+      "name": "Quality",
+      "description": "<p>Each upgrade improves the <strong>quality rating</strong> of all the PCs&rsquo; items of that type, beyond the quality established by the crew&rsquo;s Tier and fine items. You can improve the quality of <strong>Documents, Gear</strong> (covers BurglaryGear and Climbing Gear), Arcane<strong> Implements</strong>, Subterfuge <strong>Supplies</strong>, <strong>Tools</strong> (covers Demolitions Tools and Tinkering Tools), and <strong>Weapons</strong>.</p>"
+    },
+    {
+      "id": "iK5vthVkcbBjwl9W",
+      "name": "Quarters",
+      "description": "<p>Your lair includes living quarters for the crew. Without this upgrade, each PC sleeps elsewhere, and is vulnerable when they do so.</p>"
+    },
+    {
+      "id": "kocqNGx3qzOCX16H",
+      "name": "Composed",
+      "description": "<p>Each PC gets <strong>+1 stress box</strong>. This costs three upgrades to unlock, not just one.</p>"
+    },
+    {
+      "id": "lOfWxrQxBhXdBNeN",
+      "name": "Training: Resolve",
+      "description": "<p>If you have a Training upgrade, you earn 2 xp (instead of 1) when you train a&nbsp;<strong>Resolve</strong> during downtime. This upgrade essentially helps you advance more quickly. See Advancement, page 48.</p>"
+    },
+    {
+      "id": "le6lb5nD1s7nBWgb",
+      "name": "Elite Skulks",
+      "description": "<p>All of your cohorts with the Skulks type get <strong>+1d</strong> to quality rolls for Skulk-related actions.</p>"
+    },
+    {
+      "id": "nSZV98zvJHhTPiX6",
+      "name": "Steady",
+      "description": "<p>Each PC gets <strong>+1 stress box</strong>. This costs three upgrades to unlock, not just one.</p>"
+    },
+    {
+      "id": "rJNq8sRNfTBKxbsZ",
+      "name": "Elite Rooks",
+      "description": "<p>All of your cohorts with the Rooks type get <strong>+1d</strong> to quality rolls for Rook-related actions.</p>"
+    },
+    {
+      "id": "rquOQjMvzBKtX4d3",
+      "name": "Ironhook Contacts",
+      "description": "<p>Your Tier is effectively +1 higher in prison. <em>This counts for any Tier-related element in prison, including the incarceration roll (see page 148).</em></p>"
+    },
+    {
+      "id": "sIzU9C2J8Ff888hZ",
+      "name": "Training: Insight",
+      "description": "<p>If you have a Training upgrade, you earn 2 xp (instead of 1) when you train a&nbsp;<strong>Insight</strong> during downtime. This upgrade essentially helps you advance more quickly. See Advancement, page 48.</p>"
+    },
+    {
+      "id": "wrj5GnkSNPbUWyuP",
+      "name": "Barge",
+      "description": "<p>Add mobility to your lair. You can move it to a new location as a downtime activity.</p>"
+    },
+    {
+      "id": "x408dL5lglkkLJaq",
+      "name": "Hardened",
+      "description": "<p>Each PC gets +1 trauma box. This costs three upgrades to unlock, not just one. This may bring a PC with 4 trauma back into play if you wish.</p>"
+    },
+    {
+      "id": "zReHmehSOxzT8jTW",
+      "name": "Vehicle",
+      "description": "<p>All smugglers start with a vehicle. When the vehicle is upgraded (two&nbsp;boxes), it also gets armor.</p>"
+    }
+  ]
+}

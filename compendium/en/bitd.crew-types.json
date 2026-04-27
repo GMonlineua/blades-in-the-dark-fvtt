@@ -1,0 +1,52 @@
+{
+  "label": "Crew Types",
+  "mapping": {
+    "exp": "system.exp",
+    "summary": "system.summary",
+    "description": "system.description"
+  },
+  "entries": [
+    {
+      "id": "B7ypLXMnbZ7k5A0u",
+      "name": "Assassins",
+      "summary": "Killers for hire",
+      "exp": "You execute a successful accident, disappearance, murder, or ransom operation.",
+      "description": "<p>You’re professional murderers—death is your business. In Duskwall, this means extra trouble from the spirit bells and vengeful ghosts. Be prepared!</p><p><em>Do you have any scruples when it comes to who you kill? Is everyone fair game?</em></p><h3>Hunting Grounds</h3><p>Choose a favored operation type:</p><ul><li><strong>Accident</strong>: A killing with no telltale signs of murder.</li><li><strong>Disappearance</strong>: The victim vanishes without a trace.</li><li><strong>Murder</strong>: An obvious killing thatsends a message.</li><li><strong>Ransom</strong>: A kidnapping and demandfor payment for their return.</li></ul><p> </p>"
+    },
+    {
+      "id": "F2X29Cfh6b58vmuN",
+      "name": "Cult",
+      "summary": "Acolytes of a forgotten god",
+      "exp": "You advance the agenda of your deity or embody its precepts in action.",
+      "description": "<p>You heard the secret voice calling in the darkness. You obeyed. You are its instrument—and the world shall bow before its glory, or burn. Instead of hunting grounds, you have <em><strong>sacred sites</strong></em> that you use for your operations.</p><h3>Sacred Sites</h3><p>Choose a favored operation type:</p><ul><li><p><strong>Acquisition</strong>: Procure an arcane artifact and attune it to your god.</p></li><li><p><strong>Augury</strong>: Do what you must to attractthe god’s attention and counsel.</p></li><li><p><strong>Consecration</strong>: Anoint a place for your deity.</p></li><li><p><strong>Sacrifice</strong>: Destroy what is valuable orgood in honor of your god.</p></li></ul><h3>Deity</h3><p>Name your deity and describe it with two features from the list:</p><p><em>Alluring, Cruel, Ferocious, Monstrous, Radiant, Sinister, Serene, Transcendent</em></p>"
+    },
+    {
+      "id": "J7djR5wp3V6eSCAn",
+      "name": "Smugglers",
+      "summary": "Contraband transporters",
+      "exp": "You earn xp when you execute a smuggling operation or acquire new clients or contraband sources.",
+      "description": "<p>Illicit goods are the life-blood of Duskwall—both for those who consume them and those who profit from their taxation and criminalization. Smugglers keep the city alive. Instead of hunting grounds, you have <em><strong>cargo types</strong></em> that you use for your operations.</p><p><em>What kind of contraband do you transport? Do you have any rules about what you will or won’t carry?</em></p><h3>Cargo Types</h3><p>Choose a favored cargo type:</p><ul><li><p><strong>Arcane/Weird</strong>: Spirit essences, ghosts, cult materials.</p></li><li><p><strong>Arms</strong>: Restricted military weapons, heavy ordnance, explosives.</p></li><li><p><strong>Contraband</strong>: High-tax luxuries, drugs, banned art, etc.</p></li><li><p><strong>Passengers</strong>: People or livestock traveling in secret.</p></li></ul>"
+    },
+    {
+      "id": "reoVRcfL2Bkphkku",
+      "name": "Bravos",
+      "summary": "Mercenaries and thugs",
+      "exp": "You execute a successful battle, extortion, sabotage, or smash & grab operation.",
+      "description": "<p>Some crews plot and scheme, some crews sneak around, some crews get entangled with the occult—you fight. The fist and the blade are all you need.</p><p><em>Are you brutal thugs, savvy sell-swords, or ruthless gangsters?</em></p><h3>Hunting <span style=\"font-family: 'Spectral SC', serif\">Grounds</span></h3><p>Choose a favored operation type:</p><ul><li><p><strong>Battle</strong>: Defeat an enemy with overwhelming force.</p></li><li><p><strong>Extortion</strong>: Threaten violence unless you’re paid off.</p></li><li><p><strong>Sabotage</strong>: Hurt an opponent by destroying something.</p></li><li><p><strong>Smash & Grab</strong>: A fast and violentarmed robbery.</p></li></ul>"
+    },
+    {
+      "id": "tVBOqllr7aGS7Ylt",
+      "name": "Shadows",
+      "summary": "Thieves and spies",
+      "exp": "You execute a burglary, espionage, robbery, or sabotage operation.",
+      "description": "<p>Everyone wants something that they can’t have. That’s where you come in.</p><p><em>Do you spy and steal primarily to serve your own interests, or do you sell your services to whoever will pay?</em></p><h3>Hunting Grounds</h3><p>Choose a favored operation type:</p><ul><li><p><strong>Burglary</strong>: Theft by breaking and entering.</p></li><li><p><strong>Espionage</strong>: Obtain secret information by covert or clandestine means.</p></li><li><p><strong>Robbery</strong>: Theft by force or threats.</p></li><li><p><strong>Sabotage</strong>: Hurt an opponent by destroying something.</p></li></ul>"
+    },
+    {
+      "id": "vfSLmvDUnHxrRfgK",
+      "name": "Hawkers",
+      "summary": "Vice dealers",
+      "exp": "You acquire new product supply, execute clandestine or covert sales, or secure new sales territory.",
+      "description": "<p>All of Doskvol craves escape. They can’t go outside... but they can turn to you. Instead of hunting grounds, you have a <em><strong>sales territory</strong></em> where you sell your product.</p><p><em>What’s your product? Who’s your supplier? Where and how do you sell it?</em></p><h3>Sales Territory</h3><p>Choose a favored operation type:</p><ul><li><p><strong>Sale</strong>: A significant transaction with a special buyer of illicit product.</p></li><li><p><strong>Supply</strong>: A transaction to acquire new product or establish a new supplier.</p></li><li><p><strong>Show</strong> of Force: Make an example of an enemy to dominate territory.</p></li><li><p><strong>Socialize</strong>: Improve customer and/or supplier relations with a social event.</p></li></ul>"
+    }
+  ]
+}

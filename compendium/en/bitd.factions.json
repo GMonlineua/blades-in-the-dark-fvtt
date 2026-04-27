@@ -1,0 +1,493 @@
+{
+  "label": "Factions",
+  "mapping": {
+    "summary": "system.summary",
+    "lair": "system.lair.value",
+    "assets": "system.assets.value",
+    "quirks": "system.quirks.value",
+    "situation": "system.situation",
+    "description": "system.description"
+  },
+  "entries": [
+    {
+      "id": "06hDiDMtWseWiKSZ",
+      "name": "Leviathan Hunters",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "1fC73f8J290SyJCt",
+      "name": "The Church of Ecstasy",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "1gqIVwj7AzlbDIZJ",
+      "name": "The Hive",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "3FYt11srvBM6FPS5",
+      "name": "Cabbies",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "3n2elSp4vlx4416W",
+      "name": "Laborers",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "4CYFFz4k7dYeyMzs",
+      "name": "The Silver Nails",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "7hKNN1qb8pYks804",
+      "name": "Iruvian Consulate",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "86tPmfThTehH2mFZ",
+      "name": "The Forgotten Gods",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "8eKaY1ufjyA2BTNZ",
+      "name": "Rail Jacks",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "9M0WWvYay5nzKS0w",
+      "name": "The Horde",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "AREu3PM79aaeghDy",
+      "name": "Bluecoats",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "BuT8WNpVGEx9eDei",
+      "name": "The Dimmer Sisters",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "DwN4LlqhX9IVkv3H",
+      "name": "Servants",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "GjFqaMGgbF7SzQQe",
+      "name": "The Red Sashes",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "IhfWi9TmSffSMvSO",
+      "name": "The Crows",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "IqwK3so6hMX9HJJd",
+      "name": "The Weeping Lady",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "Iy6B76JexQ8ZpGH8",
+      "name": "Gondoliers",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "JIhPfUHR5FuNKFEW",
+      "name": "Skovlander Refugees",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "JnjYCHeHMuDAhKHQ",
+      "name": "The Lampblacks",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "KC9iDY9zU5XgQYbn",
+      "name": "The Lost",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "LFNbbRNCwdJ4E8HH",
+      "name": "Deathlands Scavengers",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "ORQm0h1ZCW7OnhGn",
+      "name": "Cyphers",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "Qcwbf3o4xqetMDFW",
+      "name": "Ironhook Prison",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "RmUQysqK6Fi8cW12",
+      "name": "The Circle of Flame",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "T2v2IY6yyRYUhpuK",
+      "name": "Skovlan Consulate",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "TO7TEmF8ffIpglGf",
+      "name": "The Reconciled",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "Tg08O3Xujzl9s9zo",
+      "name": "Sparkwrights",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "VB7IIqoFL83jHcFp",
+      "name": "The Fog Hounds",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "XMacwXZFQSFPNbdH",
+      "name": "Dagger Isles Consulate",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "Xybkh32JLjJJdhG1",
+      "name": "Lord Scurlock",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "YQ3X7PAKpeYMDhwE",
+      "name": "Sailors",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "ZAxjV0LbTn1eSq00",
+      "name": "The Brigade",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "dGv3ZxoqB9kfjOHq",
+      "name": "The Gray Cloaks",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "fNDX6P9KcodMECzE",
+      "name": "The Grinders",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "fVl5O1bQPPgn46iM",
+      "name": "The Unseen",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "j9KoQuggchEBM8Bn",
+      "name": "Ink Rakes",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "kfJ21HLmHJIsT5RA",
+      "name": "The Path of Echoes",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "mW9xT603blHvFvuj",
+      "name": "Dockers",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "mfuQlDWd9EdQRN5E",
+      "name": "The Foundation",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "qRbO9VV9duKn07U9",
+      "name": "Imperial Military",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "qibF5GeTfQIRbPTm",
+      "name": "City Council",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "r1VsXjzAErad8mgX",
+      "name": "Inspectors",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "u2qKZ6pcXr7njjml",
+      "name": "Ulf Ironborn",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "vXpcjfcj5wNmLiqO",
+      "name": "The Wraiths",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "vYU8sZx50LLZaPtb",
+      "name": "Severosi Consulate",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "wkUIDv5fEWiUOcmB",
+      "name": "Ministry of Preservation",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "xVwRzii3gv48Qvmc",
+      "name": "The Billhooks",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    },
+    {
+      "id": "zFNXOkmRrqvAiG3D",
+      "name": "Spirit Wardens",
+      "summary": "",
+      "lair": "",
+      "assets": "",
+      "quirks": "",
+      "situation": "",
+      "description": ""
+    }
+  ]
+}

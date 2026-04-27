@@ -1,0 +1,59 @@
+{
+  "label": "Playbooks",
+  "mapping": {
+    "summary": "system.summary",
+    "exp": "system.exp",
+    "description": "system.description"
+  },
+  "entries": [
+    {
+      "id": "4Pnbpsmd5QZjI2Vq",
+      "name": "Lurk",
+      "summary": "A stealthy infiltrator and burglar",
+      "exp": "You address a challenge with stealth or evasion.",
+      "description": "<p>There is no longer any sunlight &ndash; the world is plunged into eternal night. There are scoundrels who live in the darkness, who prowl the underworld unseen, trespassing where they will. They are the burglars, the spies, the infiltrators, the cut-throats&ndash; commonly called Lurks.</p>\n<p><strong>When you play a Lurk, you earn xp when you address a challenge with stealth&nbsp;or evasion.</strong> Stay out of sight, sneak past your enemies, and strike from the&nbsp;shadows. If things go wrong, there&rsquo;s no shame in disappearing into the darkness...&nbsp;for now. Your greatest ally is the dark and twisting city, its ink-dark streets, its&nbsp;rooftop pathways.</p>\n<p><em>How did you learn the stealthy arts of the Lurk? Which aspect are you drawn to most? The invisible watcher, spying on the unwary? The adroit acrobat, racing across rooftops? The deadly ambush predator, waiting for a victim in the darkness?</em></p>"
+    },
+    {
+      "id": "5s1K0yz5AckP5zJK",
+      "name": "Hound",
+      "summary": "A deadly sharpshooter and tracker",
+      "exp": "You address a challenge with tracking or violence.",
+      "description": "<p>There&rsquo;s always a need for scoundrels who can find what others want to keep hidden. Whether that&rsquo;s a deadbeat gambler trying to skip out on their debts, a treacherous informant or witness who&rsquo;s going to squeal to the Bluecoats, or the trail to a treasure squirreled away in a secret vault&mdash;it&rsquo;s the Hounds that ferret them out.</p>\n<p>Why have a fair fight, when you can stalk and ambush your prey on your terms?&nbsp;The underworld is your hunting ground.</p>\n<p><strong>When you play a Hound, you earn xp when you address a challenge with tracking or violence.</strong> Take the initiative to hunt down opportunities and targets for a score and be willing to hurt whoever stands in your way.</p>\n<p><em>Do you see the whole world as potential prey, or do you still care about people? Which target in the past gave you the most trouble? Why?</em></p>"
+    },
+    {
+      "id": "QIycdlEUu8xIbs0R",
+      "name": "Leech",
+      "summary": "A saboteur and technician",
+      "exp": "You address a challenge with technical skill or mayhem.",
+      "description": "<p>The world is built on industry, and the underworld is no different. Leeches are the scoundrels who distill the drugs, refine the arcane essences, build the bombs, bandage the wounds, and forge the tools of the criminal trades&mdash;and knowing how to make things also means knowing how to break them.</p>\n<p><strong>When you play a Leech, you earn xp when you address a challenge with technical skill or mayhem.</strong> Duskwall is a city full of industrial machinery, spark-crafts, plumbing, and electrical systems for you to bend to your purposes or sabotage. Get out your tools and get your hands dirty.</p>\n<p><em>The extensive training that makes a Leech is rare and strange among the disenfranchised underworld class&mdash;how did you learn your arts? Which side of the coin do you prefer, the side of creation and restoration, or the side of mayhem and destruction?</em></p>"
+    },
+    {
+      "id": "b6e20GjsLAEngJdE",
+      "name": "Slide",
+      "summary": "A subtle manipulator and spy",
+      "exp": "You address a challenge with deception or influence.",
+      "description": "<p>It&rsquo;s said that the primal substance of the world is not mere matter or strange plasms, it&rsquo;s lies. Everything we do, everything we care about, everything we value &ndash; all lies we tell each other and ourselves. The world is a fabrication, a convenient fiction, a story &ndash; and the storytellers are Slides.</p>\n<p><strong>When you play a Slide, you earn xp when you address a challenge with deception or influence.</strong> Talk your way into trouble, then talk your way out again. Pretend to be someone you&rsquo;re not. Bluff, lie, and manipulate to get your way. Every problem is ultimately a problem because of people &ndash; and people are the instrument upon which you play your music.</p>\n<p><em>Is there anything true about you, at your core? Or are you whatever you need to be, day to day? Are all of your relationships merely gambits that you play for your advantage?</em></p>"
+    },
+    {
+      "id": "dJNN5LLfIkSmhCdy",
+      "name": "Whisper",
+      "summary": "An arcane adept and channeler",
+      "exp": "You address a challenge with knowledge or arcane power.",
+      "description": "<p>Duskwall is a haunted place&mdash;plagued by rogue spirits consumed by vengeance, by cunning demons manipulating humans for their own inscrutable purposes, and by even stranger horrors lurking in the space just beyond sight and reason. To go into this shadowy world without knowledge of the arcane and the occult is to walk unarmed into the lair of the enemy. The Whispers are the sentinels who watch the greater darkness&mdash;staring into the void so others don&rsquo;t have to.</p>\n<p><strong>When you play a Whisper, you earn xp when you address a challenge with knowledge or arcane power.</strong> Seek out the strange and dark forces and bend them to your will. By being willing to face the trauma from the stress-intensive abilities of the arcane, you&rsquo;ll slowly remove parts of yourself, and replace them with power.</p>\n<p><em>Why did you pursue the path of the Whisper? How did you develop your abilities? Are you a natural, did you study and practice on your own, or did you have a mentor?</em></p>"
+    },
+    {
+      "id": "dXI2Ri1WCGlFQXxU",
+      "name": "Spider",
+      "summary": "A devious mastermind",
+      "exp": "You address a challenge with calculation or conspiracy.",
+      "description": "<p>The underworld may appear on the surface to be a chaotic array of warring factions and bloody deeds, but it has a beautiful order to those who are able to see it. This pattern is the web of connections, favors, vendettas, and secrets that bind the criminal world together. The scoundrels who pluck the strands of this web are known as Spiders.</p>\n<p><strong>When you play a Spider, you earn xp when you address a challenge with </strong><strong>calculation or conspiracy.</strong> Reach out to your contacts, friends, and associates&nbsp;to set your crew up for success. Use your downtime activities and flashbacks&nbsp;wisely to prepare for trouble and to calculate the angles of success. When things&nbsp;go wrong, don&rsquo;t panic, and remember: you planned for this.</p>\n<p><em>Are you enmeshed in the network of favors and debts that you exploit as a Spider,&nbsp;or do you scrupulously hold yourself apart, as a cold predator upon the web?</em></p>"
+    },
+    {
+      "id": "pWYxTMruSevPLyC1",
+      "name": "Cutter",
+      "summary": "A dangerous and intimidating fighter",
+      "exp": "You address a challenge with violence or coercion.",
+      "description": "<p>In the underworld of the Dusk, there are scoundrels who take what they want at the bloody edge of a blade or with a threatening presence that can stop a man cold. They are the enforcers, the debt collectors, the killers, the leg-breakers, and the thugs, commonly known as Cutters.</p>\n<p>Where subtlety fails, swift brutality &ndash; and the threat of worse to come &ndash; can solve&nbsp;the problem. Or at least turn it into a different kind of problem.</p>\n<p><strong>When you play a Cutter, you earn xp when you address a challenge with violence or coercion.</strong> Go ahead and get up in everyone&rsquo;s smug faces and tell them who&rsquo;s boss, then let your blades do the talking if they don&rsquo;t get the message.</p>\n<p><em>Do you have a personal code or a line you won&rsquo;t cross? Do you want to be the boss or do you want to be the enforcer for the boss? How did you acquire your taste for violence and coercion?</em></p>"
+    }
+  ]
+}

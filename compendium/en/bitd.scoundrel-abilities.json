@@ -1,0 +1,283 @@
+{
+  "label": "Scoundrel Abilities",
+  "mapping": {
+    "description": "system.description"
+  },
+  "entries": [
+    {
+      "id": "1A7cnqIVmeyk25S3",
+      "name": "Rook’s Gambit",
+      "description": "<p>Take <strong>2 stress</strong> to roll your best action rating while performing a different action. Say how you adapt your skill to this use.</p><p><em>This is the “jack-of-all-trades” ability. If you want to attempt lots of different sorts of actions and still have a good dice pool to roll, this is the special ability for you.</em></p>"
+    },
+    {
+      "id": "1JeYi9zeUP0Lh6a4",
+      "name": "Expertise",
+      "description": "<p>Choose one of your action ratings. When you lead a group action using that&nbsp;action, you can suffer only 1 stress at most, regardless of the number of failed rolls.</p>\n<p><em>This special ability is good for covering for your team. If they&rsquo;re all terrible at your favored action, you don&rsquo;t have to worry about suffering a lot of stress when you lead their group action.</em></p>"
+    },
+    {
+      "id": "2057zhLcWrULqmIz",
+      "name": "Weaving the Web",
+      "description": "<p>You gain <strong>+1d</strong> to <strong>Consort</strong> when you gather information on a target for a score. You get <strong>+1d</strong> to the engagement roll for that operation.</p><p><em>Your network of underworld connections can always be leveraged to gain insight for a job—even when your contacts aren’t aware that they’re helping you.</em></p>"
+    },
+    {
+      "id": "2q2BUAu8RFkTUc5g",
+      "name": "Scout",
+      "description": "<p>When you gather information to discover the location of a target, you get <strong>+1 effect</strong>. When you hide in a prepared position or use camouflage you get <strong>+1d</strong> to rolls to avoid detection.</p>\n<p><em>A &ldquo;target&rdquo; can be a person, a destination, a good ambush spot, an item, etc.</em></p>"
+    },
+    {
+      "id": "5MyTA7PxwhwB3VVE",
+      "name": "Ghost Voice",
+      "description": "<p>You know the secret method to interact with a ghost or demon as if it were a normal human, regardless of how wild or feral it appears. You gain <strong>potency</strong> when communicating with the supernatural.</p><p><em>The first part of this ability gives you permission to do something that is normally impossible: when you speak to a spirit, it always listens and understands you, even if it would otherwise be too bestial or insane to do so. The second part of the ability increases your effect when you use social actions with the supernatural.</em></p>"
+    },
+    {
+      "id": "5f09KGZKIWbhWuua",
+      "name": "Savage",
+      "description": "<p>When you unleash physical violence, it’s especially frightening. When you <strong>Command</strong> a frightened target, take <strong>+1d</strong>.</p><p><em>You instill fear in those around you when you get violent. How they react depends on the person. Some people will flee from you, some will be impressed, some will get violent in return. The GM judges the response of a given NPC.</em></p><p><em>In addition, when you <strong>Command</strong> someone who’s affected by fear (from this ability or otherwise), take +1d to your roll.</em></p>"
+    },
+    {
+      "id": "7e9Wlh4OmIc7G4Dr",
+      "name": "Trust in Me",
+      "description": "<p>You get <strong>+1d</strong> vs. a target with whom you have an intimate relationship.</p><p><em>This ability isn’t just for social interactions. Any action can get the bonus. “Intimate” is for you and the group to define, it need not exclusively mean romantic intimacy.</em></p>"
+    },
+    {
+      "id": "A1acKdRkrBi0CUqB",
+      "name": "A Little Something on the Side",
+      "description": "<p>At the end of each downtime phase, you earn <strong>+2 stash</strong>.</p><p><em>Since this money comes at the end of downtime, after all downtime actions are resolved, you can’t remove it from your stash and spend it on extra activities until your next downtime phase.</em></p>"
+    },
+    {
+      "id": "BhFlEbBNJfblD9Ka",
+      "name": "Warded",
+      "description": "<p>You may expend your <strong>special armor</strong> to resist a supernatural consequence, or to <strong>push yourself</strong> when you contend with or employ arcane forces.</p><p><em>You can use it once per score. If you resist a consequence, this ability negates or reduces its severity. If you use this ability to push yourself, you get one of the benefits (+1d, +1 effect, act despite severe harm) but you don’t take 2 stress. Your special armor is restored at the beginning of downtime.</em></p>"
+    },
+    {
+      "id": "D80PM9f2esLZMy6h",
+      "name": "Functioning Vice",
+      "description": "<p>When you indulge your vice, you may adjust the dice outcome by 1 or 2 (up or down). An ally who joins you may do the same.</p><p><em>6, or you could reduce the result to 3 or 2 (perhaps to avoid overindulgence). Allies that join you don’t need to have the same vice as you, just one that could be indulged alongside yours somehow.</em></p>"
+    },
+    {
+      "id": "DN7GzAu5tWEYE6Cs",
+      "name": "Ghost Fighter",
+      "description": "<p>You may imbue your hands, melee weapons, or tools with spirit energy. You gain <strong>potency</strong> in combat vs. the supernatural. You may grapple with spirits to restrain and capture them.</p><p><em>When you imbue yourself with spirit energy, how do you do it? What does it look like when the energy manifests? When you’re imbued, you can strongly interact with ghosts and spirit-stuff, rather than weakly interact.</em></p>"
+    },
+    {
+      "id": "EEU9B97Gn71aGdTF",
+      "name": "Mastermind",
+      "description": "<p>You may expend your <strong>special armor</strong> to <strong>protect</strong> a teammate, or to <strong>push yourself</strong> when you gather information or work on a long-term project.</p><p><em>When you use this ability, tick the special armor box on your playbook sheet. If you protect a teammate, this ability negates or reduces the severity of a consequence or harm that your teammate is facing. You don’t have to be present to use this ability—say how you prepared for this situation in the past. If you use this ability to push yourself, you get one of the benefits (+1d, +1 effect, act despite severe harm) but you don’t take 2 stress. Your special armor is restored at the beginning of downtime.</em></p>"
+    },
+    {
+      "id": "EbnTEQcmwdDSbfF3",
+      "name": "Infiltrator",
+      "description": "<p>You are not affected by <strong>quality</strong> or <strong>Tier</strong> when you bypass security measures.</p>\n<p><em>This ability lets you contend with higher-Tier enemies on equal footing. When you&rsquo;re cracking a safe, picking a lock, or sneaking past elite guards, your effect level is never reduced due to superior Tier or quality level of your opposition.</em></p>\n<p><em>Are you a renowned safe cracker? Do people tell stories of how you slipped under the noses of two Chief Inspectors, or are your exceptional talents yet to be discovered?</em></p>"
+    },
+    {
+      "id": "FEi9N2a54UskFxqN",
+      "name": "Shadow",
+      "description": "<p>You may expend your <strong>special armor</strong> to resist a consequence from detection or&nbsp;security measures, or to <strong>push yourself</strong> for a feat of athletics or stealth.</p>\n<p><em>When you use this ability, tick the special armor box on your playbook sheet. If you &ldquo;resist a consequence&rdquo; of the appropriate type, you avoid it completely. If you use this ability to push yourself, you get one of the benefits (+1d, +1 effect, act despite severe harm) but you don&rsquo;t take 2 stress. Your special armor is restored at the beginning of downtime.</em></p>"
+    },
+    {
+      "id": "GNWwl6Nho09HF2MQ",
+      "name": "Vengeful",
+      "description": "<p>You gain an additional <strong>xp trigger</strong>: <em>You got payback against someone who harmed you or someone you care about.</em> If your crew helped you get payback, also mark crew xp.</p>"
+    },
+    {
+      "id": "GOH3G7DBwxISt7o3",
+      "name": "Alchemist",
+      "description": "<p>When you <strong>invent</strong> or <strong>craft</strong> a creation with <em>alchemical</em> features, you get <strong>+1 result level</strong> to your roll (a <strong>1-3</strong> becomes a <strong>4/5</strong>, etc.). You begin with one special formula already known.</p>\n<p><em>Follow the <strong>Inventing</strong> procedure with the GM (page 224) to define your first special alchemical formula.</em></p>\n<div class=\"notranslate\" style=\"all: initial;\">&nbsp;</div>"
+    },
+    {
+      "id": "GxTgrmtw9ok3dn9l",
+      "name": "Iron Will",
+      "description": "<p>You are immune to the terror that some supernatural entities inflict on sight.&nbsp;When you make a <strong>resistance roll</strong> with <strong>Resolve</strong>, take <strong>+1d</strong>.</p>\n<p><em>With this ability, you do not freeze up or flee when confronted by any kind of&nbsp;supernatural entity or strange occult event.</em></p>"
+    },
+    {
+      "id": "HPxxezBhO0LaEH8u",
+      "name": "Daredevil",
+      "description": "<p>When you roll a <strong>desperate</strong> action, you get <strong>+1d</strong> to your roll if you also take <strong>-1d</strong>&nbsp;to any resistance rolls against consequences from your action.</p>\n<p><em>This special ability is a bit of a gamble. The bonus die helps you, but if you suffer consequences, they&rsquo;ll probably be more costly to resist. But hey, you&rsquo;re a daredevil, so no big deal, right?</em></p>"
+    },
+    {
+      "id": "IVAUFKVZJy0JGIIx",
+      "name": "Compel",
+      "description": "<p>You can <strong>Attune</strong> to the ghost field to force a nearby ghost to appear before you and obey an order you give it. You are not supernaturally terrified by a ghost you summon or attempt to compel (though your allies may be).</p>\n<p><em>The GM will tell you if you sense any ghosts nearby. If you don&rsquo;t, you cangather information (maybe <strong>Attune</strong>, <strong>Survey</strong>, or <strong>Study</strong>) to attempt tolocate one. By default, a ghost wants to satisfy its need for life essence andto exact vengeance. When you compel it, you can give it a general or specificcommand, but the more general it is (like &ldquo;Protect me&rdquo;) the more the ghostwill interpret it according to its own desires. Your control over the ghost lastsuntil the command is fulfilled, or until a day has passed, whichever comes first.</em></p>"
+    },
+    {
+      "id": "KKjdEyVtWUkQ86Tv",
+      "name": "Foresight",
+      "description": "<p>Two times per score you can <strong>assist</strong> a teammate without paying stress. Describe how you prepared for this.</p><p><em>You can narrate an event in the past that helps your teammate now, or you might explain how you expected this situation and planned a helpful contingency that you reveal now.</em></p>"
+    },
+    {
+      "id": "KTlOzWCcOIcKLWQQ",
+      "name": "Sharpshooter",
+      "description": "<p>You can <strong>push yourself</strong> to do one of the following: make a ranged attack at extreme distance beyond what&rsquo;s normal for the weapon&mdash;unleash a barrage of rapid fire to suppress the enemy.</p>\n<p><em>When you push yourself to activate this ability, you still get one of the normal benefits of pushing yourself (+1d, +1 effect, etc.) in addition to the special ability.</em></p>\n<p><em>The first use of this ability allows you to attempt long-range sniper shots that would otherwise be impossible with the rudimentary firearms of Duskwall. The second use allows you to keep up a steady rate of fire in a battle (enough to &ldquo;suppress&rdquo; a small gang up to six people), rather than stopping for a slow reload or discarding a gun after each shot. When an enemy is suppressed, they&rsquo;re reluctant to maneuver or attack (usually calling for a fortune roll to see if they can manage it).</em></p>"
+    },
+    {
+      "id": "LMsvjCHAoaNIQcmn",
+      "name": "Tempest",
+      "description": "<p>You can <strong>push yourself</strong> to do one of the following: <em>unleash a stroke of lightning as a weapon&mdash;summon a storm in your immediate vicinity (torrential rain, roaring winds, heavy fog, chilling frost and snow, etc.).</em></p>\n<p><em>When you push yourself to activate this ability, you still get one of the normal benefits of pushing yourself (+1d, +1 effect, etc.) if you&rsquo;re making a roll, in addition to the special ability.</em></p>\n<p><em>When you unleash lightning as a weapon, the GM will describe its effect level and significant collateral damage. If you unleash it in combat against an enemy who&rsquo;s threatening you, you&rsquo;ll still make an action roll in the fight (usually with <strong>Attune</strong>).</em></p>\n<p><em>When you summon a storm, the GM will describe its effect level. If you&rsquo;re using this power as cover or distraction, it&rsquo;s probably a <strong>setup</strong> teamwork maneuver, using <strong>Attune</strong>.</em></p>"
+    },
+    {
+      "id": "NyJW3EPzpXclkfTf",
+      "name": "Saboteur",
+      "description": "<p>When you <strong>Wreck</strong>, your work is much quieter than it should be and the damage is very well-hidden from casual inspection.</p>\n<p><em>You can drill holes in things, melt stuff with acid, even use a muffled explosive, and it will all be very quiet and extremely hard to notice.</em></p>"
+    },
+    {
+      "id": "OnhjRBkoGmQtJLgc",
+      "name": "Leader",
+      "description": "<p>When you <strong>Command</strong> a <strong>cohort</strong> in combat, they continue to fight when they would otherwise <strong>break</strong> (they’re not taken out when they suffer level 3 harm). They gain <strong>+1 effect</strong> and <strong>1 armor</strong>.</p><p><em>This ability makes your cohorts more effective in battle and also allows them to resist harm by using armor. While you lead your cohorts, they won’t stop fighting until they take fatal harm (level 4) or you order them to cease. What do you do to inspire such bravery in battle?</em></p><p><em>For details about cohorts, see page 96.</em></p>"
+    },
+    {
+      "id": "V6D38PkENXkG2jef",
+      "name": "Calculating",
+      "description": "<p>Due to your careful planning, during downtime, you may give yourself or another crew member <strong>+1 downtime activity</strong>.</p><p><em>If you forget to use this ability during downtime, you can still activate it during the score and flashback to the previous downtime when the extra activity happened.</em></p>"
+    },
+    {
+      "id": "VFpXEGFu6UobQ2GN",
+      "name": "Cloak & Dagger",
+      "description": "<p>When you use a disguise or other form of covert misdirection, you get <strong>+1d</strong> to rolls to confuse or deflect suspicion. When you throw off your disguise, the resulting surprise gives you the initiative in the situation.</p><p><em>This ability gives you the chance to more easily get out of trouble if a covert operation goes haywire. Also, don’t forget your <strong>fine disguise kit</strong> item, which boosts the <strong>effect</strong> of your covert deception methods.</em></p>"
+    },
+    {
+      "id": "VXj7VWQbkgUN8Jrw",
+      "name": "Like Looking Into a Mirror",
+      "description": "<p>You can always tell when someone is lying to you.</p><p><em>This ability works in all situations without restriction. It is very powerful, but also a bit of a curse. You see though every lie, even the kind ones.</em></p>"
+    },
+    {
+      "id": "VmOs5wpD7KoKa9J7",
+      "name": "Ghost Contract",
+      "description": "<p>When you shake on a deal or draft one in writing, you and your partner­ – human or otherwise – both bear a mark of your oath. If either breaks the contract, they take level <strong>3 harm</strong>, “Cursed.”</p><p><em>The mark of the oath is obvious to anyone who sees it (perhaps a magical rune appears on the skin). When you suffer “Cursed” harm, you’re incapacitated by withering: enfeebled muscles, hair falling out, bleeding from the eyes and ears, etc., until you either fulfill the deal or discover a way to heal the curse.</em></p>"
+    },
+    {
+      "id": "Wh84A7O51P1yUBrk",
+      "name": "Battleborn",
+      "description": "<p>You may expend your <strong>special armor</strong> to reduce harm from an attack in combat or to <strong>push yourself</strong> during a fight.</p><p><em>You can use it once per score. If you “reduce harm” that means the level of harm you’re facing right now is reduced by one. If you use this ability to push yourself, you get one of the benefits (+1d, +1 effect, act despite severe harm) but you don’t take 2 stress. Your special armor is restored at the beginning of downtime.</em></p>"
+    },
+    {
+      "id": "XfhXNVqnYonyOjgO",
+      "name": "Ghost Mind",
+      "description": "<p>You&rsquo;re always aware of supernatural entities in your presence. Take <strong>+1d</strong> whenever&nbsp;you <strong>gather information</strong> about the supernatural by any means.</p>"
+    },
+    {
+      "id": "YoQZF9KyZd2rlytY",
+      "name": "Vigorous",
+      "description": "<p>You recover from harm faster. Permanently fill in one of your healing clock segments. Take <strong>+1d</strong> to healing treatment rolls.</p><p><em>Your healing clock becomes a 3-clock, and you get a bonus die when you recover</em></p>"
+    },
+    {
+      "id": "Yq1edHadRaS4hJnk",
+      "name": "Physicker",
+      "description": "<p>You can <strong>Tinker</strong> with bones, blood, and bodily humours to treat wounds or stabilize the dying. You may <strong>Study</strong> a malady or corpse. Everyone in your crew (including you) gets <strong>+1d</strong> to their <strong>healing treatment</strong> rolls.</p>\n<p><em>Knowledge of anatomy and healing is a rare and esoteric thing in Duskwall. Without this ability, any attempts at treatment are likely to fail or make things worse. You can use this ability to give first aid (rolling <strong>Tinker</strong>) to allow your patient to ignore a harm penalty for an hour or two.</em></p>"
+    },
+    {
+      "id": "Ywhk0XJTOsZsMnCI",
+      "name": "Ambush",
+      "description": "<p>When you attack from hiding or spring a trap, you get <strong>+1d</strong> to your roll.</p>\n<p>This ability benefits from preparation&mdash; so don&rsquo;t forget you can do that in a&nbsp;flashback.</p>"
+    },
+    {
+      "id": "ZMcezrNyWdUr7Pqw",
+      "name": "Reflexes",
+      "description": "<p>When there&rsquo;s a question about who acts first, the answer is you.</p>\n<p><em>This ability gives you the initiative in most situations. Some specially trained NPCs (and some demons and spirits) might also have reflexes, but otherwise, you&rsquo;re always the first to act, and can interrupt anyone else who tries to beat you to the punch. This ability usually doesn&rsquo;t negate the need to make an action roll that you would otherwise have to make, but it may improve your position or effect.</em></p>"
+    },
+    {
+      "id": "a4BdaURrCggGbUPy",
+      "name": "Subterfuge",
+      "description": "<p>You may expend your <strong>special armor</strong> to resist a consequence from suspicion or persuasion, or to <strong>push yourself</strong> for subterfuge.</p><p><em>The victim’s memory “glosses over” the missing time, so it’s not suspicious that they’ve forgotten something. When you next interact with the victim, they remember everything clearly, including the strange effect of this ability.</em></p>"
+    },
+    {
+      "id": "b1ndKAjQRyUDDSle",
+      "name": "Jail Bird",
+      "description": "<p>When incarcerated, your <strong>wanted level</strong> counts as 1 less, your Tier as 1 more, and you gain <strong>+1 faction status</strong> with a faction that you help while you’re inside, in addition to whatever you get from the <strong>incarceration roll</strong>.</p><p><em>Zero is the minimum <strong>wanted level</strong>; this ability can’t make your <strong>wanted level</strong> negative. See the Incarceration roll, page 148.</em></p>"
+    },
+    {
+      "id": "cGEwA6rtLKSQ5kIn",
+      "name": "Ghost Hunter",
+      "description": "<p>Your hunting pet is imbued with spirit energy. It gains <strong>potency</strong> when tracking or fighting the supernatural, and gains an arcane ability: <em>ghost-form</em>, <em>mind-link</em>, or <em>arrow-swift</em>. Take this ability again to choose an additional arcane ability for your pet.</p>\n<p><em>Your pet functions as a cohort (Expert: Hunter). This ability gives them potency against supernatural targets and an arcane ability of your choice. Ghost-form allows the pet to transform into electroplasmic vapor as if it were a spirit. Mind- link allows the pet and hunter to share their senses and thoughts telepathically. Arrow-swift allows the pet to move extremely quickly, out-pacing any other creature or vehicle. For more details about cohorts, see page 96.</em></p>"
+    },
+    {
+      "id": "cl9trGA9g00y2tks",
+      "name": "Ghost Ward",
+      "description": "<p>When you <strong>Wreck</strong> an area with arcane substances, ruining it for any other use,it becomes anathema or enticing to spirits (your choice).</p>\n<p><em>If you make an area anathema to spirits, they will do everything they can toavoid it, and will suffer torment if forced inside the area. If you make an areaenticing to spirits, they will seek it out and linger in the area, and will suffertorment if forced to leave. This effect lasts for several days over an area thesize of a small room. Particularly powerful or prepared spirits may roll theirquality or arcane magnitude to see how well they&rsquo;re able to resist the effect.</em></p>"
+    },
+    {
+      "id": "czkY1hnJ7wlOqc6T",
+      "name": "Occultist",
+      "description": "<p>You know the secret ways to <strong>Consort</strong> with ancient powers, forgotten gods, or demons. Once you&rsquo;ve consorted with one, you get <strong>+1d</strong> to <strong>Command</strong> cultists who worship it.</p>\n<p><em><strong>Consorting</strong> with a given entity may require special preparations or travel to a specific place. The GM will tell you about any requirements. You get the bonus die to your <strong>Command</strong> rolls because you can demonstrate a secret knowledge of or influence over the entity when you interact with cultists.</em></p>"
+    },
+    {
+      "id": "dr7M44FhtXaMh3F5",
+      "name": "Ritual",
+      "description": "<p>You know the arcane methods to perform ritual sorcery. You can <strong>Study</strong> an occult ritual (or create a new one) to summon a supernatural effect or being. You begin with one ritual already learned.</p>\n<p><em>Without this special ability, the study and practice of rituals leaves you utterly vulnerable to the powers you supplicate. Such endeavors are not recommended. For more details, see Rituals, page 222.</em></p>"
+    },
+    {
+      "id": "elmE6oS6BWyYf2JC",
+      "name": "Fortitude",
+      "description": "<p>You may expend your <strong>special armor</strong> to resist a consequence of fatigue, weakness,or chemical effects, or to <strong>push yourself</strong> when working with technical skill orhandling alchemicals.</p><p><em>You can use it once per score. If you “resist a consequence” of the appropriate type, you avoid it completely. Ifyou use this ability to push yourself, you get one of the benefits (+1d, +1 effect,act despite severe harm) but you don’t take 2 stress. Your special armor isrestored at the beginning of downtime.</em></p>"
+    },
+    {
+      "id": "g2oCl8DBqNvKhkap",
+      "name": "Mule",
+      "description": "<p>Your load limits are higher. Light: 5. Normal: 7. Heavy: 8.</p><p><em>This ability is great if you want to wear heavy armor and pack a heavy weapon without attracting lots of attention. Since your exact gear is determined on- the-fly during an operation, having more load also gives you more options to get creative with when dealing with problems during a score.</em></p>"
+    },
+    {
+      "id": "hGklomtddj6dpco7",
+      "name": "Strange Methods",
+      "description": "<p>When you <strong>invent</strong> or <strong>craft</strong> a creation with arcane features, get <strong>+1 result level</strong> to your<br>roll (a <strong>1-3</strong> becomes a <strong>4/5</strong>, etc.). You begin with one arcane design already known.</p>\n<p><em>Follow the <strong>Inventing</strong> procedure with the GM (page 224) to define your first&nbsp;arcane design.</em></p>"
+    },
+    {
+      "id": "iegtG4d3d21gvew5",
+      "name": "Mesmerism",
+      "description": "<p>When you <strong>Sway</strong> someone, you may cause them to forget that it’s happened until they next interact with you.</p><p><em>The victim’s memory “glosses over” the missing time, so it’s not suspicious that they’ve forgotten something. When you next interact with the victim, they remember everything clearly, including the strange effect of this ability.</em></p>"
+    },
+    {
+      "id": "j7z92bS3oEl5ygdA",
+      "name": "Ghost Veil",
+      "description": "<p>You may shift partially into the ghost field, becoming shadowy and insubstantial for a few moments. Take 2 stress when you shift, plus 1 stress for each extra feature: <em>it lasts for a few minutes rather than moments&mdash;you are invisible rather than shadowy&mdash;you may float through the air like a ghost.</em></p>\n<p><em>This ability transforms you into an intangible shadow for a few moments. If you spend additional stress, you can extend the effect for additional benefits, which may improve your position or effect for action rolls, depending on the circumstances, as usual.</em></p>"
+    },
+    {
+      "id": "jklaI1cuiJwwNR2Z",
+      "name": "Analyst",
+      "description": "<p>During downtime, you get <strong>two ticks</strong> to distribute among any long term project clocks that involve investigation or learning a new formula or design plan.</p>"
+    },
+    {
+      "id": "k8To7lPeOjWs7tyG",
+      "name": "The Devil’s Footsteps",
+      "description": "<p>You can <strong>push yourself</strong> to do one of the following: perform a feat of athletics that&nbsp;verges on the superhuman-maneuver to confuse your enemies so they mistakenly attack each other.</p>\n<p><em>When you push yourself to activate this ability, you still get one of the normal benefits of pushing yourself (+1d, +1 effect, etc.) if you&rsquo;re making a roll, in addition to the special ability.</em></p>\n<p><em>If you perform an athletic feat (running, tumbling, balance, climbing, etc.) that verges on the superhuman, you might climb a sheer surface that lacks good hand-holds, tumble safely out of a three-story fall, leap a shocking distance, etc.</em></p>\n<p><em>If you maneuver to confuse your enemies, they attack each other for a moment before they realize their mistake. The GM might make a fortune roll to see how badly they harm or interfere with each other.</em></p>"
+    },
+    {
+      "id": "lC6dGWjlSq1XhmIB",
+      "name": "Focused",
+      "description": "<p>You may expend your <strong>special armor</strong> to resist a consequence of surprise or mental harm (fear, confusion, losing track of someone) or to <strong>push yourself</strong> for ranged combat or tracking.</p><p><em>You can use it once per score. If you “resist a consequence” of the appropriate type, you avoid it completely. If you use this ability to push yourself, you get one of the benefits (+1d, +1 effect, act despite severe harm) but you don’t take 2 stress. Your special armor is restored at the beginning of downtime.</em></p>"
+    },
+    {
+      "id": "m0efwEKeOZWVlFyH",
+      "name": "Venomous",
+      "description": "<p>Choose a drug or poison (from your bandolier stock) to which you have become immune. You can <strong>push yourself</strong> to secrete it through your skin or saliva or exhaleit as a vapor.</p>\n<p><em>When you push yourself to activate this ability, you still get one of the normal benefits of pushing yourself (+1d, +1 effect, etc.) if you&rsquo;re making a roll, in addition to the special ability.</em></p>\n<p><em>You choose the type of drug or poison when you get this ability. You may change the drug or poison by completing a long-term project. Only a single drug or poison may be chosen&mdash;you can&rsquo;t become immune to any essences, oils, or other alchemical substances.</em></p>"
+    },
+    {
+      "id": "mJcx8KnlNtQF9tUu",
+      "name": "Bodyguard",
+      "description": "<p>When you <strong>protect</strong> a teammate, take <strong>+1d</strong> to your resistance roll. When you gather info to anticipate possible threats in the current situation, you get <strong>+1 effect</strong>.</p><p><em>The <strong>protect</strong> teamwork maneuver lets you face a consequence for a teammate. If you choose to resist that consequence, this ability gives you +1d to your resistance roll. Also, when you read a situation to gather information about hidden dangers or potential attackers, you get +1 effect – which means more detailed information.</em></p>"
+    },
+    {
+      "id": "qlWzYHLJKv2vJEtP",
+      "name": "Tough as Nails",
+      "description": "<p>Penalties from harm are one level less severe (though level 4 harm is still fatal).</p>\n<p><em>With this ability, level 3 harm doesn&rsquo;t incapacitate you; instead you take -1d to your rolls (as if it were level 2 harm). Level 2 harm affects you as if it were level 1 (less effect). Level 1 harm has no effect on you (but you still write it on your sheet, and must recover to heal it). Record the harm at its original level&mdash;for healing purposes, the original harm level applies.</em></p>"
+    },
+    {
+      "id": "sSyX0PltLmhVyki5",
+      "name": "Connected",
+      "description": "<p>During downtime, you get <strong>+1 result level</strong> when you <strong>acquire an asset</strong> or <strong>reduce heat</strong>.</p><p><em>Your array of underworld connections can be leveraged to loan assets, pressure a vendor to give you a better deal, intimidate witnesses, etc.</em></p>"
+    },
+    {
+      "id": "tgivwPbTP8TsKSTl",
+      "name": "Survivor",
+      "description": "<p>From hard-won experience or occult ritual, you are immune to the poisonous miasma of the deathlands and are able to subsist on the strange flora and fauna there. You get <strong>+1 stress box</strong>.</p>\n<p><em>This ability gives you an additional stress box, so you have 10 instead of 9. The maximum number of stress boxes a PC can have (from any number of additional special abilities or upgrades) is 12.</em></p>"
+    },
+    {
+      "id": "uMWqCiqlWDyDGlIT",
+      "name": "Not to be Trifled With",
+      "description": "<p>You can push yourself to do one of the following: <em>perform a feat of physical force that verges on the superhuman – engage a small gang on equal footing in close combat.</em></p><p><em>When you push yourself to activate this ability, you still get one of the normal benefits of pushing yourself (+1d, +1 effect, etc.) in addition to the special ability.</em></p><p><em>If you perform a feat that verges on the superhuman, you might break a metal weapon with your bare hands, tackle a galloping horse, lift a huge weight, etc. If you engage a small gang on equal footing, you don’t suffer reduced effect due to scale against a small gang (up to six people).</em></p>"
+    },
+    {
+      "id": "xd2Zc6nk3pdbfObN",
+      "name": "Artificer",
+      "description": "<p>When you <strong>invent</strong> or <strong>craft</strong> a creation with <em>spark-craft</em> features, you get <strong>+1 result level</strong> to your roll (a <strong>1-3</strong> becomes a <strong>4/5</strong>, etc.). You begin with one special design already known.</p>\n<p><em>Follow the <strong>Inventing</strong> procedure with the GM (page 224) to define your first spark-craft design.</em></p>\n<div class=\"notranslate\" style=\"all: initial;\">&nbsp;</div>"
+    }
+  ]
+}
