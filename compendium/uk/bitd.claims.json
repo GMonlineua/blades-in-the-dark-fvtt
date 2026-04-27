@@ -1,0 +1,327 @@
+{
+  "label": "Claims",
+  "mapping": {
+    "description": "system.description",
+    "effect": "system.effect"
+  },
+  "entries": [
+    {
+      "id": "4JOlxeDjYHjBq3Bg",
+      "name": "Street Fence",
+      "description": "<p>An expert can find the treasure amid the trash you loot from your poorer victims.</p>",
+      "effect": "You get +2 coin in your payoff for scores that involve lower-class targets"
+    },
+    {
+      "id": "5etU9ZiwDGllIukV",
+      "name": "Ancient Tower",
+      "description": "<p>This tower was prepared by sorcery from the pre-cataclysm and acts as an arcane lens to focus eldritch energy across the black mirror into the void.</p>",
+      "effect": "You get +1d to Consort with arcane entities on-site"
+    },
+    {
+      "id": "5nl0Ua4YWksxft3q",
+      "name": "Covert Drop",
+      "description": "<p>The perfect hidden exchange point is worth the extra coin to discerning clientele.</p>",
+      "effect": "You get +2 coin in payoff for scores that involve espionage or sabotage"
+    },
+    {
+      "id": "61Li62dTsf4leNuP",
+      "name": "Bluecoat Confederates",
+      "description": "<p>The street patrol around here helps you out now.</p>",
+      "effect": "You get +1d to the engagement roll for assault plans"
+    },
+    {
+      "id": "A3i5DbJD7d29xNE2",
+      "name": "Informants",
+      "description": "<p>Your eyes and ears on the streets are always on the lookout for new targets or clients.</p>",
+      "effect": "You get +1d to gather information for a score"
+    },
+    {
+      "id": "BODTqoka5QPlNDxZ",
+      "name": "Sacred Nexus",
+      "description": "<p>Ancient arcane energy seeps into the wounded here, speeding their recovery, and marking them consecrated by its power.</p>",
+      "effect": "You get +1d to healing treatment rolls"
+    },
+    {
+      "id": "C2b6rvUffHWICja5",
+      "name": "Training Rooms",
+      "description": "<p>Extra training enables them to fight like a larger gang.</p>",
+      "effect": "Your Skulks cohorts get +1 scale"
+    },
+    {
+      "id": "Db7yvz1mJUoBeFyA",
+      "name": "Secret Routes",
+      "description": "<p>You might have access to long-forgotten underground canals, dark streets normally hidden behind debris, or some other route of your choosing.</p>",
+      "effect": "You get +1d to the engagement roll for transport plans"
+    },
+    {
+      "id": "DyZp6G4WpZ5Kfq0C",
+      "name": "Parole Influence",
+      "description": "<p>Political pressures of various sorts can be applied to the magistrates and warden who oversee sentences for crimes. With this claim, you’re always able to arrange for a shorter prison stay—as if your <strong>wanted level</strong> was 1 lower. So, if your <strong>wanted level</strong> was 3 when you went in, you’d spend only several months behind bars (equivalent to level 2) instead of a full year.</p>",
+      "effect": "You’re always able to arrange for a shorter prison stay—as if your wanted level was 1 lower."
+    },
+    {
+      "id": "FNKbWzAZggSSoBbc",
+      "name": "Spirit Well",
+      "description": "<p>A spirit well draws ghosts and other things to its power, which you harness to aid your arts.</p>",
+      "effect": "You get +1d to Attune rolls on-site"
+    },
+    {
+      "id": "G1lIdqpz07sh2bQM",
+      "name": "Offertory",
+      "description": "<p>The frightened locals offer you tribute when you perform your dark practices. They don’t want to be next.</p>",
+      "effect": "You get +2 coin in your payoff for scores that involve occult operations"
+    },
+    {
+      "id": "Kr5WTECM9lMgBtQW",
+      "name": "Protection Racket",
+      "description": "<p>Some of the locals are terrified of you and will gladly pay for “protection.”</p>",
+      "effect": "Any time during downtime, roll dice equal to your Tier. You earn coin equal to the highest result, minus your heat"
+    },
+    {
+      "id": "M80DJ08MTKZYR94z",
+      "name": "Local Graft",
+      "description": "<p>A few city officials share bribe money with those who show that they’re players on the scene.</p>",
+      "effect": "You get +2 coin in payoff for scores that involve a show of force or socializing"
+    },
+    {
+      "id": "NH1kajbk8wsEd5LX",
+      "name": "Luxury Venue",
+      "description": "<p>Silks, paintings, and crystal impress the clientele.</p>",
+      "effect": "+1d to Consort and Sway rolls on-site"
+    },
+    {
+      "id": "NK4VoIriVzjziizm",
+      "name": "Tavern",
+      "description": "<p>Some booze and friendly conversation can go a long way.</p>",
+      "effect": "You get +1d to Consort and Sway rolls on-site"
+    },
+    {
+      "id": "QKcYVcySW3P4ZVTm",
+      "name": "Interrogation Chamber",
+      "description": "<p>Grisly business, but effective.</p>",
+      "effect": "You get +1d to Command and Sway on-site"
+    },
+    {
+      "id": "QaCOaKfcTca5ZfJk",
+      "name": "Hagfish Farm",
+      "description": "",
+      "effect": "When you use the reduce heat downtime activity after a score that involves killing, you get +1d to the roll and quiet, convenient disposal of any corpses you left on the job"
+    },
+    {
+      "id": "TNT5V92ZmqbDjiwd",
+      "name": "Victim Trophies",
+      "description": "<p>Word of your grisly “collection” gets around, and your boldness boosts your rep in the underworld.</p>",
+      "effect": "You get +1 rep per score"
+    },
+    {
+      "id": "UI0JtiGFL26Hww7m",
+      "name": "Drug Den",
+      "description": "<p>What’s the drug of choice?</p>",
+      "effect": "Any time during downtime, roll dice equal to your Tier. You earn coin equal to the highest result, minus your heat"
+    },
+    {
+      "id": "UjMZq4W0US7LqQdR",
+      "name": "Warehouses",
+      "description": "<p>You have space to hold all the various spoils you end up with after your battles. It can be useful on its own or for barter when you need it.</p>",
+      "effect": "You get +1d to acquire asset rolls"
+    },
+    {
+      "id": "V7nppWvxzNdXk4DU",
+      "name": "Secret Pathways",
+      "description": "<p>You might have access to long-forgotten underground canals, rooftop walkways, or some other route of your choosing.</p>",
+      "effect": "You get +1d to the engagement roll for stealth plans"
+    },
+    {
+      "id": "ViBZq4fEciRI8vJm",
+      "name": "Ancient Altar",
+      "description": "<p>Its blessing is with you</p>",
+      "effect": "You get +1d to the engagement roll for occult plans"
+    },
+    {
+      "id": "XRg6bYxyAdnDftWr",
+      "name": "Vice Den",
+      "description": "<p>Is this claim a den you’ve overtaken from another purveyor, or a new establishment replacing something else?</p><p>Perhaps you sell some of the contraband you smuggle here? Or do you not mix your operations?</p>",
+      "effect": "Any time during downtime, roll dice equal to your Tier. You earn coin equal to the highest result, minus your heat"
+    },
+    {
+      "id": "ZuMrb2P65itIa89c",
+      "name": "Cover Identities",
+      "description": "<p>False identities help confuse the opposition.</p>",
+      "effect": "You get +1d to the engagement roll for deception and social plans"
+    },
+    {
+      "id": "aeubFzdq6WatHwYa",
+      "name": "Surplus Cache",
+      "description": "<p>You have an abundance of product, which pads your pockets every now and then.</p>",
+      "effect": "You get +2 coin in payoff for scores that involve product sale or supply"
+    },
+    {
+      "id": "axBT7dgd8ILdxTuR",
+      "name": "Guard Payoff",
+      "description": "<p>You claim several Ironhook prison guards on your payroll. Take +1d to your Tier roll when a member of your crew is incarcerated.</p>",
+      "effect": "Take +1d to your Tier roll when a member of your crew is incarcerated."
+    },
+    {
+      "id": "dbLp76z6Qj8RCe4e",
+      "name": "Gambling Den",
+      "description": "<p>Cards, dice, or something more unusual on offer?</p>",
+      "effect": "Any time during downtime, roll dice equal to your Tier. You earn coin equal to the highest result, minus your heat"
+    },
+    {
+      "id": "f3Pq2gTETZsgwGhn",
+      "name": "Sanctuary",
+      "description": "<p>Your sanctuary maintains its effect as long as your deity is well-pleased with your service.</p>",
+      "effect": "+1d to Command and Sway rolls on-site"
+    },
+    {
+      "id": "gZZkjnypiaQXVqCv",
+      "name": "Cell Block Control",
+      "description": "<p>Your crew has a cell block under their total control—guards and all. You never take <strong>trauma</strong> from incarceration.</p>",
+      "effect": "You never take trauma from incarceration."
+    },
+    {
+      "id": "ifkPSbBKrJGgDK5y",
+      "name": "Hagfish Farm",
+      "description": "",
+      "effect": "When you use the reduce heat downtime activity after a score that involves killing, you get +1d to the roll and quiet, convenient disposal of any corpses you left on the job"
+    },
+    {
+      "id": "j3hPMEU5lmPYFqdo",
+      "name": "Fighting Pits",
+      "description": "<p>The locals love to gamble away their hard-won coin on the blood-sports you host.</p>",
+      "effect": "During downtime, roll dice equal to your Tier. You earn coin equal to the highest result, minus your heat"
+    },
+    {
+      "id": "jNbX4iDal5bHvJzF",
+      "name": "Cover Operation",
+      "description": "<p>The cover of a legitimate operation helps deflect some of the heat from law enforcement.</p>",
+      "effect": "You get -2 heat per score"
+    },
+    {
+      "id": "kQX7CJnWFIIZLYqH",
+      "name": "Envoy",
+      "description": "<p>This well-connected liaison will help arrange for a better payoff from rich clients.</p>",
+      "effect": "You get +2 coin in payoff for scores that involve high-class clients"
+    },
+    {
+      "id": "lSOmpQQ9obimRP3v",
+      "name": "Barracks",
+      "description": "<p>Extra room means more gang members.</p>",
+      "effect": "Your Thug cohorts get +1 scale"
+    },
+    {
+      "id": "lShdh6RGtfLYa7rp",
+      "name": "Foreign Market",
+      "description": "<p>Some of your product makes its way out of the city.</p>",
+      "effect": "Any time during downtime, roll dice equal to your Tier. You earn coin equal to the highest result, minus your heat"
+    },
+    {
+      "id": "lTHKsuYT9LPYUKGt",
+      "name": "Lookouts",
+      "description": "",
+      "effect": "You get +1d to Hunt or Survey on your turf"
+    },
+    {
+      "id": "lhBBPcX5ZwTBx3vT",
+      "name": "Cloister",
+      "description": "<p>More room for hopeful novices desperate to pledge their service.</p>",
+      "effect": "Your Adept cohorts get +1 scale"
+    },
+    {
+      "id": "mWoLfF4iR6rf9CfI",
+      "name": "Luxury Fence",
+      "description": "<p>It requires a skilled eye and good contacts to move hot luxury goods.</p>",
+      "effect": "You get +2 coin in payoff for scores that involve high-class targets"
+    },
+    {
+      "id": "nT19z2GO5OAnZkKE",
+      "name": "Loyal Fence",
+      "description": "<p>It requires a skilled eye and good contacts to move stolen goods.</p>",
+      "effect": "You get +2 coin in payoff for scores that involve burglary or robbery"
+    },
+    {
+      "id": "oAnrktg4WqPEzKOE",
+      "name": "Side Business",
+      "description": "<p>What kind of legitimate business is this? How do you get paid in secret?</p>",
+      "effect": "Any time during downtime, roll dice equal to your Tier. You earn coin equal to the highest result, minus your heat"
+    },
+    {
+      "id": "oQEpi1eD7tVsNUB8",
+      "name": "City Records",
+      "description": "<p>You can use blueprints and other documents to determine a good approach for infiltrations.</p>",
+      "effect": "You get +1d to the engagement roll for stealth plans"
+    },
+    {
+      "id": "oyC2PhHGwSLLcC0P",
+      "name": "Bluecoat Intimidation",
+      "description": "<p>The law doesn’t want any trouble from you; they look the other way.</p>",
+      "effect": "You get -2 heat per score"
+    },
+    {
+      "id": "pZ8NipIv4FzvesCm",
+      "name": "Hardcase",
+      "description": "<p>Your reputation as a tough inmate bolsters your crew’s image in Duskwall. When your crew advances Tier, it costs 2 fewer <strong>coins</strong> than it normally would.</p>",
+      "effect": "When your crew advances Tier, it costs 2 fewer coins than it normally would."
+    },
+    {
+      "id": "qGnwXzcJobGBYbYB",
+      "name": "Ancient Obelisk",
+      "description": "<p>This effect applies to all cultists, everywhere – so long as the deity is well-pleased. You don’t have to be on-site at the obelisk to benefit from its power.</p>",
+      "effect": "-1 stress cost for all arcane powers and rituals"
+    },
+    {
+      "id": "rKFnEQKjz3cZBwCY",
+      "name": "Fleet",
+      "description": "<p>Each cohort has a common vehicle, with quality equal to your Tier</p>",
+      "effect": "Your cohorts have their own vehicles"
+    },
+    {
+      "id": "rOKYroipfUkG3KWV",
+      "name": "Smuggling",
+      "description": "<p>You arrange smuggling channels inside. You have <strong>+2 load</strong> while incarcerated, (starting from zero as a prisoner). If you take this claim twice, you’ll have 4 load while you’re serving time in Ironhook. Also, you may choose to carry <strong>coin</strong> in place of load for purposes of bribes or acquiring assets while in prison. You may reset the items in your prison loadout whenever your crew has downtime.</p>",
+      "effect": "You have +2 load while incarcerated"
+    },
+    {
+      "id": "s4SgApGfxiak93Lb",
+      "name": "Fixer",
+      "description": "<p>This well-respected agent will help arrange for a better payoff from poorer clients.</p>",
+      "effect": "You get +2 coin in payoff for scores that involve lower-class clients"
+    },
+    {
+      "id": "tqUq3Yz8jklaj4gM",
+      "name": "Personal Clothier",
+      "description": "<p>You always arrive on the scene in the most current and alluring fashion.</p>",
+      "effect": "You get +1d to the engagement roll for social plans"
+    },
+    {
+      "id": "trnJKEVlwtqCf0Zv",
+      "name": "Ancient Gate",
+      "description": "<p>When you leave the city through this gate, the spirits of the deathlands will not molest you unless directly provoked.</p>",
+      "effect": "Safe passage in the deathlands"
+    },
+    {
+      "id": "w5lWC9m49mCHmRXX",
+      "name": "Warehouses",
+      "description": "<p>You have space to hold all the various items and supplies you end up with from your smuggling runs. They can be useful on their own or for barter when you need it.</p>",
+      "effect": "You get +1d to acquire asset rolls"
+    },
+    {
+      "id": "wzF9qDYgEhPwK4EP",
+      "name": "Allied Claim",
+      "description": "<p>One of your allies on the inside arranges for their faction to grant you a boon. Take a claim for your crew from a different crew type. You can’t take turf with this claim.</p>",
+      "effect": "Take a claim for your crew from a different crew type."
+    },
+    {
+      "id": "y0oRB32h89JMT2R1",
+      "name": "Infirmary",
+      "description": "<p>The infirmary also has beds for long-term convalescence.</p>",
+      "effect": "You get +1d to healing treatment rolls"
+    },
+    {
+      "id": "yb5pmc2SsAd1LJnD",
+      "name": "Terrorized Citizens",
+      "description": "<p>The frightened locals offer you tribute whenever you lash out. They don’t want to be next.</p>",
+      "effect": "You get +2 coin in your payoff for scores that involve battle or extortion"
+    }
+  ]
+}
