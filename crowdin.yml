@@ -1,16 +1,11 @@
-"files": [
-  {
-    "source": "/lang/en.json",
-    "translation": "/lang/%two_letters_code%.json",
-    "escape_quotes": 1,
-    "escape_special_characters": 0
-  },
-  {
-    "source": "/compendium/en/*.json",
-    "translation": "/compendium/%two_letters_code%/%original_file_name%",
-    "escape_quotes": 1,
-    "escape_special_characters": 0
-  }
-]
-"commit_message": 'feat(lang): new translations %file_name% (%language%)'
-"append_commit_message": false
+files:
+  - source: /lang/en.json
+    translation: /lang/%two_letters_code%.json
+    escape_quotes: 1
+    escape_special_characters: 0
+  - source: /compendium/en/*.json
+    translation: /compendium/%two_letters_code%/%original_file_name%
+    escape_quotes: 1
+    escape_special_characters: 0
+commit_message: 'feat(lang): new translations %file_name% (%language%)'
+append_commit_message: 
