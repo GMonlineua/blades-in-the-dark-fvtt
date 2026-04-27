@@ -1,0 +1,203 @@
+{
+  "label": "Crew Abilities",
+  "mapping": {
+    "description": "system.description"
+  },
+  "entries": [
+    {
+      "id": "2nCgk1zUuJThdpol",
+      "name": "Reavers",
+      "description": "<p>When you go into conflict aboard a vehicle, you gain <strong>+1 effect</strong> for vehicle damage and speed. Your vehicle gains <strong>armor</strong>.</p><p><em>If your vehicle already has armor, this ability gives an additional armor box.</em></p>"
+    },
+    {
+      "id": "5lsKuvF49w8XGspA",
+      "name": "Glory Incarnate",
+      "description": "<p>Your deity sometimes manifests in the physical world. This can be a great boon, but the priorities and values of a god are not those of mortals. You have been warned.</p>"
+    },
+    {
+      "id": "72UyCZGuDHFEhloy",
+      "name": "Like Part of the Family",
+      "description": "<p>Create one of your vehicles as a <strong>cohort</strong> (use the vehicle edges and flaws, below). Its quality is equal to your Tier +1. The vehicle can use <strong>teamwork</strong> actions (using <strong>quality</strong> for rolls). A vehicle can’t lead a group action, but may participate.</p><table><tbody><tr><td><p style=\"text-align: center\">Vehicle Edges</p></td><td><p style=\"text-align: center\">Vehicle Flaws</p></td></tr><tr><td><ul><li><p><strong>Nimble</strong>: The vehicle handles easily. Consider this an <strong>assist</strong> for tricky maneuvers.</p></li><li><p><strong>Simple</strong>: The vehicle is easy to repair. Remove all of its harm during downtime.</p></li><li><p><strong>Sturdy</strong>: The vehicle keeps operating even when broken.</p></li></ul></td><td><ul><li><p>Costly: The vehicle costs 1 <strong>coin</strong> per downtime to keep in operation.</p></li><li><p><strong>Distinct</strong>: The vehicle has memorable features. Take +1 <strong>heat</strong> when you use it on a score.</p></li><li><p><strong>Finicky</strong>: The vehicle has quirks that only one person understands. When operated without them, it has <strong>-1 quality</strong>.</p></li></ul></td></tr></tbody></table>"
+    },
+    {
+      "id": "9HUz31TTDkbVNV8y",
+      "name": "Dangerous",
+      "description": "<p>Each PC may add +1 action rating to <strong>Hunt</strong>, <strong>Skirmish</strong>, or <strong>Wreck</strong> (up to a max rating of 3).</p><p><em>Each player may choose the action they prefer (you don’t all have to choose the same one). If you take this ability during initial character and crew creation, it supersedes the normal starting limit for action ratings.</em></p>"
+    },
+    {
+      "id": "9oAds7qwK2wpzVPa",
+      "name": "Just Passing Through",
+      "description": "<p>During <strong>downtime</strong>, take <strong>-1 heat</strong>. When your <strong>heat</strong> is <strong>4</strong> or less, you get <strong>+1d</strong> to deceive people when you pass yourselves off as ordinary citizens.</p>"
+    },
+    {
+      "id": "9wLe6Tr9sEzlzYFM",
+      "name": "Accord",
+      "description": "<p>Sometimes friends are as good as territory. You may treat up to three <strong>+3 faction</strong> <strong>statuses</strong> you hold as if they are <strong>turf</strong>.</p><p><em>If your status changes, you lose the turf until it becomes +3 again. Regardless of how much turf you hold (from this ability or otherwise) the minimum rep cost to advance your Tier is always 6.</em></p>"
+    },
+    {
+      "id": "AdG0nFxlIihZUUNd",
+      "name": "Predators",
+      "description": "<p>When you use a stealth or deception plan to commit murder, take <strong>+1d</strong> to the&nbsp;<strong>engagement roll</strong>.</p>\n<p><em>This ability applies when the goal is murder. It doesn&rsquo;t apply to other stealth or&nbsp;deception operations you attempt that happen to involve killing.</em></p>"
+    },
+    {
+      "id": "AuKZv5Q074L5xwM0",
+      "name": "Hooked",
+      "description": "<p>Your gang members use your product. Add the <em>savage</em>, <em>unreliable</em>, or <em>wild</em> flaw to your gangs to give them <strong>+1 quality</strong> (max rating of 4).</p>"
+    },
+    {
+      "id": "DF2lfOQjkhLmMPcp",
+      "name": "War Dogs",
+      "description": "<p>When you’re at war (-3 faction status), your crew does not suffer -1 hold and PCs still get two downtime activities, instead of just one.</p>"
+    },
+    {
+      "id": "EcTXvq95rzAnEkXa",
+      "name": "Blood Brothers",
+      "description": "<p>When you fight alongside your <strong>cohorts</strong> in combat, they get <strong>+1d</strong> for <strong>teamwork</strong> rolls (setup and group actions). All of your cohorts get the Thugs type for free (if they’re already Thugs, add another type).</p><p><em>If you have the Elite Thugs upgrade, it stacks with this ability. So, if you had an Adepts gang cohort, and the Elite Thugs upgrade, and then took Blood Brothers, your Adepts would add the Thugs type and also get +1d to rolls when they did Thug-type actions.</em></p><p><em>This ability may result in a gang with three types, surpassing the normal limit of two.</em></p>"
+    },
+    {
+      "id": "EsVObf1eUFShYQ1h",
+      "name": "Slippery",
+      "description": "<p>When you roll <strong>entanglements</strong>, roll twice and keep the one you want. When you <strong>reduce heat</strong> on the crew, take <strong>+1d</strong>.</p><p><em>The GM might sometimes want to choose an entanglement instead of rolling. In that case, they’ll choose two and you can pick between them.</em></p>"
+    },
+    {
+      "id": "IwWw5QgrSmThRF9X",
+      "name": "Pack Rats",
+      "description": "<p>Your lair is a jumble of stolen items. When you roll to <strong>acquire an asset</strong>, take <strong>+1d</strong>.</p><p><em>This ability might mean that you actually have the item you need in your pile of stuff, or it could mean you have extra odds and ends to barter with.</em></p>"
+    },
+    {
+      "id": "J6bvzIcBWnrncpVc",
+      "name": "Fiends",
+      "description": "<p>Fear is as good as respect. You may count each <strong>wanted level</strong> as if it were <strong>turf</strong>.</p><p><em>The maximum <strong>wanted level</strong> is 4. Regardless of how much turf you hold (from this ability or otherwise) the minimum <strong>rep</strong> cost to advance your Tier is always 6.</em></p>"
+    },
+    {
+      "id": "Ll4ql4omTfP2zEHX",
+      "name": "No Traces",
+      "description": "<p>When you keep an operation quiet or make it look like an accident, you get half the <strong>rep</strong> value of the target (round up) instead of zero. When you end downtime with zero <strong>heat</strong>, take <strong>+1 rep</strong>.</p>\n<p><em>There are many clients who value quiet operations. This ability rewards you&nbsp;for keeping a low-profile.</em></p>"
+    },
+    {
+      "id": "N4czlbabQaGHfy9M",
+      "name": "Chosen",
+      "description": "<p>Each PC may add +1 action rating to <strong>Attune</strong>, <strong>Study</strong>, or <strong>Sway</strong> (up to a max rating of 3).</p><p><em>Each player may choose the action they prefer (you don’t all have to choose the same one). If you take this ability during initial character and crew creation, it supersedes the normal starting limit for action ratings.</em></p>"
+    },
+    {
+      "id": "NYA0d6zxUfaGwbjT",
+      "name": "Synchronized",
+      "description": "<p>When you perform a <strong>group action</strong>, you may count multiple 6s from different rolls as a <strong>critical</strong> success.</p><p><em>For example, Lyric leads a group action to <strong>Attune</strong> to the ghost field to overcome a magical ward on the Dimmer Sisters’ door. Emily, Lyric’s player, rolls and gets a <strong>6</strong>, and so does Matt! Because the crew has Synchronized, their two separate <strong>6</strong>s count as a <strong>critical</strong> success on the roll.</em></p>"
+    },
+    {
+      "id": "Nciu3lVfQhpTmGOV",
+      "name": "High Society",
+      "description": "<p>It’s all about who you know. Take <strong>-1 heat</strong> during downtime and <strong>+1d</strong> to <strong>gather information</strong> about the city’s elite.</p>"
+    },
+    {
+      "id": "R4aUCPk6PnALZ9RB",
+      "name": "Ghost Echoes",
+      "description": "<p>From weird experience or occult ritual, all crew members gain the ability to see and interact with the ghostly structures, streets, and objects within the echo of Doskvol that exists in the ghost field.</p><p><em>You might explore the echo of an ancient building, crumbled to dust in the real world, but still present in the ghost field; or discern the electroplasmic glow of treasures lost in the depths of the canals; or use a sorcerous ghost door from the pre-cataclysm to infiltrate an otherwise secure location; etc. The GM will tell you what echoes persist nearby when you gather information about them. You might also undertake investigations to discover particular echoes you hope to find.</em></p>"
+    },
+    {
+      "id": "SJETpB4nDKjr0hAN",
+      "name": "Bound in Darkness",
+      "description": "<p>You may use <strong>teamwork maneuvers</strong> with any cult member, regardless of the distance separating you. By taking <strong>1 stress</strong>, your whispered message is heard by every cultist.</p><p><em>By what occult means does your teamwork manifest over distance? How is it strange or disturbing? By what ritualistic method are cult members initiated into this ability?</em></p>"
+    },
+    {
+      "id": "TqFMgTKkj6D0g7Ec",
+      "name": "Everyone Steals",
+      "description": "<p>Each PC may add +1 action rating to <strong>Prowl</strong>, <strong>Finesse</strong>, or <strong>Tinker</strong> (up to a max rating of 3).</p><p><em>Each player may choose the action they prefer (you don’t all have to choose the same one). If you take this ability during initial character and crew creation, it supersedes the normal starting limit for action ratings.</em></p>"
+    },
+    {
+      "id": "W5zUqf9fTGhTl3Fz",
+      "name": "Silver Tongues",
+      "description": "<p>Each PC may add +1 action rating to <strong>Command</strong>, <strong>Consort</strong>, or <strong>Sway</strong> (up to a max rating of 3).</p><p><em>Each player may choose the action they prefer (you don’t all have to choose the same one). If you take this ability during initial character and crew creation, it supersedes the normal starting limit for action ratings.</em></p>"
+    },
+    {
+      "id": "WzjAvT0VJTs4wa4p",
+      "name": "Vipers",
+      "description": "<p>When you acquire or craft poisons, you get <strong>+1 result level</strong> to your roll. When&nbsp;you employ a poison, you are specially prepared to be immune to its effects.</p>\n<p><em>The poison immunity lasts for the entire score, until you next have downtime.</em></p>"
+    },
+    {
+      "id": "Y9uvPQcwUezkbWlY",
+      "name": "Emberdeath",
+      "description": "<p>Due to hard-won experience or occult ritual, you know the arcane method to destroy a living victim&rsquo;s spirit at the moment you kill them. Take 3 stress to channel electroplasmic energy from the ghost field to disintegrate the spirit and body in a shower of sparking embers.</p>\n<p><em>This ability activates at the moment of the target&rsquo;s death (spend 3 stress then or lose the opportunity to use it). It can only be triggered by a killing blow. Some particularly powerful supernatural entities or specially protected targets may be resistant or immune to this ability.</em></p>"
+    },
+    {
+      "id": "Zd0oVXS2j48mSgWF",
+      "name": "Crow’s Veil",
+      "description": "<p>Due to hard-won experience or occult ritual, your activities are hidden from the notice of the deathseeker crows. You don&rsquo;t take extra <strong>heat</strong> when killing is involved on a score.</p>\n<p><em>The bells don&rsquo;t ring at the crematorium when a member of your crew kills&nbsp;someone. Do you have a &ldquo;membership ritual&rdquo; now that conveys this talent?</em></p>"
+    },
+    {
+      "id": "ZkEIWRSoGS1sEbwg",
+      "name": "Sealed in Blood",
+      "description": "<p>Each human sacrifice yields <strong>-3 stress</strong> cost for any ritual you perform.</p><p><em>For details on Rituals, see page 222.</em></p>"
+    },
+    {
+      "id": "Zv3ytL2kv8ozUtSX",
+      "name": "Leverage",
+      "description": "<p>Your crew supplies illicit goods for other factions. Your success is good for them. Whenever you gain <strong>rep</strong>, gain <strong>+1 rep</strong>.</p>"
+    },
+    {
+      "id": "afwwROkrcyp5rbUS",
+      "name": "Renegades",
+      "description": "<p>Each PC may add +1 action rating to <strong>Finesse</strong>, <strong>Prowl</strong>, or <strong>Skirmish</strong> (up to a max rating of 3).</p><p><em>Each player may choose the action they prefer (you don’t all have to choose the same one). If you take this ability during initial character and crew creation, it supersedes the normal starting limit for action ratings.</em></p>"
+    },
+    {
+      "id": "aoM5HQQRhEfhutta",
+      "name": "Conviction",
+      "description": "<p>Each PC gains an additional <strong>vice</strong>: Worship. When you indulge this vice and bring a pleasing sacrifice, you don’t overindulge if you clear excess stress. In addition, your deity will <strong>assist</strong> any one action roll you make – from now until you indulge this vice again.</p><p><em>What sort of sacrifice does your deity find pleasing?</em></p>"
+    },
+    {
+      "id": "axzaP8WqMDRtasW7",
+      "name": "Deadly",
+      "description": "<p>Each PC may add +1 action rating to <strong>Hunt</strong>, <strong>Prowl</strong>, or <strong>Skirmish</strong> (up to a&nbsp;max rating of 3).</p>\n<p><em>Each player may choose the action they prefer (you don&rsquo;t all have to choose the same one). If you take this ability during initial character and crew creation, it supersedes the normal starting limit for action ratings.</em></p>"
+    },
+    {
+      "id": "dsHY8Hvx3CJ5BLh3",
+      "name": "All Hands",
+      "description": "<p>During <strong>downtime</strong>, one of your <strong>cohorts</strong> may perform a downtime activity for the crew to <strong>acquire an asset</strong>, <strong>reduce heat</strong>, or work on a <strong>long-term project</strong>.</p>"
+    },
+    {
+      "id": "f0ssgPnnZptJQLz1",
+      "name": "Patron",
+      "description": "<p>When you advance your <strong>Tier</strong>, it costs <strong>half the coin</strong> it normally would.</p>\n<p><em>Who is your patron? Why do they help you?</em></p>"
+    },
+    {
+      "id": "fOpMmkDdaGndWSaq",
+      "name": "Second Story",
+      "description": "<p>When you execute a clandestine infiltration, you get <strong>+1d</strong> to the <strong>engagement roll</strong>.</p>"
+    },
+    {
+      "id": "i54VLsTKyjXdmxdN",
+      "name": "Zealotry",
+      "description": "<p>Your <strong>cohorts</strong> have abandoned their reason to devote themselves to the cult. They will undertake any service, no matter how dangerous or strange. They gain <strong>+1d</strong> to rolls when they act against enemies of the faith.</p>"
+    },
+    {
+      "id": "iHK5Z3oMvQTVLBI4",
+      "name": "Anointed",
+      "description": "<p>You gain <strong>+1d</strong> to <strong>resistance</strong> rolls against supernatural threats. You get <strong>+1d</strong> to healing rolls when you have supernatural harm.</p>"
+    },
+    {
+      "id": "jHI56dkLGTUC548E",
+      "name": "The Good Stuff",
+      "description": "<p>Your merchandise is exquisite. The product <strong>quality</strong> is equal to your <strong>Tier +2</strong>. When you deal with a crew or faction, the GM will tell you who among them is hooked on your product (one, a few, many, or all).</p><p><em>The quality of your product might be used for a fortune roll to find out how impressed a potential client is, to find out how enthralled or incapacitated a user is in their indulgence of it, to discover if a strange variation has side-effects, etc.</em></p>"
+    },
+    {
+      "id": "kCC15VAgRV5tyyMy",
+      "name": "Door Kickers",
+      "description": "<p>When you execute an assault plan, take <strong>+1d</strong> to the <strong>engagement</strong> roll.</p><p><em>This ability applies when the goal is to attack an enemy. It doesn’t apply to other operations you attempt that happen to involve fighting.</em></p>"
+    },
+    {
+      "id": "rcDNinKRqYZuKFyv",
+      "name": "Ghost Market",
+      "description": "<p>Through arcane ritual or hard-won experience, you have discovered how to prepare your product for sale to ghosts and/or demons. <em>They do not pay in coin. What do they pay with?</em></p><p><em>The GM will certainly have an idea about how your strange new clients pay, but jump in with your own ideas, too! This ability is usually a big shift in the game, so talk it out and come up with something that everyone is excited about. If it’s a bit mysterious and uncertain, that’s good. You have more to explore that way.</em></p>"
+    },
+    {
+      "id": "wTSVl52JQMEjPJkE",
+      "name": "Forged in the Fire",
+      "description": "<p>Each PC has been toughened by cruel experience. You get <strong>+1d</strong> to <strong>resistance</strong> rolls.</p><p><em>This ability applies to PCs in the crew. It doesn’t confer any special toughness to your cohorts.</em></p>"
+    },
+    {
+      "id": "zSNFaKADeU9yNM7h",
+      "name": "Ghost Passage",
+      "description": "<p>From harsh experience or occult ritual, all crew members are immune to possession by spirits, but may choose to “carry” a ghost as a passenger within their body.</p><p><em>What do you do to “carry” a spirit? Must the spirit consent, or can you use this ability to trap an unwilling spirit within?</em></p>"
+    }
+  ]
+}
