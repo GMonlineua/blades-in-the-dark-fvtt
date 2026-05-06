@@ -6,11 +6,11 @@
     "assets": "system.assets.value",
     "quirks": "system.quirks.value",
     "situation": "system.situation",
-    "description": "system.description"
+    "description": "system.description",
+    "name": "name"
   },
-  "entries": [
-    {
-      "id": "06hDiDMtWseWiKSZ",
+  "entries": {
+    "Leviathan Hunters": {
       "name": "Leviathan Hunters",
       "summary": "",
       "lair": "",
@@ -19,8 +19,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "1fC73f8J290SyJCt",
+    "The Church of Ecstasy": {
       "name": "The Church of Ecstasy",
       "summary": "",
       "lair": "",
@@ -29,8 +28,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "1gqIVwj7AzlbDIZJ",
+    "The Hive": {
       "name": "The Hive",
       "summary": "",
       "lair": "",
@@ -39,8 +37,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "3FYt11srvBM6FPS5",
+    "Cabbies": {
       "name": "Cabbies",
       "summary": "",
       "lair": "",
@@ -49,8 +46,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "3n2elSp4vlx4416W",
+    "Laborers": {
       "name": "Laborers",
       "summary": "",
       "lair": "",
@@ -59,8 +55,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "4CYFFz4k7dYeyMzs",
+    "The Silver Nails": {
       "name": "The Silver Nails",
       "summary": "",
       "lair": "",
@@ -69,8 +64,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "7hKNN1qb8pYks804",
+    "Iruvian Consulate": {
       "name": "Iruvian Consulate",
       "summary": "",
       "lair": "",
@@ -79,8 +73,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "86tPmfThTehH2mFZ",
+    "The Forgotten Gods": {
       "name": "The Forgotten Gods",
       "summary": "",
       "lair": "",
@@ -89,8 +82,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "8eKaY1ufjyA2BTNZ",
+    "Rail Jacks": {
       "name": "Rail Jacks",
       "summary": "",
       "lair": "",
@@ -99,8 +91,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "9M0WWvYay5nzKS0w",
+    "The Horde": {
       "name": "The Horde",
       "summary": "",
       "lair": "",
@@ -109,8 +100,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "AREu3PM79aaeghDy",
+    "Bluecoats": {
       "name": "Bluecoats",
       "summary": "",
       "lair": "",
@@ -119,8 +109,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "BuT8WNpVGEx9eDei",
+    "The Dimmer Sisters": {
       "name": "The Dimmer Sisters",
       "summary": "",
       "lair": "",
@@ -129,8 +118,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "DwN4LlqhX9IVkv3H",
+    "Servants": {
       "name": "Servants",
       "summary": "",
       "lair": "",
@@ -139,8 +127,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "GjFqaMGgbF7SzQQe",
+    "The Red Sashes": {
       "name": "The Red Sashes",
       "summary": "",
       "lair": "",
@@ -149,8 +136,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "IhfWi9TmSffSMvSO",
+    "The Crows": {
       "name": "The Crows",
       "summary": "",
       "lair": "",
@@ -159,8 +145,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "IqwK3so6hMX9HJJd",
+    "The Weeping Lady": {
       "name": "The Weeping Lady",
       "summary": "",
       "lair": "",
@@ -169,8 +154,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "Iy6B76JexQ8ZpGH8",
+    "Gondoliers": {
       "name": "Gondoliers",
       "summary": "",
       "lair": "",
@@ -179,8 +163,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "JIhPfUHR5FuNKFEW",
+    "Skovlander Refugees": {
       "name": "Skovlander Refugees",
       "summary": "",
       "lair": "",
@@ -189,8 +172,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "JnjYCHeHMuDAhKHQ",
+    "The Lampblacks": {
       "name": "The Lampblacks",
       "summary": "",
       "lair": "",
@@ -199,8 +181,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "KC9iDY9zU5XgQYbn",
+    "The Lost": {
       "name": "The Lost",
       "summary": "",
       "lair": "",
@@ -209,8 +190,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "LFNbbRNCwdJ4E8HH",
+    "Deathlands Scavengers": {
       "name": "Deathlands Scavengers",
       "summary": "",
       "lair": "",
@@ -219,8 +199,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "ORQm0h1ZCW7OnhGn",
+    "Cyphers": {
       "name": "Cyphers",
       "summary": "",
       "lair": "",
@@ -229,8 +208,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "Qcwbf3o4xqetMDFW",
+    "Ironhook Prison": {
       "name": "Ironhook Prison",
       "summary": "",
       "lair": "",
@@ -239,8 +217,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "RmUQysqK6Fi8cW12",
+    "The Circle of Flame": {
       "name": "The Circle of Flame",
       "summary": "",
       "lair": "",
@@ -249,8 +226,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "T2v2IY6yyRYUhpuK",
+    "Skovlan Consulate": {
       "name": "Skovlan Consulate",
       "summary": "",
       "lair": "",
@@ -259,8 +235,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "TO7TEmF8ffIpglGf",
+    "The Reconciled": {
       "name": "The Reconciled",
       "summary": "",
       "lair": "",
@@ -269,8 +244,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "Tg08O3Xujzl9s9zo",
+    "Sparkwrights": {
       "name": "Sparkwrights",
       "summary": "",
       "lair": "",
@@ -279,8 +253,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "VB7IIqoFL83jHcFp",
+    "The Fog Hounds": {
       "name": "The Fog Hounds",
       "summary": "",
       "lair": "",
@@ -289,8 +262,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "XMacwXZFQSFPNbdH",
+    "Dagger Isles Consulate": {
       "name": "Dagger Isles Consulate",
       "summary": "",
       "lair": "",
@@ -299,8 +271,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "Xybkh32JLjJJdhG1",
+    "Lord Scurlock": {
       "name": "Lord Scurlock",
       "summary": "",
       "lair": "",
@@ -309,8 +280,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "YQ3X7PAKpeYMDhwE",
+    "Sailors": {
       "name": "Sailors",
       "summary": "",
       "lair": "",
@@ -319,8 +289,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "ZAxjV0LbTn1eSq00",
+    "The Brigade": {
       "name": "The Brigade",
       "summary": "",
       "lair": "",
@@ -329,8 +298,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "dGv3ZxoqB9kfjOHq",
+    "The Gray Cloaks": {
       "name": "The Gray Cloaks",
       "summary": "",
       "lair": "",
@@ -339,8 +307,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "fNDX6P9KcodMECzE",
+    "The Grinders": {
       "name": "The Grinders",
       "summary": "",
       "lair": "",
@@ -349,8 +316,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "fVl5O1bQPPgn46iM",
+    "The Unseen": {
       "name": "The Unseen",
       "summary": "",
       "lair": "",
@@ -359,8 +325,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "j9KoQuggchEBM8Bn",
+    "Ink Rakes": {
       "name": "Ink Rakes",
       "summary": "",
       "lair": "",
@@ -369,8 +334,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "kfJ21HLmHJIsT5RA",
+    "The Path of Echoes": {
       "name": "The Path of Echoes",
       "summary": "",
       "lair": "",
@@ -379,8 +343,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "mW9xT603blHvFvuj",
+    "Dockers": {
       "name": "Dockers",
       "summary": "",
       "lair": "",
@@ -389,8 +352,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "mfuQlDWd9EdQRN5E",
+    "The Foundation": {
       "name": "The Foundation",
       "summary": "",
       "lair": "",
@@ -399,8 +361,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "qRbO9VV9duKn07U9",
+    "Imperial Military": {
       "name": "Imperial Military",
       "summary": "",
       "lair": "",
@@ -409,8 +370,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "qibF5GeTfQIRbPTm",
+    "City Council": {
       "name": "City Council",
       "summary": "",
       "lair": "",
@@ -419,8 +379,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "r1VsXjzAErad8mgX",
+    "Inspectors": {
       "name": "Inspectors",
       "summary": "",
       "lair": "",
@@ -429,8 +388,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "u2qKZ6pcXr7njjml",
+    "Ulf Ironborn": {
       "name": "Ulf Ironborn",
       "summary": "",
       "lair": "",
@@ -439,8 +397,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "vXpcjfcj5wNmLiqO",
+    "The Wraiths": {
       "name": "The Wraiths",
       "summary": "",
       "lair": "",
@@ -449,8 +406,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "vYU8sZx50LLZaPtb",
+    "Severosi Consulate": {
       "name": "Severosi Consulate",
       "summary": "",
       "lair": "",
@@ -459,8 +415,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "wkUIDv5fEWiUOcmB",
+    "Ministry of Preservation": {
       "name": "Ministry of Preservation",
       "summary": "",
       "lair": "",
@@ -469,8 +424,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "xVwRzii3gv48Qvmc",
+    "The Billhooks": {
       "name": "The Billhooks",
       "summary": "",
       "lair": "",
@@ -479,8 +433,7 @@
       "situation": "",
       "description": ""
     },
-    {
-      "id": "zFNXOkmRrqvAiG3D",
+    "Spirit Wardens": {
       "name": "Spirit Wardens",
       "summary": "",
       "lair": "",
@@ -489,5 +442,5 @@
       "situation": "",
       "description": ""
     }
-  ]
+  }
 }
