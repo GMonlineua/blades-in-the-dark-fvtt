@@ -5,7 +5,7 @@
   "version": "0.9.2",
   "compatibility": {
     "minimum": "13",
-    "verified": "13.347",
+    "verified": "14.360",
     "maximum": "14"
   },
   "authors": [
@@ -165,6 +165,15 @@
   "background": "systems/bitd/ui/background.jpg",
   "packFolders": [],
   "socket": true,
+  "relationships": {
+    "recommends": [
+      {
+        "id": "babele",
+        "type": "module",
+        "compatibility": {}
+      }
+    ]
+  },
   "url": "https://github.com/GMonlineua/blades-in-the-dark-fvtt",
   "manifest": "https://raw.githubusercontent.com/GMonlineua/blades-in-the-dark-fvtt/main/system.json",
   "download": "https://github.com/GMonlineua/blades-in-the-dark-fvtt/releases/download/v0.9.2/foundry.zip",
