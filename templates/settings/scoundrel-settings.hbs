@@ -1,5 +1,16 @@
 <form class="settings">
   <div class="general-settings">
+    <div class="name flex-centration">
+      <label for="system.names.useAlias">{{localize
+          "BITD.Scoundrel.Settings.UseAsName"
+        }}:</label>
+        <input
+          type="checkbox"
+          name="system.names.useAlias"
+          {{checked system.names.useAlias}}
+        />
+    </div>
+
     <div class="stress-max">
       <label for="system.stress.max">{{localize
           "BITD.Scoundrel.Settings.StressMax"

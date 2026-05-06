@@ -32,12 +32,21 @@
 
     <div class="header-fields">
       <div class="name-alias grid-2col">
-        <h1 class="scoundrel-name">
-          <input class="clear-input" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'BITD.Actor.HumanName'}}"/>
-        </h1>
-        <h2 class="scoundrel-alias">
-          <input class="clear-input" name="system.alias" type="text" value="{{system.alias}}" placeholder="{{localize 'BITD.Actor.Alias'}}"/>
-        </h2>
+        {{#if system.names.useAlias}}
+          <h1 class="main-name">
+            <input class="clear-input" name="system.names.alias" type="text" value="{{system.names.alias}}" placeholder="{{localize 'BITD.Actor.Alias'}}"/>
+          </h1>
+          <h2 class="secondary-name">
+            <input class="clear-input" name="system.names.real" type="text" value="{{system.names.real}}" placeholder="{{localize 'BITD.Actor.HumanName'}}"/>
+          </h2>
+        {{else}}
+          <h1 class="main-name">
+            <input class="clear-input" name="system.names.real" type="text" value="{{system.names.real}}" placeholder="{{localize 'BITD.Actor.HumanName'}}"/>
+          </h1>
+          <h2 class="secondary-name">
+            <input class="clear-input" name="system.names.alias" type="text" value="{{system.names.alias}}" placeholder="{{localize 'BITD.Actor.Alias'}}"/>
+          </h2>
+        {{/if}}
       </div>
 
       <div class="brief-info">

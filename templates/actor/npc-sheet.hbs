@@ -11,23 +11,44 @@
 
     <div class="header-fields">
       <h1 class="character-name">
-        <input
-          class="clear-input"
-          name="name"
-          type="text"
-          value="{{actor.name}}"
-          placeholder="{{localize 'BITD.Actor.HumanName'}}"
-        />
+        {{#if system.names.useAlias}}
+          <input
+            class="clear-input"
+            name="system.names.alias"
+            type="text"
+            value="{{system.names.alias}}"
+            placeholder="{{localize 'BITD.Actor.Alias'}}"
+          />
+        {{else}}
+          <input
+            class="clear-input"
+            name="system.names.real"
+            type="text"
+            value="{{system.names.real}}"
+            placeholder="{{localize 'BITD.Actor.HumanName'}}"
+          />
+        {{/if}}
       </h1>
       <div class="character-aka">
-        <label for="system.aka">{{localize "BITD.Actor.Aka"}}:</label>
-        <input
-          class="clear-input"
-          name="system.aka"
-          type="text"
-          value="{{system.aka}}"
-          placeholder="{{localize 'BITD.Actor.Aka'}}"
-        />
+        {{#if system.names.useAlias}}
+          <label for="system.names.real">{{localize "BITD.Actor.HumanName"}}:</label>
+          <input
+            class="clear-input"
+            name="system.names.real"
+            type="text"
+            value="{{system.names.real}}"
+            placeholder="{{localize 'BITD.Actor.HumanName'}}"
+          />
+        {{else}}
+          <label for="system.names.real">{{localize "BITD.Actor.Alias"}}:</label>
+          <input
+            class="clear-input"
+            name="system.names.alias"
+            type="text"
+            value="{{system.names.alias}}"
+            placeholder="{{localize 'BITD.Actor.Alias'}}"
+          />
+        {{/if}}
       </div>
       <div class="character-summary">
         <label for="system.summary">{{localize "BITD.Summary"}}:</label>
@@ -46,6 +67,17 @@
   {{! Sheet Body }}
   <section class="sheet-body">
     <hr />
+    <div class="name-settings flex-centration">
+      <label for="system.names.useAlias">{{localize
+          "BITD.NPC.UseAsName"
+        }}:</label>
+        <input
+          type="checkbox"
+          name="system.names.useAlias"
+          {{checked system.names.useAlias}}
+        />
+    </div>
+
     {{editor
       enrichedDescription
       target="system.description"

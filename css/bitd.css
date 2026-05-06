@@ -209,6 +209,12 @@
   text-align: center;
 }
 
+.flex-centration {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .grid-2col {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -907,7 +913,7 @@ select.clear-select {
 }
 .bitd.actor .scoundrel .sheet-header .header-fields .name-alias {
   display: grid;
-  grid-template-columns: 1fr 200px;
+  grid-template-columns: 1fr 270px;
   gap: 10px;
 }
 .bitd.actor .scoundrel .sheet-header .header-fields .name-alias input {
@@ -915,10 +921,10 @@ select.clear-select {
   padding: 0;
   text-decoration-line: underline;
 }
-.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-name {
+.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .main-name {
   position: relative;
 }
-.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-name::after {
+.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .main-name::after {
   position: absolute;
   right: -5px;
   background-color: #222;
@@ -926,12 +932,12 @@ select.clear-select {
   height: 40px;
   content: "";
 }
-.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-alias {
+.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .secondary-name {
   border-bottom: none;
   text-align: right;
 }
-.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .scoundrel-alias input {
-  width: 200px;
+.bitd.actor .scoundrel .sheet-header .header-fields .name-alias .secondary-name input {
+  width: 270px;
 }
 .bitd.actor .scoundrel .sheet-header .header-fields .brief-info {
   gap: 0 10px;
