@@ -34,7 +34,7 @@ export class BitdPlaybookSheet extends BitdItemSheet {
     super._onDrop(event);
 
     if (!this.isEditable) return;
-    const data = TextEditor.getDragEventData(event);
+    const data = foundry.applications.ux.TextEditor.implementation.getDragEventData(event);
 
     if (data.type === "Item") {
       this.item.addLinkedItem(data);
