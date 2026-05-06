@@ -2,10 +2,10 @@ import * as models from "./data/_module.mjs";
 import { BitdActor, BitdItem } from "./documents/_module.mjs";
 
 // Import Actor Sheet
-import { BitdActorSheet } from "./sheets/actor-sheet.mjs";
 import { BitdScoundrelSheet } from "./sheets/scoundrel-sheet.mjs";
 import { BitdCrewSheet } from "./sheets/crew-sheet.mjs";
 import { BitdFactionSheet } from "./sheets/faction-sheet.mjs";
+import { BitdNPCSheet } from "./sheets/npc-sheet.mjs";
 import { BitdClockSheet } from "./sheets/clock-sheet.mjs";
 
 // Import Item Sheet
@@ -63,9 +63,6 @@ Hooks.once("init", async function () {
     "core",
     foundry.appv1.sheets.ActorSheet,
   );
-  foundry.documents.collections.Actors.registerSheet("bitd", BitdActorSheet, {
-    makeDefault: true,
-  });
   foundry.documents.collections.Actors.registerSheet(
     "bitd",
     BitdScoundrelSheet,
@@ -80,6 +77,10 @@ Hooks.once("init", async function () {
   });
   foundry.documents.collections.Actors.registerSheet("bitd", BitdFactionSheet, {
     types: ["faction"],
+    makeDefault: true,
+  });
+  foundry.documents.collections.Actors.registerSheet("bitd", BitdNPCSheet, {
+    types: ["npc"],
     makeDefault: true,
   });
   foundry.documents.collections.Actors.registerSheet("bitd", BitdClockSheet, {
