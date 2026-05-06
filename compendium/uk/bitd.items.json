@@ -4,6 +4,16 @@
     "description": "system.description",
     "name": "name"
   },
+  "folders": {
+    "Default": "Загальне",
+    "Cutter": "Головоріз",
+    "Hound": "Гончак",
+    "Leech": "Мастак",
+    "Lurk": "Лицедій",
+    "Slide": "Пройда",
+    "Spider": "Комбінатор",
+    "Whisper": "Містик"
+  },
   "entries": {
     "A 2nd Pistol": {
       "name": "Пістоль (2-й)",
