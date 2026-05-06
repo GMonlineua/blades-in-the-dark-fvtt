@@ -4,6 +4,15 @@
     "description": "system.description",
     "name": "name"
   },
+  "folders": {
+    "Cutter": "Cutter",
+    "Hound": "Hound",
+    "Leech": "Leech",
+    "Lurk": "Lurk",
+    "Slide": "Slide",
+    "Spider": "Spider",
+    "Whisper": "Whisper"
+  },
   "entries": {
     "Rook’s Gambit": {
       "name": "Rook’s Gambit",

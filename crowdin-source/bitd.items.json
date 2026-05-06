@@ -4,6 +4,16 @@
     "description": "system.description",
     "name": "name"
   },
+  "folders": {
+    "Default": "Default",
+    "Cutter": "Cutter",
+    "Hound": "Hound",
+    "Leech": "Leech",
+    "Lurk": "Lurk",
+    "Slide": "Slide",
+    "Spider": "Spider",
+    "Whisper": "Whisper"
+  },
   "entries": {
     "A 2nd Pistol": {
       "name": "A 2nd Pistol",
