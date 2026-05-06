@@ -58,16 +58,21 @@ export default class BitdActor extends Actor {
     super._onUpdate(changed, options, userId);
 
     if (game.user.id != userId) return;
-    if (this.type != "clock") return;
 
-    if (changed?.system?.progress !== undefined) {
-      if (!this._debouncedClockUpdate) {
-        this._debouncedClockUpdate = foundry.utils.debounce(
-          this._setClockImage.bind(this),
-          50,
-        );
+    if (this.type === "clock") {
+      if (changed?.system?.progress !== undefined) {
+        if (!this._debouncedClockUpdate) {
+          this._debouncedClockUpdate = foundry.utils.debounce(
+            this._setClockImage.bind(this),
+            50,
+          );
+        }
+        this._debouncedClockUpdate();
       }
-      this._debouncedClockUpdate();
+    } else if (this.type === "scoundrel" || this.type === "npc" ) {
+      if (changed?.system?.names !== undefined) {
+        this._onUpdateName();
+      }
     }
   }
 
@@ -259,6 +264,14 @@ export default class BitdActor extends Actor {
     }
 
     this.createEmbeddedDocuments("Item", toCreate);
+  }
+
+  async _onUpdateName() {
+    if (this.system.names.useAlias && this.system.names.alias) {
+      await this.update({ name : this.system.names.alias });
+    } else if (this.system.names.real) {
+      await this.update({ name : this.system.names.real });
+    }
   }
 
   async addLinkedActor(actor) {

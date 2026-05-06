@@ -31,7 +31,6 @@
       "HumanName": "Name",
       "StructureName": "Name",
       "Alias": "Alias",
-      "Aka": "Aka",
       "Coins": "Coins",
       "Tier": "Tier"
     },
@@ -70,9 +69,9 @@
         "Harm": "Harm",
         "Healing": "Healing",
         "Effect": {
-          "Light": "Need Help",
+          "Light": "Less Effect",
           "Medium": "-1 D",
-          "Heavy": "Less Effect"
+          "Heavy": "Need Help"
         }
       },
       "Stash": "Stash",
@@ -107,6 +106,7 @@
       },
       "Settings": {
         "Title": "Scoundrel Settings",
+        "UseAsName": "Use alias as main name",
         "StressMax": "Stress max",
         "CoinsMax": "Coins max",
         "StashMax": "Stash max",
@@ -196,6 +196,9 @@
         "Title": "Show",
         "Tooltip": "Show this field in limited sheet"
       }
+    },
+    "NPC": {
+      "UseAsName": "Use alias as main name"
     },
     "Clock": {
       "Filled": "Filled",

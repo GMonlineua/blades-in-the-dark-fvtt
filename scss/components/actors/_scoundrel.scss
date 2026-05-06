@@ -53,7 +53,7 @@
 
       .name-alias {
         display: grid;
-        grid-template-columns: 1fr 200px;
+        grid-template-columns: 1fr 270px;
         gap: $padding-md;
 
         input {
@@ -62,11 +62,11 @@
           text-decoration-line: underline;
         }
 
-        .scoundrel-name {
+        .main-name {
           position: relative;
         }
 
-        .scoundrel-name::after {
+        .main-name::after {
           position: absolute;
           right: -5px;
           background-color: $light-black;
@@ -75,12 +75,12 @@
           content: "";
         }
 
-        .scoundrel-alias {
+        .secondary-name {
           border-bottom: none;
           text-align: right;
 
           input {
-            width: 200px;
+            width: 270px;
           }
         }
       }

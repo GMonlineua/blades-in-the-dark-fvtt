@@ -31,7 +31,7 @@ export class BitdItemSheet extends foundry.appv1.sheets.ItemSheet {
     this.item.loadLinkedData();
     const context = await super.getData();
 
-    context.enrichedDescription = await TextEditor.enrichHTML(
+    context.enrichedDescription = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
       this.object.system.description,
       { async: true },
     );
@@ -45,12 +45,6 @@ export class BitdItemSheet extends foundry.appv1.sheets.ItemSheet {
     if (actor) {
       context.rollData = actor.getRollData();
     }
-
-    // Encrich editor content
-    context.enrichedDescription = await TextEditor.enrichHTML(
-      this.object.system.description,
-      { async: true },
-    );
 
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = itemData.system;

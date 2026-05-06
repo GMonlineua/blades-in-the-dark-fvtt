@@ -1,0 +1,641 @@
+{
+  "label": "НІПи",
+  "mapping": {
+    "name": "name",
+    "realName": "system.realName",
+    "aka": "system.aka",
+    "summary": "system.summary",
+    "description": "system.description"
+  },
+  "folders": {
+    "Assassins": "Убивці",
+    "Bravos": "Зухвальців",
+    "Cult": "Культисти",
+    "Hawkers": "Перекупи",
+    "Shadows": "Нишпорки",
+    "Smugglers": "Контрабандисти",
+    "Cutter": "Головоріз",
+    "Hound": "Гончак",
+    "Leech": "Мастак",
+    "Lurk": "Лицедій",
+    "Slide": "Пройда",
+    "Spider": "Комбінатор",
+    "Whisper": "Містик"
+  },
+  "entries": {
+<<<<<<< crowdin
+    "Hawkers": {
+      "name": "Перекупи"
+    },
+=======
+    "Assassins": {
+      "name": "Убивці"
+    },
+    "Bravos": {
+      "name": "Зухвальців"
+    },
+    "Hawkers": {
+      "name": "Перекупи"
+    },
+    "Cult": {
+      "name": "Культисти"
+    },
+>>>>>>> development
+    "Shadows": {
+      "name": "Нишпорки"
+    },
+    "Smugglers": {
+      "name": "Контрабандисти"
+    },
+<<<<<<< crowdin
+    "Cult": {
+      "name": "Культисти"
+    },
+    "Lurk": {
+      "name": "Лицедій"
+=======
+    "Cutter": {
+      "name": "Головоріз"
+>>>>>>> development
+    },
+    "Hound": {
+      "name": "Гончак"
+    },
+<<<<<<< crowdin
+    "Assassins": {
+      "name": "Убивці"
+=======
+    "Leech": {
+      "name": "Мастак"
+    },
+    "Lurk": {
+      "name": "Лицедій"
+>>>>>>> development
+    },
+    "Slide": {
+      "name": "Пройда"
+    },
+<<<<<<< crowdin
+    "Bravos": {
+      "name": "Зухвальців"
+    },
+    "Cutter": {
+      "name": "Головоріз"
+    },
+    "Leech": {
+      "name": "Мастак"
+=======
+    "Spider": {
+      "name": "Комбінатор"
+>>>>>>> development
+    },
+    "Whisper": {
+      "name": "Містик"
+    },
+<<<<<<< crowdin
+    "Spider": {
+      "name": "Комбінатор"
+    },
+=======
+>>>>>>> development
+    "Augus": {
+      "name": "Авґус",
+      "realName": "",
+      "aka": "",
+      "summary": "архітектор",
+      "description": "<p>Знавець будівельних планів та історії чи, можливо, ворог, який розробляє заходи безпеки?</p>"
+    },
+<<<<<<< crowdin
+    "Moriya": {
+      "name": "Moriya",
+      "realName": "",
+      "aka": "",
+      "summary": "spirit trafficker",
+      "description": ""
+    },
+=======
+>>>>>>> development
+    "Steiner": {
+      "name": "Штайнер",
+      "realName": "",
+      "aka": "",
+      "summary": "найманий вбивця",
+      "description": "<p>Можливо, один із ваших давніх конкурентів чи колишній напарник?</p>"
+    },
+<<<<<<< crowdin
+    "Elynn": {
+      "name": "Elynn",
+      "realName": "",
+      "aka": "",
+      "summary": "dock worker",
+      "description": "<p>Perhaps a friend who can help with the infernal paperwork of the Empire?</p>"
+    },
+    "Decker": {
+      "name": "Decker",
+      "realName": "",
+      "aka": "",
+      "summary": "anarchist",
+      "description": "<p>Perhaps a client in need of the illegal tools of revolution?</p>"
+    },
+    "Sevoy": {
+      "name": "Sevoy",
+      "realName": "",
+      "aka": "",
+      "summary": "merchant lord",
+      "description": "<p>Perhaps a connection to clients with deep pockets?</p>"
+    },
+    "Laroze": {
+      "name": "Laroze",
+      "realName": "",
+      "aka": "",
+      "summary": "Bluecoat",
+      "description": "<p>Perhaps an informant within the City Watch?</p>"
+    },
+=======
+>>>>>>> development
+    "Bazso Baz": {
+      "name": "Базсо Баз",
+      "realName": "",
+      "aka": "",
+      "summary": "лідер банди",
+      "description": "<p>Закоханий, що прагне вашої уваги, або колишній коханець, який тепер зневажає вас?</p>"
+    },
+    "Salia": {
+      "name": "Салія",
+      "realName": "",
+      "aka": "",
+      "summary": "торговка інформацією",
+      "description": "<p>Надійний контакт для злочинних справ чи, можливо, колишня напарниця, яка вас зрадила?</p>"
+    },
+    "Quellyn": {
+      "name": "Квеллін",
+      "realName": "",
+      "aka": "",
+      "summary": "відьма",
+      "description": "<p>Ймовірно, досвідчена цілителька і провидиця чи ваша учениця, з котрою ви розсварилися?</p>"
+    },
+    "Veldren": {
+      "name": "Велдрен",
+      "realName": "",
+      "aka": "",
+      "summary": "психонавт",
+      "description": "<p>Наркоман, чий розум настільки затьмарений отруйними речовинами, що він не може чітко мислити? Чи, можливо, дослідник психоделічних світів, недоступних простим смертним?</p>"
+    },
+<<<<<<< crowdin
+    "Lutes": {
+      "name": "Lutes",
+      "realName": "",
+      "aka": "",
+      "summary": "tavern owner",
+      "description": "<p>Perhaps a good source of news and gossip?</p>"
+    },
+    "Irimina": {
+      "name": "Irimina",
+      "realName": "",
+      "aka": "",
+      "summary": "vicious noble",
+      "description": "<p>Perhaps a potential patron for your crew?</p>"
+    },
+    "Dowler": {
+      "name": "Dowler",
+      "realName": "",
+      "aka": "",
+      "summary": "explorer",
+      "description": "<p>Perhaps one of the rare deathlands scavengers that survived his sentence?</p>"
+    },
+=======
+>>>>>>> development
+    "Veleris": {
+      "name": "Велеріс",
+      "realName": "",
+      "aka": "",
+      "summary": "шпигун",
+      "description": "<p>Кому Велеріс передає роздобуту інформацію?</p>"
+    },
+<<<<<<< crowdin
+    "Rolan": {
+      "name": "Rolan",
+      "realName": "",
+      "aka": "",
+      "summary": "drug dealer",
+      "description": "<p>Perhaps a client with strong underworld ties?</p>"
+    },
+    "Bennett": {
+      "name": "Bennett",
+      "realName": "",
+      "aka": "",
+      "summary": "astronomer",
+      "description": ""
+    },
+    "Trev": {
+      "name": "Trev",
+      "realName": "",
+      "aka": "",
+      "summary": "gang boss",
+      "description": "<p>Perhaps a gang that helped your crew get started?</p>"
+    },
+    "Gagan": {
+      "name": "Gagan",
+      "realName": "",
+      "aka": "",
+      "summary": "academic",
+      "description": ""
+    },
+    "Hoxley": {
+      "name": "Hoxley",
+      "realName": "",
+      "aka": "",
+      "summary": "smuggler",
+      "description": "<p>Perhaps a friend of powerful ship captains?</p>"
+    },
+=======
+>>>>>>> development
+    "Celene": {
+      "name": "Селін",
+      "realName": "",
+      "aka": "",
+      "summary": "охоронниця",
+      "description": "<p>Селін — вартова; захисниця. Кого вона оберігає?</p>"
+    },
+    "Telda": {
+      "name": "Тельда",
+      "realName": "",
+      "aka": "",
+      "summary": "жебрачка",
+      "description": "<p>Наставниця, котра допомогла вам відточити здібності, або ж крадійка-суперниця?</p>"
+    },
+    "Jeren": {
+      "name": "Джерен",
+      "realName": "",
+      "aka": "",
+      "summary": "архіваріус Синіх мундирів",
+      "description": "<p>Подвійний агент у рядах Варти чи надмірно допитливий офіцер, що зацікавився вашими злочинами?</p>"
+    },
+<<<<<<< crowdin
+    "Keller": {
+      "name": "Keller",
+      "realName": "",
+      "aka": "",
+      "summary": "blacksmith",
+      "description": "<p>Perhaps a source for armaments?</p>"
+    },
+    "Meg": {
+      "name": "Meg",
+      "realName": "",
+      "aka": "",
+      "summary": "pit-fighter",
+      "description": "<p>Perhaps a trainer, or perhaps a fellow extortion artist?</p>"
+    },
+=======
+>>>>>>> development
+    "Chael": {
+      "name": "Чайл",
+      "realName": "",
+      "aka": "",
+      "summary": "злісний бандит",
+      "description": "<p>Член вашої колишньої банди чи незалежний злодій, який став у вас на заваді?</p>"
+    },
+<<<<<<< crowdin
+    "Karlos": {
+      "name": "Karlos",
+      "realName": "",
+      "aka": "",
+      "summary": "bounty hunter",
+      "description": "<p>Perhaps a source for off-book government “wet work?”</p>"
+    },
+=======
+>>>>>>> development
+    "Malista": {
+      "name": "Маліста",
+      "realName": "",
+      "aka": "",
+      "summary": "жриця",
+      "description": "<p>Якому забутому божеству вона служить?</p>"
+    },
+<<<<<<< crowdin
+    "Mercy": {
+      "name": "Милосердник",
+      "realName": "",
+      "aka": "",
+      "summary": "холоднокровний вбивця",
+      "description": "<p>Можливо, найманець чи один із найнебезпечніших негідників злочинного світу?</p>"
+=======
+    "Grace": {
+      "name": "Добряк",
+      "realName": "",
+      "aka": "",
+      "summary": "вимагач",
+      "description": "<p>Ймовірно, колишній напарник чи конкурент у якомусь злочині?</p>"
+>>>>>>> development
+    },
+    "Flint": {
+      "name": "Кремінь",
+      "realName": "",
+      "aka": "",
+      "summary": "торговець духами",
+      "description": "<p>Можливо, постачальник незвичайних магічних матеріалів чи конкурент в окультному світі Даскволу?</p>"
+    },
+    "Nyryx": {
+      "name": "Найрікс",
+      "realName": "",
+      "aka": "",
+      "summary": "повія",
+      "description": "<p>Можливо, інформаторка, що вказує на потенційних жертв, або конкурентка-маніпуляторка?</p>"
+    },
+    "Frake": {
+      "name": "Фрейк",
+      "realName": "",
+      "aka": "",
+      "summary": "слюсар",
+      "description": "<p>Можливо, це ваш консультант, а може, майстер, який ускладнює вам життя своїми першокласними замками?</p>"
+    },
+    "Jul": {
+      "name": "Джул",
+      "realName": "",
+      "aka": "",
+      "summary": "дилер крові",
+      "description": "<p>Які ще химерні клієнти вдаються до його послуг?</p>"
+    },
+<<<<<<< crowdin
+    "Conway": {
+      "name": "Conway",
+      "realName": "",
+      "aka": "",
+      "summary": "Bluecoat",
+      "description": "<p>Perhaps an informant within the City Watch?</p>"
+    },
+=======
+>>>>>>> development
+    "Roslyn Kellis": {
+      "name": "Розалін Келліс",
+      "realName": "",
+      "aka": "",
+      "summary": "дворянка",
+      "description": "<p>Стара подруга й довірена особа чи одна із жертв вашого шпіонажу, яка прагне помсти?</p>"
+    },
+<<<<<<< crowdin
+    "Anya": {
+      "name": "Anya",
+      "realName": "",
+      "aka": "",
+      "summary": "dilettante",
+      "description": "<p>Perhaps a well-connected socialite?</p>"
+    },
+    "Lydra": {
+      "name": "Lydra",
+      "realName": "",
+      "aka": "",
+      "summary": "deal broker",
+      "description": "<p>Perhaps she acts as a liaison with your clients?</p>"
+    },
+    "Sera": {
+      "name": "Sera",
+      "realName": "",
+      "aka": "",
+      "summary": "arms dealer",
+      "description": "<p>Perhaps a supplier with military access?</p>"
+    },
+=======
+>>>>>>> development
+    "Bryl": {
+      "name": "Брил",
+      "realName": "",
+      "aka": "",
+      "summary": "наркоторговець",
+      "description": "<p>Можливо, надійний контакт зі злочинного світу чи давній напарник, що затаїв образу?</p>"
+    },
+    "Scurlock": {
+      "name": "Скарлок",
+      "realName": "",
+      "aka": "",
+      "summary": "вампір",
+      "description": "<p>Невже наставник чи, навпаки, запеклий ворог?</p>"
+    },
+    "Sawtooth": {
+      "name": "Пилозуб",
+      "realName": "",
+      "aka": "",
+      "summary": "дохтор",
+      "description": "<p>Приятель із часів війни чи м’ясник, котрий наламав дров, зашиваючи вас?</p>"
+    },
+<<<<<<< crowdin
+    "Grace": {
+      "name": "Добряк",
+      "realName": "",
+      "aka": "",
+      "summary": "вимагач",
+      "description": "<p>Ймовірно, колишній напарник чи конкурент у якомусь злочині?</p>"
+=======
+    "Mercy": {
+      "name": "Милосердник",
+      "realName": "",
+      "aka": "",
+      "summary": "холоднокровний вбивця",
+      "description": "<p>Можливо, найманець чи один із найнебезпечніших негідників злочинного світу?</p>"
+>>>>>>> development
+    },
+    "Marlane": {
+      "name": "Марлейн",
+      "realName": "",
+      "aka": "",
+      "summary": "боєць",
+      "description": "<p>Можливо, чемпіон бійцівських ям чи ваш тренер із боксу?</p>"
+    },
+<<<<<<< crowdin
+    "Exeter": {
+      "name": "Exeter",
+      "realName": "",
+      "aka": "",
+      "summary": "Spirit Warden",
+      "description": "<p>Perhaps a double-agent informant for you?</p>"
+    },
+=======
+>>>>>>> development
+    "Casta": {
+      "name": "Каста",
+      "realName": "",
+      "aka": "",
+      "summary": "мисливиця за головами",
+      "description": "<p>Наставниця, котра допомогла вам відточити здібності. Чи, може, навпаки?</p>"
+    },
+    "Eckerd": {
+      "name": "Екерд",
+      "realName": "",
+      "aka": "",
+      "summary": "крадій трупів",
+      "description": "<p>Ймовірно, постачальник «сировини»?</p>"
+    },
+    "Stazia": {
+      "name": "Стазія",
+      "realName": "",
+      "aka": "",
+      "summary": "аптекарка",
+      "description": "<p>Колишня негідниця, що зайнялася законним алхімічним бізнесом, або все було навпаки?</p>"
+    },
+<<<<<<< crowdin
+    "Rigney": {
+      "name": "Rigney",
+      "realName": "",
+      "aka": "",
+      "summary": "tavern owner",
+      "description": "<p>Perhaps a good source of news and gossip?</p>"
+    },
+    "Adikin": {
+      "name": "Adikin",
+      "realName": "",
+      "aka": "",
+      "summary": "occultist",
+      "description": ""
+    },
+    "Adelaide Phroaig": {
+      "name": "Adelaide Phroaig",
+      "realName": "",
+      "aka": "",
+      "summary": "noble",
+      "description": "<p>Perhaps a source for scores among the elite?</p>"
+    },
+    "Marlo": {
+      "name": "Marlo",
+      "realName": "",
+      "aka": "",
+      "summary": "gang boss",
+      "description": "<p>Perhaps a good partner with a gang of tough thugs?</p>"
+    },
+    "Tomas": {
+      "name": "Tomas",
+      "realName": "",
+      "aka": "",
+      "summary": "physicker",
+      "description": "<p>Perhaps a former thug turned doctor?</p>"
+    },
+=======
+>>>>>>> development
+    "Darmot": {
+      "name": "Дармот",
+      "realName": "",
+      "aka": "",
+      "summary": "Синій мундир",
+      "description": "<p>Можливо, кмітливий офіцер, який вас ловив, або старий друг, що вийшов зі справ та став на бік закону?</p>"
+    },
+    "Setarra": {
+      "name": "Сетарра",
+      "realName": "",
+      "aka": "",
+      "summary": "демон",
+      "description": "<p>Можливо, ваша партнерка в темних починаннях чи сутність, що служила вам, а тепер прагне помсти?</p>"
+    },
+<<<<<<< crowdin
+    "Rolan Wott": {
+      "name": "Rolan Wott",
+      "realName": "",
+      "aka": "",
+      "summary": "magistrate",
+      "description": "<p>Perhaps with a feckless son in Doskvol Academy, always in need of rescuing?</p>"
+    },
+    "Nyelle": {
+      "name": "Nyelle",
+      "realName": "",
+      "aka": "",
+      "summary": "spirit trafficker",
+      "description": "<p>Perhaps a supplier for the strangest of cargo?</p>"
+    },
+=======
+>>>>>>> development
+    "Melvir": {
+      "name": "Мелвір",
+      "realName": "",
+      "aka": "",
+      "summary": "дохтор",
+      "description": "<p>Старий друг, якому частенько доводилось вас зашивати? Чи, може, той, хто лікує ваших незліченних жертв?</p>"
+    },
+    "Riven": {
+      "name": "Рівен",
+      "realName": "",
+      "aka": "",
+      "summary": "аптекар",
+      "description": "<p>Можливо, надійний постачальник ліків?</p>"
+    },
+<<<<<<< crowdin
+    "Walker": {
+      "name": "Walker",
+      "realName": "",
+      "aka": "",
+      "summary": "ward boss",
+      "description": "<p>Perhaps an employer who often needs violent work?</p>"
+    },
+=======
+>>>>>>> development
+    "Klyra": {
+      "name": "Клайра",
+      "realName": "",
+      "aka": "",
+      "summary": "власниця таверни",
+      "description": "<p>Ймовірно, хороше джерело пліток?</p>"
+    },
+    "Harker": {
+      "name": "Гаркер",
+      "realName": "",
+      "aka": "",
+      "summary": "в'язень",
+      "description": "<p>Друг, якому ви допомогли, коли сиділи у в’язниці, чи ворог, що скривдив вас, коли ви відбували строк?</p>"
+    },
+<<<<<<< crowdin
+    "Esme": {
+      "name": "Esme",
+      "realName": "",
+      "aka": "",
+      "summary": "tavern owner",
+      "description": "<p>Perhaps a good source of news and gossip?</p>"
+    },
+=======
+>>>>>>> development
+    "Petra": {
+      "name": "Петра",
+      "realName": "",
+      "aka": "",
+      "summary": "міський клерк",
+      "description": "<p>Ймовірно, хороше джерело інформації?</p>"
+    },
+<<<<<<< crowdin
+    "Hutchins": {
+      "name": "Hutchins",
+      "realName": "",
+      "aka": "",
+      "summary": "antiquarian",
+      "description": ""
+    },
+    "Amancio": {
+      "name": "Amancio",
+      "realName": "",
+      "aka": "",
+      "summary": "deal broker",
+      "description": "<p>Perhaps a well-connected underworld figure, famous for their neutrality?</p>"
+    },
+    "Fitz": {
+      "name": "Fitz",
+      "realName": "",
+      "aka": "",
+      "summary": "collector",
+      "description": "<p>Perhaps an aficionado of strange artifacts?</p>"
+    },
+=======
+>>>>>>> development
+    "Jennah": {
+      "name": "Дженна",
+      "realName": "",
+      "aka": "",
+      "summary": "служниця",
+      "description": "<p>Ймовірно, чудове джерело пліток про вище товариство?</p>"
+<<<<<<< crowdin
+    },
+    "Mateas Kline": {
+      "name": "Mateas Kline",
+      "realName": "",
+      "aka": "",
+      "summary": "noble",
+      "description": ""
+=======
+>>>>>>> development
+    }
+  }
+}
