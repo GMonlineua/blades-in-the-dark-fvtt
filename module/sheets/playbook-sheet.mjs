@@ -10,7 +10,6 @@ export class BitdPlaybookSheet extends BitdItemSheet {
     return foundry.utils.mergeObject(super.defaultOptions, {
       dragDrop: [
         { dragSelector: ".item", dropSelector: ".playbook" },
-        { dragSelector: ".item", dropSelector: ".crewType" },
       ],
     });
   }
