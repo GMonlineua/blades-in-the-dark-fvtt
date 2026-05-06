@@ -7,7 +7,11 @@ export default class ScoundrelData extends foundry.abstract.TypeDataModel {
     const requiredPositiveInteger = { ...requiredInteger, min: 0 };
 
     return {
-      alias: new fields.StringField(),
+      names: new fields.SchemaField({
+        useAlias: new fields.BooleanField({ initial: false }),
+        real: new fields.StringField(),
+        alias: new fields.StringField(),
+      }),
       vice: new fields.StringField(),
       look: new fields.StringField(),
       beliefs: new fields.StringField(),

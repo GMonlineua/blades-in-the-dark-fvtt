@@ -23,30 +23,59 @@
     "Whisper": "Містик"
   },
   "entries": {
+<<<<<<< crowdin
     "Hawkers": {
       "name": "Перекупи"
     },
+=======
+    "Assassins": {
+      "name": "Убивці"
+    },
+    "Bravos": {
+      "name": "Зухвальців"
+    },
+    "Hawkers": {
+      "name": "Перекупи"
+    },
+    "Cult": {
+      "name": "Культисти"
+    },
+>>>>>>> development
     "Shadows": {
       "name": "Нишпорки"
     },
     "Smugglers": {
       "name": "Контрабандисти"
     },
+<<<<<<< crowdin
     "Cult": {
       "name": "Культисти"
     },
     "Lurk": {
       "name": "Лицедій"
+=======
+    "Cutter": {
+      "name": "Головоріз"
+>>>>>>> development
     },
     "Hound": {
       "name": "Гончак"
     },
+<<<<<<< crowdin
     "Assassins": {
       "name": "Убивці"
+=======
+    "Leech": {
+      "name": "Мастак"
+    },
+    "Lurk": {
+      "name": "Лицедій"
+>>>>>>> development
     },
     "Slide": {
       "name": "Пройда"
     },
+<<<<<<< crowdin
     "Bravos": {
       "name": "Зухвальців"
     },
@@ -55,13 +84,20 @@
     },
     "Leech": {
       "name": "Мастак"
+=======
+    "Spider": {
+      "name": "Комбінатор"
+>>>>>>> development
     },
     "Whisper": {
       "name": "Містик"
     },
+<<<<<<< crowdin
     "Spider": {
       "name": "Комбінатор"
     },
+=======
+>>>>>>> development
     "Augus": {
       "name": "Авґус",
       "realName": "",
@@ -69,6 +105,7 @@
       "summary": "архітектор",
       "description": "<p>Знавець будівельних планів та історії чи, можливо, ворог, який розробляє заходи безпеки?</p>"
     },
+<<<<<<< crowdin
     "Moriya": {
       "name": "Moriya",
       "realName": "",
@@ -76,6 +113,8 @@
       "summary": "spirit trafficker",
       "description": ""
     },
+=======
+>>>>>>> development
     "Steiner": {
       "name": "Штайнер",
       "realName": "",
@@ -83,6 +122,7 @@
       "summary": "найманий вбивця",
       "description": "<p>Можливо, один із ваших давніх конкурентів чи колишній напарник?</p>"
     },
+<<<<<<< crowdin
     "Elynn": {
       "name": "Elynn",
       "realName": "",
@@ -111,6 +151,8 @@
       "summary": "Bluecoat",
       "description": "<p>Perhaps an informant within the City Watch?</p>"
     },
+=======
+>>>>>>> development
     "Bazso Baz": {
       "name": "Базсо Баз",
       "realName": "",
@@ -139,6 +181,7 @@
       "summary": "психонавт",
       "description": "<p>Наркоман, чий розум настільки затьмарений отруйними речовинами, що він не може чітко мислити? Чи, можливо, дослідник психоделічних світів, недоступних простим смертним?</p>"
     },
+<<<<<<< crowdin
     "Lutes": {
       "name": "Lutes",
       "realName": "",
@@ -160,6 +203,8 @@
       "summary": "explorer",
       "description": "<p>Perhaps one of the rare deathlands scavengers that survived his sentence?</p>"
     },
+=======
+>>>>>>> development
     "Veleris": {
       "name": "Велеріс",
       "realName": "",
@@ -167,6 +212,7 @@
       "summary": "шпигун",
       "description": "<p>Кому Велеріс передає роздобуту інформацію?</p>"
     },
+<<<<<<< crowdin
     "Rolan": {
       "name": "Rolan",
       "realName": "",
@@ -202,6 +248,8 @@
       "summary": "smuggler",
       "description": "<p>Perhaps a friend of powerful ship captains?</p>"
     },
+=======
+>>>>>>> development
     "Celene": {
       "name": "Селін",
       "realName": "",
@@ -223,6 +271,7 @@
       "summary": "архіваріус Синіх мундирів",
       "description": "<p>Подвійний агент у рядах Варти чи надмірно допитливий офіцер, що зацікавився вашими злочинами?</p>"
     },
+<<<<<<< crowdin
     "Keller": {
       "name": "Keller",
       "realName": "",
@@ -237,6 +286,8 @@
       "summary": "pit-fighter",
       "description": "<p>Perhaps a trainer, or perhaps a fellow extortion artist?</p>"
     },
+=======
+>>>>>>> development
     "Chael": {
       "name": "Чайл",
       "realName": "",
@@ -244,6 +295,7 @@
       "summary": "злісний бандит",
       "description": "<p>Член вашої колишньої банди чи незалежний злодій, який став у вас на заваді?</p>"
     },
+<<<<<<< crowdin
     "Karlos": {
       "name": "Karlos",
       "realName": "",
@@ -251,6 +303,8 @@
       "summary": "bounty hunter",
       "description": "<p>Perhaps a source for off-book government “wet work?”</p>"
     },
+=======
+>>>>>>> development
     "Malista": {
       "name": "Маліста",
       "realName": "",
@@ -258,12 +312,21 @@
       "summary": "жриця",
       "description": "<p>Якому забутому божеству вона служить?</p>"
     },
+<<<<<<< crowdin
     "Mercy": {
       "name": "Милосердник",
       "realName": "",
       "aka": "",
       "summary": "холоднокровний вбивця",
       "description": "<p>Можливо, найманець чи один із найнебезпечніших негідників злочинного світу?</p>"
+=======
+    "Grace": {
+      "name": "Добряк",
+      "realName": "",
+      "aka": "",
+      "summary": "вимагач",
+      "description": "<p>Ймовірно, колишній напарник чи конкурент у якомусь злочині?</p>"
+>>>>>>> development
     },
     "Flint": {
       "name": "Кремінь",
@@ -293,6 +356,7 @@
       "summary": "дилер крові",
       "description": "<p>Які ще химерні клієнти вдаються до його послуг?</p>"
     },
+<<<<<<< crowdin
     "Conway": {
       "name": "Conway",
       "realName": "",
@@ -300,6 +364,8 @@
       "summary": "Bluecoat",
       "description": "<p>Perhaps an informant within the City Watch?</p>"
     },
+=======
+>>>>>>> development
     "Roslyn Kellis": {
       "name": "Розалін Келліс",
       "realName": "",
@@ -307,6 +373,7 @@
       "summary": "дворянка",
       "description": "<p>Стара подруга й довірена особа чи одна із жертв вашого шпіонажу, яка прагне помсти?</p>"
     },
+<<<<<<< crowdin
     "Anya": {
       "name": "Anya",
       "realName": "",
@@ -328,6 +395,8 @@
       "summary": "arms dealer",
       "description": "<p>Perhaps a supplier with military access?</p>"
     },
+=======
+>>>>>>> development
     "Bryl": {
       "name": "Брил",
       "realName": "",
@@ -349,12 +418,21 @@
       "summary": "дохтор",
       "description": "<p>Приятель із часів війни чи м’ясник, котрий наламав дров, зашиваючи вас?</p>"
     },
+<<<<<<< crowdin
     "Grace": {
       "name": "Добряк",
       "realName": "",
       "aka": "",
       "summary": "вимагач",
       "description": "<p>Ймовірно, колишній напарник чи конкурент у якомусь злочині?</p>"
+=======
+    "Mercy": {
+      "name": "Милосердник",
+      "realName": "",
+      "aka": "",
+      "summary": "холоднокровний вбивця",
+      "description": "<p>Можливо, найманець чи один із найнебезпечніших негідників злочинного світу?</p>"
+>>>>>>> development
     },
     "Marlane": {
       "name": "Марлейн",
@@ -363,6 +441,7 @@
       "summary": "боєць",
       "description": "<p>Можливо, чемпіон бійцівських ям чи ваш тренер із боксу?</p>"
     },
+<<<<<<< crowdin
     "Exeter": {
       "name": "Exeter",
       "realName": "",
@@ -370,6 +449,8 @@
       "summary": "Spirit Warden",
       "description": "<p>Perhaps a double-agent informant for you?</p>"
     },
+=======
+>>>>>>> development
     "Casta": {
       "name": "Каста",
       "realName": "",
@@ -391,6 +472,7 @@
       "summary": "аптекарка",
       "description": "<p>Колишня негідниця, що зайнялася законним алхімічним бізнесом, або все було навпаки?</p>"
     },
+<<<<<<< crowdin
     "Rigney": {
       "name": "Rigney",
       "realName": "",
@@ -426,6 +508,8 @@
       "summary": "physicker",
       "description": "<p>Perhaps a former thug turned doctor?</p>"
     },
+=======
+>>>>>>> development
     "Darmot": {
       "name": "Дармот",
       "realName": "",
@@ -440,6 +524,7 @@
       "summary": "демон",
       "description": "<p>Можливо, ваша партнерка в темних починаннях чи сутність, що служила вам, а тепер прагне помсти?</p>"
     },
+<<<<<<< crowdin
     "Rolan Wott": {
       "name": "Rolan Wott",
       "realName": "",
@@ -454,6 +539,8 @@
       "summary": "spirit trafficker",
       "description": "<p>Perhaps a supplier for the strangest of cargo?</p>"
     },
+=======
+>>>>>>> development
     "Melvir": {
       "name": "Мелвір",
       "realName": "",
@@ -468,6 +555,7 @@
       "summary": "аптекар",
       "description": "<p>Можливо, надійний постачальник ліків?</p>"
     },
+<<<<<<< crowdin
     "Walker": {
       "name": "Walker",
       "realName": "",
@@ -475,6 +563,8 @@
       "summary": "ward boss",
       "description": "<p>Perhaps an employer who often needs violent work?</p>"
     },
+=======
+>>>>>>> development
     "Klyra": {
       "name": "Клайра",
       "realName": "",
@@ -489,6 +579,7 @@
       "summary": "в'язень",
       "description": "<p>Друг, якому ви допомогли, коли сиділи у в’язниці, чи ворог, що скривдив вас, коли ви відбували строк?</p>"
     },
+<<<<<<< crowdin
     "Esme": {
       "name": "Esme",
       "realName": "",
@@ -496,6 +587,8 @@
       "summary": "tavern owner",
       "description": "<p>Perhaps a good source of news and gossip?</p>"
     },
+=======
+>>>>>>> development
     "Petra": {
       "name": "Петра",
       "realName": "",
@@ -503,6 +596,7 @@
       "summary": "міський клерк",
       "description": "<p>Ймовірно, хороше джерело інформації?</p>"
     },
+<<<<<<< crowdin
     "Hutchins": {
       "name": "Hutchins",
       "realName": "",
@@ -524,12 +618,15 @@
       "summary": "collector",
       "description": "<p>Perhaps an aficionado of strange artifacts?</p>"
     },
+=======
+>>>>>>> development
     "Jennah": {
       "name": "Дженна",
       "realName": "",
       "aka": "",
       "summary": "служниця",
       "description": "<p>Ймовірно, чудове джерело пліток про вище товариство?</p>"
+<<<<<<< crowdin
     },
     "Mateas Kline": {
       "name": "Mateas Kline",
@@ -537,6 +634,8 @@
       "aka": "",
       "summary": "noble",
       "description": ""
+=======
+>>>>>>> development
     }
   }
 }

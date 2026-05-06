@@ -210,11 +210,11 @@ export default class BitdRolls extends HandlebarsApplicationMixin(
 
   stressCalculation(data) {
     let stress = 0;
-    if (data.pushDice) stress+=2;
-    if (data.pushEffect) stress+=2;
-    if (data.harm.includes("severe")) stress+=2;
+    if (data.pushDice) stress += 2;
+    if (data.pushEffect) stress += 2;
+    if (data.harm.includes("severe")) stress += 2;
 
-    return stress
+    return stress;
   }
 
   toIntData(data) {

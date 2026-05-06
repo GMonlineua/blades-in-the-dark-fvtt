@@ -1,0 +1,542 @@
+{
+  "label": "NPCs",
+  "mapping": {
+    "name": "name",
+    "realName": "system.realName",
+    "aka": "system.aka",
+    "summary": "system.summary",
+    "description": "system.description"
+  },
+  "folders": {
+    "Assassins": "Assassins",
+    "Bravos": "Bravos",
+    "Cult": "Cult",
+    "Hawkers": "Hawkers",
+    "Shadows": "Shadows",
+    "Smugglers": "Smugglers",
+    "Cutter": "Cutter",
+    "Hound": "Hound",
+    "Leech": "Leech",
+    "Lurk": "Lurk",
+    "Slide": "Slide",
+    "Spider": "Spider",
+    "Whisper": "Whisper"
+  },
+  "entries": {
+    "Hawkers": {
+      "name": "Hawkers"
+    },
+    "Shadows": {
+      "name": "Shadows"
+    },
+    "Smugglers": {
+      "name": "Smugglers"
+    },
+    "Cult": {
+      "name": "Cult"
+    },
+    "Lurk": {
+      "name": "Lurk"
+    },
+    "Hound": {
+      "name": "Hound"
+    },
+    "Assassins": {
+      "name": "Assassins"
+    },
+    "Slide": {
+      "name": "Slide"
+    },
+    "Bravos": {
+      "name": "Bravos"
+    },
+    "Cutter": {
+      "name": "Cutter"
+    },
+    "Leech": {
+      "name": "Leech"
+    },
+    "Whisper": {
+      "name": "Whisper"
+    },
+    "Spider": {
+      "name": "Spider"
+    },
+    "Augus": {
+      "name": "Augus",
+      "realName": "",
+      "aka": "",
+      "summary": "master architect",
+      "description": "<p>Perhaps a good source for building schematics and historical details, or perhaps a rival who designs security measures?</p>"
+    },
+    "Moriya": {
+      "name": "Moriya",
+      "realName": "",
+      "aka": "",
+      "summary": "spirit trafficker",
+      "description": ""
+    },
+    "Steiner": {
+      "name": "Steiner",
+      "realName": "",
+      "aka": "",
+      "summary": "assassin",
+      "description": "<p>Perhaps one of your competitors, or a former partner from before you joined the crew?</p>"
+    },
+    "Elynn": {
+      "name": "Elynn",
+      "realName": "",
+      "aka": "",
+      "summary": "dock worker",
+      "description": "<p>Perhaps a friend who can help with the infernal paperwork of the Empire?</p>"
+    },
+    "Decker": {
+      "name": "Decker",
+      "realName": "",
+      "aka": "",
+      "summary": "anarchist",
+      "description": "<p>Perhaps a client in need of the illegal tools of revolution?</p>"
+    },
+    "Sevoy": {
+      "name": "Sevoy",
+      "realName": "",
+      "aka": "",
+      "summary": "merchant lord",
+      "description": "<p>Perhaps a connection to clients with deep pockets?</p>"
+    },
+    "Laroze": {
+      "name": "Laroze",
+      "realName": "",
+      "aka": "",
+      "summary": "Bluecoat",
+      "description": "<p>Perhaps an informant within the City Watch?</p>"
+    },
+    "Bazso Baz": {
+      "name": "Bazso Baz",
+      "realName": "",
+      "aka": "",
+      "summary": "gang leader",
+      "description": "<p>Perhaps a paramour pursuing your affections, or perhaps a former lover, now scorned?</p>"
+    },
+    "Salia": {
+      "name": "Salia",
+      "realName": "",
+      "aka": "",
+      "summary": "information broker",
+      "description": "<p>Perhaps a reliable contact for underworld jobs, or perhaps a former partner who sold you out?</p>"
+    },
+    "Quellyn": {
+      "name": "Quellyn",
+      "realName": "",
+      "aka": "",
+      "summary": "witch",
+      "description": "<p>Perhaps a knowledgeable healer and seer, or perhaps a student of yours who left over bad blood?</p>"
+    },
+    "Veldren": {
+      "name": "Veldren",
+      "realName": "",
+      "aka": "",
+      "summary": "psychonaut",
+      "description": "<p>Perhaps an addict too poisoned to ever return to lucid thought, or perhaps an explorer of psychedelic realms beyond mere mortal experience?</p>"
+    },
+    "Lutes": {
+      "name": "Lutes",
+      "realName": "",
+      "aka": "",
+      "summary": "tavern owner",
+      "description": "<p>Perhaps a good source of news and gossip?</p>"
+    },
+    "Irimina": {
+      "name": "Irimina",
+      "realName": "",
+      "aka": "",
+      "summary": "vicious noble",
+      "description": "<p>Perhaps a potential patron for your crew?</p>"
+    },
+    "Dowler": {
+      "name": "Dowler",
+      "realName": "",
+      "aka": "",
+      "summary": "explorer",
+      "description": "<p>Perhaps one of the rare deathlands scavengers that survived his sentence?</p>"
+    },
+    "Veleris": {
+      "name": "Veleris",
+      "realName": "",
+      "aka": "",
+      "summary": "spy",
+      "description": "<p>Who does Veleris give their intelligence to?</p>"
+    },
+    "Rolan": {
+      "name": "Rolan",
+      "realName": "",
+      "aka": "",
+      "summary": "drug dealer",
+      "description": "<p>Perhaps a client with strong underworld ties?</p>"
+    },
+    "Bennett": {
+      "name": "Bennett",
+      "realName": "",
+      "aka": "",
+      "summary": "astronomer",
+      "description": ""
+    },
+    "Trev": {
+      "name": "Trev",
+      "realName": "",
+      "aka": "",
+      "summary": "gang boss",
+      "description": "<p>Perhaps a gang that helped your crew get started?</p>"
+    },
+    "Gagan": {
+      "name": "Gagan",
+      "realName": "",
+      "aka": "",
+      "summary": "academic",
+      "description": ""
+    },
+    "Hoxley": {
+      "name": "Hoxley",
+      "realName": "",
+      "aka": "",
+      "summary": "smuggler",
+      "description": "<p>Perhaps a friend of powerful ship captains?</p>"
+    },
+    "Celene": {
+      "name": "Celene",
+      "realName": "",
+      "aka": "",
+      "summary": "sentinel",
+      "description": "<p>Celene is a guardian; a protector. Who does she watch over?</p>"
+    },
+    "Telda": {
+      "name": "Telda",
+      "realName": "",
+      "aka": "",
+      "summary": "beggar",
+      "description": "<p>Perhaps a mentor who taught you your skills, or perhaps a rival sneak-thief?</p>"
+    },
+    "Jeren": {
+      "name": "Jeren",
+      "realName": "",
+      "aka": "",
+      "summary": "a Bluecoat archivist",
+      "description": "<p>Perhaps a double-agent within the City Watch, or perhaps an overly curious officer, interested in your crimes?</p>"
+    },
+    "Keller": {
+      "name": "Keller",
+      "realName": "",
+      "aka": "",
+      "summary": "blacksmith",
+      "description": "<p>Perhaps a source for armaments?</p>"
+    },
+    "Meg": {
+      "name": "Meg",
+      "realName": "",
+      "aka": "",
+      "summary": "pit-fighter",
+      "description": "<p>Perhaps a trainer, or perhaps a fellow extortion artist?</p>"
+    },
+    "Chael": {
+      "name": "Chael",
+      "realName": "",
+      "aka": "",
+      "summary": "vicious thug",
+      "description": "<p>Perhaps a member of a gang that you were in before the current crew, or an independent operator who’s been in your way before?</p>"
+    },
+    "Karlos": {
+      "name": "Karlos",
+      "realName": "",
+      "aka": "",
+      "summary": "bounty hunter",
+      "description": "<p>Perhaps a source for off-book government “wet work?”</p>"
+    },
+    "Malista": {
+      "name": "Malista",
+      "realName": "",
+      "aka": "",
+      "summary": "priestess",
+      "description": "<p>To what forgotten god does Malista give her service?</p>"
+    },
+    "Mercy": {
+      "name": "Mercy",
+      "realName": "",
+      "aka": "",
+      "summary": "cold killer",
+      "description": "<p>Perhaps an assassin for hire, or a particularly deadly underworld scoundrel?</p>"
+    },
+    "Flint": {
+      "name": "Flint",
+      "realName": "",
+      "aka": "",
+      "summary": "spirit trafficker",
+      "description": "<p>Perhaps a good source for unusual arcane supplies, or perhaps a rival in the occult world of Duskwall?</p>"
+    },
+    "Nyryx": {
+      "name": "Nyryx",
+      "realName": "",
+      "aka": "",
+      "summary": "prostitute",
+      "description": "<p>Perhaps an informant to spark potential marks, or perhaps a rival manipulator?</p>"
+    },
+    "Frake": {
+      "name": "Frake",
+      "realName": "",
+      "aka": "",
+      "summary": "locksmith",
+      "description": "<p>Perhaps an expert that you go to for consultations, or perhaps a master who creates locks to defeat you?</p>"
+    },
+    "Jul": {
+      "name": "Jul",
+      "realName": "",
+      "aka": "",
+      "summary": "blood dealer",
+      "description": "<p>What other strange clients do they have?</p>"
+    },
+    "Conway": {
+      "name": "Conway",
+      "realName": "",
+      "aka": "",
+      "summary": "Bluecoat",
+      "description": "<p>Perhaps an informant within the City Watch?</p>"
+    },
+    "Roslyn Kellis": {
+      "name": "Roslyn Kellis",
+      "realName": "",
+      "aka": "",
+      "summary": "noble",
+      "description": "<p>Perhaps an old friend and confidant, or perhaps one of the victims of your espionage, bent on revenge?</p>"
+    },
+    "Anya": {
+      "name": "Anya",
+      "realName": "",
+      "aka": "",
+      "summary": "dilettante",
+      "description": "<p>Perhaps a well-connected socialite?</p>"
+    },
+    "Lydra": {
+      "name": "Lydra",
+      "realName": "",
+      "aka": "",
+      "summary": "deal broker",
+      "description": "<p>Perhaps she acts as a liaison with your clients?</p>"
+    },
+    "Sera": {
+      "name": "Sera",
+      "realName": "",
+      "aka": "",
+      "summary": "arms dealer",
+      "description": "<p>Perhaps a supplier with military access?</p>"
+    },
+    "Bryl": {
+      "name": "Bryl",
+      "realName": "",
+      "aka": "",
+      "summary": "drug dealer",
+      "description": "<p>Perhaps a reliable underworld contact, or perhaps an old partner with a grudge?</p>"
+    },
+    "Scurlock": {
+      "name": "Scurlock",
+      "realName": "",
+      "aka": "",
+      "summary": "vampire",
+      "description": "<p>Perhaps a mentor, or perhaps a deadly rival?</p>"
+    },
+    "Sawtooth": {
+      "name": "Sawtooth",
+      "realName": "",
+      "aka": "",
+      "summary": "physicker",
+      "description": "<p>Perhaps a buddy from the war, or perhaps a butcher who botched your treatment?</p>"
+    },
+    "Grace": {
+      "name": "Grace",
+      "realName": "",
+      "aka": "",
+      "summary": "extortionist",
+      "description": "<p>Perhaps a former partner in thuggery, or a competitor on the scene?</p>"
+    },
+    "Marlane": {
+      "name": "Marlane",
+      "realName": "",
+      "aka": "",
+      "summary": "pugilist",
+      "description": "<p>Perhaps a pit fighter down at the docks, or a boxing coach who trained you?</p>"
+    },
+    "Exeter": {
+      "name": "Exeter",
+      "realName": "",
+      "aka": "",
+      "summary": "Spirit Warden",
+      "description": "<p>Perhaps a double-agent informant for you?</p>"
+    },
+    "Casta": {
+      "name": "Casta",
+      "realName": "",
+      "aka": "",
+      "summary": "bounty hunter",
+      "description": "<p>Perhaps a mentor who trained you in the deadly arts, or vice versa?</p>"
+    },
+    "Eckerd": {
+      "name": "Eckerd",
+      "realName": "",
+      "aka": "",
+      "summary": "corpse thief",
+      "description": "<p>Perhaps a good source of “raw materials”?</p>"
+    },
+    "Stazia": {
+      "name": "Stazia",
+      "realName": "",
+      "aka": "",
+      "summary": "apothecary",
+      "description": "<p>Perhaps a former scoundrel turned to legitimate alchemical business, or perhaps the other way around?</p>"
+    },
+    "Rigney": {
+      "name": "Rigney",
+      "realName": "",
+      "aka": "",
+      "summary": "tavern owner",
+      "description": "<p>Perhaps a good source of news and gossip?</p>"
+    },
+    "Adikin": {
+      "name": "Adikin",
+      "realName": "",
+      "aka": "",
+      "summary": "occultist",
+      "description": ""
+    },
+    "Adelaide Phroaig": {
+      "name": "Adelaide Phroaig",
+      "realName": "",
+      "aka": "",
+      "summary": "noble",
+      "description": "<p>Perhaps a source for scores among the elite?</p>"
+    },
+    "Marlo": {
+      "name": "Marlo",
+      "realName": "",
+      "aka": "",
+      "summary": "gang boss",
+      "description": "<p>Perhaps a good partner with a gang of tough thugs?</p>"
+    },
+    "Tomas": {
+      "name": "Tomas",
+      "realName": "",
+      "aka": "",
+      "summary": "physicker",
+      "description": "<p>Perhaps a former thug turned doctor?</p>"
+    },
+    "Darmot": {
+      "name": "Darmot",
+      "realName": "",
+      "aka": "",
+      "summary": "Bluecoat",
+      "description": "<p>Perhaps a savvy officer that’s busted you many times, or perhaps an old friend who turned to the law instead of crime?</p>"
+    },
+    "Setarra": {
+      "name": "Setarra",
+      "realName": "",
+      "aka": "",
+      "summary": "demon",
+      "description": "<p>Perhaps your partner in a dark endeavor, or perhaps an entity you once controlled, seeking vengeance?</p>"
+    },
+    "Rolan Wott": {
+      "name": "Rolan Wott",
+      "realName": "",
+      "aka": "",
+      "summary": "magistrate",
+      "description": "<p>Perhaps with a feckless son in Doskvol Academy, always in need of rescuing?</p>"
+    },
+    "Nyelle": {
+      "name": "Nyelle",
+      "realName": "",
+      "aka": "",
+      "summary": "spirit trafficker",
+      "description": "<p>Perhaps a supplier for the strangest of cargo?</p>"
+    },
+    "Melvir": {
+      "name": "Melvir",
+      "realName": "",
+      "aka": "",
+      "summary": "physicker",
+      "description": "<p>Perhaps an old friend who’s patched you up many times, or someone to whom you’ve sent too many victims?</p>"
+    },
+    "Riven": {
+      "name": "Riven",
+      "realName": "",
+      "aka": "",
+      "summary": "chemist",
+      "description": "<p>Perhaps a good source of medicines for recovery?</p>"
+    },
+    "Walker": {
+      "name": "Walker",
+      "realName": "",
+      "aka": "",
+      "summary": "ward boss",
+      "description": "<p>Perhaps an employer who often needs violent work?</p>"
+    },
+    "Klyra": {
+      "name": "Klyra",
+      "realName": "",
+      "aka": "",
+      "summary": "tavern owner",
+      "description": "<p>Perhaps a good source for gossip?</p>"
+    },
+    "Harker": {
+      "name": "Harker",
+      "realName": "",
+      "aka": "",
+      "summary": "jail bird",
+      "description": "<p>Perhaps a friend who you helped when you were in prison, or perhaps an enemy who hurt you when you served your time?</p>"
+    },
+    "Esme": {
+      "name": "Esme",
+      "realName": "",
+      "aka": "",
+      "summary": "tavern owner",
+      "description": "<p>Perhaps a good source of news and gossip?</p>"
+    },
+    "Petra": {
+      "name": "Petra",
+      "realName": "",
+      "aka": "",
+      "summary": "city clerk",
+      "description": "<p>Perhaps a good source of information?</p>"
+    },
+    "Hutchins": {
+      "name": "Hutchins",
+      "realName": "",
+      "aka": "",
+      "summary": "antiquarian",
+      "description": ""
+    },
+    "Amancio": {
+      "name": "Amancio",
+      "realName": "",
+      "aka": "",
+      "summary": "deal broker",
+      "description": "<p>Perhaps a well-connected underworld figure, famous for their neutrality?</p>"
+    },
+    "Fitz": {
+      "name": "Fitz",
+      "realName": "",
+      "aka": "",
+      "summary": "collector",
+      "description": "<p>Perhaps an aficionado of strange artifacts?</p>"
+    },
+    "Jennah": {
+      "name": "Jennah",
+      "realName": "",
+      "aka": "",
+      "summary": "servant",
+      "description": "<p>Perhaps a good source for gossip among the upper class?</p>"
+    },
+    "Mateas Kline": {
+      "name": "Mateas Kline",
+      "realName": "",
+      "aka": "",
+      "summary": "noble",
+      "description": ""
+    }
+  }
+}

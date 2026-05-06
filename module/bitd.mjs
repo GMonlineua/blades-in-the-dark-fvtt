@@ -2,10 +2,10 @@ import * as models from "./data/_module.mjs";
 import { BitdActor, BitdItem } from "./documents/_module.mjs";
 
 // Import Actor Sheet
-import { BitdActorSheet } from "./sheets/actor-sheet.mjs";
 import { BitdScoundrelSheet } from "./sheets/scoundrel-sheet.mjs";
 import { BitdCrewSheet } from "./sheets/crew-sheet.mjs";
 import { BitdFactionSheet } from "./sheets/faction-sheet.mjs";
+import { BitdNPCSheet } from "./sheets/npc-sheet.mjs";
 import { BitdClockSheet } from "./sheets/clock-sheet.mjs";
 
 // Import Item Sheet
@@ -54,36 +54,58 @@ Hooks.once("init", async function () {
     upgrade: models.UpgradeData,
   };
 
-  // Register sheet application classes
-  Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("bitd", BitdActorSheet, { makeDefault: true });
-  Actors.registerSheet("bitd", BitdScoundrelSheet, {
-    types: ["scoundrel"],
-    makeDefault: true,
-  });
-  Actors.registerSheet("bitd", BitdCrewSheet, {
+  /* -------------------------------------------- */
+  /* Register sheet application classes           */
+  /* -------------------------------------------- */
+
+  // Register Actor's sheets
+  foundry.documents.collections.Actors.unregisterSheet(
+    "core",
+    foundry.appv1.sheets.ActorSheet,
+  );
+  foundry.documents.collections.Actors.registerSheet(
+    "bitd",
+    BitdScoundrelSheet,
+    {
+      types: ["scoundrel"],
+      makeDefault: true,
+    },
+  );
+  foundry.documents.collections.Actors.registerSheet("bitd", BitdCrewSheet, {
     types: ["crew"],
     makeDefault: true,
   });
-  Actors.registerSheet("bitd", BitdFactionSheet, {
+  foundry.documents.collections.Actors.registerSheet("bitd", BitdFactionSheet, {
     types: ["faction"],
     makeDefault: true,
   });
-  Actors.registerSheet("bitd", BitdClockSheet, {
+  foundry.documents.collections.Actors.registerSheet("bitd", BitdNPCSheet, {
+    types: ["npc"],
+    makeDefault: true,
+  });
+  foundry.documents.collections.Actors.registerSheet("bitd", BitdClockSheet, {
     types: ["clock"],
     makeDefault: true,
   });
-  Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("bitd", BitdItemSheet, { makeDefault: true });
-  Items.registerSheet("bitd", BitdCrewTypeSheet, {
+
+  // Register Item's sheet
+  foundry.documents.collections.Items.unregisterSheet(
+    "core",
+    foundry.appv1.sheets.ItemSheet,
+  );
+  foundry.documents.collections.Items.registerSheet("bitd", BitdItemSheet, {
+    makeDefault: true,
+  });
+  foundry.documents.collections.Items.registerSheet("bitd", BitdCrewTypeSheet, {
     types: ["crewType"],
     makeDefault: true,
   });
-  Items.registerSheet("bitd", BitdPlaybookSheet, {
+  foundry.documents.collections.Items.registerSheet("bitd", BitdPlaybookSheet, {
     types: ["playbook"],
     makeDefault: true,
   });
 
+  /* -------------------------------------------- */
   // Custom buners for compendiums
   CONFIG.Actor.compendiumBanner =
     "systems/bitd/ui/compendium-banners/actor-banner.jpg";
@@ -104,17 +126,26 @@ Hooks.once("init", async function () {
   CONFIG.Scene.compendiumBanner =
     "systems/bitd/ui/compendium-banners/scene-banner.jpg";
 
+
+  /* -------------------------------------------- */
   registerHandlebarsHelpers();
 
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
 });
 
+
+/* -------------------------------------------- */
+Hooks.once('babele.init', (babele) => {
+    babele.setSystemTranslationsDir("compendium");
+});
+
+
 // Preprocess chat message before it is created hook
 Hooks.on("preCreateChatMessage", preprocessChatMessage);
 
 // Render chat message hook
-Hooks.on("renderChatMessage", renderChatMessage);
+Hooks.on("renderChatMessageHTML", renderChatMessage);
 
 Hooks.on("renderHotbar", (app, html, data) => {
   if (html.querySelector(".bitd-roller")) return;
