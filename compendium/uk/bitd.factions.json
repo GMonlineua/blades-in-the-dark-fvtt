@@ -9,6 +9,12 @@
     "description": "system.description",
     "name": "name"
   },
+  "folders": {
+    "Institutions": "Institutions",
+    "Labor & Trade": "Labor & Trade",
+    "The Fringe": "The Fringe",
+    "Underworld": "Underworld"
+  },
   "entries": {
     "Leviathan Hunters": {
       "name": "Leviathan Hunters",
