@@ -1,5 +1,5 @@
 {
-  "label": "Claims",
+  "label": "Активи",
   "mapping": {
     "description": "system.description",
     "effect": "system.effect",
@@ -7,259 +7,259 @@
   },
   "entries": {
     "Street Fence": {
-      "name": "Street Fence",
-      "description": "<p>An expert can find the treasure amid the trash you loot from your poorer victims.</p>",
-      "effect": "You get +2 coin in your payoff for scores that involve lower-class targets"
+      "name": "Вуличний скупник",
+      "description": "<p>Фахівець може знайти справжній скарб серед сміття, яке ви відбираєте у своїх бідніших жертв.</p>",
+      "effect": "Ви отримуєте +2 золоті у виплату за діла, ціллю яких були жертви з нижчого класу."
     },
     "Ancient Tower": {
-      "name": "Ancient Tower",
-      "description": "<p>This tower was prepared by sorcery from the pre-cataclysm and acts as an arcane lens to focus eldritch energy across the black mirror into the void.</p>",
-      "effect": "You get +1d to Consort with arcane entities on-site"
+      "name": "Стародавня вежа",
+      "description": "<p>Ця вежа була створена чаклунством ще до катаклізму. Вона є магічною лінзою, що направляє моторошну енергію через чорне дзеркало в небуття.</p>",
+      "effect": "Ви отримуєте +1к до Спілкування з магічними сутностями в цьому місці."
     },
     "Covert Drop": {
-      "name": "Covert Drop",
-      "description": "<p>The perfect hidden exchange point is worth the extra coin to discerning clientele.</p>",
-      "effect": "You get +2 coin in payoff for scores that involve espionage or sabotage"
+      "name": "Місце збуту",
+      "description": "<p>Вибагливі клієнти готові заплатити додаткові кошти за ідеально приховану точку обміну.</p>",
+      "effect": "Ви отримуєте +2 золоті у виплату за діла зі шпіонажем або диверсією."
     },
     "Bluecoat Confederates": {
-      "name": "Bluecoat Confederates",
-      "description": "<p>The street patrol around here helps you out now.</p>",
-      "effect": "You get +1d to the engagement roll for assault plans"
+      "name": "Спільники серед варти",
+      "description": "<p>Місцевий вуличний патруль прикриває вас.</p>",
+      "effect": "Ви отримуєте +1к до перевірок ситуації в планах нападу."
     },
     "Informants": {
-      "name": "Informants",
-      "description": "<p>Your eyes and ears on the streets are always on the lookout for new targets or clients.</p>",
-      "effect": "You get +1d to gather information for a score"
+      "name": "Інформатори",
+      "description": "<p>Ваші «очі та вуха» на вулицях завжди вишукують потенційних цілей або клієнтів.</p>",
+      "effect": "Ви отримуєте +1к до збору інформації по ділу."
     },
     "Sacred Nexus": {
-      "name": "Sacred Nexus",
-      "description": "<p>Ancient arcane energy seeps into the wounded here, speeding their recovery, and marking them consecrated by its power.</p>",
-      "effect": "You get +1d to healing treatment rolls"
+      "name": "Сакральний вузол",
+      "description": "<p>У цьому місці стародавня магічна енергія проникає в поранених, прискорюючи одужання, і таврує їх священною силою.</p>",
+      "effect": "Ви отримуєте +1к до перевірок одужання."
     },
     "Training Rooms": {
-      "name": "Training Rooms",
-      "description": "<p>Extra training enables them to fight like a larger gang.</p>",
-      "effect": "Your Skulks cohorts get +1 scale"
+      "name": "Тренувальні зали",
+      "description": "<p>Додаткові тренування дають їм змогу битися як більша банда.</p>",
+      "effect": "Ваші когорти Пронир отримують +1 масштаб."
     },
     "Secret Routes": {
-      "name": "Secret Routes",
-      "description": "<p>You might have access to long-forgotten underground canals, dark streets normally hidden behind debris, or some other route of your choosing.</p>",
-      "effect": "You get +1d to the engagement roll for transport plans"
+      "name": "Таємні маршрути",
+      "description": "<p>У вас може бути доступ до забутих підземних каналів і вуличок, прихованих за завалами, або інших маршрутів на ваш вибір.</p>",
+      "effect": "Ви отримуєте +1к до перевірок ситуації у планах транспортування."
     },
     "Parole Influence": {
-      "name": "Parole Influence",
-      "description": "<p>Political pressures of various sorts can be applied to the magistrates and warden who oversee sentences for crimes. With this claim, you’re always able to arrange for a shorter prison stay—as if your <strong>wanted level</strong> was 1 lower. So, if your <strong>wanted level</strong> was 3 when you went in, you’d spend only several months behind bars (equivalent to level 2) instead of a full year.</p>",
-      "effect": "You’re always able to arrange for a shorter prison stay—as if your wanted level was 1 lower."
+      "name": "Вплив на дострокове звільнення",
+      "description": "<p>На магістратів і наглядачів можна чинити політичний тиск. Завдяки цьому ви завжди можете домовитися про скорочення строку ув’язнення — ніби ваш <strong>рівень розшуку</strong> на 1 нижче. Іншими словами: якщо при ув’язненні ваш <strong>рівень розшуку</strong> був 3, то ви проведете за ґратами лише кілька місяців (наче у вас 2-й рівень) замість цілого року.</p>",
+      "effect": "Ви завжди можете домовитися про скорочення строку ув’язнення — ніби ваш рівень розшуку на 1 нижче."
     },
     "Spirit Well": {
-      "name": "Spirit Well",
-      "description": "<p>A spirit well draws ghosts and other things to its power, which you harness to aid your arts.</p>",
-      "effect": "You get +1d to Attune rolls on-site"
+      "name": "Колодязь духів",
+      "description": "<p>Сила колодязя духів притягує примар та інші сутності, котрі допомагають вам практикувати темні мистецтва.</p>",
+      "effect": "Ви отримуєте +1к до перевірок Фокусування в цьому місці."
     },
     "Offertory": {
-      "name": "Offertory",
-      "description": "<p>The frightened locals offer you tribute when you perform your dark practices. They don’t want to be next.</p>",
-      "effect": "You get +2 coin in your payoff for scores that involve occult operations"
+      "name": "Пожертвування",
+      "description": "<p>Налякані місцеві намагаються від вас відкупитися, коли ви провертаєте свої темні справи. Вони не хочуть стати наступними.</p>",
+      "effect": "Ви отримуєте +2 золоті у виплату за діла, пов’язані з окультизмом."
     },
     "Protection Racket": {
-      "name": "Protection Racket",
-      "description": "<p>Some of the locals are terrified of you and will gladly pay for “protection.”</p>",
-      "effect": "Any time during downtime, roll dice equal to your Tier. You earn coin equal to the highest result, minus your heat"
+      "name": "Кришування",
+      "description": "<p>Місцеві бояться вас і з радістю заплатять вам за «захист».</p>",
+      "effect": "Під час перепочинку ви можете кинути кількість кісток, що відповідає вашому Рангу. Ви отримуєте золоті в розмірі найвищого результату мінус шухер."
     },
     "Local Graft": {
-      "name": "Local Graft",
-      "description": "<p>A few city officials share bribe money with those who show that they’re players on the scene.</p>",
-      "effect": "You get +2 coin in payoff for scores that involve a show of force or socializing"
+      "name": "Місцеве хабарництво",
+      "description": "<p>Деякі міські урядовці охоче діляться хабарями з тими, хто показує свою важливість.</p>",
+      "effect": "Ви отримуєте +2 золоті у виплату за діла з демонстрацією сили або з громадськими заходами."
     },
     "Luxury Venue": {
-      "name": "Luxury Venue",
-      "description": "<p>Silks, paintings, and crystal impress the clientele.</p>",
-      "effect": "+1d to Consort and Sway rolls on-site"
+      "name": "Розкішний заклад",
+      "description": "<p>Шовки, картини та кришталь справляють враження на клієнтів.</p>",
+      "effect": "+1к до перевірок Спілкування та Маніпуляції у цьому місці."
     },
     "Tavern": {
-      "name": "Tavern",
-      "description": "<p>Some booze and friendly conversation can go a long way.</p>",
-      "effect": "You get +1d to Consort and Sway rolls on-site"
+      "name": "Шинок",
+      "description": "<p>Трохи випивки й дружня розмова можуть зіграти ключову роль.</p>",
+      "effect": "Ви отримуєте +1к до перевірок Спілкування та Маніпуляції в цьому місці."
     },
     "Interrogation Chamber": {
-      "name": "Interrogation Chamber",
-      "description": "<p>Grisly business, but effective.</p>",
-      "effect": "You get +1d to Command and Sway on-site"
+      "name": "Кімната для допитів",
+      "description": "<p>Брудні методи, але дієві.</p>",
+      "effect": "Ви отримуєте +1к до перевірок Наказу та Маніпуляції в цьому місці."
     },
     "Hagfish Farm": {
-      "name": "Hagfish Farm",
+      "name": "Міксинові угіддя",
       "description": "",
-      "effect": "When you use the reduce heat downtime activity after a score that involves killing, you get +1d to the roll and quiet, convenient disposal of any corpses you left on the job"
+      "effect": "Коли ви знижуєте шухер під час перепочинку після діла з убивством, ви отримуєте +1к до перевірки, тихо та без зайвих проблем позбавляючись тіл."
     },
     "Victim Trophies": {
-      "name": "Victim Trophies",
-      "description": "<p>Word of your grisly “collection” gets around, and your boldness boosts your rep in the underworld.</p>",
-      "effect": "You get +1 rep per score"
+      "name": "Трофеї від жертв",
+      "description": "<p>Чутки про вашу жахливу «колекцію» швидко ширяться, і ваша зухвалість підсилює репутацію в злочинному світі.</p>",
+      "effect": "Ви отримуєте +1 реп за діло."
     },
     "Drug Den": {
-      "name": "Drug Den",
-      "description": "<p>What’s the drug of choice?</p>",
-      "effect": "Any time during downtime, roll dice equal to your Tier. You earn coin equal to the highest result, minus your heat"
+      "name": "Наркокубло",
+      "description": "<p>Якому наркотику ви надаєте перевагу?</p>",
+      "effect": "Під час перепочинку ви можете кинути кількість кісток, що відповідає вашому Рангу. Ви отримуєте золоті в розмірі найвищого результату мінус шухер."
     },
     "Warehouses": {
-      "name": "Warehouses",
-      "description": "<p>You have space to hold all the various items and supplies you end up with from your smuggling runs. They can be useful on their own or for barter when you need it.</p>",
-      "effect": "You get +1d to acquire asset rolls"
+      "name": "Склади",
+      "description": "<p>Ви маєте місце для зберігання всіх ваших нелегальних товарів, котрі можуть стати вам у пригоді згодом самі по собі або для обміну на щось корисне.</p>",
+      "effect": "Ви здобуваєте +1к до перевірок отримання ресурсу."
     },
     "Secret Pathways": {
-      "name": "Secret Pathways",
-      "description": "<p>You might have access to long-forgotten underground canals, rooftop walkways, or some other route of your choosing.</p>",
-      "effect": "You get +1d to the engagement roll for stealth plans"
+      "name": "Таємні ходи",
+      "description": "<p>У вас може бути доступ до давно забутих підземних каналів, коротких маршрутів дахами або інших ходів на ваш вибір.</p>",
+      "effect": "Ви отримуєте +1к до перевірок ситуації в планах проникнення."
     },
     "Ancient Altar": {
-      "name": "Ancient Altar",
-      "description": "<p>Its blessing is with you</p>",
-      "effect": "You get +1d to the engagement roll for occult plans"
+      "name": "Стародавній вівтар",
+      "description": "<p>Його благословення з вами.</p>",
+      "effect": "Ви отримуєте +1к до перевірок ситуації в планах окультизму."
     },
     "Vice Den": {
-      "name": "Vice Den",
-      "description": "<p>Is this claim a den you’ve overtaken from another purveyor, or a new establishment replacing something else?</p><p>Perhaps you sell some of the contraband you smuggle here? Or do you not mix your operations?</p>",
-      "effect": "Any time during downtime, roll dice equal to your Tier. You earn coin equal to the highest result, minus your heat"
+      "name": "Гніздо пороку",
+      "description": "<p>Ви відібрали це кубло в іншого перекупа чи це новий заклад, збудований на місці чогось іншого?</p><p>Можливо, саме тут ви збуваєте частину контрабанди? Чи ви не змішуєте різний бізнес?</p>",
+      "effect": "Під час перепочинку ви можете кинути кількість кісток, що відповідає вашому Рангу. Ви отримуєте золоті в розмірі найвищого результату мінус шухер."
     },
     "Cover Identities": {
-      "name": "Cover Identities",
-      "description": "<p>False identities help confuse the opposition.</p>",
-      "effect": "You get +1d to the engagement roll for deception and social plans"
+      "name": "Фальшиві документи",
+      "description": "<p>Вигадані особи допоможуть спантеличити опонентів.</p>",
+      "effect": "Ви отримуєте +1к до перевірок ситуації в планах перемовин."
     },
     "Surplus Cache": {
-      "name": "Surplus Cache",
-      "description": "<p>You have an abundance of product, which pads your pockets every now and then.</p>",
-      "effect": "You get +2 coin in payoff for scores that involve product sale or supply"
+      "name": "Заначка товару",
+      "description": "<p>У вас завжди є надлишок товарів, які ви за нагоди збуваєте.</p>",
+      "effect": "Ви отримуєте +2 золоті у виплату за діла з торгівлею або постачанням."
     },
     "Guard Payoff": {
-      "name": "Guard Payoff",
-      "description": "<p>You claim several Ironhook prison guards on your payroll. Take +1d to your Tier roll when a member of your crew is incarcerated.</p>",
-      "effect": "Take +1d to your Tier roll when a member of your crew is incarcerated."
+      "name": "Підкуп охорони",
+      "description": "<p>Ви платите кільком охоронцям в’язниці «Залізний гак». Отримуйте +1к до вашої перевірки Рангу, коли ваш ватажанин потрапляє до в’язниці.</p>",
+      "effect": "Отримуйте +1к до вашої перевірки Рангу, коли ваш ватажанин потрапляє до в’язниці."
     },
     "Gambling Den": {
-      "name": "Gambling Den",
-      "description": "<p>Cards, dice, or something more unusual on offer?</p>",
-      "effect": "Any time during downtime, roll dice equal to your Tier. You earn coin equal to the highest result, minus your heat"
+      "name": "Гральний дім",
+      "description": "<p>Ви пропонуєте клієнтам карти, гральні кістки чи щось неординарніше?</p>",
+      "effect": "Під час перепочинку ви можете кинути кількість кісток, що відповідає вашому Рангу. Ви отримуєте золоті в розмірі найвищого результату мінус шухер."
     },
     "Sanctuary": {
-      "name": "Sanctuary",
-      "description": "<p>Your sanctuary maintains its effect as long as your deity is well-pleased with your service.</p>",
-      "effect": "+1d to Command and Sway rolls on-site"
+      "name": "Святилище",
+      "description": "<p>Святилище зберігає свій ефект доти, доки божество задоволене вашим служінням.</p>",
+      "effect": "Ви отримуєте +1к до перевірок Наказу та Маніпуляції в цьому місці."
     },
     "Cell Block Control": {
-      "name": "Cell Block Control",
-      "description": "<p>Your crew has a cell block under their total control—guards and all. You never take <strong>trauma</strong> from incarceration.</p>",
-      "effect": "You never take trauma from incarceration."
+      "name": "Контроль тюремного блоку",
+      "description": "<p>Ваша ватага тримає блок камер під повним контролем — охоронці й усе таке. Ви ніколи не матимете <strong>травм</strong> від ув’язнення.</p>",
+      "effect": "Ви ніколи не матимете травм від ув’язнення."
     },
     "Fighting Pits": {
-      "name": "Fighting Pits",
-      "description": "<p>The locals love to gamble away their hard-won coin on the blood-sports you host.</p>",
-      "effect": "During downtime, roll dice equal to your Tier. You earn coin equal to the highest result, minus your heat"
+      "name": "Бійцівські ями",
+      "description": "<p>Місцеві обожнюють циндрити свої зароблені важкою працею кошти на ставки в кривавих боях, які ви влаштовуєте.</p>",
+      "effect": "Під час перепочинку ви можете кинути кількість кісток, що відповідає вашому Рангу. Ви отримуєте золоті в розмірі найвищого результату мінус шухер."
     },
     "Cover Operation": {
-      "name": "Cover Operation",
-      "description": "<p>The cover of a legitimate operation helps deflect some of the heat from law enforcement.</p>",
-      "effect": "You get -2 heat per score"
+      "name": "Прикриття",
+      "description": "<p>Ви імітуєте законну операцію, щоб приспати пильність правоохоронців.</p>",
+      "effect": "Ви отримуєте -2 шухеру за діло."
     },
     "Envoy": {
-      "name": "Envoy",
-      "description": "<p>This well-connected liaison will help arrange for a better payoff from rich clients.</p>",
-      "effect": "You get +2 coin in payoff for scores that involve high-class clients"
+      "name": "Емісар",
+      "description": "<p>Посередник із хорошими зв’язками допоможе отримати більші виплати від багатих клієнтів.</p>",
+      "effect": "Ви отримуєте +2 золоті у виплату за діла від замовників із вищого класу."
     },
     "Barracks": {
-      "name": "Barracks",
-      "description": "<p>Extra room means more gang members.</p>",
-      "effect": "Your Thug cohorts get +1 scale"
+      "name": "Бараки",
+      "description": "<p>Більше місця — більше членів банди.</p>",
+      "effect": "Ваші когорти Відморозків отримують +1 масштаб."
     },
     "Foreign Market": {
-      "name": "Foreign Market",
-      "description": "<p>Some of your product makes its way out of the city.</p>",
-      "effect": "Any time during downtime, roll dice equal to your Tier. You earn coin equal to the highest result, minus your heat"
+      "name": "Експорт",
+      "description": "<p>Частина ваших товарів продається за межами міста.</p>",
+      "effect": "Під час перепочинку ви можете кинути кількість кісток, що відповідає вашому Рангу. Ви отримуєте золоті в розмірі найвищого результату мінус шухер."
     },
     "Lookouts": {
-      "name": "Lookouts",
+      "name": "Дозорні",
       "description": "",
-      "effect": "You get +1d to Hunt or Survey on your turf"
+      "effect": "Ви отримуєте +1к до Полювання та Розвідки на своїй території."
     },
     "Cloister": {
-      "name": "Cloister",
-      "description": "<p>More room for hopeful novices desperate to pledge their service.</p>",
-      "effect": "Your Adept cohorts get +1 scale"
+      "name": "Обитель",
+      "description": "<p>Більше місця для наївних послушників, які відчайдушно бажають присвятити себе служінню.</p>",
+      "effect": "Ваші когорти Адептів отримують +1 масштаб."
     },
     "Luxury Fence": {
-      "name": "Luxury Fence",
-      "description": "<p>It requires a skilled eye and good contacts to move hot luxury goods.</p>",
-      "effect": "You get +2 coin in payoff for scores that involve high-class targets"
+      "name": "Скупник предметів розкоші",
+      "description": "<p>Фахівець із хорошими контактами зможе збути елітні предмети розкоші.</p>",
+      "effect": "Ви отримуєте +2 золоті у виплату за діла, ціллю яких були жертви з вищого класу."
     },
     "Loyal Fence": {
-      "name": "Loyal Fence",
-      "description": "<p>It requires a skilled eye and good contacts to move stolen goods.</p>",
-      "effect": "You get +2 coin in payoff for scores that involve burglary or robbery"
+      "name": "Надійний скупник",
+      "description": "<p>Для збуту награбованого потрібний професійний погляд та хороші контакти.</p>",
+      "effect": "Ви отримуєте +2 золоті у виплату за діла з проникненням або пограбуванням."
     },
     "Side Business": {
-      "name": "Side Business",
-      "description": "<p>What kind of legitimate business is this? How do you get paid in secret?</p>",
-      "effect": "Any time during downtime, roll dice equal to your Tier. You earn coin equal to the highest result, minus your heat"
+      "name": "Халтура",
+      "description": "<p>Що це за законний бізнес? Як ви таємно отримуєте з нього плату?</p>",
+      "effect": "Під час перепочинку ви можете кинути кількість кісток, що відповідає вашому Рангу. Ви отримуєте золоті в розмірі найвищого результату мінус шухер."
     },
     "City Records": {
-      "name": "City Records",
-      "description": "<p>You can use blueprints and other documents to determine a good approach for infiltrations.</p>",
-      "effect": "You get +1d to the engagement roll for stealth plans"
+      "name": "Міський архів",
+      "description": "<p>Ви можете користуватися планами будівель та іншими документами, щоб знайти найкращий підхід.</p>",
+      "effect": "Ви отримуєте +1к до перевірок ситуації в планах проникнення."
     },
     "Bluecoat Intimidation": {
-      "name": "Bluecoat Intimidation",
-      "description": "<p>The law doesn’t want any trouble from you; they look the other way.</p>",
-      "effect": "You get -2 heat per score"
+      "name": "Залякані Сині мундири",
+      "description": "<p>Законники не хочуть із вами зв’язуватися та заплющують очі на вашу діяльність.</p>",
+      "effect": "Ви отримуєте -2 шухеру за діло."
     },
     "Hardcase": {
-      "name": "Hardcase",
-      "description": "<p>Your reputation as a tough inmate bolsters your crew’s image in Duskwall. When your crew advances Tier, it costs 2 fewer <strong>coins</strong> than it normally would.</p>",
-      "effect": "When your crew advances Tier, it costs 2 fewer coins than it normally would."
+      "name": "Бандюган",
+      "description": "<p>Ваша сувора репутація у в’язниці зміцнює авторитет вашої ватаги в Даскволі. Коли ваша ватага підвищує <strong>Ранг</strong>, це коштує на 2 <strong>золоті</strong> менше, ніж зазвичай.</p>",
+      "effect": "Коли ваша ватага підвищує Ранг, це коштує на 2 золоті менше, ніж зазвичай."
     },
     "Ancient Obelisk": {
-      "name": "Ancient Obelisk",
-      "description": "<p>This effect applies to all cultists, everywhere – so long as the deity is well-pleased. You don’t have to be on-site at the obelisk to benefit from its power.</p>",
-      "effect": "-1 stress cost for all arcane powers and rituals"
+      "name": "Стародавній обеліск",
+      "description": "<p>Цей ефект поширюється на всіх культистів, де б вони не були, допоки божество задоволене. Необов’язково перебувати поруч з обеліском, щоб скористатися його силою.</p>",
+      "effect": "Вартість використання магічних сил та проведення ритуалів -1 пункт стресу."
     },
     "Fleet": {
-      "name": "Fleet",
-      "description": "<p>Each cohort has a common vehicle, with quality equal to your Tier</p>",
-      "effect": "Your cohorts have their own vehicles"
+      "name": "Флотилія",
+      "description": "<p>Кожна когорта має транспортний засіб, якість якого відповідає вашому Рангу.</p>",
+      "effect": "Ваші когорти мають власний транспорт."
     },
     "Smuggling": {
-      "name": "Smuggling",
-      "description": "<p>You arrange smuggling channels inside. You have <strong>+2 load</strong> while incarcerated, (starting from zero as a prisoner). If you take this claim twice, you’ll have 4 load while you’re serving time in Ironhook. Also, you may choose to carry <strong>coin</strong> in place of load for purposes of bribes or acquiring assets while in prison. You may reset the items in your prison loadout whenever your crew has downtime.</p>",
-      "effect": "You have +2 load while incarcerated"
+      "name": "Контрабанда",
+      "description": "<p>Ви організовуєте канали контрабанди у в’язниці. Під час ув’язнення ви отримуєте <strong>+2 навантаження</strong> (починаючи з нуля як в’язень). Якщо ви провернете це двічі, то матимете навантаження 4 під час відбування строку. Крім того, ви на свій вибір можете носити <strong>золоті</strong> замість вантажу, щоб давати хабарі або отримувати ресурси у в’язниці. Ви можете скинути своє тюремне спорядження, коли ваша ватага перепочиватиме.</p>",
+      "effect": "Під час ув’язнення ви отримуєте +2 навантаження."
     },
     "Fixer": {
-      "name": "Fixer",
-      "description": "<p>This well-respected agent will help arrange for a better payoff from poorer clients.</p>",
-      "effect": "You get +2 coin in payoff for scores that involve lower-class clients"
+      "name": "Ділок",
+      "description": "<p>Поважний представник допоможе отримати більші виплати від бідних клієнтів.</p>",
+      "effect": "Ви отримуєте +2 золоті у виплату за діла від замовників із нижчого класу."
     },
     "Personal Clothier": {
-      "name": "Personal Clothier",
-      "description": "<p>You always arrive on the scene in the most current and alluring fashion.</p>",
-      "effect": "You get +1d to the engagement roll for social plans"
+      "name": "Особистий кравець",
+      "description": "<p>Ви завжди бездоганно вбрані.</p>",
+      "effect": "Ви отримуєте +1к до перевірок ситуації в планах перемовин."
     },
     "Ancient Gate": {
-      "name": "Ancient Gate",
-      "description": "<p>When you leave the city through this gate, the spirits of the deathlands will not molest you unless directly provoked.</p>",
-      "effect": "Safe passage in the deathlands"
+      "name": "Стародавня брама",
+      "description": "<p>Коли ви покидаєте місто через цю браму, духи мертвоземелля не потурбують вас, якщо їх не провокувати.</p>",
+      "effect": "Безпечний прохід до мертвоземелля."
     },
     "Allied Claim": {
-      "name": "Allied Claim",
-      "description": "<p>One of your allies on the inside arranges for their faction to grant you a boon. Take a claim for your crew from a different crew type. You can’t take turf with this claim.</p>",
-      "effect": "Take a claim for your crew from a different crew type."
+      "name": "Актив союзника",
+      "description": "<p>Один із ваших союзників у в’язниці домовився, щоб його фракція допомогла вам. Отримайте актив для своєї ватаги від ватаги іншого типу. Ви не можете захопити територію за допомогою цього активу.</p>",
+      "effect": "Отримайте актив для своєї ватаги від ватаги іншого типу."
     },
     "Infirmary": {
-      "name": "Infirmary",
-      "description": "<p>The infirmary also has beds for long-term convalescence.</p>",
-      "effect": "You get +1d to healing treatment rolls"
+      "name": "Лазарет",
+      "description": "<p>Лазарет оснащений ліжками для стаціонарного лікування.</p>",
+      "effect": "Ви отримуєте +1к до перевірок одужання."
     },
     "Terrorized Citizens": {
-      "name": "Terrorized Citizens",
-      "description": "<p>The frightened locals offer you tribute whenever you lash out. They don’t want to be next.</p>",
-      "effect": "You get +2 coin in your payoff for scores that involve battle or extortion"
+      "name": "Зацькована громада",
+      "description": "<p>Налякані місцеві жителі намагаються від вас відкупитися, коли ви виходите на діло. Вони не хочуть стати наступними.</p>",
+      "effect": "Ви отримуєте +2 золоті у виплату за діла, пов’язані з бійкою або шантажем."
     }
   }
 }

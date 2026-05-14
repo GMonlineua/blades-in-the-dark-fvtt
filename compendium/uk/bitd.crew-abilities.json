@@ -1,165 +1,165 @@
 {
-  "label": "Crew Abilities",
+  "label": "Здібності ватаг",
   "mapping": {
     "description": "system.description",
     "name": "name"
   },
   "entries": {
     "Reavers": {
-      "name": "Reavers",
-      "description": "<p>When you go into conflict aboard a vehicle, you gain <strong>+1 effect</strong> for vehicle damage and speed. Your vehicle gains <strong>armor</strong>.</p><p><em>If your vehicle already has armor, this ability gives an additional armor box.</em></p>"
+      "name": "Лихачі",
+      "description": "<p>Якщо в конфлікті задіяний ваш транспортний засіб, ви маєте <strong>+1 ефект</strong> до пошкоджень, яких він завдає, та швидкості. Також він оснащується <strong>бронею</strong>.</p><p><em>Якщо ваш транспортний засіб уже оснащений бронею, ця здібність дає додаткову клітинку броні.</em></p>"
     },
     "Glory Incarnate": {
-      "name": "Glory Incarnate",
-      "description": "<p>Your deity sometimes manifests in the physical world. This can be a great boon, but the priorities and values of a god are not those of mortals. You have been warned.</p>"
+      "name": "Велична подоба",
+      "description": "<p>Ваше божество іноді з’являється у фізичному світі. Це може бути великим благом, але іноді пріоритети та цінності бога відрізняються від цінностей смертних. Вас попереджено.</p>"
     },
     "Like Part of the Family": {
-      "name": "Like Part of the Family",
-      "description": "<p>Create one of your vehicles as a <strong>cohort</strong> (use the vehicle edges and flaws, below). Its quality is equal to your Tier +1. The vehicle can use <strong>teamwork</strong> actions (using <strong>quality</strong> for rolls). A vehicle can’t lead a group action, but may participate.</p><table><tbody><tr><td><p style=\"text-align: center\">Vehicle Edges</p></td><td><p style=\"text-align: center\">Vehicle Flaws</p></td></tr><tr><td><ul><li><p><strong>Nimble</strong>: The vehicle handles easily. Consider this an <strong>assist</strong> for tricky maneuvers.</p></li><li><p><strong>Simple</strong>: The vehicle is easy to repair. Remove all of its harm during downtime.</p></li><li><p><strong>Sturdy</strong>: The vehicle keeps operating even when broken.</p></li></ul></td><td><ul><li><p>Costly: The vehicle costs 1 <strong>coin</strong> per downtime to keep in operation.</p></li><li><p><strong>Distinct</strong>: The vehicle has memorable features. Take +1 <strong>heat</strong> when you use it on a score.</p></li><li><p><strong>Finicky</strong>: The vehicle has quirks that only one person understands. When operated without them, it has <strong>-1 quality</strong>.</p></li></ul></td></tr></tbody></table>"
+      "name": "Наче член сім'ї",
+      "description": "<p>Один із ваших транспортних засобів може стати <strong>когортою</strong>. Для цього пройдіть пунктами створення когорти, скориставшись поданими нижче козирями та хибами транспорту. Його якість відповідає вашому Рангу +1. Транспорт може виконувати <strong>командні</strong> дії (для перевірок застосовується його <strong>якість</strong>). Він не може очолити групову дію, але може брати в ній участь.</p><table><tbody><tr><td><p style=\"text-align: center\">Козирі транспорту</p></td><td><p style=\"text-align: center\">Хиби транспорту</p></td></tr><tr><td><ul><li><p><strong>Добротний</strong>: Навіть зламаним він продовжує працювати.</p></li><li><p><strong>Маневровий</strong>: Ним легко керувати. Ви отримуєте <strong>допомогу</strong> при складних маневрах.</p></li><li><p><strong>Простий</strong>: Його легко ремонтувати. Зніміть усю його шкоду під час перепочинку.</p></li></ul></td><td><ul><li><p>Затратний: Ви мусите платити 1 <strong>золотий</strong> на кожному перепочинку.</p></li><li><p><strong>Помітний</strong>: Він має виразні прикмети. Ви отримаєте +1 <strong>шухер</strong>, якщо скористаєтеся ним на ділі.</p></li><li><p><strong>Вибагливий</strong>: Лише одна людина може кермувати ним. Якщо за кермом не вона, транспорт отримує <strong>-1 до якості</strong>.</p></li></ul></td></tr></tbody></table>"
     },
     "Dangerous": {
-      "name": "Dangerous",
-      "description": "<p>Each PC may add +1 action rating to <strong>Hunt</strong>, <strong>Skirmish</strong>, or <strong>Wreck</strong> (up to a max rating of 3).</p><p><em>Each player may choose the action they prefer (you don’t all have to choose the same one). If you take this ability during initial character and crew creation, it supersedes the normal starting limit for action ratings.</em></p>"
+      "name": "Небезпечні",
+      "description": "<p>Кожен ПГ може додати +1 значення дії до <strong>Полювання</strong>, <strong>Бійки</strong> чи <strong>Погрому</strong> (до максимального значення 3).</p><p><em>Кожен гравець може вибрати дію, яка йому до вподоби (вона не має бути однаковою для всіх). Якщо ви обираєте цю здібність під час створення персонажа та ватаги, вона дає вам змогу перевищити початкове максимальне значення дій.</em></p>"
     },
     "Just Passing Through": {
-      "name": "Just Passing Through",
-      "description": "<p>During <strong>downtime</strong>, take <strong>-1 heat</strong>. When your <strong>heat</strong> is <strong>4</strong> or less, you get <strong>+1d</strong> to deceive people when you pass yourselves off as ordinary citizens.</p>"
+      "name": "Просто проходили повз",
+      "description": "<p>Під час <strong>перепочинку</strong> ви отримуєте <strong>-1 шухер</strong>. Якщо ваш <strong>шухер</strong> <strong>4</strong> або менше, ви отримуєте <strong>+1к</strong> до обману людей, коли видаєте себе за простих мешканців.</p>"
     },
     "Accord": {
-      "name": "Accord",
-      "description": "<p>Sometimes friends are as good as territory. You may treat up to three <strong>+3 faction</strong> <strong>statuses</strong> you hold as if they are <strong>turf</strong>.</p><p><em>If your status changes, you lose the turf until it becomes +3 again. Regardless of how much turf you hold (from this ability or otherwise) the minimum rep cost to advance your Tier is always 6.</em></p>"
+      "name": "Угода",
+      "description": "<p>Друзі не менш цінні за території. До трьох <strong>статусів +3</strong>, які ви маєте з фракціями, рахуються як ваша <strong>територія</strong>.</p><p><em>Якщо статус зміниться, ви втратите відповідну територію, доки він знову не стане +3. Незалежно від того, скількома територіями ви володієте (завдяки цій здібності чи чомусь іншому), підвищення вашого Рангу завжди коштує 6 реп.</em></p>"
     },
     "Predators": {
-      "name": "Predators",
-      "description": "<p>When you use a stealth or deception plan to commit murder, take <strong>+1d</strong> to the&nbsp;<strong>engagement roll</strong>.</p>\n<p><em>This ability applies when the goal is murder. It doesn&rsquo;t apply to other stealth or&nbsp;deception operations you attempt that happen to involve killing.</em></p>"
+      "name": "Хижаки",
+      "description": "<p>Коли ви користуєтесь планом обману або проникнення для скоєння вбивства, отримайте <strong>+1к</strong> до <strong>перевірок ситуації</strong>.</p>\n<p><em>Ця здатність застосовується, коли метою справи є вбивство. Вона не впливає на плани обману або проникнення, якщо вбивство не було метою.</em></p>"
     },
     "Hooked": {
-      "name": "Hooked",
-      "description": "<p>Your gang members use your product. Add the <em>savage</em>, <em>unreliable</em>, or <em>wild</em> flaw to your gangs to give them <strong>+1 quality</strong> (max rating of 4).</p>"
+      "name": "Підсаджені",
+      "description": "<p>Члени однієї з ваших банд підсіли на ваш товар. Додайте банді хибу (<em>безжальна</em>, <em>ненадійна</em> або <em>гучна</em>) та <strong>+1 якість</strong> (максимальне значення 4).</p>"
     },
     "War Dogs": {
-      "name": "War Dogs",
-      "description": "<p>When you’re at war (-3 faction status), your crew does not suffer -1 hold and PCs still get two downtime activities, instead of just one.</p>"
+      "name": "Бійцівські пси",
+      "description": "<p>Коли ви перебуваєте в стані війни із фракцією (статус -3), ваша ватага не отримує -1 вплив, а ПГ і надалі мають два заняття під час перепочинку замість одного.</p>"
     },
     "Blood Brothers": {
-      "name": "Blood Brothers",
-      "description": "<p>When you fight alongside your <strong>cohorts</strong> in combat, they get <strong>+1d</strong> for <strong>teamwork</strong> rolls (setup and group actions). All of your cohorts get the Thugs type for free (if they’re already Thugs, add another type).</p><p><em>If you have the Elite Thugs upgrade, it stacks with this ability. So, if you had an Adepts gang cohort, and the Elite Thugs upgrade, and then took Blood Brothers, your Adepts would add the Thugs type and also get +1d to rolls when they did Thug-type actions.</em></p><p><em>This ability may result in a gang with three types, surpassing the normal limit of two.</em></p>"
+      "name": "Кровні брати",
+      "description": "<p>Коли ви б’єтеся разом зі своєю <strong>когортою</strong> в бою, її учасники отримують <strong>+1к</strong> на перевірку <strong>командної роботи</strong> (підготовка та групові дії). Усі ваші когорти безкоштовно отримують тип Відморозки (якщо вони вже Відморозки, додайте інший тип).</p><p><em>Якщо у вас є вдосконалення «Елітні Відморозки», воно сумується із цією здатністю. Тож, якщо у вас була когорта типу Адептів та вдосконалення «Елітні Відморозки», а потім ви взяли Кровних братів, ваші Адепти додатково отримують тип Відморозків та +1к до перевірок злочинної діяльності Відморозків.</em></p><p><em>Ця здібність дає змогу створювати банди з трьома типами, що перевищує звичайний ліміт зі значенням 2.</em></p>"
     },
     "Slippery": {
-      "name": "Slippery",
-      "description": "<p>When you roll <strong>entanglements</strong>, roll twice and keep the one you want. When you <strong>reduce heat</strong> on the crew, take <strong>+1d</strong>.</p><p><em>The GM might sometimes want to choose an entanglement instead of rolling. In that case, they’ll choose two and you can pick between them.</em></p>"
+      "name": "Слизькі",
+      "description": "<p>Коли ви робите перевірку <strong>хитросплетінь</strong>, киньте двічі та оберіть варіант, який вам до вподоби. Коли ви <strong>знижуєте шухер</strong> ватаги, отримайте <strong>+1к</strong>.</p><p><em>Іноді Майстер самостійно вибирає хитросплетіння, не вдаючись до перевірки. У такому випадку він вибере два, і ви зможете обрати між ними.</em></p>"
     },
     "Pack Rats": {
-      "name": "Pack Rats",
-      "description": "<p>Your lair is a jumble of stolen items. When you roll to <strong>acquire an asset</strong>, take <strong>+1d</strong>.</p><p><em>This ability might mean that you actually have the item you need in your pile of stuff, or it could mean you have extra odds and ends to barter with.</em></p>"
+      "name": "Сороки",
+      "description": "<p>Ваше лігво захаращене поцупленими речами. Додавайте <strong>+1к</strong> при перевірках <strong>отримання ресурсу</strong>.</p><p><em>Це означає, що потрібний предмет лежить серед ваших трофеїв або його можна отримати в обмін на один із них.</em></p>"
     },
     "Fiends": {
-      "name": "Fiends",
-      "description": "<p>Fear is as good as respect. You may count each <strong>wanted level</strong> as if it were <strong>turf</strong>.</p><p><em>The maximum <strong>wanted level</strong> is 4. Regardless of how much turf you hold (from this ability or otherwise) the minimum <strong>rep</strong> cost to advance your Tier is always 6.</em></p>"
+      "name": "Нелюди",
+      "description": "<p>Бояться — значить поважають. Кожен ваш <strong>рівень розшуку</strong> рахується за <strong>територію</strong>.</p><p><em>Максимальний <strong>рівень розшуку</strong> — 4. Незалежно від того, скількома територіями ви володієте (завдяки цій здібності чи чомусь іншому), підвищення вашого Рангу завжди коштує 6 <strong>реп</strong>.</em></p>"
     },
     "No Traces": {
-      "name": "No Traces",
-      "description": "<p>When you keep an operation quiet or make it look like an accident, you get half the <strong>rep</strong> value of the target (round up) instead of zero. When you end downtime with zero <strong>heat</strong>, take <strong>+1 rep</strong>.</p>\n<p><em>There are many clients who value quiet operations. This ability rewards you&nbsp;for keeping a low-profile.</em></p>"
+      "name": "Жодних слідів",
+      "description": "<p>Коли ви провертаєте діло таємно або маскуєте його під нещасний випадок, ви отримуєте половину значення <strong>реп</strong> цілі (округлюючи вгору) замість нуля. Закінчуючи перепочинок із <strong>шухером</strong> 0, ви отримуєте <strong>+1 реп</strong>.</p>\n<p><em>Багато замовників цінують тиху роботу. Ця здібність винагороджує вас за стриманість.</em></p>"
     },
     "Chosen": {
-      "name": "Chosen",
-      "description": "<p>Each PC may add +1 action rating to <strong>Attune</strong>, <strong>Study</strong>, or <strong>Sway</strong> (up to a max rating of 3).</p><p><em>Each player may choose the action they prefer (you don’t all have to choose the same one). If you take this ability during initial character and crew creation, it supersedes the normal starting limit for action ratings.</em></p>"
+      "name": "Обрані",
+      "description": "<p>Кожен ПГ може додати +1 значення дії до <strong>Фокусування</strong>, <strong>Вивчення</strong> чи <strong>Маніпуляції</strong> (до максимального значення 3).</p><p><em>Кожен гравець може вибрати дію, яка йому до вподоби (вона не має бути однаковою для всіх). Якщо ви обираєте цю здібність під час створення персонажа та ватаги, вона дає вам змогу перевищити початкове максимальне значення дій.</em></p>"
     },
     "Synchronized": {
-      "name": "Synchronized",
-      "description": "<p>When you perform a <strong>group action</strong>, you may count multiple 6s from different rolls as a <strong>critical</strong> success.</p><p><em>For example, Lyric leads a group action to <strong>Attune</strong> to the ghost field to overcome a magical ward on the Dimmer Sisters’ door. Emily, Lyric’s player, rolls and gets a <strong>6</strong>, and so does Matt! Because the crew has Synchronized, their two separate <strong>6</strong>s count as a <strong>critical</strong> success on the roll.</em></p>"
+      "name": "Синхронність",
+      "description": "<p>Під час <strong>групової дії</strong> ви можете зарахувати шестірки, котрі випали в різних гравців, як <strong>критичний</strong> успіх.</p><p><em>Наприклад, Лайрік очолює групову дію <strong>Фокусування</strong> на примарне поле, щоб подолати магічний захист на дверях Сестер Морок. Емілі, що грає за Лайрік, робить перевірку та отримує <strong>6</strong>, як і Мет! Оскільки ватажани Синхронні, їх дві окремі <strong>6</strong> рахуються як <strong>критичний</strong> успіх у цій перевірці.</em></p>"
     },
     "High Society": {
-      "name": "High Society",
-      "description": "<p>It’s all about who you know. Take <strong>-1 heat</strong> during downtime and <strong>+1d</strong> to <strong>gather information</strong> about the city’s elite.</p>"
+      "name": "Світське товариство",
+      "description": "<p>Скажи мені, хто твій друг, і я скажу, хто ти. Отримайте <strong>-1 шухер</strong> під час перепочинку та <strong>+1к</strong> до <strong>збору інформації</strong> про місцеву еліту.</p>"
     },
     "Ghost Echoes": {
-      "name": "Ghost Echoes",
-      "description": "<p>From weird experience or occult ritual, all crew members gain the ability to see and interact with the ghostly structures, streets, and objects within the echo of Doskvol that exists in the ghost field.</p><p><em>You might explore the echo of an ancient building, crumbled to dust in the real world, but still present in the ghost field; or discern the electroplasmic glow of treasures lost in the depths of the canals; or use a sorcerous ghost door from the pre-cataclysm to infiltrate an otherwise secure location; etc. The GM will tell you what echoes persist nearby when you gather information about them. You might also undertake investigations to discover particular echoes you hope to find.</em></p>"
+      "name": "Примарні відголоси",
+      "description": "<p>Завдяки химерному випробуванню або окультному ритуалу всі ватажани можуть бачити та взаємодіяти з примарними спорудами, вулицями та об’єктами в межах відголосів Доскволу в примарному полі.</p><p><em>Ви можете дослідити відголос будівлі, яка в реальному світі перетворилася на руїни, але залишається цілісною в примарному полі; або розгледіти електроплазматичне сяйво скарбів, загублених у каналах; або відчинити примарні двері, що існували ще до катаклізму, і проникнути в сховане від людського ока місце, тощо. Майстер розкаже вам, які відголоси є поблизу, коли ви збиратимете інформацію про них. Ви також можете проводити розслідування, щоб знайти певні відголоси, які вас цікавлять.</em></p>"
     },
     "Bound in Darkness": {
-      "name": "Bound in Darkness",
-      "description": "<p>You may use <strong>teamwork maneuvers</strong> with any cult member, regardless of the distance separating you. By taking <strong>1 stress</strong>, your whispered message is heard by every cultist.</p><p><em>By what occult means does your teamwork manifest over distance? How is it strange or disturbing? By what ritualistic method are cult members initiated into this ability?</em></p>"
+      "name": "Пов'язані темрявою",
+      "description": "<p>Ви можете виконувати <strong>командні маневри</strong> з будь-яким членом культу незалежно від відстані, що розділяє вас. При цьому ви отримуєте <strong>1 пункт стресу</strong>, щоб прошепотіти послання, котре почує кожен культист.</p><p><em>До яких окультних засобів ви вдалися, щоб отримати цю здібність? Що в ній химерного та тривожного? Через який ритуал мусять пройти члени вашого культу, щоб оволодіти нею?</em></p>"
     },
     "Everyone Steals": {
-      "name": "Everyone Steals",
-      "description": "<p>Each PC may add +1 action rating to <strong>Prowl</strong>, <strong>Finesse</strong>, or <strong>Tinker</strong> (up to a max rating of 3).</p><p><em>Each player may choose the action they prefer (you don’t all have to choose the same one). If you take this ability during initial character and crew creation, it supersedes the normal starting limit for action ratings.</em></p>"
+      "name": "Усі крадуть",
+      "description": "<p>Кожен ПГ може додати +1 значення дії до <strong>Скрадання</strong>, <strong>Вправності</strong> чи <strong>Майстрування</strong> (до максимального значення 3).</p><p><em>Кожен гравець може вибрати дію, яка йому до вподоби (вона не має бути однаковою для всіх). Якщо ви обираєте цю здібність під час створення персонажа та ватаги, вона дає вам змогу перевищити початкове максимальне значення дій.</em></p>"
     },
     "Silver Tongues": {
-      "name": "Silver Tongues",
-      "description": "<p>Each PC may add +1 action rating to <strong>Command</strong>, <strong>Consort</strong>, or <strong>Sway</strong> (up to a max rating of 3).</p><p><em>Each player may choose the action they prefer (you don’t all have to choose the same one). If you take this ability during initial character and crew creation, it supersedes the normal starting limit for action ratings.</em></p>"
+      "name": "Красномовні",
+      "description": "<p>Кожен ПГ може додати +1 значення дії до <strong>Наказу</strong>, <strong>Спілкування</strong> чи <strong>Маніпуляції</strong> (до максимального значення 3).</p><p><em>Кожен гравець може вибрати дію, яка йому до вподоби (вона не має бути однаковою для всіх). Якщо ви обираєте цю здібність під час створення персонажа та ватаги, вона дає вам змогу перевищити початкове максимальне значення дій.</em></p>"
     },
     "Vipers": {
-      "name": "Vipers",
-      "description": "<p>When you acquire or craft poisons, you get <strong>+1 result level</strong> to your roll. When&nbsp;you employ a poison, you are specially prepared to be immune to its effects.</p>\n<p><em>The poison immunity lasts for the entire score, until you next have downtime.</em></p>"
+      "name": "Гадюки",
+      "description": "<p>Коли ви отримуєте або виготовляєте отруту, ви заробляєте <strong>+1 рівень результату</strong> до вашої перевірки. Користуючись отрутою, ви здобуваєте імунітет до неї.</p>\n<p><em>Імунітет до отрути триває протягом діла до початку перепочинку.</em></p>"
     },
     "Emberdeath": {
-      "name": "Emberdeath",
-      "description": "<p>Due to hard-won experience or occult ritual, you know the arcane method to destroy a living victim&rsquo;s spirit at the moment you kill them. Take 3 stress to channel electroplasmic energy from the ghost field to disintegrate the spirit and body in a shower of sparking embers.</p>\n<p><em>This ability activates at the moment of the target&rsquo;s death (spend 3 stress then or lose the opportunity to use it). It can only be triggered by a killing blow. Some particularly powerful supernatural entities or specially protected targets may be resistant or immune to this ability.</em></p>"
+      "name": "Кремація",
+      "description": "<p>Завдяки важкому випробуванню або окультному ритуалу вам відомий магічний спосіб знищення духу жертви в момент її вбивства. Отримуючи 3 пункти стресу, ви скеровуєте електроплазматичну енергію з примарного поля на жертву, а її дух і тіло розпадаються зливою іскристого попелу.</p>\n<p><em>Ця здібність активується в момент смерті цілі (витратьте 3 пункти стресу тоді, або втратьте можливість нею користуватися). Вона може бути викликана лише смертельним ударом. Деякі особливо могутні надприродні сутності або надзвичайно захищені цілі можуть мати опір або імунітет до цієї здібності.</em></p>"
     },
     "Crow’s Veil": {
-      "name": "Crow’s Veil",
-      "description": "<p>Due to hard-won experience or occult ritual, your activities are hidden from the notice of the deathseeker crows. You don&rsquo;t take extra <strong>heat</strong> when killing is involved on a score.</p>\n<p><em>The bells don&rsquo;t ring at the crematorium when a member of your crew kills&nbsp;someone. Do you have a &ldquo;membership ritual&rdquo; now that conveys this talent?</em></p>"
+      "name": "Вороняча завіса",
+      "description": "<p>Завдяки важкому випробуванню або окультному ритуалу ваша діяльність прихована від Шукачів Смерті. Ви не отримуєте додатковий <strong>шухер</strong>, коли вбиваєте під час діла.</p>\n<p><em>Дзвони в крематорії мовчать, коли ватажанин скоює вбивство. Чи є у вас якийсь ритуал посвяти у ватажани, котрий наділяє цією здібністю?</em></p>"
     },
     "Sealed in Blood": {
-      "name": "Sealed in Blood",
-      "description": "<p>Each human sacrifice yields <strong>-3 stress</strong> cost for any ritual you perform.</p><p><em>For details on Rituals, see page 222.</em></p>"
+      "name": "Кривавий пакт",
+      "description": "<p>Принесення в жертву людини зменшує ціну проведення будь-якого ритуалу на <strong>-3 пункти стресу</strong>.</p><p><em>Докладніше про Ритуали див. на с. 226.</em></p>"
     },
     "Leverage": {
-      "name": "Leverage",
-      "description": "<p>Your crew supplies illicit goods for other factions. Your success is good for them. Whenever you gain <strong>rep</strong>, gain <strong>+1 rep</strong>.</p>"
+      "name": "Важелі тиску",
+      "description": "<p>Ваша ватага постачає незаконні товари іншим фракціям. Вони зацікавлені у вашій успішності. Здобуваючи <strong>реп</strong>, щоразу отримуйте <strong>+1 реп</strong>.</p>"
     },
     "Renegades": {
-      "name": "Renegades",
-      "description": "<p>Each PC may add +1 action rating to <strong>Finesse</strong>, <strong>Prowl</strong>, or <strong>Skirmish</strong> (up to a max rating of 3).</p><p><em>Each player may choose the action they prefer (you don’t all have to choose the same one). If you take this ability during initial character and crew creation, it supersedes the normal starting limit for action ratings.</em></p>"
+      "name": "Відступники",
+      "description": "<p>Кожен ПГ може додати +1 значення дії до <strong>Вправності</strong>, <strong>Скрадання</strong> чи <strong>Бійки</strong> (до максимального значення 3).</p><p><em>Кожен гравець може вибрати дію, яка йому до вподоби (вона не має бути однаковою для всіх). Якщо ви обираєте цю здібність під час створення персонажа та ватаги, вона дає вам змогу перевищити початкове максимальне значення дій.</em></p>"
     },
     "Conviction": {
-      "name": "Conviction",
-      "description": "<p>Each PC gains an additional <strong>vice</strong>: Worship. When you indulge this vice and bring a pleasing sacrifice, you don’t overindulge if you clear excess stress. In addition, your deity will <strong>assist</strong> any one action roll you make – from now until you indulge this vice again.</p><p><em>What sort of sacrifice does your deity find pleasing?</em></p>"
+      "name": "Запеклість",
+      "description": "<p>Кожен ПГ отримує додатковий <strong>порок</strong> — Поклоніння. Потураючи йому й проводячи відповідне жертвопринесення, ви не зловживаєте, якщо позбавляєтеся надмірного стресу. Крім того, божество <strong>допоможе</strong> вам з однією перевіркою будь-якої дії — з цього моменту і до наступного потурання цьому пороку.</p><p><em>Яка жертва задовольнить ваше божество?</em></p>"
     },
     "Deadly": {
-      "name": "Deadly",
-      "description": "<p>Each PC may add +1 action rating to <strong>Hunt</strong>, <strong>Prowl</strong>, or <strong>Skirmish</strong> (up to a&nbsp;max rating of 3).</p>\n<p><em>Each player may choose the action they prefer (you don&rsquo;t all have to choose the same one). If you take this ability during initial character and crew creation, it supersedes the normal starting limit for action ratings.</em></p>"
+      "name": "Смертоносні",
+      "description": "<p>Кожен ПГ може додати +1 значення дії до <strong>Полювання</strong>, <strong>Скрадання</strong> чи <strong>Бійки</strong> (до максимального значення 3).</p>\n<p><em>Кожен гравець може вибрати дію, яка йому до вподоби (вона не має бути однаковою для всіх). Якщо ви обираєте цю здібність під час створення персонажа та ватаги, вона дає вам змогу перевищити початкове максимальне значення дій.</em></p>"
     },
     "All Hands": {
-      "name": "All Hands",
-      "description": "<p>During <strong>downtime</strong>, one of your <strong>cohorts</strong> may perform a downtime activity for the crew to <strong>acquire an asset</strong>, <strong>reduce heat</strong>, or work on a <strong>long-term project</strong>.</p>"
+      "name": "Усі на місця",
+      "description": "<p>Під час <strong>перепочинку</strong> одна з ваших <strong>когорт</strong> може виконати дію, щоб <strong>отримати ресурс</strong>, <strong>зменшити шухер</strong> чи попрацювати над <strong>довготривалим проєктом</strong>.</p>"
     },
     "Patron": {
-      "name": "Patron",
-      "description": "<p>When you advance your <strong>Tier</strong>, it costs <strong>half the coin</strong> it normally would.</p>\n<p><em>Who is your patron? Why do they help you?</em></p>"
+      "name": "Покровитель",
+      "description": "<p>Коли ви підвищуєте свій <strong>Ранг</strong>, це коштує <strong>вдвічі менше золотих</strong>, ніж зазвичай.</p>\n<p><em>Хто ваш покровитель? Чому він допомагає вам?</em></p>"
     },
     "Second Story": {
-      "name": "Second Story",
-      "description": "<p>When you execute a clandestine infiltration, you get <strong>+1d</strong> to the <strong>engagement roll</strong>.</p>"
+      "name": "Домушники",
+      "description": "<p>Коли ви провертаєте таємне проникнення, ви отримуєте <strong>+1к</strong> до <strong>перевірки ситуації</strong>.</p>"
     },
     "Zealotry": {
-      "name": "Zealotry",
-      "description": "<p>Your <strong>cohorts</strong> have abandoned their reason to devote themselves to the cult. They will undertake any service, no matter how dangerous or strange. They gain <strong>+1d</strong> to rolls when they act against enemies of the faith.</p>"
+      "name": "Фанатизм",
+      "description": "<p>Ваші <strong>когорти</strong> повністю присвятили себе культу. Вони візьмуться за будь-яку роботу, якою б небезпечною чи химерною вона не була. Вони отримують <strong>+1к</strong> до перевірок, коли діють проти ворогів віри.</p>"
     },
     "Anointed": {
-      "name": "Anointed",
-      "description": "<p>You gain <strong>+1d</strong> to <strong>resistance</strong> rolls against supernatural threats. You get <strong>+1d</strong> to healing rolls when you have supernatural harm.</p>"
+      "name": "Посвячені",
+      "description": "<p>Ви отримуєте <strong>+1к</strong> до <strong>перевірок опору</strong> надприродним силам. Ви отримуєте <strong>+1к</strong> до перевірок одужання від надприродної шкоди.</p>"
     },
     "The Good Stuff": {
-      "name": "The Good Stuff",
-      "description": "<p>Your merchandise is exquisite. The product <strong>quality</strong> is equal to your <strong>Tier +2</strong>. When you deal with a crew or faction, the GM will tell you who among them is hooked on your product (one, a few, many, or all).</p><p><em>The quality of your product might be used for a fortune roll to find out how impressed a potential client is, to find out how enthralled or incapacitated a user is in their indulgence of it, to discover if a strange variation has side-effects, etc.</em></p>"
+      "name": "Якісна продукція",
+      "description": "<p>Ваш товар неперевершений. <strong>Якість</strong> продукції відповідає вашому <strong>Рангу +2</strong>. Коли ви будете укладати угоду з іншою ватагою чи фракцією, Майстер повідомить вам, хто з них підсів на ваш товар (хтось один, кілька людей, багато хто чи всі).</p><p><em>Якість вашого продукту можна додавати до перевірок на удачу, щоб з’ясувати, наскільки вражений потенційний клієнт, наскільки сильно він підсів на товар, чи є у продукції побічні ефекти тощо.</em></p>"
     },
     "Door Kickers": {
-      "name": "Door Kickers",
-      "description": "<p>When you execute an assault plan, take <strong>+1d</strong> to the <strong>engagement</strong> roll.</p><p><em>This ability applies when the goal is to attack an enemy. It doesn’t apply to other operations you attempt that happen to involve fighting.</em></p>"
+      "name": "Напролом",
+      "description": "<p>Провертаючи план нападу, ви отримуєте <strong>+1к</strong> до <strong>перевірок ситуації</strong>.</p><p><em>Ця здатність застосовується, коли метою діла є атака на ворога. Вона не впливає на діла з іншою метою, навіть якщо в них може трапитися бійка.</em></p>"
     },
     "Ghost Market": {
-      "name": "Ghost Market",
-      "description": "<p>Through arcane ritual or hard-won experience, you have discovered how to prepare your product for sale to ghosts and/or demons. <em>They do not pay in coin. What do they pay with?</em></p><p><em>The GM will certainly have an idea about how your strange new clients pay, but jump in with your own ideas, too! This ability is usually a big shift in the game, so talk it out and come up with something that everyone is excited about. If it’s a bit mysterious and uncertain, that’s good. You have more to explore that way.</em></p>"
+      "name": "Надприродні товари",
+      "description": "<p>Завдяки важкому випробуванню або магічному ритуалу ви дізналися, як змінити свій товар таким чином, щоб він зацікавив примар або демонів. Вони не розплачуються <strong>золотими</strong>. <em>Чим же тоді?</em></p><p><em>Майстер знає, чим можуть розплачуватися ваші нові клієнти, але не бійтеся висловити власні ідеї! Ця здібність може докорінно змінити гру, тому обговоріть її та придумайте варіант, який всім сподобається. Якщо вийде щось загадкове й не до кінця зрозуміле, це навіть добре. Буде ще одна таємниця, яку доведеться розкрити.</em></p>"
     },
     "Forged in the Fire": {
-      "name": "Forged in the Fire",
-      "description": "<p>Each PC has been toughened by cruel experience. You get <strong>+1d</strong> to <strong>resistance</strong> rolls.</p><p><em>This ability applies to PCs in the crew. It doesn’t confer any special toughness to your cohorts.</em></p>"
+      "name": "Викувані у вогні",
+      "description": "<p>Кожен ПГ загартований жорстоким випробуванням. Ви отримуєте <strong>+1к</strong> до <strong>перевірок опору</strong>.</p><p><em>Ця здібність стосується лише ПГ ватаги й не поширюється на ваші когорти.</em></p>"
     },
     "Ghost Passage": {
-      "name": "Ghost Passage",
-      "description": "<p>From harsh experience or occult ritual, all crew members are immune to possession by spirits, but may choose to “carry” a ghost as a passenger within their body.</p><p><em>What do you do to “carry” a spirit? Must the spirit consent, or can you use this ability to trap an unwilling spirit within?</em></p>"
+      "name": "Примарний пасажир",
+      "description": "<p>Усі ватажани мають імунітет до одержимості духами, але за бажанням можуть «переносити» примар у своєму тілі як пасажирів.</p><p><em>Що наділило вас цією здібністю? Дух має дати свою згоду на це чи ви можете, завдяки своїй здібності, заманити його в пастку проти волі?</em></p>"
     }
   }
 }
