@@ -1,5 +1,5 @@
 {
-  "label": "Factions",
+  "label": "Фракції",
   "mapping": {
     "summary": "system.summary",
     "lair": "system.lair.value",
@@ -10,14 +10,14 @@
     "name": "name"
   },
   "folders": {
-    "Institutions": "Institutions",
-    "Labor & Trade": "Labor & Trade",
-    "The Fringe": "The Fringe",
-    "Underworld": "Underworld"
+    "Institutions": "Інституції",
+    "Labor & Trade": "Роботяги й торговці",
+    "The Fringe": "Маргінали",
+    "Underworld": "Злочинний світ"
   },
   "entries": {
     "Leviathan Hunters": {
-      "name": "Leviathan Hunters",
+      "name": "Мисливці на левіафанів",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -26,7 +26,7 @@
       "description": ""
     },
     "The Church of Ecstasy": {
-      "name": "The Church of Ecstasy",
+      "name": "Церква екстазу",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -35,7 +35,7 @@
       "description": ""
     },
     "The Hive": {
-      "name": "The Hive",
+      "name": "Рій",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -44,7 +44,7 @@
       "description": ""
     },
     "Cabbies": {
-      "name": "Cabbies",
+      "name": "Погоничі",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -53,7 +53,7 @@
       "description": ""
     },
     "Laborers": {
-      "name": "Laborers",
+      "name": "Робітники",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -62,7 +62,7 @@
       "description": ""
     },
     "The Silver Nails": {
-      "name": "The Silver Nails",
+      "name": "Срібні цвяхи",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -71,7 +71,7 @@
       "description": ""
     },
     "Iruvian Consulate": {
-      "name": "Iruvian Consulate",
+      "name": "Ірувійське консульство",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -80,7 +80,7 @@
       "description": ""
     },
     "The Forgotten Gods": {
-      "name": "The Forgotten Gods",
+      "name": "Забуті боги",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -89,7 +89,7 @@
       "description": ""
     },
     "Rail Jacks": {
-      "name": "Rail Jacks",
+      "name": "Домкратники",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -98,7 +98,7 @@
       "description": ""
     },
     "The Horde": {
-      "name": "The Horde",
+      "name": "Орда",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -107,7 +107,7 @@
       "description": ""
     },
     "Bluecoats": {
-      "name": "Bluecoats",
+      "name": "Сині мундири",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -116,7 +116,7 @@
       "description": ""
     },
     "The Dimmer Sisters": {
-      "name": "The Dimmer Sisters",
+      "name": "Сестри Морок",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -125,7 +125,7 @@
       "description": ""
     },
     "Servants": {
-      "name": "Servants",
+      "name": "Слуги",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -134,7 +134,7 @@
       "description": ""
     },
     "The Red Sashes": {
-      "name": "The Red Sashes",
+      "name": "Червоні пояси",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -143,7 +143,7 @@
       "description": ""
     },
     "The Crows": {
-      "name": "The Crows",
+      "name": "Ворони",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -152,7 +152,7 @@
       "description": ""
     },
     "The Weeping Lady": {
-      "name": "The Weeping Lady",
+      "name": "Плакальниця",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -161,7 +161,7 @@
       "description": ""
     },
     "Gondoliers": {
-      "name": "Gondoliers",
+      "name": "Гондольєри",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -170,7 +170,7 @@
       "description": ""
     },
     "Skovlander Refugees": {
-      "name": "Skovlander Refugees",
+      "name": "Сковланські біженці",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -179,7 +179,7 @@
       "description": ""
     },
     "The Lampblacks": {
-      "name": "The Lampblacks",
+      "name": "Кіптярники",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -188,7 +188,7 @@
       "description": ""
     },
     "The Lost": {
-      "name": "The Lost",
+      "name": "Пропащі",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -197,7 +197,7 @@
       "description": ""
     },
     "Deathlands Scavengers": {
-      "name": "Deathlands Scavengers",
+      "name": "Мародери мертвоземелля",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -206,7 +206,7 @@
       "description": ""
     },
     "Cyphers": {
-      "name": "Cyphers",
+      "name": "Шифри",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -215,7 +215,7 @@
       "description": ""
     },
     "Ironhook Prison": {
-      "name": "Ironhook Prison",
+      "name": "В’язниця «Залізний гак»",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -224,7 +224,7 @@
       "description": ""
     },
     "The Circle of Flame": {
-      "name": "The Circle of Flame",
+      "name": "Полум’яне коло",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -233,7 +233,7 @@
       "description": ""
     },
     "Skovlan Consulate": {
-      "name": "Skovlan Consulate",
+      "name": "Сковланське консульство",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -242,7 +242,7 @@
       "description": ""
     },
     "The Reconciled": {
-      "name": "The Reconciled",
+      "name": "Примирені",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -251,7 +251,7 @@
       "description": ""
     },
     "Sparkwrights": {
-      "name": "Sparkwrights",
+      "name": "Іскротворці",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -260,7 +260,7 @@
       "description": ""
     },
     "The Fog Hounds": {
-      "name": "The Fog Hounds",
+      "name": "Туманні гончаки",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -269,7 +269,7 @@
       "description": ""
     },
     "Dagger Isles Consulate": {
-      "name": "Dagger Isles Consulate",
+      "name": "Консульство Кинджальних островів",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -278,7 +278,7 @@
       "description": ""
     },
     "Lord Scurlock": {
-      "name": "Lord Scurlock",
+      "name": "Лорд Скарлок",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -287,7 +287,7 @@
       "description": ""
     },
     "Sailors": {
-      "name": "Sailors",
+      "name": "Моряки",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -296,7 +296,7 @@
       "description": ""
     },
     "The Brigade": {
-      "name": "The Brigade",
+      "name": "Бригада",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -305,7 +305,7 @@
       "description": ""
     },
     "The Gray Cloaks": {
-      "name": "The Gray Cloaks",
+      "name": "Сірі плащі",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -314,7 +314,7 @@
       "description": ""
     },
     "The Grinders": {
-      "name": "The Grinders",
+      "name": "Дробителі",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -323,7 +323,7 @@
       "description": ""
     },
     "The Unseen": {
-      "name": "The Unseen",
+      "name": "Незримі",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -332,7 +332,7 @@
       "description": ""
     },
     "Ink Rakes": {
-      "name": "Ink Rakes",
+      "name": "Чорнильні гребачі",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -341,7 +341,7 @@
       "description": ""
     },
     "The Path of Echoes": {
-      "name": "The Path of Echoes",
+      "name": "Шлях відголосів",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -350,7 +350,7 @@
       "description": ""
     },
     "Dockers": {
-      "name": "Dockers",
+      "name": "Докери",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -359,7 +359,7 @@
       "description": ""
     },
     "The Foundation": {
-      "name": "The Foundation",
+      "name": "Основоположники",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -368,7 +368,7 @@
       "description": ""
     },
     "Imperial Military": {
-      "name": "Imperial Military",
+      "name": "Імперська армія",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -377,7 +377,7 @@
       "description": ""
     },
     "City Council": {
-      "name": "City Council",
+      "name": "Рада",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -386,7 +386,7 @@
       "description": ""
     },
     "Inspectors": {
-      "name": "Inspectors",
+      "name": "Інспектори",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -395,7 +395,7 @@
       "description": ""
     },
     "Ulf Ironborn": {
-      "name": "Ulf Ironborn",
+      "name": "Ульф Залізороджений",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -404,7 +404,7 @@
       "description": ""
     },
     "The Wraiths": {
-      "name": "The Wraiths",
+      "name": "Фантоми",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -413,7 +413,7 @@
       "description": ""
     },
     "Severosi Consulate": {
-      "name": "Severosi Consulate",
+      "name": "Североське консульство",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -422,7 +422,7 @@
       "description": ""
     },
     "Ministry of Preservation": {
-      "name": "Ministry of Preservation",
+      "name": "Міністерство збереження",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -431,7 +431,7 @@
       "description": ""
     },
     "The Billhooks": {
-      "name": "The Billhooks",
+      "name": "Патрачі",
       "summary": "",
       "lair": "",
       "assets": "",
@@ -440,7 +440,7 @@
       "description": ""
     },
     "Spirit Wardens": {
-      "name": "Spirit Wardens",
+      "name": "Наглядачі",
       "summary": "",
       "lair": "",
       "assets": "",

@@ -22,7 +22,7 @@
     "Smugglers": {
       "name": "Smugglers",
       "summary": "Contraband transporters",
-      "exp": "You earn xp when you execute a smuggling operation or acquire new clients or contraband sources.",
+      "exp": "You execute a smuggling operation or acquire new clients or contraband sources.",
       "description": "<p>Illicit goods are the life-blood of Duskwall—both for those who consume them and those who profit from their taxation and criminalization. Smugglers keep the city alive. Instead of hunting grounds, you have <em><strong>cargo types</strong></em> that you use for your operations.</p><p><em>What kind of contraband do you transport? Do you have any rules about what you will or won’t carry?</em></p><h3>Cargo Types</h3><p>Choose a favored cargo type:</p><ul><li><p><strong>Arcane/Weird</strong>: Spirit essences, ghosts, cult materials.</p></li><li><p><strong>Arms</strong>: Restricted military weapons, heavy ordnance, explosives.</p></li><li><p><strong>Contraband</strong>: High-tax luxuries, drugs, banned art, etc.</p></li><li><p><strong>Passengers</strong>: People or livestock traveling in secret.</p></li></ul>"
     },
     "Bravos": {
