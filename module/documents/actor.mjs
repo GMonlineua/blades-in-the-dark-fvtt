@@ -320,7 +320,7 @@ export default class BitdActor extends Actor {
       uuid: actor.uuid,
       name: actor.name,
     };
-    if (actor.type === "faction") link.tier = actor.system.tier.value;
+    if (actor.type === "faction" || actor.type === "crew") link.tier = actor.system.tier.value;
     if (actor.type === "clock") link.progress = actor.system.progress;
     container.push(link);
 

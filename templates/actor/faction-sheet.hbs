@@ -18,12 +18,6 @@
             {{selectOptions config.factionTypes selected=system.type localize=true}}
           </select>
         </div>
-        <div class="prop">
-          <label class="prop-label" for="system.status">{{localize 'BITD.Faction.Status.Title'}}:</label>
-          <select class="clear-select" name="system.status">
-            {{selectOptions config.statusTypes selected=system.status localize=true}}
-          </select>
-        </div>
         <input class="prop summary all-width" name="system.summary" type="text" value="{{system.summary}}" placeholder="{{localize 'BITD.Summary'}}" data-dtype="String">
       </div>
     </div>

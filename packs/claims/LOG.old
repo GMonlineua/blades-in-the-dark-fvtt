@@ -1,8 +1,3 @@
-2026/05/14-22:30:58.350601 7fa636dfc6c0 Recovering log #321
-2026/05/14-22:30:58.354563 7fa636dfc6c0 Delete type=3 #319
-2026/05/14-22:30:58.354619 7fa636dfc6c0 Delete type=0 #321
-2026/05/14-22:31:48.281670 7fa58d89f6c0 Level-0 table #326: started
-2026/05/14-22:31:48.281686 7fa58d89f6c0 Level-0 table #326: 0 bytes OK
-2026/05/14-22:31:48.285239 7fa58d89f6c0 Delete type=0 #324
-2026/05/14-22:31:48.287446 7fa58d89f6c0 Manual compaction at level-0 from '!folders!2atnPiYyccRh97tR' @ 72057594037927935 : 1 .. '!items!yb5pmc2SsAd1LJnD' @ 0 : 0; will stop at (end)
-2026/05/14-22:31:48.289559 7fa58d89f6c0 Manual compaction at level-1 from '!folders!2atnPiYyccRh97tR' @ 72057594037927935 : 1 .. '!items!yb5pmc2SsAd1LJnD' @ 0 : 0; will stop at (end)
+2026/05/22-14:11:11.718832 7f05beffe6c0 Recovering log #328
+2026/05/22-14:11:11.722959 7f05beffe6c0 Delete type=0 #328
+2026/05/22-14:11:11.723019 7f05beffe6c0 Delete type=3 #327

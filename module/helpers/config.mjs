@@ -20,10 +20,12 @@ export const BITD = {
       scoundrel: "members",
       npc: "contacts",
       faction: "relatedFactions",
+      crew: "relatedFactions",
       clock: "goals",
     },
     faction: {
       faction: "relatedFactions",
+      crew: "relatedFactions",
       npc: "members",
       clock: "goals",
     },
