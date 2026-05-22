@@ -6,12 +6,12 @@
     "name": "name"
   },
   "folders": {
-    "Assassins": "Assassins",
-    "Bravos": "Bravos",
-    "Cult": "Cult",
-    "Hawkers": "Hawkers",
-    "Shadows": "Shadows",
-    "Smugglers": "Smugglers"
+    "Assassins": "Убивці",
+    "Bravos": "Зухвальців",
+    "Cult": "Культисти",
+    "Hawkers": "Перекупи",
+    "Shadows": "Нишпорки",
+    "Smugglers": "Контрабандисти"
   },
   "entries": {
     "Street Fence": {
