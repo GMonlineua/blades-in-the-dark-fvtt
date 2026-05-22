@@ -94,6 +94,8 @@ export class BitdActorSheet extends foundry.appv1.sheets.ActorSheet {
   activateListeners(html) {
     super.activateListeners(html);
 
+
+
     // Count dot
     html.find(".value-step-block").each(function () {
       const value = Number(this.dataset.value);
@@ -120,14 +122,25 @@ export class BitdActorSheet extends foundry.appv1.sheets.ActorSheet {
     });
 
     // Calculate text area height
-    html.find("textarea.auto-grow").each(function () {
-      this.style.height = "auto";
-      this.style.height = this.scrollHeight + 5 + "px";
-    });
+    const resizeAutoGrow = function () {
+      if (this.offsetParent !== null) {
+        this.style.height = "auto";
+        this.style.height = this.scrollHeight + 5 + "px";
+      }
+    };
 
-    html.find("textarea.auto-grow").on("input", function () {
-      this.style.height = "auto";
-      this.style.height = this.scrollHeight + 5 + "px";
+    setTimeout(() => {
+      html.find("textarea.auto-grow").each(resizeAutoGrow);
+    }, 0);
+
+    // Resize on user input
+    html.find("textarea.auto-grow").on("input", resizeAutoGrow);
+
+    // Resize when switching tabs
+    html.find(".sheet-tabs .item").on("click", () => {
+      setTimeout(() => {
+        html.find("textarea.auto-grow").each(resizeAutoGrow);
+      }, 0);
     });
 
     // Show item summary
