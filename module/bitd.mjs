@@ -126,7 +126,6 @@ Hooks.once("init", async function () {
   CONFIG.Scene.compendiumBanner =
     "systems/bitd/ui/compendium-banners/scene-banner.jpg";
 
-
   /* -------------------------------------------- */
   registerHandlebarsHelpers();
 
@@ -134,12 +133,10 @@ Hooks.once("init", async function () {
   return preloadHandlebarsTemplates();
 });
 
-
 /* -------------------------------------------- */
-Hooks.once('babele.init', (babele) => {
-    babele.setSystemTranslationsDir("compendium");
+Hooks.once("babele.init", (babele) => {
+  babele.setSystemTranslationsDir("compendium");
 });
-
 
 // Preprocess chat message before it is created hook
 Hooks.on("preCreateChatMessage", preprocessChatMessage);

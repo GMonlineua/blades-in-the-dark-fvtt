@@ -8,9 +8,7 @@ export class BitdPlaybookSheet extends BitdItemSheet {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      dragDrop: [
-        { dragSelector: ".item", dropSelector: ".playbook" },
-      ],
+      dragDrop: [{ dragSelector: ".item", dropSelector: ".playbook" }],
     });
   }
 
@@ -34,7 +32,8 @@ export class BitdPlaybookSheet extends BitdItemSheet {
     super._onDrop(event);
 
     if (!this.isEditable) return;
-    const data = foundry.applications.ux.TextEditor.implementation.getDragEventData(event);
+    const data =
+      foundry.applications.ux.TextEditor.implementation.getDragEventData(event);
 
     if (data.type === "Item") {
       this.item.addLinkedItem(data);

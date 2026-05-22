@@ -69,7 +69,7 @@ export default class BitdActor extends Actor {
         }
         this._debouncedClockUpdate();
       }
-    } else if (this.type === "scoundrel" || this.type === "npc" ) {
+    } else if (this.type === "scoundrel" || this.type === "npc") {
       if (changed?.system?.names !== undefined) {
         this._onUpdateName();
       }
@@ -268,9 +268,9 @@ export default class BitdActor extends Actor {
 
   async _onUpdateName() {
     if (this.system.names.useAlias && this.system.names.alias) {
-      await this.update({ name : this.system.names.alias });
+      await this.update({ name: this.system.names.alias });
     } else if (this.system.names.real) {
-      await this.update({ name : this.system.names.real });
+      await this.update({ name: this.system.names.real });
     }
   }
 

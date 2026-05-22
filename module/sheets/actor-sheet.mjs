@@ -94,8 +94,6 @@ export class BitdActorSheet extends foundry.appv1.sheets.ActorSheet {
   activateListeners(html) {
     super.activateListeners(html);
 
-
-
     // Count dot
     html.find(".value-step-block").each(function () {
       const value = Number(this.dataset.value);
