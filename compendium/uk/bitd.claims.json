@@ -5,6 +5,14 @@
     "effect": "system.effect",
     "name": "name"
   },
+  "folders": {
+    "Assassins": "Assassins",
+    "Bravos": "Bravos",
+    "Cult": "Cult",
+    "Hawkers": "Hawkers",
+    "Shadows": "Shadows",
+    "Smugglers": "Smugglers"
+  },
   "entries": {
     "Street Fence": {
       "name": "Вуличний скупник",
