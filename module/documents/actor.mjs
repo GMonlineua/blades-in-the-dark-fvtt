@@ -147,7 +147,7 @@ export default class BitdActor extends Actor {
 
   async _setClockImage() {
     const progress = this.system.progress;
-    const imagePath = `systems/bitd/assets/progress-clocks/black/size-${progress.max}/progress-${progress.value}.svg`;
+    const imagePath = `systems/bitd/ui/clocks/size-${progress.max}/progress-${progress.value}.svg`;
 
     // Update actor avatar
     const actorUpdates = {};

@@ -81,7 +81,7 @@
   }
 
   .value-tooth {
-    background-image: url("../assets/tooth/tooth-black-white.svg");
+    background-image: url("../ui/tooth/tooth-black-white.svg");
     background-position: center;
     background-size: 14px;
     background-repeat: no-repeat;
@@ -90,36 +90,36 @@
   }
 
   .value-tooth.active {
-    background-image: url("../assets/tooth/tooth-black.svg");
+    background-image: url("../ui/tooth/tooth-black.svg");
   }
 
   .red-tooth.active {
-    background-image: url("../assets/tooth/tooth-black-red.svg");
+    background-image: url("../ui/tooth/tooth-black-red.svg");
   }
 
   .simple-tooth,
   .simple-red-tooth {
-    background-image: url("../assets/tooth/tooth-white.svg");
+    background-image: url("../ui/tooth/tooth-white.svg");
     background-size: 9px;
     width: 9px;
     height: 30px;
   }
 
   .simple-tooth.active {
-    background-image: url("../assets/tooth/tooth-black.svg");
+    background-image: url("../ui/tooth/tooth-black.svg");
   }
 
   .simple-red-tooth.active {
-    background-image: url("../assets/tooth/tooth-red.svg");
+    background-image: url("../ui/tooth/tooth-red.svg");
   }
 
   .small-tooth {
-    background-image: url("../assets/tooth/tooth-small-grey.svg");
+    background-image: url("../ui/tooth/tooth-small-grey.svg");
     height: 20px;
   }
 
   .small-tooth.active {
-    background-image: url("../assets/tooth/tooth-small-black.svg");
+    background-image: url("../ui/tooth/tooth-small-black.svg");
   }
 
   .value-box {
