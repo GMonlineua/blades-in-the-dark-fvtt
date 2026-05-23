@@ -12,11 +12,6 @@ export default class FactionData extends foundry.abstract.TypeDataModel {
         max: new fields.NumberField({ requiredPositiveInteger, initial: 5 }),
       }),
       hold: new fields.StringField({ initial: "strong" }),
-      status: new fields.StringField({
-        required: true,
-        nullable: false,
-        initial: "neutral",
-      }),
       type: new fields.StringField(),
       summary: new fields.StringField(),
 

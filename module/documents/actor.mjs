@@ -69,7 +69,7 @@ export default class BitdActor extends Actor {
         }
         this._debouncedClockUpdate();
       }
-    } else if (this.type === "scoundrel" || this.type === "npc" ) {
+    } else if (this.type === "scoundrel" || this.type === "npc") {
       if (changed?.system?.names !== undefined) {
         this._onUpdateName();
       }
@@ -147,7 +147,7 @@ export default class BitdActor extends Actor {
 
   async _setClockImage() {
     const progress = this.system.progress;
-    const imagePath = `systems/bitd/assets/progress-clocks/black/size-${progress.max}/progress-${progress.value}.svg`;
+    const imagePath = `systems/bitd/ui/clocks/size-${progress.max}/progress-${progress.value}.svg`;
 
     // Update actor avatar
     const actorUpdates = {};
@@ -268,9 +268,9 @@ export default class BitdActor extends Actor {
 
   async _onUpdateName() {
     if (this.system.names.useAlias && this.system.names.alias) {
-      await this.update({ name : this.system.names.alias });
+      await this.update({ name: this.system.names.alias });
     } else if (this.system.names.real) {
-      await this.update({ name : this.system.names.real });
+      await this.update({ name: this.system.names.real });
     }
   }
 
@@ -320,7 +320,7 @@ export default class BitdActor extends Actor {
       uuid: actor.uuid,
       name: actor.name,
     };
-    if (actor.type === "faction") link.tier = actor.system.tier.value;
+    if (actor.type === "faction" || actor.type === "crew") link.tier = actor.system.tier.value;
     if (actor.type === "clock") link.progress = actor.system.progress;
     container.push(link);
 

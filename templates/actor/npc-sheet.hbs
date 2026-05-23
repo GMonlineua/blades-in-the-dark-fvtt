@@ -31,7 +31,9 @@
       </h1>
       <div class="character-aka">
         {{#if system.names.useAlias}}
-          <label for="system.names.real">{{localize "BITD.Actor.HumanName"}}:</label>
+          <label for="system.names.real">{{localize
+              "BITD.Actor.HumanName"
+            }}:</label>
           <input
             class="clear-input"
             name="system.names.real"
@@ -40,7 +42,9 @@
             placeholder="{{localize 'BITD.Actor.HumanName'}}"
           />
         {{else}}
-          <label for="system.names.real">{{localize "BITD.Actor.Alias"}}:</label>
+          <label for="system.names.real">{{localize
+              "BITD.Actor.Alias"
+            }}:</label>
           <input
             class="clear-input"
             name="system.names.alias"
@@ -71,11 +75,11 @@
       <label for="system.names.useAlias">{{localize
           "BITD.NPC.UseAsName"
         }}:</label>
-        <input
-          type="checkbox"
-          name="system.names.useAlias"
-          {{checked system.names.useAlias}}
-        />
+      <input
+        type="checkbox"
+        name="system.names.useAlias"
+        {{checked system.names.useAlias}}
+      />
     </div>
 
     {{editor

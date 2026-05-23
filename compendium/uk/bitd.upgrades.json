@@ -4,6 +4,14 @@
     "description": "system.description",
     "name": "name"
   },
+  "folders": {
+    "Assassins": "Убивці",
+    "Bravos": "Зухвальців",
+    "Cult": "Культисти",
+    "Hawkers": "Перекупи",
+    "Shadows": "Нишпорки",
+    "Smugglers": "Контрабандисти"
+  },
   "entries": {
     "Carriage House": {
       "name": "Возівня",

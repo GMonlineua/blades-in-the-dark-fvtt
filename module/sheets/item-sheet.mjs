@@ -31,10 +31,11 @@ export class BitdItemSheet extends foundry.appv1.sheets.ItemSheet {
     this.item.loadLinkedData();
     const context = await super.getData();
 
-    context.enrichedDescription = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
-      this.object.system.description,
-      { async: true },
-    );
+    context.enrichedDescription =
+      await foundry.applications.ux.TextEditor.implementation.enrichHTML(
+        this.object.system.description,
+        { async: true },
+      );
 
     // Use a safe clone of the item data for further operations.
     const itemData = context.item;
