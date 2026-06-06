@@ -2,539 +2,500 @@
   "label": "NPCs",
   "mapping": {
     "name": "name",
-    "realName": "system.realName",
-    "aka": "system.aka",
+    "realName": "system.names.real",
+    "alias": "system.names.alias",
     "summary": "system.summary",
     "description": "system.description"
   },
   "folders": {
-    "Assassins": "Assassins",
-    "Bravos": "Bravos",
-    "Cult": "Cult",
     "Hawkers": "Hawkers",
     "Shadows": "Shadows",
     "Smugglers": "Smugglers",
-    "Cutter": "Cutter",
-    "Hound": "Hound",
-    "Leech": "Leech",
+    "Cult": "Cult",
     "Lurk": "Lurk",
+    "Hound": "Hound",
+    "Assassins": "Assassins",
     "Slide": "Slide",
-    "Spider": "Spider",
-    "Whisper": "Whisper"
+    "Bravos": "Bravos",
+    "Cutter": "Cutter",
+    "Leech": "Leech",
+    "Whisper": "Whisper",
+    "Spider": "Spider"
   },
   "entries": {
-    "Hawkers": {
-      "name": "Hawkers"
-    },
-    "Shadows": {
-      "name": "Shadows"
-    },
-    "Smugglers": {
-      "name": "Smugglers"
-    },
-    "Cult": {
-      "name": "Cult"
-    },
-    "Lurk": {
-      "name": "Lurk"
-    },
-    "Hound": {
-      "name": "Hound"
-    },
-    "Assassins": {
-      "name": "Assassins"
-    },
-    "Slide": {
-      "name": "Slide"
-    },
-    "Bravos": {
-      "name": "Bravos"
-    },
-    "Cutter": {
-      "name": "Cutter"
-    },
-    "Leech": {
-      "name": "Leech"
-    },
-    "Whisper": {
-      "name": "Whisper"
-    },
-    "Spider": {
-      "name": "Spider"
-    },
     "Augus": {
       "name": "Augus",
-      "realName": "",
-      "aka": "",
+      "realName": "Augus",
+      "alsias": "",
       "summary": "master architect",
       "description": "<p>Perhaps a good source for building schematics and historical details, or perhaps a rival who designs security measures?</p>"
     },
     "Moriya": {
       "name": "Moriya",
-      "realName": "",
-      "aka": "",
+      "realName": "Moriya",
+      "alsias": "",
       "summary": "spirit trafficker",
       "description": ""
     },
     "Steiner": {
       "name": "Steiner",
-      "realName": "",
-      "aka": "",
+      "realName": "Steiner",
+      "alsias": "",
       "summary": "assassin",
       "description": "<p>Perhaps one of your competitors, or a former partner from before you joined the crew?</p>"
     },
     "Elynn": {
       "name": "Elynn",
-      "realName": "",
-      "aka": "",
+      "realName": "Elynn",
+      "alsias": "",
       "summary": "dock worker",
       "description": "<p>Perhaps a friend who can help with the infernal paperwork of the Empire?</p>"
     },
     "Decker": {
       "name": "Decker",
       "realName": "",
-      "aka": "",
+      "alsias": "Decker",
       "summary": "anarchist",
       "description": "<p>Perhaps a client in need of the illegal tools of revolution?</p>"
     },
     "Sevoy": {
       "name": "Sevoy",
-      "realName": "",
-      "aka": "",
+      "realName": "Sevoy",
+      "alsias": "",
       "summary": "merchant lord",
       "description": "<p>Perhaps a connection to clients with deep pockets?</p>"
     },
     "Laroze": {
       "name": "Laroze",
-      "realName": "",
-      "aka": "",
+      "realName": "Laroze",
+      "alsias": "",
       "summary": "Bluecoat",
       "description": "<p>Perhaps an informant within the City Watch?</p>"
     },
     "Bazso Baz": {
       "name": "Bazso Baz",
-      "realName": "",
-      "aka": "",
+      "realName": "Bazso Baz",
+      "alsias": "",
       "summary": "gang leader",
       "description": "<p>Perhaps a paramour pursuing your affections, or perhaps a former lover, now scorned?</p>"
     },
     "Salia": {
       "name": "Salia",
-      "realName": "",
-      "aka": "",
+      "realName": "Salia",
+      "alsias": "",
       "summary": "information broker",
       "description": "<p>Perhaps a reliable contact for underworld jobs, or perhaps a former partner who sold you out?</p>"
     },
     "Quellyn": {
       "name": "Quellyn",
-      "realName": "",
-      "aka": "",
+      "realName": "Quellyn",
+      "alsias": "",
       "summary": "witch",
       "description": "<p>Perhaps a knowledgeable healer and seer, or perhaps a student of yours who left over bad blood?</p>"
     },
     "Veldren": {
       "name": "Veldren",
-      "realName": "",
-      "aka": "",
+      "realName": "Veldren",
+      "alsias": "",
       "summary": "psychonaut",
       "description": "<p>Perhaps an addict too poisoned to ever return to lucid thought, or perhaps an explorer of psychedelic realms beyond mere mortal experience?</p>"
     },
     "Lutes": {
       "name": "Lutes",
       "realName": "",
-      "aka": "",
+      "alsias": "Lutes",
       "summary": "tavern owner",
       "description": "<p>Perhaps a good source of news and gossip?</p>"
     },
     "Irimina": {
       "name": "Irimina",
-      "realName": "",
-      "aka": "",
+      "realName": "Irimina",
+      "alsias": "",
       "summary": "vicious noble",
       "description": "<p>Perhaps a potential patron for your crew?</p>"
     },
     "Dowler": {
       "name": "Dowler",
-      "realName": "",
-      "aka": "",
+      "realName": "Dowler",
+      "alsias": "",
       "summary": "explorer",
       "description": "<p>Perhaps one of the rare deathlands scavengers that survived his sentence?</p>"
     },
     "Veleris": {
       "name": "Veleris",
-      "realName": "",
-      "aka": "",
+      "realName": "Veleris",
+      "alsias": "",
       "summary": "spy",
       "description": "<p>Who does Veleris give their intelligence to?</p>"
     },
     "Rolan": {
       "name": "Rolan",
-      "realName": "",
-      "aka": "",
+      "realName": "Rolan",
+      "alsias": "",
       "summary": "drug dealer",
       "description": "<p>Perhaps a client with strong underworld ties?</p>"
     },
     "Bennett": {
       "name": "Bennett",
-      "realName": "",
-      "aka": "",
+      "realName": "Bennett",
+      "alsias": "",
       "summary": "astronomer",
       "description": ""
     },
     "Trev": {
       "name": "Trev",
-      "realName": "",
-      "aka": "",
+      "realName": "Trev",
+      "alsias": "",
       "summary": "gang boss",
       "description": "<p>Perhaps a gang that helped your crew get started?</p>"
     },
     "Gagan": {
       "name": "Gagan",
-      "realName": "",
-      "aka": "",
+      "realName": "Gagan",
+      "alsias": "",
       "summary": "academic",
       "description": ""
     },
     "Hoxley": {
       "name": "Hoxley",
-      "realName": "",
-      "aka": "",
+      "realName": "Hoxley",
+      "alsias": "",
       "summary": "smuggler",
       "description": "<p>Perhaps a friend of powerful ship captains?</p>"
     },
     "Celene": {
       "name": "Celene",
-      "realName": "",
-      "aka": "",
+      "realName": "Celene",
+      "alsias": "",
       "summary": "sentinel",
       "description": "<p>Celene is a guardian; a protector. Who does she watch over?</p>"
     },
     "Telda": {
       "name": "Telda",
-      "realName": "",
-      "aka": "",
+      "realName": "Telda",
+      "alsias": "",
       "summary": "beggar",
       "description": "<p>Perhaps a mentor who taught you your skills, or perhaps a rival sneak-thief?</p>"
     },
     "Jeren": {
       "name": "Jeren",
-      "realName": "",
-      "aka": "",
+      "realName": "Jeren",
+      "alsias": "",
       "summary": "a Bluecoat archivist",
       "description": "<p>Perhaps a double-agent within the City Watch, or perhaps an overly curious officer, interested in your crimes?</p>"
     },
     "Keller": {
       "name": "Keller",
-      "realName": "",
-      "aka": "",
+      "realName": "Keller",
+      "alsias": "",
       "summary": "blacksmith",
       "description": "<p>Perhaps a source for armaments?</p>"
     },
     "Meg": {
       "name": "Meg",
-      "realName": "",
-      "aka": "",
+      "realName": "Meg",
+      "alsias": "",
       "summary": "pit-fighter",
       "description": "<p>Perhaps a trainer, or perhaps a fellow extortion artist?</p>"
     },
     "Chael": {
       "name": "Chael",
-      "realName": "",
-      "aka": "",
+      "realName": "Chael",
+      "alsias": "",
       "summary": "vicious thug",
       "description": "<p>Perhaps a member of a gang that you were in before the current crew, or an independent operator who’s been in your way before?</p>"
     },
     "Karlos": {
       "name": "Karlos",
-      "realName": "",
-      "aka": "",
+      "realName": "Karlos",
+      "alsias": "",
       "summary": "bounty hunter",
       "description": "<p>Perhaps a source for off-book government “wet work?”</p>"
     },
     "Malista": {
       "name": "Malista",
-      "realName": "",
-      "aka": "",
+      "realName": "Malista",
+      "alsias": "",
       "summary": "priestess",
       "description": "<p>To what forgotten god does Malista give her service?</p>"
     },
     "Mercy": {
       "name": "Mercy",
       "realName": "",
-      "aka": "",
+      "alsias": "Mercy",
       "summary": "cold killer",
       "description": "<p>Perhaps an assassin for hire, or a particularly deadly underworld scoundrel?</p>"
     },
     "Flint": {
       "name": "Flint",
       "realName": "",
-      "aka": "",
+      "alsias": "Flint",
       "summary": "spirit trafficker",
       "description": "<p>Perhaps a good source for unusual arcane supplies, or perhaps a rival in the occult world of Duskwall?</p>"
     },
     "Nyryx": {
       "name": "Nyryx",
-      "realName": "",
-      "aka": "",
+      "realName": "Nyryx",
+      "alsias": "",
       "summary": "prostitute",
       "description": "<p>Perhaps an informant to spark potential marks, or perhaps a rival manipulator?</p>"
     },
     "Frake": {
       "name": "Frake",
-      "realName": "",
-      "aka": "",
+      "realName": "Frake",
+      "alsias": "",
       "summary": "locksmith",
       "description": "<p>Perhaps an expert that you go to for consultations, or perhaps a master who creates locks to defeat you?</p>"
     },
     "Jul": {
       "name": "Jul",
-      "realName": "",
-      "aka": "",
+      "realName": "Jul",
+      "alsias": "",
       "summary": "blood dealer",
       "description": "<p>What other strange clients do they have?</p>"
     },
     "Conway": {
       "name": "Conway",
-      "realName": "",
-      "aka": "",
+      "realName": "Conway",
+      "alsias": "",
       "summary": "Bluecoat",
       "description": "<p>Perhaps an informant within the City Watch?</p>"
     },
     "Roslyn Kellis": {
       "name": "Roslyn Kellis",
-      "realName": "",
-      "aka": "",
+      "realName": "Roslyn Kellis",
+      "alsias": "",
       "summary": "noble",
       "description": "<p>Perhaps an old friend and confidant, or perhaps one of the victims of your espionage, bent on revenge?</p>"
     },
     "Anya": {
       "name": "Anya",
-      "realName": "",
-      "aka": "",
+      "realName": "Anya",
+      "alsias": "",
       "summary": "dilettante",
       "description": "<p>Perhaps a well-connected socialite?</p>"
     },
     "Lydra": {
       "name": "Lydra",
-      "realName": "",
-      "aka": "",
+      "realName": "Lydra",
+      "alsias": "",
       "summary": "deal broker",
       "description": "<p>Perhaps she acts as a liaison with your clients?</p>"
     },
     "Sera": {
       "name": "Sera",
-      "realName": "",
-      "aka": "",
+      "realName": "Sera",
+      "alsias": "",
       "summary": "arms dealer",
       "description": "<p>Perhaps a supplier with military access?</p>"
     },
     "Bryl": {
       "name": "Bryl",
-      "realName": "",
-      "aka": "",
+      "realName": "Bryl",
+      "alsias": "",
       "summary": "drug dealer",
       "description": "<p>Perhaps a reliable underworld contact, or perhaps an old partner with a grudge?</p>"
     },
     "Scurlock": {
       "name": "Scurlock",
-      "realName": "",
-      "aka": "",
+      "realName": "Scurlock",
+      "alsias": "",
       "summary": "vampire",
       "description": "<p>Perhaps a mentor, or perhaps a deadly rival?</p>"
     },
     "Sawtooth": {
       "name": "Sawtooth",
       "realName": "",
-      "aka": "",
+      "alsias": "Sawtooth",
       "summary": "physicker",
       "description": "<p>Perhaps a buddy from the war, or perhaps a butcher who botched your treatment?</p>"
     },
     "Grace": {
       "name": "Grace",
       "realName": "",
-      "aka": "",
+      "alsias": "Grace",
       "summary": "extortionist",
       "description": "<p>Perhaps a former partner in thuggery, or a competitor on the scene?</p>"
     },
     "Marlane": {
       "name": "Marlane",
-      "realName": "",
-      "aka": "",
+      "realName": "Marlane",
+      "alsias": "",
       "summary": "pugilist",
       "description": "<p>Perhaps a pit fighter down at the docks, or a boxing coach who trained you?</p>"
     },
     "Exeter": {
       "name": "Exeter",
-      "realName": "",
-      "aka": "",
+      "realName": "Exeter",
+      "alsias": "",
       "summary": "Spirit Warden",
       "description": "<p>Perhaps a double-agent informant for you?</p>"
     },
     "Casta": {
       "name": "Casta",
-      "realName": "",
-      "aka": "",
+      "realName": "Casta",
+      "alsias": "",
       "summary": "bounty hunter",
       "description": "<p>Perhaps a mentor who trained you in the deadly arts, or vice versa?</p>"
     },
     "Eckerd": {
       "name": "Eckerd",
-      "realName": "",
-      "aka": "",
+      "realName": "Eckerd",
+      "alsias": "",
       "summary": "corpse thief",
       "description": "<p>Perhaps a good source of “raw materials”?</p>"
     },
     "Stazia": {
       "name": "Stazia",
-      "realName": "",
-      "aka": "",
+      "realName": "Stazia",
+      "alsias": "",
       "summary": "apothecary",
       "description": "<p>Perhaps a former scoundrel turned to legitimate alchemical business, or perhaps the other way around?</p>"
     },
     "Rigney": {
       "name": "Rigney",
-      "realName": "",
-      "aka": "",
+      "realName": "Rigney",
+      "alsias": "",
       "summary": "tavern owner",
       "description": "<p>Perhaps a good source of news and gossip?</p>"
     },
     "Adikin": {
       "name": "Adikin",
-      "realName": "",
-      "aka": "",
+      "realName": "Adikin",
+      "alsias": "",
       "summary": "occultist",
       "description": ""
     },
     "Adelaide Phroaig": {
       "name": "Adelaide Phroaig",
-      "realName": "",
-      "aka": "",
+      "realName": "Adelaide Phroaig",
+      "alsias": "",
       "summary": "noble",
       "description": "<p>Perhaps a source for scores among the elite?</p>"
     },
     "Marlo": {
       "name": "Marlo",
-      "realName": "",
-      "aka": "",
+      "realName": "Marlo",
+      "alsias": "",
       "summary": "gang boss",
       "description": "<p>Perhaps a good partner with a gang of tough thugs?</p>"
     },
     "Tomas": {
       "name": "Tomas",
-      "realName": "",
-      "aka": "",
+      "realName": "Tomas",
+      "alsias": "",
       "summary": "physicker",
       "description": "<p>Perhaps a former thug turned doctor?</p>"
     },
     "Darmot": {
       "name": "Darmot",
-      "realName": "",
-      "aka": "",
+      "realName": "Darmot",
+      "alsias": "",
       "summary": "Bluecoat",
       "description": "<p>Perhaps a savvy officer that’s busted you many times, or perhaps an old friend who turned to the law instead of crime?</p>"
     },
     "Setarra": {
       "name": "Setarra",
-      "realName": "",
-      "aka": "",
+      "realName": "Setarra",
+      "alsias": "",
       "summary": "demon",
       "description": "<p>Perhaps your partner in a dark endeavor, or perhaps an entity you once controlled, seeking vengeance?</p>"
     },
     "Rolan Wott": {
       "name": "Rolan Wott",
-      "realName": "",
-      "aka": "",
+      "realName": "Rolan Wott",
+      "alsias": "",
       "summary": "magistrate",
       "description": "<p>Perhaps with a feckless son in Doskvol Academy, always in need of rescuing?</p>"
     },
     "Nyelle": {
       "name": "Nyelle",
-      "realName": "",
-      "aka": "",
+      "realName": "Nyelle",
+      "alsias": "",
       "summary": "spirit trafficker",
       "description": "<p>Perhaps a supplier for the strangest of cargo?</p>"
     },
     "Melvir": {
       "name": "Melvir",
-      "realName": "",
-      "aka": "",
+      "realName": "Melvir",
+      "alsias": "",
       "summary": "physicker",
       "description": "<p>Perhaps an old friend who’s patched you up many times, or someone to whom you’ve sent too many victims?</p>"
     },
     "Riven": {
       "name": "Riven",
       "realName": "",
-      "aka": "",
+      "alsias": "Riven",
       "summary": "chemist",
       "description": "<p>Perhaps a good source of medicines for recovery?</p>"
     },
     "Walker": {
       "name": "Walker",
       "realName": "",
-      "aka": "",
+      "alsias": "Walker",
       "summary": "ward boss",
       "description": "<p>Perhaps an employer who often needs violent work?</p>"
     },
     "Klyra": {
       "name": "Klyra",
-      "realName": "",
-      "aka": "",
+      "realName": "Klyra",
+      "alsias": "",
       "summary": "tavern owner",
       "description": "<p>Perhaps a good source for gossip?</p>"
     },
     "Harker": {
       "name": "Harker",
       "realName": "",
-      "aka": "",
+      "alsias": "Harker",
       "summary": "jail bird",
       "description": "<p>Perhaps a friend who you helped when you were in prison, or perhaps an enemy who hurt you when you served your time?</p>"
     },
     "Esme": {
       "name": "Esme",
-      "realName": "",
-      "aka": "",
+      "realName": "Esme",
+      "alsias": "",
       "summary": "tavern owner",
       "description": "<p>Perhaps a good source of news and gossip?</p>"
     },
     "Petra": {
       "name": "Petra",
-      "realName": "",
-      "aka": "",
+      "realName": "Petra",
+      "alsias": "",
       "summary": "city clerk",
       "description": "<p>Perhaps a good source of information?</p>"
     },
     "Hutchins": {
       "name": "Hutchins",
-      "realName": "",
-      "aka": "",
+      "realName": "Hutchins",
+      "alsias": "",
       "summary": "antiquarian",
       "description": ""
     },
     "Amancio": {
       "name": "Amancio",
-      "realName": "",
-      "aka": "",
+      "realName": "Amancio",
+      "alsias": "",
       "summary": "deal broker",
       "description": "<p>Perhaps a well-connected underworld figure, famous for their neutrality?</p>"
     },
     "Fitz": {
       "name": "Fitz",
       "realName": "",
-      "aka": "",
+      "alsias": "Fitz",
       "summary": "collector",
       "description": "<p>Perhaps an aficionado of strange artifacts?</p>"
     },
     "Jennah": {
       "name": "Jennah",
-      "realName": "",
-      "aka": "",
+      "realName": "Jennah",
+      "alsias": "",
       "summary": "servant",
       "description": "<p>Perhaps a good source for gossip among the upper class?</p>"
     },
     "Mateas Kline": {
       "name": "Mateas Kline",
-      "realName": "",
-      "aka": "",
+      "realName": "Mateas Kline",
+      "alsias": "",
       "summary": "noble",
       "description": ""
     }
