@@ -2,7 +2,7 @@
   "id": "bitd",
   "title": "Blades in the Dark",
   "description": "Blades in the Dark game system by GMonline",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "compatibility": {
     "minimum": "13",
     "verified": "14.363",
@@ -21,12 +21,8 @@
       "discord": "kemrian"
     }
   ],
-  "esmodules": [
-    "module/bitd.mjs"
-  ],
-  "styles": [
-    "css/bitd.css"
-  ],
+  "esmodules": ["module/bitd.mjs"],
+  "styles": ["css/bitd.css"],
   "languages": [
     {
       "lang": "en",
