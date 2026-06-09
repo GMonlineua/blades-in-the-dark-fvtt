@@ -2,540 +2,501 @@
   "label": "НІПи",
   "mapping": {
     "name": "name",
-    "realName": "system.realName",
-    "aka": "system.aka",
+    "realName": "system.names.real",
+    "alias": "system.names.alias",
     "summary": "system.summary",
     "description": "system.description"
   },
   "folders": {
-    "Assassins": "Убивці",
-    "Bravos": "Зухвальців",
-    "Cult": "Культисти",
     "Hawkers": "Перекупи",
     "Shadows": "Нишпорки",
     "Smugglers": "Контрабандисти",
-    "Cutter": "Головоріз",
-    "Hound": "Гончак",
-    "Leech": "Мастак",
+    "Cult": "Культисти",
     "Lurk": "Пройда",
+    "Hound": "Гончак",
+    "Assassins": "Убивці",
     "Slide": "Лицедій",
-    "Spider": "Комбінатор",
-    "Whisper": "Містик"
+    "Bravos": "Зухвальців",
+    "Cutter": "Головоріз",
+    "Leech": "Мастак",
+    "Whisper": "Містик",
+    "Spider": "Комбінатор"
   },
   "entries": {
-    "Hawkers": {
-      "name": "Перекупи"
-    },
-    "Shadows": {
-      "name": "Нишпорки"
-    },
-    "Smugglers": {
-      "name": "Контрабандисти"
-    },
-    "Cult": {
-      "name": "Культисти"
-    },
-    "Lurk": {
-      "name": "Лицедій"
-    },
-    "Hound": {
-      "name": "Гончак"
-    },
-    "Assassins": {
-      "name": "Убивці"
-    },
-    "Slide": {
-      "name": "Пройда"
-    },
-    "Bravos": {
-      "name": "Зухвальців"
-    },
-    "Cutter": {
-      "name": "Головоріз"
-    },
-    "Leech": {
-      "name": "Мастак"
-    },
-    "Whisper": {
-      "name": "Містик"
-    },
-    "Spider": {
-      "name": "Комбінатор"
-    },
     "Augus": {
-      "name": "Авґус",
-      "realName": "",
-      "aka": "",
+      "name": "Авгус",
+      "realName": "Авгус",
+      "alsias": "",
       "summary": "архітектор",
       "description": "<p>Знавець будівельних планів та історії чи, можливо, ворог, який розробляє заходи безпеки?</p>"
     },
     "Moriya": {
-      "name": "Moriya",
-      "realName": "",
-      "aka": "",
-      "summary": "spirit trafficker",
+      "name": "Морія",
+      "realName": "Морія",
+      "alsias": "",
+      "summary": "торговка духами",
       "description": ""
     },
     "Steiner": {
       "name": "Штайнер",
-      "realName": "",
-      "aka": "",
-      "summary": "найманий вбивця",
+      "realName": "Штайнер",
+      "alsias": "",
+      "summary": "найманий убивця",
       "description": "<p>Можливо, один із ваших давніх конкурентів чи колишній напарник?</p>"
     },
     "Elynn": {
-      "name": "Elynn",
-      "realName": "",
-      "aka": "",
-      "summary": "dock worker",
-      "description": "<p>Perhaps a friend who can help with the infernal paperwork of the Empire?</p>"
+      "name": "Елін",
+      "realName": "Елін",
+      "alsias": "",
+      "summary": "робітниця доків",
+      "description": "<p>Можливо, подруга, яка може допомогти з пекельною паперовою тяганиною Імперіуму?</p>"
     },
     "Decker": {
-      "name": "Decker",
+      "name": "Деккер",
       "realName": "",
-      "aka": "",
-      "summary": "anarchist",
-      "description": "<p>Perhaps a client in need of the illegal tools of revolution?</p>"
+      "alsias": "Деккер",
+      "summary": "анархіст",
+      "description": "<p>Можливо, клієнт, що потребує незаконних інструментів для революції?</p>"
     },
     "Sevoy": {
-      "name": "Sevoy",
-      "realName": "",
-      "aka": "",
-      "summary": "merchant lord",
-      "description": "<p>Perhaps a connection to clients with deep pockets?</p>"
+      "name": "Севой",
+      "realName": "Севой",
+      "alsias": "",
+      "summary": "лорд-купець",
+      "description": "<p>Можливо, зв'язок із клієнтами з тугими гаманцями?</p>"
     },
     "Laroze": {
-      "name": "Laroze",
-      "realName": "",
-      "aka": "",
-      "summary": "Bluecoat",
-      "description": "<p>Perhaps an informant within the City Watch?</p>"
+      "name": "Лароуз",
+      "realName": "Лароуз",
+      "alsias": "",
+      "summary": "Синій мундир",
+      "description": "<p>Можливо, інформатор у рядах Варти?</p>"
     },
     "Bazso Baz": {
       "name": "Базсо Баз",
-      "realName": "",
-      "aka": "",
+      "realName": "Базсо Баз",
+      "alsias": "",
       "summary": "лідер банди",
       "description": "<p>Закоханий, що прагне вашої уваги, або колишній коханець, який тепер зневажає вас?</p>"
     },
     "Salia": {
       "name": "Салія",
-      "realName": "",
-      "aka": "",
+      "realName": "Салія",
+      "alsias": "",
       "summary": "торговка інформацією",
       "description": "<p>Надійний контакт для злочинних справ чи, можливо, колишня напарниця, яка вас зрадила?</p>"
     },
     "Quellyn": {
       "name": "Квеллін",
-      "realName": "",
-      "aka": "",
+      "realName": "Квеллін",
+      "alsias": "",
       "summary": "відьма",
       "description": "<p>Ймовірно, досвідчена цілителька і провидиця чи ваша учениця, з котрою ви розсварилися?</p>"
     },
     "Veldren": {
       "name": "Велдрен",
-      "realName": "",
-      "aka": "",
+      "realName": "Велдрен",
+      "alsias": "",
       "summary": "психонавт",
       "description": "<p>Наркоман, чий розум настільки затьмарений отруйними речовинами, що він не може чітко мислити? Чи, можливо, дослідник психоделічних світів, недоступних простим смертним?</p>"
     },
     "Lutes": {
-      "name": "Lutes",
+      "name": "Лютс",
       "realName": "",
-      "aka": "",
-      "summary": "tavern owner",
-      "description": "<p>Perhaps a good source of news and gossip?</p>"
+      "alsias": "Лютс",
+      "summary": "власник таверни",
+      "description": "<p>Можливо, хороше джерело новин і пліток?</p>"
     },
     "Irimina": {
-      "name": "Irimina",
-      "realName": "",
-      "aka": "",
-      "summary": "vicious noble",
-      "description": "<p>Perhaps a potential patron for your crew?</p>"
+      "name": "Іріміна",
+      "realName": "Іріміна",
+      "alsias": "",
+      "summary": "жорстока дворянка",
+      "description": "<p>Можливо, потенційна покровителька для вашої ватаги?</p>"
     },
     "Dowler": {
-      "name": "Dowler",
-      "realName": "",
-      "aka": "",
-      "summary": "explorer",
-      "description": "<p>Perhaps one of the rare deathlands scavengers that survived his sentence?</p>"
+      "name": "Давлер",
+      "realName": "Давлер",
+      "alsias": "",
+      "summary": "дослідник",
+      "description": "<p>Можливо, один із рідкісних мародерів мертвоземелля, що пережив свій вирок?</p>"
     },
     "Veleris": {
       "name": "Велеріс",
-      "realName": "",
-      "aka": "",
+      "realName": "Велеріс",
+      "alsias": "",
       "summary": "шпигун",
       "description": "<p>Кому Велеріс передає роздобуту інформацію?</p>"
     },
     "Rolan": {
-      "name": "Rolan",
-      "realName": "",
-      "aka": "",
-      "summary": "drug dealer",
-      "description": "<p>Perhaps a client with strong underworld ties?</p>"
+      "name": "Ролан",
+      "realName": "Ролан",
+      "alsias": "",
+      "summary": "наркоторговець",
+      "description": "<p>Можливо, клієнт із міцними зв'язками в злочинному світі?</p>"
     },
     "Bennett": {
-      "name": "Bennett",
-      "realName": "",
-      "aka": "",
-      "summary": "astronomer",
+      "name": "Беннет",
+      "realName": "Беннет",
+      "alsias": "",
+      "summary": "астроном",
       "description": ""
     },
     "Trev": {
-      "name": "Trev",
-      "realName": "",
-      "aka": "",
-      "summary": "gang boss",
-      "description": "<p>Perhaps a gang that helped your crew get started?</p>"
+      "name": "Трев",
+      "realName": "Трев",
+      "alsias": "",
+      "summary": "ватажок банди",
+      "description": "<p>Можливо, банда, яка допомогла вашій ватазі на початку?</p>"
     },
     "Gagan": {
-      "name": "Gagan",
-      "realName": "",
-      "aka": "",
-      "summary": "academic",
+      "name": "Гаган",
+      "realName": "Гаган",
+      "alsias": "",
+      "summary": "вчений",
       "description": ""
     },
     "Hoxley": {
-      "name": "Hoxley",
-      "realName": "",
-      "aka": "",
-      "summary": "smuggler",
-      "description": "<p>Perhaps a friend of powerful ship captains?</p>"
+      "name": "Гокслі",
+      "realName": "Гокслі",
+      "alsias": "",
+      "summary": "контрабандист",
+      "description": "<p>Можливо, друг впливових капітанів кораблів?</p>"
     },
     "Celene": {
       "name": "Селін",
-      "realName": "",
-      "aka": "",
+      "realName": "Селін",
+      "alsias": "",
       "summary": "охоронниця",
       "description": "<p>Селін — вартова; захисниця. Кого вона оберігає?</p>"
     },
     "Telda": {
       "name": "Тельда",
-      "realName": "",
-      "aka": "",
+      "realName": "Тельда",
+      "alsias": "",
       "summary": "жебрачка",
       "description": "<p>Наставниця, котра допомогла вам відточити здібності, або ж крадійка-суперниця?</p>"
     },
     "Jeren": {
       "name": "Джерен",
-      "realName": "",
-      "aka": "",
+      "realName": "Джерен",
+      "alsias": "",
       "summary": "архіваріус Синіх мундирів",
       "description": "<p>Подвійний агент у рядах Варти чи надмірно допитливий офіцер, що зацікавився вашими злочинами?</p>"
     },
     "Keller": {
-      "name": "Keller",
-      "realName": "",
-      "aka": "",
-      "summary": "blacksmith",
-      "description": "<p>Perhaps a source for armaments?</p>"
+      "name": "Келлер",
+      "realName": "Келлер",
+      "alsias": "",
+      "summary": "коваль",
+      "description": "<p>Можливо, джерело озброєння?</p>"
     },
     "Meg": {
-      "name": "Meg",
-      "realName": "",
-      "aka": "",
-      "summary": "pit-fighter",
-      "description": "<p>Perhaps a trainer, or perhaps a fellow extortion artist?</p>"
+      "name": "Мег",
+      "realName": "Мег",
+      "alsias": "",
+      "summary": "боєць ям",
+      "description": "<p>Можливо, тренер або колега-здирниця?</p>"
     },
     "Chael": {
       "name": "Чайл",
-      "realName": "",
-      "aka": "",
+      "realName": "Чайл",
+      "alsias": "",
       "summary": "злісний бандит",
       "description": "<p>Член вашої колишньої банди чи незалежний злодій, який став у вас на заваді?</p>"
     },
     "Karlos": {
-      "name": "Karlos",
-      "realName": "",
-      "aka": "",
-      "summary": "bounty hunter",
-      "description": "<p>Perhaps a source for off-book government “wet work?”</p>"
+      "name": "Карлос",
+      "realName": "Карлос",
+      "alsias": "",
+      "summary": "мисливець за головами",
+      "description": "<p>Можливо, джерело неофіційної урядової «брудної роботи»?</p>"
     },
     "Malista": {
       "name": "Маліста",
-      "realName": "",
-      "aka": "",
+      "realName": "Маліста",
+      "alsias": "",
       "summary": "жриця",
       "description": "<p>Якому забутому божеству вона служить?</p>"
     },
     "Mercy": {
       "name": "Милосердник",
       "realName": "",
-      "aka": "",
+      "alsias": "Милосердник",
       "summary": "холоднокровний вбивця",
       "description": "<p>Можливо, найманець чи один із найнебезпечніших негідників злочинного світу?</p>"
     },
     "Flint": {
       "name": "Кремінь",
       "realName": "",
-      "aka": "",
+      "alsias": "Кремінь",
       "summary": "торговець духами",
       "description": "<p>Можливо, постачальник незвичайних магічних матеріалів чи конкурент в окультному світі Даскволу?</p>"
     },
     "Nyryx": {
       "name": "Найрікс",
-      "realName": "",
-      "aka": "",
+      "realName": "Найрікс",
+      "alsias": "",
       "summary": "повія",
       "description": "<p>Можливо, інформаторка, що вказує на потенційних жертв, або конкурентка-маніпуляторка?</p>"
     },
     "Frake": {
       "name": "Фрейк",
-      "realName": "",
-      "aka": "",
+      "realName": "Фрейк",
+      "alsias": "",
       "summary": "слюсар",
       "description": "<p>Можливо, це ваш консультант, а може, майстер, який ускладнює вам життя своїми першокласними замками?</p>"
     },
     "Jul": {
       "name": "Джул",
-      "realName": "",
-      "aka": "",
+      "realName": "Джул",
+      "alsias": "",
       "summary": "дилер крові",
       "description": "<p>Які ще химерні клієнти вдаються до його послуг?</p>"
     },
     "Conway": {
-      "name": "Conway",
-      "realName": "",
-      "aka": "",
-      "summary": "Bluecoat",
-      "description": "<p>Perhaps an informant within the City Watch?</p>"
+      "name": "Конвей",
+      "realName": "Конвей",
+      "alsias": "",
+      "summary": "Синій мундир",
+      "description": "<p>Можливо, інформатор у рядах Варти?</p>"
     },
     "Roslyn Kellis": {
-      "name": "Розалін Келліс",
-      "realName": "",
-      "aka": "",
+      "name": "Розлін Келліс",
+      "realName": "Розлін Келліс",
+      "alsias": "",
       "summary": "дворянка",
       "description": "<p>Стара подруга й довірена особа чи одна із жертв вашого шпіонажу, яка прагне помсти?</p>"
     },
     "Anya": {
-      "name": "Anya",
-      "realName": "",
-      "aka": "",
-      "summary": "dilettante",
-      "description": "<p>Perhaps a well-connected socialite?</p>"
+      "name": "Аня",
+      "realName": "Аня",
+      "alsias": "",
+      "summary": "дилетантка",
+      "description": "<p>Можливо, світська левиця з хорошими зв'язками?</p>"
     },
     "Lydra": {
-      "name": "Lydra",
-      "realName": "",
-      "aka": "",
-      "summary": "deal broker",
-      "description": "<p>Perhaps she acts as a liaison with your clients?</p>"
+      "name": "Лідра",
+      "realName": "Лідра",
+      "alsias": "",
+      "summary": "посередниця",
+      "description": "<p>Можливо, вона виступає зв'язковою з вашими клієнтами?</p>"
     },
     "Sera": {
-      "name": "Sera",
-      "realName": "",
-      "aka": "",
-      "summary": "arms dealer",
-      "description": "<p>Perhaps a supplier with military access?</p>"
+      "name": "Сера",
+      "realName": "Сера",
+      "alsias": "",
+      "summary": "торговця зброєю",
+      "description": "<p>Можливо, постачальниця з доступом до військових складів?</p>"
     },
     "Bryl": {
       "name": "Брил",
-      "realName": "",
-      "aka": "",
+      "realName": "Брил",
+      "alsias": "",
       "summary": "наркоторговець",
       "description": "<p>Можливо, надійний контакт зі злочинного світу чи давній напарник, що затаїв образу?</p>"
     },
     "Scurlock": {
       "name": "Скарлок",
-      "realName": "",
-      "aka": "",
+      "realName": "Скарлок",
+      "alsias": "",
       "summary": "вампір",
       "description": "<p>Невже наставник чи, навпаки, запеклий ворог?</p>"
     },
     "Sawtooth": {
       "name": "Пилозуб",
       "realName": "",
-      "aka": "",
+      "alsias": "Пилозуб",
       "summary": "дохтор",
-      "description": "<p>Приятель із часів війни чи м’ясник, котрий наламав дров, зашиваючи вас?</p>"
+      "description": "<p>Приятель із часів війни чи м'ясник, котрий наламав дров, зашиваючи вас?</p>"
     },
     "Grace": {
       "name": "Добряк",
       "realName": "",
-      "aka": "",
+      "alsias": "Добряк",
       "summary": "вимагач",
       "description": "<p>Ймовірно, колишній напарник чи конкурент у якомусь злочині?</p>"
     },
     "Marlane": {
       "name": "Марлейн",
-      "realName": "",
-      "aka": "",
+      "realName": "Марлейн",
+      "alsias": "",
       "summary": "боєць",
       "description": "<p>Можливо, чемпіон бійцівських ям чи ваш тренер із боксу?</p>"
     },
     "Exeter": {
-      "name": "Exeter",
-      "realName": "",
-      "aka": "",
-      "summary": "Spirit Warden",
-      "description": "<p>Perhaps a double-agent informant for you?</p>"
+      "name": "Ексетер",
+      "realName": "Ексетер",
+      "alsias": "",
+      "summary": "Наглядач",
+      "description": "<p>Можливо, подвійний агент і ваш інформатор?</p>"
     },
     "Casta": {
       "name": "Каста",
-      "realName": "",
-      "aka": "",
+      "realName": "Каста",
+      "alsias": "",
       "summary": "мисливиця за головами",
       "description": "<p>Наставниця, котра допомогла вам відточити здібності. Чи, може, навпаки?</p>"
     },
     "Eckerd": {
       "name": "Екерд",
-      "realName": "",
-      "aka": "",
+      "realName": "Екерд",
+      "alsias": "",
       "summary": "крадій трупів",
       "description": "<p>Ймовірно, постачальник «сировини»?</p>"
     },
     "Stazia": {
       "name": "Стазія",
-      "realName": "",
-      "aka": "",
+      "realName": "Стазія",
+      "alsias": "",
       "summary": "аптекарка",
       "description": "<p>Колишня негідниця, що зайнялася законним алхімічним бізнесом, або все було навпаки?</p>"
     },
     "Rigney": {
-      "name": "Rigney",
-      "realName": "",
-      "aka": "",
-      "summary": "tavern owner",
-      "description": "<p>Perhaps a good source of news and gossip?</p>"
+      "name": "Рігні",
+      "realName": "Рігні",
+      "alsias": "",
+      "summary": "власник таверни",
+      "description": "<p>Можливо, хороше джерело новин і пліток?</p>"
     },
     "Adikin": {
-      "name": "Adikin",
-      "realName": "",
-      "aka": "",
-      "summary": "occultist",
+      "name": "Адікін",
+      "realName": "Адікін",
+      "alsias": "",
+      "summary": "окультист",
       "description": ""
     },
     "Adelaide Phroaig": {
-      "name": "Adelaide Phroaig",
-      "realName": "",
-      "aka": "",
-      "summary": "noble",
-      "description": "<p>Perhaps a source for scores among the elite?</p>"
+      "name": "Аделаїда Фройг",
+      "realName": "Аделаїда Фройг",
+      "alsias": "",
+      "summary": "дворянка",
+      "description": "<p>Можливо, джерело для діл серед еліти?</p>"
     },
     "Marlo": {
-      "name": "Marlo",
-      "realName": "",
-      "aka": "",
-      "summary": "gang boss",
-      "description": "<p>Perhaps a good partner with a gang of tough thugs?</p>"
+      "name": "Марло",
+      "realName": "Марло",
+      "alsias": "",
+      "summary": "ватажок банди",
+      "description": "<p>Можливо, хороший партнер із бандою міцних головорізів?</p>"
     },
     "Tomas": {
-      "name": "Tomas",
-      "realName": "",
-      "aka": "",
-      "summary": "physicker",
-      "description": "<p>Perhaps a former thug turned doctor?</p>"
+      "name": "Томас",
+      "realName": "Томас",
+      "alsias": "",
+      "summary": "дохтор",
+      "description": "<p>Можливо, колишній головоріз, що став лікарем?</p>"
     },
     "Darmot": {
       "name": "Дармот",
-      "realName": "",
-      "aka": "",
+      "realName": "Дармот",
+      "alsias": "",
       "summary": "Синій мундир",
       "description": "<p>Можливо, кмітливий офіцер, який вас ловив, або старий друг, що вийшов зі справ та став на бік закону?</p>"
     },
     "Setarra": {
       "name": "Сетарра",
-      "realName": "",
-      "aka": "",
+      "realName": "Сетарра",
+      "alsias": "",
       "summary": "демон",
       "description": "<p>Можливо, ваша партнерка в темних починаннях чи сутність, що служила вам, а тепер прагне помсти?</p>"
     },
     "Rolan Wott": {
-      "name": "Rolan Wott",
-      "realName": "",
-      "aka": "",
-      "summary": "magistrate",
-      "description": "<p>Perhaps with a feckless son in Doskvol Academy, always in need of rescuing?</p>"
+      "name": "Ролан Вотт",
+      "realName": "Ролан Вотт",
+      "alsias": "",
+      "summary": "магістрат",
+      "description": "<p>Можливо, з недолугим сином в Академії Досквол, який постійно потребує порятунку?</p>"
     },
     "Nyelle": {
-      "name": "Nyelle",
-      "realName": "",
-      "aka": "",
-      "summary": "spirit trafficker",
-      "description": "<p>Perhaps a supplier for the strangest of cargo?</p>"
+      "name": "Ніель",
+      "realName": "Ніель",
+      "alsias": "",
+      "summary": "торговка духами",
+      "description": "<p>Можливо, постачальниця найхимерніших вантажів?</p>"
     },
     "Melvir": {
       "name": "Мелвір",
-      "realName": "",
-      "aka": "",
+      "realName": "Мелвір",
+      "alsias": "",
       "summary": "дохтор",
       "description": "<p>Старий друг, якому частенько доводилось вас зашивати? Чи, може, той, хто лікує ваших незліченних жертв?</p>"
     },
     "Riven": {
       "name": "Рівен",
       "realName": "",
-      "aka": "",
+      "alsias": "Рівен",
       "summary": "аптекар",
       "description": "<p>Можливо, надійний постачальник ліків?</p>"
     },
     "Walker": {
-      "name": "Walker",
+      "name": "Вокер",
       "realName": "",
-      "aka": "",
-      "summary": "ward boss",
-      "description": "<p>Perhaps an employer who often needs violent work?</p>"
+      "alsias": "Вокер",
+      "summary": "бос кварталу",
+      "description": "<p>Можливо, роботодавець, який часто потребує брудної роботи?</p>"
     },
     "Klyra": {
       "name": "Клайра",
-      "realName": "",
-      "aka": "",
+      "realName": "Клайра",
+      "alsias": "",
       "summary": "власниця таверни",
       "description": "<p>Ймовірно, хороше джерело пліток?</p>"
     },
     "Harker": {
       "name": "Гаркер",
       "realName": "",
-      "aka": "",
+      "alsias": "Гаркер",
       "summary": "в'язень",
-      "description": "<p>Друг, якому ви допомогли, коли сиділи у в’язниці, чи ворог, що скривдив вас, коли ви відбували строк?</p>"
+      "description": "<p>Друг, якому ви допомогли, коли сиділи у в'язниці, чи ворог, що скривдив вас, коли ви відбували строк?</p>"
     },
     "Esme": {
-      "name": "Esme",
-      "realName": "",
-      "aka": "",
-      "summary": "tavern owner",
-      "description": "<p>Perhaps a good source of news and gossip?</p>"
+      "name": "Есме",
+      "realName": "Есме",
+      "alsias": "",
+      "summary": "власниця таверни",
+      "description": "<p>Можливо, хороше джерело новин і пліток?</p>"
     },
     "Petra": {
       "name": "Петра",
-      "realName": "",
-      "aka": "",
+      "realName": "Петра",
+      "alsias": "",
       "summary": "міський клерк",
       "description": "<p>Ймовірно, хороше джерело інформації?</p>"
     },
     "Hutchins": {
-      "name": "Hutchins",
-      "realName": "",
-      "aka": "",
-      "summary": "antiquarian",
+      "name": "Гатчінс",
+      "realName": "Гатчінс",
+      "alsias": "",
+      "summary": "антиквар",
       "description": ""
     },
     "Amancio": {
-      "name": "Amancio",
-      "realName": "",
-      "aka": "",
-      "summary": "deal broker",
-      "description": "<p>Perhaps a well-connected underworld figure, famous for their neutrality?</p>"
+      "name": "Амансіо",
+      "realName": "Амансіо",
+      "alsias": "",
+      "summary": "посередник",
+      "description": "<p>Можливо, впливова фігура в злочинному світі, відома своїм нейтралітетом?</p>"
     },
     "Fitz": {
-      "name": "Fitz",
+      "name": "Фітц",
       "realName": "",
-      "aka": "",
-      "summary": "collector",
-      "description": "<p>Perhaps an aficionado of strange artifacts?</p>"
+      "alsias": "Фітц",
+      "summary": "колекціонер",
+      "description": "<p>Можливо, шанувальник дивних артефактів?</p>"
     },
     "Jennah": {
       "name": "Дженна",
-      "realName": "",
-      "aka": "",
+      "realName": "Дженна",
+      "alsias": "",
       "summary": "служниця",
       "description": "<p>Ймовірно, чудове джерело пліток про вище товариство?</p>"
     },
     "Mateas Kline": {
-      "name": "Mateas Kline",
-      "realName": "",
-      "aka": "",
-      "summary": "noble",
+      "name": "Матеас Клайн",
+      "realName": "Матеас Клайн",
+      "alsias": "",
+      "summary": "дворянин",
       "description": ""
     }
   }
