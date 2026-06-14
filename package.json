@@ -14,5 +14,6 @@
     "format:assets": "prettier --write \"**/*.{mjs,js,json,scss}\"",
     "format:hbs": "html-beautify -r \"**/*.hbs\"",
     "format": "npm run format:assets && npm run format:hbs"
-  }
+  },
+  "version": "0.0.1"
 }
