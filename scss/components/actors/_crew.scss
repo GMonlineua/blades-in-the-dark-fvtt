@@ -1,218 +1,224 @@
-.crew {
-  .sheet-header {
-    row-gap: 5px;
+@use "utils/variables" as vars;
 
-    .type-container {
-      display: grid;
-      grid-template-columns: 60px 1fr;
-      column-gap: $padding-md;
-      height: -webkit-fill-available;
+@mixin styles {
+  &.crew {
+    min-width: 775px;
 
-      .profile-img {
-        border: none;
-        width: 100%;
-      }
+    .sheet-header {
+      row-gap: 5px;
 
-      .crew-type {
-        font-family: $font-secondary;
+      .type-container {
+        display: grid;
+        grid-template-columns: 60px 1fr;
+        column-gap: vars.$padding-md;
+        height: -webkit-fill-available;
 
-        .playbook-description {
-          margin: 0;
-          font-size: medium;
+        .profile-img {
+          border: none;
+          width: 100%;
         }
-      }
-    }
 
-    .name-container {
-      .crew-name {
-        margin: 0;
+        .crew-type {
+          font-family: vars.$font-secondary;
 
-        input {
-          margin: 0;
-          padding: 0;
-          height: 90%;
-        }
-      }
-
-      .brief-info {
-        row-gap: 0;
-
-        .prop {
-          display: block;
-          font-family: $font-secondary;
-
-          .prop-label {
-            display: block;
+          .playbook-description {
+            margin: 0;
             font-size: medium;
           }
+        }
+      }
 
-          .prop-input {
+      .name-container {
+        .crew-name {
+          margin: 0;
+
+          input {
+            margin: 0;
             padding: 0;
-            font-size: small;
-          }
-        }
-      }
-    }
-
-    .hunting-ground {
-      position: relative;
-      grid-row: 2 / 4;
-
-      .edit-hunting-ground {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        color: white;
-      }
-
-      .operation-header {
-        font-family: $font-secondary;
-      }
-    }
-
-    .header-fields {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      column-gap: $padding-md;
-      row-gap: $padding-sm;
-      font-family: $font-secondary;
-
-      .heat-block {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        border-top: $border-hard;
-
-        .wanted-lvl {
-          font-size: small;
-        }
-
-        .flexrow {
-          align-items: flex-start;
-        }
-      }
-
-      .tier-block {
-        .hold {
-          .clear-select {
-            padding: 0;
+            height: 90%;
           }
         }
 
-        .tier {
+        .brief-info {
+          row-gap: 0;
+
+          .prop {
+            display: block;
+            font-family: vars.$font-secondary;
+
+            .prop-label {
+              display: block;
+              font-size: medium;
+            }
+
+            .prop-input {
+              padding: 0;
+              font-size: small;
+            }
+          }
+        }
+      }
+
+      .hunting-ground {
+        position: relative;
+        grid-row: 2 / 4;
+
+        .edit-hunting-ground {
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          color: white;
+        }
+
+        .operation-header {
+          font-family: vars.$font-secondary;
+        }
+      }
+
+      .header-fields {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: vars.$padding-md;
+        row-gap: vars.$padding-sm;
+        font-family: vars.$font-secondary;
+
+        .heat-block {
           display: flex;
           justify-content: space-between;
+          align-items: flex-start;
+          border-top: vars.$border-hard;
 
-          .value-step-block {
-            margin-left: $padding-sm;
-            padding-top: 2px;
-            padding-right: $padding-sm;
+          .wanted-lvl {
+            font-size: small;
+          }
+
+          .flexrow {
+            align-items: flex-start;
+          }
+        }
+
+        .tier-block {
+          .hold {
+            .clear-select {
+              padding: 0;
+            }
+          }
+
+          .tier {
+            display: flex;
+            justify-content: space-between;
+
+            .value-step-block {
+              margin-left: vars.$padding-sm;
+              padding-top: 2px;
+              padding-right: vars.$padding-sm;
+            }
+          }
+        }
+
+        .reputation {
+          display: flex;
+          align-items: flex-start;
+          border-top: vars.$border-hard;
+        }
+      }
+
+      .header-fields > div {
+        background: vars.$dark-paper;
+      }
+
+      .exp-block {
+        position: relative;
+
+        .value-step-block {
+          position: absolute;
+          top: 0;
+          right: vars.$padding-sm;
+        }
+
+        .bitd-subheader,
+        .exp-tips {
+          font-size: small;
+        }
+      }
+
+      h3.bitd-header {
+        padding-top: 0;
+      }
+    }
+
+    .sheet-header > div {
+      height: 100%;
+    }
+
+    .sheet-body {
+      .claims-map {
+        .claim {
+          height: 140px;
+        }
+      }
+
+      .prison {
+        .claims-map {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .load-prison-block {
+          margin-top: 10px;
+
+          .load-prison {
+            border: vars.$border;
+            background: vars.$dark-paper;
+            padding: 3px;
           }
         }
       }
 
-      .reputation {
-        display: flex;
-        align-items: flex-start;
-        border-top: $border-hard;
-      }
-    }
+      .general-container {
+        grid-template-areas:
+          "1 main"
+          "2 main";
 
-    .header-fields > div {
-      background: $dark-paper;
-    }
-
-    .exp-block {
-      position: relative;
-
-      .value-step-block {
-        position: absolute;
-        top: 0;
-        right: $padding-sm;
-      }
-
-      .bitd-subheader,
-      .exp-tips {
-        font-size: small;
-      }
-    }
-
-    h3.bitd-header {
-      padding-top: 0;
-    }
-  }
-
-  .sheet-header > div {
-    height: 100%;
-  }
-
-  .sheet-body {
-    .claims-map {
-      .claim {
-        height: 140px;
-      }
-    }
-
-    .prison {
-      .claims-map {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .load-prison-block {
-        margin-top: 10px;
-
-        .load-prison {
-          border: $border;
-          background: $dark-paper;
-          padding: 3px;
-        }
-      }
-    }
-
-    .general-container {
-      grid-template-areas:
-        "1 main"
-        "2 main";
-
-      .spec-upgrades {
-        grid-area: 1;
-      }
-
-      .upgrades {
-        grid-area: 2;
-      }
-
-      .abilities {
-        grid-area: main;
-      }
-
-      .cohorts {
-        .item-name {
-          font-weight: bold;
+        .spec-upgrades {
+          grid-area: 1;
         }
 
-        .specialisation {
-          text-transform: lowercase;
+        .upgrades {
+          grid-area: 2;
         }
 
-        .condition {
-          font-style: italic;
+        .abilities {
+          grid-area: main;
+        }
+
+        .cohorts {
+          .item-name {
+            font-weight: bold;
+          }
+
+          .specialisation {
+            text-transform: lowercase;
+          }
+
+          .condition {
+            font-style: italic;
+          }
         }
       }
-    }
 
-    .contacts-container {
-      .related-faction {
-        margin-top: $padding-md;
+      .contacts-container {
+        .related-faction {
+          margin-top: vars.$padding-md;
+        }
       }
-    }
 
-    .crew-notes {
-      .goals {
-        margin-bottom: $padding-md;
+      .crew-notes {
+        .goals {
+          margin-bottom: vars.$padding-md;
 
-        .item-description {
-          padding-top: $padding-sm;
+          .item-description {
+            padding-top: vars.$padding-sm;
+          }
         }
       }
     }

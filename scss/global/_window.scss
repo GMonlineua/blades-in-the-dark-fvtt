@@ -1,3 +1,5 @@
+@use "utils/variables" as vars;
+
 input.clear-input {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -19,7 +21,7 @@ select.clear-select {
 }
 
 .window-app {
-  font-family: $font-primary;
+  font-family: vars.$font-primary;
 }
 
 .window-content {
@@ -36,60 +38,23 @@ select.clear-select {
 .bitd-header > h3 {
   margin: 0;
   border: none;
-  background-color: $light-black;
+  background-color: vars.$light-black;
   padding: 0 3px;
-  color: $light-white;
+  color: vars.$light-white;
   font-weight: bold;
   font-size: medium;
-  font-family: $font-secondary;
+  font-family: vars.$font-secondary;
   text-transform: uppercase;
 
   input {
-    color: $light-white;
+    color: vars.$light-white;
   }
 }
 
 .bitd-subheader {
   margin-top: 0;
-  background-color: $grey;
+  background-color: vars.$grey;
   color: black;
-}
-
-.bitd.sheet.actor {
-  min-width: 400px;
-  min-height: 375px;
-}
-
-.bitd.sheet.actor.scoundrel {
-  min-width: 750px;
-  min-height: 500px;
-}
-
-.bitd.sheet.actor.crew {
-  min-width: 750px;
-}
-
-.bitd.sheet.actor.faction {
-  min-width: 550px;
-}
-
-.bitd.sheet.actor.clock,
-.bitd.sheet.actor.npc {
-  min-width: 150px;
-  min-height: 200px;
-
-  .header-button {
-    font-size: 0;
-
-    i {
-      font-size: medium;
-    }
-  }
-}
-
-.bitd.sheet.item {
-  min-width: 450px;
-  min-height: 400px;
 }
 
 .journal-entry.journal-sheet {
@@ -100,6 +65,6 @@ select.clear-select {
   .journal-entry-page h5,
   .journal-entry-page h6 {
     font-weight: bold;
-    font-family: "Spectral SC", serif;
+    font-family: vars.$font-secondary;
   }
 }

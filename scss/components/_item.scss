@@ -1,99 +1,108 @@
-input.all-width {
-  width: 100%;
-}
+@use "utils/variables" as vars;
 
-.cohort {
-  .specialisation {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+@mixin styles {
+  &.item {
+    min-width: 450px;
+    min-height: 400px;
 
-    .prop-input {
-      margin-left: 5px;
-      border-bottom: $border;
+    input.all-width {
       width: 100%;
     }
-  }
-}
 
-.brief-info {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  font-family: $font-secondary;
-}
-
-.items-header {
-  display: flex;
-  flex: 100px auto;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-bottom: 10px;
-  overflow: hidden;
-
-  .item-img {
-    flex: 0 0 100px;
-    margin-right: 10px;
-    border: none;
-    height: 100px;
-  }
-
-  .header-fields {
-    flex: 1;
-
-    .item-name {
-      margin: 5px 0;
-      border-bottom: 0;
-      padding: 0px;
-      height: 35px;
-      font-family: $font-secondary;
-      input {
-        margin: 0;
+    .cohort {
+      .specialisation {
+        display: flex;
+        flex-direction: row;
         width: 100%;
-        height: 100%;
+
+        .prop-input {
+          margin-left: 5px;
+          border-bottom: vars.$border;
+          width: 100%;
+        }
       }
     }
 
     .brief-info {
-      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font-family: vars.$font-secondary;
     }
-  }
-}
 
-.sheet-body {
-  .editor-block {
-    flex: auto;
-  }
-}
+    .items-header {
+      display: flex;
+      flex: 100px auto;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+      overflow: hidden;
 
-.playbook,
-.crewType {
-  .summary {
-    margin-top: 10px;
-    margin-bottom: 0;
-  }
+      .item-img {
+        flex: 0 0 100px;
+        margin-right: 10px;
+        border: none;
+        height: 100px;
+      }
 
-  .linked-items {
-    margin-bottom: 10px;
+      .header-fields {
+        flex: 1;
 
-    .link-block {
-      line-height: 1.5;
+        .item-name {
+          margin: 5px 0;
+          border-bottom: 0;
+          padding: 0px;
+          height: 35px;
+          font-family: vars.$font-secondary;
+          input {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .brief-info {
+          margin-top: 10px;
+        }
+      }
     }
-  }
-}
 
-.playbook {
-  .attribute-block {
-    font-family: $font-secondary;
-  }
-}
+    .sheet-body {
+      .editor-block {
+        flex: auto;
+      }
+    }
 
-.crewType {
-  .claims-map {
-    .claim {
-      height: 100px;
+    .playbook,
+    .crewType {
+      .summary {
+        margin-top: 10px;
+        margin-bottom: 0;
+      }
+
+      .linked-items {
+        margin-bottom: 10px;
+
+        .link-block {
+          line-height: 1.5;
+        }
+      }
+    }
+
+    .playbook {
+      .attribute-block {
+        font-family: vars.$font-secondary;
+      }
+    }
+
+    .crewType {
+      .claims-map {
+        .claim {
+          height: 100px;
+        }
+      }
     }
   }
 }

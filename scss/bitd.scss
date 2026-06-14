@@ -1,29 +1,40 @@
-// Import utilities.
-@import "utils/variables";
+// Load variables
+@use "utils/variables" as vars;
 
-/* Global styles */
-@import "global/apps";
-@import "global/flex";
-@import "global/grid";
-@import "global/window";
+// Load global styles
+@use "global/apps";
+@use "global/flex";
+@use "global/grid";
+@use "global/window";
+
+// Load component mixins (these do NOT print CSS until included)
+@use "components/forms";
+@use "components/item-list";
+@use "components/actor";
+@use "components/actors/scoundrel";
+@use "components/actors/crew";
+@use "components/actors/faction";
+@use "components/actors/npc";
+@use "components/actors/clock";
+@use "components/item";
 
 /* Styles limited to system sheets */
 .bitd {
-  font-family: $font-primary;
+  font-family: vars.$font-primary;
 
-  @import "components/forms";
-  @import "components/item-list";
+  @include forms.styles;
+  @include item-list.styles;
 }
 
 .bitd.actor {
-  @import "components/actor";
-  @import "components/actors/scoundrel";
-  @import "components/actors/crew";
-  @import "components/actors/faction";
-  @import "components/actors/npc";
-  @import "components/actors/clock";
+  @include actor.styles;
+  @include scoundrel.styles;
+  @include crew.styles;
+  @include faction.styles;
+  @include npc.styles;
+  @include clock.styles;
 }
 
 .bitd.item {
-  @import "components/item";
+  @include item.styles;
 }

@@ -1,172 +1,176 @@
-.items-block {
-  position: relative;
+@use "utils/variables" as vars;
 
-  .item-create {
-    position: absolute;
-    top: 2px;
-    right: 5px;
-  }
+@mixin styles {
+  .items-block {
+    position: relative;
 
-  .items-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    .item-create {
+      position: absolute;
+      top: 2px;
+      right: 5px;
+    }
 
-    .item {
-      position: relative;
-      align-items: center;
-      margin-bottom: 5px;
+    .items-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
 
-      .item-description {
-        padding-right: 55px;
+      .item {
+        position: relative;
+        align-items: center;
+        margin-bottom: 5px;
 
-        .item-name.active {
-          font-weight: bold;
+        .item-description {
+          padding-right: 55px;
+
+          .item-name.active {
+            font-weight: bold;
+          }
+
+          .item-tags {
+            font-style: italic;
+          }
         }
 
-        .item-tags {
-          font-style: italic;
+        .item-summary {
+          flex: auto;
+          transition: height 0.3s ease;
+          margin: 0;
+          height: 0;
+          overflow: hidden;
+        }
+
+        .item-controls {
+          display: flex;
+          position: absolute;
+          top: 3px;
+          right: 0;
+          justify-content: flex-end;
+
+          a {
+            margin: 0 3px;
+            font-size: 12px;
+            text-align: center;
+          }
         }
       }
 
-      .item-summary {
-        flex: auto;
-        transition: height 0.3s ease;
-        margin: 0;
-        height: 0;
-        overflow: hidden;
+      .item.active {
+        .item-name {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .items-block.full-size {
+    .item-header {
+      display: flex;
+
+      .item-create {
+        position: static;
+        margin: 0 3px;
+      }
+    }
+
+    .items-list {
+      .item-description {
+        .item-checkbox {
+          position: relative;
+          top: 5px;
+          margin: 0;
+          width: 15px;
+        }
+
+        .item-name {
+          cursor: pointer;
+          font-family: vars.$font-secondary;
+        }
+
+        .item-uses {
+          margin: 0;
+        }
       }
 
       .item-controls {
-        display: flex;
-        position: absolute;
-        top: 3px;
-        right: 0;
-        justify-content: flex-end;
+        top: 6px;
+      }
+    }
+  }
 
-        a {
-          margin: 0 3px;
-          font-size: 12px;
-          text-align: center;
+  .contacts.items-block {
+    .item {
+      margin: 0;
+
+      .item-description {
+        .set-relationship {
+          display: inline-block;
+          vertical-align: middle;
+          cursor: pointer;
+          background-position: center;
+          background-size: 12px;
+          background-repeat: no-repeat;
+          width: 12px;
+          height: 16px;
+        }
+
+        .set-relationship.rival {
+          background-image: url("/systems/bitd/ui/relationship-icons/caret-down.svg");
+        }
+
+        .set-relationship.neutral {
+          background-image: url("/systems/bitd/ui/relationship-icons/minus.svg");
+        }
+
+        .set-relationship.friend {
+          background-image: url("/systems/bitd/ui/relationship-icons/caret-up.svg");
+        }
+
+        .set-relationship.special {
+          background-image: url("/systems/bitd/ui/relationship-icons/dot-circle.svg");
+        }
+
+        .item-name {
+          font-weight: 700;
+        }
+
+        .item-name:not(:last-child)::after {
+          content: ",";
+          font-weight: normal;
         }
       }
     }
-
-    .item.active {
-      .item-name {
-        font-weight: bold;
-      }
-    }
-  }
-}
-
-.items-block.full-size {
-  .item-header {
-    display: flex;
-
-    .item-create {
-      position: static;
-      margin: 0 3px;
-    }
   }
 
-  .items-list {
-    .item-description {
-      .item-checkbox {
-        position: relative;
-        top: 5px;
-        margin: 0;
-        width: 15px;
+  .related-faction.items-block {
+    .item {
+      .item-description {
+        display: grid;
+        grid-template-columns: 1fr 100px 150px;
+        margin-right: 40px;
+
+        .item-name {
+          padding-top: 3px;
+          font-family: vars.$font-secondary;
+        }
+
+        .tier {
+          padding-top: 6px;
+        }
+
+        .set-status {
+          margin: 0;
+          padding: 0;
+        }
       }
 
-      .item-name {
-        cursor: pointer;
-        font-family: $font-secondary;
-      }
-
-      .item-uses {
-        margin: 0;
-      }
-    }
-
-    .item-controls {
-      top: 6px;
-    }
-  }
-}
-
-.contacts.items-block {
-  .item {
-    margin: 0;
-
-    .item-description {
-      .set-relationship {
-        display: inline-block;
-        vertical-align: middle;
-        cursor: pointer;
-        background-position: center;
-        background-size: 12px;
-        background-repeat: no-repeat;
-        width: 12px;
-        height: 16px;
-      }
-
-      .set-relationship.rival {
-        background-image: url("/systems/bitd/ui/relationship-icons/caret-down.svg");
-      }
-
-      .set-relationship.neutral {
-        background-image: url("/systems/bitd/ui/relationship-icons/minus.svg");
-      }
-
-      .set-relationship.friend {
-        background-image: url("/systems/bitd/ui/relationship-icons/caret-up.svg");
-      }
-
-      .set-relationship.special {
-        background-image: url("/systems/bitd/ui/relationship-icons/dot-circle.svg");
-      }
-
-      .item-name {
-        font-weight: 700;
-      }
-
-      .item-name:not(:last-child)::after {
-        content: ",";
-        font-weight: normal;
-      }
-    }
-  }
-}
-
-.related-faction.items-block {
-  .item {
-    .item-description {
-      display: grid;
-      grid-template-columns: 1fr 100px 150px;
-      margin-right: 40px;
-
-      .item-name {
-        padding-top: 3px;
-        font-family: $font-secondary;
-      }
-
-      .tier {
-        padding-top: 6px;
-      }
-
-      .set-status {
-        margin: 0;
-        padding: 0;
+      .item-controls {
+        top: 6px;
       }
     }
 
-    .item-controls {
-      top: 6px;
+    .faction:not(:last-child) {
+      border-bottom: vars.$border;
     }
-  }
-
-  .faction:not(:last-child) {
-    border-bottom: $border;
   }
 }

@@ -1,68 +1,111 @@
-.faction {
-  .sheet-header {
-    display: flex;
-    flex: 100px auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin-bottom: 10px;
-    overflow: hidden;
+@use "utils/variables" as vars;
 
-    .profile-img {
-      flex: 0 0 100px;
-      border: none;
-      height: 100px;
-    }
+@mixin styles {
+  &.faction {
+    min-width: 550px;
 
-    .header-fields {
-      flex: 1;
+    .sheet-header {
+      display: flex;
+      flex: 100px auto;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+      overflow: hidden;
 
-      .character-name {
-        margin: 5px 0;
-        border-bottom: 0;
-        padding: 0px;
-        height: 35px;
-        font-weight: 700;
-        font-family: $font-secondary;
-        input {
-          margin: 0;
-          width: 100%;
-          height: 100%;
-        }
+      .profile-img {
+        flex: 0 0 100px;
+        border: none;
+        height: 100px;
       }
 
-      .brief-info {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-top: 10px;
-        font-family: $font-secondary;
+      .header-fields {
+        flex: 1;
 
-        .summary {
-          font-size: small;
-        }
-      }
-    }
-  }
-
-  .sheet-body {
-    .general {
-      .prop-field {
-        position: relative;
-
-        .prop-lable {
+        .character-name {
+          margin: 5px 0;
+          border-bottom: 0;
+          padding: 0px;
+          height: 35px;
           font-weight: 700;
-          font-family: $font-secondary;
+          font-family: vars.$font-secondary;
+          input {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+          }
         }
 
-        .show-for-limited {
-          position: absolute;
-          right: 0;
+        .brief-info {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          margin-top: 10px;
+          font-family: vars.$font-secondary;
 
-          .show-checkbox {
+          .summary {
+            font-size: small;
+          }
+        }
+      }
+    }
+
+    .sheet-body {
+      .general {
+        .prop-field {
+          position: relative;
+
+          .prop-lable {
+            font-weight: 700;
+            font-family: vars.$font-secondary;
+          }
+
+          .show-for-limited {
+            position: absolute;
+            right: 0;
+
+            .show-checkbox {
+              position: relative;
+              top: 2px;
+              margin: 0;
+              width: 15px;
+              height: 15px;
+            }
+          }
+        }
+
+        .goals {
+          .show-link {
             position: relative;
-            top: 2px;
+            top: 5px;
+            margin: 0;
+            width: 15px;
+          }
+        }
+
+        .turf {
+          margin: 5px 0;
+        }
+
+        .members {
+          margin: 5px 0;
+
+          .show-link {
+            margin: 0;
+            width: 15px;
+            height: 15px;
+          }
+        }
+
+        .related-faction {
+          margin: 5px 0;
+
+          .clear-input {
+            border-bottom: vars.$border;
+          }
+
+          .show-link {
             margin: 0;
             width: 15px;
             height: 15px;
@@ -70,51 +113,14 @@
         }
       }
 
-      .goals {
-        .show-link {
-          position: relative;
-          top: 5px;
-          margin: 0;
-          width: 15px;
-        }
-      }
-
-      .turf {
-        margin: 5px 0;
-      }
-
-      .members {
-        margin: 5px 0;
-
-        .show-link {
-          margin: 0;
-          width: 15px;
-          height: 15px;
-        }
-      }
-
-      .related-faction {
-        margin: 5px 0;
-
-        .clear-input {
-          border-bottom: $border;
+      .notes {
+        .bitd-header {
+          padding: 3px;
         }
 
-        .show-link {
-          margin: 0;
-          width: 15px;
-          height: 15px;
+        .situation {
+          margin-bottom: 5px;
         }
-      }
-    }
-
-    .notes {
-      .bitd-header {
-        padding: 3px;
-      }
-
-      .situation {
-        margin-bottom: 5px;
       }
     }
   }
