@@ -1,4 +1,4 @@
-name: Building Release
+name: Prepare Release
 
 on:
   pull_request_target:
@@ -10,7 +10,7 @@ on:
       - 'system.json'
 
 jobs:
-  build:
+  prepare:
     if: ${{ github.event.pull_request.head.repo.full_name == 'GMonlineua/blades-in-the-dark-fvtt' && github.event.pull_request.head.ref == 'development' }}
     permissions:
       contents: write
@@ -35,11 +35,17 @@ jobs:
           LINK="https://img.shields.io/badge/Version-${VERSION}-informational?style=flat-square"
           sed -i "s|\[Version\]:.*|\[Version\]: $LINK|" README.md
 
-      - name: Compile CSS from SCSS
-        uses: gha-utilities/sass-build@v0.6.0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          source: scss/bitd.scss
-          destination: css/bitd.css
+          node-version: '26'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Compile CSS from SCSS
+        run: npm run build:css
 
       - name: Commit AutoBuild
         run: |
