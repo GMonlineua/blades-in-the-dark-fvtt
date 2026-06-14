@@ -25,8 +25,6 @@ To install a module, follow these instructions:
 - [Roadmap](https://github.com/GMonlineua/blades-in-the-dark-fvtt/wiki/Roadmap)
 - [Data Structure](https://github.com/GMonlineua/blades-in-the-dark-fvtt/wiki/Documentation#data-structure)
 
-To use sass: `sass --load-path [path-to-scss-directory] --style compressed -w [path-to-bitd.scss] [path-to-bitd.css]`
-
 ![Screenshot with actors sheet](screenshots/screenshot-1.jpg)
 
 ## Credits
