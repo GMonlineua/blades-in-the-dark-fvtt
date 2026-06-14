@@ -2,13 +2,8 @@
   {{! Sheet Header }}
   <header class="sheet-header">
     <h2 class="clock-name">
-      <input
-        class="clear-input"
-        name="name"
-        type="text"
-        value="{{actor.name}}"
-        placeholder="{{localize 'BITD.Item.Name'}}"
-      />
+      <input class="clear-input" name="name" type="text" value="{{actor.name}}"
+        placeholder="{{localize 'BITD.Item.Name'}}" />
     </h2>
 
     <div class="clock-img-block">
@@ -20,13 +15,8 @@
         <label for="system.progress.value">{{localize
             "BITD.Clock.Filled"
           }}:</label>
-        <input
-          class="clear-input"
-          name="system.progress.value"
-          type="number"
-          max="{{system.progress.max}}"
-          value="{{system.progress.value}}"
-        />
+        <input class="clear-input" name="system.progress.value" type="number" max="{{system.progress.max}}"
+          value="{{system.progress.value}}" />
       </div>
       <div class="size">
         <label for="system.progress.max">{{localize "BITD.Clock.Size"}}:</label>

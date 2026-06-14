@@ -2,31 +2,16 @@
   {{! Sheet Header }}
   <header class="sheet-header actor-grid">
 
-    <img
-      class="profile-img"
-      src="{{actor.img}}"
-      data-edit="img"
-      title="{{actor.name}}"
-    />
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
 
     <div class="header-fields">
       <h1 class="main-name">
         {{#if system.names.useAlias}}
-          <input
-            class="clear-input"
-            name="system.names.alias"
-            type="text"
-            value="{{system.names.alias}}"
-            placeholder="{{localize 'BITD.Actor.Alias'}}"
-          />
+          <input class="clear-input" name="system.names.alias" type="text" value="{{system.names.alias}}"
+            placeholder="{{localize 'BITD.Actor.Alias'}}" />
         {{else}}
-          <input
-            class="clear-input"
-            name="system.names.real"
-            type="text"
-            value="{{system.names.real}}"
-            placeholder="{{localize 'BITD.Actor.HumanName'}}"
-          />
+          <input class="clear-input" name="system.names.real" type="text" value="{{system.names.real}}"
+            placeholder="{{localize 'BITD.Actor.HumanName'}}" />
         {{/if}}
       </h1>
       <div class="brief-info">
@@ -35,37 +20,22 @@
             <label class="prop-label" for="system.names.real">{{localize
                 "BITD.Actor.HumanName"
               }}:</label>
-            <input
-              class="prop-input clear-input"
-              name="system.names.real"
-              type="text"
-              value="{{system.names.real}}"
-              placeholder="{{localize 'BITD.Actor.HumanName'}}"
-            />
+            <input class="prop-input clear-input" name="system.names.real" type="text" value="{{system.names.real}}"
+              placeholder="{{localize 'BITD.Actor.HumanName'}}" />
           {{else}}
             <label class="prop-label" for="system.names.real">{{localize
                 "BITD.Actor.Alias"
               }}:</label>
-            <input
-              class="prop-input clear-input"
-              name="system.names.alias"
-              type="text"
-              value="{{system.names.alias}}"
-              placeholder="{{localize 'BITD.Actor.Alias'}}"
-            />
+            <input class="prop-input clear-input" name="system.names.alias" type="text" value="{{system.names.alias}}"
+              placeholder="{{localize 'BITD.Actor.Alias'}}" />
           {{/if}}
         </div>
         <div class="character-summary prop">
           <label class="prop-label" for="system.summary">{{localize
               "BITD.Summary"
             }}:</label>
-          <input
-            class="prop-input clear-input"
-            name="system.summary"
-            type="text"
-            value="{{system.summary}}"
-            placeholder="{{localize 'BITD.Summary'}}"
-          />
+          <input class="prop-input clear-input" name="system.summary" type="text" value="{{system.summary}}"
+            placeholder="{{localize 'BITD.Summary'}}" />
         </div>
       </div>
     </div>
@@ -79,11 +49,7 @@
       <label for="system.names.useAlias">{{localize
           "BITD.NPC.UseAsName"
         }}:</label>
-      <input
-        type="checkbox"
-        name="system.names.useAlias"
-        {{checked system.names.useAlias}}
-      />
+      <input type="checkbox" name="system.names.useAlias" {{checked system.names.useAlias}} />
     </div>
 
     {{editor

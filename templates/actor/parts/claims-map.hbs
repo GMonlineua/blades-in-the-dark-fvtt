@@ -1,8 +1,11 @@
 <div class="claims-map grid-{{data.columns}}col" data-container={{container}}>
   {{#each data.map}}
-    <div class="item claim {{#if this.active}}active{{/if}}" data-item-id="{{this.id}}" data-claimType="{{this.type}}" data-index={{@index}}>
-      <a class="claim-move move-left" title="{{localize 'BITD.Claim.Move.Left'}}" data-direction="left"><i class="fa-solid fa-caret-left"></i></a>
-      <a class="claim-move move-up" title="{{localize 'BITD.Claim.Move.Up'}}" data-direction="up"><i class="fa-solid fa-caret-up"></i></a>
+    <div class="item claim {{#if this.active}}active{{/if}}" data-item-id="{{this.id}}" data-claimType="{{this.type}}"
+      data-index={{@index}}>
+      <a class="claim-move move-left" title="{{localize 'BITD.Claim.Move.Left'}}" data-direction="left"><i
+          class="fa-solid fa-caret-left"></i></a>
+      <a class="claim-move move-up" title="{{localize 'BITD.Claim.Move.Up'}}" data-direction="up"><i
+          class="fa-solid fa-caret-up"></i></a>
 
       {{#iff this.type "==" "claim"}}
         <div class="item-summary">
@@ -11,7 +14,8 @@
         </div>
 
         <div class="item-controls">
-          <input class="item-checkbox" data-key="active" type="checkbox" name="this.active" data-dtype="Boolean" {{checked this.active}}></input>
+          <input class="item-checkbox" data-key="active" type="checkbox" name="this.active" data-dtype="Boolean"
+            {{checked this.active}}></input>
           <a class="item-control item-show" title="{{localize 'BITD.Item.Show'}}"><i class="fa fa-comment"></i></a>
           <a class="item-control item-edit" title="{{localize 'BITD.Item.Edit'}}"><i class="fas fa-edit"></i></a>
           <a class="item-control claim-delete" title="{{localize 'BITD.Item.Delete'}}"><i class="fas fa-trash"></i></a>
@@ -21,8 +25,10 @@
       {{#iff this.type "==" "turf"}}
         <p class="name">{{localize "BITD.Claim.Turf"}}</p>
         <div class="item-controls">
-          <input class="claim-checkbox" type="checkbox" name="this.active" data-dtype="Boolean" {{checked this.active}}></input>
-          <a class="item-create" title="{{localize 'BITD.Item.Add'}}" data-type="{{../itemType}}"><i class="fas fa-plus"></i></a>
+          <input class="claim-checkbox" type="checkbox" name="this.active" data-dtype="Boolean"
+            {{checked this.active}}></input>
+          <a class="item-create" title="{{localize 'BITD.Item.Add'}}" data-type="{{../itemType}}"><i
+              class="fas fa-plus"></i></a>
         </div>
       {{/iff}}
 
@@ -30,8 +36,10 @@
         <p class="name">{{localize "BITD.Crew.Lair"}}</p>
       {{/iff}}
 
-      <a class="claim-move move-right" title="{{localize 'BITD.Claim.Move.Right'}}" data-direction="right"><i class="fa-solid fa-caret-right"></i></a>
-      <a class="claim-move move-down" title="{{localize 'BITD.Claim.Move.Down'}}" data-direction="down"><i class="fa-solid fa-caret-down"></i></a>
+      <a class="claim-move move-right" title="{{localize 'BITD.Claim.Move.Right'}}" data-direction="right"><i
+          class="fa-solid fa-caret-right"></i></a>
+      <a class="claim-move move-down" title="{{localize 'BITD.Claim.Move.Down'}}" data-direction="down"><i
+          class="fa-solid fa-caret-down"></i></a>
     </div>
   {{/each}}
 </div>

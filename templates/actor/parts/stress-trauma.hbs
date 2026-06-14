@@ -6,16 +6,9 @@
       }}</h3>
   </div>
 
-  <div
-    class="value-step-block"
-    data-value="{{system.stress.value}}"
-    data-key="system.stress.value"
-  >
+  <div class="value-step-block" data-value="{{system.stress.value}}" data-key="system.stress.value">
     {{#numLoop system.stress.max}}
-      <span
-        class="value-step value-tooth red-tooth"
-        data-index="{{this}}"
-      ></span>
+      <span class="value-step value-tooth red-tooth" data-index="{{this}}"></span>
     {{/numLoop}}
   </div>
 

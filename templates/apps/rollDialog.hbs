@@ -2,12 +2,7 @@
   <div class="inputs-block">
     <div class="roll-type">
       <label for="roll-type">{{localize "BITD.Roll.Type.Title"}}: </label>
-      <select
-        id="roll-type"
-        class="optional-listen dice-listen"
-        name="rollType"
-        data-type="String"
-      >
+      <select id="roll-type" class="optional-listen dice-listen" name="rollType" data-type="String">
         {{selectOptions
           rollConfig.type
           selected=rollConfig.defaults.type
@@ -20,12 +15,7 @@
       <div class="roll-as optional" data-connected="information">
         <label for="roll-as">{{localize "BITD.Roll.GatherInformation.RollAs"}}:
         </label>
-        <select
-          id="roll-as"
-          class="optional-listen dice-listen"
-          name="rollAs"
-          data-type="String"
-        >
+        <select id="roll-as" class="optional-listen dice-listen" name="rollAs" data-type="String">
           {{selectOptions rollConfig.rollAs selected="action" localize=true}}
         </select>
       </div>
@@ -33,12 +23,7 @@
       <div class="attributes optional" data-connected="resistance">
         <label for="attribute">{{localize "BITD.Attributes.Attribute"}}:
         </label>
-        <select
-          id="attribute"
-          class="dice-listen"
-          name="attribute"
-          data-type="String"
-        >
+        <select id="attribute" class="dice-listen" name="attribute" data-type="String">
           {{selectOptions
             rollConfig.attributes
             selected=rollConfig.defaults.attribute
@@ -49,12 +34,7 @@
 
       <div class="action optional" data-connected="action">
         <label for="action">{{localize "BITD.Actions.Action"}}: </label>
-        <select
-          id="action"
-          class="dice-listen"
-          name="action"
-          data-type="String"
-        >
+        <select id="action" class="dice-listen" name="action" data-type="String">
           {{selectOptions
             rollConfig.actions
             selected=rollConfig.defaults.action
@@ -67,22 +47,12 @@
     <div class="grid-2col roll-dice">
       <div class="dice-number">
         <label for="dice-number">{{localize "BITD.Roll.DiceNumber"}}: </label>
-        <input
-          id="dice-number"
-          name="diceNumber"
-          type="number"
-          value="{{rollConfig.defaults.dice}}"
-          data-dtype="Number"
-        />
+        <input id="dice-number" name="diceNumber" type="number" value="{{rollConfig.defaults.dice}}"
+          data-dtype="Number" />
       </div>
 
       <div class="optional" data-connected="action,fortune">
-        <input
-          id="assistance"
-          name="assistance"
-          type="checkbox"
-          data-dtype="Boolean"
-        />
+        <input id="assistance" name="assistance" type="checkbox" data-dtype="Boolean" />
         <label class="checkbox-label" for="assistance">{{localize
             "BITD.Roll.Bonus.Assistance"
           }}</label>
@@ -90,22 +60,11 @@
 
       <div class="modifier">
         <label for="modifier">{{localize "BITD.Roll.Modifier"}}: </label>
-        <input
-          id="modifier"
-          name="modifier"
-          type="number"
-          value="0"
-          data-dtype="Number"
-        />
+        <input id="modifier" name="modifier" type="number" value="0" data-dtype="Number" />
       </div>
 
       <div class="optional" data-connected="action,fortune">
-        <input
-          id="pushEffect"
-          name="pushEffect"
-          type="checkbox"
-          data-dtype="Boolean"
-        />
+        <input id="pushEffect" name="pushEffect" type="checkbox" data-dtype="Boolean" />
         <label class="checkbox-label" for="pushEffect">{{localize
             "BITD.Roll.Bonus.PushEffect"
           }}</label>
@@ -116,12 +75,7 @@
       <h4 for="push-or-dice">{{localize "BITD.Roll.Bonus.AddDice"}}</h4>
 
       <div>
-        <input
-          id="pushDice"
-          name="pushDice"
-          type="checkbox"
-          data-dtype="Boolean"
-        />
+        <input id="pushDice" name="pushDice" type="checkbox" data-dtype="Boolean" />
         <label class="checkbox-label" for="pushDice">{{localize
             "BITD.Roll.Bonus.Push"
           }}</label>
@@ -130,12 +84,7 @@
       <span>{{localize "BITD.Roll.Bonus.or"}}</span>
 
       <div>
-        <input
-          id="devisBargain"
-          name="devisBargain"
-          type="checkbox"
-          data-dtype="Boolean"
-        />
+        <input id="devisBargain" name="devisBargain" type="checkbox" data-dtype="Boolean" />
         <label class="checkbox-label" for="devisBargain">{{localize
             "BITD.Roll.Bonus.DevilsBargain"
           }}</label>
