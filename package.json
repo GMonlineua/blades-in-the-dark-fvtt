@@ -1,4 +1,5 @@
 {
+  "version": "0.9.7",
   "devDependencies": {
     "js-beautify": "^1.15.4",
     "prettier": "^3.8.4",
@@ -15,5 +16,4 @@
     "format:hbs": "html-beautify -r \"**/*.hbs\"",
     "format": "npm run format:assets && npm run format:hbs"
   },
-  "version": "0.0.1"
 }
