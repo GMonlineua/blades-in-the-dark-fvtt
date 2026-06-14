@@ -25,18 +25,6 @@
             }}
           </select>
         </div>
-        <div class="prop">
-          <label class="prop-label" for="system.status">{{localize
-              "BITD.Faction.Status.Title"
-            }}:</label>
-          <select class="clear-select" name="system.status">
-            {{selectOptions
-              config.statusTypes
-              selected=system.status
-              localize=true
-            }}
-          </select>
-        </div>
         <p class="summary">{{system.summary}}</p>
       </div>
     </div>
@@ -53,7 +41,7 @@
 
     {{! Owned Playbook Tab }}
     <div class="tab general" data-group="primary" data-tab="general">
-      <div class="goals items-block prop-field">
+      <div class="goals prop-field items-block full-size">
         <h3 class="bitd-header">{{localize "BITD.Faction.Goals"}}</h3>
         <ol class="items-list" data-array="goals">
           {{#each system.goals as |goal|}}
@@ -73,28 +61,22 @@
       </div>
 
       {{#if system.lair.show}}
-        <div class="lair prop-field">
-          <label class="prop-label" for="system.lair">{{localize
-              "BITD.Faction.Lair"
-            }}:</label>
+        <div class="lair prop-field full-size">
+        <h3 class="bitd-header">{{localize "BITD.Faction.Lair"}}</h3>
           <span>{{system.lair.value}}</span>
         </div>
       {{/if}}
 
       {{#if system.assets.show}}
-        <div class="notable-assets prop-field">
-          <label class="prop-label" for="system.assets">{{localize
-              "BITD.Faction.NotableAssets"
-            }}:</label>
+        <div class="notable-assets prop-field full-size">
+        <h3 class="bitd-header">{{localize "BITD.Faction.NotableAssets"}}</h3>
           <span>{{system.assets.value}}</span>
         </div>
       {{/if}}
 
       {{#if system.quirks.show}}
-        <div class="quirks prop-field">
-          <label class="prop-label" for="system.quirks">{{localize
-              "BITD.Faction.Quirks"
-            }}:</label>
+        <div class="quirks prop-field full-size">
+        <h3 class="bitd-header">{{localize "BITD.Faction.Quirks"}}</h3>
           <span>{{system.quirks.value}}</span>
         </div>
       {{/if}}
@@ -112,7 +94,7 @@
                 </div>
                 <div class="item-summary">
                   <p class="effect"><b>{{localize "BITD.Claim.Effect"}}:</b>
-                    {{system.effect}}</p>
+                    {{item.system.effect}}</p>
                   {{{item.system.description}}}
                 </div>
               </li>

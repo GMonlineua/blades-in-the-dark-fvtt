@@ -55,60 +55,32 @@
       .general {
         .prop-field {
           position: relative;
-
-          .prop-lable {
-            font-weight: 700;
-            font-family: vars.$font-secondary;
-          }
+          margin: 5px 0;
 
           .show-for-limited {
             position: absolute;
-            right: 0;
+            right: 5px;
+            top: 5px;
 
             .show-checkbox {
               position: relative;
-              top: 2px;
               margin: 0;
               width: 15px;
               height: 15px;
             }
+          }
+
+          .show-link {
+            margin: 0;
+            width: 15px;
+            height: 15px;
           }
         }
 
         .goals {
           .show-link {
             position: relative;
-            top: 5px;
-            margin: 0;
-            width: 15px;
-          }
-        }
-
-        .turf {
-          margin: 5px 0;
-        }
-
-        .members {
-          margin: 5px 0;
-
-          .show-link {
-            margin: 0;
-            width: 15px;
-            height: 15px;
-          }
-        }
-
-        .related-faction {
-          margin: 5px 0;
-
-          .clear-input {
-            border-bottom: vars.$border;
-          }
-
-          .show-link {
-            margin: 0;
-            width: 15px;
-            height: 15px;
+            top: 3px;
           }
         }
       }

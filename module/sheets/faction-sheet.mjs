@@ -25,8 +25,6 @@ export class BitdFactionSheet extends BitdActorSheet {
   async getData() {
     const context = await super.getData();
     const actorData = context.data;
-    context.system = actorData.system;
-    context.flags = actorData.flags;
 
     // Encrich editor content
     context.enrichedSituation =

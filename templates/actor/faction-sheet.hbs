@@ -37,36 +37,42 @@
 
       {{> "systems/bitd/templates/actor/parts/goals.hbs" isFaction=true}}
 
-      <div class="lair prop-field">
+      <div class="lair prop-field full-size">
         <div class="show-for-limited" data-tooltip="{{localize 'BITD.Faction.ShowForPlayers.Tooltip'}}">
-          <label for="system.lair.show">{{localize 'BITD.Faction.ShowForPlayers.Title'}}</label>
           <input class="show-checkbox" type="checkbox" name="system.lair.show" {{checked system.lair.show}}></input>
         </div>
-        <label class="prop-lable" for="system.lair">{{localize 'BITD.Crew.Lair'}}:</label>
+        <div class="item-header bitd-header">
+          <h3>{{localize 'BITD.Crew.Lair'}}</h3>
+        </div>
+
         <input class="all-width" name="system.lair.value" type="text" value="{{system.lair.value}}"></input>
       </div>
 
-      <div class="notable-assets prop-field">
+      <div class="notable-assets prop-field full-size">
         <div class="show-for-limited" data-tooltip="{{localize 'BITD.Faction.ShowForPlayers.Tooltip'}}">
-          <label for="system.assets.show">{{localize 'BITD.Faction.ShowForPlayers.Title'}}</label>
           <input class="show-checkbox" type="checkbox" name="system.assets.show" {{checked system.assets.show}}></input>
         </div>
-        <label class="prop-lable" for="system.assets">{{localize 'BITD.Faction.NotableAssets'}}:</label>
+        <div class="item-header bitd-header">
+          <h3>{{localize 'BITD.Faction.NotableAssets'}}</h3>
+        </div>
+
         <textarea class="auto-grow" name="system.assets.value">{{system.assets.value}}</textarea>
       </div>
 
-      <div class="quirks prop-field">
+      <div class="quirks prop-field full-size">
         <div class="show-for-limited" data-tooltip="{{localize 'BITD.Faction.ShowForPlayers.Tooltip'}}">
-          <label for="system.quirks.show">{{localize 'BITD.Faction.ShowForPlayers.Title'}}</label>
           <input class="show-checkbox" type="checkbox" name="system.quirks.show" {{checked system.quirks.show}}></input>
         </div>
-        <label class="prop-lable" for="system.quirks">{{localize 'BITD.Faction.Quirks'}}:</label>
+        <div class="item-header bitd-header">
+          <h3>{{localize 'BITD.Faction.Quirks'}}</h3>
+        </div>
+
         <textarea class="auto-grow" name="system.quirks.value">{{system.quirks.value}}</textarea>
       </div>
 
       <div class="turf prop-field items-block full-size">
         <div class="show-for-limited" data-tooltip="{{localize 'BITD.Faction.ShowForPlayers.Tooltip'}}">
-          <input class="show-checkbox" type="checkbox" name="system.turf.show" {{checked system.turf.show}}></input>
+          <input class="show-checkbox" type="checkbox" name="system.showTurf" {{checked system.showTurf}}></input>
         </div>
         <div class="item-header bitd-header">
           <a class="item-create" title="{{localize 'BITD.Item.Add'}}" data-type="claim"><i class="fas fa-plus"></i></a>
@@ -94,7 +100,7 @@
         </ol>
       </div>
 
-      <div class="members items-block prop-field">
+      <div class="members items-block prop-field full-size">
         <h3 class="bitd-header">{{localize 'BITD.Faction.Members'}}</h3>
         <ol class="items-list" data-array="members">
           {{#each system.members as |member|}}
