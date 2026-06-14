@@ -31,7 +31,7 @@
       .header-fields {
         flex: 1;
 
-        .character-name {
+        .main-name {
           margin: 5px 0;
           border-bottom: 0;
           padding: 0px;
@@ -46,16 +46,7 @@
           }
         }
 
-        .character-aka {
-          font-family: vars.$font-secondary;
-        }
-
-        .brief-info {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          margin-top: 10px;
+        .secondary-name {
           font-family: vars.$font-secondary;
         }
       }
