@@ -1,3 +1,5 @@
+@use "utils/variables" as vars;
+
 .portrait {
   flex: none;
   margin-right: 5px;
@@ -7,7 +9,7 @@
 .add-trauma-form {
   margin-bottom: 5px;
   font-size: medium;
-  font-family: $font-secondary;
+  font-family: vars.$font-secondary;
   text-align: center;
 
   .trauma {
@@ -15,13 +17,13 @@
   }
 
   .trauma.active {
-    text-shadow: $shadow;
+    text-shadow: vars.$shadow;
   }
 }
 
 .edit-hunting-form {
   .custom-name.clear-input {
-    border-bottom: $border-black;
+    border-bottom: vars.$border-black;
   }
 
   label {
@@ -34,7 +36,7 @@
 
   .actor-checkboxes {
     font-size: medium;
-    font-family: $font-secondary;
+    font-family: vars.$font-secondary;
 
     .flexrow {
       align-items: center;
@@ -62,7 +64,7 @@
 
 .bitd-rolls {
   height: auto;
-  font-family: $font-secondary;
+  font-family: vars.$font-secondary;
 
   .inputs-block {
     select {
@@ -71,19 +73,19 @@
 
     .roll-type {
       display: flex;
-      margin-bottom: $padding-sm;
+      margin-bottom: vars.$padding-sm;
       font-weight: bold;
       font-size: medium;
       text-align: center;
       text-transform: uppercase;
 
       label {
-        margin-top: $padding-sm;
+        margin-top: vars.$padding-sm;
       }
     }
 
     .roll-as {
-      margin-bottom: $padding-sm;
+      margin-bottom: vars.$padding-sm;
     }
 
     .roll-dice {
@@ -110,11 +112,11 @@
     }
 
     .harm {
-      margin-bottom: $padding-sm;
+      margin-bottom: vars.$padding-sm;
     }
 
     .useful-info {
-      font-family: $font-primary;
+      font-family: vars.$font-primary;
     }
 
     h4 {
@@ -131,7 +133,7 @@
   }
 
   .roll-summary {
-    margin-bottom: $padding-sm;
+    margin-bottom: vars.$padding-sm;
 
     h4 {
       margin-top: 0;
@@ -168,14 +170,14 @@
     h4 {
       font-weight: bold;
       font-size: medium;
-      font-family: $font-secondary;
+      font-family: vars.$font-secondary;
       text-transform: uppercase;
     }
 
     h5 {
       margin: 10px 0 0 0;
       font-weight: bold;
-      font-family: $font-secondary;
+      font-family: vars.$font-secondary;
       text-transform: uppercase;
     }
   }
@@ -193,7 +195,7 @@
       background-size: 30px 30px;
       background-repeat: no-repeat;
       min-width: 30px;
-      color: $light-black;
+      color: vars.$light-black;
       font-weight: bold;
       font-size: 16px;
       line-height: 30px;

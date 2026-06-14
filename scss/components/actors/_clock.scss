@@ -1,29 +1,41 @@
-.clock {
-  .sheet-header {
-    display: block;
+@use "utils/variables" as vars;
 
-    .clock-name {
-      border: none;
-      text-align: center;
-    }
+@mixin styles {
+  &.clock {
+    .header-button {
+      font-size: 0;
 
-    .clock-img-block {
-      margin: 0 auto;
-      width: 90%;
-
-      .clock-img {
-        border: none;
-        width: 100%;
-        height: auto;
+      i {
+        font-size: medium;
       }
     }
 
-    .clock-info {
-      font-family: $font-secondary;
-      text-align: center;
+    .sheet-header {
+      display: block;
 
-      .clear-input {
-        max-width: 20px;
+      .clock-name {
+        border: none;
+        text-align: center;
+      }
+
+      .clock-img-block {
+        margin: 0 auto;
+        width: 90%;
+
+        .clock-img {
+          border: none;
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .clock-info {
+        font-family: vars.$font-secondary;
+        text-align: center;
+
+        .clear-input {
+          max-width: 20px;
+        }
       }
     }
   }

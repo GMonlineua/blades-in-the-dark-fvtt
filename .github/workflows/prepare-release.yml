@@ -1,4 +1,4 @@
-name: Building Release
+name: Prepare Release
 
 on:
   pull_request_target:
@@ -7,10 +7,10 @@ on:
     branches:
       - 'main'
     paths:
-      - 'system.json'
+      - 'package.json'
 
 jobs:
-  build:
+  prepare:
     if: ${{ github.event.pull_request.head.repo.full_name == 'GMonlineua/blades-in-the-dark-fvtt' && github.event.pull_request.head.ref == 'development' }}
     permissions:
       contents: write
@@ -23,23 +23,29 @@ jobs:
           ref: development
 
       - name: Get Version
-        run: echo "RELEASE_VERSION=$(jq -r '.version' system.json)" >> $GITHUB_ENV
+        run: echo "VERSION=$(jq -r '.version' package.json)" >> $GITHUB_ENV
 
-      - name: Update Download Link
+      - name: Update system.json
         run: |
-          jq '.download = "https://github.com/GMonlineua/blades-in-the-dark-fvtt/releases/download/v${{ env.RELEASE_VERSION }}/foundry.zip"' system.json > tmp.json && mv tmp.json system.json
+          DOWNLOAD_URL="https://github.com/GMonlineua/blades-in-the-dark-fvtt/releases/download/v${{ env.VERSION }}/foundry.zip"
+          jq --arg v "${{ env.VERSION }}" --arg d "$DOWNLOAD_URL" '.version = $v | .download = $d' system.json > tmp.json && mv tmp.json system.json
 
       - name: Update Readme
         run: |
-          VERSION=$(jq -r '.version' system.json | sed 's/-//g')
-          LINK="https://img.shields.io/badge/Version-${VERSION}-informational?style=flat-square"
+          LINK="https://img.shields.io/badge/Version-${{ env.VERSION }}-informational?style=flat-square"
           sed -i "s|\[Version\]:.*|\[Version\]: $LINK|" README.md
 
-      - name: Compile CSS from SCSS
-        uses: gha-utilities/sass-build@v0.6.0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          source: scss/bitd.scss
-          destination: css/bitd.css
+          node-version: '26'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Compile CSS from SCSS
+        run: npm run build:css
 
       - name: Commit AutoBuild
         run: |

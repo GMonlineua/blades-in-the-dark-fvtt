@@ -1,0 +1,8 @@
+{
+  "html": {
+    "indent_size": 2,
+    "templating": ["handlebars"],
+    "max_preserve_newlines": 1,
+    "wrap_line_length": 120
+  }
+}

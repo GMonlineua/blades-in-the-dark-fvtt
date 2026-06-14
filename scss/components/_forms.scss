@@ -1,280 +1,284 @@
-.brief-info {
-  font-size: medium;
+@use "utils/variables" as vars;
 
-  .prop {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
+@mixin styles {
+  .brief-info {
+    font-size: medium;
 
-    .prop-label {
-      flex: 0 0 auto;
-      margin-right: 3px;
-    }
-
-    .prop-input {
-      flex: 1;
-      text-transform: lowercase;
-    }
-
-    .all-row {
-      flex: 100%;
-      padding: 0;
-    }
-  }
-}
-
-.detail-window {
-  .detail-trigger {
-    cursor: pointer;
-  }
-
-  .detail-block:not(.active) {
-    display: none;
-  }
-}
-
-.rollable {
-  &:hover,
-  &:focus {
-    cursor: pointer;
-    color: black;
-  }
-}
-
-.bitd-header.rollable {
-  &:hover,
-  &:focus {
-    color: white;
-  }
-}
-
-.tier-styled {
-  counter-increment: my-awesome-counter 0;
-  counter-reset: my-awesome-counter var(--tier);
-}
-
-.tier-styled:before {
-  margin-right: 5px;
-  content: counter(my-awesome-counter, upper-roman);
-}
-
-.value-step-block {
-  display: inline-block;
-
-  .value-step {
-    display: inline-block;
-    cursor: pointer;
-  }
-
-  .value-dot {
-    border: 1px solid black;
-    border-radius: 50%;
-    background: white;
-    width: 14px;
-    height: 14px;
-  }
-
-  .value-dot.active {
-    background: black;
-  }
-
-  .value-tooth {
-    background-image: url("../ui/tooth/tooth-black-white.svg");
-    background-position: center;
-    background-size: 14px;
-    background-repeat: no-repeat;
-    width: 14px;
-    height: 40px;
-  }
-
-  .value-tooth.active {
-    background-image: url("../ui/tooth/tooth-black.svg");
-  }
-
-  .red-tooth.active {
-    background-image: url("../ui/tooth/tooth-black-red.svg");
-  }
-
-  .simple-tooth,
-  .simple-red-tooth {
-    background-image: url("../ui/tooth/tooth-white.svg");
-    background-size: 9px;
-    width: 9px;
-    height: 30px;
-  }
-
-  .simple-tooth.active {
-    background-image: url("../ui/tooth/tooth-black.svg");
-  }
-
-  .simple-red-tooth.active {
-    background-image: url("../ui/tooth/tooth-red.svg");
-  }
-
-  .small-tooth {
-    background-image: url("../ui/tooth/tooth-small-grey.svg");
-    height: 20px;
-  }
-
-  .small-tooth.active {
-    background-image: url("../ui/tooth/tooth-small-black.svg");
-  }
-
-  .value-box {
-    border: 1px solid black;
-    border-radius: 0;
-    background: white;
-    width: 12px;
-    height: 12px;
-  }
-
-  .value-box.active {
-    background: black;
-  }
-}
-
-h1,
-h2,
-h3 {
-  font-family: $font-secondary;
-}
-
-textarea {
-  resize: vertical;
-}
-
-.sheet-tabs {
-  font-size: medium;
-  font-family: $font-secondary;
-
-  .item.active {
-    background: $dark-paper;
-    text-shadow: none;
-  }
-}
-
-.window-content {
-  background: $background-paper;
-}
-
-.tox {
-  min-height: 300px;
-
-  .tox-editor-container {
-    background: white;
-  }
-
-  .tox-edit-area {
-    padding: 0 $padding-sm;
-  }
-}
-
-.editor {
-  border: $border;
-  padding: 0 $padding-sm;
-  min-height: 200px;
-}
-
-.claims-map {
-  display: grid;
-  gap: $padding-md;
-
-  .claim {
-    display: grid;
-    position: relative;
-    align-items: center;
-    background: $dark-paper;
-    text-align: center;
-
-    .name {
-      font-weight: bold;
-      font-size: medium;
-      font-family: $font-secondary;
-    }
-
-    .item-summary {
-      padding: 15px 3px 0 3px;
-      height: 140px;
-      overflow: hidden;
-
-      .name {
-        font-size: small;
-      }
-
-      p {
-        margin: 0;
-      }
-    }
-
-    .item-controls {
+    .prop {
       display: flex;
-      position: absolute;
-      top: 5px;
-      right: 5px;
-      justify-content: flex-end;
-      font-size: smaller;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
 
-      .item-checkbox,
-      .claim-checkbox {
-        margin: 0;
-        width: 10px;
-        height: 12px;
-      }
-
-      .item-control {
+      .prop-label {
+        flex: 0 0 auto;
         margin-right: 3px;
       }
-    }
 
-    .claim-move {
-      position: absolute;
-      opacity: 0;
-      transition: opacity 0.3s ease-in;
-      font-size: large;
-    }
+      .prop-input {
+        flex: 1;
+        // text-transform: lowercase;
+      }
 
-    .move-left {
-      left: -3px;
-    }
-
-    .move-up {
-      top: -7px;
-      left: 47%;
-    }
-
-    .move-right {
-      right: -3px;
-    }
-
-    .move-down {
-      bottom: -7px;
-      left: 47%;
+      .all-row {
+        flex: 100%;
+        padding: 0;
+      }
     }
   }
 
-  .claim:first-child {
-    .move-left,
-    .move-up {
+  .detail-window {
+    .detail-trigger {
+      cursor: pointer;
+    }
+
+    .detail-block:not(.active) {
       display: none;
     }
   }
 
-  .claim:last-child {
-    .move-right,
-    .move-down {
-      display: none;
+  .rollable {
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      color: black;
     }
   }
 
-  .claim:hover {
-    .claim-move {
-      opacity: 1;
+  .bitd-header.rollable {
+    &:hover,
+    &:focus {
+      color: white;
     }
   }
 
-  .claim.active {
-    background: rgba(0, 0, 0, 0.3);
+  .tier-styled {
+    counter-increment: my-awesome-counter 0;
+    counter-reset: my-awesome-counter var(--tier);
+  }
+
+  .tier-styled:before {
+    margin-right: 5px;
+    content: counter(my-awesome-counter, upper-roman);
+  }
+
+  .value-step-block {
+    display: inline-block;
+
+    .value-step {
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .value-dot {
+      border: 1px solid black;
+      border-radius: 50%;
+      background: white;
+      width: 14px;
+      height: 14px;
+    }
+
+    .value-dot.active {
+      background: black;
+    }
+
+    .value-tooth {
+      background-image: url("../ui/tooth/tooth-black-white.svg");
+      background-position: center;
+      background-size: 14px;
+      background-repeat: no-repeat;
+      width: 14px;
+      height: 40px;
+    }
+
+    .value-tooth.active {
+      background-image: url("../ui/tooth/tooth-black.svg");
+    }
+
+    .red-tooth.active {
+      background-image: url("../ui/tooth/tooth-black-red.svg");
+    }
+
+    .simple-tooth,
+    .simple-red-tooth {
+      background-image: url("../ui/tooth/tooth-white.svg");
+      background-size: 9px;
+      width: 9px;
+      height: 30px;
+    }
+
+    .simple-tooth.active {
+      background-image: url("../ui/tooth/tooth-black.svg");
+    }
+
+    .simple-red-tooth.active {
+      background-image: url("../ui/tooth/tooth-red.svg");
+    }
+
+    .small-tooth {
+      background-image: url("../ui/tooth/tooth-small-grey.svg");
+      height: 20px;
+    }
+
+    .small-tooth.active {
+      background-image: url("../ui/tooth/tooth-small-black.svg");
+    }
+
+    .value-box {
+      border: 1px solid black;
+      border-radius: 0;
+      background: white;
+      width: 12px;
+      height: 12px;
+    }
+
+    .value-box.active {
+      background: black;
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: vars.$font-secondary;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .sheet-tabs {
+    font-size: medium;
+    font-family: vars.$font-secondary;
+
+    .item.active {
+      background: vars.$dark-paper;
+      text-shadow: none;
+    }
+  }
+
+  .window-content {
+    background: vars.$background-paper;
+  }
+
+  .tox {
+    min-height: 300px;
+
+    .tox-editor-container {
+      background: white;
+    }
+
+    .tox-edit-area {
+      padding: 0 vars.$padding-sm;
+    }
+  }
+
+  .editor {
+    border: vars.$border;
+    padding: 0 vars.$padding-sm;
+    min-height: 200px;
+  }
+
+  .claims-map {
+    display: grid;
+    gap: vars.$padding-md;
+
+    .claim {
+      display: grid;
+      position: relative;
+      align-items: center;
+      background: vars.$dark-paper;
+      text-align: center;
+
+      .name {
+        font-weight: bold;
+        font-size: medium;
+        font-family: vars.$font-secondary;
+      }
+
+      .item-summary {
+        padding: 15px 3px 0 3px;
+        height: 140px;
+        overflow: hidden;
+
+        .name {
+          font-size: small;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+
+      .item-controls {
+        display: flex;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        justify-content: flex-end;
+        font-size: smaller;
+
+        .item-checkbox,
+        .claim-checkbox {
+          margin: 0;
+          width: 10px;
+          height: 12px;
+        }
+
+        .item-control {
+          margin-right: 3px;
+        }
+      }
+
+      .claim-move {
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
+        font-size: large;
+      }
+
+      .move-left {
+        left: -3px;
+      }
+
+      .move-up {
+        top: -7px;
+        left: 47%;
+      }
+
+      .move-right {
+        right: -3px;
+      }
+
+      .move-down {
+        bottom: -7px;
+        left: 47%;
+      }
+    }
+
+    .claim:first-child {
+      .move-left,
+      .move-up {
+        display: none;
+      }
+    }
+
+    .claim:last-child {
+      .move-right,
+      .move-down {
+        display: none;
+      }
+    }
+
+    .claim:hover {
+      .claim-move {
+        opacity: 1;
+      }
+    }
+
+    .claim.active {
+      background: rgba(0, 0, 0, 0.3);
+    }
   }
 }
