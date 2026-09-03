@@ -10,8 +10,8 @@
           <span class="item-name">{{item.name}}</span>
           <div class="item-tags">
             {{#if item.system.elite}}<span>{{localize 'BITD.Cohort.Elite'}}</span>{{/if}}
-            <span>{{item.system.type}}</span>{{#if item.system.specialisation}},
-              <span class="specialisation">{{item.system.specialisation}}</span>{{/if}}
+            <span>{{getLocalize "BITD.Cohort.Type." item.system.type}}</span>
+            {{#if item.system.specialisation}}<span class="specialisation">{{item.system.specialisation}}</span>{{/if}}
           </div>
           <div class="condition">
             {{#if item.system.harm}}
