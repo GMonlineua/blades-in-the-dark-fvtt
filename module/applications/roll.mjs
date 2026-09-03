@@ -436,7 +436,7 @@ export default class BitdRolls extends HandlebarsApplicationMixin(
       });
     }
 
-    rollData.resistanceStress = addStress;
+    rollData.resistance.stress = addStress;
     this._sufferStress(rollResult);
 
     return rollResult;
