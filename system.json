@@ -2,10 +2,10 @@
   "id": "bitd",
   "title": "Blades in the Dark",
   "description": "Blades in the Dark game system by GMonline",
-  "version": "0.9.7",
+  "version": "0.9.8",
   "compatibility": {
     "minimum": "13",
-    "verified": "14.364",
+    "verified": "14.367",
     "maximum": "14"
   },
   "authors": [
